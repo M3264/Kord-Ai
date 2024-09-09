@@ -1,0 +1,59 @@
+{
+  "name": "kord-ai",
+  "version": "1.0.0",
+  "description": "A simple WhatsApp user bot written in JavaScript using the Baileys library. This bot can interact with groups and normal messages. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/M3264/Kord.git"
+  },
+  "keywords": [
+    "md",
+    "whatsapp-web",
+    "whatsapp-bot",
+    "multi-device",
+    "kord-md",
+    "bot",
+    "baileys",
+    "nodejs"
+  ],
+  "author": "Mirage Tech",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/M3264/Kord/issues"
+  },
+  "homepage": "https://github.com/M3264/Kord#readme",
+  "dependencies": {
+    "@iamtraction/google-translate": "^2.0.1",
+    "@whiskeysockets/baileys": "^6.7.5",
+    "@distube/ytdl-core": "^4.14.4",
+    "chalk": "^5.3.0",
+    "cheerio": "^1.0.0-rc.12",
+    "chokidar": "^3.6.0",
+    "express": "^4.19.2",
+    "fluent-ffmpeg": "^2.1.3",
+    "fetch-lyrics": "^1.0.15",
+    "lyrics-finder": "^21.7.0",
+    "g-i-s": "^2.1.7",
+    "googlethis": "^1.8.0",
+    "iso-639-1": "^3.1.2",
+    "jimp": "^0.16.13",
+    "link-preview-js": "^3.0.5",
+    "lodash.debounce": "^4.0.8",
+    "moment": "^2.30.1",
+    "mongodb": "^6.8.0",
+    "nayan-media-downloader": "^2.4.9",
+    "qrcode-terminal": "^0.12.0",
+    "rahad-media-downloader": "^2.1.14",
+    "socket.io": "^4.7.5",
+    "systeminformation": "^5.22.11",
+    "winston": "^3.13.0",
+    "yt-search": "^2.11.1",
+    "ytdl-core": "^4.11.5",
+    "new-youtube-exec": "1.0.5"
+  }
+}
