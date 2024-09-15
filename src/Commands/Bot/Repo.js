@@ -62,7 +62,7 @@ module.exports = {
             const lastUpdateDate = moment(repoData.updated_at).format('MMMM Do YYYY, h:mm:ss a');
 
             const repoInfoMessage = `
-╔══════════ *𝐁𝐮𝐝𝐝𝐲 𝐌𝐃 𝐑𝐞𝐩𝐨𝐬𝐢𝐭𝐨𝐫𝐲* ══════════╗
+╔══════════ *ᴋᴏʀᴅ-ᴀɪ ʀᴇᴘᴏsɪᴛᴏʀʏ* ══════════╗
 
 ${emojis.repo} *Name:* [${repoData.name}](${repoData.html_url})
 ${emojis.info} *Description:* ${repoData.description || "No description available."}

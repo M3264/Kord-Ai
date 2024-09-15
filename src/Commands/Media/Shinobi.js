@@ -4,7 +4,7 @@ const path = require('path');
 const ffmpeg = require('fluent-ffmpeg');
 
 module.exports = {
-    usage: ["animehug", "hug"],
+    usage: ["animeshinobu", "shinobu"],
     desc: "Fetch and send a random anime wallpaper.",
     commandType: "Anime",
     isGroupOnly: false,
@@ -21,7 +21,7 @@ module.exports = {
             // Notify user the image is being fetched
             kord.react(m, '🍁');
             
-            const waifudd = await axios.get(`https://api.waifu.pics/sfw/hug`);
+            const waifudd = await axios.get(`https://api.waifu.pics/sfw/shinobu`);
 
             if (!waifudd.data.url) {
                 return await global.kord.reply(m, '❌ Failed to fetch the wallpaper.');
@@ -61,7 +61,7 @@ module.exports = {
                 // Clean up
                 fs.unlinkSync(gifPath);
                 fs.unlinkSync(mp4Path);
-            } else if (fileExtension === 'jpg' || fileExtension === 'jpeg' || fileExtension === 'JPG' || fileExtension === 'JPEG') {
+            } else if (fileExtension === 'jpg' || fileExtension === 'png' || fileExtension === 'JPG' || fileExtension === 'JPEG') {
                 // Send image if the URL ends with .jpg or .jpeg
                 await global.kord.sendImage(m, imageUrl, '> © ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ ʙʏ ᴋᴏʀᴅ ɪɴᴄ³²¹™');
             } else {

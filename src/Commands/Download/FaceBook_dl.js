@@ -1,4 +1,4 @@
-const fetch = require('node-fetch'); // Ensure you have node-fetch installed
+const fetch = require('node-fetch');
 const fs = require('fs').promises;
 const path = require('path');
 const { createWriteStream } = require('fs');
@@ -46,11 +46,12 @@ class FacebookDownloader {
     async fetchVideoInfo(url) {
         for (let attempt = 0; attempt < RETRY_ATTEMPTS; attempt++) {
             try {
-                const response = await fetch(`https://api.betabotz.eu.org/api/download/fbdown?url=${url}&apikey=btzmouricedevs`);
+                const apiUrl = `https://api.shannmoderz.xyz/downloader/facebook?key=SRA-OHOKAI&url=${encodeURIComponent(url)}`;
+                const response = await fetch(apiUrl);
                 const js = await response.json();
 
-                if (Array.isArray(js.result) && js.result.length > 0) {
-                    this.videoInfo = js.result; // Ensure this is an array
+                if (js.status && Array.isArray(js.result) && js.result.length > 0) {
+                    this.videoInfo = js.result;
                     return;
                 } else {
                     await kord.reply(this.m, `${emojis.noResults} No downloadable links found for this video.`);
@@ -67,13 +68,12 @@ class FacebookDownloader {
     }
 
     async promptQualitySelection() {
-        // Ensure this.videoInfo is an array and contains video information
         if (!Array.isArray(this.videoInfo) || this.videoInfo.length === 0) {
             await kord.reply(this.m, `${emojis.error} No video formats available to choose from.`);
             return null;
         }
 
-        const options = this.videoInfo.map((res, index) => `\`[${index + 1}] ${res.resolution}\``).join('\n');
+        const options = this.videoInfo.map((res, index) => `\`[${index + 1}] ${res.quality}\``).join('\n');
         
         const downloadOptions = `
 📽️ *Kord-Ai FACEBOOK-DOWNLOADER* 📽️
@@ -101,7 +101,7 @@ ${options}`;
         }
 
         await kord.react(this.m, emojis.option);
-        return this.videoInfo[choice]._url;
+        return this.videoInfo[choice].downloadLink;
     }
 
     async downloadAndSendVideo(downloadLink) {
@@ -124,7 +124,7 @@ ${options}`;
 
         try {
             await kord.editMsg(this.m, sentMessage, `${emojis.done} Download complete! Sending video...`);
-            const caption = `Facebook Video\n\n👤 Author: ${this.videoInfo.owner || "Unknown"}\n📝 Description: ${(this.videoInfo.description || "").slice(0, 100)}...`;
+            const caption = `> © ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ ʙʏ ᴋᴏʀᴅ ɪɴᴄ³²¹™`;
             await kord.sendVideo(this.m, await fs.readFile(tempPath), caption);
         } finally {
             await fs.unlink(tempPath).catch(console.error);

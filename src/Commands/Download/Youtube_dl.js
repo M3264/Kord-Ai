@@ -40,22 +40,24 @@ module.exports = {
             await global.kord.react(m, emojis.processing);
 
             // Use Gifted API to get video info
-            const apiUrl = `https://api.giftedtechnexus.co.ke/api/download/ytdl?url=${encodeURIComponent(url)}&apikey=gifted`;
-            const response = await fetch(apiUrl);
-            const videoInfo = await response.json();
+            const apiUrl = `https://bk9.fun/download/youtube?url=${url}`;
+            const apiResponse = await fetch(apiUrl);
+            const data = await apiResponse.json();
+            console.log(data);
 
-            if (!videoInfo || videoInfo.status !== 200 || !videoInfo.result || !videoInfo.result.video_url) {
+            if (!data || data.status !== true || !data.BK9 || !data.BK9.video.url) {
                 await global.kord.react(m, emojis.error);
                 console.log("API Response Error: ", videoInfo);
                 return await global.kord.reply(m, "❌ Unable to fetch the video. Please try again later.");
             }
 
-            const downloadUrl = videoInfo.result.video_url;
+            const downloadUrl = data.BK9.video.url;;
             const fileExtension = 'mp4';
 
             // Download the file
             const fileResponse = await fetch(downloadUrl);
             const fileBuffer = await fileResponse.buffer();
+            console.log(fileResponse);
 
             const fileSize = fileBuffer.length;
 
@@ -80,7 +82,7 @@ module.exports = {
             await fs.writeFile(tempFilePath, fileBuffer);
 
             // Send the video file with caption
-            const captionLine = `🎥 *KORD-AI YOUTUBE-DOWNLOADER* 🎥\n\n🔗 Link: ${videoInfo.result.url}\n📽️ Title: ${videoInfo.result.title}`;
+            const captionLine = `🎥 *KORD-AI YOUTUBE-DOWNLOADER* 🎥\n\n🔗 Link: ${url}\n📽️ Title: ${data.BK9.title}`;
             await global.kord.sendVideo(m, await fs.readFile(tempFilePath), captionLine);
 
             // Clean up

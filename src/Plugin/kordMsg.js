@@ -178,7 +178,7 @@ async function kordMsg(sock) {
           contextInfo: {
             externalAdReply: {
               showAdAttribution: false,
-              renderLargerThumbnail: true,
+              renderLargerThumbnail: false,
               title: title,
               body: body,
               previewType: 0,

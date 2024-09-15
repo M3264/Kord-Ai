@@ -158,9 +158,12 @@ async function kordAi(io, app) {
 
              if (!sock.authState.creds.registered && pairingOption === 'Whatsapp Pairing Code') {
                  setTimeout(async () => {
-                    const code = await sock.requestPairingCode(2347013159244);
-                     console.log(chalk.greenBright(`Pairing Code: ${code}`))
-                 }, 5000);
+                 const ownerNumbers = global.settings.OWNER_NUMBERS.split(',').map(num => num.trim());
+                 for (const number of ownerNumbers) {
+                 const code = await sock.requestPairingCode(number);
+                 console.log(chalk.greenBright(`Pairing Code for ${number}: ${code}`));
+    }
+}, 5000);
              }
 
             if (connection === "open") {

@@ -10,17 +10,16 @@ const emojis = {
 
 async function getGitHubRepo(args, m, kord) {
     const url = args[0];
-    if (typeof url === 'string' && !args[0].includes('github.com')) return kord.reply(m,"Link invalid!!")
 
     // Check if URL starts with 'github.com'
-    if (typeof url === 'string' && url.includes('github.com')) {
+    if (!url.includes('github.com')) {
         return await kord.reply(m, "Invalid URL. Please provide a URL starting with 'github.com'.");
     }
 
     // Extract repository details
-  
+    const parts = url.split('/');
     const user = parts[parts.indexOf('github.com') + 1];
-    const repo = parts[parts.indexOfI'('github.com') + 2];
+    const repo = parts[parts.indexOf('github.com') + 2];
     const repoName = repo.replace(/.git$/, '');
 
     const downloadUrl = `https://api.github.com/repos/${user}/${repoName}/zipball`;

@@ -40,10 +40,11 @@ const command = getCommand(commandName.toLowerCase());
         const sender = m.key.remoteJid.endsWith('@g.us') ? m.key.participant : m.key.remoteJid;
 
         // Check if user is banned
-        if (bannedUsers.includes(sender)) {
+       /*  if (bannedUsers.includes(sender)) {
             await kord.reply(m, '⛔ *You are banned from using this bot.*');
             return;
         }
+        */
 
         const context = await buildContext(sock, m, sender);
 
@@ -78,7 +79,7 @@ async function buildContext(sock, m, sender) {
 
 async function checkPermissions(sock, m, command, context) {
     const { isOwner, isGroupAdmin } = context;
-    if (command.isAdminOnly && !m.key.fromMe && !isOwner && !isGroupAdmin) {
+    if (command.isAdminOnly && !m.key.fromMe && !isOwner) {
         await kord.reply(m, '⛔ *This command can only be used by bot Owners.*');
         return false;
     } else if (command.isGroupOnly && !m.key.remoteJid.endsWith('@g.us')) {
@@ -87,7 +88,7 @@ async function checkPermissions(sock, m, command, context) {
     } else if (command.isPrivateOnly && !m.key.remoteJid.endsWith('@s.whatsapp.net')) {
         await kord.reply(m, '⛔ *This command can only be used in private chats.*');
         return false;
-    } else if (command.isAdminOnly && !isGroupAdmin && !isOwner) {
+    } else if (command.isGroupAdminOnly && !isGroupAdmin && !isOwner) {
         await kord.reply(m, '⛔ *This command can only be used by group admins.*');
         return false;
     }

@@ -3,7 +3,7 @@ const fs = require('fs').promises;
 const path = require('path');
 
 module.exports = {
-    usage: ["instavid", "igvid", "instadlvid"],
+    usage: ["instapic", "igpic", "instadlpic"],
     desc: "Download Instagram media",
     commandType: "General",
     isGroupOnly: false,
@@ -41,7 +41,7 @@ module.exports = {
             }
 
             const mediaBuffer = await mediaResponse.buffer();
-            const fileName = `instagram_${Date.now()}.mp4`; // Adjust the extension based on content type
+            const fileName = `instagram_${Date.now()}.jpg`; // Adjust the extension based on content type
             const filePath = path.join(__dirname, '../tmp/', fileName);
 
             // Ensure the directory exists
@@ -55,7 +55,7 @@ module.exports = {
             await fs.writeFile(filePath, mediaBuffer);
 
             // Send the downloaded media
-            await global.kord.sendVideo(m, filePath, '> Here is your downloaded Instagram media!');
+            await global.kord.sendImage(m, filePath, '> Here is your downloaded Instagram media!');
 
             // Clean up the file after sending
             await fs.unlink(filePath);

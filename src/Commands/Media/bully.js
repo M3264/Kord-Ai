@@ -4,7 +4,7 @@ const path = require('path');
 const ffmpeg = require('fluent-ffmpeg');
 
 module.exports = {
-    usage: ["animehug", "hug"],
+    usage: ["animebully", "bully"],
     desc: "Fetch and send a random anime wallpaper.",
     commandType: "Anime",
     isGroupOnly: false,
@@ -21,7 +21,7 @@ module.exports = {
             // Notify user the image is being fetched
             kord.react(m, '🍁');
             
-            const waifudd = await axios.get(`https://api.waifu.pics/sfw/hug`);
+            const waifudd = await axios.get(`https://api.waifu.pics/sfw/bully`);
 
             if (!waifudd.data.url) {
                 return await global.kord.reply(m, '❌ Failed to fetch the wallpaper.');

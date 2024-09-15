@@ -1,4 +1,3 @@
-const yts = require('yt-search');
 const fetch = require('node-fetch');
 const fs = require('fs').promises;
 const path = require('path');
@@ -30,15 +29,18 @@ module.exports = {
                 return await global.kord.reply(m, "🔗 Please provide a YouTube search query.");
             }
 
-            // Use yts to search for YouTube videos
-            const results = await yts(query);
-            if (results.videos.length === 0) {
+            // Use Gifted API to search for YouTube videos
+            const searchApiUrl = `https://free-ytdl.giftedtechnexus.co.ke/api/yts?query=${encodeURIComponent(query)}`;
+            const searchResponse = await fetch(searchApiUrl);
+            const searchResults = await searchResponse.json();
+
+            if (!searchResults.success || searchResults.videos.length === 0) {
                 await global.kord.react(m, emojis.noResults);
-                return await global.kord.reply(m, "😕 Oops! No videos found for that query.");
+                return await global.kord.reply(m, `${emojis.noResults} Oops! No videos found for that query.`);
             }
 
             // Get the first video from search results
-            const video = results.videos[0];
+            const video = searchResults.videos[0];
             const videoUrl = video.url;
             const videoTitle = video.title.replace(/[<>:"/\\|?*\x00-\x1F]/g, ''); // Clean title for file name
 

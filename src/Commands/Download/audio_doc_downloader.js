@@ -45,15 +45,15 @@ module.exports = {
             await kord.react(m, emojis.found);
 
             // Fetch the download link from Junn API
-            const apiUrl = `https://api.junn4.my.id/download/ytmp3?url=${video.url}`;
+            const apiUrl = `https://api.shannmoderz.xyz/downloader/yt-audio?key=SRA-OHOKAI&url=${video.url}`;
             const apiResponse = await fetch(apiUrl);
             const data = await apiResponse.json();
 
-            if (!data || data.status !== 200 || !data.result.media) {
+            if (!data || data.status !== true || !data.result.download_url) {
                 return await kord.reply(m, "❌ An error occurred while fetching the download link. Please try again later.");
             }
 
-            const downloadUrl = data.result.media;
+            const downloadUrl = data.result.download_url;
 
             const tempDir = path.join(__dirname, '../../temp');
             if (!fs.existsSync(tempDir)) {
