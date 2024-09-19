@@ -51,6 +51,7 @@
     "rahad-media-downloader": "^2.1.14",
     "socket.io": "^4.7.5",
     "systeminformation": "^5.22.11",
+    "tesseract.js": "^4.1.1",
     "winston": "^3.13.0",
     "yt-search": "^2.11.1",
     "ytdl-core": "^4.11.5",
