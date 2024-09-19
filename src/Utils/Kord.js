@@ -32,17 +32,30 @@ let messagesSent = 0;
 
 async function getAuthState() {
     const sessionDir = path.join(__dirname, '..', 'Session');
+    const credsPath = path.join(sessionDir, 'creds.json');
 
     try {
         // Retrieve the SESSION_ID from global.settings
         const sessionId = global.settings.SESSION_ID;
 
-        // Log the SESSION_ID
-        console.log("Session ID:", sessionId);
+        if (sessionId) {
+            // Log the SESSION_ID
+            console.log("Session ID:", sessionId);
 
-        // Decode the SESSION_ID and save it to creds.json
-        const decodedData = Buffer.from(sessionId, 'base64').toString('utf-8');
-        fs.writeFileSync(path.join(sessionDir, 'creds.json'), decodedData);
+            // Decode the SESSION_ID and save it to creds.json
+            const decodedData = Buffer.from(sessionId, 'base64').toString('utf-8');
+            fs.writeFileSync(credsPath, decodedData);
+        } else if (fs.existsSync(credsPath)) {
+            // Load the SESSION_ID from creds.json
+            const decodedData = fs.readFileSync(credsPath, 'utf-8');
+            const savedSessionId = JSON.parse(decodedData);
+            console.log("Using SESSION_ID from creds.json:", savedSessionId);
+            sessionId = savedSessionId;
+        } else {
+            console.error("Error: No SESSION_ID found in global.settings or creds.json");
+            // Handle the missing SESSION_ID (e.g., throw an error or exit gracefully)
+            return;
+        }
 
         // Use multi-file auth state
         console.log('\x1b[33m%s\x1b[0m', 'Using multi-file auth state.');

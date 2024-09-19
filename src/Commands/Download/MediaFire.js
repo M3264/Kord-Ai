@@ -15,7 +15,7 @@ const emojis = {
 const MAX_DOWNLOAD_SIZE = settings.MAX_DOWNLOAD_SIZE * 1024 * 1024; // 100 MB limit
 
 module.exports = {
-    usage: ["mediafire", "mf"],
+    usage: ["mediafire", "mediaf"],
     desc: "Download files from MediaFire links",
     commandType: "Download",
     isGroupOnly: false,
@@ -57,7 +57,7 @@ module.exports = {
 
         } catch (error) {
             console.error("Error in MediaFire download:", error);
-            await kord.reply(m, `${emojis.error} An error occurred while processing your request. Please try again later.`);
+            await kord.reply(m, `${emojis.error} An error occurred while processing your request. Please try again later.\n ${error.message}`);
         }
     }
 };

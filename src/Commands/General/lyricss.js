@@ -1,6 +1,8 @@
-const lyricsFinder = require('lyrics-finder');
+const Genius = require("genius-lyrics");
+const Client = new Genius.Client(V0oeid4uq3WJovgQvRG69hWG35E4uu4d6VeVcB3EMvl-4-FSGGdX9Sm3n8cEdOJn);
+
 const emojis = {
-    info: 'ℹ️',  // Define your emojis here
+    info: 'ℹ️',
     search: '🔍',
     found: '🎵',
     notFound: '😕',
@@ -10,7 +12,7 @@ const emojis = {
 module.exports = {
     usage: ["lyrics"],
     desc: "Fetch lyrics for a given song and artist.",
-    commandType: "Music",
+    commandType: "Media",
     isGroupOnly: false,
     isAdminOnly: false,
     isPrivateOnly: false,
@@ -19,7 +21,7 @@ module.exports = {
     async execute(sock, m, args) {
         try {
             if (args.length < 2) {
-                return await sock.sendMessage(m.key.remoteJid, { text: `Please provide both the artist name and song title. Example: \`${settings.PREFIX[0]}lyrics Ed Sheeran Shape of You\`` });
+                return await sock.sendMessage(m.key.remoteJid, { text: `${emojis.info} Please provide both the artist name and song title. Example: \`${settings.PREFIX[0]}lyrics Ed Sheeran Shape of You\`` });
             }
 
             const artist = args[0];
@@ -27,12 +29,19 @@ module.exports = {
 
             await sock.sendMessage(m.key.remoteJid, { text: `${emojis.search} Searching for lyrics...` });
 
-            const lyrics = await lyricsFinder(artist, songTitle);
+            const searches = await Client.songs.search(songTitle + " " + artist);
+            
+            if (searches.length === 0) {
+                return await sock.sendMessage(m.key.remoteJid, { text: `${emojis.notFound} Could not find lyrics for "${songTitle}" by ${artist}.` });
+            }
+
+            const song = searches[0];
+            const lyrics = await song.lyrics();
 
             if (lyrics) {
-                await sock.sendMessage(m.key.remoteJid, { text: `${emojis.found} *Lyrics for "${songTitle}" by ${artist}:*\n\n${lyrics}` });
+                await sock.sendMessage(m.key.remoteJid, { text: `${emojis.found} *Lyrics for "${song.title}" by ${song.artist.name}:*\n\n${lyrics}` });
             } else {
-                await sock.sendMessage(m.key.remoteJid, { text: `${emojis.notFound} Could not find lyrics for "${songTitle}" by ${artist}.` });
+                await sock.sendMessage(m.key.remoteJid, { text: `${emojis.notFound} Could not fetch lyrics for "${songTitle}" by ${artist}.` });
             }
 
         } catch (error) {

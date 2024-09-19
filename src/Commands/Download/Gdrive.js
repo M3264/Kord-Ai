@@ -41,7 +41,7 @@ async function downloadGoogleDrive(args, m, kord) {
         await fs.unlink(tempPath);
     } catch (error) {
         console.error("Error downloading Google Drive file:", error);
-        await kord.reply(m, "Error downloading Google Drive file: " + error.message);
+        await kord.reply(m, `Error downloading Google Drive file: ${error.message}`);
     }
 }
 

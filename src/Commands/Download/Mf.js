@@ -88,7 +88,7 @@ function createProgressBar(percentage) {
 }
 
 module.exports = {
-    usage: ["mediafire", "mf"],
+    usage: ["mf"],
     desc: "Download files from MediaFire links.",
     commandType: "Download",
     isGroupOnly: false,
