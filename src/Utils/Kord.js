@@ -32,26 +32,18 @@ let messagesSent = 0;
 
 async function getAuthState() {
     const sessionDir = path.join(__dirname, '..', 'Session');
-    const configPath = path.join(__dirname, '..', '..', 'Config.js');
-    
+
     try {
-        // Check if config.js exists and has SESSION_ID
-        if (fs.existsSync(configPath)) {
-            const config = require(configPath);
-            if (config.SESSION_ID) {
-                console.log('\x1b[33m%s\x1b[0m', 'Using SESSION_ID from config.js');
-                const decodedData = Buffer.from(config.SESSION_ID, 'base64').toString('utf-8');
-                
-                // Ensure the Session directory exists
-                if (!fs.existsSync(sessionDir)) {
-                    fs.mkdirSync(sessionDir, { recursive: true });
-                }
-                
-                // Write decoded data to creds.json in the Session folder
-                fs.writeFileSync(path.join(sessionDir, 'creds.json'), decodedData);
-            }
-        }
-        
+        // Retrieve the SESSION_ID from global.settings
+        const sessionId = global.settings.SESSION_ID;
+
+        // Log the SESSION_ID
+        console.log("Session ID:", sessionId);
+
+        // Decode the SESSION_ID and save it to creds.json
+        const decodedData = Buffer.from(sessionId, 'base64').toString('utf-8');
+        fs.writeFileSync(path.join(sessionDir, 'creds.json'), decodedData);
+
         // Use multi-file auth state
         console.log('\x1b[33m%s\x1b[0m', 'Using multi-file auth state.');
         return await useMultiFileAuthState(sessionDir);
