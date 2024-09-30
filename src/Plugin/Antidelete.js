@@ -1,5 +1,8 @@
 const fs = require('fs');
 const { downloadMediaMessage } = require('@whiskeysockets/baileys');
+const pino = require('pino');
+
+const logger = pino({ level: 'info' }); // Set up logging
 
 // Function to handle deleted messages
 async function handleDeletedMessage(sock, message) {
@@ -8,17 +11,10 @@ async function handleDeletedMessage(sock, message) {
 
         // Prepare the forwarding message
         let forwardContent = {
-            text: `🚨 *DELETED MESSAGE DETECTED* 🚨
-
-` +
-                  `From: ${deletedMessage.key.remoteJid}
-` +
-                  `Sender: ${deletedMessage.key.fromMe ? 'Me' : deletedMessage.pushName || deletedMessage.key.participant}
-
-` +
-                  `Message Type: ${deletedMessage.message ? Object.keys(deletedMessage.message)[0] : 'Unknown'}
-
-`
+            text: `🚨 *DELETED MESSAGE DETECTED* 🚨\n` +
+                  `From: ${deletedMessage.key.remoteJid}\n` +
+                  `Sender: ${deletedMessage.key.fromMe ? 'Me' : deletedMessage.pushName || deletedMessage.key.participant}\n` +
+                  `Message Type: ${deletedMessage.message ? Object.keys(deletedMessage.message)[0] : 'Unknown'}\n`
         };
 
         // Handle different types of messages
@@ -33,7 +29,7 @@ async function handleDeletedMessage(sock, message) {
                 // Download and attach the media
                 const stream = await downloadMediaMessage(deletedMessage, 'buffer');
                 forwardContent.media = stream;
-                
+
                 if (deletedMessage.message.imageMessage) {
                     forwardContent.type = 'image';
                     forwardContent.caption = deletedMessage.message.imageMessage.caption || '';
@@ -48,19 +44,28 @@ async function handleDeletedMessage(sock, message) {
         }
 
         // Send the deleted message info to the owner
-        await sock.sendMessage('2347013159244@s.whatsapp.net', forwardContent);
+        const ownerJid = `${global.settings.OWNER_NUMBERS}@s.whatsapp.net`;
+        try {
+            await sock.sendMessage(ownerJid, forwardContent);
+            logger.info('Sent deleted message to owner:', forwardContent);
+        } catch (error) {
+            logger.error('Failed to send deleted message to owner:', error);
+        }
     }
 }
 
 // Set up the message deletion listener
-function setupAntidelete(sock) {
+function setupAntidelete(sock, store) {
     sock.ev.on('message.delete', async (deletedMessage) => {
         // Check if the deleted message is in our cache
         const key = deletedMessage.key;
-        const cachedMessage = await sock.loadMessage(key.remoteJid, key.id);
+        const cachedMessage = await store.loadMessage(key.remoteJid, key.id);
         
         if (cachedMessage) {
+            logger.info('Deleted message detected:', cachedMessage);
             await handleDeletedMessage(sock, cachedMessage);
+        } else {
+            logger.warn('No cached message found for deleted message:', deletedMessage);
         }
     });
 }

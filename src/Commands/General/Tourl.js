@@ -1,9 +1,9 @@
-const { downloadMediaMessage } = require('@whiskeysockets/baileys');
 const axios = require('axios');
-const fs = require('fs').promises;
+const fs = require('fs'); // Regular fs for streams
+const fsPromises = require('fs').promises; // Promise-based fs for async operations
 const path = require('path');
 const os = require('os');
-const mime = require('mime-types');
+const FormData = require('form-data');
 
 module.exports = {
     usage: ["tourl"],
@@ -16,41 +16,44 @@ module.exports = {
 
     async execute(sock, m, args) {
         let tempFilePath;
+        let mediaBuffer;
+        let fileExtension;
 
         try {
-            // Get the quoted media using Kord.getQuotedMedia
-            const mediaData = await global.kord.getQuotedMedia(m);
-            
-            // If no media found
-            if (!mediaData) {
-                return await global.kord.reply(m, "🔗 Please provide a media file to upload.");
-            }
+            // Check if the message is quoted
+            if (m.message.extendedTextMessage && m.message.extendedTextMessage.contextInfo && m.message.extendedTextMessage.contextInfo.quotedMessage) {
+                const quotedMedia = await global.kord.downloadQuotedMedia(m);
 
-            // Download media from the message
-            const mediaBuffer = await downloadMediaMessage(mediaData.message, 'buffer');
-            if (!mediaBuffer) {
-                return await global.kord.reply(m, "❌ Failed to download the media. Try again.");
-            }
+                if (quotedMedia) {
+                    mediaBuffer = quotedMedia.buffer;
+                    fileExtension = quotedMedia.extension; // Get the file extension
+                } else {
+                    return await global.kord.reply(m, "❌ Failed to download the quoted media.");
+                }
+            } else {
+                // No quoted message, download media from the main message
+                const mediaMsg = await global.kord.downloadMediaMsg(m);
 
-            // Determine file extension
-            const mediaType = Object.keys(mediaData.message)[0];
-            const ext = getFileExtension(mediaType);
-            if (!ext) {
-                return await global.kord.reply(m, "❌ Unable to determine the file type.");
+                if (mediaMsg) {
+                    mediaBuffer = mediaMsg.buffer;
+                    fileExtension = mediaMsg.extension; // Get the file extension
+                } else {
+                    return await global.kord.reply(m, "❌ Failed to download the media.");
+                }
             }
 
             // Create a temporary file path
-            tempFilePath = path.join(os.tmpdir(), `temp_${Date.now()}.${ext}`);
+            tempFilePath = path.join(os.tmpdir(), `temp_${Date.now()}.${fileExtension}`);
 
             // Save the media to the temp file
-            await fs.writeFile(tempFilePath, mediaBuffer);
+            await fsPromises.writeFile(tempFilePath, mediaBuffer);
             console.log("File downloaded to:", tempFilePath);
 
             // Upload to the API
             const formData = new FormData();
-            formData.append('file', fs.createReadStream(tempFilePath));
+            formData.append('file', fs.createReadStream(tempFilePath)); // Use regular fs for streams
 
-            const response = await axios.post('https://api.giftedtechnexus.co.ke/api/tools/upload', formData, {
+            const response = await axios.post('https://itzpire.com/tools/upload', formData, {
                 headers: {
                     ...formData.getHeaders(),
                 }
@@ -58,10 +61,14 @@ module.exports = {
 
             const result = response.data;
 
-            if (result.success) {
-                const fileUrl = result.result;
-                // Send the URL
-                await sock.sendMessage(m.key.remoteJid, { text: 'Url: ' + fileUrl }, { quoted: m });
+            if (result.status === 'success') {
+                const { url, downloadUrl, deleteUrl } = result.fileInfo;
+                // Send the URLs back in the message
+                const message = `🔗 *Upload Successful!*\n\n` +
+                                `🌐 *File URL:* ${url}\n` +
+                                `⬇️ *Download URL:* ${downloadUrl}\n` +
+                                `🗑️ *Delete URL:* ${deleteUrl}`;
+                await sock.sendMessage(m.key.remoteJid, { text: message }, { quoted: m });
             } else {
                 throw new Error('Upload failed: ' + (result.message || 'Unknown error'));
             }
@@ -79,7 +86,7 @@ module.exports = {
             // Clean up: delete the temporary file
             if (tempFilePath) {
                 try {
-                    await fs.unlink(tempFilePath);
+                    await fsPromises.unlink(tempFilePath);
                     console.log("Temporary file deleted:", tempFilePath);
                 } catch (unlinkError) {
                     console.error("Error deleting temporary file:", unlinkError);
@@ -88,14 +95,3 @@ module.exports = {
         }
     }
 };
-
-// Helper function to determine the file extension based on media type
-function getFileExtension(mediaType) {
-    switch (mediaType) {
-        case 'imageMessage': return 'jpg';
-        case 'videoMessage': return 'mp4';
-        case 'audioMessage': return 'mp3';
-        case 'documentMessage': return 'pdf';
-        default: return 'bin';
-    }
-}

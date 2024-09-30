@@ -1,12 +1,12 @@
 const emojis = {
-    info: 'ℹ️',      // Information symbol
-    cpu: '🖥️',       // Desktop computer emoji
-    ram: '🧠',       // Brain emoji (represents memory)
-    storage: '💾',    // Floppy disk emoji
-    os: '🐧',        // Penguin emoji (for Linux, change if on another OS)
-    error: '❌',     // Error emoji
-    clock: '🕒',     // Clock emoji (for speed)
-    load: '🏋️‍♂️'   // Weightlifter emoji (for load)
+    info: 'ℹ️',
+    cpu: '🖥️',
+    ram: '🧠',
+    storage: '💾',
+    os: '🐧',
+    error: '❌',
+    clock: '🕒',
+    load: '🏋️‍♂️'
 };
 
 const si = require('systeminformation');

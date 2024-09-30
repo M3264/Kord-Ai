@@ -28,17 +28,7 @@ module.exports = {
 *Intelligence :* ${getRandomPercentage()}%
 *Courage :* ${getRandomPercentage()}%
 *Afraid :* ${getRandomPercentage()}%`;
-
-        let ppuser;
-        try {
-            ppuser = await sock.profilePictureUrl(m.sender, 'image');
-        } catch (err) {
-            ppuser = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60';
-        }
-
-        const ppkord = await getBuffer(ppuser);
-
         // Assuming you have a function to send a message with an image
-        await sock.sendMessage(m.chat, { image: ppkord, caption: profile }, { quoted: m });
+        await global.kord.reply(m, profile)
     }
 };

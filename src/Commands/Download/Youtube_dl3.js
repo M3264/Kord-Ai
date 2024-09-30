@@ -1,7 +1,7 @@
 const yts = require('yt-search');
 const fs = require('fs');
 const path = require('path');
-const fetch = require('node-fetch');
+const ytdl = require('youtubedl-core');
 const { logger } = require('../../Plugin/kordlogger');
 const settings = require('../../../Config');
 
@@ -40,22 +40,10 @@ module.exports = {
                 await kord.react(m, emojis.noResults);
                 return await kord.reply(m, "😕 Oops! No videos found for that query.");
             }
-            const video = results.videos[0]; 
+            const video = results.videos[0];
             console.log(video);
 
             await kord.react(m, emojis.found);
-
-            // Fetch the download link from Junn API
-            const apiUrl = `https://api.shannmoderz.xyz/downloader/yt-audio?key=SRA-OHOKAI&url=${video.url}`;
-            const apiResponse = await fetch(apiUrl);
-            const data = await apiResponse.json();
-            console.log(data);
-
-            if (!data || data.status !== true || !data.result.download_url) {
-                return await kord.reply(m, "❌ An error occurred while fetching the download link. Please try again later.");
-            }
-
-            const downloadUrl = data.result.download_url;
 
             const tempDir = path.join(__dirname, '../../temp');
             if (!fs.existsSync(tempDir)) {
@@ -63,19 +51,29 @@ module.exports = {
             }
 
             const tempPath = path.join(tempDir, `temp_${Date.now()}.mp3`);
-            const writeStream = fs.createWriteStream(tempPath);
 
-            // Download the file
-            const downloadStream = await fetch(downloadUrl);
-            downloadStream.body.pipe(writeStream);
+            // Download the audio using youtubedl-core
+            await kord.freply(m, `${emojis.processing} Downloading audio...`);
+            
+            const audioStream = ytdl(video.url, {
+                quality: 'highestaudio',
+                filter: 'audioonly',
+            });
+
+            const writeStream = fs.createWriteStream(tempPath);
+            audioStream.pipe(writeStream);
 
             writeStream.on('finish', async () => {
-                writeStream.close(); 
                 const fileSize = fs.statSync(tempPath).size;
 
                 if (fileSize === 0) {
                     fs.unlinkSync(tempPath);
                     return await kord.reply(m, "❌ The file appears to be empty. Please try again later.");
+                }
+
+                if (fileSize > MAXDLSIZE) {
+                    fs.unlinkSync(tempPath);
+                    return await kord.reply(m, `${emojis.warning} The file size exceeds the maximum allowed size.`);
                 }
 
                 // Send the audio normally
@@ -99,7 +97,7 @@ ${emojis.done} Audio file has been sent.
                 `;
 
                 const styledResponse = await kord.changeFont(response, 'smallBoldScript'); // Apply font style
-                await kord.reply(m, styledResponse);
+                await kord.freply(m, styledResponse);
 
                 // Delete the temp file after sending
                 fs.unlinkSync(tempPath); 

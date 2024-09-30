@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 
 module.exports = {
     usage: ["npm"],
-    desc: "Searches the npm registry for a specified package using the GiftedTech Nexus API.",
+    desc: "Searches the npm registry for a specified package using the Popcat API.",
     commandType: "General",
     isGroupOnly: false,
     isAdminOnly: false,
@@ -18,26 +18,26 @@ module.exports = {
 
             // Construct the query URL with the package name
             const packageName = encodeURIComponent(args.join(" "));
-            const apiKey = "gifted"; // Provided API key
-            const apiUrl = `https://api.giftedtechnexus.co.ke/api/search/npmsearch?packagename=${packageName}&apikey=${apiKey}`;
+            const apiUrl = `https://api.popcat.xyz/npm?q=${packageName}`;
 
             // Fetch the results from the API
             const response = await fetch(apiUrl);
             const data = await response.json();
 
             // Check if the API returned an error or no results
-            if (response.status !== 200 || !data.results || data.results.length === 0) {
+            if (response.status !== 200 || !data.name) {
                 return kord.reply(m, "❌ No results found for the specified package name.");
             }
 
             // Extract and format the search results
-            const result = data.results[0]; // Assuming we're interested in the first result
             const responseText = `
-*Package Name:* ${result.name}
-*Version:* ${result.version}
-*Description:* ${result.description}
-*Author:* ${result.author}
-*Link:* [${result.name}](${result.url})
+*Package Name:* ${data.name}
+*Version:* ${data.version}
+*Description:* ${data.description}
+*Author:* ${data.author} (${data.author_email || "No email"})
+*Last Published:* ${data.last_published}
+*Downloads This Year:* ${data.downloads_this_year}
+*Repository:* ${data.repository || "None"}
 `;
 
             // Send the formatted result back to the user

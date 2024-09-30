@@ -1,52 +1,38 @@
-const fs = require('fs').promises;
-const path = require('path');
 const fetch = require('node-fetch');
 
 module.exports = {
-    usage: ["ss", "ssweb"],
-    desc: "Web Screenshot",
+    usage: ["ss"],
+    desc: "Take a screenshot of the given website URL",
     commandType: "General",
     isGroupOnly: false,
     isAdminOnly: false,
     isPrivateOnly: false,
-    emoji: "🖼️",
+    emoji: "📸",
 
     async execute(sock, m, args) {
-    if (!args[0]) return await global.kord.reply(m, 'Please provide a URL to take a screenshot.');
+        if (!args[0]) return await global.kord.reply(m, 'Please provide a valid website URL.\nExample: .ss https://google.com');
 
-    if (args[0].match(/xnxx\.com|hamster\.com|nekopoi\.care/i)) {
-        return await global.kord.reply(m, 'The link is prohibited.');
-    }
+        const url = args[0];
+        const apiKey = 'PtOLkiDxFAUAZg'; // Provided access key for ScreenshotOne API
+        const apiUrl = `https://api.screenshotone.com/take?access_key=${apiKey}&url=${encodeURIComponent(url)}&full_page=true&viewport_width=1920&viewport_height=1080&device_scale_factor=1&format=jpg&image_quality=100&block_ads=true&block_cookie_banners=true&block_banners_by_heuristics=false&block_trackers=true&delay=0&timeout=60`;
 
-    await global.kord.reply(m, '> *✨`Loading..`💨*');
-
-    const url = args[0].startsWith('http') ? args[0] : 'https://' + args[0];
-
-    try {
-        let response = await fetch(`https://api.junn4.my.id/tools/ssweb?url=${encodeURIComponent(url)}`);
-
-        if (!response.ok) {
-            await global.kord.reply(m, '❌ Failed to fetch the screenshot.');
-            return;
-        }
-
-        const imgBuffer = await response.buffer();
-        const filePath = path.join(__dirname, '../tmp/', `${Date.now()}.jpeg`);
+        await global.kord.react(m, '✨');
 
         try {
-            await fs.access(path.dirname(filePath));
-        } catch {
-            await fs.mkdir(path.dirname(filePath), { recursive: true });
+            const response = await fetch(apiUrl);
+            if (!response.ok) {
+                await global.kord.reply(m, '❌ Failed to take screenshot.');
+                return;
+            }
+
+            // Convert the response to buffer (image format)
+            const buffer = await response.buffer();
+
+            // Send the screenshot as an image
+            await global.kord.sendImage(m, buffer, `> Screenshot of ${url}\n > © ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ ʙʏ ᴋᴏʀᴅ ɪɴᴄ³²¹™`);
+        } catch (error) {
+            console.error('Error in ss command:', error);
+            await global.kord.reply(m, `❌ An error occurred while trying to take the screenshot.\n ${error.message}`);
         }
-
-        await fs.writeFile(filePath, imgBuffer);
-
-        await global.kord.sendImage(m, filePath, '> Here is the screenshot of the webpage.');
-
-        await fs.unlink(filePath); // Clean up the file after sending
-
-    } catch (error) {
-        console.error('Error in screenshot command:', error);
-        await global.kord.reply(m, '❌ An error occurred while trying to fetch the screenshot.');
-    }}
-}
+    }
+};

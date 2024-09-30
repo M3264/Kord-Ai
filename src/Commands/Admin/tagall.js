@@ -17,15 +17,14 @@ module.exports = {
 
             let message = `
 ╭─── ･ ｡ﾟ☆: *.☽ .* :☆ﾟ. ───╮
-*Attention everyone!*
+      *Attention everyone!*
 ╰─── ･ ｡ﾟ☆: *.☽ .* :☆ﾟ. ───╯
 
 `;
 
             participants.forEach((participant, index) => {
-                message += `╭─ ･ ｡ﾟ☆: *.☽ .* :☆ﾟ. ───╮
-┊  *${index + 1}.* @${participant.id.split('@')[0]}
-╰─── ･ ｡ﾟ☆: *.☽ .* :☆ﾟ. ───╯\n`;
+                message += `
+┊ ✦ *${index + 1}.* @${participant.id.split('@')[0]}`;
             });
 
             await sock.sendMessage(groupId, {

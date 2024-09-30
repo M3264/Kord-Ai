@@ -32,7 +32,7 @@ module.exports = {
             // Construct the query URL with user input
             const encodedText = encodeURIComponent(text);
             const apiKey = "gifted"; // Provided API key
-            const apiUrl = `https://api.giftedtechnexus.co.ke/api/ephoto360/lighteffect?text=${encodedText}&apikey=${apiKey}`;
+            const apiUrl = `https://giftedapis.us.kg/api/ephoto360/lighteffect?text=${encodedText}&apikey=${apiKey}`;
 
             // Fetch the results from the API
             const response = await fetch(apiUrl);

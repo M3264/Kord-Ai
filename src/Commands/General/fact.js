@@ -1,3 +1,5 @@
+const axios = require('axios');
+
 module.exports = {
     usage: ["fact"],
     desc: "Fetches Random Facts",

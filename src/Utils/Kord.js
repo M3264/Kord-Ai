@@ -36,25 +36,24 @@ async function getAuthState() {
 
     try {
         // Retrieve the SESSION_ID from global.settings
-        const sessionId = global.settings.SESSION_ID;
+        let sessionId = global.settings.SESSION_ID;
 
-        if (sessionId) {
-            // Log the SESSION_ID
-            console.log("Session ID:", sessionId);
+        if (sessionId && sessionId !== '') {
+            // If SESSION_ID is provided, use it
+            console.log("Session ID from config:", sessionId);
 
             // Decode the SESSION_ID and save it to creds.json
             const decodedData = Buffer.from(sessionId, 'base64').toString('utf-8');
             fs.writeFileSync(credsPath, decodedData);
         } else if (fs.existsSync(credsPath)) {
-            // Load the SESSION_ID from creds.json
+            // If SESSION_ID is not provided, use creds.json
             const decodedData = fs.readFileSync(credsPath, 'utf-8');
             const savedSessionId = JSON.parse(decodedData);
             console.log("Using SESSION_ID from creds.json:", savedSessionId);
             sessionId = savedSessionId;
         } else {
-            console.error("Error: No SESSION_ID found in global.settings or creds.json");
-            // Handle the missing SESSION_ID (e.g., throw an error or exit gracefully)
-            return;
+            console.log("No SESSION_ID in config or creds.json found. Proceeding to pairing code...");
+            // Continue without session ID or creds.json, handle pairing code below
         }
 
         // Use multi-file auth state
@@ -155,7 +154,7 @@ async function kordAi(io, app) {
                     console.log(chalk.cyan('Calling Socket...'));
                     console.log(chalk.cyan('Connected! 🔒✅'));
                     
-                    setupAntidelete(sock);
+                    setupAntidelete(sock, store);
                     kordMsg(sock);
                     return new Promise((resolve, reject) => {
                         setTimeout(async () => {

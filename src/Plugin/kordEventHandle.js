@@ -46,9 +46,9 @@ class AgainstEventManager {
                 for (const event of events) {
                     this.antiCheckers.set(event, commandModule);
                 }
-           //     console.log(chalk.green(`✅ Loaded Event: ${commandModule.event} from ${file}`));
+                console.log(chalk.green(`✅ Loaded Event: ${events.join(', ')} from ${file}`));
             } else {
-           //     console.warn(chalk.yellow(`⚠️ Event in ${file} does not have an event property.`));
+                console.warn(chalk.yellow(`⚠️ Event in ${file} does not have an event property.`));
             }
         } catch (error) {
             console.error(chalk.red(`❌ Error loading Event from ${file}:`, error));

@@ -1,4 +1,8 @@
 const { remini } = require('../../Plugin/remini');
+const fs = require('fs'); // Regular fs for streams
+const fsPromises = require('fs').promises; // Promise-based fs for async operations
+const path = require('path');
+const os = require('os');
 
 module.exports = {
     usage: ["remini"],
@@ -7,28 +11,39 @@ module.exports = {
     isGroupOnly: false,
     isAdminOnly: false,
     isPrivateOnly: false,
-    emoji: "🖼️",
+    emoji: "✨",
 
     async execute(sock, m, args) {
+        let tempFilePath;
+
         try {
-            // Extract media from quoted message
-            const quotedMedia = await global.kord.getQuotedMedia(m);
-            const media = quotedMedia ? await quotedMedia.download() : null;
+            // Extract media from quoted message using kord.getQuotedMedia
+            const mediaData = await global.kord.getQuotedMedia(m);
 
-            // If no media found in quoted message, check if the command was used with an image caption
-            const { mime } = m.message;
-            if (!media && /image/.test(mime)) {
-                media = await m.download();
+            // If no media found, return an error
+            if (!mediaData) {
+                return await global.kord.reply(m, '❌ Please reply to an image to enhance it.');
             }
 
-            // If still no media found, return an error message
-            if (!media) {
-                return await global.kord.reply(m, 'Where is the picture? Please reply to an image or send an image with the command.');
+            // Download the media
+            const mediaBuffer = await global.kord.downloadMediaMsg(m);
+            if (!mediaBuffer) {
+                return await global.kord.reply(m, '❌ Failed to download the media. Try again.');
             }
 
-            // Inform the user that the process has started
-            await global.kord.reply(m, '🛠️ Processing the image, please wait...');
-            const enhancedImage = await remini(media, 'enhance');
+            // Create a temporary file path
+            const tempFilePath = path.join(os.tmpdir(), `temp_${Date.now()}.jpg`);
+
+            // Save the media to a temporary file
+            await fsPromises.writeFile(tempFilePath, mediaBuffer);
+            console.log("Media saved to:", tempFilePath);
+
+            // Inform the user that the enhancement process has started
+            await global.kord.reply(m, '🛠️ Enhancing the image, please wait...');
+
+            // Process the image using the Remini API
+            const enhancedImage = await remini(tempFilePath, 'enhance');
+            console.log(enhancedImage);
             if (!enhancedImage) {
                 return await global.kord.reply(m, '❌ Failed to enhance the image. Please try again.');
             }
@@ -39,8 +54,18 @@ module.exports = {
         } catch (error) {
             console.error('Error in remini command:', error);
 
-            // Notify the user
+            // Notify the user about the error
             await sock.sendMessage(m.key.remoteJid, { text: `❌ Oops! Something went wrong.\n\nError: ${error.message}` }, { quoted: m });
+        } finally {
+            // Clean up: delete the temporary file if it exists
+            if (tempFilePath) {
+                try {
+                    await fsPromises.unlink(tempFilePath);
+                    console.log("Temporary file deleted:", tempFilePath);
+                } catch (unlinkError) {
+                    console.error("Error deleting temporary file:", unlinkError);
+                }
+            }
         }
     }
 };

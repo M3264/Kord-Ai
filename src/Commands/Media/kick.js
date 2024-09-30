@@ -4,7 +4,7 @@ const path = require('path');
 const ffmpeg = require('fluent-ffmpeg');
 
 module.exports = {
-    usage: ["animekick", "kick"],
+    usage: ["animekick", "kck"],
     desc: "Fetch and send a random anime wallpaper.",
     commandType: "Anime",
     isGroupOnly: false,

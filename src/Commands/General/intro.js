@@ -1,14 +1,14 @@
 const emojis = {
     intro: '📝',        // Emoji for intro command
     processing: '⏳',
-    process: '👾', // Emoji to show processing
+    process: '👾',      // Emoji to show processing
     done: '✅',         // Emoji to indicate completion
     error: '❌'         // Emoji for errors
 };
 
 module.exports = {
     usage: ["test"],
-    desc: "Send a message letter by letter.",
+    desc: "Send a message word by word.",
     commandType: "General",
     isGroupOnly: false,
     isAdminOnly: false,
@@ -21,18 +21,19 @@ module.exports = {
             
             const startTime = Date.now();
             await kord.react(m, emojis.process);
-            const latency = Date.now() - startTime;// Initial reaction
+            const latency = Date.now() - startTime;
 
             const message = `ʜᴇʟʟᴏ👋, ɪ'ᴍ ᴋᴏʀᴅ ᴀɪ💨\nʏᴏᴜʀ ᴀʟʟ ɪɴ ᴏɴᴇ ᴡʜᴀᴛsᴀᴘᴘ ʙᴏᴛ ᴜsɪɴɢ ᴡʜɪsᴋᴇʏsᴏᴄᴋᴇᴛs ʙᴀɪʟᴇʏs!\nʟᴀᴛᴇɴᴄʏ => *${latency}ms* \nᴜsᴇ _.ᴍᴇɴᴜ_ ᴛᴏ sᴇᴇ ᴡʜᴀᴛ ɪ ᴄᴀɴ ᴅᴏ!🚀`;
+            const words = message.split(/\s+/);
             let fullMessage = '';
 
             // Send the initial message
             const sentMsg = await kord.reply(m, ""); // Send an initial empty message to get the message ID
             
-            for (const letter of message) {
-                fullMessage += letter;
-                await kord.editMsg(m, sentMsg, fullMessage); // Update message content letter by letter
-                await new Promise(resolve => setTimeout(resolve, 0.00000000000000001)); // Delay between letters
+            for (const word of words) {
+                fullMessage += word + ' ';
+                await kord.editMsg(m, sentMsg, fullMessage.trim()); // Update message content word by word
+                await new Promise(resolve => setTimeout(resolve, 100)); // Delay between words (100ms)
             }
 
             await kord.react(m, emojis.done); // Reaction to indicate completion

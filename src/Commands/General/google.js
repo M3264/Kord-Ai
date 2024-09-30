@@ -1,4 +1,4 @@
-const googlethis = require('googlethis');
+const GoogleSearch = require('../../Plugin/googlesc'); // Adjust path
 
 module.exports = {
     usage: ["google"],
@@ -19,30 +19,23 @@ module.exports = {
             // Construct the query
             const query = args.join(" ");
 
-            // Search Google
-            const options = {
-                page: 0,
-                safe: false,
-                additional_params: {
-                    hl: 'en'
-                }
-            };
+            // Initialize GoogleSearch instance
+            const googleSearch = new GoogleSearch({ lang: 'en', timeout: 5000, safe: 'active' });
 
-            const response = await googlethis.search(query, options);
+            // Perform the search (limit to 5 results)
+            const searchResults = await googleSearch.search(query, 5);
 
             // Extract and format the search results
-            const results = response.results.map((result, index) => (
-                `*${index + 1}. ${result.title}*
-                ${result.description}
-                [Link](${result.url})`
-            )).join(" ");
+            const results = searchResults.map((result, index) => (
+                `*${index + 1}. ${result.title}*\n${result.description}\n[Link](${result.url})`
+            )).join("\n\n");
 
             // Send the formatted results back to the user
-            await kord.reply(m, results || "No results found for your query.");
+            await kord.reply(m, results || "No results found for your query🙁.");
 
         } catch (error) {
             console.error("Error executing .google command:", error);
-            await kord.reply(m, "❌ An error occurred while processing your request. Please try again.");
+            await kord.reply(m, `❌ An error occurred while processing your request. Please try again\n${error.message}.`);
         }
     }
 };

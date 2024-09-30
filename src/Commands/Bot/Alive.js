@@ -1,70 +1,82 @@
-const { delay } = require('@whiskeysockets/baileys');
+const audioUrls = [
+    "https://files.catbox.moe/b1js43.mp3",
+    "https://files.catbox.moe/9ievhh.mp3",
+    "https://files.catbox.moe/z7u9gz.mp3",
+    "https://files.catbox.moe/q50wno.mp3",
+    "https://files.catbox.moe/kap8jh.mp3",
+    "https://files.catbox.moe/oqjilo.mp3"
+];
 
-// Emojis for more expressive messages
-const emojis = {
-    alive: '⚡',
-    heart: '💖',
-    party: '🎉',
-    wave: '👋',
-    thumbsup: '👍',
-    flexing: '💪',
-    fire: '🔥',
-    error: '❌', // New emoji for errors
-};
+const thumbnailUrl = "https://files.catbox.moe/g4q04p.png";
 
 module.exports = {
     usage: ["alive"],
-    desc: "Confirms the bot's active status with style and flair.",
-    commandType: "Bot",
+    desc: "Check if the bot is alive.",
+    commandType: "Media",
     isGroupOnly: false,
     isAdminOnly: false,
     isPrivateOnly: false,
-    emoji: emojis.alive, 
+    emoji: "💖",
 
     async execute(sock, m) {
         try {
-            const botName = settings.BOT_NAME;
-            const botVersion = settings.VERSION;
-            const runtime = formatSecondsToDHMS(process.uptime());
-
-            // Create a visually appealing alive message using Unicode characters 
-            const aliveMessage = `
-╔══════════════════════╗
-    ⚡  *${botName}* is ALIVE! 💖
-╚══════════════════════╝
-${emojis.wave} Status: Online and Ready!
-${emojis.flexing} Version: ${botVersion}
-${emojis.thumbsup} Uptime: ${runtime}
-${emojis.party} Created by: MIRACLE
-
-${emojis.fire} Let's get this party started! ${emojis.fire}
-`;
-
-            // Send the message and add a random reaction
-            const sentMsg = await kord.reply(m, aliveMessage);
-            const randomEmoji = [emojis.party, emojis.thumbsup, emojis.fire][Math.floor(Math.random() * 3)];
-            await kord.react(m, randomEmoji);
-
-            // Delay and then edit the message for a dramatic reveal
-            await delay(1500); 
-            await kord.editMsg(m, sentMsg, aliveMessage + `\n\nP.S. Did you catch that awesome reaction? ${emojis.party}`);
-
+            const audioUrl = getRandomAudioUrl();
+            if (!audioUrl) {
+                throw new Error("No valid audio URL available.");
+            }
+            const messageContent = createMessageContent(audioUrl, m.sender);
+            await sendMessage(sock, m.key.remoteJid, messageContent, m);
         } catch (error) {
-            // Basic error logging in the console (no color)
-            console.error(`[ERROR] Alive Command:`, error); 
-
-            // Inform the user about the error
-            await kord.react(m, emojis.error);
-            await kord.reply(m, `${emojis.error} Uh oh! Something's not right. I might need a reboot.`);
+            await handleError(sock, m.key.remoteJid, error);
         }
     }
 };
 
+function getRandomAudioUrl() {
+    const validUrls = audioUrls.filter(url => typeof url === 'string' && url.trim() !== '');
+    if (validUrls.length === 0) {
+        return null;
+    }
+    const randomIndex = Math.floor(Math.random() * validUrls.length);
+    return validUrls[randomIndex];
+}
 
-// Helper function to format uptime
-function formatSecondsToDHMS(seconds) {
-    const days = Math.floor(seconds / (3600 * 24));
-    const hours = Math.floor((seconds % (3600 * 24)) / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
-    return `${days}d ${hours}h ${minutes}m`;
+function createMessageContent(audioUrl, sender) {
+    return {
+        audio: { url: audioUrl },
+        mimetype: 'audio/mpeg',
+        ptt: true,
+        fileName: 'Kord.mp3',
+        contextInfo: {
+            externalAdReply: {
+                title: '\`I AM ALIVE\`',
+                body: 'ᴋᴏʀᴅ-ᴀɪ',
+                mediaType: 1,
+                thumbnailUrl: thumbnailUrl,
+                sourceUrl: 'https://wa.me/2347013159244',
+                renderLargerThumbnail: true, // This will make the ad larger
+                showAdAttribution: true // This will show "AD" tag if supported by the client
+            }
+        }
+    };
+}
+
+async function sendMessage(sock, remoteJid, content, quotedMessage) {
+    try {
+        console.log("Sending message with content:", JSON.stringify(content, null, 2));
+        const messageResponse = await sock.sendMessage(remoteJid, content, { quoted: quotedMessage });
+        console.log("Message sent successfully:", messageResponse);
+    } catch (error) {
+        console.error("Error sending message:", error);
+        throw new Error("Failed to send message: " + error.message);
+    }
+}
+
+async function handleError(sock, remoteJid, error) {
+    console.error('Error executing alive command:', error.message);
+    try {
+        await sock.sendMessage(remoteJid, { text: `❌ Error: ${error.message}` });
+    } catch (sendError) {
+        console.error('Failed to send error message:', sendError);
+    }
 }

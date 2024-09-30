@@ -1,52 +1,45 @@
-const Genius = require("genius-lyrics");
-const Client = new Genius.Client(V0oeid4uq3WJovgQvRG69hWG35E4uu4d6VeVcB3EMvl-4-FSGGdX9Sm3n8cEdOJn);
-
-const emojis = {
-    info: 'ℹ️',
-    search: '🔍',
-    found: '🎵',
-    notFound: '😕',
-    error: '❌'
-};
+const axios = require('axios');
 
 module.exports = {
     usage: ["lyrics"],
-    desc: "Fetch lyrics for a given song and artist.",
+    desc: "Fetch lyrics for the specified song title.",
     commandType: "Media",
     isGroupOnly: false,
     isAdminOnly: false,
     isPrivateOnly: false,
-    emoji: emojis.search,
+    emoji: "🎵",
 
     async execute(sock, m, args) {
+        if (!args[0]) {
+            return await global.kord.reply(m, "❌ Please provide a song title.");
+        }
+
+        const songTitle = args.join(" ");
+        const apiUrl = `https://some-random-api.com/others/lyrics?title=${encodeURIComponent(songTitle)}`;
+
         try {
-            if (args.length < 2) {
-                return await sock.sendMessage(m.key.remoteJid, { text: `${emojis.info} Please provide both the artist name and song title. Example: \`${settings.PREFIX[0]}lyrics Ed Sheeran Shape of You\`` });
-            }
+            const response = await axios.get(apiUrl);
+            const data = response.data;
 
-            const artist = args[0];
-            const songTitle = args.slice(1).join(' ');
+            if (data.source === 0) {
+                const lyricsMessage = `
+*Title:* ${data.title}
+*Author:* ${data.author}
+*More Info:* ${data.links.genius}
+\`\`\`
+${data.lyrics}
+\`\`\`
+                `;
+                
+                // Send the thumbnail and lyrics as caption
+                await global.kord.sendImage(m, data.thumbnail.genius, lyricsMessage);
 
-            await sock.sendMessage(m.key.remoteJid, { text: `${emojis.search} Searching for lyrics...` });
-
-            const searches = await Client.songs.search(songTitle + " " + artist);
-            
-            if (searches.length === 0) {
-                return await sock.sendMessage(m.key.remoteJid, { text: `${emojis.notFound} Could not find lyrics for "${songTitle}" by ${artist}.` });
-            }
-
-            const song = searches[0];
-            const lyrics = await song.lyrics();
-
-            if (lyrics) {
-                await sock.sendMessage(m.key.remoteJid, { text: `${emojis.found} *Lyrics for "${song.title}" by ${song.artist.name}:*\n\n${lyrics}` });
             } else {
-                await sock.sendMessage(m.key.remoteJid, { text: `${emojis.notFound} Could not fetch lyrics for "${songTitle}" by ${artist}.` });
+                await global.kord.reply(m, "❌ Lyrics not found for the specified song.");
             }
-
         } catch (error) {
-            console.error("Error fetching lyrics:", error);
-            await sock.sendMessage(m.key.remoteJid, { text: `${emojis.error} An error occurred while fetching the lyrics. Please try again later.` });
+            console.error('Error fetching lyrics:', error);
+            await global.kord.reply(m, `❌ Failed to fetch lyrics. Error: ${error.message}`);
         }
     }
 };

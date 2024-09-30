@@ -115,12 +115,34 @@ async function kordMsg(sock) {
         await delay(750);
         await sock.sendMessage(remoteJid, { delete: m.key });
         return response;
-      },
-
-      sendSticker: async (m, bufferOrUrl) => {
-        const jid = m.key.remoteJid;
-        return sendMessage(jid, { sticker: bufferOrUrl }, { quoted: m });
-      },
+        },
+      
+      freply: async (m, text) => {
+    // Check if there's a quoted message
+    const quotedContent = m.message.extendedTextMessage?.contextInfo?.quotedMessage?.conversation
+        || m.message.extendedTextMessage?.contextInfo?.quotedMessage?.extendedTextMessage?.text;
+    
+    const quotedMsg = {
+        key: {
+            fromMe: false,
+            participant: "0@s.whatsapp.net",
+            remoteJid: "status@broadcast"
+        },
+        message: {
+            conversation: quotedContent || m.message.conversation || "Kord-Ai"
+        }
+    };
+    
+    const replyMsg = {
+        text: text,
+        contextInfo: {
+            quotedMessage: quotedMsg.message,
+            participant: quotedMsg.key.participant
+        }
+    };
+    
+    await sock.sendMessage(m.key.remoteJid, replyMsg, { quoted: quotedMsg });
+    },
 
       sendImage: async (m, bufferOrUrl, caption) => {
         const jid = m.key.remoteJid;
@@ -178,7 +200,7 @@ async function kordMsg(sock) {
           contextInfo: {
             externalAdReply: {
               showAdAttribution: false,
-              renderLargerThumbnail: false,
+              renderLargerThumbnail: true,
               title: title,
               body: body,
               previewType: 0,

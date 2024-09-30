@@ -1,4 +1,5 @@
-const fetch = require('node-fetch');
+const ytdl = require('youtubedl-core');
+const yts = require('yt-search');
 const fs = require('fs').promises;
 const path = require('path');
 
@@ -29,45 +30,37 @@ module.exports = {
                 return await global.kord.reply(m, "🔗 Please provide a YouTube search query.");
             }
 
-            // Use Gifted API to search for YouTube videos
-            const searchApiUrl = `https://free-ytdl.giftedtechnexus.co.ke/api/yts?query=${encodeURIComponent(query)}`;
-            const searchResponse = await fetch(searchApiUrl);
-            const searchResults = await searchResponse.json();
-
-            if (!searchResults.success || searchResults.videos.length === 0) {
+            // Use yts to search for YouTube videos
+            const results = await yts(query);
+            if (results.videos.length === 0) {
                 await global.kord.react(m, emojis.noResults);
-                return await global.kord.reply(m, `${emojis.noResults} Oops! No videos found for that query.`);
+                return await global.kord.reply(m, "😕 Oops! No videos found for that query.");
             }
 
             // Get the first video from search results
-            const video = searchResults.videos[0];
+            const video = results.videos[0];
             const videoUrl = video.url;
             const videoTitle = video.title.replace(/[<>:"/\\|?*\x00-\x1F]/g, ''); // Clean title for file name
 
             await global.kord.react(m, emojis.processing);
 
-            // Use Gifted API to get video download URL
-            const apiUrl = `https://api.giftedtechnexus.co.ke/api/download/ytdl?url=${encodeURIComponent(videoUrl)}&apikey=gifted`;
-            const response = await fetch(apiUrl);
-            const videoInfo = await response.json();
+            // Get video info using youtubedl-core
+            const info = await ytdl.getInfo(videoUrl);
+            const videoDetails = info.videoDetails;
 
-            if (!videoInfo || videoInfo.status !== 200 || !videoInfo.result || !videoInfo.result.video_url) {
+            if (!videoDetails) {
                 await global.kord.react(m, emojis.error);
-                return await global.kord.reply(m, "❌ Unable to fetch the video. Please try again later.");
+                console.log("Video Info Error: ", info);
+                return await global.kord.reply(m, "❌ Unable to fetch the video information. Please try again later.");
             }
 
-            const downloadUrl = videoInfo.result.video_url;
-
-            // Download the video file
-            const fileResponse = await fetch(downloadUrl);
-            const fileBuffer = await fileResponse.buffer();
-
+            // Choose the best quality format that doesn't exceed MAXDLSIZE
             const MAXDLSIZE = settings.MAX_DOWNLOAD_SIZE * 1024 * 1024; // Convert MB to bytes
-            const fileSize = fileBuffer.length;
+            const format = ytdl.chooseFormat(info.formats, { quality: 'highestvideo' });
 
-            if (fileSize > MAXDLSIZE) {
+            if (format.contentLength > MAXDLSIZE) {
                 await global.kord.react(m, emojis.warning);
-                return await global.kord.reply(m, `${emojis.warning} The file size (${(fileSize / 1024 / 1024).toFixed(2)} MB) exceeds the maximum allowed size (${settings.MAX_DOWNLOAD_SIZE} MB).`);
+                return await global.kord.reply(m, `${emojis.warning} The file size (${(format.contentLength / 1024 / 1024).toFixed(2)} MB) exceeds the maximum allowed size (${settings.MAX_DOWNLOAD_SIZE} MB).`);
             }
 
             const tempDir = path.join('./temp');
@@ -83,10 +76,17 @@ module.exports = {
             }
 
             const tempFilePath = path.join(tempDir, `${videoTitle}.mp4`);
-            await fs.writeFile(tempFilePath, fileBuffer);
+
+            // Download the video
+            await new Promise((resolve, reject) => {
+                ytdl(videoUrl, { format: format })
+                    .pipe(require('fs').createWriteStream(tempFilePath))
+                    .on('finish', resolve)
+                    .on('error', reject);
+            });
 
             // Send the video with caption
-            const captionLine = `🎥 *KORD-AI YOUTUBE-DOWNLOADER* 🎥\n\n🔗 Link: ${video.url}\n📽️ Title: ${video.title}\n🕒 Duration: ${video.duration}`;
+            const captionLine = `🎥 *KORD-AI YOUTUBE-DOWNLOADER* 🎥\n\n🔗 Link: ${videoUrl}\n📽️ Title: ${videoDetails.title}\n🕒 Duration: ${video.duration}`;
             await global.kord.sendVideo(m, await fs.readFile(tempFilePath), captionLine);
 
             // Clean up

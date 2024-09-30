@@ -1,7 +1,8 @@
-
+const ytdl = require('youtubedl-core');
 const fetch = require('node-fetch');
 const fs = require('fs').promises;
 const path = require('path');
+const { Client } = require('undici');
 
 const emojis = {
     search: '🔍',
@@ -39,25 +40,17 @@ module.exports = {
 
             await global.kord.react(m, emojis.processing);
 
-            // Use Gifted API to get video info
-            const apiUrl = `https://bk9.fun/download/youtube?url=${url}`;
-            const apiResponse = await fetch(apiUrl);
-            const data = await apiResponse.json();
-            console.log(data);
-
-            if (!data || data.status !== true || !data.BK9 || !data.BK9.video.url) {
+            const videoDetails = await ytddl(url);
+            if (!videoDetails) {
                 await global.kord.react(m, emojis.error);
-                console.log("API Response Error: ", videoInfo);
-                return await global.kord.reply(m, "❌ Unable to fetch the video. Please try again later.");
+                return await global.kord.reply(m, "❎ Error downloading video");
             }
 
-            const downloadUrl = data.BK9.video.url;;
-            const fileExtension = 'mp4';
+            const { url: downloadUrl, title, author, description } = videoDetails;
 
             // Download the file
             const fileResponse = await fetch(downloadUrl);
             const fileBuffer = await fileResponse.buffer();
-            console.log(fileResponse);
 
             const fileSize = fileBuffer.length;
 
@@ -66,27 +59,18 @@ module.exports = {
                 return await global.kord.reply(m, `${emojis.warning} The file size (${(fileSize / 1024 / 1024).toFixed(2)} MB) exceeds the maximum allowed size (${settings.MAX_DOWNLOAD_SIZE} MB).`);
             }
 
-            const tempDir = path.join('./temp');
-            try {
-                await fs.access(tempDir); // Check if directory exists
-            } catch (error) {
-                if (error.code === 'ENOENT') {
-                    // Directory doesn't exist, create it
-                    await fs.mkdir(tempDir);
-                } else {
-                    throw error; // Propagate other errors
-                }
-            }
-
-            const tempFilePath = path.join(tempDir, `youtube_${Date.now()}.${fileExtension}`);
-            await fs.writeFile(tempFilePath, fileBuffer);
-
             // Send the video file with caption
-            const captionLine = `🎥 *KORD-AI YOUTUBE-DOWNLOADER* 🎥\n\n🔗 Link: ${url}\n📽️ Title: ${data.BK9.title}`;
-            await global.kord.sendVideo(m, await fs.readFile(tempFilePath), captionLine);
+            const captionLine = `✼ ••๑⋯❀ Y O U T U B E ❀⋯⋅๑•• ✼
+    
+❏ Title: ${title || 'Unknown'}
+❒ Author: ${author || 'Unknown'}
+❒ Description: ${description || 'No description available'}
+❒ Link: ${url}
 
-            // Clean up
-            await fs.unlink(tempFilePath);
+> © ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ ʙʏ ᴋᴏʀᴅ ɪɴᴄ³²¹™
+⊱─━⊱༻●༺⊰━─⊰`;
+
+            await global.kord.sendVideo(m, fileBuffer, captionLine);
 
             await global.kord.react(m, emojis.done);
 
@@ -103,3 +87,44 @@ module.exports = {
         }
     }
 };
+
+async function getCookies() {
+    const cookiesPath = path.resolve(__dirname, '../../Assets/cookies.json');
+    try {
+        await fs.access(cookiesPath);
+        const cookiesData = await fs.readFile(cookiesPath, 'utf-8');
+        return JSON.parse(cookiesData);
+    } catch (error) {
+        if (error.code === 'ENOENT') {
+            throw new Error('Cookies file not found');
+        }
+        throw error;
+    }
+}
+
+async function createClient() {
+    const cookies = await getCookies();
+    return new Client("https://www.youtube.com", {
+        headers: {
+            "Cookie": cookies.map(cookie => `${cookie.name}=${cookie.value}`).join('; ')
+        }
+    });
+}
+
+async function ytddl(url) {
+    try {
+        const client = await createClient();
+        const yt = await ytdl.getInfo(url, { requestOptions: { client: client } });
+        const link = ytdl.chooseFormat(yt.formats, { quality: 'highest', filter: 'audioandvideo' });
+
+        return {
+            url: link.url,
+            title: yt.videoDetails.title,
+            author: yt.videoDetails.author.name,
+            description: yt.videoDetails.description,
+        };
+    } catch (error) {
+        console.error("An error occurred:", error);
+        return null;  // Ensure a null is returned on error
+    }
+}

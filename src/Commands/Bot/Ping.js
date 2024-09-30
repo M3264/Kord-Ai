@@ -1,40 +1,48 @@
 const emojis = {
-    ping: '🏓',       // Ping-pong emoji
-    response: '🚀',   // Rocket emoji for a fast response
-    thinking: '🤔'   // Thinking emoji while processing
+    ping: '🏓',
+    response: '🚀',
+    thinking: '🤔'
 };
 
+
 module.exports = {
-    usage: ["ping"],
-    desc: "Checks the bot's response time.",
-    commandType: "Bot",
+    usage: 'ping',
     isGroupOnly: false,
     isAdminOnly: false,
     isPrivateOnly: false,
-    isOwnerOnly: true,
-    emoji: emojis.ping, // Emoji metadata added here
 
-    async execute(sock, m) {
+    async execute(sock, m, args, context) {
         try {
-            // Initial reaction to indicate the bot is working on the request
-            await kord.react(m, emojis.thinking); 
-
-            // Get the timestamp before sending the message
-            const startTime = Date.now(); 
-
-            // Send the "Pong!" message
-            const sentMsg = await kord.reply(m, "🏓 Running Latency Test!"); 
-
-            // Calculate the round-trip time
+            const uusage = this.usage
+            const msg = {
+                key: {
+                    fromMe: false,
+                    participant: "0@s.whatsapp.net",
+                    remoteJid: "status@broadcast"
+                },
+                message: {
+                    conversation: `${uusage}`
+                }
+            };
+            const startTime = Date.now();
+            await kord.react(m, "⚡")
             const latency = Date.now() - startTime;
+            
+            
 
-            // Edit the message with the latency information and a rocket emoji
-            await kord.editMsg(m, sentMsg, `🚀 Pong! ${latency}ms`);
+            const Rmsg = {
+                text: `🚀 ⚡ Pong! ${latency}ms`,
+                contextInfo: { 
+                    quotedMessage: msg.message,
+                    participant: msg.key.participant
+                }
+            };
+
+            await sock.sendMessage(m.key.remoteJid, Rmsg, { quoted: msg });
 
         } catch (error) {
-            // Error handling
-            await kord.react(m, emojis.error);
-            await kord.reply(m, "❌ An error occurred while checking the ping.");
+            console.error('Error Sending Ping:', error);
+            await sock.sendMessage(m.key.remoteJid, { text: `An error occurred ${error.mesaage}` });
         }
     }
-};
+}

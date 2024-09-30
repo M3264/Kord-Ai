@@ -7,11 +7,13 @@ module.exports = {
         const m = ms[0];
         if (m.key.fromMe) return;
         const messageText = m.message?.conversation || m.message?.extendedTextMessage?.text;
+        
         try {
             if (messageText && typeof messageText === 'string') {
                 const badWords = global.settings.BAD_WORDS.map(word => word.toLowerCase());
                
                 if (badWords.some(word => messageText.toLowerCase().includes(word))) {
+                    console.log('BadWord: Bad word detected');
                     if (m.key.remoteJid.endsWith('@g.us')) {
                         const groupMetadata = await sock.groupMetadata(m.key.remoteJid);
                         const myID = sock.user.id.split(':')[0] + '@s.whatsapp.net';
@@ -30,6 +32,8 @@ module.exports = {
                         await sock.sendMessage(m.key.remoteJid, { delete: m.key });
                         console.log(`Deleted message with bad word in chat ${m.key.remoteJid}`);
                     }
+                } else {
+                    console.log('BadWord: No bad words detected in this message');
                 }
             }
         } catch (error) {
