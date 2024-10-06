@@ -1,69 +1,49 @@
 const fs = require('fs');
 const path = require('path');
-const { getCommand, getAllCommands } = require('./kordLoadCmd');
-const cooldowns = new Map();
-const rateLimit = new Map();
-const banListPath = path.join(__dirname, 'banList.json');
+const { getCommand } = require('./kordLoadCmd');
 
-// Load ban list from file
+// Constants
+const COOLDOWNS = new Map();
+const RATE_LIMITS = new Map();
+const BAN_LIST_PATH = path.join(__dirname, '..', 'Commands', 'General', 'banList.json');
+
+
+// Ban list management
 let bannedUsers = [];
-if (fs.existsSync(banListPath)) {
-    bannedUsers = JSON.parse(fs.readFileSync(banListPath, 'utf8'));
-}
 
-async function kordCmdUpsert(sock, m) {
+function loadBanList() {
     try {
-        if (!m || !m.message) return;
-
-        const { message } = m;
-        const messageTypes = ['extendedTextMessage', 'conversation', 'imageMessage', 'videoMessage'];
-        let text = messageTypes.reduce((acc, type) =>
-            acc || (message[type] && (message[type].text || message[type].caption || message[type])) || '', '');
-
-        if (typeof text !== 'string') {
-            text = '';
-        }
-
-        const response = text.toString();  // No .toLowerCase() here
-        const prefix = settings.PREFIX.find(p => response.toLowerCase().startsWith(p.toLowerCase())); // Prefix match in lowercase
-        
-        if (!prefix) return;
-        if (settings.WORK_MODE.toLowerCase() === "private" && m.key.remoteJid.endsWith('@g.us')) {
-    return;
+        return JSON.parse(fs.readFileSync(BAN_LIST_PATH, 'utf8'));
+    } catch (error) {
+        console.error('Error loading ban list:', error);
+        return [];
+    }
 }
 
-const [commandName, ...args] = response.slice(prefix.length).trim().split(/\s+/);
-
-// Only convert the command name to lowercase, not the entire response
-const command = getCommand(commandName.toLowerCase());
-
-        const sender = m.key.remoteJid.endsWith('@g.us') ? m.key.participant : m.key.remoteJid;
-
-        // Check if user is banned
-       /*  if (bannedUsers.includes(sender)) {
-            await kord.reply(m, '⛔ *You are banned from using this bot.*');
-            return;
-        }
-        */
-
-        const context = await buildContext(sock, m, sender);
-
-        if (!await checkPermissions(sock, m, command, context)) return;
-        if (!await checkCooldown(sock, m, command, sender)) return;
-        if (!await checkRateLimit(sock, m, sender)) return;
-
-        try {
-            if (command.emoji) await kord.react(m, command.emoji);
-            if (settings.READ_ALL_MESSAGES) await sock.readMessages([m.key]);
-
-            await command.execute(sock, m, args, context);
-        } catch (err) {
-            console.error(`Error executing command ${commandName}:`, err);
-            await kord.reply(m, 'An error occurred while processing your command. Please try again later.');
-        }
+function saveBanList() {
+    try {
+        fs.writeFileSync(BAN_LIST_PATH, JSON.stringify(bannedUsers, null, 2));
     } catch (error) {
-        console.error('Error in Command Execute:', error);
+        console.error('Error saving ban list:', error);
     }
+}
+
+// Watch for changes in the ban list file
+fs.watch(BAN_LIST_PATH, (eventType) => {
+    if (eventType === 'change') {
+        console.log('Ban list file changed. Reloading...');
+        bannedUsers = loadBanList();
+    }
+});
+
+// Initial load of the ban list
+bannedUsers = loadBanList();
+
+// Helper functions
+function extractTextFromMessage(message) {
+    const messageTypes = ['extendedTextMessage', 'conversation', 'imageMessage', 'videoMessage'];
+    return messageTypes.reduce((acc, type) => 
+        acc || (message[type] && (message[type].text || message[type].caption || message[type])) || '', '').toString();
 }
 
 async function buildContext(sock, m, sender) {
@@ -79,18 +59,21 @@ async function buildContext(sock, m, sender) {
 
 async function checkPermissions(sock, m, command, context) {
     const { isOwner, isGroupAdmin } = context;
-    if (command.isAdminOnly && !m.key.fromMe && !isOwner) {
-        await kord.reply(m, '⛔ *This command can only be used by bot Owners.*');
-        return false;
-    } else if (command.isGroupOnly && !m.key.remoteJid.endsWith('@g.us')) {
-        await kord.reply(m, '⛔ *This command can only be used in groups.*');
-        return false;
-    } else if (command.isPrivateOnly && !m.key.remoteJid.endsWith('@s.whatsapp.net')) {
-        await kord.reply(m, '⛔ *This command can only be used in private chats.*');
-        return false;
-    } else if (command.isGroupAdminOnly && !isGroupAdmin && !isOwner) {
-        await kord.reply(m, '⛔ *This command can only be used by group admins.*');
-        return false;
+    const errorMessages = {
+        isAdminOnly: '⛔ *This command can only be used by bot Owners.*',
+        isGroupOnly: '⛔ *This command can only be used in groups.*',
+        isPrivateOnly: '⛔ *This command can only be used in private chats.*',
+        isGroupAdminOnly: '⛔ *This command can only be used by group admins.*'
+    };
+
+    for (const [permission, message] of Object.entries(errorMessages)) {
+        if (command[permission] && !((permission === 'isAdminOnly' && isOwner) || 
+                                     (permission === 'isGroupAdminOnly' && (isGroupAdmin || isOwner)) ||
+                                     (permission === 'isGroupOnly' && m.key.remoteJid.endsWith('@g.us')) ||
+                                     (permission === 'isPrivateOnly' && m.key.remoteJid.endsWith('@s.whatsapp.net')))) {
+            await sock.sendMessage(m.key.remoteJid, { text: message }, { quoted: m });
+            return false;
+        }
     }
     return true;
 }
@@ -98,13 +81,14 @@ async function checkPermissions(sock, m, command, context) {
 async function checkCooldown(sock, m, command, sender) {
     const cooldownTime = command.cooldown || settings.COMMAND_COOLDOWN_TIME_IN_MS || 2000;
     const now = Date.now();
-    const timestamps = cooldowns.get(sender) || cooldowns.set(sender, new Map()).get(sender);
+    const timestamps = COOLDOWNS.get(sender) || new Map();
+    COOLDOWNS.set(sender, timestamps);
 
     if (timestamps.has(command.usage)) {
         const expirationTime = timestamps.get(command.usage) + cooldownTime;
         if (now < expirationTime) {
             const timeLeft = (expirationTime - now) / 1000;
-            await kord.reply(m, `Please wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.usage}\` command.`);
+            await sock.sendMessage(m.key.remoteJid, { text: `Please wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.usage}\` command.` }, { quoted: m });
             return false;
         }
     }
@@ -117,7 +101,7 @@ async function checkCooldown(sock, m, command, sender) {
 async function checkRateLimit(sock, m, sender) {
     const maxCommandsPerMinute = settings.MAX_COMMANDS_PER_MINUTE || 10;
     const now = Date.now();
-    const userRateLimit = rateLimit.get(sender) || { count: 0, resetTime: now + 60000 };
+    const userRateLimit = RATE_LIMITS.get(sender) || { count: 0, resetTime: now + 60000 };
 
     if (now > userRateLimit.resetTime) {
         userRateLimit.count = 1;
@@ -126,14 +110,57 @@ async function checkRateLimit(sock, m, sender) {
         userRateLimit.count++;
     }
 
-    rateLimit.set(sender, userRateLimit);
+    RATE_LIMITS.set(sender, userRateLimit);
 
     if (userRateLimit.count > maxCommandsPerMinute) {
-        await kord.reply(m, `You've reached the maximum number of commands per minute. Please wait before trying again.`);
+        await sock.sendMessage(m.key.remoteJid, { text: `You've reached the maximum number of commands per minute. Please wait before trying again.` }, { quoted: m });
         return false;
     }
 
     return true;
+}
+
+// Main command handler
+async function kordCmdUpsert(sock, m) {
+    try {
+        if (!m || !m.message) return;
+
+        const text = extractTextFromMessage(m.message);
+        const prefix = settings.PREFIX.find(p => text.toLowerCase().startsWith(p.toLowerCase()));
+        
+        if (!prefix) return;
+        if (settings.WORK_MODE.toLowerCase() === "private" && m.key.remoteJid.endsWith('@g.us')) return;
+
+        const [commandName, ...args] = text.slice(prefix.length).trim().split(/\s+/);
+        const command = getCommand(commandName.toLowerCase());
+        if (!command) return;
+
+        const sender = m.key.remoteJid.endsWith('@g.us') ? m.key.participant : m.key.remoteJid;
+
+        const context = await buildContext(sock, m, sender);
+
+        // Check if user is banned, but allow the owner to use the bot regardless
+        if (bannedUsers.includes(sender) && !context.isOwner) {
+            await sock.sendMessage(m.key.remoteJid, { text: '⛔ *You are banned from using this bot.*' }, { quoted: m });
+            return;
+        }
+
+        if (!await checkPermissions(sock, m, command, context)) return;
+        if (!await checkCooldown(sock, m, command, sender)) return;
+        if (!await checkRateLimit(sock, m, sender)) return;
+
+        try {
+            if (command.emoji) await sock.sendMessage(m.key.remoteJid, { react: { text: command.emoji, key: m.key } });
+            if (settings.READ_ALL_MESSAGES) await sock.readMessages([m.key]);
+
+            await command.execute(sock, m, args, context);
+        } catch (err) {
+            console.error(`Error executing command ${commandName}:`, err);
+            await sock.sendMessage(m.key.remoteJid, { text: 'An error occurred while processing your command. Please try again later.' }, { quoted: m });
+        }
+    } catch (error) {
+        console.error('Error in Command Execute:', error);
+    }
 }
 
 module.exports = { kordCmdUpsert };

@@ -16,27 +16,35 @@ function saveBanList() {
 module.exports = {
     usage: ['ban'],
     description: 'Ban a user from using the bot.',
-    isGroupOnly: true,
-    isGroupAdminOnly: true,
+    isGroupOnly: false,
+    isGroupAdminOnly: false,
     execute: async (sock, m, args) => {
-        const target = m.message.extendedTextMessage
-            ? m.message.extendedTextMessage.contextInfo.participant
-            : args[0] ? `${args[0].replace(/[^\d]/g, '')}@s.whatsapp.net` : '';
+        let target;
+
+        // Check if the message is a reply
+        if (m.message.extendedTextMessage && m.message.extendedTextMessage.contextInfo.participant) {
+            target = m.message.extendedTextMessage.contextInfo.participant;
+        } 
+        // If not a reply, check if a phone number was provided
+        else if (args[0]) {
+            target = `${args[0].replace(/[^\d]/g, '')}@s.whatsapp.net`;
+        }
 
         if (!target) {
-            await kord.reply(m, 'Please specify a user to ban.');
+            await sock.sendMessage(m.key.remoteJid, { text: 'Please specify a user to ban or reply to their message.' }, { quoted: m });
             return;
         }
 
         if (bannedUsers.includes(target)) {
-            await kord.reply(m, 'This user is already banned.');
+            await sock.sendMessage(m.key.remoteJid, { text: 'This user is already banned.' }, { quoted: m });
             return;
         }
 
         bannedUsers.push(target);
         saveBanList();
-        await kord.reply(m, `User @${target.split('@')[0]} has been banned from using the bot.`, {
-            mentions: [target],
-        });
+        await sock.sendMessage(m.key.remoteJid, { 
+            text: `User @${target.split('@')[0]} has been banned from using the bot.`,
+            mentions: [target]
+        }, { quoted: m });
     },
 };

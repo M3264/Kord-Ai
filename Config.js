@@ -1,9 +1,9 @@
 global.settings = {
-    OWNER_NUMBERS: "2347013159244",
-    OWNER_NAME: 'Miracle',
-    BOT_NAME: "KORD",
+    OWNER_NUMBERS: "2347013159244", // replace with your number
+    OWNER_NAME: 'Miracle', // desired name
+    BOT_NAME: "KORD", // desired name
     VERSION: 'V1.0.0',
-    SESSION_ID: '', //Put your session id if creds.json is not provided!
+    SESSION_ID: '', //put your session id between ''
     MONGO_DB_URL: 'mongodb+srv://miracle32669:Iyanu1234@cluster0.m7glm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
     WORK_MODE: "Public",
     READ_ALL_MESSAGES: false,
@@ -18,7 +18,7 @@ global.settings = {
     },
     isHackEnable:true,
     SAFE_SEARCH: true,
-    REJECT_CALLS: false,
+    REJECT_CALLS: true,
     SEND_WELCOME_MESSAGE: false,
     WELCOME_MESSAGE: "👋 Welcome to the group! We're glad to have you here. 😊",
     DELETE_WA_LINKS: false,

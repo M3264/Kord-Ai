@@ -1,43 +1,60 @@
-const { getAggregateVotesInPollMessage, downloadContentFromMessage } = require("@whiskeysockets/baileys");
+const { downloadContentFromMessage } = require("@whiskeysockets/baileys");
 const { kordCmdUpsert } = require('./kordCmd');
-const logger = require('./kordlogger');
 const { EventEmitter } = require('events');
-const { promisify } = require('util');
-const stream = require('stream');
-
-const pipeline = promisify(stream.pipeline);
+const fs = require('fs').promises;
+const logger = require('./kordlogger');
+const chalk = require('chalk');
 
 class KordEventsManager extends EventEmitter {
-    constructor(sock, chalk) {
+    constructor(sock) {
         super();
         this.sock = sock;
-        this.chalk = chalk;
-        this.processedMessages = new Set(); // To track processed messages
-        this.initializeEventListeners();
+        this.processedMessages = new Set();
+        this.mediaDownloadPath = './media_downloads';
+        this.messageStore = new Map();
+        this.storeCapacity = 1000;
+        this.debugMode = process.env.DEBUG_MODE === 'true';
+        this.ownerJid = null;
+        this.mediaTimeout = 15 * 60 * 1000; // 15 minutes in milliseconds
+    }
+
+    async initialize() {
+        try {
+            await this.createMediaDownloadDirectory();
+            this.initializeEventListeners();
+            this.startPeriodicCleanup();
+            this.setOwnerJid();
+            logger.info(chalk.green('✅ KordEventsManager initialized successfully.'));
+        } catch (error) {
+            logger.error(chalk.red('❌ Error initializing KordEventsManager:'), error);
+            throw error;
+        }
+    }
+
+    async createMediaDownloadDirectory() {
+        try {
+            await fs.mkdir(this.mediaDownloadPath, { recursive: true });
+            logger.info(chalk.blue(`📁 Media download directory created: ${this.mediaDownloadPath}`));
+        } catch (error) {
+            logger.error(chalk.red('❌ Error creating media download directory:'), error);
+            throw error;
+        }
     }
 
     initializeEventListeners() {
-        const events = [
-            'messages.upsert',
-            'messages.update',
-            'chats.upsert',
-            'chats.update',
-            'presence.update',
-            'groups.upsert',
-            'groups.update',
-            'group-participants.update',
-            'call'
-        ];
-
+        const events = ['messages.upsert', 'messages.update', 'messages.delete'];
         events.forEach(event => {
             this.sock.ev.on(event, (...args) => this.handleEvent(event, ...args));
         });
-
-        logger.info(this.chalk.green('🚀 Baileys event listeners initialized.'));
+        logger.info(chalk.blue('👂 Baileys event listeners initialized.'));
     }
 
     async handleEvent(event, ...args) {
         try {
+            logger.debug(chalk.cyan(`🔄 Handling event: ${event}`));
+            if (this.debugMode) {
+                logger.debug(chalk.gray('📊 Event args:'), JSON.stringify(args, null, 2));
+            }
             switch (event) {
                 case 'messages.upsert':
                     await this.handleMessagesUpsert(...args);
@@ -45,78 +62,251 @@ class KordEventsManager extends EventEmitter {
                 case 'messages.update':
                     await this.handleMessagesUpdate(...args);
                     break;
-                // Add cases for other events as needed
+                case 'messages.delete':
+                    await this.handleMessagesDelete(...args);
+                    break;
                 default:
-                    logger.debug(this.chalk.yellow(`Event handled: ${event}`));
+                    logger.debug(chalk.yellow(`⚠️ Unhandled event: ${event}`));
                     break;
             }
         } catch (error) {
-            logger.error(this.chalk.red(`❌ Error handling ${event} event:`), error);
-            logger.debug('Event args:', JSON.stringify(args, null, 2));
+            logger.error(chalk.red(`❌ Error handling ${event} event:`), error);
             this.emit('error', { event, error, args });
         }
     }
 
-    async handleMessagesUpsert({ messages, type }) {
+    async handleMessagesUpsert({ messages }) {
+        logger.debug(chalk.cyan('🔄 Handling messages.upsert'));
         for (const message of messages) {
-            if (!message.message) continue;
+            if (!this.isValidMessage(message)) continue;
 
-            const messageId = message.key.id;
+            const messageId = message.key?.id;
+            const userJid = message.key.remoteJid;
+
+            if (userJid === 'status@broadcast') {
+                await this.handleStatus(message);
+                continue;
+            }
+
+            this.storeMessage(userJid, message);
+
             if (this.processedMessages.has(messageId)) {
-                logger.info(this.chalk.yellow('Message already processed, skipping.'));
+                logger.debug(chalk.gray(`🔁 Message ${messageId} already processed, skipping.`));
                 continue;
             }
 
             this.processedMessages.add(messageId);
-
-            logger.debug('Full message structure:', JSON.stringify(message, null, 2));
-
-            const messageType = Object.keys(message.message)[0];
-            const userJid = message.key.remoteJid;
-            const participantJid = message.key.participant || userJid;
-            const isGroup = userJid.endsWith('@g.us');
-
-            const messageContent = this.getMessageContent(message.message);
-
-            logger.info(this.chalk.blue('📩 New message received:'));
-            logger.info(this.chalk.green(`User JID: ${participantJid}`));
-            logger.info(this.chalk.yellow(`Message: ${messageContent}`));
-            logger.info(this.chalk.cyan(`Chat JID: ${userJid}`));
-            logger.info(this.chalk.white(`Message Type: ${messageType}`));
+            logger.debug(chalk.cyan(`🔄 Processing message ${messageId}`));
 
             try {
-                if (userJid === 'status@broadcast') {
-                    await this.handleStatus(message);
+                if (message.message?.protocolMessage) {
+                    await this.handleProtocolMessage(message);
                 } else {
-                    await kordCmdUpsert(this.sock, message);
-                    this.emit('messageReceived', message);
-
-                    // Check for keywords and handle quoted media
-                    const keywords = ['save', 'send', 'download', 'statusdown', 'take'];
-                    if (keywords.some(keyword => messageContent.toLowerCase().includes(keyword))) {
-                        await this.handleQuotedMediaDownload(message);
-                    }
+                    await this.processNormalMessage(message);
                 }
             } catch (error) {
-                logger.error(this.chalk.red('Error processing message:'), error);
+                logger.error(chalk.red(`❌ Error processing message ${messageId}:`), error);
             } finally {
-                // Remove the message from processed set after a delay
-                setTimeout(() => {
-                    this.processedMessages.delete(messageId);
-                }, 60000); // Remove after 1 minute
+                this.scheduleMessageCleanup(messageId);
             }
+        }
+    }
+
+    async handleStatus(message) {
+        const sender = message.key.participant || message.key.remoteJid;
+        const messageContent = this.getMessageContent(message.message);
+
+        logger.info(chalk.magenta('📊 New status update received:'));
+        logger.info(chalk.green(`👤 Sender JID: ${sender}`));
+        logger.info(chalk.yellow(`💬 Status Content: ${messageContent}`));
+        logger.info(chalk.white(`🏷️ Status Type: ${Object.keys(message.message)[0]}`));
+
+        try {
+            await this.sock.readMessages([message.key]);
+            logger.info(chalk.cyan('✅ Status marked as read'));
+        } catch (error) {
+            logger.error(chalk.red('❌ Error marking status as read:'), error);
         }
     }
 
     async handleMessagesUpdate(updates) {
+        logger.debug(chalk.cyan('🔄 Handling messages.update event'));
         for (const update of updates) {
-            if (update.update.pollUpdates) {
-                await this.handlePollUpdate(update);
+            try {
+                if (update.update?.deleteMessages) {
+                    await this.handleDeletedMessage(update.key.remoteJid, update.key.id);
+                } else if (update.update?.protocolMessage) {
+                    await this.handleProtocolMessage(update);
+                } else {
+                    logger.debug(chalk.yellow('⚠️ Unhandled update type:'), JSON.stringify(update, null, 2));
+                }
+            } catch (error) {
+                logger.error(chalk.red('❌ Error processing update:'), error);
             }
         }
     }
 
+    async handleMessagesDelete(deletedMessages) {
+        logger.debug(chalk.cyan('🔄 Handling messages.delete event'));
+        if (typeof deletedMessages === 'object' && deletedMessages !== null) {
+            for (const [chatJid, messageIds] of Object.entries(deletedMessages)) {
+                for (const messageId of messageIds) {
+                    await this.handleDeletedMessage(chatJid, messageId);
+                }
+            }
+        } else {
+            logger.warn(chalk.yellow('⚠️ Invalid format for deleted messages'));
+        }
+    }
+
+    async handleDeletedMessage(chatJid, messageId) {
+        logger.debug(chalk.cyan(`🔄 Handling deleted message. Chat JID: ${chatJid}, Message ID: ${messageId}`));
+        const deletedMessage = this.getMessageFromStore(chatJid, messageId);
+        if (deletedMessage) {
+            await this.notifyOwnerAboutDeletedMessage(deletedMessage);
+        } else {
+            logger.warn(chalk.yellow(`⚠️ Deleted message not found in store. Chat JID: ${chatJid}, Message ID: ${messageId}`));
+        }
+    }
+
+    async handleProtocolMessage(message) {
+        const protocolMessage = message.message?.protocolMessage || message.update?.protocolMessage;
+        if (!protocolMessage) {
+            logger.warn(chalk.yellow('⚠️ Invalid protocol message structure'));
+            return;
+        }
+
+        logger.debug(chalk.cyan(`🔄 Protocol message type: ${protocolMessage.type}`));
+
+        if (protocolMessage.type === 0) {
+            const deletedMessageKey = protocolMessage.key;
+            const remoteJid = deletedMessageKey.remoteJid || message.key.remoteJid;
+            await this.handleDeletedMessage(remoteJid, deletedMessageKey.id);
+        } else {
+            logger.debug(chalk.yellow(`⚠️ Unhandled protocol message type: ${protocolMessage.type}`));
+        }
+    }
+
+    async processNormalMessage(message) {
+        const messageType = Object.keys(message.message)[0];
+        const userJid = message.key.remoteJid;
+        const participantJid = message.key.participant || userJid;
+        const messageContent = this.getMessageContent(message.message);
+
+        this.logMessageInfo(participantJid, messageContent, userJid, messageType);
+        this.storeMessage(userJid, message);
+
+        await kordCmdUpsert(this.sock, message);
+        this.emit('messageReceived', message);
+    }
+
+    async notifyOwnerAboutDeletedMessage(deletedMessage) {
+        if (!this.ownerJid) {
+            logger.error(chalk.red('❌ Owner JID not set'));
+            return;
+        }
+
+        const sender = deletedMessage.key.participant || deletedMessage.key.remoteJid;
+        const chat = deletedMessage.key.remoteJid;
+        const messageContent = this.getMessageContent(deletedMessage.message);
+
+        try {
+            const fakeReply = this.createFakeReply();
+            let sentMessage = await this.sendDeletedMessageNotification(deletedMessage, messageContent, sender, chat, fakeReply);
+
+            if (sentMessage) {
+                await this.sendDeletedMessageInfo(sentMessage, sender, chat);
+                logger.info(chalk.green('✅ Deleted message notification sent to owner.'));
+            }
+        } catch (error) {
+            logger.error(chalk.red('❌ Error sending deleted message notification:'), error);
+        }
+    }
+
+    async sendDeletedMessageNotification(deletedMessage, messageContent, sender, chat, fakeReply) {
+        if (this.isMediaMessage(deletedMessage.message)) {
+            return await this.sendDeletedMediaNotification(deletedMessage, sender, chat, fakeReply);
+        } else if (messageContent) {
+            return await this.sendDeletedTextNotification(messageContent, sender, chat, fakeReply);
+        }
+        return null;
+    }
+
+    async sendDeletedMediaNotification(deletedMessage, sender, chat, fakeReply) {
+        logger.debug(chalk.cyan('🔄 Sending deleted media to owner'));
+        const mediaData = await this.downloadDeletedMedia(deletedMessage.message);
+        if (mediaData) {
+            const originalCaption = this.getOriginalCaption(deletedMessage.message) || '';
+            const mediaType = Object.keys(mediaData)[0];
+            const mediaMsg = {
+                [mediaType]: mediaData[mediaType],
+                mimetype: mediaData.mimetype,
+                fileName: mediaData.fileName,
+                caption: `*[DELETED MEDIA]*\n\n${originalCaption}`,
+                contextInfo: {
+                    mentionedJid: [sender],
+                    quotedMessage: fakeReply.message,
+                    participant: sender,
+                    remoteJid: chat
+                }
+            };
+            const sentMessage = await this.sock.sendMessage(this.ownerJid, mediaMsg, { quoted: fakeReply });
+            this.scheduleMediaDeletion(mediaData.fileName);
+            return sentMessage;
+        }
+        return null;
+    }
+
+    async sendDeletedTextNotification(messageContent, sender, chat, fakeReply) {
+        const textMsg = {
+            text: `*[DELETED MESSAGE]*\n\n${messageContent}`,
+            contextInfo: {
+                mentionedJid: [sender],
+                quotedMessage: fakeReply.message,
+                participant: sender,
+                remoteJid: chat
+            }
+        };
+        return await this.sock.sendMessage(this.ownerJid, textMsg, { quoted: fakeReply });
+    }
+
+    async sendDeletedMessageInfo(sentMessage, sender, chat) {
+        const chatName = await this.getChatName(chat);
+        const lagosTime = new Date().toLocaleString('en-NG', { timeZone: 'Africa/Lagos' });
+
+        const infoText = `*[DELETED INFORMATION]*\n\n` +
+                         `*TIME:* ${lagosTime}\n` +
+                         `*CHAT:* ${chatName}\n` +
+                         `*DELETED BY:* @${sender.split('@')[0]}\n` +
+                         `*MESSAGE FROM:* @${sender.split('@')[0]}`;
+
+        const infoMsg = {
+            text: infoText,
+            contextInfo: {
+                mentionedJid: [sender],
+                participant: sender,
+                remoteJid: chat
+            }
+        };
+
+        await this.sock.sendMessage(this.ownerJid, infoMsg, { quoted: sentMessage });
+    }
+
+    createFakeReply() {
+        return {
+            key: {
+                fromMe: false,
+                participant: "0@s.whatsapp.net",
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                conversation: "*ANTIDELETE DETECTED*"
+            }
+        };
+    }
+
     getMessageContent(messageContent) {
+        if (!messageContent) return '[Unknown Message Type]';
         if (messageContent.conversation) return messageContent.conversation;
         if (messageContent.extendedTextMessage) return messageContent.extendedTextMessage.text;
         if (messageContent.imageMessage) return `[Image] ${messageContent.imageMessage.caption || ''}`;
@@ -129,189 +319,209 @@ class KordEventsManager extends EventEmitter {
         return '[Unknown Message Type]';
     }
 
-    async handleStatus(message) {
-        const sender = message.key.participant || message.key.remoteJid;
-        const messageContent = this.getMessageContent(message.message);
+    isMediaMessage(message) {
+        return message && (message.imageMessage || 
+               message.videoMessage || 
+               message.audioMessage ||
+               message.stickerMessage ||
+               message.documentMessage);
+    }
 
-        logger.info(this.chalk.magenta('📊 New status update received:'));
-        logger.info(this.chalk.green(`Sender JID: ${sender}`));
-        logger.info(this.chalk.yellow(`Status Content: ${messageContent}`));
-        logger.info(this.chalk.white(`Status Type: ${Object.keys(message.message)[0]}`));
-
-        try {
-            const quotedMessage = message.message.extendedTextMessage?.contextInfo?.quotedMessage;
-            if (quotedMessage) {
-                logger.debug('Quoted message structure:', JSON.stringify(quotedMessage, null, 2));
-
-                if (quotedMessage.imageMessage) {
-                    await this.downloadAndSendMedia(message.key.remoteJid, 'image', quotedMessage.imageMessage);
-                } else if (quotedMessage.videoMessage) {
-                    await this.downloadAndSendMedia(message.key.remoteJid, 'video', quotedMessage.videoMessage);
-                } else {
-                    logger.info(this.chalk.yellow('Quoted message does not contain downloadable media.'));
-                }
-                await this.sock.sendMessage(message.key.remoteJid, { text: '*Status processing completed.*' });
-            } else {
-                logger.info(this.chalk.yellow('No quoted message found in the status update.'));
-            }
-
-            await this.sock.readMessages([message.key]);
-            logger.info(this.chalk.cyan('Status marked as read'));
-        } catch (error) {
-            logger.error(this.chalk.red('Error handling status or media:'), error);
+    storeMessage(jid, message) {
+        if (!this.messageStore.has(jid)) {
+            this.messageStore.set(jid, []);
+        }
+        const chatMessages = this.messageStore.get(jid);
+        chatMessages.push(message);
+        
+        if (chatMessages.length > this.storeCapacity) {
+            chatMessages.splice(0, chatMessages.length - this.storeCapacity);
         }
     }
 
-    async downloadAndSendMedia(remoteJid, mediaType, mediaMessage) {
-        try {
-            const caption = mediaMessage.caption || '';
-            const downloadedMedia = await this.downloadMedia({ type: `${mediaType}Message`, message: mediaMessage });
-            
-            if (downloadedMedia) {
-                await this.sock.sendMessage(remoteJid, {
-                    [mediaType]: downloadedMedia.buffer,
-                    caption: caption
-                });
-                logger.info(this.chalk.green(`Successfully downloaded and sent status ${mediaType}.`));
-            } else {
-                logger.warn(this.chalk.yellow(`Failed to download ${mediaType} from status.`));
-            }
-        } catch (error) {
-            logger.error(this.chalk.red(`Error downloading and sending ${mediaType}:`), error);
+    getMessageFromStore(jid, messageId) {
+        if (this.messageStore.has(jid)) {
+            const chatMessages = this.messageStore.get(jid);
+            return chatMessages.find(m => m.key.id === messageId);
         }
-    }
-
-    async handlePollUpdate(update) {
-        try {
-            const pollCreation = await this.sock.getMessage(update.key.remoteJid, update.key.id);
-            if (pollCreation) {
-                const pollMessage = await getAggregateVotesInPollMessage({
-                    message: pollCreation,
-                    pollUpdates: update.update.pollUpdates,
-                });
-                logger.info(this.chalk.blue('Updated poll message:'), pollMessage);
-                this.emit('pollUpdated', pollMessage);
-            }
-        } catch (error) {
-            logger.error(this.chalk.red('Error handling poll updates:'), error);
-        }
-    }
-
-    async handleQuotedMediaDownload(message) {
-        try {
-            const quotedMedia = await this.getQuotedOrDirectMedia(message);
-            if (!quotedMedia) {
-                logger.info(this.chalk.yellow('No quoted media found in the message.'));
-                return;
-            }
-
-            logger.debug('Quoted media structure:', JSON.stringify(quotedMedia, null, 2));
-
-            const downloadedMedia = await this.downloadMedia(quotedMedia);
-            if (!downloadedMedia) {
-                logger.info(this.chalk.yellow('Failed to download quoted media.'));
-                return;
-            }
-
-            const { buffer, extension, filename } = downloadedMedia;
-
-            // Send the downloaded media back to the chat
-            await this.sock.sendMessage(message.key.remoteJid, {
-                [quotedMedia.type.replace('Message', '')]: buffer,
-                mimetype: quotedMedia.message.mimetype,
-                fileName: filename,
-                caption: 'ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ✅'
-            });
-
-            logger.info(this.chalk.green('Successfully downloaded and sent quoted media.'));
-        } catch (error) {
-            logger.error(this.chalk.red('Error handling quoted media download:'), error);
-        }
-    }
-
-    async getQuotedOrDirectMedia(m) {
-        const findMediaMessage = (obj) => {
-            if (!obj) return null;
-            const mediaTypes = ['imageMessage', 'videoMessage', 'audioMessage', 'documentMessage', 'stickerMessage'];
-            for (const type of mediaTypes) {
-                if (obj[type]) return { type, message: obj[type] };
-            }
-            if (typeof obj === 'object') {
-                for (const key in obj) {
-                    const result = findMediaMessage(obj[key]);
-                    if (result) return result;
-                }
-            }
-            return null;
-        };
-
-        // Check if the message itself has media
-        const directMedia = findMediaMessage(m.message);
-        if (directMedia) return directMedia;
-
-        // Check if quoted message has media
-        for (const key in m.message) {
-            const msg = m.message[key];
-            if (msg?.contextInfo?.quotedMessage) {
-                const quotedMedia = findMediaMessage(msg.contextInfo.quotedMessage);
-                if (quotedMedia) return quotedMedia;
-            }
-        }
-
         return null;
     }
 
-    async downloadMedia(mediaMessage) {
-        if (!mediaMessage || !mediaMessage.message) {
-            logger.error(this.chalk.red('Invalid media message structure'));
+    startPeriodicCleanup() {
+        setInterval(() => {
+            this.cleanupProcessedMessages();
+            this.cleanupMessageStore();
+        }, 3600000); // Run every hour
+    }
+
+    cleanupProcessedMessages() {
+        const now = Date.now();
+        for (const messageId of this.processedMessages) {
+            if (now - parseInt(messageId.split('_')[0]) > 3600000) { // Remove messages older than 1 hour
+                this.processedMessages.delete(messageId);
+            }
+        }
+        logger.debug(chalk.cyan(`🧹 Cleaned up processed messages. Current count: ${this.processedMessages.size}`));
+    }
+
+    cleanupMessageStore() {
+        for (const [jid, messages] of this.messageStore) {
+            if (messages.length > this.storeCapacity) {
+                this.messageStore.set(jid, messages.slice(-this.storeCapacity));
+            }
+        }
+        logger.debug(chalk.cyan(`🧹 Cleaned up message store. Current size: ${this.messageStore.size} chats`));
+    }
+
+    scheduleMessageCleanup(messageId) {
+        setTimeout(() => {
+            this.processedMessages.delete(messageId);
+            logger.debug(chalk.cyan(`🗑️ Removed ${messageId} from processed messages`));
+        }, 300000); // 5 minutes (300,000 ms)
+    }
+
+    scheduleMediaDeletion(fileName) {
+        setTimeout(async () => {
+            try {
+                await fs.unlink(`${this.mediaDownloadPath}/${fileName}`);
+                logger.info(chalk.green(`🗑️ Deleted media file: ${fileName}`));
+            } catch (error) {
+                logger.error(chalk.red(`❌ Error deleting media file ${fileName}:`), error);
+            }
+        }, this.mediaTimeout);
+    }
+
+    logMessageInfo(participantJid, messageContent, userJid, messageType) {
+        logger.info(chalk.magenta('📩 New message received:'));
+        logger.info(chalk.blue(`👤 User JID: ${participantJid}`));
+        logger.info(chalk.green(`💬 Message: ${messageContent}`));
+        logger.info(chalk.yellow(`🗨️ Chat JID: ${userJid}`));
+        logger.info(chalk.cyan(`🏷️ Message Type: ${messageType}`));
+    }
+
+    getOriginalCaption(message) {
+        if (!message) {
+            logger.debug(chalk.yellow('⚠️ getOriginalCaption: Message is null or undefined'));
             return null;
         }
 
-        const mediaType = mediaMessage.type.replace('Message', '');
-        if (!['image', 'video', 'audio', 'document', 'sticker'].includes(mediaType)) {
-            logger.error(this.chalk.red(`Unsupported media type: ${mediaType}`));
+        const messageTypes = ['imageMessage', 'videoMessage', 'documentMessage', 'stickerMessage'];
+        
+        for (const type of messageTypes) {
+            if (message[type] && message[type].caption) {
+                logger.debug(chalk.cyan(`🔍 getOriginalCaption: Found caption in ${type}`));
+                return message[type].caption;
+            }
+        }
+
+        if (message.extendedTextMessage && message.extendedTextMessage.text) {
+            logger.debug(chalk.cyan('🔍 getOriginalCaption: Found caption in extendedTextMessage'));
+            return message.extendedTextMessage.text;
+        }
+
+        logger.debug(chalk.yellow('⚠️ getOriginalCaption: No caption found in message'));
+        return null;
+    }
+
+    async downloadDeletedMedia(message) {
+        if (!message) {
+            logger.error(chalk.red('❌ Invalid message structure in downloadDeletedMedia'));
             return null;
         }
+
+        const mediaType = this.getMediaType(message);
+        if (!mediaType) return null;
 
         try {
-            const getExtension = (type) => {
-                const extensions = { image: 'png', video: 'mp4', audio: 'mp3', document: 'bin', sticker: 'webp' };
-                return extensions[type] || 'bin';
+            const mediaMessage = message[mediaType];
+            if (!mediaMessage) {
+                logger.error(chalk.red(`❌ Media message of type ${mediaType} is undefined`));
+                return null;
+            }
+
+            const stream = await downloadContentFromMessage(mediaMessage, mediaType.replace('Message', ''));
+            const buffer = await this.streamToBuffer(stream);
+            const mimetype = mediaMessage.mimetype || 'application/octet-stream';
+            const fileName = mediaMessage.fileName || `deleted_${mediaType}_${Date.now()}.${mimetype.split('/')[1]}`;
+
+            return {
+                [mediaType.replace('Message', '')]: buffer,
+                mimetype,
+                fileName
             };
-
-            const extension = getExtension(mediaType);
-            const filename = mediaMessage.message.fileName || `media_${Date.now()}.${extension}`;
-            const mimeType = mediaMessage.message.mimetype?.split('/')[0] || mediaType;
-            const mediaStream = await downloadContentFromMessage(mediaMessage.message, mimeType);
-
-            const buffer = await this.streamToBuffer(mediaStream);
-
-            return { buffer, extension, filename };
         } catch (error) {
-            logger.error(this.chalk.red('Error downloading media:'), error);
+            logger.error(chalk.red('❌ Error downloading deleted media:'), error);
             return null;
         }
     }
 
-    async streamToBuffer(mediaStream) {
+    getMediaType(message) {
+        if (!message) return null;
+        const mediaTypes = ['imageMessage', 'videoMessage', 'audioMessage', 'stickerMessage', 'documentMessage'];
+        return mediaTypes.find(type => message[type]);
+    }
+
+    async streamToBuffer(stream) {
         const chunks = [];
-        for await (const chunk of mediaStream) {
+        for await (const chunk of stream) {
             chunks.push(chunk);
         }
         return Buffer.concat(chunks);
     }
+
+    async getChatName(jid) {
+        try {
+            if (jid.endsWith('@g.us')) {
+                // It's a group chat
+                const chat = await this.sock.groupMetadata(jid);
+                return chat.subject;
+            } else {
+                // It's a private chat
+                const contact = await this.sock.getContactInfo(jid);
+                return contact.pushName || contact.notify || jid.split('@')[0];
+            }
+        } catch (error) {
+            logger.error(chalk.red('❌ Error getting chat name:'), error);
+            return jid.split('@')[0]; // Return the number/user part of the JID as fallback
+        }
+    }
+
+    setOwnerJid() {
+        const ownerNumbers = global.settings?.OWNER_NUMBERS;
+        if (!ownerNumbers) {
+            logger.error(chalk.red('❌ Owner numbers not set in global settings'));
+            return;
+        }
+        this.ownerJid = `${ownerNumbers}@s.whatsapp.net`;
+    }
+
+    isValidMessage(message) {
+        if (!message || !message.message) {
+            logger.debug(chalk.yellow('⚠️ Skipping message with no content'));
+            return false;
+        }
+
+        if (!message.key?.id) {
+            logger.debug(chalk.yellow('⚠️ Skipping message with no ID'));
+            return false;
+        }
+
+        return true;
+    }
 }
 
-function initializeKordEvents(sock, chalk) {
-    const kordEventsManager = new KordEventsManager(sock, chalk);
-
-    kordEventsManager.on('error', ({ event, error, args }) => {
-        logger.error(`Error in event ${event}:`, error);
-        logger.debug('Event args:', JSON.stringify(args, null, 2));
-        // Implement error handling strategy (e.g., retry logic, notifications)
+function initializeKordEvents(sock) {
+    const kordEventsManager = new KordEventsManager(sock);
+    kordEventsManager.initialize().catch(error => {
+        console.error(chalk.red('❌ Failed to initialize KordEventsManager:'), error);
     });
 
-    return kordEventsManager;
+    kordEventsManager.on('error', ({ event, error, args }) => {
+        logger.error(chalk.red(`❌ Error in event ${event}:`), error);
+        if (kordEventsManager.debugMode) {
+            logger.debug(chalk.gray('📊 Event args:'), JSON.stringify(args, null, 2));
+        }
+    });
 }
 
-module.exports = { initializeKordEvents, KordEventsManager };
+module.exports = { KordEventsManager, initializeKordEvents };

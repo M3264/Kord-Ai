@@ -135,7 +135,56 @@ ${options}`;
             await fs.unlink(tempPath).catch(console.error);
         }
     }
+    
+    async getFileSize(url) {
+        const response = await fetch(url, { method: 'HEAD' });
+        return parseInt(response.headers.get('content-length'), 10);
+    }
 
+    async downloadWithProgress(url, tempPath, sentMessage) {
+        const writer = createWriteStream(tempPath);
+        const response = await fetch(url);
+        const totalLength = parseInt(response.headers.get('content-length'), 10);
+        let downloadedLength = 0;
+        let lastUpdateTime = Date.now();
+
+        response.body.on('data', (chunk) => {
+            downloadedLength += chunk.length;
+            const now = Date.now();
+            if (now - lastUpdateTime > 5000) {
+                this.updateProgressMessage(sentMessage, downloadedLength, totalLength);
+                lastUpdateTime = now;
+            }
+        });
+
+        await pipeline(response.body, writer);
+    }
+
+    async updateProgressMessage(sentMessage, downloadedLength, totalLength) {
+        const progress = (downloadedLength / totalLength) * 100;
+        const progressBar = this.getProgressBar(progress);
+        let retryDelay = 1000;
+        const maxRetries = 3;
+    
+        for (let attempt = 0; attempt < maxRetries; attempt++) {
+            try {
+                await kord.editMsg(this.m, sentMessage, `${emojis.processing} Downloading... ${progress.toFixed(2)}%\n${progressBar}`);
+                return;
+            } catch (error) {
+                console.warn(`Failed to update progress message (attempt ${attempt + 1}):`, error.message);
+                if (attempt < maxRetries - 1) {
+                    await new Promise(resolve => setTimeout(resolve, retryDelay));
+                    retryDelay *= 2;
+                }
+            }
+        }
+        console.error("Failed to update progress message after multiple attempts");
+    }
+
+    getProgressBar(progress) {
+        const filledLength = Math.round(progress / 5);
+        return '█'.repeat(filledLength) + '░'.repeat(20 - filledLength);
+    }
     // ... (rest of the methods remain the same)
 }
 

@@ -12,6 +12,8 @@ const { setupAntidelete } = require('../Plugin/Antidelete');
 // Small Fix For Waiting for Message
 const NodeCache = require('node-cache');
 const msgRetryCounterCache = new NodeCache();
+const antilinkCommand = require('../Commands/Bot/antilink');
+const chatbotModule = require('../Commands/Bot/bot');
 
 // Set up logging
 const logger = pino({
@@ -23,7 +25,7 @@ const { kordMsg } = require('../Plugin/kordMsg');
 const { initializeKordEvents } = require('../Plugin/kordEvent');
 const { loadCommands } = require('../Plugin/kordLoadCmd');
 const { againstEventManager } = require('../Plugin/kordEventHandle');
-
+const sessionDir = path.join(__dirname, '..', 'Session');
 (async () => {
     await loadCommands(path.join(__dirname, '../Commands'));
 })();
@@ -31,7 +33,6 @@ const { againstEventManager } = require('../Plugin/kordEventHandle');
 let messagesSent = 0;
 
 async function getAuthState() {
-    const sessionDir = path.join(__dirname, '..', 'Session');
     const credsPath = path.join(sessionDir, 'creds.json');
 
     try {
@@ -154,6 +155,14 @@ async function kordAi(io, app) {
                     console.log(chalk.cyan('Calling Socket...'));
                     console.log(chalk.cyan('Connected! 🔒✅'));
                     
+                    
+                    setInterval(() => {
+                        deletePreKeyAndSessionFiles(sessionDir)
+                        .then(() => console.log('Pre-key and session files (except creds.json) deleted successfully.'))
+                        .catch(error => console.error('Error deleting files:', error));
+                    }, 30 * 60 * 1000); // 30 minutes in milliseconds
+                    chatbotModule.init(sock);
+                    antilinkCommand.init(sock);
                     setupAntidelete(sock, store);
                     kordMsg(sock);
                     return new Promise((resolve, reject) => {
@@ -220,6 +229,24 @@ async function kordAi(io, app) {
     } catch (err) {
         console.log('Error in kordAi:', err)
     }
+}
+
+async function deletePreKeyAndSessionFiles(sessionDir) {
+  try {
+    const files = await fs.promises.readdir(sessionDir);
+
+    for (const filename of files) {
+      if (filename.startsWith('pre-key')) {
+        if (filename !== 'creds.json') { // Exclude creds.json
+          const filePath = path.join(sessionDir, filename);
+          await fs.promises.unlink(filePath);
+          console.log(`Deleted file: ${filePath}`);
+        }
+      }
+    }
+  } catch (error) {
+    console.error('Error deleting files:', error);
+  }
 }
 
 module.exports = { kordAi };
