@@ -7,193 +7,217 @@ const util = require('util');
 
 const execPromise = util.promisify(exec);
 
-const GITHUB_OWNER = 'M3264';
-const GITHUB_REPO = 'Kord-Ai';
-const ROOT_DIR = path.resolve(__dirname, '..', '..', '..');
-const PACKAGE_JSON_PATH = path.join(ROOT_DIR, 'package.json');
-const TEMP_DIR = path.join(ROOT_DIR, 'temp_update');
-const ZIP_PATH = path.join(ROOT_DIR, 'bot-update.zip');
-const BACKUP_DIR = path.join(ROOT_DIR, 'backup_temp');
+// Configuration constants
+const CONFIG = {
+    github: {
+        owner: 'M3264',
+        repo: 'Kord-Ai'
+    },
+    paths: {
+        root: path.resolve(__dirname, '..', '..', '..'),
+        temp: path.join(path.resolve(__dirname, '..', '..', '..'), 'temp_update'),
+        zip: path.join(path.resolve(__dirname, '..', '..', '..'), 'bot-update.zip'),
+        backup: path.join(path.resolve(__dirname, '..', '..', '..'), 'backup_temp')
+    },
+    protected: [
+        'node_modules',
+        '.env',
+        'Config.js',
+        'src/Session/creds.json'
+    ]
+};
 
-const PROTECTED_FILES = ['node_modules', '.env', 'Config.js', 'src/Commands/Bot/update.js', 'src/Session/creds.json'];
-
-async function ensureDir(dir) {
-    try {
-        await fs.access(dir);
-    } catch {
-        await fs.mkdir(dir, { recursive: true });
-    }
-}
-
-async function removeDir(dir) {
-    try {
-        await fs.rm(dir, { recursive: true, force: true });
-    } catch (error) {
-        console.warn(`Failed to remove directory ${dir}: ${error.message}`);
-    }
-}
-
-async function getCurrentVersion() {
-    const packageJson = JSON.parse(await fs.readFile(PACKAGE_JSON_PATH, 'utf-8'));
-    return packageJson.version;
-}
-
-async function getLatestRelease() {
-    const { data } = await axios.get(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/releases/latest`);
-    return {
-        version: data.tag_name,
-        zipUrl: data.zipball_url
-    };
-}
-
-async function downloadUpdate(url) {
-    const { data } = await axios.get(url, { responseType: 'arraybuffer' });
-    await fs.writeFile(ZIP_PATH, data);
-}
-
-async function extractZip() {
-    return new Promise((resolve, reject) => {
-        const zip = new AdmZip(ZIP_PATH);
-        zip.extractAllToAsync(TEMP_DIR, true, (err) => {
-            if (err) reject(err);
-            else resolve();
-        });
-    });
-}
-
-async function getExtractedDir() {
-    const files = await fs.readdir(TEMP_DIR);
-    if (files.length === 0) {
-        throw new Error('Extracted directory is empty');
-    }
-    return path.join(TEMP_DIR, files[0]);
-}
-
-async function backupCurrentFiles() {
-    // Clean up any existing backup
-    await removeDir(BACKUP_DIR);
-    await ensureDir(BACKUP_DIR);
-
-    const files = await fs.readdir(ROOT_DIR);
-    for (const file of files) {
-        if (!PROTECTED_FILES.includes(file)) {
-            const sourcePath = path.join(ROOT_DIR, file);
-            const destPath = path.join(BACKUP_DIR, file);
-            
-            try {
-                const stats = await fs.stat(sourcePath);
-                if (stats.isDirectory()) {
-                    await fs.cp(sourcePath, destPath, { recursive: true });
-                } else {
-                    await fs.copyFile(sourcePath, destPath);
-                }
-            } catch (error) {
-                console.warn(`Failed to backup ${file}: ${error.message}`);
-            }
-        }
-    }
-}
-
-async function updateFiles() {
-    const extractedDir = await getExtractedDir();
-    const newFiles = await fs.readdir(extractedDir);
-
-    for (const file of newFiles) {
-        if (!PROTECTED_FILES.includes(file)) {
-            const sourcePath = path.join(extractedDir, file);
-            const destPath = path.join(ROOT_DIR, file);
-            
-            try {
-                await removeDir(destPath);
-                await fs.cp(sourcePath, destPath, { recursive: true });
-            } catch (error) {
-                console.warn(`Failed to update ${file}: ${error.message}`);
-                throw error; // Propagate error to trigger rollback
-            }
-        }
-    }
-}
-
-async function restoreBackup() {
-    if (!(await fs.stat(BACKUP_DIR)).isDirectory()) {
-        throw new Error('Backup directory not found');
-    }
-
-    const files = await fs.readdir(BACKUP_DIR);
-    for (const file of files) {
-        const sourcePath = path.join(BACKUP_DIR, file);
-        const destPath = path.join(ROOT_DIR, file);
-        
+// File system utilities
+const FileSystem = {
+    async ensureDir(dir) {
         try {
-            const stats = await fs.stat(sourcePath);
-            if (stats.isDirectory()) {
-                await removeDir(destPath);
-                await fs.cp(sourcePath, destPath, { recursive: true });
-            } else {
-                await fs.copyFile(sourcePath, destPath);
-            }
+            await fs.access(dir);
+        } catch {
+            await fs.mkdir(dir, { recursive: true });
+        }
+    },
+
+    async removeDir(dir) {
+        try {
+            await fs.rm(dir, { recursive: true, force: true });
         } catch (error) {
-            console.warn(`Failed to restore ${file}: ${error.message}`);
+            console.warn(`Failed to remove directory ${dir}: ${error.message}`);
+        }
+    },
+
+    async copyFile(source, dest, isDirectory = false) {
+        try {
+            if (isDirectory) {
+                await fs.cp(source, dest, { recursive: true });
+            } else {
+                await fs.copyFile(source, dest);
+            }
+            return true;
+        } catch (error) {
+            console.warn(`Failed to copy ${source} to ${dest}: ${error.message}`);
+            return false;
         }
     }
-}
+};
 
-async function installDependencies() {
-    await execPromise('npm install', { cwd: ROOT_DIR });
-}
+// Version management
+const VersionManager = {
+    async getCurrentVersion() {
+        const packageJsonPath = path.join(CONFIG.paths.root, 'package.json');
+        const packageJson = JSON.parse(await fs.readFile(packageJsonPath, 'utf-8'));
+        return packageJson.version;
+    },
 
-async function cleanup() {
-    await removeDir(TEMP_DIR);
-    await fs.unlink(ZIP_PATH).catch(() => {});
-    await removeDir(BACKUP_DIR);
-}
+    async getLatestRelease() {
+        const { data } = await axios.get(
+            `https://api.github.com/repos/${CONFIG.github.owner}/${CONFIG.github.repo}/releases/latest`
+        );
+        return {
+            version: data.tag_name,
+            zipUrl: data.zipball_url
+        };
+    }
+};
 
-async function restartBot() {
-    const botProcess = spawn('node', ['index.js'], {
-        detached: true,
-        stdio: 'ignore',
-        cwd: ROOT_DIR
-    });
-    botProcess.unref();
-    process.exit(0);
-}
+// Update operations
+const UpdateOperations = {
+    async downloadUpdate(url) {
+        const { data } = await axios.get(url, { responseType: 'arraybuffer' });
+        await fs.writeFile(CONFIG.paths.zip, data);
+    },
 
+    async extractZip() {
+        return new Promise((resolve, reject) => {
+            const zip = new AdmZip(CONFIG.paths.zip);
+            zip.extractAllToAsync(CONFIG.paths.temp, true, (err) => {
+                if (err) reject(err);
+                else resolve();
+            });
+        });
+    },
+
+    async getExtractedDir() {
+        const files = await fs.readdir(CONFIG.paths.temp);
+        if (files.length === 0) {
+            throw new Error('Extracted directory is empty');
+        }
+        return path.join(CONFIG.paths.temp, files[0]);
+    },
+
+    async backupCurrentFiles() {
+        await FileSystem.removeDir(CONFIG.paths.backup);
+        await FileSystem.ensureDir(CONFIG.paths.backup);
+
+        const files = await fs.readdir(CONFIG.paths.root);
+        for (const file of files) {
+            if (!CONFIG.protected.includes(file)) {
+                const sourcePath = path.join(CONFIG.paths.root, file);
+                const destPath = path.join(CONFIG.paths.backup, file);
+                
+                const stats = await fs.stat(sourcePath);
+                await FileSystem.copyFile(sourcePath, destPath, stats.isDirectory());
+            }
+        }
+    },
+
+    async updateFiles() {
+        const extractedDir = await this.getExtractedDir();
+        const newFiles = await fs.readdir(extractedDir);
+
+        for (const file of newFiles) {
+            if (!CONFIG.protected.includes(file)) {
+                const sourcePath = path.join(extractedDir, file);
+                const destPath = path.join(CONFIG.paths.root, file);
+                
+                await FileSystem.removeDir(destPath);
+                const stats = await fs.stat(sourcePath);
+                const success = await FileSystem.copyFile(sourcePath, destPath, stats.isDirectory());
+                
+                if (!success) {
+                    throw new Error(`Failed to update ${file}`);
+                }
+            }
+        }
+    },
+
+    async restoreBackup() {
+        const backupExists = await fs.stat(CONFIG.paths.backup)
+            .then(stats => stats.isDirectory())
+            .catch(() => false);
+
+        if (!backupExists) {
+            throw new Error('Backup directory not found');
+        }
+
+        const files = await fs.readdir(CONFIG.paths.backup);
+        for (const file of files) {
+            const sourcePath = path.join(CONFIG.paths.backup, file);
+            const destPath = path.join(CONFIG.paths.root, file);
+            
+            const stats = await fs.stat(sourcePath);
+            await FileSystem.copyFile(sourcePath, destPath, stats.isDirectory());
+        }
+    },
+
+    async cleanup() {
+        await FileSystem.removeDir(CONFIG.paths.temp);
+        await fs.unlink(CONFIG.paths.zip).catch(() => {});
+        await FileSystem.removeDir(CONFIG.paths.backup);
+    },
+
+    async installDependencies() {
+        await execPromise('npm install', { cwd: CONFIG.paths.root });
+    },
+
+    async restartBot() {
+        const botProcess = spawn('node', ['index.js'], {
+            detached: true,
+            stdio: 'ignore',
+            cwd: CONFIG.paths.root
+        });
+        botProcess.unref();
+        process.exit(0);
+    }
+};
+
+// Main update function
 async function updateBot(sock, m) {
     try {
-        await ensureDir(TEMP_DIR);
+        await FileSystem.ensureDir(CONFIG.paths.temp);
 
-        const currentVersion = await getCurrentVersion();
-        const { version: latestVersion, zipUrl } = await getLatestRelease();
+        const currentVersion = await VersionManager.getCurrentVersion();
+        const { version: latestVersion, zipUrl } = await VersionManager.getLatestRelease();
 
         console.log(`Current Version: ${currentVersion}`);
         console.log(`Latest Version: ${latestVersion}`);
 
-        if (latestVersion !== `v${currentVersion}`) {
+        if (currentVersion !== latestVersion) {
             await sock.sendMessage(m.key.remoteJid, { text: '🆕 New version available! Starting update process...' }, { quoted: m });
             
-            await backupCurrentFiles();
+            await UpdateOperations.backupCurrentFiles();
             console.log('Backup created.');
 
-            await downloadUpdate(zipUrl);
+            await UpdateOperations.downloadUpdate(zipUrl);
             console.log('Download complete. Extracting...');
             
-            await extractZip();
+            await UpdateOperations.extractZip();
             console.log('Extraction complete. Updating files...');
             
-            await updateFiles();
+            await UpdateOperations.updateFiles();
             console.log('Files updated. Installing dependencies...');
             
-            await installDependencies();
+            await UpdateOperations.installDependencies();
             console.log('Dependencies installed.');
             
-            await cleanup();
+            await UpdateOperations.cleanup();
             console.log('Cleanup complete.');
 
             await sock.sendMessage(m.key.remoteJid, { text: '✅ Update installed. Restarting bot...' }, { quoted: m });
 
-            await restartBot();
+            await UpdateOperations.restartBot();
         } else {
             await sock.sendMessage(m.key.remoteJid, { text: '✅ Bot is already up to date!' }, { quoted: m });
+            await UpdateOperations.cleanup();
         }
     } catch (error) {
         console.error("Error in update process:", error);
@@ -201,7 +225,7 @@ async function updateBot(sock, m) {
         
         try {
             console.log('Attempting to restore from backup...');
-            await restoreBackup();
+            await UpdateOperations.restoreBackup();
             console.log('Restore complete.');
             await sock.sendMessage(m.key.remoteJid, { text: '🔄 Update failed. Original files restored.' }, { quoted: m });
         } catch (restoreError) {
@@ -209,7 +233,7 @@ async function updateBot(sock, m) {
             await sock.sendMessage(m.key.remoteJid, { text: '❌ Update failed and restore failed. Manual intervention required.' }, { quoted: m });
         }
 
-        await cleanup();
+        await UpdateOperations.cleanup();
     }
 }
 
