@@ -5,6 +5,7 @@ module.exports = {
     isGroupOnly: false,
     isAdminOnly: false,
     isPrivateOnly: false,
+    isOwnerOnly: true,
     emoji: "⚙️",
 
     async execute(sock, m, args) {

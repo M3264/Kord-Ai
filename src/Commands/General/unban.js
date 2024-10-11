@@ -4,14 +4,24 @@ const banListPath = path.join(__dirname, 'banList.json');
 
 // Load ban list from file
 let bannedUsers = [];
-if (fs.existsSync(banListPath)) {
-    bannedUsers = JSON.parse(fs.readFileSync(banListPath, 'utf8'));
+function loadBanList() {
+    if (fs.existsSync(banListPath)) {
+        try {
+            bannedUsers = JSON.parse(fs.readFileSync(banListPath, 'utf8'));
+        } catch (error) {
+            console.error('Error loading ban list:', error);
+            bannedUsers = [];
+        }
+    }
 }
 
 // Save the ban list to file
 function saveBanList() {
     fs.writeFileSync(banListPath, JSON.stringify(bannedUsers, null, 2));
 }
+
+// Load the ban list initially
+loadBanList();
 
 module.exports = {
     usage: ['unban'],
@@ -35,14 +45,20 @@ module.exports = {
             return;
         }
 
-        const index = bannedUsers.indexOf(target);
+        // Reload the ban list to ensure we have the latest data
+        loadBanList();
+
+        // Check if the user is banned
+        const index = bannedUsers.findIndex(user => user === target);
         if (index === -1) {
-            await sock.sendMessage(m.key.remoteJid, { text: 'This user is not banned.' }, { quoted: m });
+            await sock.sendMessage(m.key.remoteJid, { text: `User @${target.split('@')[0]} is not banned.`, mentions: [target] }, { quoted: m });
             return;
         }
 
+        // Unban the user
         bannedUsers.splice(index, 1);
         saveBanList();
+
         await sock.sendMessage(m.key.remoteJid, { 
             text: `User @${target.split('@')[0]} has been unbanned and can now use the bot.`,
             mentions: [target]
