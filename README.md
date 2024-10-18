@@ -14,6 +14,9 @@ Kord-AI is a powerful, multi-functional WhatsApp bot built using the `whiskeysoc
 - **Customization Options** – Personalize bot responses and behaviors
 - **Multi-platform Deployment** – Easily deploy on platforms like Render, Heroku, Koyeb, Bot-hosting, and more
 
+## Fork the repository
+to fork the repo, click [here](https://github.com/M3264/Kord-Ai/fork)
+
 ## Get Your Session
 Get your session ID from [https://mirage-session-o2cf.onrender.com/pair](https://mirage-session-o2cf.onrender.com/pair) and set it in the `config.js`.
 
