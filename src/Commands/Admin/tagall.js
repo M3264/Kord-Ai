@@ -4,8 +4,9 @@ module.exports = {
     usage: ['tagall'],
     description: 'Tag all members in the group.',
     emoji: '📢',
-    commandType: 'Utility',
+    commandType: 'Group',
     isGroupOnly: true,
+    IsAdminOnly: true,
 
     async execute(sock, m, args) {
         const groupId = m.key.remoteJid;

@@ -6,6 +6,7 @@ global.settings = {
     SESSION_ID: '', //put your session id between ''
     MONGO_DB_URL: 'mongodb+srv://miracle32669:Iyanu1234@cluster0.m7glm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
     WORK_MODE: "Public",
+    TIME_ZONE: "Africa/Lagos",
     READ_ALL_MESSAGES: false,
     PREFIX: [".", "/", "!"],
     WELCOME_MESSAGE: "Hello! I'm KORD-AI, your friendly WhatsApp bot.",

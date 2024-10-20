@@ -28,6 +28,7 @@ module.exports = {
     description: 'Unban a user, allowing them to use the bot again.',
     isGroupOnly: false,
     isGroupAdminOnly: false,
+    isOwnerOnly: true,
     execute: async (sock, m, args) => {
         let target;
 

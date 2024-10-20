@@ -53,7 +53,7 @@ function createUptimeMessage(runtime) {
                 title: 'Bot Uptime',
                 body: 'ᴋᴏʀᴅ-ᴀɪ',
                 mediaType: 1,
-                thumbnailUrl: "https://files.catbox.moe/g4q04p.png",
+                thumbnailUrl: "https://files.catbox.moe/xdzljz.png",
                 sourceUrl: 'https://wa.me/2347013159244',
                 renderLargerThumbnail: true,
                 showAdAttribution: true
