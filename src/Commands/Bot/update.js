@@ -7,7 +7,6 @@ const util = require('util');
 
 const execPromise = util.promisify(exec);
 
-// Configuration constants
 const CONFIG = {
     github: {
         owner: 'M3264',
@@ -27,7 +26,6 @@ const CONFIG = {
     ]
 };
 
-// File system utilities
 const FileSystem = {
     async ensureDir(dir) {
         try {
@@ -60,7 +58,6 @@ const FileSystem = {
     }
 };
 
-// Version management
 const VersionManager = {
     async getCurrentVersion() {
         const packageJsonPath = path.join(CONFIG.paths.root, 'package.json');
@@ -79,7 +76,6 @@ const VersionManager = {
     }
 };
 
-// Update operations
 const UpdateOperations = {
     async downloadUpdate(url) {
         const { data } = await axios.get(url, { responseType: 'arraybuffer' });
@@ -146,7 +142,8 @@ const UpdateOperations = {
             .catch(() => false);
 
         if (!backupExists) {
-            throw new Error('Backup directory not found');
+            console.log('Backup directory not found. Continuing without restore.');
+            return;
         }
 
         const files = await fs.readdir(CONFIG.paths.backup);
@@ -180,7 +177,6 @@ const UpdateOperations = {
     }
 };
 
-// Main update function
 async function updateBot(sock, m) {
     try {
         await FileSystem.ensureDir(CONFIG.paths.temp);
@@ -216,6 +212,7 @@ async function updateBot(sock, m) {
 
             await UpdateOperations.restartBot();
         } else {
+            await kord.react(m, "✅");
             await sock.sendMessage(m.key.remoteJid, { text: '✅ Bot is already up to date!' }, { quoted: m });
             await UpdateOperations.cleanup();
         }
@@ -226,11 +223,11 @@ async function updateBot(sock, m) {
         try {
             console.log('Attempting to restore from backup...');
             await UpdateOperations.restoreBackup();
-            console.log('Restore complete.');
-            await sock.sendMessage(m.key.remoteJid, { text: '🔄 Update failed. Original files restored.' }, { quoted: m });
+            console.log('Restore attempt completed.');
+            await sock.sendMessage(m.key.remoteJid, { text: '🔄 Update failed. Attempted to restore original files.' }, { quoted: m });
         } catch (restoreError) {
-            console.error("Error during restore:", restoreError);
-            await sock.sendMessage(m.key.remoteJid, { text: '❌ Update failed and restore failed. Manual intervention required.' }, { quoted: m });
+            console.error("Error during restore attempt:", restoreError);
+            await sock.sendMessage(m.key.remoteJid, { text: '❌ Update failed and restore attempt failed. Manual intervention may be required.' }, { quoted: m });
         }
 
         await UpdateOperations.cleanup();
@@ -245,6 +242,6 @@ module.exports = {
     isAdminOnly: false,
     isPrivateOnly: false,
     isOwnerOnly: true,
-    emoji: '✅',
+    emoji: '☘️',
     execute: updateBot
 };
