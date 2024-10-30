@@ -1,1 +1,139 @@
-const _0x15f748=_0x143d;function _0x143d(_0x536abc,_0x4cc814){const _0x8d0b4b=_0x8d0b();return _0x143d=function(_0x143df1,_0x1e866b){_0x143df1=_0x143df1-0x10b;let _0x3cdb89=_0x8d0b4b[_0x143df1];return _0x3cdb89;},_0x143d(_0x536abc,_0x4cc814);}(function(_0x599da1,_0x2f7b50){const _0x129baf=_0x143d,_0x122003=_0x599da1();while(!![]){try{const _0x3b5817=-parseInt(_0x129baf(0x116))/0x1+parseInt(_0x129baf(0x112))/0x2*(parseInt(_0x129baf(0x111))/0x3)+parseInt(_0x129baf(0x15a))/0x4+parseInt(_0x129baf(0x143))/0x5+parseInt(_0x129baf(0x125))/0x6*(parseInt(_0x129baf(0x11c))/0x7)+parseInt(_0x129baf(0x10c))/0x8+-parseInt(_0x129baf(0x14b))/0x9;if(_0x3b5817===_0x2f7b50)break;else _0x122003['push'](_0x122003['shift']());}catch(_0x5705bf){_0x122003['push'](_0x122003['shift']());}}}(_0x8d0b,0xa4aee));const fetch=require(_0x15f748(0x14c)),fs=require('fs')[_0x15f748(0x14f)],path=require('path'),{createWriteStream}=require('fs'),{pipeline}=require(_0x15f748(0x12d)),emojis={'search':'🔍','found':'🎉','noResults':'😕','error':'🤖','downloadChoice':'👇','option':'✅','processing':'⏳','done':'🚀','warning':'⚠️','info':'ℹ️'},MAX_DOWNLOAD_SIZE=settings[_0x15f748(0x12f)]*0x400*0x400,TEMP_DIR=_0x15f748(0x12e),RETRY_ATTEMPTS=0x3,RETRY_DELAY=0x3e8;function _0x8d0b(){const _0x353b6a=['react','search','isArray','map','9387783ZfigkG','node-fetch','sendImage','done','promises','\x20Please\x20provide\x20a\x20Facebook\x20video\x20URL.','get','body','\x20Timed\x20out\x20waiting\x20for\x20your\x20choice.','sock','Download\x20Facebook\x20videos\x20with\x20advanced\x20features.','promptQualitySelection','length','\x20MB.','.mp4','539904lJwGyr','reply','640304IFjdxv','noResults','API\x20request\x20error:','\x0a\x0a🔢\x20Select\x20the\x20download\x20quality:\x0a\x0a','editMsg','9jfFuGa','676358jsWMvS','now','data','message','168087hiKVBK','updateProgressMessage','fb_','downloadChoice','join','getFileSize','269815dzQFWo','processing','downloadWithProgress','\x20No\x20downloadable\x20links\x20found\x20for\x20this\x20video.','args','Error\x20in\x20Facebook\x20downloader:','repeat','HEAD','fetchVideoInfo','78fxehmF','option','VideoInfo','smallBoldScript','https://api.abrotech.com.ng/api/fbdl?url=','headers','toFixed','downloadAndSendVideo','stream/promises','./temp','MAX_DOWNLOAD_SIZE','getResponseText','videoInfo','content-length','startsWith','status','\x20Invalid\x20or\x20missing\x20download\x20link\x20provided.','\x20Downloading...\x20','error','\x20Downloading...\x200%','exports','resolution','\x20File\x20size\x20(','\x20Download\x20complete!\x20Sending\x20video...','execute','response','warn','https://www.facebook.com/images/fb_icon_325x325.png','/render.php','round','775400TKWVpQ','readFile','sendVideo','unlink'];_0x8d0b=function(){return _0x353b6a;};return _0x8d0b();}class FacebookDownloader{constructor(_0x41aa43,_0x1586f7,_0x4d1fea){const _0x2b7b4e=_0x15f748;this[_0x2b7b4e(0x154)]=_0x41aa43,this['m']=_0x1586f7,this[_0x2b7b4e(0x120)]=_0x4d1fea,this['videoInfo']=null;}async[_0x15f748(0x13d)](){const _0x3b0f0e=_0x15f748;try{const _0x1b4d20=this[_0x3b0f0e(0x120)][0x0];if(!_0x1b4d20)return await kord[_0x3b0f0e(0x10b)](this['m'],emojis[_0x3b0f0e(0x148)]+_0x3b0f0e(0x150));await this[_0x3b0f0e(0x124)](_0x1b4d20);if(!this[_0x3b0f0e(0x131)])return;const _0x25531e=await this[_0x3b0f0e(0x156)]();if(!_0x25531e)return;await this[_0x3b0f0e(0x12c)](_0x25531e);}catch(_0x35fa70){console[_0x3b0f0e(0x137)](_0x3b0f0e(0x121),_0x35fa70),await kord[_0x3b0f0e(0x147)](this['m'],emojis[_0x3b0f0e(0x137)]),await kord['reply'](this['m'],emojis[_0x3b0f0e(0x137)]+'\x20An\x20unexpected\x20error\x20occurred.\x20Please\x20try\x20again\x20later.');}}async['fetchVideoInfo'](_0x33a8de){const _0x4132a7=_0x15f748;for(let _0x311929=0x0;_0x311929<RETRY_ATTEMPTS;_0x311929++){try{const _0x1b47ed=_0x4132a7(0x129)+encodeURIComponent(_0x33a8de)+'&apikey=abrotech',_0x481b85=await fetch(_0x1b47ed),_0x22535e=await _0x481b85['json']();if(_0x22535e[_0x4132a7(0x134)]===0xc8&&_0x22535e[_0x4132a7(0x127)]&&_0x22535e[_0x4132a7(0x127)]['status']&&Array[_0x4132a7(0x149)](_0x22535e[_0x4132a7(0x127)][_0x4132a7(0x114)])){this['videoInfo']=_0x22535e[_0x4132a7(0x127)][_0x4132a7(0x114)];return;}else return await kord[_0x4132a7(0x10b)](this['m'],emojis[_0x4132a7(0x10d)]+_0x4132a7(0x11f)),null;}catch(_0x480e95){if(_0x311929===RETRY_ATTEMPTS-0x1){console['error'](_0x4132a7(0x10e),_0x480e95);throw _0x480e95;}await new Promise(_0x3e9a18=>setTimeout(_0x3e9a18,RETRY_DELAY));}}}async[_0x15f748(0x156)](){const _0x303c77=_0x15f748;if(!Array[_0x303c77(0x149)](this[_0x303c77(0x131)])||this[_0x303c77(0x131)][_0x303c77(0x157)]===0x0)return await kord[_0x303c77(0x10b)](this['m'],emojis[_0x303c77(0x137)]+'\x20No\x20video\x20formats\x20available\x20to\x20choose\x20from.'),null;const _0x4450d2=this[_0x303c77(0x131)][_0x303c77(0x14a)]((_0x29be21,_0x4f76f9)=>'`['+(_0x4f76f9+0x1)+']\x20'+_0x29be21[_0x303c77(0x13a)]+'`')['join']('\x0a'),_0x380056='\x0a📽️\x20*Kord-Ai\x20FACEBOOK-DOWNLOADER*\x20📽️\x0a\x0a🔗\x20Link:\x20'+this[_0x303c77(0x120)][0x0]+_0x303c77(0x10f)+_0x4450d2,_0x57d488=await kord['changeFont'](_0x380056,_0x303c77(0x128)),_0x3c0635=await kord[_0x303c77(0x14d)](this['m'],_0x303c77(0x140),_0x57d488);await kord['react'](this['m'],emojis[_0x303c77(0x119)]);const _0x567489=await kord[_0x303c77(0x130)](this['m'],_0x3c0635,0x7530);if(!_0x567489)return await kord[_0x303c77(0x10b)](this['m'],emojis['warning']+_0x303c77(0x153)),null;const _0x3bd328=parseInt(_0x567489[_0x303c77(0x13e)],0xa)-0x1;if(isNaN(_0x3bd328)||_0x3bd328<0x0||_0x3bd328>=this[_0x303c77(0x131)]['length'])return await kord[_0x303c77(0x10b)](this['m'],emojis['warning']+'\x20Invalid\x20choice.\x20Please\x20try\x20again.'),null;return await kord[_0x303c77(0x147)](this['m'],emojis[_0x303c77(0x126)]),this[_0x303c77(0x131)][_0x3bd328]['url'];}async[_0x15f748(0x12c)](_0x561e95){const _0x54314b=_0x15f748;if(!_0x561e95){await kord[_0x54314b(0x10b)](this['m'],emojis['error']+_0x54314b(0x135));return;}_0x561e95[_0x54314b(0x133)](_0x54314b(0x141))&&(_0x561e95='https://api.abrotech.com.ng'+_0x561e95);const _0x5c5115=await this[_0x54314b(0x11b)](_0x561e95);if(_0x5c5115>MAX_DOWNLOAD_SIZE)return await kord[_0x54314b(0x10b)](this['m'],emojis['warning']+_0x54314b(0x13b)+(_0x5c5115/0x400/0x400)[_0x54314b(0x12b)](0x2)+'\x20MB)\x20exceeds\x20the\x20limit\x20of\x20'+MAX_DOWNLOAD_SIZE/0x400/0x400+_0x54314b(0x158));const _0x5f3015=path[_0x54314b(0x11a)](TEMP_DIR,_0x54314b(0x118)+Date[_0x54314b(0x113)]()+_0x54314b(0x159));await fs['mkdir'](TEMP_DIR,{'recursive':!![]});const _0x23d671=await kord[_0x54314b(0x10b)](this['m'],emojis[_0x54314b(0x11d)]+_0x54314b(0x138));await this['downloadWithProgress'](_0x561e95,_0x5f3015,_0x23d671);try{await kord[_0x54314b(0x110)](this['m'],_0x23d671,emojis[_0x54314b(0x14e)]+_0x54314b(0x13c));const _0x45b570='>\x20©\x20ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ\x20ʙʏ\x20ᴋᴏʀᴅ\x20ɪɴᴄ³²¹™';await kord[_0x54314b(0x145)](this['m'],await fs[_0x54314b(0x144)](_0x5f3015),_0x45b570);}finally{await fs[_0x54314b(0x146)](_0x5f3015)['catch'](console[_0x54314b(0x137)]);}}async[_0x15f748(0x11b)](_0x11de6c){const _0x232c75=_0x15f748,_0x19df49=await fetch(_0x11de6c,{'method':_0x232c75(0x123)});return parseInt(_0x19df49['headers'][_0x232c75(0x151)](_0x232c75(0x132)),0xa);}async[_0x15f748(0x11e)](_0x2738c6,_0x1fcec7,_0x15dc4e){const _0x1850ae=_0x15f748,_0x4cd537=createWriteStream(_0x1fcec7),_0x32d4d1=await fetch(_0x2738c6),_0x2dc6e9=parseInt(_0x32d4d1[_0x1850ae(0x12a)][_0x1850ae(0x151)](_0x1850ae(0x132)),0xa);let _0x2b8b2c=0x0,_0x5183d5=Date[_0x1850ae(0x113)]();_0x32d4d1[_0x1850ae(0x152)]['on'](_0x1850ae(0x114),_0xae9fff=>{const _0x4c8e64=_0x1850ae;_0x2b8b2c+=_0xae9fff[_0x4c8e64(0x157)];const _0x5f201c=Date[_0x4c8e64(0x113)]();_0x5f201c-_0x5183d5>0x1388&&(this[_0x4c8e64(0x117)](_0x15dc4e,_0x2b8b2c,_0x2dc6e9),_0x5183d5=_0x5f201c);}),await pipeline(_0x32d4d1[_0x1850ae(0x152)],_0x4cd537);}async[_0x15f748(0x117)](_0x43af82,_0x5455a7,_0xaef4c2){const _0x4902cd=_0x15f748,_0x1e7329=_0x5455a7/_0xaef4c2*0x64,_0x4f6f0b=this['getProgressBar'](_0x1e7329);let _0x464aed=0x3e8;const _0x44a97a=0x3;for(let _0x40cef6=0x0;_0x40cef6<_0x44a97a;_0x40cef6++){try{await kord[_0x4902cd(0x110)](this['m'],_0x43af82,emojis['processing']+_0x4902cd(0x136)+_0x1e7329[_0x4902cd(0x12b)](0x2)+'%\x0a'+_0x4f6f0b);return;}catch(_0x1edac4){console[_0x4902cd(0x13f)]('Failed\x20to\x20update\x20progress\x20message\x20(attempt\x20'+(_0x40cef6+0x1)+'):',_0x1edac4[_0x4902cd(0x115)]),_0x40cef6<_0x44a97a-0x1&&(await new Promise(_0xdd448f=>setTimeout(_0xdd448f,_0x464aed)),_0x464aed*=0x2);}}console[_0x4902cd(0x137)]('Failed\x20to\x20update\x20progress\x20message\x20after\x20multiple\x20attempts');}['getProgressBar'](_0x54c4db){const _0x28c00c=_0x15f748,_0x218b61=Math[_0x28c00c(0x142)](_0x54c4db/0x5);return'█'[_0x28c00c(0x122)](_0x218b61)+'░'['repeat'](0x14-_0x218b61);}}module[_0x15f748(0x139)]={'usage':['fb','facebook'],'desc':_0x15f748(0x155),'commandType':'Download','isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'emoji':'⬇️',async 'execute'(_0x3ce4ee,_0x1b1953,_0x42b320){const _0x34a4e2=new FacebookDownloader(_0x3ce4ee,_0x1b1953,_0x42b320);await _0x34a4e2['execute']();}};
+const fetch = require('node-fetch');
+const fs = require('fs').promises;
+const path = require('path');
+const { createWriteStream } = require('fs');
+const { pipeline } = require('stream/promises');
+
+const emojis = {
+    search: '🔍', found: '🎉', error: '🤖', processing: '⏳', 
+    done: '🚀', warning: '⚠️'
+};
+
+const MAX_DOWNLOAD_SIZE = settings.MAX_DOWNLOAD_SIZE * 1024 * 1024;
+const TEMP_DIR = './temp';
+const RETRY_ATTEMPTS = 3;
+const RETRY_DELAY = 1000;
+
+class FacebookDownloader {
+    constructor(sock, m, args) {
+        this.sock = sock;
+        this.m = m;
+        this.args = args;
+        this.videoInfo = null;
+    }
+
+    async execute() {
+        try {
+            const url = this.args[0];
+            if (!url) {
+                return await kord.reply(this.m, `${emojis.search} Please provide a Facebook video URL.`);
+            }
+
+            await this.fetchVideoInfo(url);
+            if (!this.videoInfo) return;
+
+            await this.downloadAndSendVideo();
+        } catch (error) {
+            console.error("Error in Facebook downloader:", error);
+            await kord.react(this.m, emojis.error);
+            await kord.reply(this.m, `${emojis.error} An unexpected error occurred. Please try again later.`);
+        }
+    }
+
+    async fetchVideoInfo(url) {
+        for (let attempt = 0; attempt < RETRY_ATTEMPTS; attempt++) {
+            try {
+                const apiUrl = `https://itzpire.com/download/facebook?url=${encodeURIComponent(url)}`;
+                const response = await fetch(apiUrl);
+                
+                if (!response.ok) {
+                    throw new Error(`API response not OK: ${response.status}`);
+                }
+
+                const data = await response.json();
+
+                if (data.status === "success" && data.data) {
+                    this.videoInfo = {
+                        video_url: data.data.video_sd || data.data.video_hd
+                    };
+                    return;
+                }
+
+                if (attempt === RETRY_ATTEMPTS - 1) {
+                    await kord.reply(this.m, `${emojis.warning} Unable to fetch video information. Please check the URL and try again.`);
+                    return null;
+                }
+            } catch (error) {
+                console.error(`Attempt ${attempt + 1} failed:`, error);
+                if (attempt === RETRY_ATTEMPTS - 1) {
+                    throw error;
+                }
+                await new Promise(resolve => setTimeout(resolve, RETRY_DELAY));
+            }
+        }
+    }
+
+    async downloadAndSendVideo() {
+        const downloadLink = this.videoInfo.video_url;
+
+        if (!downloadLink) {
+            await kord.reply(this.m, `${emojis.error} No valid download link available.`);
+            return;
+        }
+
+        const fileSize = await this.getFileSize(downloadLink);
+
+        if (fileSize > MAX_DOWNLOAD_SIZE) {
+            return await kord.reply(this.m, `${emojis.warning} File size (${(fileSize / 1024 / 1024).toFixed(2)} MB) exceeds the limit of ${MAX_DOWNLOAD_SIZE / 1024 / 1024} MB.`);
+        }
+
+        const tempPath = path.join(TEMP_DIR, `fb_${Date.now()}.mp4`);
+        await fs.mkdir(TEMP_DIR, { recursive: true });
+
+        try {
+            await kord.react(this.m, emojis.processing);
+            const response = await fetch(downloadLink);
+            
+            if (!response.ok) {
+                throw new Error(`Failed to download video: ${response.statusText}`);
+            }
+
+            const fileStream = createWriteStream(tempPath);
+            await pipeline(response.body, fileStream);
+
+            const caption = `> © ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ ʙʏ ᴋᴏʀᴅ ɪɴᴄ³²¹™`;
+            await kord.sendVideo(this.m, await fs.readFile(tempPath), caption);
+            await kord.react(this.m, emojis.done);
+        } catch (error) {
+            console.error("Download error:", error);
+            await kord.reply(this.m, `${emojis.error} Failed to download video. Please try again later.`);
+        } finally {
+            await fs.unlink(tempPath).catch(console.error);
+        }
+    }
+
+    async getFileSize(url) {
+        try {
+            const response = await fetch(url, { method: 'HEAD' });
+            return parseInt(response.headers.get('content-length') || '0', 10);
+        } catch (error) {
+            console.error('Error getting file size:', error);
+            return 0;
+        }
+    }
+}
+
+module.exports = {
+    usage: ["fb", "facebook"],
+    desc: "Download Facebook videos with advanced features.",
+    commandType: "Download",
+    isGroupOnly: false,
+    isAdminOnly: false,
+    isPrivateOnly: false,
+    emoji: "⬇️",
+
+    async execute(sock, m, args) {
+        const downloader = new FacebookDownloader(sock, m, args);
+        await downloader.execute();
+    }
+};

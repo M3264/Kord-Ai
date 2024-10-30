@@ -1,1 +1,92 @@
-function _0x36af(){const _0x16c948=['138vOxojp','search','message','replace','mp4','readFile','\x20The\x20file\x20size\x20(','.mp4','timestamp','network','videos','../../../Config','2DjoSpn','noResults','reply','sendDocument','path','151053JNHozP','../../temp','🔗\x20Please\x20provide\x20a\x20YouTube\x20search\x20query.','?url=','promises','mkdir','Error\x20during\x20execution:','duration','error','exports','🌐\x20Hmm,\x20having\x20trouble\x20connecting\x20to\x20the\x20internet.\x20Please\x20try\x20again\x20later.','writeFile','toFixed','join','buffer','11LmeOZJ','\x0a📽️\x20Title:\x20','Download','react','\x20MB)\x20exceeds\x20the\x20maximum\x20allowed\x20size\x20(','video/mp4','url','kord','316986BQqnyo','includes','MAX_DOWNLOAD_SIZE','2253ulXzMr','AbroTech\x20API\x20request\x20failed:','72uRUool','json','title','😕\x20Oops!\x20No\x20videos\x20found\x20for\x20that\x20query.','29025468rPJyoQ','yt-search','warning','&apikey=','10IIrYiU','10985400vQaign','4338225VzJQHl','abrotech','done','1768395IxqcVE','API\x20error:\x20Invalid\x20response\x20status\x20or\x20missing\x20video\x20URL','true'];_0x36af=function(){return _0x16c948;};return _0x36af();}const _0x3d9e35=_0x1b0e;function _0x1b0e(_0x4d8c56,_0x5e7b72){const _0x36af1a=_0x36af();return _0x1b0e=function(_0x1b0e4d,_0x17fcef){_0x1b0e4d=_0x1b0e4d-0x1e7;let _0x36d952=_0x36af1a[_0x1b0e4d];return _0x36d952;},_0x1b0e(_0x4d8c56,_0x5e7b72);}(function(_0x169e26,_0x45330a){const _0x40e874=_0x1b0e,_0x130d1b=_0x169e26();while(!![]){try{const _0x343103=-parseInt(_0x40e874(0x20a))/0x1*(-parseInt(_0x40e874(0x1ee))/0x2)+parseInt(_0x40e874(0x20d))/0x3*(parseInt(_0x40e874(0x20f))/0x4)+parseInt(_0x40e874(0x21c))/0x5+parseInt(_0x40e874(0x21f))/0x6*(-parseInt(_0x40e874(0x1f3))/0x7)+-parseInt(_0x40e874(0x218))/0x8+-parseInt(_0x40e874(0x219))/0x9*(parseInt(_0x40e874(0x217))/0xa)+-parseInt(_0x40e874(0x202))/0xb*(-parseInt(_0x40e874(0x213))/0xc);if(_0x343103===_0x45330a)break;else _0x130d1b['push'](_0x130d1b['shift']());}catch(_0xa3f6d2){_0x130d1b['push'](_0x130d1b['shift']());}}}(_0x36af,0xb775f));const yts=require(_0x3d9e35(0x214)),fetch=require('node-fetch'),fs=require('fs')[_0x3d9e35(0x1f7)],path=require(_0x3d9e35(0x1f2)),settings=require(_0x3d9e35(0x1ed)),API_URL='https://api.abrotech.com.ng/api/ytmp4',API_KEY=_0x3d9e35(0x21a),emojis={'search':'🔍','processing':'🔄','done':'✅','error':'❌','warning':'⚠️','noResults':'😕'},requestAbroTechAPI=async _0x1bf72a=>{const _0x2c93d0=_0x3d9e35;try{const _0x10becd=await fetch(API_URL+_0x2c93d0(0x1f6)+encodeURIComponent(_0x1bf72a)+_0x2c93d0(0x216)+API_KEY),_0x1bbd58=await _0x10becd[_0x2c93d0(0x210)]();if(_0x1bbd58['status']!==_0x2c93d0(0x21e)||!_0x1bbd58['mp4'])throw new Error(_0x2c93d0(0x21d));return _0x1bbd58;}catch(_0x49d64f){console['error'](_0x2c93d0(0x20e),_0x49d64f);throw _0x49d64f;}},downloadVideo=async _0x3a956f=>{const _0x5bbfa0=_0x3d9e35,_0x4e3a49=await fetch(_0x3a956f);return await _0x4e3a49[_0x5bbfa0(0x201)]();};module[_0x3d9e35(0x1fc)]={'usage':['videodoc'],'desc':'Search\x20for\x20YouTube\x20videos\x20and\x20download\x20them\x20as\x20documents.','commandType':_0x3d9e35(0x204),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'emoji':'📄',async 'execute'(_0x375a99,_0x570139,_0x533a8e){const _0xa2c49a=_0x3d9e35;try{const _0x1617b6=_0x533a8e[_0xa2c49a(0x200)]('\x20');await global['kord'][_0xa2c49a(0x205)](_0x570139,emojis[_0xa2c49a(0x220)]);if(!_0x1617b6)return await global[_0xa2c49a(0x209)][_0xa2c49a(0x1f0)](_0x570139,_0xa2c49a(0x1f5));const _0x4771d6=await yts(_0x1617b6);if(_0x4771d6[_0xa2c49a(0x1ec)]['length']===0x0)return await global['kord']['react'](_0x570139,emojis[_0xa2c49a(0x1ef)]),await global['kord']['reply'](_0x570139,_0xa2c49a(0x212));const _0x15a6ff=_0x4771d6[_0xa2c49a(0x1ec)][0x0],_0x45eda8=_0x15a6ff[_0xa2c49a(0x208)],_0x27b5ec=_0x15a6ff[_0xa2c49a(0x211)][_0xa2c49a(0x222)](/[<>:"/\\|?*\x00-\x1F]/g,'');await global['kord']['react'](_0x570139,emojis['processing']);const _0xf372a=await requestAbroTechAPI(_0x45eda8),_0x5bbbb5=_0xf372a[_0xa2c49a(0x223)],_0x54ffd4=await downloadVideo(_0x5bbbb5),_0x274a28=settings[_0xa2c49a(0x20c)]*0x400*0x400;if(_0x54ffd4['length']>_0x274a28)return await global[_0xa2c49a(0x209)][_0xa2c49a(0x205)](_0x570139,emojis[_0xa2c49a(0x215)]),await global[_0xa2c49a(0x209)][_0xa2c49a(0x1f0)](_0x570139,emojis['warning']+_0xa2c49a(0x1e8)+(_0x54ffd4['length']/0x400/0x400)[_0xa2c49a(0x1ff)](0x2)+_0xa2c49a(0x206)+settings['MAX_DOWNLOAD_SIZE']+'\x20MB).');const _0x1d34a6=path[_0xa2c49a(0x200)](__dirname,_0xa2c49a(0x1f4));await fs[_0xa2c49a(0x1f8)](_0x1d34a6,{'recursive':!![]});const _0x41c7cc=path[_0xa2c49a(0x200)](_0x1d34a6,_0x27b5ec+_0xa2c49a(0x1e9));await fs[_0xa2c49a(0x1fe)](_0x41c7cc,_0x54ffd4);const _0x26e6fc='🎥\x20*KORD-AI\x20YOUTUBE-DOWNLOADER*\x20🎥\x0a\x0a🔗\x20Link:\x20'+_0x15a6ff[_0xa2c49a(0x208)]+_0xa2c49a(0x203)+_0x15a6ff[_0xa2c49a(0x211)]+'\x0a🕒\x20Duration:\x20'+_0x15a6ff[_0xa2c49a(0x1fa)][_0xa2c49a(0x1ea)];await global[_0xa2c49a(0x209)][_0xa2c49a(0x1f1)](_0x570139,await fs[_0xa2c49a(0x1e7)](_0x41c7cc),_0xa2c49a(0x207),_0x27b5ec+_0xa2c49a(0x1e9),_0x26e6fc),await fs['unlink'](_0x41c7cc),await global[_0xa2c49a(0x209)][_0xa2c49a(0x205)](_0x570139,emojis[_0xa2c49a(0x21b)]);}catch(_0x2b5f61){await global['kord']['react'](_0x570139,emojis[_0xa2c49a(0x1fb)]),console['error'](_0xa2c49a(0x1f9),_0x2b5f61);if(_0x2b5f61['message'][_0xa2c49a(0x20b)](_0xa2c49a(0x1eb)))await global['kord'][_0xa2c49a(0x1f0)](_0x570139,_0xa2c49a(0x1fd));else _0x2b5f61[_0xa2c49a(0x221)][_0xa2c49a(0x20b)]('404')?await global[_0xa2c49a(0x209)][_0xa2c49a(0x1f0)](_0x570139,'🚫🔗\x20The\x20video\x20is\x20no\x20longer\x20available.\x20Please\x20check\x20the\x20URL\x20and\x20try\x20again.'):await global[_0xa2c49a(0x209)]['reply'](_0x570139,'🤖\x20Oops!\x20Something\x20unexpected\x20happened.\x20We\x27ll\x20look\x20into\x20it.');}}};
+const ytdl = require('youtubedl-core');
+const yts = require('yt-search');
+const fs = require('fs')
+const path = require('path');
+const gifted = require('gifted-dls');
+const axios = require('axios');
+
+const emojis = {
+    search: '🔍',
+    processing: '🔄',
+    done: '✅',
+    error: '❌',
+    warning: '⚠️',
+    noResults: '😕'
+};
+
+module.exports = {
+    usage: ["videoo"],
+    desc: "Search for YouTube videos and download them.",
+    commandType: "Download",
+    isGroupOnly: false,
+    isAdminOnly: false,
+    isPrivateOnly: false,
+    emoji: "📺",
+
+    async execute(sock, m, args) {
+        try {
+            const query = args.join(" ");
+            await global.kord.react(m, emojis.search);
+
+            if (!query) {
+                return await global.kord.reply(m, "🔗 Please provide a YouTube search query.");
+            }
+
+            // Use yts to search for YouTube videos
+            const results = await yts(query);
+            if (results.videos.length === 0) {
+                await global.kord.react(m, emojis.noResults);
+                return await global.kord.reply(m, "😕 Oops! No videos found for that query.");
+            }
+
+            // Get the first video from search results
+            const video = results.videos[0];
+            const videoUrl = video.url;
+            await global.kord.react(m, emojis.processing);
+            const data = await gifted.ytmp4(videoUrl);
+            if (!data || !data.download_url) throw new Error('Download URL not found');
+
+            // Create temp directory if it doesn't exist
+            const tempDir = path.join(__dirname, '../../temp');
+            if (!fs.existsSync(tempDir)) {
+                fs.mkdirSync(tempDir, { recursive: true });
+            }
+
+            const tempPath = path.join(tempDir, `video_${Date.now()}.mp4`);
+
+            // Download video using axios
+            const response = await axios({
+                method: 'GET',
+                url: data.download_url,
+                responseType: 'stream'
+            });
+
+            const writer = fs.createWriteStream(tempPath);
+            response.data.pipe(writer);
+
+            await new Promise((resolve, reject) => {
+                writer.on('finish', resolve);
+                writer.on('error', reject);
+            });
+            const captionLine = "\n> © ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ ʙʏ ᴋᴏʀᴅ ɪɴᴄ³²¹™";
+
+            // Send video with caption
+            await global.kord.sendDocument(m, await fs.readFile(tempPath), 'video/mp4', `video_${Date.now()}.mp4`, captionLine);
+            // Clean up
+            await fs.unlink(tempPath);
+
+            await global.kord.react(m, emojis.done);
+
+        } catch (error) {
+            await global.kord.react(m, emojis.error);
+            console.log("Error during execution:", error);
+            if (error.message.includes('network')) {
+                await global.kord.reply(m, "🌐 Hmm, having trouble connecting to the internet. Please try again later.");
+            } else if (error.message.includes('404')) {
+                await global.kord.reply(m, "🚫🔗 The video is no longer available. Please check the URL and try again.");
+            } else {
+                await global.kord.reply(m, "🤖 Oops! Something unexpected happened. We'll look into it.");
+            }
+        }
+    }
+};

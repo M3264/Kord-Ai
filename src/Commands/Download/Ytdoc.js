@@ -1,1 +1,105 @@
-const _0xa1e72c=_0x481d;(function(_0x547ab6,_0x3c49ff){const _0xf1aeaf=_0x481d,_0xbd4ec5=_0x547ab6();while(!![]){try{const _0x12ffb8=-parseInt(_0xf1aeaf(0xd3))/0x1+parseInt(_0xf1aeaf(0xf7))/0x2+parseInt(_0xf1aeaf(0xf1))/0x3*(parseInt(_0xf1aeaf(0xdd))/0x4)+-parseInt(_0xf1aeaf(0xf9))/0x5*(parseInt(_0xf1aeaf(0x10d))/0x6)+-parseInt(_0xf1aeaf(0x10b))/0x7*(parseInt(_0xf1aeaf(0xed))/0x8)+parseInt(_0xf1aeaf(0xe8))/0x9*(parseInt(_0xf1aeaf(0x108))/0xa)+-parseInt(_0xf1aeaf(0xfa))/0xb*(parseInt(_0xf1aeaf(0xe1))/0xc);if(_0x12ffb8===_0x3c49ff)break;else _0xbd4ec5['push'](_0xbd4ec5['shift']());}catch(_0x28f87f){_0xbd4ec5['push'](_0xbd4ec5['shift']());}}}(_0x107e,0xbb226));const fetch=require('node-fetch'),fs=require('fs')['promises'],path=require(_0xa1e72c(0x106)),emojis={'search':'🔍','processing':'🔄','done':'✅','error':'❌','warning':'⚠️'};function _0x107e(){const _0x1cceb9=['youtubedoc','ytmp4','2863110cntunb','reply','30CLzgGb','899426EMbfnY','\x0a📽️\x20Title:\x20','video_url','test','🚫\x20Please\x20provide\x20a\x20valid\x20YouTube\x20URL.','kord','buffer','code','unlink','error','result','access','path','includes','10eRrNqj','replace','&apikey=gifted','7084bNVrbE','video/mp4','1333602RoTVrA','exports','🚫🔗\x20The\x20video\x20is\x20no\x20longer\x20available.\x20Please\x20check\x20the\x20URL\x20and\x20try\x20again.','1171401bfdWgm','search','🌐\x20Hmm,\x20having\x20trouble\x20connecting\x20to\x20the\x20internet.\x20Please\x20try\x20again\x20later.','\x0a🕒\x20Duration:\x20','🔗\x20Please\x20provide\x20a\x20YouTube\x20video\x20URL.','Download\x20YouTube\x20videos\x20as\x20documents.','readFile','Error\x20during\x20execution:','log','url','52184gpdLBK','API\x20Response\x20Error:\x20','react','MAX_DOWNLOAD_SIZE','60OZrhij','./temp','\x20MB)\x20exceeds\x20the\x20maximum\x20allowed\x20size\x20(','message','404','processing','\x20MB).','11607606UaWAQG','mp4','mkdir','https://api.giftedtechnexus.co.ke/api/download/ytdl?url=','ENOENT','2216GAsnEf','\x20The\x20file\x20size\x20(','json','warning','285CskhNS','done','title','toFixed'];_0x107e=function(){return _0x1cceb9;};return _0x107e();}function _0x481d(_0x39af93,_0x723b3a){const _0x107e04=_0x107e();return _0x481d=function(_0x481d01,_0x5602a7){_0x481d01=_0x481d01-0xd2;let _0x44aabd=_0x107e04[_0x481d01];return _0x44aabd;},_0x481d(_0x39af93,_0x723b3a);}module[_0xa1e72c(0x10e)]={'usage':['ytdoc',_0xa1e72c(0xf5),_0xa1e72c(0xf6)],'desc':_0xa1e72c(0xd8),'commandType':'Download','isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'emoji':'📄',async 'execute'(_0x47875f,_0x24351a,_0x4b0f36){const _0x1e924f=_0xa1e72c;try{const _0x238129=settings[_0x1e924f(0xe0)]*0x400*0x400,_0x476a35=_0x4b0f36[0x0];await global[_0x1e924f(0xff)][_0x1e924f(0xdf)](_0x24351a,emojis[_0x1e924f(0xd4)]);if(!_0x476a35)return await global[_0x1e924f(0xff)][_0x1e924f(0xf8)](_0x24351a,_0x1e924f(0xd7));const _0x200163=/^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$/;if(!_0x200163[_0x1e924f(0xfd)](_0x476a35))return await global[_0x1e924f(0xff)][_0x1e924f(0xdf)](_0x24351a,emojis[_0x1e924f(0x103)]),await global[_0x1e924f(0xff)][_0x1e924f(0xf8)](_0x24351a,_0x1e924f(0xfe));await global['kord'][_0x1e924f(0xdf)](_0x24351a,emojis[_0x1e924f(0xe6)]);const _0x4d75ec=_0x1e924f(0xeb)+encodeURIComponent(_0x476a35)+_0x1e924f(0x10a),_0x572110=await fetch(_0x4d75ec),_0x113ea2=await _0x572110[_0x1e924f(0xef)]();if(!_0x113ea2||_0x113ea2['status']!==0xc8||!_0x113ea2[_0x1e924f(0x104)]||!_0x113ea2[_0x1e924f(0x104)][_0x1e924f(0xfc)])return await global['kord'][_0x1e924f(0xdf)](_0x24351a,emojis[_0x1e924f(0x103)]),console[_0x1e924f(0xdb)](_0x1e924f(0xde),_0x113ea2),await global[_0x1e924f(0xff)][_0x1e924f(0xf8)](_0x24351a,'❌\x20Unable\x20to\x20fetch\x20the\x20video.\x20Please\x20try\x20again\x20later.');const _0x2468b5=_0x113ea2[_0x1e924f(0x104)]['video_url'],_0xd2fa20=_0x113ea2['result'][_0x1e924f(0xf3)][_0x1e924f(0x109)](/[<>:"/\\|?*\x00-\x1F]/g,''),_0x3ff42f=_0x1e924f(0xe9),_0x1cc33e=await fetch(_0x2468b5),_0x18baec=await _0x1cc33e[_0x1e924f(0x100)](),_0x1e097f=_0x18baec['length'];if(_0x1e097f>_0x238129)return await global[_0x1e924f(0xff)][_0x1e924f(0xdf)](_0x24351a,emojis[_0x1e924f(0xf0)]),await global[_0x1e924f(0xff)][_0x1e924f(0xf8)](_0x24351a,emojis[_0x1e924f(0xf0)]+_0x1e924f(0xee)+(_0x1e097f/0x400/0x400)[_0x1e924f(0xf4)](0x2)+_0x1e924f(0xe3)+settings['MAX_DOWNLOAD_SIZE']+_0x1e924f(0xe7));const _0x3f2115=path['join'](_0x1e924f(0xe2));try{await fs[_0x1e924f(0x105)](_0x3f2115);}catch(_0x1d88d9){if(_0x1d88d9[_0x1e924f(0x101)]===_0x1e924f(0xec))await fs[_0x1e924f(0xea)](_0x3f2115);else throw _0x1d88d9;}const _0x4a883c=path['join'](_0x3f2115,_0xd2fa20+'.'+_0x3ff42f);await fs['writeFile'](_0x4a883c,_0x18baec);const _0x54c0ff='🎥\x20*KORD-AI\x20YOUTUBE-DOWNLOADER*\x20🎥\x0a\x0a🔗\x20Link:\x20'+_0x113ea2[_0x1e924f(0x104)][_0x1e924f(0xdc)]+_0x1e924f(0xfb)+_0x113ea2[_0x1e924f(0x104)]['title']+_0x1e924f(0xd6)+_0x113ea2['result']['duration'];await global[_0x1e924f(0xff)]['sendDocument'](_0x24351a,await fs[_0x1e924f(0xd9)](_0x4a883c),_0x1e924f(0x10c),_0xd2fa20+'.'+_0x3ff42f,_0x54c0ff),await fs[_0x1e924f(0x102)](_0x4a883c),await global[_0x1e924f(0xff)][_0x1e924f(0xdf)](_0x24351a,emojis[_0x1e924f(0xf2)]);}catch(_0x2cdb2d){await global[_0x1e924f(0xff)][_0x1e924f(0xdf)](_0x24351a,emojis['error']),console[_0x1e924f(0xdb)](_0x1e924f(0xda),_0x2cdb2d);if(_0x2cdb2d[_0x1e924f(0xe4)]['includes']('network'))await global['kord'][_0x1e924f(0xf8)](_0x24351a,_0x1e924f(0xd5));else _0x2cdb2d[_0x1e924f(0xe4)][_0x1e924f(0x107)](_0x1e924f(0xe5))?await global[_0x1e924f(0xff)][_0x1e924f(0xf8)](_0x24351a,_0x1e924f(0xd2)):await global['kord'][_0x1e924f(0xf8)](_0x24351a,'🤖\x20Oops!\x20Something\x20unexpected\x20happened.\x20We\x27ll\x20look\x20into\x20it.');}}};
+const fetch = require('node-fetch');
+const fs = require('fs').promises;
+const path = require('path');
+
+const emojis = {
+    search: '🔍',
+    processing: '🔄',
+    done: '✅',
+    error: '❌',
+    warning: '⚠️'
+};
+
+module.exports = {
+    usage: ["ytdoc", "youtubedoc", "ytmp4"],
+    desc: "Download YouTube videos as documents.",
+    commandType: "Download",
+    isGroupOnly: false,
+    isAdminOnly: false,
+    isPrivateOnly: false,
+    emoji: "📄",
+
+    async execute(sock, m, args) {
+        try {
+            const MAXDLSIZE = settings.MAX_DOWNLOAD_SIZE * 1024 * 1024; // Convert MB to bytes
+            const url = args[0];
+            await global.kord.react(m, emojis.search);
+
+            if (!url) {
+                return await global.kord.reply(m, "🔗 Please provide a YouTube video URL.");
+            }
+
+            // Check if it's a valid YouTube URL
+            const validYouTubeRegex = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$/;
+            if (!validYouTubeRegex.test(url)) {
+                await global.kord.react(m, emojis.error);
+                return await global.kord.reply(m, "🚫 Please provide a valid YouTube URL.");
+            }
+
+            await global.kord.react(m, emojis.processing);
+
+            // Use Gifted API to get video info
+            const apiUrl = `https://api.giftedtechnexus.co.ke/api/download/ytdl?url=${encodeURIComponent(url)}&apikey=gifted`;
+            const response = await fetch(apiUrl);
+            const videoInfo = await response.json();
+
+            if (!videoInfo || videoInfo.status !== 200 || !videoInfo.result || !videoInfo.result.video_url) {
+                await global.kord.react(m, emojis.error);
+                console.log("API Response Error: ", videoInfo);
+                return await global.kord.reply(m, "❌ Unable to fetch the video. Please try again later.");
+            }
+
+            const downloadUrl = videoInfo.result.video_url;
+            const videoTitle = videoInfo.result.title.replace(/[<>:"/\\|?*\x00-\x1F]/g, ''); // Clean title for file name
+            const fileExtension = 'mp4';
+
+            // Download the file
+            const fileResponse = await fetch(downloadUrl);
+            const fileBuffer = await fileResponse.buffer();
+
+            const fileSize = fileBuffer.length;
+
+            if (fileSize > MAXDLSIZE) {
+                await global.kord.react(m, emojis.warning);
+                return await global.kord.reply(m, `${emojis.warning} The file size (${(fileSize / 1024 / 1024).toFixed(2)} MB) exceeds the maximum allowed size (${settings.MAX_DOWNLOAD_SIZE} MB).`);
+            }
+
+            const tempDir = path.join('./temp');
+            try {
+                await fs.access(tempDir); // Check if directory exists
+            } catch (error) {
+                if (error.code === 'ENOENT') {
+                    // Directory doesn't exist, create it
+                    await fs.mkdir(tempDir);
+                } else {
+                    throw error; // Propagate other errors
+                }
+            }
+
+            const tempFilePath = path.join(tempDir, `${videoTitle}.${fileExtension}`);
+            await fs.writeFile(tempFilePath, fileBuffer);
+
+            // Use the same caption as the youtube command
+            const captionLine = `🎥 *KORD-AI YOUTUBE-DOWNLOADER* 🎥\n\n🔗 Link: ${videoInfo.result.url}\n📽️ Title: ${videoInfo.result.title}\n🕒 Duration: ${videoInfo.result.duration}`;
+
+            // Send the video as a document with the title as the file name
+            await global.kord.sendDocument(m, await fs.readFile(tempFilePath), 'video/mp4', `${videoTitle}.${fileExtension}`, captionLine);
+
+            // Clean up
+            await fs.unlink(tempFilePath);
+
+            await global.kord.react(m, emojis.done);
+
+        } catch (error) {
+            await global.kord.react(m, emojis.error);
+            console.log("Error during execution:", error);
+            if (error.message.includes('network')) {
+                await global.kord.reply(m, "🌐 Hmm, having trouble connecting to the internet. Please try again later.");
+            } else if (error.message.includes('404')) {
+                await global.kord.reply(m, "🚫🔗 The video is no longer available. Please check the URL and try again.");
+            } else {
+                await global.kord.reply(m, "🤖 Oops! Something unexpected happened. We'll look into it.");
+            }
+        }
+    }
+};

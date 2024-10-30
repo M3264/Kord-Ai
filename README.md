@@ -95,6 +95,9 @@ You can trigger commands using the bot's prefix. The default prefixes are `!`, `
 
 Contributions are welcome! If you'd like to contribute to Kord-AI, feel free to submit a pull request or open an issue on GitHub.
 
+### Appreciation
+Thanks to [Gifted](https://github.com/mouricedevs) for gifted-dls!!🤩🤩
+
 ### License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

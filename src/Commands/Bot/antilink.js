@@ -9,7 +9,7 @@ const emojis = {
     link: '🔗'
 };
 
-const configPath = path.join(__dirname, 'antilink_config.json');
+const configPath = path.join(__dirname, '..', '..', 'Database', 'antilink_config.json');
 
 let isAntilinkActive = false;
 let messageListener = null;

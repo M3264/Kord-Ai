@@ -1,133 +1,223 @@
 const fetch = require('node-fetch');
 const fs = require('fs').promises;
+const fsSync = require('fs');
 const path = require('path');
-const { parse } = require('url');
-const TEMP_DIR = './temp';
-const waitMessage = "Downloading from Google Drive, please wait...";
-const emojis = {
-    processing: '⏳',
-    done: '🚀'
-};
+const archiver = require('archiver');
+const axios = require('axios');
 
-async function downloadGoogleDrive(args, m, kord) {
-    const url = args[0];
-
-    try {
-        // Extract file ID from the URL
-        const fileId = extractFileId(url);
-        if (!fileId) {
-            throw new Error("Unable to extract file ID from the URL.");
-        }
-
-        // Get download link and file info
-        const { downloadLink, filename, fileSize } = await getDownloadLink(fileId);
-
-        // Create temporary file path
-        const tempPath = path.join(TEMP_DIR, filename);
-
-        // Ensure TEMP_DIR exists
-        await fs.mkdir(TEMP_DIR, { recursive: true });
-
-        // Reply with the initial wait message
-        let sentMessage = await kord.reply(m, `${emojis.processing} ${waitMessage}`);
-
-        // Download the file with progress
-        await downloadWithProgress(downloadLink, tempPath, fileSize, sentMessage, kord, m);
-
-        // Send the downloaded file
-        await kord.sendDocument(m, tempPath, 'application/octet-stream', filename, 'Here is your Google Drive file.');
-
-        // Clean up temporary file
-        await fs.unlink(tempPath);
-    } catch (error) {
-        console.error("Error downloading Google Drive file:", error);
-        await kord.reply(m, `Error downloading Google Drive file: ${error.message}`);
-    }
-}
-
-function extractFileId(url) {
-    const parsedUrl = parse(url, true);
-    if (parsedUrl.pathname.includes('/file/d/')) {
-        return parsedUrl.pathname.split('/')[3];
-    } else if (parsedUrl.pathname === '/open') {
-        return parsedUrl.query.id;
-    }
-    return null;
-}
-
-async function getDownloadLink(fileId) {
-    const response = await fetch(`https://drive.google.com/uc?id=${fileId}&export=download`);
-    const text = await response.text();
-    
-    if (response.url.includes('accounts.google.com')) {
-        throw new Error("This file is not publicly accessible.");
-    }
-
-    let downloadLink = response.url;
-    let filename = getFilenameFromContentDisposition(response.headers.get('content-disposition')) || `gdrive_file_${fileId}`;
-    let fileSize = parseInt(response.headers.get('content-length'), 10);
-
-    // Check if it's a large file
-    if (text.includes('uc-download-link')) {
-        const confirmToken = text.match(/confirm=([^&]+)/)[1];
-        downloadLink = `https://drive.google.com/uc?id=${fileId}&export=download&confirm=${confirmToken}`;
-        
-        // For large files, we need to make another request to get the actual file size
-        const headResponse = await fetch(downloadLink, { method: 'HEAD' });
-        fileSize = parseInt(headResponse.headers.get('content-length'), 10);
-    }
-
-    return { downloadLink, filename, fileSize };
-}
-
-function getFilenameFromContentDisposition(contentDisposition) {
-    if (!contentDisposition) return null;
-    const matches = /filename="?(.+)"?/i.exec(contentDisposition);
-    return matches && matches[1] ? decodeURIComponent(matches[1]) : null;
-}
-
-async function downloadWithProgress(url, filePath, fileSize, sentMessage, kord, m) {
-    const response = await fetch(url);
-    const fileStream = fs.createWriteStream(filePath);
-
-    let downloadedSize = 0;
-
-    response.body.on('data', (chunk) => {
-        downloadedSize += chunk.length;
-        const percentComplete = (downloadedSize / fileSize) * 100;
-
-        // Update the message with the download progress
-        const progressBar = createProgressBar(percentComplete);
-        kord.editMsg(m, sentMessage.key, `${emojis.processing} Downloading: ${progressBar} ${percentComplete.toFixed(2)}%`);
-    });
-
-    response.body.pipe(fileStream);
-
-    await new Promise((resolve, reject) => {
-        fileStream.on('finish', resolve);
-        fileStream.on('error', reject);
-    });
-
-    // Notify download is complete
-    kord.editMsg(m, sentMessage.key, `${emojis.done} Download complete!`);
-}
-
-function createProgressBar(percentage) {
-    const length = 20;
-    const filledLength = Math.round((length * percentage) / 100);
-    const bar = '█'.repeat(filledLength) + '░'.repeat(length - filledLength);
-    return bar;
-}
+const TEMP_DIR = path.join(__dirname, '../tmp/');
 
 module.exports = {
     usage: ["gdrive", "googledrive"],
-    desc: "Download files from Google Drive links.",
+    desc: "Download files/folders from Google Drive",
     commandType: "Download",
     isGroupOnly: false,
     isAdminOnly: false,
     isPrivateOnly: false,
     emoji: "☁️",
-    async execute(args, m, kord) {
-        await downloadGoogleDrive(args, m, kord);
-    }
+    execute: handleDriveCommand
 };
+
+async function handleDriveCommand(sock, m, args) {
+    if (!args[0]) {
+        return await replyMessage(m, '❌ Please provide a Google Drive URL.');
+    }
+
+    const url = args[0];
+    
+    try {
+        await replyMessage(m, '📝 Processing Google Drive link...');
+        
+        if (!isValidDriveUrl(url)) {
+            return await replyMessage(m, '❌ Invalid Google Drive URL.');
+        }
+
+        if (url.includes('/folders/')) {
+            await handleFolder(url, sock, m);
+        } else {
+            await handleFile(url, sock, m);
+        }
+
+    } catch (error) {
+        console.error('Drive Download Error:', error);
+        await replyMessage(m, `❌ Error: ${error.message || 'Unknown error occurred'}`);
+    }
+}
+
+async function handleFolder(url, sock, m) {
+    try {
+        const files = await getFolderFiles(url);
+        if (!files.length) {
+            throw new Error('No accessible files found');
+        }
+
+        await replyMessage(m, `📂 Found ${files.length} files. Starting download...`);
+
+        for (const fileId of files) {
+            try {
+                await downloadAndSendFile(fileId, sock, m);
+                await new Promise(resolve => setTimeout(resolve, 1000)); // Delay between files
+            } catch (err) {
+                console.error(`Error with file ${fileId}:`, err);
+            }
+        }
+
+        await replyMessage(m, '✅ Folder download completed!');
+    } catch (error) {
+        throw new Error(`Folder processing failed: ${error.message}`);
+    }
+}
+
+async function getFolderFiles(url) {
+    try {
+        const folderId = url.match(/folders\/([^/?]+)/)?.[1];
+        if (!folderId) throw new Error('Invalid folder URL');
+
+        const response = await axios.get(`https://drive.google.com/drive/folders/${folderId}`, {
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+            }
+        });
+
+        const fileIds = [];
+        const matches = response.data.match(/\/file\/d\/([^/"\s]+)/g) || [];
+        
+        for (const match of matches) {
+            const fileId = match.split('/')[3];
+            if (fileId && !fileIds.includes(fileId)) {
+                fileIds.push(fileId);
+            }
+        }
+
+        return fileIds;
+    } catch (error) {
+        throw new Error(`Failed to get folder contents: ${error.message}`);
+    }
+}
+
+async function handleFile(url, sock, m) {
+    const fileId = extractFileId(url);
+    if (!fileId) {
+        throw new Error('Invalid file URL');
+    }
+    await downloadAndSendFile(fileId, sock, m);
+}
+
+async function downloadAndSendFile(fileId, sock, m) {
+    try {
+        const downloadInfo = await getDownloadInfo(fileId);
+        await replyMessage(m, `⏳ Downloading: ${downloadInfo.fileName}`);
+
+        const tempPath = path.join(TEMP_DIR, downloadInfo.fileName);
+        await downloadFile(downloadInfo.downloadUrl, tempPath);
+
+        await sock.sendMessage(
+            m.key.remoteJid,
+            {
+                document: fsSync.createReadStream(tempPath),
+                fileName: downloadInfo.fileName,
+                mimetype: downloadInfo.mimeType || 'application/octet-stream'
+            },
+            { quoted: m }
+        );
+
+        await fs.unlink(tempPath);
+        await replyMessage(m, `✅ Sent: ${downloadInfo.fileName}`);
+    } catch (error) {
+        throw new Error(`Download failed: ${error.message}`);
+    }
+}
+
+async function getDownloadInfo(fileId) {
+    try {
+        // First request to get cookies and confirmation token if needed
+        const firstResponse = await axios.get(`https://drive.google.com/uc?id=${fileId}&export=download`, {
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+            },
+            maxRedirects: 0,
+            validateStatus: status => status >= 200 && status < 400
+        });
+
+        // Check if we need to handle confirmation for large files
+        const confirmToken = firstResponse.data.match(/confirm=([^&]+)/)?.[1];
+        const cookies = firstResponse.headers['set-cookie']?.map(cookie => cookie.split(';')[0]).join('; ');
+
+        let downloadUrl;
+        let fileName = fileId;
+        let mimeType = 'application/octet-stream';
+
+        if (confirmToken) {
+            // Large file handling
+            downloadUrl = `https://drive.google.com/uc?id=${fileId}&export=download&confirm=${confirmToken}`;
+        } else {
+            // Direct download for small files
+            downloadUrl = `https://drive.google.com/uc?id=${fileId}&export=download`;
+        }
+
+        // Try to get filename from content-disposition
+        const contentDisposition = firstResponse.headers['content-disposition'];
+        if (contentDisposition) {
+            const fileNameMatch = contentDisposition.match(/filename\*?=['"]?(?:UTF-\d['"]*)?([^;\r\n"']*)['"]?;?/i);
+            if (fileNameMatch) {
+                fileName = decodeURIComponent(fileNameMatch[1]);
+            }
+        }
+
+        // Try to get mimeType from content-type
+        const contentType = firstResponse.headers['content-type'];
+        if (contentType) {
+            mimeType = contentType;
+        }
+
+        return {
+            downloadUrl,
+            fileName,
+            mimeType,
+            cookies
+        };
+    } catch (error) {
+        throw new Error(`Failed to get download info: ${error.message}`);
+    }
+}
+
+async function downloadFile(url, destPath) {
+    const response = await axios({
+        method: 'GET',
+        url: url,
+        responseType: 'stream',
+        headers: {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+        }
+    });
+
+    const writer = fsSync.createWriteStream(destPath);
+    response.data.pipe(writer);
+
+    return new Promise((resolve, reject) => {
+        writer.on('finish', resolve);
+        writer.on('error', reject);
+    });
+}
+
+function isValidDriveUrl(url) {
+    return /drive\.google\.com\/(file\/d\/|drive\/folders\/)/i.test(url);
+}
+
+function extractFileId(url) {
+    const match = url.match(/\/file\/d\/([^/]+)/);
+    return match ? match[1] : null;
+}
+
+async function replyMessage(m, text) {
+    return await global.kord.reply(m, text);
+}
+
+// Create temp directory if it doesn't exist
+(async () => {
+    try {
+        await fs.access(TEMP_DIR);
+    } catch {
+        await fs.mkdir(TEMP_DIR, { recursive: true });
+    }
+})();

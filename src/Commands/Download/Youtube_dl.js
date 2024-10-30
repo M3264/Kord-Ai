@@ -1,1 +1,63 @@
-const _0xa99950=_0x44f1;function _0x5b00(){const _0x271326=['YouTube\x20download\x20error:','Download','6185619pTqOAo','Error\x20status:','YouTube\x20API\x20request\x20failed:','add','response','264919wDDQQf','object','react','status','exports','782831LWrQPi','stream','404','mkdir','GET','request','includes','catch','test','promises','🤖\x20Oops!\x20Something\x20unexpected\x20happened.','Download\x20YouTube\x20videos.','No\x20response\x20received\x20from\x20YouTube\x20API','../../temp','🚫\x20Please\x20provide\x20a\x20valid\x20YouTube\x20URL.','\x20-\x20','8KeRwfU','🔗\x20Please\x20provide\x20a\x20YouTube\x20video\x20URL.','🌐\x20Having\x20trouble\x20connecting\x20to\x20the\x20internet.\x20Please\x20try\x20again\x20later.','size','message','open','createWriteStream','error','4869370LfclQN','data','8sWUmiB','596493XSLpqu','🚫\x20There\x20was\x20an\x20issue\x20processing\x20your\x20request.\x20The\x20video\x20might\x20be\x20unavailable\x20or\x20restricted.\x20Please\x20try\x20a\x20different\x20video.','kord','2156652bWTVYd','youtube','MAX_DOWNLOAD_SIZE','readFile','\x0a\x0a>\x20©\x20ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ\x20ʙʏ\x20ᴋᴏʀᴅ\x20ɪɴᴄ³²¹™\x0a⊱─━⊱༻●༺⊰━─⊰','search','axios','toFixed','has','mp4','now','10zrjpFv','join','done','abrotech','true','.mp4','YouTube\x20API\x20error:\x20','temp_','reply','https://api.abrotech.com.ng/api/ytmp4','\x20MB).','../../Plugin/kordlogger','🚫🔗\x20The\x20video\x20is\x20no\x20longer\x20available.\x20Please\x20check\x20the\x20URL\x20and\x20try\x20again.','../../../Config','path','stat','\x0a✼\x20••๑⋯❀\x20Y\x20O\x20U\x20T\x20U\x20B\x20E\x20❀⋯⋅๑••\x20✼\x0a\x0a❒\x20Link:\x20','24JkxvDT','1665676VkqOEE'];_0x5b00=function(){return _0x271326;};return _0x5b00();}(function(_0x909c7b,_0x4f11d2){const _0x51b7a5=_0x44f1,_0x97ebd2=_0x909c7b();while(!![]){try{const _0x205d6f=parseInt(_0x51b7a5(0x182))/0x1*(-parseInt(_0x51b7a5(0x197))/0x2)+-parseInt(_0x51b7a5(0x1a5))/0x3+-parseInt(_0x51b7a5(0x17a))/0x4*(-parseInt(_0x51b7a5(0x1b0))/0x5)+-parseInt(_0x51b7a5(0x179))/0x6*(-parseInt(_0x51b7a5(0x187))/0x7)+parseInt(_0x51b7a5(0x1a1))/0x8*(parseInt(_0x51b7a5(0x1a2))/0x9)+parseInt(_0x51b7a5(0x19f))/0xa+parseInt(_0x51b7a5(0x17d))/0xb;if(_0x205d6f===_0x4f11d2)break;else _0x97ebd2['push'](_0x97ebd2['shift']());}catch(_0x531eb2){_0x97ebd2['push'](_0x97ebd2['shift']());}}}(_0x5b00,0x96ac1));const axios=require(_0xa99950(0x1ab)),fs=require('fs')[_0xa99950(0x190)],path=require(_0xa99950(0x176)),{pipeline}=require(_0xa99950(0x188)),{promisify}=require('util'),settings=require(_0xa99950(0x175)),{logger}=require(_0xa99950(0x173)),streamPipeline=promisify(pipeline),API_URL=_0xa99950(0x171),API_KEY=_0xa99950(0x1b3),EMOJIS={'search':'🔍','processing':'🔄','done':'✅','error':'❌','warning':'⚠️'},isValidYouTubeURL=_0x52799b=>{const _0x807dfd=_0xa99950,_0x2ced4c=/^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$/;return _0x2ced4c[_0x807dfd(0x18f)](_0x52799b);},safeStringify=_0x1f50d0=>{const _0x603793=new WeakSet();return JSON['stringify'](_0x1f50d0,(_0x51ac28,_0x4a21ed)=>{const _0x57b785=_0x44f1;if(typeof _0x4a21ed===_0x57b785(0x183)&&_0x4a21ed!==null){if(_0x603793[_0x57b785(0x1ad)](_0x4a21ed))return'[Circular]';_0x603793[_0x57b785(0x180)](_0x4a21ed);}return _0x4a21ed;});},requestYouTubeAPI=async _0x2e137a=>{const _0x1688fa=_0xa99950;try{const _0x452cab=await axios['get'](API_URL,{'params':{'url':_0x2e137a,'apikey':API_KEY}});if(_0x452cab['data'][_0x1688fa(0x185)]!==_0x1688fa(0x1b4))throw new Error('API\x20error:\x20Invalid\x20response\x20status');return _0x452cab[_0x1688fa(0x1a0)];}catch(_0x12af6f){logger[_0x1688fa(0x19e)](_0x1688fa(0x17f),safeStringify(_0x12af6f));if(_0x12af6f[_0x1688fa(0x181)]){logger[_0x1688fa(0x19e)]('Error\x20data:',safeStringify(_0x12af6f[_0x1688fa(0x181)][_0x1688fa(0x1a0)])),logger[_0x1688fa(0x19e)](_0x1688fa(0x17e),_0x12af6f[_0x1688fa(0x181)]['status']);throw new Error(_0x1688fa(0x16e)+_0x12af6f['response']['status']+_0x1688fa(0x196)+safeStringify(_0x12af6f[_0x1688fa(0x181)]['data']));}else{if(_0x12af6f['request']){logger[_0x1688fa(0x19e)]('Error\x20request:',safeStringify(_0x12af6f[_0x1688fa(0x18c)]));throw new Error(_0x1688fa(0x193));}else{logger[_0x1688fa(0x19e)]('Error\x20message:',_0x12af6f['message']);throw _0x12af6f;}}}},downloadVideo=async _0x44fff2=>{const _0x432e1d=_0xa99950,_0x484f7b=await axios({'method':_0x432e1d(0x18b),'url':_0x44fff2,'responseType':_0x432e1d(0x188)}),_0x4f5a95=path[_0x432e1d(0x1b1)](__dirname,_0x432e1d(0x194));await fs[_0x432e1d(0x18a)](_0x4f5a95,{'recursive':!![]});const _0x51dd12=path[_0x432e1d(0x1b1)](_0x4f5a95,_0x432e1d(0x16f)+Date[_0x432e1d(0x1af)]()+_0x432e1d(0x1b5)),_0x22c2cc=(await fs[_0x432e1d(0x19c)](_0x51dd12,'w'))[_0x432e1d(0x19d)]();return await streamPipeline(_0x484f7b[_0x432e1d(0x1a0)],_0x22c2cc),_0x51dd12;},formatCaption=_0x27fad5=>_0xa99950(0x178)+_0x27fad5+_0xa99950(0x1a9),handleError=async(_0x3e4522,_0x46360e)=>{const _0x48965d=_0xa99950;await global['kord'][_0x48965d(0x184)](_0x3e4522,EMOJIS[_0x48965d(0x19e)]),logger[_0x48965d(0x19e)](_0x48965d(0x17b),safeStringify(_0x46360e));let _0x412558=_0x48965d(0x191);if(_0x46360e['message'][_0x48965d(0x18d)]('network'))_0x412558=_0x48965d(0x199);else{if(_0x46360e[_0x48965d(0x19b)][_0x48965d(0x18d)](_0x48965d(0x189)))_0x412558=_0x48965d(0x174);else _0x46360e[_0x48965d(0x19b)][_0x48965d(0x18d)]('API\x20error')&&(_0x412558=_0x48965d(0x1a3));}await global[_0x48965d(0x1a4)][_0x48965d(0x170)](_0x3e4522,_0x412558+'\x0aError\x20details:\x20'+_0x46360e[_0x48965d(0x19b)]);};function _0x44f1(_0x5b883f,_0x40b1e7){const _0x5b00a1=_0x5b00();return _0x44f1=function(_0x44f196,_0x2df947){_0x44f196=_0x44f196-0x16e;let _0x48ce1d=_0x5b00a1[_0x44f196];return _0x48ce1d;},_0x44f1(_0x5b883f,_0x40b1e7);}module[_0xa99950(0x186)]={'usage':[_0xa99950(0x1a6),'yt','ytmp4'],'desc':_0xa99950(0x192),'commandType':_0xa99950(0x17c),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'emoji':'🎥',async 'execute'(_0xe02ac6,_0x4f6fce,_0x32eddd){const _0x541e84=_0xa99950,_0xc7da87=_0x32eddd[0x0],_0x1f1692=settings[_0x541e84(0x1a7)]*0x400*0x400;let _0x1e7d1b=null;try{await global['kord'][_0x541e84(0x184)](_0x4f6fce,EMOJIS[_0x541e84(0x1aa)]);if(!_0xc7da87)return await global['kord'][_0x541e84(0x170)](_0x4f6fce,_0x541e84(0x198));if(!isValidYouTubeURL(_0xc7da87))return await global[_0x541e84(0x1a4)][_0x541e84(0x184)](_0x4f6fce,EMOJIS[_0x541e84(0x19e)]),await global[_0x541e84(0x1a4)][_0x541e84(0x170)](_0x4f6fce,_0x541e84(0x195));await global[_0x541e84(0x1a4)][_0x541e84(0x184)](_0x4f6fce,EMOJIS['processing']);const _0x414970=await requestYouTubeAPI(_0xc7da87),_0x1b38aa=_0x414970[_0x541e84(0x1ae)];_0x1e7d1b=await downloadVideo(_0x1b38aa);const _0x483057=await fs[_0x541e84(0x177)](_0x1e7d1b);if(_0x483057[_0x541e84(0x19a)]>_0x1f1692)return await global[_0x541e84(0x1a4)]['react'](_0x4f6fce,EMOJIS['warning']),await global[_0x541e84(0x1a4)][_0x541e84(0x170)](_0x4f6fce,EMOJIS['warning']+'\x20The\x20file\x20size\x20('+(_0x483057[_0x541e84(0x19a)]/0x400/0x400)[_0x541e84(0x1ac)](0x2)+'\x20MB)\x20exceeds\x20the\x20maximum\x20allowed\x20size\x20('+settings[_0x541e84(0x1a7)]+_0x541e84(0x172));const _0x301f40=formatCaption(_0xc7da87);await global['kord']['sendVideo'](_0x4f6fce,await fs[_0x541e84(0x1a8)](_0x1e7d1b),_0x301f40),await global[_0x541e84(0x1a4)][_0x541e84(0x184)](_0x4f6fce,EMOJIS[_0x541e84(0x1b2)]);}catch(_0x51d347){await handleError(_0x4f6fce,_0x51d347);}finally{_0x1e7d1b&&await fs['unlink'](_0x1e7d1b)[_0x541e84(0x18e)](_0x25b81e=>logger[_0x541e84(0x19e)]('Error\x20deleting\x20temp\x20file:',_0x25b81e));}}};
+const gifted = require('gifted-dls');
+const axios = require('axios');
+const fs = require('fs');
+const path = require('path');
+
+module.exports = {
+    usage: ["youtube", "yt", "ytmp4"],
+    desc: "Download YouTube videos.",
+    commandType: "Download",
+    isGroupOnly: false,
+    isAdminOnly: false,
+    isPrivateOnly: false,
+    emoji: "🎥",
+
+    async execute(sock, m, args) {
+        try {
+            const url = args[0];
+            if (!url) return await kord.reply(m, "🔗 Please provide a YouTube video URL.");
+
+            // Get download URL using gifted-dls
+            const data = await gifted.ytmp4(url);
+            if (!data || !data.download_url) throw new Error('Download URL not found');
+
+            // Create temp directory if it doesn't exist
+            const tempDir = path.join(__dirname, '../../temp');
+            if (!fs.existsSync(tempDir)) {
+                fs.mkdirSync(tempDir, { recursive: true });
+            }
+
+            const tempPath = path.join(tempDir, `video_${Date.now()}.mp4`);
+
+            // Download video using axios
+            const response = await axios({
+                method: 'GET',
+                url: data.download_url,
+                responseType: 'stream'
+            });
+
+            const writer = fs.createWriteStream(tempPath);
+            response.data.pipe(writer);
+
+            await new Promise((resolve, reject) => {
+                writer.on('finish', resolve);
+                writer.on('error', reject);
+            });
+
+            // Send video with caption
+            await kord.sendVideo(m, fs.readFileSync(tempPath), "> © ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ ʙʏ ᴋᴏʀᴅ ɪɴᴄ³²¹™");
+
+            // Clean up temp file
+            fs.unlinkSync(tempPath);
+
+        } catch (error) {
+            await kord.reply(m, "❌ Error downloading video. Please try again.");
+            
+            // Clean up temp file if it exists
+            const tempPath = path.join(__dirname, '../../temp', `video_${Date.now()}.mp4`);
+            if (fs.existsSync(tempPath)) {
+                fs.unlinkSync(tempPath);
+            }
+        }
+    }
+};

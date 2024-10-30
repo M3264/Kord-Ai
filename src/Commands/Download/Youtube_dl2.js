@@ -1,1 +1,91 @@
-const _0x45fce7=_0x513b;function _0x2909(){const _0x5a096b=['.mp4','util','65574dZiQoz','🤖\x20Oops!\x20Something\x20unexpected\x20happened.\x20We\x27ll\x20look\x20into\x20it.','sendVideo','createWriteStream','../../temp','4106125ibESdd','mkdir','404','network','join','API\x20error:\x20Invalid\x20response\x20status','743500GWNMRy','269072sfiPSg','error','\x20MB)\x20exceeds\x20the\x20maximum\x20allowed\x20size\x20(','🌐\x20Hmm,\x20having\x20trouble\x20connecting\x20to\x20the\x20internet.\x20Please\x20try\x20again\x20later.','Unexpected\x20response\x20','body','duration','1621074SBilTN','size','includes','readFile','mp4','reply','stream','kord','message','?url=','status','node-fetch','react','\x0a📽️\x20Title:\x20','done','open','18cQgdmv','videos','warning','abrotech','\x20MB).','promises','title','processing','temp_','🔗\x20Please\x20provide\x20a\x20YouTube\x20search\x20query.','exports','208LkxcqX','search','unlink','10709TNNqXE','\x0a🕒\x20Duration:\x20','now','YouTube\x20API\x20request\x20failed:','stat','MAX_DOWNLOAD_SIZE','true','&apikey=','Error\x20during\x20execution:','../../../Config','64KjJGxD','json','timestamp','yt-search','path','7561568pJQAtV'];_0x2909=function(){return _0x5a096b;};return _0x2909();}function _0x513b(_0x5a1193,_0x9ce83a){const _0x2909ae=_0x2909();return _0x513b=function(_0x513b4b,_0x914677){_0x513b4b=_0x513b4b-0x14b;let _0xaad6b9=_0x2909ae[_0x513b4b];return _0xaad6b9;},_0x513b(_0x5a1193,_0x9ce83a);}(function(_0x2fe5db,_0x1b6b58){const _0x460d19=_0x513b,_0xe12fdb=_0x2fe5db();while(!![]){try{const _0x3dc7f6=-parseInt(_0x460d19(0x157))/0x1*(-parseInt(_0x460d19(0x154))/0x2)+parseInt(_0x460d19(0x169))/0x3*(-parseInt(_0x460d19(0x161))/0x4)+parseInt(_0x460d19(0x16e))/0x5+parseInt(_0x460d19(0x17c))/0x6+-parseInt(_0x460d19(0x166))/0x7+-parseInt(_0x460d19(0x175))/0x8*(-parseInt(_0x460d19(0x18c))/0x9)+parseInt(_0x460d19(0x174))/0xa;if(_0x3dc7f6===_0x1b6b58)break;else _0xe12fdb['push'](_0xe12fdb['shift']());}catch(_0x2e7e97){_0xe12fdb['push'](_0xe12fdb['shift']());}}}(_0x2909,0xdfd46));const fetch=require(_0x45fce7(0x187)),yts=require(_0x45fce7(0x164)),fs=require('fs')[_0x45fce7(0x14e)],path=require(_0x45fce7(0x165)),{pipeline}=require(_0x45fce7(0x182)),{promisify}=require(_0x45fce7(0x168)),settings=require(_0x45fce7(0x160)),streamPipeline=promisify(pipeline),API_URL='https://api.abrotech.com.ng/api/ytmp4',API_KEY=_0x45fce7(0x14c),emojis={'search':'🔍','processing':'🔄','done':'✅','error':'❌','warning':'⚠️','noResults':'😕'},requestYouTubeAPI=async _0x1ab023=>{const _0x48b74f=_0x45fce7;try{const _0x2d387d=await fetch(API_URL+_0x48b74f(0x185)+encodeURIComponent(_0x1ab023)+_0x48b74f(0x15e)+API_KEY),_0x296999=await _0x2d387d[_0x48b74f(0x162)]();if(_0x296999[_0x48b74f(0x186)]!==_0x48b74f(0x15d))throw new Error(_0x48b74f(0x173));return _0x296999;}catch(_0x130d3e){console[_0x48b74f(0x176)](_0x48b74f(0x15a),_0x130d3e);throw _0x130d3e;}},downloadVideo=async _0x101913=>{const _0x9b83f9=_0x45fce7,_0x3d8560=await fetch(_0x101913);if(!_0x3d8560['ok'])throw new Error(_0x9b83f9(0x179)+_0x3d8560['statusText']);const _0x4221b8=path[_0x9b83f9(0x172)](__dirname,_0x9b83f9(0x16d));await fs[_0x9b83f9(0x16f)](_0x4221b8,{'recursive':!![]});const _0xb8935e=path['join'](_0x4221b8,_0x9b83f9(0x151)+Date[_0x9b83f9(0x159)]()+_0x9b83f9(0x167)),_0x4994d4=(await fs[_0x9b83f9(0x18b)](_0xb8935e,'w'))[_0x9b83f9(0x16c)]();return await streamPipeline(_0x3d8560[_0x9b83f9(0x17a)],_0x4994d4),_0xb8935e;};module[_0x45fce7(0x153)]={'usage':['video'],'desc':'Search\x20for\x20YouTube\x20videos\x20and\x20download\x20them.','commandType':'Download','isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'emoji':'📺',async 'execute'(_0x54f1f0,_0x528990,_0x4f8cc9){const _0x256d61=_0x45fce7;try{const _0x50c875=_0x4f8cc9[_0x256d61(0x172)]('\x20');await global[_0x256d61(0x183)][_0x256d61(0x188)](_0x528990,emojis[_0x256d61(0x155)]);if(!_0x50c875)return await global[_0x256d61(0x183)]['reply'](_0x528990,_0x256d61(0x152));const _0x3981af=await yts(_0x50c875);if(_0x3981af[_0x256d61(0x18d)]['length']===0x0)return await global[_0x256d61(0x183)][_0x256d61(0x188)](_0x528990,emojis['noResults']),await global[_0x256d61(0x183)][_0x256d61(0x181)](_0x528990,'😕\x20Oops!\x20No\x20videos\x20found\x20for\x20that\x20query.');const _0x42f673=_0x3981af[_0x256d61(0x18d)][0x0],_0x5449ad=_0x42f673['url'];await global['kord']['react'](_0x528990,emojis[_0x256d61(0x150)]);const _0x160a9d=await requestYouTubeAPI(_0x5449ad),_0x2353ec=_0x160a9d[_0x256d61(0x180)],_0x1c7d45=await downloadVideo(_0x2353ec),_0xf7abfc=await fs[_0x256d61(0x15b)](_0x1c7d45),_0xb99287=settings[_0x256d61(0x15c)]*0x400*0x400;if(_0xf7abfc[_0x256d61(0x17d)]>_0xb99287)return await global[_0x256d61(0x183)][_0x256d61(0x188)](_0x528990,emojis[_0x256d61(0x14b)]),await fs[_0x256d61(0x156)](_0x1c7d45),await global[_0x256d61(0x183)][_0x256d61(0x181)](_0x528990,emojis['warning']+'\x20The\x20file\x20size\x20('+(_0xf7abfc['size']/0x400/0x400)['toFixed'](0x2)+_0x256d61(0x177)+settings[_0x256d61(0x15c)]+_0x256d61(0x14d));const _0x2e5cd1='🎥\x20*KORD-AI\x20YOUTUBE-DOWNLOADER*\x20🎥\x0a\x0a🔗\x20Link:\x20'+_0x5449ad+_0x256d61(0x189)+_0x42f673[_0x256d61(0x14f)]+_0x256d61(0x158)+_0x42f673[_0x256d61(0x17b)][_0x256d61(0x163)];await global[_0x256d61(0x183)][_0x256d61(0x16b)](_0x528990,await fs[_0x256d61(0x17f)](_0x1c7d45),_0x2e5cd1),await fs['unlink'](_0x1c7d45),await global[_0x256d61(0x183)][_0x256d61(0x188)](_0x528990,emojis[_0x256d61(0x18a)]);}catch(_0x2d067d){await global['kord'][_0x256d61(0x188)](_0x528990,emojis[_0x256d61(0x176)]),console['error'](_0x256d61(0x15f),_0x2d067d);if(_0x2d067d[_0x256d61(0x184)][_0x256d61(0x17e)](_0x256d61(0x171)))await global[_0x256d61(0x183)][_0x256d61(0x181)](_0x528990,_0x256d61(0x178));else _0x2d067d[_0x256d61(0x184)][_0x256d61(0x17e)](_0x256d61(0x170))?await global[_0x256d61(0x183)][_0x256d61(0x181)](_0x528990,'🚫🔗\x20The\x20video\x20is\x20no\x20longer\x20available.\x20Please\x20check\x20the\x20URL\x20and\x20try\x20again.'):await global[_0x256d61(0x183)][_0x256d61(0x181)](_0x528990,_0x256d61(0x16a));}}};
+const ytdl = require('youtubedl-core');
+const yts = require('yt-search');
+const fs = require('fs')
+const path = require('path');
+const gifted = require('gifted-dls');
+const axios = require('axios');
+
+const emojis = {
+    search: '🔍',
+    processing: '🔄',
+    done: '✅',
+    error: '❌',
+    warning: '⚠️',
+    noResults: '😕'
+};
+
+module.exports = {
+    usage: ["video"],
+    desc: "Search for YouTube videos and download them.",
+    commandType: "Download",
+    isGroupOnly: false,
+    isAdminOnly: false,
+    isPrivateOnly: false,
+    emoji: "📺",
+
+    async execute(sock, m, args) {
+        try {
+            const query = args.join(" ");
+            await global.kord.react(m, emojis.search);
+
+            if (!query) {
+                return await global.kord.reply(m, "🔗 Please provide a YouTube search query.");
+            }
+
+            // Use yts to search for YouTube videos
+            const results = await yts(query);
+            if (results.videos.length === 0) {
+                await global.kord.react(m, emojis.noResults);
+                return await global.kord.reply(m, "😕 Oops! No videos found for that query.");
+            }
+
+            // Get the first video from search results
+            const video = results.videos[0];
+            const videoUrl = video.url;
+            await global.kord.react(m, emojis.processing);
+            const data = await gifted.ytmp4(videoUrl);
+            if (!data || !data.download_url) throw new Error('Download URL not found');
+
+            // Create temp directory if it doesn't exist
+            const tempDir = path.join(__dirname, '../../temp');
+            if (!fs.existsSync(tempDir)) {
+                fs.mkdirSync(tempDir, { recursive: true });
+            }
+
+            const tempPath = path.join(tempDir, `video_${Date.now()}.mp4`);
+
+            // Download video using axios
+            const response = await axios({
+                method: 'GET',
+                url: data.download_url,
+                responseType: 'stream'
+            });
+
+            const writer = fs.createWriteStream(tempPath);
+            response.data.pipe(writer);
+
+            await new Promise((resolve, reject) => {
+                writer.on('finish', resolve);
+                writer.on('error', reject);
+            });
+
+            // Send video with caption
+            await kord.sendVideo(m, fs.readFileSync(tempPath), "> © ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ ʙʏ ᴋᴏʀᴅ ɪɴᴄ³²¹™");
+            // Clean up
+            await fs.unlink(tempPath);
+
+            await global.kord.react(m, emojis.done);
+
+        } catch (error) {
+            await global.kord.react(m, emojis.error);
+            console.log("Error during execution:", error);
+            if (error.message.includes('network')) {
+                await global.kord.reply(m, "🌐 Hmm, having trouble connecting to the internet. Please try again later.");
+            } else if (error.message.includes('404')) {
+                await global.kord.reply(m, "🚫🔗 The video is no longer available. Please check the URL and try again.");
+            } else {
+                await global.kord.reply(m, "🤖 Oops! Something unexpected happened. We'll look into it.");
+            }
+        }
+    }
+};

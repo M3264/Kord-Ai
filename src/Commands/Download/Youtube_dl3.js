@@ -1,1 +1,131 @@
-const _0x1f8ef5=_0x2c8f;(function(_0xac1108,_0x44d861){const _0x41a65a=_0x2c8f,_0x3d9eab=_0xac1108();while(!![]){try{const _0x3bf2db=-parseInt(_0x41a65a(0x1e7))/0x1*(-parseInt(_0x41a65a(0x1e1))/0x2)+parseInt(_0x41a65a(0x1c0))/0x3*(-parseInt(_0x41a65a(0x1bb))/0x4)+-parseInt(_0x41a65a(0x1b5))/0x5+-parseInt(_0x41a65a(0x1bc))/0x6+parseInt(_0x41a65a(0x1ab))/0x7*(-parseInt(_0x41a65a(0x1d6))/0x8)+parseInt(_0x41a65a(0x1c1))/0x9*(-parseInt(_0x41a65a(0x1ed))/0xa)+-parseInt(_0x41a65a(0x1b1))/0xb*(-parseInt(_0x41a65a(0x1db))/0xc);if(_0x3bf2db===_0x44d861)break;else _0x3d9eab['push'](_0x3d9eab['shift']());}catch(_0x351118){_0x3d9eab['push'](_0x3d9eab['shift']());}}}(_0x73a4,0x6f6da));function _0x2c8f(_0x4d6d4d,_0xcc518a){const _0x73a43e=_0x73a4();return _0x2c8f=function(_0x2c8fb9,_0x4b1a3b){_0x2c8fb9=_0x2c8fb9-0x1a6;let _0xa7eccf=_0x73a43e[_0x2c8fb9];return _0xa7eccf;},_0x2c8f(_0x4d6d4d,_0xcc518a);}function _0x73a4(){const _0x2ed238=['song','https://dl.khyernet.xyz','../../../Config','match','2ESsogH','post','Download','Invalid\x20YouTube\x20URL','stream','util','2801210ksWgTe','application/json','videos','path','audio','url','processing','784217nsEqZS','size','GET','reply','join','exports','14707ceFwGe','data','floor','author','2980590eftJqK','\x0a├\x20\x20⚠️\x20Use\x20*.playdoc\x20|\x20.mp3doc*\x20to\x20get\x20the\x20audio\x20as\x20a\x20file!\x0a└───────────────────\x0a\x0a','error','changeFont','.mp3','play','116zQGSEf','3059568eZndIQ','Failed\x20to\x20fetch\x20data\x20from\x20Cobalt\x20API','Cobalt\x20API\x20request\x20failed:','smallBoldScript','44925wzlGeV','9eJdeSM','warning','🔍\x20Please\x20provide\x20a\x20search\x20query\x20or\x20YouTube\x20link.','audio/mpeg','done','found','../../temp','title','log','existsSync','\x0a├\x20\x20🕘\x20*Duration:*\x20','sendAudio','timestamp','status','search','readFileSync','tunnel','temp_','mp3','react','https://cobalt.api.timelessnesses.me','48TEQudg','https://co.eepy.today','freply','❌\x20The\x20file\x20appears\x20to\x20be\x20empty.\x20Please\x20try\x20again\x20later.','createWriteStream','22056Mebgkf','An\x20error\x20occurred\x20while\x20fetching\x20data\x20from\x20Cobalt\x20API','noResults','ago','unlinkSync','random','491632WURDvs','\x20The\x20file\x20size\x20exceeds\x20the\x20maximum\x20allowed\x20size.'];_0x73a4=function(){return _0x2ed238;};return _0x73a4();}const yts=require('yt-search'),fs=require('fs'),path=require(_0x1f8ef5(0x1a7)),axios=require('axios'),{pipeline}=require(_0x1f8ef5(0x1eb)),{promisify}=require(_0x1f8ef5(0x1ec)),{logger}=require('../../Plugin/kordlogger'),settings=require(_0x1f8ef5(0x1e5)),streamPipeline=promisify(pipeline),COBALT_APIS=[_0x1f8ef5(0x1d5),_0x1f8ef5(0x1d7),_0x1f8ef5(0x1e4)],getRandomAPI=()=>COBALT_APIS[Math[_0x1f8ef5(0x1b3)](Math[_0x1f8ef5(0x1e0)]()*COBALT_APIS['length'])],extractYouTubeID=_0x23f16b=>{const _0x36c96c=_0x1f8ef5,_0x2e0254=_0x23f16b[_0x36c96c(0x1e6)](/(?:youtu\.be\/|youtube\.com\/(?:\S*?[?&]v=)|v\/|e\/|u\/\w+\/|embed\/|shorts\/)([\w-]{11})/);return _0x2e0254?_0x2e0254[0x1]:null;},requestCobaltAPI=async(_0x28e393,_0x34a49b='mp3')=>{const _0x351a39=_0x1f8ef5,_0x3c4df9=getRandomAPI(),_0x14a886={'url':'https://youtube.com/watch?v='+_0x28e393,'downloadMode':_0x351a39(0x1a8),'audioFormat':_0x34a49b};try{const _0xe735de=await axios[_0x351a39(0x1e8)](_0x3c4df9,_0x14a886,{'headers':{'accept':_0x351a39(0x1ee),'content-type':_0x351a39(0x1ee)}});if(_0xe735de[_0x351a39(0x1ce)]!==0xc8||!_0xe735de['data']||_0xe735de[_0x351a39(0x1b2)][_0x351a39(0x1ce)]!==_0x351a39(0x1d1))throw new Error(_0x351a39(0x1bd));return _0xe735de[_0x351a39(0x1b2)][_0x351a39(0x1a9)];}catch(_0x2679ce){logger[_0x351a39(0x1b7)](_0x351a39(0x1be),_0x2679ce);throw new Error(_0x351a39(0x1dc));}},emojis={'search':'🔍','found':'🎉','noResults':'😕','error':'🤖','processing':'⏳','done':'🚀','warning':'⚠️'};module[_0x1f8ef5(0x1b0)]={'usage':[_0x1f8ef5(0x1a8),_0x1f8ef5(0x1e3),_0x1f8ef5(0x1ba),_0x1f8ef5(0x1d3)],'desc':'Search\x20for\x20YouTube\x20videos\x20and\x20download\x20their\x20audio.','commandType':_0x1f8ef5(0x1e9),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'emoji':'🎵',async 'execute'(_0x3d4138,_0x1e4776,_0x1f8182){const _0x1c9edc=_0x1f8ef5;try{const _0x2e0076=settings['MAX_DOWNLOAD_SIZE']*0x400*0x400,_0x19fcb0=_0x1f8182[_0x1c9edc(0x1af)]('\x20');await kord['react'](_0x1e4776,emojis[_0x1c9edc(0x1cf)]);if(!_0x19fcb0)return await kord[_0x1c9edc(0x1ae)](_0x1e4776,_0x1c9edc(0x1c3));const _0x47c46b=await yts(_0x19fcb0);if(_0x47c46b['videos']['length']===0x0)return await kord[_0x1c9edc(0x1d4)](_0x1e4776,emojis[_0x1c9edc(0x1dd)]),await kord['reply'](_0x1e4776,'😕\x20Oops!\x20No\x20videos\x20found\x20for\x20that\x20query.');const _0x641810=_0x47c46b[_0x1c9edc(0x1a6)][0x0];console[_0x1c9edc(0x1c9)](_0x641810),await kord[_0x1c9edc(0x1d4)](_0x1e4776,emojis[_0x1c9edc(0x1c6)]);const _0x1ff04d=path[_0x1c9edc(0x1af)](__dirname,_0x1c9edc(0x1c7));!fs[_0x1c9edc(0x1ca)](_0x1ff04d)&&fs['mkdirSync'](_0x1ff04d);const _0x24241b=path['join'](_0x1ff04d,_0x1c9edc(0x1d2)+Date['now']()+_0x1c9edc(0x1b9));await kord[_0x1c9edc(0x1d8)](_0x1e4776,emojis[_0x1c9edc(0x1aa)]+'\x20Downloading\x20audio...');const _0x55622f=extractYouTubeID(_0x641810[_0x1c9edc(0x1a9)]);if(!_0x55622f)throw new Error(_0x1c9edc(0x1ea));const _0x34bda7=await requestCobaltAPI(_0x55622f),_0x4bd358=await axios({'method':_0x1c9edc(0x1ad),'url':_0x34bda7,'responseType':'stream'}),_0x59a6e2=fs[_0x1c9edc(0x1da)](_0x24241b);await streamPipeline(_0x4bd358[_0x1c9edc(0x1b2)],_0x59a6e2);const _0x2cf110=fs['statSync'](_0x24241b)[_0x1c9edc(0x1ac)];if(_0x2cf110===0x0)return fs[_0x1c9edc(0x1df)](_0x24241b),await kord[_0x1c9edc(0x1ae)](_0x1e4776,_0x1c9edc(0x1d9));if(_0x2cf110>_0x2e0076)return fs['unlinkSync'](_0x24241b),await kord[_0x1c9edc(0x1ae)](_0x1e4776,emojis[_0x1c9edc(0x1c2)]+_0x1c9edc(0x1e2));await kord[_0x1c9edc(0x1cc)](_0x1e4776,fs[_0x1c9edc(0x1d0)](_0x24241b),_0x1c9edc(0x1c4),_0x641810['title']+'.mp3');let _0x55cde3='\x0a🎵\x20*KORD-AI\x20AUDIO-DOWNLOADER*\x20🎵\x0a\x0a┌───────────────────\x0a├\x20\x20ℹ️\x20*Title:*\x20'+_0x641810[_0x1c9edc(0x1c8)]+'\x0a├\x20\x20👤\x20*Channel:*\x20'+_0x641810[_0x1c9edc(0x1b4)]['name']+'\x0a├\x20\x20📆\x20*Published:*\x20'+_0x641810[_0x1c9edc(0x1de)]+_0x1c9edc(0x1cb)+_0x641810[_0x1c9edc(0x1cd)]+_0x1c9edc(0x1b6)+emojis[_0x1c9edc(0x1c5)]+'\x20Audio\x20file\x20has\x20been\x20sent.\x0a\x0a>\x20©\x20ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ\x20ʙʏ\x20ᴋᴏʀᴅ\x20ɪɴᴄ³²¹™\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20';const _0x3dc769=await kord[_0x1c9edc(0x1b8)](_0x55cde3,_0x1c9edc(0x1bf));await kord[_0x1c9edc(0x1d8)](_0x1e4776,_0x3dc769),fs['unlinkSync'](_0x24241b);}catch(_0x3a41b){await kord['react'](_0x1e4776,emojis['error']),await kord[_0x1c9edc(0x1ae)](_0x1e4776,'🤖\x20Oops!\x20Something\x20unexpected\x20happened.'),logger[_0x1c9edc(0x1b7)](_0x3a41b);}}};
+const yts = require('yt-search');
+const fs = require('fs');
+const path = require('path');
+const { logger } = require('../../Plugin/kordlogger');
+const settings = require('../../../Config');
+const gifted = require('gifted-dls');
+const axios = require('axios'); // Add axios for downloading
+
+const emojis = {
+    search: '🔍',
+    found: '🎉',
+    noResults: '😕',
+    error: '🤖',
+    processing: '⏳',
+    done: '🚀',
+    warning: '⚠️'
+};
+
+module.exports = {
+    usage: ["audio", "song", "play", "mp3"],
+    desc: "Search for YouTube videos and download their audio.",
+    commandType: "Download",
+    isGroupOnly: false,
+    isAdminOnly: false,
+    isPrivateOnly: false,
+    emoji: "🎵",
+
+    async execute(sock, m, args) {
+        try {
+            const MAXDLSIZE = settings.MAX_DOWNLOAD_SIZE * 1024 * 1024; // Convert MB to bytes
+            const query = args.join(" ");
+            await kord.react(m, emojis.search);
+
+            if (!query) {
+                return await kord.reply(m, "🔍 Please provide a search query or YouTube link.");
+            }
+
+            // Search for the video using yt-search
+            const results = await yts(query);
+            if (results.videos.length === 0) {
+                await kord.react(m, emojis.noResults);
+                return await kord.reply(m, "😕 Oops! No videos found for that query.");
+            }
+            const video = results.videos[0];
+
+            await kord.react(m, emojis.found);
+
+            const tempDir = path.join(__dirname, '../../temp');
+            if (!fs.existsSync(tempDir)) {
+                fs.mkdirSync(tempDir, { recursive: true });
+            }
+
+            const tempPath = path.join(tempDir, `temp_${Date.now()}.mp3`);
+
+            // Download the audio using gifted-dls
+            await kord.freply(m, `${emojis.processing} Downloading audio...`);
+            const data = await gifted.ytmp3(video.url);
+
+            if (!data || !data.download_url) {
+                throw new Error('Failed to get download URL');
+            }
+
+            // Download the file using axios
+            const response = await axios({
+                method: 'GET',
+                url: data.download_url,
+                responseType: 'stream'
+            });
+
+            // Create write stream
+            const writer = fs.createWriteStream(tempPath);
+
+            // Get content length for size check
+            const contentLength = parseInt(response.headers['content-length'], 10);
+            if (contentLength > MAXDLSIZE) {
+                return await kord.reply(m, `${emojis.warning} The file size exceeds the maximum allowed size.`);
+            }
+
+            // Pipe the response to the file
+            response.data.pipe(writer);
+
+            // Wait for the download to complete
+            await new Promise((resolve, reject) => {
+                writer.on('finish', resolve);
+                writer.on('error', reject);
+            });
+
+            // Verify the downloaded file
+            const fileSize = fs.statSync(tempPath).size;
+            if (fileSize === 0) {
+                fs.unlinkSync(tempPath);
+                return await kord.reply(m, "❌ The file appears to be empty. Please try again later.");
+            }
+
+            // Send the audio
+            await kord.sendAudio(m, fs.readFileSync(tempPath), 'audio/mpeg', `${video.title}.mp3`);
+            
+            let res = `
+🎵 *KORD-AI AUDIO-DOWNLOADER* 🎵
+
+┌───────────────────
+├  ℹ️ *Title:* ${video.title}
+├  👤 *Channel:* ${video.author.name}
+├  📆 *Published:* ${video.ago}
+├  🕘 *Duration:* ${video.timestamp}
+├  ⚠️ Use *.playdoc | .mp3doc* to get the audio as a file!
+└───────────────────
+
+${emojis.done} Audio file has been sent.
+
+> © ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ ʙʏ ᴋᴏʀᴅ ɪɴᴄ³²¹™
+            `;
+
+            const styledResponse = await kord.changeFont(res, 'smallBoldScript');
+            await kord.freply(m, styledResponse);
+
+            // Clean up
+            fs.unlinkSync(tempPath);
+        } catch (error) {
+            await kord.react(m, emojis.error);
+            await kord.reply(m, "🤖 Oops! Something unexpected happened.");
+            logger.error(error);
+
+            // Clean up in case of error
+            const tempPath = path.join(__dirname, '../../temp', `temp_${Date.now()}.mp3`);
+            if (fs.existsSync(tempPath)) {
+                fs.unlinkSync(tempPath);
+            }
+        }
+    }
+};

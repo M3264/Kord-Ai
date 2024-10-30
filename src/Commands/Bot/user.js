@@ -1,1 +1,931 @@
-const _0x11ec03=_0x59fb;(function(_0x2e8f86,_0xdac306){const _0x368be8=_0x59fb,_0x5cde82=_0x2e8f86();while(!![]){try{const _0x181a24=-parseInt(_0x368be8(0x189))/0x1+-parseInt(_0x368be8(0x1a9))/0x2*(parseInt(_0x368be8(0x18a))/0x3)+-parseInt(_0x368be8(0x1c2))/0x4+parseInt(_0x368be8(0x1b5))/0x5*(-parseInt(_0x368be8(0x19e))/0x6)+parseInt(_0x368be8(0x1b9))/0x7+-parseInt(_0x368be8(0x1e8))/0x8*(-parseInt(_0x368be8(0x1d9))/0x9)+parseInt(_0x368be8(0x197))/0xa;if(_0x181a24===_0xdac306)break;else _0x5cde82['push'](_0x5cde82['shift']());}catch(_0xaeb725){_0x5cde82['push'](_0x5cde82['shift']());}}}(_0x5aab,0xbf0a3));const {generateWAMessageFromContent,proto}=require(_0x11ec03(0x1c1));function _0x59fb(_0x5e88a1,_0x2a7dc4){const _0x5aab9d=_0x5aab();return _0x59fb=function(_0x59fbd5,_0xf34e29){_0x59fbd5=_0x59fbd5-0x185;let _0xbf3aeb=_0x5aab9d[_0x59fbd5];return _0xbf3aeb;},_0x59fb(_0x5e88a1,_0x2a7dc4);}module[_0x11ec03(0x1e9)]=[{'usage':[_0x11ec03(0x188)],'desc':_0x11ec03(0x1ac),'commandType':_0x11ec03(0x1cf),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'🚫','execute':async(_0x33826d,_0x39bfc4)=>{const _0x4a0dfb=_0x11ec03,_0x4ba8f3=_0x39bfc4['key'][_0x4a0dfb(0x1d2)]||null;if(!_0x4ba8f3)return await global[_0x4a0dfb(0x1d5)]['reply'](_0x39bfc4,_0x4a0dfb(0x1d4));try{await _0x33826d[_0x4a0dfb(0x18f)](_0x4ba8f3,_0x4a0dfb(0x188)),await global[_0x4a0dfb(0x1d5)][_0x4a0dfb(0x1d8)](_0x39bfc4,_0x4a0dfb(0x1dd)+_0x4ba8f3+_0x4a0dfb(0x1b1));}catch(_0x3e8735){console[_0x4a0dfb(0x1cc)](_0x4a0dfb(0x1c9),_0x3e8735),await global['kord']['reply'](_0x39bfc4,_0x4a0dfb(0x1c8));}}},{'usage':[_0x11ec03(0x1da)],'desc':_0x11ec03(0x1aa),'commandType':'User','isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'✅','execute':async(_0x1c79e0,_0x29a8f0)=>{const _0x377a08=_0x11ec03,_0x360214=_0x29a8f0[_0x377a08(0x1a2)][_0x377a08(0x1d2)]||null;if(!_0x360214)return await global[_0x377a08(0x1d5)][_0x377a08(0x1d8)](_0x29a8f0,_0x377a08(0x1b3));try{await _0x1c79e0[_0x377a08(0x18f)](_0x360214,_0x377a08(0x1da)),await global[_0x377a08(0x1d5)][_0x377a08(0x1d8)](_0x29a8f0,_0x377a08(0x1dd)+_0x360214+_0x377a08(0x1bc));}catch(_0x4b2ae6){console[_0x377a08(0x1cc)](_0x377a08(0x1e7),_0x4b2ae6),await global[_0x377a08(0x1d5)][_0x377a08(0x1d8)](_0x29a8f0,_0x377a08(0x1a3));}}},{'usage':[_0x11ec03(0x1ba)],'desc':_0x11ec03(0x1a5),'commandType':_0x11ec03(0x1cf),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':![],'emoji':'🆔','execute':async(_0x5f3695,_0x8fcab9)=>{const _0x15ac79=_0x11ec03,_0x312fc2=_0x8fcab9[_0x15ac79(0x1a2)][_0x15ac79(0x1d2)]||_0x8fcab9[_0x15ac79(0x1db)];await global['kord'][_0x15ac79(0x1d8)](_0x8fcab9,'JID:\x20'+_0x312fc2);}},{'usage':['clear'],'desc':_0x11ec03(0x1f1),'commandType':_0x11ec03(0x1cf),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'🧹','execute':async(_0x2ed011,_0x51f075)=>{const _0x192f26=_0x11ec03;try{await _0x2ed011['chatModify']({'delete':!![],'lastMessages':[{'key':_0x51f075['key'],'messageTimestamp':_0x51f075[_0x192f26(0x1d6)]}]},_0x51f075[_0x192f26(0x1a2)]['remoteJid']),await global[_0x192f26(0x1d5)][_0x192f26(0x1d8)](_0x51f075,'✅\x20Chat\x20has\x20been\x20cleared.');}catch(_0x42b37e){console['error'](_0x192f26(0x1f2),_0x42b37e),await global[_0x192f26(0x1d5)]['reply'](_0x51f075,'❌\x20Failed\x20to\x20clear\x20the\x20chat.');}}},{'usage':[_0x11ec03(0x1ee)],'desc':_0x11ec03(0x190),'commandType':_0x11ec03(0x1cf),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'↪️','execute':async(_0x5b2564,_0x24d04a,_0x1ceb00)=>{const _0xf690ff=_0x11ec03,_0x5d42e0=await global[_0xf690ff(0x1d5)][_0xf690ff(0x1d3)](_0x24d04a);if(!_0x5d42e0)return await global['kord'][_0xf690ff(0x1d8)](_0x24d04a,'❌\x20Please\x20reply\x20to\x20a\x20message\x20to\x20forward\x20it.');if(!_0x1ceb00[0x0])return await global[_0xf690ff(0x1d5)][_0xf690ff(0x1d8)](_0x24d04a,_0xf690ff(0x1b7));const _0x3c67e4=_0x1ceb00[0x0][_0xf690ff(0x1c0)]('@')?_0x1ceb00[0x0]:_0x1ceb00[0x0]+_0xf690ff(0x18c);try{await global[_0xf690ff(0x1d5)][_0xf690ff(0x1e1)](_0x3c67e4,{'key':_0x24d04a[_0xf690ff(0x1a2)],'message':_0x5d42e0}),await global[_0xf690ff(0x1d5)][_0xf690ff(0x1d8)](_0x24d04a,_0xf690ff(0x1b4));}catch(_0xbb9de2){console[_0xf690ff(0x1cc)](_0xf690ff(0x1e6),_0xbb9de2),await global['kord'][_0xf690ff(0x1d8)](_0x24d04a,_0xf690ff(0x1e4));}}},{'usage':['broadcastgc'],'desc':_0x11ec03(0x1ef),'commandType':_0x11ec03(0x1cf),'isGroupOnly':![],'isAdminOnly':!![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'📢','execute':async(_0x233c3d,_0xd41b45)=>{const _0x5ae8d3=_0x11ec03,_0x3103a5=await global[_0x5ae8d3(0x1d5)][_0x5ae8d3(0x1d3)](_0xd41b45);if(!_0x3103a5)return await global[_0x5ae8d3(0x1d5)][_0x5ae8d3(0x1d8)](_0xd41b45,_0x5ae8d3(0x1c4));const _0xf815df=Object['keys'](await _0x233c3d[_0x5ae8d3(0x18d)]());let _0x40c158=0x0;for(let _0x2e3ff4 of _0xf815df){try{await global[_0x5ae8d3(0x1d5)][_0x5ae8d3(0x1e1)](_0x2e3ff4,{'key':_0xd41b45[_0x5ae8d3(0x1a2)],'message':_0x3103a5}),_0x40c158++;}catch(_0x3e3b6b){console[_0x5ae8d3(0x1cc)]('Error\x20broadcasting\x20to\x20'+_0x2e3ff4+':',_0x3e3b6b);}}await global['kord'][_0x5ae8d3(0x1d8)](_0xd41b45,_0x5ae8d3(0x196)+_0x40c158+_0x5ae8d3(0x1ca));}},{'usage':[_0x11ec03(0x191)],'desc':_0x11ec03(0x1bf),'commandType':_0x11ec03(0x1cf),'isGroupOnly':![],'isAdminOnly':!![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'📣','execute':async(_0x5951d0,_0x34c339)=>{const _0x2d6a63=_0x11ec03,_0x271611=await global[_0x2d6a63(0x1d5)][_0x2d6a63(0x1d3)](_0x34c339);if(!_0x271611)return await global[_0x2d6a63(0x1d5)][_0x2d6a63(0x1d8)](_0x34c339,_0x2d6a63(0x1c4));const _0x97940f=Object['entries'](await _0x5951d0[_0x2d6a63(0x192)])[_0x2d6a63(0x186)](([_0x3824b5])=>!_0x3824b5[_0x2d6a63(0x1c6)]('@g.us'));let _0x1c1933=0x0;for(let [_0x1f15a5]of _0x97940f){try{await global['kord'][_0x2d6a63(0x1e1)](_0x1f15a5,{'key':_0x34c339['key'],'message':_0x271611}),_0x1c1933++;}catch(_0x13f9f6){console[_0x2d6a63(0x1cc)](_0x2d6a63(0x1a6)+_0x1f15a5+':',_0x13f9f6);}}await global['kord'][_0x2d6a63(0x1d8)](_0x34c339,'✅\x20Broadcast\x20sent\x20to\x20'+_0x1c1933+_0x2d6a63(0x1cb));}},{'usage':[_0x11ec03(0x1a0)],'desc':_0x11ec03(0x1ad),'commandType':'User','isGroupOnly':!![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'👋','execute':async(_0x20f0fb,_0x177fb2)=>{const _0x566dfc=_0x11ec03;try{await _0x20f0fb[_0x566dfc(0x1b0)](_0x177fb2[_0x566dfc(0x1a2)][_0x566dfc(0x1d2)]),await global[_0x566dfc(0x1d5)][_0x566dfc(0x1d8)](_0x177fb2,_0x566dfc(0x195));}catch(_0x559004){console[_0x566dfc(0x1cc)](_0x566dfc(0x19d),_0x559004),await global[_0x566dfc(0x1d5)][_0x566dfc(0x1d8)](_0x177fb2,_0x566dfc(0x19b));}}},{'usage':[_0x11ec03(0x1ae)],'desc':'Join\x20a\x20group\x20via\x20invite\x20link','commandType':_0x11ec03(0x1cf),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'🚪','execute':async(_0x566ed5,_0x197f43,_0x5415fe)=>{const _0x46d366=_0x11ec03;let _0x2fd71d;if(_0x5415fe[0x0])_0x2fd71d=_0x5415fe[0x0];else{const _0x2990f9=await global[_0x46d366(0x1d5)][_0x46d366(0x19f)](_0x197f43);if(!_0x2990f9)return await global[_0x46d366(0x1d5)][_0x46d366(0x1d8)](_0x197f43,_0x46d366(0x1e2));_0x2fd71d=_0x2990f9;}const _0x45b3d5=/chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i,[,_0x2c860d]=_0x2fd71d[_0x46d366(0x1c3)](_0x45b3d5)||[];if(!_0x2c860d)return await global['kord'][_0x46d366(0x1d8)](_0x197f43,_0x46d366(0x1ce));try{await _0x566ed5[_0x46d366(0x198)](_0x2c860d),await global[_0x46d366(0x1d5)]['reply'](_0x197f43,_0x46d366(0x1e5));}catch(_0x27fc80){console[_0x46d366(0x1cc)](_0x46d366(0x193),_0x27fc80),await global[_0x46d366(0x1d5)]['reply'](_0x197f43,_0x46d366(0x194));}}},{'usage':['whois'],'desc':_0x11ec03(0x1c7),'commandType':_0x11ec03(0x1cf),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':![],'emoji':'👤','execute':async(_0xa3c494,_0x5ae143)=>{const _0x6c5ce7=_0x11ec03,_0x1f3c2f=_0x5ae143[_0x6c5ce7(0x1a2)][_0x6c5ce7(0x1d2)]||_0x5ae143[_0x6c5ce7(0x1db)];try{const _0x1bed49=await _0xa3c494[_0x6c5ce7(0x1d7)](_0x1f3c2f,_0x6c5ce7(0x1de))[_0x6c5ce7(0x199)](()=>_0x6c5ce7(0x1dc)),{status:_0x3be6df,setAt:_0x4ffd5c}=await _0xa3c494[_0x6c5ce7(0x1f0)](_0x1f3c2f),{username:_0x4b4823,pushname:_0x44de30,vname:_0xafbe63}=(await _0xa3c494['fetchContactsOfUser'](_0x1f3c2f))[0x0]||{},_0x198810=_0x3be6df||'No\x20bio\x20available',_0x1f73ee=_0x6c5ce7(0x1b2)+global[_0x6c5ce7(0x1d5)]['changeFont'](_0x6c5ce7(0x1e0),'smallBoldScript')+'\x20'+_0x1f3c2f+_0x6c5ce7(0x1e3)+global[_0x6c5ce7(0x1d5)][_0x6c5ce7(0x1bb)](_0x6c5ce7(0x19c),_0x6c5ce7(0x1af))+'\x20'+(_0x44de30||_0xafbe63||_0x4b4823||'Unknown')+_0x6c5ce7(0x185)+global[_0x6c5ce7(0x1d5)][_0x6c5ce7(0x1bb)](_0x6c5ce7(0x1ab),_0x6c5ce7(0x1af))+'\x20'+_0x1f3c2f[_0x6c5ce7(0x1a1)]('@')[0x0]+_0x6c5ce7(0x18e)+global[_0x6c5ce7(0x1d5)][_0x6c5ce7(0x1bb)](_0x6c5ce7(0x18b),'smallBoldScript')+'\x20'+_0x198810+_0x6c5ce7(0x187)+global[_0x6c5ce7(0x1d5)][_0x6c5ce7(0x1bb)]('Bio\x20set\x20at:',_0x6c5ce7(0x1af))+'\x20'+new Date(_0x4ffd5c*0x3e8)[_0x6c5ce7(0x1b8)]()+_0x6c5ce7(0x1a8);await _0xa3c494[_0x6c5ce7(0x1bd)](_0x5ae143[_0x6c5ce7(0x1a2)][_0x6c5ce7(0x1d2)],{'image':{'url':_0x1bed49},'caption':_0x1f73ee});}catch(_0xc9d928){console[_0x6c5ce7(0x1cc)]('Error\x20fetching\x20user\x20info:',_0xc9d928),await global['kord'][_0x6c5ce7(0x1d8)](_0x5ae143,_0x6c5ce7(0x1a4));}}},{'usage':[_0x11ec03(0x19a)],'desc':_0x11ec03(0x1b6),'commandType':_0x11ec03(0x1cf),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':![],'emoji':'📷','execute':async(_0x1ca2e7,_0x2b5a00)=>{const _0x40014b=_0x11ec03,_0x5b35c0=_0x2b5a00[_0x40014b(0x1ea)]?.[_0x40014b(0x1a2)]?.[_0x40014b(0x1d2)]||_0x2b5a00[_0x40014b(0x1a2)][_0x40014b(0x1d2)];try{const _0x30f323=await _0x1ca2e7[_0x40014b(0x1d7)](_0x5b35c0,_0x40014b(0x1de));await _0x1ca2e7['sendMessage'](_0x2b5a00[_0x40014b(0x1a2)][_0x40014b(0x1d2)],{'image':{'url':_0x30f323}});}catch(_0x29350d){console['error'](_0x40014b(0x1df),_0x29350d),await global[_0x40014b(0x1d5)][_0x40014b(0x1d8)](_0x2b5a00,'❌\x20Failed\x20to\x20fetch\x20the\x20profile\x20picture.');}}},{'usage':_0x11ec03(0x1be),'description':'Get\x20the\x20owner\x27s\x20contact\x20information\x20as\x20a\x20vCard.',async 'execute'(_0x8e181,_0x52b79a,_0x22f9ca){const _0xda3a64=_0x11ec03;try{const _0x163f4c=global[_0xda3a64(0x1a7)],_0x37d669=_0x163f4c[_0xda3a64(0x1d0)],_0x24f89c=_0x163f4c['OWNER_NAME'],_0x30527a=_0xda3a64(0x1cd)+_0x24f89c+_0xda3a64(0x1ed)+_0x37d669+':'+_0x37d669+_0xda3a64(0x1c5),_0x2ec8b7={'contacts':{'displayName':_0x24f89c,'contacts':[{'vcard':_0x30527a}]}};await _0x8e181[_0xda3a64(0x1bd)](_0x52b79a[_0xda3a64(0x1a2)][_0xda3a64(0x1d2)],_0x2ec8b7,{'quoted':_0x52b79a});}catch(_0x246beb){console[_0xda3a64(0x1cc)](_0xda3a64(0x1eb),_0x246beb),await _0x8e181[_0xda3a64(0x1bd)](_0x52b79a[_0xda3a64(0x1a2)]['remoteJid'],{'text':_0xda3a64(0x1ec)+_0x246beb[_0xda3a64(0x1d1)]},{'quoted':_0x52b79a});}}}];function _0x5aab(){const _0x17654a=['1762938Azsrjr','getQuotedText','leave','split','key','❌\x20Failed\x20to\x20unblock\x20the\x20user.','❌\x20Failed\x20to\x20fetch\x20user\x20information.','Get\x20JID\x20of\x20a\x20user','Error\x20broadcasting\x20to\x20','settings','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','70862tAmDDV','Unblock\x20a\x20user','Number:','Block\x20a\x20user','Leave\x20the\x20group\x20chat','join','smallBoldScript','groupLeave','\x20has\x20been\x20blocked.','\x0a🆔\x20','❌\x20Please\x20reply\x20to\x20a\x20message\x20or\x20mention\x20a\x20user\x20to\x20unblock.','✅\x20Message\x20has\x20been\x20forwarded.','25YSQCVJ','Get\x20the\x20profile\x20picture\x20of\x20a\x20user','❌\x20Please\x20provide\x20a\x20number\x20to\x20forward\x20the\x20message\x20to.','toLocaleString','929586AIGFnG','jid','changeFont','\x20has\x20been\x20unblocked.','sendMessage','owner','Broadcast\x20a\x20message\x20to\x20all\x20private\x20chats','includes','@whiskeysockets/baileys','4511984QvRcbq','match','❌\x20Please\x20reply\x20to\x20a\x20message\x20to\x20broadcast.','\x0aEND:VCARD\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','endsWith','Get\x20info\x20about\x20a\x20user','❌\x20Failed\x20to\x20block\x20the\x20user.','Error\x20blocking\x20user:','\x20groups.','\x20private\x20chats.','error','\x0aBEGIN:VCARD\x0aVERSION:3.0\x0aFN:','❌\x20Invalid\x20invite\x20link.','User','OWNER_NUMBERS','message','remoteJid','getQuotedMessage','❌\x20Please\x20reply\x20to\x20a\x20message\x20or\x20mention\x20a\x20user\x20to\x20block.','kord','messageTimestamp','profilePictureUrl','reply','989649YwGReK','unblock','sender','https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png','✅\x20User\x20','image','Error\x20fetching\x20profile\x20picture:','JID:','forwardMessage','❌\x20Please\x20provide\x20a\x20group\x20invite\x20link\x20or\x20reply\x20to\x20a\x20message\x20containing\x20the\x20link.','\x0a👤\x20','❌\x20Failed\x20to\x20forward\x20the\x20message.','✅\x20Successfully\x20joined\x20the\x20group!','Error\x20forwarding\x20message:','Error\x20unblocking\x20user:','96itEOAe','exports','quoted','Error\x20executing\x20owner\x20command:','❌\x20An\x20error\x20occurred:\x20','\x0aTEL;type=CELL;type=VOICE;waid=','forward','Broadcast\x20a\x20message\x20to\x20all\x20groups','fetchStatus','Clear\x20chat','Error\x20clearing\x20chat:','\x0a📞\x20','filter','\x0a🕰️\x20','block','1466639QceqvC','69qcJODT','Bio:','@s.whatsapp.net','groupFetchAllParticipating','\x0a🌟\x20','updateBlockStatus','Forward\x20a\x20message\x20to\x20a\x20number','broadcastpm','chats','Error\x20joining\x20group:','❌\x20Failed\x20to\x20join\x20the\x20group.','👋\x20Leaving\x20the\x20group.\x20Goodbye!','✅\x20Broadcast\x20sent\x20to\x20','42088320HaBCmP','groupAcceptInvite','catch','getpp','❌\x20Failed\x20to\x20leave\x20the\x20group.','Name:','Error\x20leaving\x20group:'];_0x5aab=function(){return _0x17654a;};return _0x5aab();}
+const fs = require('fs');
+const path = require('path');
+const axios = require('axios');
+const fsPromises = require('fs').promises
+const jimp = require('jimp');
+const os = require('os');
+
+
+module.exports = [
+    {
+        usage: ["archive"],
+        desc: "Archive a chat",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: true,
+        emoji: "📥",
+        execute: async (sock, m) => {
+            try {
+                await sock.chatModify({ archive: true }, m.key.remoteJid);
+                await global.kord.reply(m, "✅ Chat has been archived.");
+            } catch (error) {
+                console.error("Error archiving chat:", error);
+                await global.kord.reply(m, "❌ Failed to archive the chat.");
+            }
+        }
+    },
+    {
+        usage: ["block"],
+        desc: "Block a user",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: true, 
+        emoji: "🚫",
+        execute: async (sock, m) => {
+            const user = m.key.remoteJid || null;
+            if (!user) {
+                return await global.kord.reply(m, "❌ Please reply to a message or mention a user to block.");
+            }
+            try {
+                await sock.updateBlockStatus(user, "block");
+                await global.kord.reply(m, `✅ User ${user} has been blocked.`);
+            } catch (error) {
+                console.error("Error blocking user:", error);
+                await global.kord.reply(m, "❌ Failed to block the user.");
+            }
+        }
+    },
+    {
+        usage: ["unblock"],
+        desc: "Unblock a user",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: true, 
+        emoji: "✅",
+        execute: async (sock, m) => {
+            const user = m.key.remoteJid || null;
+            if (!user) {
+                return await global.kord.reply(m, "❌ Please reply to a message or mention a user to unblock.");
+            }
+            try {
+                await sock.updateBlockStatus(user, "unblock");
+                await global.kord.reply(m, `✅ User ${user} has been unblocked.`);
+            } catch (error) {
+                console.error("Error unblocking user:", error);
+                await global.kord.reply(m, "❌ Failed to unblock the user.");
+            }
+        }
+    },
+    {
+        usage: ["jid"],
+        desc: "Get JID of a user",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: false,
+        emoji: "🆔",
+        execute: async (sock, m) => {
+            const jid = m.key.remoteJid || m.sender;
+            await global.kord.reply(m, `JID: ${jid}`);
+        }
+    },
+    {
+        usage: ["clear"],
+        desc: "Clear chat",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: true, 
+        emoji: "🧹",
+        execute: async (sock, m) => {
+            try {
+                await sock.chatModify({ delete: true, lastMessages: [{ key: m.key, messageTimestamp: m.messageTimestamp }] }, m.key.remoteJid);
+                await global.kord.reply(m, "✅ Chat has been cleared.");
+            } catch (error) {
+                console.error("Error clearing chat:", error);
+                await global.kord.reply(m, "❌ Failed to clear the chat.");
+            }
+        }
+    },
+    {
+        usage: ["forward"],
+        desc: "Forward a message to a number",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: true, 
+        emoji: "↪️",
+        execute: async (sock, m, args) => {
+            const quotedMessage = await global.kord.getQuotedMessage(m);
+            if (!quotedMessage) {
+                return await global.kord.reply(m, "❌ Please reply to a message to forward it.");
+            }
+            if (!args[0]) {
+                return await global.kord.reply(m, "❌ Please provide a number to forward the message to.");
+            }
+            const jid = args[0].includes('@') ? args[0] : `${args[0]}@s.whatsapp.net`;
+            try {
+                await global.kord.forwardMessage(jid, { key: m.key, message: quotedMessage });
+                await global.kord.reply(m, "✅ Message has been forwarded.");
+            } catch (error) {
+                console.error("Error forwarding message:", error);
+                await global.kord.reply(m, "❌ Failed to forward the message.");
+            }
+        }
+    },
+    {
+        usage: ["broadcastgc"],
+        desc: "Broadcast a message to all groups",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: true,
+        isPrivateOnly: false,
+        isOwnerOnly: true, 
+        emoji: "📢",
+        execute: async (sock, m) => {
+            const quotedMessage = await global.kord.getQuotedMessage(m);
+            if (!quotedMessage) {
+                return await global.kord.reply(m, "❌ Please reply to a message to broadcast.");
+            }
+            const groups = Object.keys(await sock.groupFetchAllParticipating());
+            let successCount = 0;
+            for (let jid of groups) {
+                try {
+                    await global.kord.forwardMessage(jid, { key: m.key, message: quotedMessage });
+                    successCount++;
+                } catch (error) {
+                    console.error(`Error broadcasting to ${jid}:`, error);
+                }
+            }
+            await global.kord.reply(m, `✅ Broadcast sent to ${successCount} groups.`);
+        }
+    },
+    {
+        usage: ["broadcastpm"],
+        desc: "Broadcast a message to all private chats",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: true,
+        isPrivateOnly: false,
+        isOwnerOnly: true, 
+        emoji: "📣",
+        execute: async (sock, m) => {
+            const quotedMessage = await global.kord.getQuotedMessage(m);
+            if (!quotedMessage) {
+                return await global.kord.reply(m, "❌ Please reply to a message to broadcast.");
+            }
+            const chats = Object.entries(await sock.chats).filter(([jid]) => !jid.endsWith('@g.us'));
+            let successCount = 0;
+            for (let [jid] of chats) {
+                try {
+                    await global.kord.forwardMessage(jid, { key: m.key, message: quotedMessage });
+                    successCount++;
+                } catch (error) {
+                    console.error(`Error broadcasting to ${jid}:`, error);
+                }
+            }
+            await global.kord.reply(m, `✅ Broadcast sent to ${successCount} private chats.`);
+        }
+    },
+    {
+        usage: ["leave"],
+        desc: "Leave the group chat",
+        commandType: "User",
+        isGroupOnly: true,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: true, 
+        emoji: "👋",
+        execute: async (sock, m) => {
+            try {
+                await sock.groupLeave(m.key.remoteJid);
+                await global.kord.reply(m, "👋 Leaving the group. Goodbye!");
+            } catch (error) {
+                console.error("Error leaving group:", error);
+                await global.kord.reply(m, "❌ Failed to leave the group.");
+            }
+        }
+    },
+    {
+        usage: ["join"],
+        desc: "Join a group via invite link",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: true, 
+        emoji: "🚪",
+        execute: async (sock, m, args) => {
+            let inviteLink;
+            if (args[0]) {
+                inviteLink = args[0];
+            } else {
+                const quotedText = await global.kord.getQuotedText(m);
+                if (!quotedText) {
+                    return await global.kord.reply(m, "❌ Please provide a group invite link or reply to a message containing the link.");
+                }
+                inviteLink = quotedText;
+            }
+
+            const linkRegex = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i;
+            const [, code] = inviteLink.match(linkRegex) || [];
+            if (!code) {
+                return await global.kord.reply(m, "❌ Invalid invite link.");
+            }
+
+            try {
+                await sock.groupAcceptInvite(code);
+                await global.kord.reply(m, "✅ Successfully joined the group!");
+            } catch (error) {
+                console.error("Error joining group:", error);
+                await global.kord.reply(m, "❌ Failed to join the group.");
+            }
+        }
+    },
+    {
+        usage: ["whois"],
+        desc: "Get info about a user",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: false,
+        emoji: "👤",
+        execute: async (sock, m) => {
+            const jid = m.key.remoteJid || m.sender;
+            try {
+                const pp = await sock.profilePictureUrl(jid, 'image').catch(() => 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png');
+                const { status, setAt } = await sock.fetchStatus(jid);
+                const { username, pushname, vname } = (await sock.fetchContactsOfUser(jid))[0] || {};
+                const bio = status || "No bio available";
+                const response = `
+🆔 ${global.kord.changeFont('JID:', 'smallBoldScript')} ${jid}
+👤 ${global.kord.changeFont('Name:', 'smallBoldScript')} ${pushname || vname || username || "Unknown"}
+📞 ${global.kord.changeFont('Number:', 'smallBoldScript')} ${jid.split('@')[0]}
+🌟 ${global.kord.changeFont('Bio:', 'smallBoldScript')} ${bio}
+🕰️ ${global.kord.changeFont('Bio set at:', 'smallBoldScript')} ${new Date(setAt * 1000).toLocaleString()}
+                `;
+                await sock.sendMessage(m.key.remoteJid, { image: { url: pp }, caption: response });
+            } catch (error) {
+                console.error("Error fetching user info:", error);
+                await global.kord.reply(m, "❌ Failed to fetch user information.");
+            }
+        }
+    },
+    {
+        usage: ["getpp"],
+        desc: "Get the profile picture of a user",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: false,
+        emoji: "📷",
+        execute: async (sock, m) => {
+            const jid = m.quoted?.key?.remoteJid || m.key.remoteJid;
+            try {
+                const pp = await sock.profilePictureUrl(jid, 'image');
+                await sock.sendMessage(m.key.remoteJid, { image: { url: pp } });
+            } catch (error) {
+                console.error("Error fetching profile picture:", error);
+                await global.kord.reply(m, "❌ Failed to fetch the profile picture.");
+            }
+        }
+    },
+    {
+    usage: ["privatemode"],
+    desc: "Set the bot's work mode to private.",
+    commandType: "Bot",
+    isGroupOnly: false,
+    isAdminOnly: false,
+    isPrivateOnly: false,
+    isOwnerOnly: true,
+    emoji: "🔒",
+
+    async execute(sock, m, args) {
+        // Path to the Config.js file
+        const configPath = path.join(__dirname, '../', '../', '../', 'Config.js');
+
+        // Read the config file
+        fs.readFile(configPath, 'utf8', (err, data) => {
+            if (err) {
+                console.error("Error reading Config.js file:", err);
+                kord.freply(m, "Failed to read Config.js.");
+                return;
+            }
+
+            // Check current WORK_MODE
+            const currentModeMatch = data.match(/WORK_MODE:\s*"(.*?)"/);
+            if (!currentModeMatch) {
+                kord.freply(m, "Failed to determine current work mode.");
+                return;
+            }
+
+            const currentMode = currentModeMatch[1];
+            if (currentMode === 'Private') {
+                kord.freply(m, "Bot is already in Private mode.");
+                return;
+            }
+
+            // Replace WORK_MODE with "Private"
+            const updatedData = data.replace(/WORK_MODE:\s*"(.*?)"/, 'WORK_MODE: "Private"');
+
+            // Write the updated config back to the file
+            fs.writeFile(configPath, updatedData, 'utf8', (err) => {
+                if (err) {
+                    console.error("Error writing to Config.js file:", err);
+                    kord.freply(m, "Failed to update Config.js.");
+                    return;
+                }
+
+                // Send confirmation message
+                kord.freply(m, "Bot's work mode is now set to Private.");
+            });
+        });
+    }
+    },
+    {
+    usage: ["publicmode"],
+    desc: "Switch the bot's work mode between public and private.",
+    commandType: "Bot",
+    isGroupOnly: false,
+    isAdminOnly: false,
+    isPrivateOnly: false,
+    isOwnerOnly: true,
+    emoji: "🌐",
+
+    async execute(sock, m, args) {
+        // Check if the user provided an argument
+        const mode = args[0];
+        if (!mode || (mode !== 'on' && mode !== 'off')) {
+            kord.freply(m, "Please provide a valid argument! Use `.publicmode on` or `.publicmode off`.");
+            return;
+        }
+
+        // Path to the Config.js file
+        const configPath = path.join(__dirname, '../', '../', '../', 'Config.js');
+
+        // Read the config file
+        fs.readFile(configPath, 'utf8', (err, data) => {
+            if (err) {
+                console.error("Error reading Config.js file:", err);
+                kord.freply(m, "Failed to read Config.js.");
+                return;
+            }
+
+            // Check current WORK_MODE
+            const currentModeMatch = data.match(/WORK_MODE:\s*"(.*?)"/);
+            if (!currentModeMatch) {
+                kord.freply(m, "Failed to determine current work mode.");
+                return;
+            }
+
+            const currentMode = currentModeMatch[1];
+            if (mode === 'on' && currentMode === 'Public') {
+                kord.freply(m, "Bot is already in Public mode.");
+                return;
+            }
+
+            if (mode === 'off' && currentMode === 'Private') {
+                kord.freply(m, "Bot is already in Private mode.");
+                return;
+            }
+
+            // Determine the new WORK_MODE value
+            const newMode = mode === 'on' ? 'Public' : 'Private';
+
+            // Replace WORK_MODE with the new mode
+            const updatedData = data.replace(/WORK_MODE:\s*"(.*?)"/, `WORK_MODE: "${newMode}"`);
+
+            // Write the updated config back to the file
+            fs.writeFile(configPath, updatedData, 'utf8', (err) => {
+                if (err) {
+                    console.error("Error writing to Config.js file:", err);
+                    kord.freply(m, "Failed to update Config.js.");
+                    return;
+                }
+
+                // Send confirmation message
+                kord.freply(m, `Bot's work mode is now set to ${newMode}.`);
+            });
+        });
+    }
+    },
+    {
+    usage: ["setmultiprefix"],
+    desc: "Set multiple command prefixes separated by spaces",
+    commandType: "User",
+    isGroupOnly: false,
+    isAdminOnly: false,
+    isPrivateOnly: false,
+    isOwnerOnly: true, 
+    emoji: "🔧",
+    execute: async (sock, m, args) => {
+        if (args.length === 0) {
+            return await global.kord.reply(m, "❌ Please provide prefixes separated by spaces.");
+        }
+
+        // Join the arguments into a single string and split by space
+        const newPrefixes = args.join(" ").split(" ").map(prefix => prefix.trim());
+
+        // Filter out empty prefixes and limit each prefix to a single character
+        const validPrefixes = newPrefixes.filter(prefix => prefix.length > 0 && prefix.length === 1);
+
+        if (validPrefixes.length === 0) {
+            return await global.kord.reply(m, "❌ All provided prefixes are invalid. Please provide single-character prefixes.");
+        }
+
+        // Update the PREFIX variable in the config.js
+        global.settings.PREFIX = validPrefixes;
+
+        // Optionally, save the updated settings to config.js file if necessary
+        // const fs = require('fs');
+        // fs.writeFileSync('./config.js', `PREFIX: [${validPrefixes.join(", ")}]`);
+
+        await global.kord.reply(m, `✅ Command prefixes have been set to: ${validPrefixes.join(", ")}`);
+    }
+},
+    {
+    usage: ["setprefix"],
+    desc: "Set a new command prefix",
+    commandType: "User",
+    isGroupOnly: false,
+    isAdminOnly: false,
+    isPrivateOnly: false,
+    isOwnerOnly: true, 
+    emoji: "🔧",
+    execute: async (sock, m, args) => {
+        if (args.length !== 1) {
+            return await global.kord.reply(m, "❌ Please provide a single prefix to set.");
+        }
+
+        const newPrefix = args[0];
+        if (newPrefix.length > 1) {
+            return await global.kord.reply(m, "❌ Prefix must be a single character.");
+        }
+
+        // Update the PREFIX variable in the config.js
+        global.settings.PREFIX = [newPrefix];
+
+        // Optionally, save the updated settings to config.js file if necessary
+        // const fs = require('fs');
+        // fs.writeFileSync('./config.js', `PREFIX: [${newPrefix}]`);
+
+        await global.kord.reply(m, `✅ Command prefix has been set to: ${newPrefix}`);
+    }
+},
+    {
+        usage: ["unarchive"],
+        desc: "Unarchive a chat",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: true,
+        emoji: "📤",
+        execute: async (sock, m) => {
+            try {
+                await sock.chatModify({ archive: false }, m.key.remoteJid);
+                await global.kord.reply(m, "✅ Chat has been unarchived.");
+            } catch (error) {
+                console.error("Error unarchiving chat:", error);
+                await global.kord.reply(m, "❌ Failed to unarchive the chat.");
+            }
+        }
+    },
+    {
+  usage: ["alwaysonline"],
+  desc: "Toggle the always online status",
+  commandType: "User",
+  isGroupOnly: false,
+  isAdminOnly: false,
+  isPrivateOnly: false,
+  isOwnerOnly: true,
+  emoji: "🔧",
+  execute: async (sock, m, args) => {
+    if (args[0] !== 'true' && args[0] !== 'false') {
+      return await global.kord.reply(m, "❌ Please use either `alwaysonline true` or `alwaysonline false`");
+    }
+
+    const newmode = args[0] === 'true'; // Convert string to boolean
+
+    // Update the ALWAYS_ONLINE variable in the global settings
+    global.settings.ALWAYS_ONLINE = newmode;
+
+    // Optionally, save the updated settings to config.js file if necessary
+    // const fs = require('fs');
+    // fs.writeFileSync('./config.js', `ALWAYS_ONLINE: ${newmode}`);
+
+    const status = newmode ? "true" : "false";
+    await global.kord.reply(m, `*_✅ Always Online Has Been Set to ${status}!*`);
+    
+  }
+    },
+    {
+    usage: ["antivv"],
+    desc: "Toggle the Anti View Once feature",
+    commandType: "User",
+    isGroupOnly: false,
+    isAdminOnly: false,
+    isPrivateOnly: false,
+    isOwnerOnly: true, 
+    emoji: "🛡️",
+    execute: async (sock, m, args) => {
+        if (typeof args[0] !== 'boolean') {
+            return await global.kord.reply(m, "❌ Please use either `antivv true` or `antivv false`");
+        }
+
+        const newmode = args[0];  // Directly use the boolean value
+        
+        // Update the ANTI_VIEWONCE variable in the global settings
+        global.settings.ANTI_VIEWONCE = newmode;
+
+        // Optionally, save the updated settings to config.js file if necessary
+        // const fs = require('fs');
+        // fs.writeFileSync('./config.js', `ANTI_VIEWONCE: ${newmode}`);
+
+        const status = newmode ? "Enabled" : "Disabled";
+        await global.kord.reply(m, `*_✅ Anti View Once has been ${status}!*`);
+    }
+},
+{
+    usage: ["readstatus", "autoswview", "autoreadstatus"],
+    desc: "Toggle the Auto Read Status feature",
+    commandType: "User",
+    isGroupOnly: false,
+    isAdminOnly: false,
+    isPrivateOnly: false,
+    isOwnerOnly: true, 
+    emoji: "🫧",
+    execute: async (sock, m, args) => {
+        if (typeof args[0] !== 'boolean') {
+            return await global.kord.reply(m, "❌ Please use either `readstatus true`, `autoswview true`, or `autoreadstatus true` (or `false` to disable).");
+        }
+
+        const newmode = args[0];  // Directly use the boolean value
+        
+        // Update the AUTO_READ_STATUS variable in the global settings
+        global.settings.AUTO_READ_STATUS = newmode;
+
+        // Optionally, save the updated settings to config.js file if necessary
+        // const fs = require('fs');
+        // fs.writeFileSync('./config.js', `AUTO_READ_STATUS: ${newmode}`);
+
+        const status = newmode ? "Enabled" : "Disabled";
+        await global.kord.reply(m, `*_✅ Auto Read Status has been ${status}!*`);
+    }
+},
+    {
+        usage: ["chatpin"],
+        desc: "Pin a chat",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: true,
+        emoji: "📌",
+        execute: async (sock, m) => {
+            try {
+                await sock.chatModify({ pin: true }, m.key.remoteJid);
+                await global.kord.reply(m, "✅ Chat has been pinned.");
+            } catch (error) {
+                console.error("Error pinning chat:", error);
+                await global.kord.reply(m, "❌ Failed to pin the chat.");
+            }
+        }
+    },
+    {
+        usage: ["unpin"],
+        desc: "Unpin a chat",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: true,
+        emoji: "📍",
+        execute: async (sock, m) => {
+            try {
+                await sock.chatModify({ pin: false }, m.key.remoteJid);
+                await global.kord.reply(m, "✅ Chat has been unpinned.");
+            } catch (error) {
+                console.error("Error unpinning chat:", error);
+                await global.kord.reply(m, "❌ Failed to unpin the chat.");
+            }
+        }
+    },
+    {
+        usage: ["markread"],
+        desc: "Mark chat as read",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: true,
+        emoji: "✓",
+        execute: async (sock, m) => {
+            try {
+                await sock.chatModify({ markRead: true }, m.key.remoteJid);
+                await global.kord.reply(m, "✅ Chat has been marked as read.");
+            } catch (error) {
+                console.error("Error marking chat as read:", error);
+                await global.kord.reply(m, "❌ Failed to mark chat as read.");
+            }
+        }
+    },
+    {
+        usage: ["markunread"],
+        desc: "Mark chat as unread",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: true,
+        emoji: "✗",
+        execute: async (sock, m) => {
+            try {
+                await sock.chatModify({ markRead: false }, m.key.remoteJid);
+                await global.kord.reply(m, "✅ Chat has been marked as unread.");
+            } catch (error) {
+                console.error("Error marking chat as unread:", error);
+                await global.kord.reply(m, "❌ Failed to mark chat as unread.");
+            }
+        }
+    },
+    {
+        usage: ["unmutechat"],
+        desc: "Unmute a chat",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: true,
+        emoji: "🔔",
+        execute: async (sock, m) => {
+            try {
+                await sock.chatModify({ mute: null }, m.key.remoteJid);
+                await global.kord.reply(m, "✅ Chat has been unmuted.");
+            } catch (error) {
+                console.error("Error unmuting chat:", error);
+                await global.kord.reply(m, "❌ Failed to unmute the chat.");
+            }
+        }
+    },
+    {
+    usage: ["newgc", "creategc"],
+    desc: "Create a new group chat",
+    commandType: "User",
+    isGroupOnly: false,
+    isAdminOnly: false,
+    isPrivateOnly: false,
+    isOwnerOnly: true,
+    emoji: "👥",
+    execute: async (sock, m, args) => {
+        let groupName;
+        let participants = [];
+
+        // If no arguments provided, create group with just the bot
+        if (args.length === 0) {
+            groupName = "New Group";
+            participants = [sock.user.id.split(':')[0] + "@s.whatsapp.net"];
+        }
+        // If only group name provided
+        else if (args.length === 1) {
+            groupName = args[0];
+            participants = [sock.user.id.split(':')[0] + "@s.whatsapp.net"];
+        }
+        // If group name and participants provided
+        else {
+            groupName = args[0];
+            participants = args.slice(1).map(num => num.includes('@') ? num : `${num}@s.whatsapp.net`);
+        }
+
+        try {
+            const group = await sock.groupCreate(groupName, participants);
+            await global.kord.reply(m, `✅ Group "${groupName}" has been created successfully!\nGroup Link:  https://chat.whatsapp.com/${group.id}`);
+        } catch (error) {
+            console.error("Error creating group:", error);
+            await global.kord.reply(m, "❌ Failed to create the group.");
+        }
+    }
+},
+    {
+        usage: ["save"],
+        desc: "Save a message to starred messages",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: true,
+        emoji: "⭐",
+        execute: async (sock, m) => {
+            if (!m.quoted) {
+                return await global.kord.reply(m, "❌ Please reply to a message to save it.");
+            }
+            try {
+                await sock.starMessage(m.quoted.key, true);
+                await global.kord.reply(m, "✅ Message has been saved to starred messages.");
+            } catch (error) {
+                console.error("Error saving message:", error);
+                await global.kord.reply(m, "❌ Failed to save the message.");
+            }
+        }
+    },
+    {
+        usage: ["privacy"],
+        desc: "Configure privacy settings",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: true,
+        emoji: "🔒",
+        execute: async (sock, m, args) => {
+            if (args.length < 2) {
+                return await global.kord.reply(m, "❌ Usage: .privacy [last_seen|profile|status|read_receipts|groups|online] [all|contacts|none]");
+            }
+            
+            const setting = args[0].toLowerCase();
+            const value = args[1].toLowerCase();
+            
+            try {
+                await sock.updatePrivacySettings(setting, value);
+                await global.kord.reply(m, `✅ Privacy setting "${setting}" has been updated to "${value}".`);
+            } catch (error) {
+                console.error("Error updating privacy settings:", error);
+                await global.kord.reply(m, "❌ Failed to update privacy settings.");
+            }
+        }
+    },
+    {
+    usage: ["fullpp"],
+    desc: "Set full screen profile picture",
+    commandType: "User",
+    isGroupOnly: false,
+    isAdminOnly: false,
+    isPrivateOnly: false,
+    isOwnerOnly: true,
+    emoji: "🖼️",
+    execute: async (sock, m, args) => {
+        let mediaBuffer, fileExtension, tempFilePath;
+
+        try {
+            if (m.message.extendedTextMessage && m.message.extendedTextMessage.contextInfo && m.message.extendedTextMessage.contextInfo.quotedMessage) {
+                const quotedMedia = await global.kord.downloadQuotedMedia(m);
+
+                if (quotedMedia) {
+                    mediaBuffer = quotedMedia.buffer;
+                    fileExtension = quotedMedia.extension;
+                } else {
+                    return await global.kord.reply(m, "❌ Failed to download the quoted media.");
+                }
+            } else {
+                // No quoted message, download media from the main message
+                const mediaMsg = await global.kord.downloadMediaMsg(m);
+
+                if (mediaMsg) {
+                    mediaBuffer = mediaMsg.buffer;
+                    fileExtension = mediaMsg.extension;
+                } else {
+                    return await global.kord.reply(m, "❌ Failed to download the media.");
+                }
+            }
+
+            // Create a temporary file path
+            tempFilePath = path.join(os.tmpdir(), `temp_${Date.now()}.${fileExtension}`);
+
+            // Save the media to the temp file
+            await fsPromises.writeFile(tempFilePath, mediaBuffer);
+
+            // Process and update profile picture
+            await updateProfilePicture(sock.user.id.split(':')[0] + "@s.whatsapp.net", mediaBuffer, sock);
+            
+            await global.kord.reply(m, "✅ Full profile picture has been updated.");
+        } catch (error) {
+            console.error("Error in fullpp:", error);
+            await global.kord.reply(m, "❌ Failed to update profile picture.");
+        } finally {
+            // Clean up: delete the temporary file
+            if (tempFilePath) {
+                try {
+                    await fsPromises.unlink(tempFilePath);
+                } catch (unlinkError) {
+                    console.error("Error deleting temporary file:", unlinkError);
+                }
+            }
+        }
+    }
+},
+    {
+        usage: ["blocklist"],
+        desc: "View list of blocked users",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: true,
+        emoji: "🚫",
+        execute: async (sock, m) => {
+            try {
+                const blocked = await sock.fetchBlocklist();
+                if (blocked.length === 0) {
+                    return await global.kord.reply(m, "No blocked users.");
+                }
+                const list = blocked.map((jid, i) => `${i + 1}. ${jid}`).join('\n');
+                await global.kord.reply(m, `📋 Blocked Users List:\n\n${list}`);
+            } catch (error) {
+                console.error("Error fetching blocklist:", error);
+                await global.kord.reply(m, "❌ Failed to fetch the blocklist.");
+            }
+        }
+    },
+    {
+    usage: ["location"],
+    desc: "Get and send location of a place or timezone",
+    commandType: "User",
+    isGroupOnly: false,
+    isAdminOnly: false,
+    isPrivateOnly: false,
+    isOwnerOnly: false,
+    emoji: "📍",
+    execute: async (sock, m, args) => {
+        try {
+            // If no args provided, use TIME_ZONE
+            if (args.length === 0) {
+                const timezone = global.settings.TIME_ZONE;
+                // Convert timezone to location using geocoding API
+                const response = await axios.get(
+                    `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(timezone)}`
+                );
+
+                if (response.data && response.data[0]) {
+                    const { lat, lon } = response.data[0];
+                    await sock.sendMessage(m.key.remoteJid, { 
+                        location: { 
+                            degreesLatitude: parseFloat(lat), 
+                            degreesLongitude: parseFloat(lon)
+                        }
+                    });
+                } else {
+                    await global.kord.reply(m, "❌ Could not find location for the timezone.");
+                }
+                return;
+            }
+
+            // If args provided, search for the place
+            const place = args.join(" ");
+            const response = await axios.get(
+                `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(place)}`
+            );
+
+            if (response.data && response.data[0]) {
+                const { lat, lon, display_name } = response.data[0];
+                await sock.sendMessage(m.key.remoteJid, { 
+                    location: { 
+                        degreesLatitude: parseFloat(lat), 
+                        degreesLongitude: parseFloat(lon),
+                        name: display_name
+                    }
+                });
+            } else {
+                await global.kord.reply(m, "❌ Location not found.");
+            }
+        } catch (error) {
+            console.error("Error sending location:", error);
+            await global.kord.reply(m, "❌ Failed to send location.");
+        }
+    }
+}
+];
+
+async function updateProfilePicture(jid, imageBuffer, sock) {
+    const { preview } = await generateProfilePicture(imageBuffer);
+    
+    await sock.query({
+        tag: 'iq',
+        attrs: {
+            to: jid,
+            type: "set",
+            xmlns: "w:profile:picture"
+        },
+        content: [{
+            tag: "picture",
+            attrs: { type: "image" },
+            content: preview
+        }]
+    });
+}
+
+async function generateProfilePicture(imageBuffer) {
+    const image = await jimp.read(imageBuffer);
+    const width = image.getWidth();
+    const height = image.getHeight();
+    const processedImage = image.crop(0, 0, width, height);
+
+    return {
+        img: await processedImage
+            .scaleToFit(324, 720)
+            .getBufferAsync(jimp.MIME_JPEG),
+        preview: await processedImage
+            .normalize()
+            .getBufferAsync(jimp.MIME_JPEG)
+    };
+}
