@@ -43,8 +43,8 @@ module.exports = {
             const video = results.videos[0];
             const videoUrl = video.url;
             await global.kord.react(m, emojis.processing);
-            const data = await gifted.ytmp4(videoUrl);
-            if (!data || !data.download_url) throw new Error('Download URL not found');
+            const data = await gifted.giftedytmp4(videoUrl);
+            if (!data || !data.result.download_url) throw new Error('Download URL not found');
 
             // Create temp directory if it doesn't exist
             const tempDir = path.join(__dirname, '../../temp');
@@ -57,7 +57,7 @@ module.exports = {
             // Download video using axios
             const response = await axios({
                 method: 'GET',
-                url: data.download_url,
+                url: data.result.download_url,
                 responseType: 'stream'
             });
 

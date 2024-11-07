@@ -54,16 +54,16 @@ module.exports = {
 
             // Download the audio using gifted-dls
             await kord.freply(m, `${emojis.processing} Downloading audio...`);
-            const data = await gifted.ytmp3(video.url);
+            const data = await gifted.giftedytmp3(video.url);
 
-            if (!data || !data.download_url) {
+            if (!data || !data.result.download_url) {
                 throw new Error('Failed to get download URL');
             }
 
             // Download the file using axios
             const response = await axios({
                 method: 'GET',
-                url: data.download_url,
+                url: data.result.download_url,
                 responseType: 'stream'
             });
 

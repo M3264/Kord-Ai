@@ -18,8 +18,8 @@ module.exports = {
             if (!url) return await kord.reply(m, "🔗 Please provide a YouTube video URL.");
 
             // Get download URL using gifted-dls
-            const data = await gifted.ytmp4(url);
-            if (!data || !data.download_url) throw new Error('Download URL not found');
+            const data = await gifted.giftedytmp4(url);
+            if (!data || !data.result.download_url) throw new Error('Download URL not found');
 
             // Create temp directory if it doesn't exist
             const tempDir = path.join(__dirname, '../../temp');
@@ -32,7 +32,7 @@ module.exports = {
             // Download video using axios
             const response = await axios({
                 method: 'GET',
-                url: data.download_url,
+                url: data.result.download_url,
                 responseType: 'stream'
             });
 

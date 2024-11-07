@@ -530,7 +530,7 @@ module.exports = [
     isOwnerOnly: true, 
     emoji: "🛡️",
     execute: async (sock, m, args) => {
-        if (typeof args[0] !== 'boolean') {
+    if (args[0] !== 'true' && args[0] !== 'false') {
             return await global.kord.reply(m, "❌ Please use either `antivv true` or `antivv false`");
         }
 
@@ -557,7 +557,7 @@ module.exports = [
     isOwnerOnly: true, 
     emoji: "🫧",
     execute: async (sock, m, args) => {
-        if (typeof args[0] !== 'boolean') {
+    if (args[0] !== 'true' && args[0] !== 'false') {
             return await global.kord.reply(m, "❌ Please use either `readstatus true`, `autoswview true`, or `autoreadstatus true` (or `false` to disable).");
         }
 
