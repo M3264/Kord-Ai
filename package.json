@@ -1,6 +1,6 @@
 {
   "name": "kord-ai",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "A simple WhatsApp user bot written in JavaScript using the Baileys library. This bot can interact with groups and normal messages. ",
   "main": "index.js",
   "scripts": {
@@ -20,8 +20,7 @@
     "whatsapp-web",
     "whatsapp-bot",
     "multi-device",
-    "kord-ai",
-    "m3264",
+    "kord-md",
     "bot",
     "baileys",
     "nodejs"
@@ -61,6 +60,7 @@
     "moment-timezone": "^0.5.46",
     "mongodb": "^6.8.0",
     "nayan-media-downloader": "^2.4.9",
+    "node-schedule": "^2.1.1",
     "pm2": "^5.3.2",
     "object-query-string": "^1.2.0",
     "qrcode-terminal": "^0.12.0",
@@ -79,6 +79,8 @@
     "libphonenumber-js": "^1.11.11",
     "semver": "^7.3.8",
     "crypto": "^1.0.1",
-    "adm-zip": "^0.5.10"
+    "adm-zip": "^0.5.10",
+    "sqlite3": "^5.0.11",
+    "sqlite": "5.1.1"
   }
 }

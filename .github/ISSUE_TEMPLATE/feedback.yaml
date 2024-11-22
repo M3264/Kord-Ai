@@ -1,0 +1,106 @@
+name: 🌟 Share Your Thoughts! 💭
+description: We'd love to hear your feedback on our product or service! 🎉
+title: "📣 General Feedback: "
+labels: ["💌 feedback", "👂 listening"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # 🎈 Welcome to Our Feedback Forum! 🎈
+        
+        Your opinion matters to us! Whether it's a suggestion, compliment, or concern,
+        we're all ears. Help us make your experience even better! 🚀💖
+
+  - type: dropdown
+    id: feedback-type
+    attributes:
+      label: 🎭 What type of feedback do you have?
+      description: Choose the category that best fits your thoughts.
+      options:
+        - 💡 Suggestion for Improvement
+        - 🎉 Compliment
+        - 🤔 General Comment
+        - 😕 Concern or Issue
+    validations:
+      required: true
+
+  - type: textarea
+    id: feedback-details
+    attributes:
+      label: 📝 Tell us more!
+      description: |
+        🌈 We'd love to hear the details of your feedback. The more specific, the better!
+      placeholder: "I really enjoy using your product, but I think it would be even better if..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: product-area
+    attributes:
+      label: 🎯 Which area of our product/service does this relate to?
+      description: Help us route your feedback to the right team.
+      options:
+        - 🏠 Menu
+        - 🙋‍♂️ Customer Support
+        - 🚚 Delivery Service
+        - 🔒 Account & Security
+        - 🎨 Design & User Interface
+        - 🤖 Other (please specify in your feedback)
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: 💥 How does this impact your experience?
+      description: |
+        🔮 Help us understand how this affects you or other users.
+      placeholder: "This feature would save me time by..."
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: 🔄 How often do you use our product/service?
+      options:
+        - 🌟 Daily
+        - 🌙 Weekly
+        - 🗓️ Monthly
+        - 🍃 Occasionally
+        - 🆕 I'm a new user
+    validations:
+      required: false
+
+  - type: textarea
+    id: suggestions
+    attributes:
+      label: 💡 Any suggestions for us?
+      description: |
+        🚀 If you have ideas on how we can improve, we'd love to hear them!
+      placeholder: "It would be great if you could..."
+
+  - type: input
+    id: contact
+    attributes:
+      label: 📧 Contact Information (Optional)
+      description: |
+        If you'd like us to follow up with you, please provide your email address.
+      placeholder: "your.email@example.com"
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: 📜 Before submitting...
+      options:
+        - label: I agree that this feedback may be used to improve the product/service. 👍
+          required: true
+        - label: I'd like to be contacted about participating in future user research. (Optional) 🔬
+          required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 🎊 Thank You for Your Valuable Feedback! 🎊
+        
+        Your insights help us grow and improve. We truly appreciate you taking the time to share your thoughts with us.
+        
+        Stay awesome! 😎✨

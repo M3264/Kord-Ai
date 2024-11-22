@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 
 module.exports = {
-    usage: ['ttstiktok'],
+    usage: ['ttstiktok', 'tts'],
     desc: "Convert text to TikTok TTS audio",
     commandType: "media",
     isGroupOnly: false,

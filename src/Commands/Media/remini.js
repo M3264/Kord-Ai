@@ -1,12 +1,52 @@
-const { remini } = require('../../Plugin/remini');
-const fs = require('fs'); // Regular fs for streams
-const fsPromises = require('fs').promises; // Promise-based fs for async operations
+const FormData = require('form-data');
+const fs = require('fs');
+const fsPromises = require('fs').promises;
 const path = require('path');
 const os = require('os');
+const https = require('https');
+
+async function processImage(imagePath, processingType) {
+  return new Promise((resolve, reject) => {
+    const formData = new FormData();
+    const apiUrl = `https://inferenceengine.vyro.ai/${processingType}`;
+    
+    formData.append('model_version', 1, {
+      'Content-Transfer-Encoding': 'binary',
+      contentType: 'multipart/form-data; charset=utf-8',
+    });
+    
+    formData.append('image', fs.createReadStream(imagePath), {
+      filename: 'enhance_image_body.jpg',
+      contentType: 'image/jpeg',
+    });
+    
+    const request = https.request(apiUrl, {
+      method: 'POST',
+      headers: {
+        ...formData.getHeaders(),
+        'User-Agent': 'okhttp/4.9.3',
+        'Connection': 'Keep-Alive',
+        'Accept-Encoding': 'gzip',
+      },
+    }, (response) => {
+      if (response.statusCode !== 200) {
+        reject(new Error(`HTTP error! status: ${response.statusCode}`));
+        return;
+      }
+
+      const chunks = [];
+      response.on('data', (chunk) => chunks.push(chunk));
+      response.on('end', () => resolve(Buffer.concat(chunks)));
+    });
+
+    request.on('error', reject);
+    formData.pipe(request);
+  });
+}
 
 module.exports = {
-    usage: ["remini"],
-    desc: "Enhance an image using Remini AI.",
+    usage: ["enhance", "hd", "remini"],
+    desc: "Enhance an image using AI.",
     commandType: "Utility",
     isGroupOnly: false,
     isAdminOnly: false,
@@ -32,7 +72,7 @@ module.exports = {
             }
 
             // Create a temporary file path
-            const tempFilePath = path.join(os.tmpdir(), `temp_${Date.now()}.jpg`);
+            tempFilePath = path.join(os.tmpdir(), `temp_${Date.now()}.jpg`);
 
             // Save the media to a temporary file
             await fsPromises.writeFile(tempFilePath, mediaBuffer);
@@ -41,21 +81,20 @@ module.exports = {
             // Inform the user that the enhancement process has started
             await global.kord.reply(m, '🛠️ Enhancing the image, please wait...');
 
-            // Process the image using the Remini API
-            const enhancedImage = await remini(tempFilePath, 'enhance');
-            console.log(enhancedImage);
-            if (!enhancedImage) {
-                return await global.kord.reply(m, '❌ Failed to enhance the image. Please try again.');
+            // Process the image
+            const enhancedImageBuffer = await processImage(tempFilePath, 'enhance');
+
+            if (!enhancedImageBuffer || enhancedImageBuffer.length === 0) {
+                throw new Error('Received empty response from the enhancement service');
             }
 
             // Send the enhanced image to the chat
-            await sock.sendMessage(m.key.remoteJid, { image: enhancedImage, caption: 'Here’s your enhanced media!' }, { quoted: m });
+            await sock.sendMessage(m.key.remoteJid, { image: enhancedImageBuffer, caption: 'Here\'s your enhanced image!' }, { quoted: m });
 
         } catch (error) {
-            console.error('Error in remini command:', error);
-
+            console.error('Error in enhance command:', error);
             // Notify the user about the error
-            await sock.sendMessage(m.key.remoteJid, { text: `❌ Oops! Something went wrong.\n\nError: ${error.message}` }, { quoted: m });
+            await global.kord.reply(m, `❌ Oops! Something went wrong.\n\nError: ${error.message}`);
         } finally {
             // Clean up: delete the temporary file if it exists
             if (tempFilePath) {

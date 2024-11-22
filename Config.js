@@ -28,5 +28,5 @@ global.settings = {
     DELETE_WA_LINKS: false,
     BAD_WORD_FILTER: true,
     BAD_WORDS: ['badword1', 'badword2', 'fuck', 'bitch', 'hentai'],
-    ANTI_DELETE_ENABLED: true // Add this line for anti-delete feature
+    ANTI_DELETE_ENABLED: true
 };

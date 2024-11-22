@@ -30,7 +30,7 @@
   <a href="https://github.com/M3264/Kord-Ai/fork"><img title="KORD-AI" src="https://img.shields.io/badge/FORK-KORD AI-h?color=blue&style=for-the-badge&logo=stackshare"></a>
 
 
- 
+ ### Version 1.4.6
 
 
 ## How To Deploy?

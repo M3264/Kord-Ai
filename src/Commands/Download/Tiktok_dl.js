@@ -1,15 +1,21 @@
 const fs = require('fs').promises;
 const path = require('path');
 const fetch = require('node-fetch');
-const gifted = require('gifted-dls');
 
 const emojis = {
     search: '🔍',
     processing: '🔄',
+    downloadChoice: '📥',
+    option: '⚙️',
     warning: '⚠️',
     done: '✅',
     error: '❌'
 };
+
+function correctTikTokUrlCase(url) {
+    const match = url.match(/https:\/\/vm\.tiktok\.com\/[A-Za-z0-9]+/);
+    return match ? match[0] : url;
+}
 
 module.exports = {
     usage: ["tiktok", "tt"],
@@ -23,7 +29,7 @@ module.exports = {
     async execute(sock, m, args) {
         try {
             const MAXDLSIZE = settings.MAX_DOWNLOAD_SIZE * 1024 * 1024;
-            const url = args[0];
+            let url = args.join(" ").trim();
             
             await global.kord.react(m, emojis.search);
 
@@ -31,27 +37,25 @@ module.exports = {
                 return await global.kord.reply(m, "🔗 Please provide a TikTok video URL.");
             }
 
+            url = correctTikTokUrlCase(url);
             await global.kord.react(m, emojis.processing);
 
-            // Use gifted-dls library to fetch video info
-            const response = await gifted.giftedtiktok(url);
-            
-            if (!response || response.status !== 200 || !response.result) {
+            const apiUrl = `https://api.kordai.us.kg/tiktok?url=${encodeURIComponent(url)}`;
+            const response = await fetch(apiUrl);
+            const videoInfo = await response.json();
+
+            if (!videoInfo.success || !videoInfo.data) {
                 await global.kord.react(m, emojis.error);
                 return await global.kord.reply(m, "❌ Unable to retrieve the video information. Try again.");
             }
 
-            const videoInfo = response.result;
-            const downloadUrl = videoInfo.video;
-            
+            const downloadUrl = videoInfo.data.downloadLinks[0].link;
             if (!downloadUrl) {
                 await global.kord.react(m, emojis.error);
                 return await global.kord.reply(m, "❌ Unable to retrieve the download link. The video may not be available.");
             }
 
-            // Prepare caption with video information
-            const caption = `> © ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ ʙʏ ᴋᴏʀᴅ ɪɴᴄ³²¹™`;
-
+            const caption = `🎵 *TikTok Video*\n Info: ${videoInfo.data.title}\n\n\n > © ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ ʙʏ ᴋᴏʀᴅ ɪɴᴄ³²¹™`;
             const tempDir = path.join('./temp');
             await fs.mkdir(tempDir, { recursive: true });
 
@@ -61,14 +65,14 @@ module.exports = {
             }
             const fileBuffer = await fileResponse.buffer();
 
-            if (fileBuffer.length > MAXDLSIZE) {
+            const fileSize = fileBuffer.length;
+            if (fileSize > MAXDLSIZE) {
                 await global.kord.react(m, emojis.warning);
-                return await global.kord.reply(m, `${emojis.warning} File size exceeds the maximum allowed size of ${settings.MAX_DOWNLOAD_SIZE} MB.`);
+                return await global.kord.reply(m, `${emojis.warning} The file size (${(fileSize / 1024 / 1024).toFixed(2)} MB) exceeds the maximum allowed size (${settings.MAX_DOWNLOAD_SIZE} MB).`);
             }
 
             const tempFilePath = path.join(tempDir, `tiktok_${Date.now()}.mp4`);
             await fs.writeFile(tempFilePath, fileBuffer);
-            
             await global.kord.sendVideo(m, await fs.readFile(tempFilePath), caption);
             await fs.unlink(tempFilePath);
             await global.kord.react(m, emojis.done);
@@ -76,11 +80,11 @@ module.exports = {
         } catch (error) {
             await global.kord.react(m, emojis.error);
             if (error.message.includes('network')) {
-                await global.kord.reply(m, "🌐 Network error. Please try again later.");
+                await global.kord.reply(m, "🌐 Hmm, having trouble connecting to the internet. Please try again later.");
             } else if (error.message.includes('404')) {
-                await global.kord.reply(m, "🚫 Video not available. Please check the URL.");
+                await global.kord.reply(m, "🚫🔗 The video is no longer available. Please check the URL and try again.");
             } else {
-                await global.kord.reply(m, `❌ Error: ${error.message}`);
+                await global.kord.reply(m, `🤖 Oops! Something unexpected happened: ${error.message}`);
             }
         }
     }
