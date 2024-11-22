@@ -521,60 +521,6 @@ module.exports = [
   }
     },
     {
-    usage: ["antivv"],
-    desc: "Toggle the Anti View Once feature",
-    commandType: "User",
-    isGroupOnly: false,
-    isAdminOnly: false,
-    isPrivateOnly: false,
-    isOwnerOnly: true, 
-    emoji: "🛡️",
-    execute: async (sock, m, args) => {
-    if (args[0] !== 'true' && args[0] !== 'false') {
-            return await global.kord.reply(m, "❌ Please use either `antivv true` or `antivv false`");
-        }
-
-        const newmode = args[0];  // Directly use the boolean value
-        
-        // Update the ANTI_VIEWONCE variable in the global settings
-        global.settings.ANTI_VIEWONCE = newmode;
-
-        // Optionally, save the updated settings to config.js file if necessary
-        // const fs = require('fs');
-        // fs.writeFileSync('./config.js', `ANTI_VIEWONCE: ${newmode}`);
-
-        const status = newmode ? "Enabled" : "Disabled";
-        await global.kord.reply(m, `*_✅ Anti View Once has been ${status}!*`);
-    }
-},
-{
-    usage: ["readstatus", "autoswview", "autoreadstatus"],
-    desc: "Toggle the Auto Read Status feature",
-    commandType: "User",
-    isGroupOnly: false,
-    isAdminOnly: false,
-    isPrivateOnly: false,
-    isOwnerOnly: true, 
-    emoji: "🫧",
-    execute: async (sock, m, args) => {
-    if (args[0] !== 'true' && args[0] !== 'false') {
-            return await global.kord.reply(m, "❌ Please use either `readstatus true`, `autoswview true`, or `autoreadstatus true` (or `false` to disable).");
-        }
-
-        const newmode = args[0];  // Directly use the boolean value
-        
-        // Update the AUTO_READ_STATUS variable in the global settings
-        global.settings.AUTO_READ_STATUS = newmode;
-
-        // Optionally, save the updated settings to config.js file if necessary
-        // const fs = require('fs');
-        // fs.writeFileSync('./config.js', `AUTO_READ_STATUS: ${newmode}`);
-
-        const status = newmode ? "Enabled" : "Disabled";
-        await global.kord.reply(m, `*_✅ Auto Read Status has been ${status}!*`);
-    }
-},
-    {
         usage: ["chatpin"],
         desc: "Pin a chat",
         commandType: "User",
