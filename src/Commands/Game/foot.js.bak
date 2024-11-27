@@ -1,0 +1,342 @@
+const axios = require('axios');
+const { generateWAMessageFromContent, proto, prepareWAMessageMedia } = require('@whiskeysockets/baileys');
+
+module.exports = {
+    usage: ["livescores"],
+    desc: "Get Football Livescores!",
+    commandType: "Game",
+    isGroupOnly: false,
+    isAdminOnly: false,
+    isPrivateOnly: false,
+    emoji: "⚽",
+
+    leagues: [
+        { 
+            id: 'premier', 
+            name: 'Premier League', 
+            emoji: '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+            key: 'premier-league'
+        },
+        { 
+            id: 'laliga', 
+            name: 'La Liga', 
+            emoji: '🇪🇸',
+            key: 'la-liga'
+        },
+        { 
+            id: 'bundesliga', 
+            name: 'Bundesliga', 
+            emoji: '🇩🇪',
+            key: 'bundesliga'
+        },
+        { 
+            id: 'seriea', 
+            name: 'Serie A', 
+            emoji: '🇮🇹',
+            key: 'serie-a'
+        },
+        { 
+            id: 'ligue1', 
+            name: 'Ligue 1', 
+            emoji: '🇫🇷',
+            key: 'ligue-1'
+        },
+        { 
+            id: 'ucl', 
+            name: 'Champions League', 
+            emoji: '🏆',
+            key: 'champions-league'
+        }
+    ],
+
+    // Store active listeners with their timeouts
+    activeListeners: new Map(),
+
+    async execute(sock, m, args) {
+        try {
+            const sender = m.key.remoteJid;
+
+            // Clear any existing listener for this sender
+            this.clearListener(sock, sender);
+
+            if (!args.length) {
+                await this.showLeagueMenu(sock, sender);
+                return this.setupButtonListener(sock, sender);
+            }
+
+            const league = this.getLeague(args[0]);
+            if (league) {
+                await this.fetchAndSendScores(sock, sender, league);
+                return this.setupButtonListener(sock, sender);
+            }
+
+            await sock.sendMessage(sender, { 
+                text: "❌ Invalid league. Use /livescores to see available leagues." 
+            });
+        } catch (error) {
+            console.error('LiveScores Error:', error);
+            await sock.sendMessage(sender, { 
+                text: "❌ An error occurred. Please try again later." 
+            });
+        }
+    },
+
+    getLeague(input) {
+        return this.leagues.find(league => 
+            league.id.toLowerCase() === input.toLowerCase() || 
+            league.name.toLowerCase().includes(input.toLowerCase())
+        );
+    },
+
+    async showLeagueMenu(sock, sender) {
+        const buttons = this.leagues.map(league => ({
+            name: 'quick_reply',
+            buttonParamsJson: JSON.stringify({
+                display_text: `${league.emoji} ${league.name}`,
+                id: `livescores_${league.id}`
+            })
+        }));
+
+        const waMessage = generateWAMessageFromContent(
+            sender,
+            {
+                viewOnceMessage: {
+                    message: {
+                        interactiveMessage: proto.Message.InteractiveMessage.create({
+                            body: proto.Message.InteractiveMessage.Body.create({
+                                text: "*⚽ Select a League for Live Scores*"
+                            }),
+                            footer: proto.Message.InteractiveMessage.Footer.create({
+                                text: "© Football Live Scores"
+                            }),
+                            header: proto.Message.InteractiveMessage.Header.create({
+                                ...await prepareWAMessageMedia(
+                                    { image: { url: 'https://files.catbox.moe/xdzljz.png' } },
+                                    { upload: sock.waUploadToServer }
+                                ),
+                                title: "Live Football Scores",
+                                hasMediaAttachment: true
+                            }),
+                            nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
+                                buttons: buttons
+                            })
+                        })
+                    }
+                }
+            },
+            {}
+        );
+
+        await sock.relayMessage(sender, waMessage.message, { messageId: waMessage.key.id });
+    },
+
+    clearListener(sock, sender) {
+        const listenerInfo = this.activeListeners.get(sender);
+        if (listenerInfo) {
+            clearTimeout(listenerInfo.timeout);
+            sock.ev.off('messages.upsert', listenerInfo.listener);
+            this.activeListeners.delete(sender);
+        }
+    },
+
+    setupButtonListener(sock, sender) {
+        // Create the listener function
+        const listener = async (msgUpsert) => {
+            const message = msgUpsert.messages[0];
+            if (message.key.remoteJid !== sender) return; // Only handle messages from this sender
+
+            const buttonResponse = this.getButtonResponse(message);
+            if (!buttonResponse) return;
+
+            if (buttonResponse === 'livescores_menu') {
+                // Show league menu
+                await this.showLeagueMenu(sock, sender);
+                // Reset the timeout since user interacted
+                this.resetListenerTimeout(sock, sender);
+            }
+            else if (buttonResponse.startsWith('livescores_refresh_')) {
+                const leagueId = buttonResponse.split('_')[2];
+                const league = this.getLeague(leagueId);
+                if (league) {
+                    await this.fetchAndSendScores(sock, sender, league);
+                    // Reset the timeout since user interacted
+                    this.resetListenerTimeout(sock, sender);
+                }
+            }
+            else if (buttonResponse.startsWith('livescores_')) {
+                const leagueId = buttonResponse.split('_')[1];
+                const league = this.getLeague(leagueId);
+                if (league) {
+                    await this.fetchAndSendScores(sock, sender, league);
+                    // Reset the timeout since user interacted
+                    this.resetListenerTimeout(sock, sender);
+                }
+            }
+        };
+
+        // Set up the timeout
+        const timeout = setTimeout(() => {
+            this.clearListener(sock, sender);
+        }, 120000); // 2 minutes
+
+        // Store the listener and timeout
+        this.activeListeners.set(sender, {
+            listener,
+            timeout
+        });
+
+        // Activate the listener
+        sock.ev.on('messages.upsert', listener);
+    },
+
+    resetListenerTimeout(sock, sender) {
+        const listenerInfo = this.activeListeners.get(sender);
+        if (listenerInfo) {
+            clearTimeout(listenerInfo.timeout);
+            const newTimeout = setTimeout(() => {
+                this.clearListener(sock, sender);
+            }, 120000); // Reset to 2 minutes
+            this.activeListeners.set(sender, {
+                ...listenerInfo,
+                timeout: newTimeout
+            });
+        }
+    },
+
+    getButtonResponse(message) {
+        const interactiveMessage = message.message?.interactiveResponseMessage;
+        if (interactiveMessage) {
+            const paramsJson = interactiveMessage?.nativeFlowResponseMessage?.paramsJson;
+            if (paramsJson) {
+                try {
+                    const params = JSON.parse(paramsJson);
+                    return params.id;
+                } catch (parseError) {
+                    console.error('Error parsing button response:', parseError);
+                }
+            }
+        }
+
+        const templateButtonMessageId = message.message?.templateButtonReplyMessage?.selectedId;
+        return templateButtonMessageId;
+    },
+
+    async fetchScoresFromAPI(league) {
+        try {
+            const response = await axios.get('https://livescore-api.com/api-client/scores/live.json', {
+                params: {
+                    key: 'tUASsWasOCAeZLL5',
+                    secret: 'FJna78t7YWq1lhAPcbHF8S8WuIbutWA9',
+                    competition_id: this.getLeagueId(league.key)
+                }
+            });
+            
+            if (response.data.success && response.data.data.match) {
+                return response.data.data.match.map(match => ({
+                    teams: {
+                        home: match.home_name,
+                        away: match.away_name
+                    },
+                    score: `${match.score[0] || 0} - ${match.score[1] || 0}`,
+                    time: this.formatMatchTime(match.status, match.time)
+                }));
+            }
+            
+            return [];
+        } catch (error) {
+            console.error('API Fetch Error:', error.response ? error.response.data : error.message);
+            return [];
+        }
+    },
+
+    getLeagueId(leagueKey) {
+        const leagueMap = {
+            'premier-league': '2',
+            'la-liga': '3',
+            'bundesliga': '4',
+            'serie-a': '5',
+            'ligue-1': '6',
+            'champions-league': '7'
+        };
+        return leagueMap[leagueKey] || '2';
+    },
+
+    formatMatchTime(status, time) {
+        if (status === 'FINISHED') return 'FT';
+        if (status === 'HT') return 'HT';
+        if (status === 'NOT STARTED') return 'Upcoming';
+        return `${time}'`;
+    },
+
+    async fetchAndSendScores(sock, sender, league) {
+        try {
+            const matches = await this.fetchScoresFromAPI(league);
+            console.log(matches);
+            if (matches.length === 0) {
+                return await sock.sendMessage(sender, { 
+                    text: `${league.emoji} No live matches in ${league.name} right now.` 
+                });
+            }
+
+            const buttons = [
+                {
+                    name: 'quick_reply',
+                    buttonParamsJson: JSON.stringify({
+                        display_text: '🔄 Refresh Scores',
+                        id: `livescores_refresh_${league.id}`
+                    })
+                },
+                {
+                    name: 'quick_reply',
+                    buttonParamsJson: JSON.stringify({
+                        display_text: '📋 League Menu',
+                        id: 'livescores_menu'
+                    })
+                }
+            ];
+
+            const scoreMessage = this.formatScores(matches, league);
+            
+            const waMessage = generateWAMessageFromContent(
+                sender,
+                {
+                    viewOnceMessage: {
+                        message: {
+                            interactiveMessage: proto.Message.InteractiveMessage.create({
+                                body: proto.Message.InteractiveMessage.Body.create({
+                                    text: scoreMessage
+                                }),
+                                footer: proto.Message.InteractiveMessage.Footer.create({
+                                    text: `Last updated: ${new Date().toLocaleTimeString()}`
+                                }),
+                                nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
+                                    buttons: buttons
+                                })
+                            })
+                        }
+                    }
+                },
+                {}
+            );
+
+            await sock.relayMessage(sender, waMessage.message, { messageId: waMessage.key.id });
+
+        } catch (error) {
+            console.error(`Scores Fetch Error for ${league.name}:`, error);
+            await sock.sendMessage(sender, { 
+                text: `❌ Could not fetch scores for ${league.name}` 
+            });
+        }
+    },
+
+    formatScores(matches, league) {
+        let message = `${league.emoji} *${league.name} Live Scores*\n\n`;
+        
+        matches.forEach(match => {
+            message += `${match.teams.home} ${match.score} ${match.teams.away}\n`;
+            message += `⏱️ ${match.time}\n\n`;
+        });
+
+        return message;
+    }
+};
