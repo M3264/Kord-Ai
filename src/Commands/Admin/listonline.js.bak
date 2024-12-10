@@ -1,0 +1,81 @@
+const { logger } = require('../../Plugin/kordlogger');
+
+module.exports = {
+    usage: ["listonline"],
+    desc: "List online users in a GC",
+    commandType: "Group",
+    isGroupOnly: true,
+    isAdminOnly: false,
+    isPrivateOnly: false,
+    emoji: "🧑‍💻",
+
+    async execute(sock, m, args) {
+        try {
+            const groupId = m.key.remoteJid;
+            let online = [];
+
+            // Get group participants
+            const groupMetadata = await sock.groupMetadata(groupId);
+            if (!groupMetadata.participants) {
+                throw new Error('No participants found in group metadata');
+            }
+
+            // Check store for presences
+            if (sock.store && sock.store.presences && sock.store.presences[groupId]) {
+                // Get participants who are marked as online in the store
+                online = Object.entries(sock.store.presences[groupId])
+                    .filter(([_, presence]) => presence === 'available')
+                    .map(([jid]) => jid);
+            }
+
+            // Add message sender to online list
+            if (m.key.participant) {
+                online.push(m.key.participant);
+            }
+
+            // Get recent messages using the messages collection from the store
+            try {
+                const messages = await sock.store.messages[groupId]?.array() || [];
+                if (messages.length > 0) {
+                    // Get the 20 most recent messages
+                    const recentMessages = messages.slice(-20);
+                    const recentSenders = recentMessages
+                        .filter(msg => msg.key.participant)
+                        .map(msg => msg.key.participant);
+                    online.push(...recentSenders);
+                }
+            } catch (error) {
+                console.log('Error loading messages:', error);
+                // Continue execution even if message loading fails
+            }
+
+            // Remove duplicates and ensure they're group members
+            online = [...new Set(online)].filter(jid => 
+                groupMetadata.participants.some(p => p.id === jid)
+            );
+
+            if (online.length === 0) {
+                return await sock.sendMessage(groupId, { 
+                    text: "No users are currently online in this group." 
+                }, { quoted: m });
+            }
+
+            // Format message
+            const formattedUsers = online.map(jid => {
+                const number = jid.split('@')[0];
+                return `• @${number}`;
+            }).sort();
+
+            await sock.sendMessage(groupId, {
+                text: `📱 *Online Users in this Group:*\n\n${formattedUsers.join('\n')}\n\n_Last updated: ${new Date().toLocaleTimeString()}_`,
+                mentions: online
+            }, { quoted: m });
+
+        } catch (error) {
+            console.log('Error in listonline command:', error);
+            await sock.sendMessage(m.key.remoteJid, { 
+                text: '❌ Error: Failed to list online users.' 
+            }, { quoted: m });
+        }
+    }
+};
