@@ -37,10 +37,9 @@
 ---
 
 1. Get `SESSION ID`
-- Web: [Click Here](https://mirage-session-o2cf.onrender.com/pair) (Long Session I)
-- Telegram Bot: [Click Here](https://t.me/kpair_bot) (Short Session Id)
-
-- Any one of the links above is good and can be used
+- Web: [Click Here](https://session.kordai.us.kg)
+- Telegram Bot: [Click Here](https://t.me/kpair_bot)
+- Any one of the links above can be used
 
 2.  ***`Star ⭐` repository & Click [`FORK`](https://github.com/M3264/Kord-Ai/fork)***
    
