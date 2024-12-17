@@ -1,0 +1,61 @@
+const fs = require('fs');
+const path = require('path');
+
+module.exports = {
+  usage: ["antidelete"],
+  desc: "Enable or disable anti-delete functionality.",
+  commandType: "Settings",
+  isGroupOnly: false,
+  isAdminOnly: false,
+  isPrivateOnly: false,
+  isOwnerOnly: true,
+  emoji: "🛡️",
+
+  async execute(sock, m, args) {
+    const mode = args[0];
+    if (!mode || (mode !== 'on' && mode !== 'off')) {
+      if (global.settings?.INVINCIBLE_MODE) {
+        await kord.react(m, "🚫");
+        await kord.sendErr(m, mode, {
+          context: "antidelete",
+          info: "Invalid mode provided!"
+        });
+      } else {
+        return await kord.freply(m, "Please use `.antidelete on` or `.antidelete off`.");
+      }
+      return;
+    }
+
+    const configPath = path.join(__dirname, '../', '../', '../', 'Config.js');
+    
+    try {
+      // Use promise-based fs methods
+      const data = await fs.promises.readFile(configPath, 'utf8');
+
+      const newValue = mode === 'on';
+      const updatedData = data.replace(/ANTI_DELETE_ENABLED:\s*(true|false)/, `ANTI_DELETE_ENABLED: ${newValue}`);
+
+      await fs.promises.writeFile(configPath, updatedData, 'utf8');
+      
+      if (global.settings?.INVINCIBLE_MODE) {
+        await kord.react(m, "✅");
+        await kord.sendErr(m, "done", {
+          context: "antidelete",
+          info: "Configured!!"
+        });
+      await kord.freply(m, `Anti-delete functionality is now ${mode === 'on' ? 'enabled' : 'disabled'}.`);
+    } catch (err) {
+      console.error("Error handling anti-delete configuration:", err);
+      
+      if (global.settings?.INVINCIBLE_MODE) {
+        await kord.react(m, "🚫");
+        await kord.sendErr(m, err, {
+          context: "antidelete",
+          info: "Failed to update configuration!"
+        });
+      } else {
+        await kord.freply(m, "Failed to update configuration.");
+      }
+    }
+  }
+};

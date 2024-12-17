@@ -1,1 +1,1467 @@
-const a0_0x2088cd=a0_0x1834;(function(_0x220a4e,_0x28c0d2){const _0xc5a16e=a0_0x1834,_0x380ab1=_0x220a4e();while(!![]){try{const _0x4cbe51=-parseInt(_0xc5a16e(0x256))/0x1+parseInt(_0xc5a16e(0x19b))/0x2+parseInt(_0xc5a16e(0x218))/0x3*(parseInt(_0xc5a16e(0x17b))/0x4)+parseInt(_0xc5a16e(0x20a))/0x5*(-parseInt(_0xc5a16e(0x198))/0x6)+parseInt(_0xc5a16e(0x216))/0x7*(-parseInt(_0xc5a16e(0x1df))/0x8)+parseInt(_0xc5a16e(0x25e))/0x9+-parseInt(_0xc5a16e(0x1b3))/0xa*(parseInt(_0xc5a16e(0x27e))/0xb);if(_0x4cbe51===_0x28c0d2)break;else _0x380ab1['push'](_0x380ab1['shift']());}catch(_0x5c61fb){_0x380ab1['push'](_0x380ab1['shift']());}}}(a0_0x37a8,0x6c665));const a0_0x52e5cd=a0_0xdd9e;(function(_0x16dd73,_0x8c9295){const _0x2e056a=a0_0x1834,_0x3f7858=a0_0xdd9e,_0x3363de=_0x16dd73();while(!![]){try{const _0x38b95f=parseInt(_0x3f7858(0x1ed))/0x1*(parseInt(_0x3f7858(0x22f))/0x2)+-parseInt(_0x3f7858(0x213))/0x3+parseInt(_0x3f7858(0x266))/0x4*(parseInt(_0x3f7858(0x1e1))/0x5)+-parseInt(_0x3f7858(0x2b3))/0x6*(-parseInt(_0x3f7858(0x1cb))/0x7)+parseInt(_0x3f7858(0x26b))/0x8*(-parseInt(_0x3f7858(0x215))/0x9)+parseInt(_0x3f7858(0x1e3))/0xa+parseInt(_0x3f7858(0x1d1))/0xb;if(_0x38b95f===_0x8c9295)break;else _0x3363de[_0x2e056a(0x1a0)](_0x3363de['shift']());}catch(_0x23a10b){_0x3363de['push'](_0x3363de[_0x2e056a(0x23b)]());}}}(a0_0x678d,0x2386a));function a0_0x37a8(){const _0x3221d4=['updateLastSeenPrivacy','6555BravvZ','Error\x20in\x20broadcastgc\x20command','❌\x20Failed\x20to\x20send\x20location.','Unpin\x20a\x20chat','length','✅\x20Chat\x20has\x20been\x20marked\x20as\x20read.','Failed\x20to\x20unread\x20chat','privatemode','❌\x20Failed\x20to\x20save\x20the\x20message.','contacts','Get\x20and\x20send\x20location\x20of\x20a\x20place\x20or\x20timezone','picture','28AjkLCd','✅\x20Command\x20prefixes\x20have\x20been\x20set\x20to:\x20','1164867TBcnJJ','Failed\x20to\x20Pin\x20chat','Failed\x20to\x20unmute\x20chat','Invalid\x20read_receipts\x20value','❌\x20Usage:\x20.privacy\x20[last_seen|profile|status|read_receipts|groups|online]\x20[all|contacts|none]','unmutechat','error','extension','forward','Failed\x20to\x20read\x20Config.js.','set','❌\x20Please\x20reply\x20to\x20a\x20message\x20to\x20save\x20it.','Bot\x20is\x20already\x20in\x20Public\x20mode.','PREFIX','❌\x20Failed\x20to\x20mark\x20chat\x20as\x20read.','image','getQuotedMessage','Block\x20User','Error\x20clearing\x20chat:','writeFile','INVINCIBLE_MODE','chat','setprefix\x20command','❌\x20Failed\x20to\x20block\x20the\x20user.','23uLRCmE','529380uoOLhK','\x0aBEGIN:VCARD\x0aVERSION:3.0\x0aFN:','block','❌\x20Failed\x20to\x20forward\x20the\x20message.','Error\x20writing\x20to\x20Config.js','updateReadReceiptsPrivacy','endsWith','w:profile:picture','✅\x20Broadcast\x20sent\x20to\x20','Error\x20unarchiving\x20chat:','shift','MIME_JPEG','Create\x20a\x20new\x20group\x20chat','extendedTextMessage','utf8','✅\x20Message\x20has\x20been\x20saved\x20to\x20starred\x20messages.','Failed\x20to\x20fetch\x20blocklist','split','\x20has\x20been\x20blocked.','Failed\x20to\x20read\x20chat','669676EReqJg','Error\x20unblocking\x20user:','profile','getpp','Set\x20full\x20screen\x20profile\x20picture','No\x20Message\x20to\x20star','Error\x20reading\x20Config.js\x20file:','https://chat.whatsapp.com/','Invalid\x20groups\x20value','Error\x20creating\x20group:','readFile','✅\x20Chat\x20has\x20been\x20cleared.','\x20has\x20been\x20unblocked.','none','Broadcast\x20a\x20message\x20to\x20all\x20groups','No\x20timezone\x20configured','❌\x20Failed\x20to\x20download\x20the\x20media.','527357RVdhgP','Error\x20forwarding\x20message:','Location','OWNER_NUMBERS','Error\x20pinning\x20chat:','✅\x20Group\x20\x22','Failed\x20to\x20determine\x20current\x20work\x20mode','normalize','5843241lbwGyF','publicmode','chatModify','❌\x20Invalid\x20invite\x20link.','No\x20Prefix\x20provided','Failed\x20to\x20update\x20profile\x20picture','jid','reply','fetch','match_last_seen','Leave\x20the\x20group\x20chat','❌\x20Please\x20reply\x20to\x20a\x20message\x20to\x20broadcast.','Could\x20not\x20determine\x20message\x20ID\x20or\x20chat','data','Invalid\x20invite\x20link\x20format.','1264BiXPcK','❌\x20Please\x20provide\x20prefixes\x20separated\x20by\x20spaces.','Get\x20the\x20owner\x27s\x20contact\x20information\x20as\x20a\x20vCard.','Get\x20JID\x20of\x20a\x20user','unmute\x20Chat','Error\x20unmuting\x20chat:','Error\x20joining\x20group:','Error\x20marking\x20chat\x20as\x20read:','sender','No\x20link\x20provided\x20or\x20replied\x20message\x20was\x20empty.','❌\x20Failed\x20to\x20update\x20profile\x20picture.','No\x20blocked\x20users.','react','Config.js','filter','updateOnlinePrivacy','join','830071UODNmN','Owner\x20details\x20not\x20configured','disappearing','Privacy\x20Settings\x20Update','groupAcceptInvite','WORK_MODE:\x20\x22Private\x22','all','❌\x20Failed\x20to\x20unmute\x20the\x20chat.','fetchPrivacySettings','promises','downloadQuotedMedia','Get\x20Profile\x20Picture','Configure\x20privacy\x20settings','❌\x20Please\x20reply\x20to\x20a\x20message\x20or\x20mention\x20a\x20user\x20to\x20unblock.','Pin\x20a\x20chat','Error\x20fetching\x20profile\x20picture','Error\x20fetching\x20profile\x20picture:','Error\x20in\x20leave\x20command','❌\x20Failed\x20to\x20archive\x20the\x20chat.','star\x20command','clear','\x20private\x20chats.','updateGroupsAddPrivacy','✅\x20Chat\x20has\x20been\x20archived.','markunread','Invalid\x20profile\x20value','Failed\x20to\x20determine\x20current\x20work\x20mode.','❌\x20Failed\x20to\x20clear\x20the\x20chat.','WORK_MODE:\x20\x22','Blocklist\x20Fetch','2844720LKFcld','buffer','❌\x20Failed\x20to\x20create\x20the\x20group.','Invalid\x20online\x20value','4DoksYE','Unblock\x20a\x20user','Failed\x20to\x20unarchive\x20chat','unpin','Broadcast\x20a\x20message\x20to\x20all\x20private\x20chats','crop','Invalid\x20status\x20value','Error\x20leaving\x20group:','Pin\x20Chat','last_seen','Could\x20not\x20find\x20location\x20for\x20the\x20timezone','❌\x20Failed\x20to\x20pin\x20the\x20chat.','Failed\x20to\x20send\x20location','quotedMessage','❌\x20Failed\x20to\x20update\x20privacy\x20settings.','Set\x20a\x20new\x20command\x20prefix','key','12qqmQcK','Error\x20in\x20clearing\x20chat','❌\x20Location\x20not\x20found.','✅\x20User\x20','map','downloadMediaMsg','New\x20Group','unread\x20Chat','https://nominatim.openstreetmap.org/search?format=json&q=','Error\x20unpinning\x20chat:','Switch\x20the\x20bot\x27s\x20work\x20mode\x20between\x20public\x20and\x20private.','get','6lLsQFp','TIME_ZONE','✅\x20Chat\x20has\x20been\x20unpinned.','1640984oYHTBY','✅\x20Chat\x20has\x20been\x20unmuted.','kord','❌\x20Please\x20provide\x20a\x20single\x20prefix\x20to\x20set.','remoteJid','push','sendMessage','\x20groups.','scaleToFit','❌\x20Owner\x20details\x20not\x20configured','Full\x20Profile\x20Picture','slice','❌\x20Failed\x20to\x20fetch\x20the\x20profile\x20picture.','Error\x20blocking\x20user:','❌\x20Please\x20reply\x20to\x20a\x20message\x20to\x20forward\x20it.','privacy','No\x20number\x20provided','Bot\x27s\x20work\x20mode\x20is\x20now\x20set\x20to\x20Private.','off','📋\x20Current\x20Privacy\x20Settings:\x0a','✅\x20Full\x20profile\x20picture\x20has\x20been\x20updated.','forwardMessage','Unblock\x20User','Public','50OLvUjY','Public\x20Mode','Error\x20sending\x20location:','owner','Error\x20writing\x20to\x20Config.js\x20file:','keys','Error\x20archiving\x20chat:','Owner\x20Contact','contextInfo','Error\x20fetching\x20blocklist:','Join\x20Command','Failed\x20to\x20unblock\x20user','Failed\x20to\x20download\x20media\x20message','✅\x20Chat\x20has\x20been\x20unarchived.','Invalid\x20Prefix','✅\x20Command\x20prefix\x20has\x20been\x20set\x20to:\x20','Failed\x20to\x20create\x20group','📋\x20Blocked\x20Users\x20List:\x0a\x0a','creategc','Unmute\x20a\x20chat','save','Bot\x20is\x20already\x20in\x20Private\x20mode.','Error\x20broadcasting\x20to\x20','No\x20quoted\x20text','❌\x20Invalid\x20privacy\x20setting.\x20Choose\x20from:\x20last_seen,\x20profile,\x20status,\x20read_receipts,\x20groups,\x20online,\x20fetch,\x20disappearing','groupCreate','\x22\x20has\x20been\x20updated\x20to\x20\x22','settings','participant','leave','chatpin','freply','Private','❌\x20Failed\x20to\x20fetch\x20the\x20blocklist.','3154BKuqFq','Failed\x20to\x20archive\x20chat','Failed\x20to\x20update\x20Config.js.','Error\x20reading\x20Config.js','includes','jimp','stanzaId','Prefix\x20must\x20me\x20A\x20single\x20character\x20brr','View\x20list\x20of\x20blocked\x20users','Failed\x20to\x20download\x20quoted\x20media','1016104cMqtOF','fullpp','broadcastpm','query','❌\x20An\x20error\x20occurred:\x20','Failed\x20to\x20unpin\x20chat','replace','Forward\x20a\x20message\x20to\x20a\x20number','getWidth','updateDefaultDisappearingMode','fetchBlocklist','multiprefix\x20command','groups','Private\x20Mode','Bot','unlink','message','User','Error\x20in\x20forward\x20command','toLowerCase','star\x20Chat','Get\x20the\x20profile\x20picture\x20of\x20a\x20user','Clear\x20chat','setmultiprefix','updateBlockStatus','Failed\x20to\x20update\x20privacy\x20settings','Save\x20a\x20message\x20to\x20starred\x20messages','fromMe','Insufficient\x20arguments\x20for\x20privacy\x20command','Error\x20executing\x20owner\x20command:','read_receipts','newgc','❌\x20Please\x20provide\x20a\x20number\x20to\x20forward\x20the\x20message\x20to.','sendErr','chats','user','markread','No\x20user\x20specified\x20to\x20unblock','match','Error\x20in\x20fullpp:','15867vfrtuy','groupInviteCode'];a0_0x37a8=function(){return _0x3221d4;};return a0_0x37a8();}function a0_0x1834(_0x9f48df,_0xd92194){const _0x37a83c=a0_0x37a8();return a0_0x1834=function(_0x183486,_0x1d71ad){_0x183486=_0x183486-0x174;let _0x4bdfdc=_0x37a83c[_0x183486];return _0x4bdfdc;},a0_0x1834(_0x9f48df,_0xd92194);}const fs=require('fs'),path=require(a0_0x52e5cd(0x26d)),axios=require(a0_0x52e5cd(0x2b6)),fsPromises=require('fs')[a0_0x52e5cd(0x25f)],jimp=require(a0_0x52e5cd(0x281)),os=require('os');module['exports']=[{'usage':[a0_0x52e5cd(0x24c)],'desc':a0_0x52e5cd(0x228),'commandType':a0_0x52e5cd(0x2bf),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'📥','execute':async(_0xf30740,_0x1f5b7f)=>{const _0x33e6e5=a0_0x1834,_0x436ad9=a0_0x52e5cd;try{await _0xf30740[_0x436ad9(0x274)]({'archive':!![]},_0x1f5b7f['key'][_0x436ad9(0x200)]),global[_0x436ad9(0x217)]?.[_0x33e6e5(0x22c)]?await kord[_0x33e6e5(0x279)](_0x1f5b7f,'✅'):await global[_0x436ad9(0x212)][_0x436ad9(0x1fd)](_0x1f5b7f,_0x436ad9(0x257));}catch(_0x19840d){global[_0x33e6e5(0x1ce)]?.[_0x436ad9(0x223)]?(await kord[_0x436ad9(0x20a)](_0x1f5b7f,'🚫'),await kord[_0x436ad9(0x22a)](_0x1f5b7f,_0x19840d,{'context':_0x436ad9(0x273),'info':_0x33e6e5(0x1d6)})):(console[_0x436ad9(0x298)](_0x436ad9(0x299),_0x19840d),await global[_0x436ad9(0x212)][_0x436ad9(0x1fd)](_0x1f5b7f,_0x33e6e5(0x290)));}}},{'usage':[a0_0x52e5cd(0x2a5)],'desc':a0_0x52e5cd(0x23a),'commandType':a0_0x52e5cd(0x2bf),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'🚫','execute':async(_0x517fdd,_0x136ddb)=>{const _0x4d1b9d=a0_0x1834,_0x433f6e=a0_0x52e5cd,_0x409ff7=_0x136ddb[_0x433f6e(0x202)][_0x433f6e(0x200)]||null;if(!_0x409ff7){if(global[_0x433f6e(0x217)]?.[_0x433f6e(0x223)])await kord[_0x433f6e(0x20a)](_0x136ddb,'🚫'),await kord[_0x433f6e(0x22a)](_0x136ddb,_0x409ff7,{'context':_0x4d1b9d(0x229),'info':'No\x20user\x20specified\x20to\x20block'});else return await global[_0x433f6e(0x212)][_0x433f6e(0x1fd)](_0x136ddb,_0x433f6e(0x260));return;}try{await _0x517fdd[_0x433f6e(0x2c3)](_0x409ff7,_0x433f6e(0x2a5)),global['settings']?.[_0x4d1b9d(0x22c)]?await kord[_0x4d1b9d(0x279)](_0x136ddb,'✅'):await global[_0x433f6e(0x212)][_0x433f6e(0x1fd)](_0x136ddb,_0x4d1b9d(0x18f)+_0x409ff7+_0x433f6e(0x261));}catch(_0xd27c48){global[_0x433f6e(0x217)]?.[_0x433f6e(0x223)]?(await kord[_0x433f6e(0x20a)](_0x136ddb,'🚫'),await kord[_0x433f6e(0x22a)](_0x136ddb,_0xd27c48,{'context':_0x433f6e(0x1eb),'info':'Failed\x20to\x20block\x20user'})):(console[_0x4d1b9d(0x21e)](_0x4d1b9d(0x1a8),_0xd27c48),await global[_0x433f6e(0x212)][_0x433f6e(0x1fd)](_0x136ddb,_0x433f6e(0x1e7)));}}},{'usage':[a0_0x52e5cd(0x26f)],'desc':a0_0x52e5cd(0x1ce),'commandType':a0_0x52e5cd(0x2bf),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'✅','execute':async(_0x4cf001,_0x553d45)=>{const _0x106c22=a0_0x1834,_0x243492=a0_0x52e5cd,_0x2bcb30=_0x553d45[_0x243492(0x202)][_0x243492(0x200)]||null;if(!_0x2bcb30){if(global[_0x243492(0x217)]?.[_0x243492(0x223)])await kord[_0x243492(0x20a)](_0x553d45,'🚫'),await kord[_0x106c22(0x200)](_0x553d45,_0x2bcb30,{'context':_0x243492(0x258),'info':_0x243492(0x209)});else return await global[_0x243492(0x212)][_0x243492(0x1fd)](_0x553d45,_0x243492(0x241));return;}try{await _0x4cf001[_0x243492(0x2c3)](_0x2bcb30,_0x243492(0x26f)),global[_0x243492(0x217)]?.[_0x243492(0x223)]?await kord[_0x106c22(0x279)](_0x553d45,'✅'):await global[_0x243492(0x212)][_0x243492(0x1fd)](_0x553d45,_0x243492(0x1ec)+_0x2bcb30+_0x243492(0x2af));}catch(_0x860de3){global[_0x243492(0x217)]?.[_0x106c22(0x22c)]?(await kord[_0x243492(0x20a)](_0x553d45,'🚫'),await kord[_0x243492(0x22a)](_0x553d45,_0x860de3,{'context':_0x106c22(0x1b1),'info':_0x243492(0x269)})):(console[_0x106c22(0x21e)](_0x243492(0x226),_0x860de3),await global[_0x243492(0x212)][_0x106c22(0x265)](_0x553d45,_0x243492(0x239)));}}},{'usage':[a0_0x52e5cd(0x272)],'desc':a0_0x2088cd(0x270),'commandType':a0_0x52e5cd(0x2bf),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':![],'emoji':'🆔','execute':async(_0x2cfab3,_0x2d10f7)=>{const _0x573689=a0_0x2088cd,_0x45c2b4=a0_0x52e5cd,_0x52549e=_0x2d10f7[_0x45c2b4(0x202)][_0x573689(0x19f)]||_0x2d10f7[_0x45c2b4(0x2c2)];await global['kord'][_0x45c2b4(0x1fd)](_0x2d10f7,''+_0x52549e);}},{'usage':[a0_0x52e5cd(0x227)],'desc':a0_0x52e5cd(0x28e),'commandType':a0_0x52e5cd(0x2bf),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'🧹','execute':async(_0x47affa,_0x36d7bd)=>{const _0x49d82f=a0_0x2088cd,_0x4d059f=a0_0x52e5cd;try{await _0x47affa[_0x49d82f(0x260)]({'delete':!![],'lastMessages':[{'key':_0x36d7bd[_0x4d059f(0x202)],'messageTimestamp':_0x36d7bd['messageTimestamp']}]},_0x36d7bd[_0x4d059f(0x202)][_0x49d82f(0x19f)]),global['settings']?.[_0x4d059f(0x223)]?await kord[_0x4d059f(0x20a)](_0x36d7bd,'✅'):await global[_0x4d059f(0x212)][_0x4d059f(0x1fd)](_0x36d7bd,_0x4d059f(0x268));}catch(_0x16e124){console[_0x4d059f(0x298)](_0x49d82f(0x22a),_0x16e124),global[_0x4d059f(0x217)]?.[_0x4d059f(0x223)]?(await kord[_0x4d059f(0x20a)](_0x36d7bd,'❌'),await kord[_0x4d059f(0x22a)](_0x36d7bd,_0x16e124,{'context':_0x4d059f(0x255)})):await global['kord'][_0x49d82f(0x265)](_0x36d7bd,_0x4d059f(0x1f7));}}},{'usage':[a0_0x52e5cd(0x27d)],'desc':a0_0x52e5cd(0x1e4),'commandType':a0_0x52e5cd(0x2bf),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'↪️','execute':async(_0x48a355,_0x4bdc60,_0x2b7ce9)=>{const _0x536076=a0_0x2088cd,_0x28dbe2=a0_0x52e5cd,_0x55f4dc=await global[_0x28dbe2(0x212)][_0x28dbe2(0x2b8)](_0x4bdc60)||_0x28dbe2(0x1ff);if(!_0x55f4dc){if(global[_0x28dbe2(0x217)]?.[_0x536076(0x22c)])await kord[_0x28dbe2(0x20a)](_0x4bdc60,'❌'),await kord[_0x536076(0x200)](_0x4bdc60,_0x55f4dc,{'context':_0x536076(0x1f1)});else return await global[_0x28dbe2(0x212)][_0x536076(0x265)](_0x4bdc60,_0x28dbe2(0x1e2));return;}if(!_0x2b7ce9[0x0]){if(global[_0x28dbe2(0x217)]?.[_0x28dbe2(0x223)])await kord[_0x28dbe2(0x20a)](_0x4bdc60,'❌'),await kord['sendErr'](_0x4bdc60,_0x536076(0x1ab),{'context':_0x28dbe2(0x2a9)});else return await global[_0x28dbe2(0x212)]['reply'](_0x4bdc60,_0x536076(0x1ff));return;}const _0x1b94da=_0x2b7ce9[0x0][_0x28dbe2(0x1f9)]('@')?_0x2b7ce9[0x0]:_0x2b7ce9[0x0]+_0x28dbe2(0x1c7);try{await global[_0x28dbe2(0x212)][_0x28dbe2(0x23c)](_0x1b94da,{'key':_0x4bdc60[_0x28dbe2(0x202)],'message':_0x55f4dc}),global[_0x536076(0x1ce)]?.[_0x28dbe2(0x223)]?kord[_0x28dbe2(0x20a)](_0x4bdc60,'✅'):await global['kord'][_0x28dbe2(0x1fd)](_0x4bdc60,'✅\x20Message\x20has\x20been\x20forwarded.');}catch(_0x5b0a9d){console[_0x28dbe2(0x298)](_0x536076(0x257),_0x5b0a9d),global['settings']?.[_0x536076(0x22c)]?(await kord[_0x28dbe2(0x20a)](_0x4bdc60,'❌'),await kord[_0x28dbe2(0x22a)](_0x4bdc60,_0x5b0a9d,{'context':_0x28dbe2(0x2a9)})):await global[_0x28dbe2(0x212)][_0x28dbe2(0x1fd)](_0x4bdc60,_0x28dbe2(0x233));}}},{'usage':[a0_0x52e5cd(0x206)],'desc':a0_0x52e5cd(0x1fc),'commandType':a0_0x2088cd(0x1f0),'isGroupOnly':![],'isAdminOnly':!![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'📢','execute':async(_0x18fac6,_0x2446b7)=>{const _0x3b7ff3=a0_0x2088cd,_0x2f1abe=a0_0x52e5cd,_0x534122=await global[_0x3b7ff3(0x19d)][_0x2f1abe(0x2b8)](_0x2446b7)||_0x2f1abe(0x1ff);if(!_0x534122){if(global[_0x3b7ff3(0x1ce)]?.[_0x3b7ff3(0x22c)])await kord['react'](_0x2446b7,'❌'),await kord[_0x2f1abe(0x22a)](_0x2446b7,_0x534122,{'context':_0x2f1abe(0x1e9)});else return await global[_0x2f1abe(0x212)][_0x2f1abe(0x1fd)](_0x2446b7,_0x2f1abe(0x2c1));return;}const _0x3f4b21=Object[_0x3b7ff3(0x1b8)](await _0x18fac6[_0x2f1abe(0x259)]());let _0x20d8cc=0x0;for(let _0x5194dc of _0x3f4b21){try{await global[_0x2f1abe(0x212)][_0x2f1abe(0x23c)](_0x5194dc,{'key':_0x2446b7[_0x2f1abe(0x202)],'message':_0x534122}),_0x20d8cc++;}catch(_0x42b7f4){console[_0x2f1abe(0x298)](_0x2f1abe(0x2a7)+_0x5194dc+':',_0x42b7f4),global[_0x2f1abe(0x217)]?.[_0x2f1abe(0x223)]&&(await kord[_0x2f1abe(0x20a)](_0x2446b7,'❌'),await kord[_0x2f1abe(0x22a)](_0x2446b7,_0x42b7f4,{'context':_0x3b7ff3(0x20b)}));}}global[_0x2f1abe(0x217)]?.[_0x2f1abe(0x223)]?await kord[_0x2f1abe(0x20a)](_0x2446b7,'✅'):await global[_0x2f1abe(0x212)][_0x2f1abe(0x1fd)](_0x2446b7,_0x2f1abe(0x1c2)+_0x20d8cc+_0x3b7ff3(0x1a2));}},{'usage':[a0_0x52e5cd(0x218)],'desc':a0_0x52e5cd(0x2c6),'commandType':a0_0x2088cd(0x1f0),'isGroupOnly':![],'isAdminOnly':!![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'📣','execute':async(_0x600850,_0x3284f4)=>{const _0x2e4988=a0_0x2088cd,_0x3f64b6=a0_0x52e5cd,_0x3d3668=await global[_0x3f64b6(0x212)][_0x3f64b6(0x2b8)](_0x3284f4);if(!_0x3d3668){if(global[_0x2e4988(0x1ce)]?.['INVINCIBLE_MODE'])await kord[_0x3f64b6(0x20a)](_0x3284f4,'❌'),await kord[_0x3f64b6(0x22a)](_0x3284f4,_0x3d3668,{'context':_0x3f64b6(0x2bc)});else return await global[_0x3f64b6(0x212)][_0x3f64b6(0x1fd)](_0x3284f4,_0x2e4988(0x269));return;}const _0x4b96a2=Object[_0x3f64b6(0x244)](await _0x600850[_0x3f64b6(0x2d5)])[_0x2e4988(0x27b)](([_0xc0d1f0])=>!_0xc0d1f0[_0x3f64b6(0x293)]('@g.us'));let _0x2fdf7c=0x0;for(let [_0x49a511]of _0x4b96a2){try{await global[_0x3f64b6(0x212)][_0x3f64b6(0x23c)](_0x49a511,{'key':_0x3284f4[_0x3f64b6(0x202)],'message':_0x3d3668}),_0x2fdf7c++;}catch(_0x1245a4){console[_0x3f64b6(0x298)](_0x2e4988(0x1c9)+_0x49a511+':',_0x1245a4),global[_0x3f64b6(0x217)]?.[_0x3f64b6(0x223)]&&(await kord[_0x2e4988(0x279)](_0x3284f4,'❌'),await kord[_0x3f64b6(0x22a)](_0x3284f4,_0x1245a4,{'context':_0x2e4988(0x20b)}));}}global[_0x3f64b6(0x217)]?.[_0x3f64b6(0x223)]?await kord[_0x3f64b6(0x20a)](_0x3284f4,'✅'):await global[_0x3f64b6(0x212)][_0x3f64b6(0x1fd)](_0x3284f4,_0x3f64b6(0x1c2)+_0x2fdf7c+_0x3f64b6(0x2c7));}},{'usage':[a0_0x2088cd(0x1d0)],'desc':a0_0x52e5cd(0x2da),'commandType':a0_0x2088cd(0x1f0),'isGroupOnly':!![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'👋','execute':async(_0x101be8,_0x36bf2e)=>{const _0x2255e5=a0_0x2088cd,_0x5acceb=a0_0x52e5cd;try{await _0x101be8[_0x5acceb(0x21b)](_0x36bf2e[_0x5acceb(0x202)][_0x2255e5(0x19f)]);}catch(_0x167404){console[_0x5acceb(0x298)](_0x5acceb(0x1dd),_0x167404),global[_0x2255e5(0x1ce)]?.[_0x5acceb(0x223)]?(await kord[_0x5acceb(0x20a)](_0x36bf2e,'❌'),await kord['sendErr'](_0x36bf2e,_0x167404,{'context':_0x5acceb(0x247)})):await global[_0x5acceb(0x212)][_0x5acceb(0x1fd)](_0x36bf2e,_0x5acceb(0x24a));}}},{'usage':[a0_0x52e5cd(0x28b)],'desc':a0_0x52e5cd(0x295),'commandType':a0_0x52e5cd(0x2bf),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'🚪','execute':async(_0x4e63fa,_0x14d6a0,_0x19848e)=>{const _0x36b91a=a0_0x2088cd,_0x128ec4=a0_0x52e5cd;let _0x34c13b;if(_0x19848e[0x0])_0x34c13b=_0x19848e[0x0];else{const _0x36d830=await global[_0x128ec4(0x212)][_0x128ec4(0x2d1)](_0x14d6a0)||null;if(!_0x36d830){if(global[_0x128ec4(0x217)]?.[_0x36b91a(0x22c)])await kord[_0x128ec4(0x20a)](_0x14d6a0,'❌'),await kord[_0x128ec4(0x22a)](_0x14d6a0,_0x36d830,{'context':_0x36b91a(0x1bd),'info':_0x128ec4(0x1db)});else return await global[_0x128ec4(0x212)][_0x128ec4(0x1fd)](_0x14d6a0,'❌\x20Please\x20provide\x20a\x20group\x20invite\x20link\x20or\x20reply\x20to\x20a\x20message\x20containing\x20the\x20link.');return;}_0x34c13b=_0x36d830;}const _0x49b89d=/chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i,[,_0x51bd13]=_0x34c13b[_0x128ec4(0x2a2)](_0x49b89d)||[];if(!_0x51bd13){if(global['settings']?.[_0x128ec4(0x223)])await kord[_0x36b91a(0x279)](_0x14d6a0,'❌'),await kord[_0x128ec4(0x22a)](_0x14d6a0,_0x34c13b,{'context':'Join\x20Command','info':_0x128ec4(0x296)});else return await global[_0x128ec4(0x212)][_0x128ec4(0x1fd)](_0x14d6a0,_0x128ec4(0x1f4));return;}try{await _0x4e63fa[_0x128ec4(0x1bd)](_0x51bd13),!global[_0x36b91a(0x1ce)]?.[_0x36b91a(0x22c)]&&await global[_0x128ec4(0x212)][_0x128ec4(0x1fd)](_0x14d6a0,_0x128ec4(0x27b));}catch(_0x523de7){global[_0x128ec4(0x217)]?.[_0x128ec4(0x223)]?(await kord[_0x36b91a(0x279)](_0x14d6a0,'🚫'),await kord[_0x36b91a(0x200)](_0x14d6a0,_0x523de7,{'context':_0x36b91a(0x1bd),'info':'Failed\x20to\x20join\x20the\x20group.'})):(console[_0x36b91a(0x21e)](_0x36b91a(0x273),_0x523de7),await global[_0x128ec4(0x212)][_0x128ec4(0x1fd)](_0x14d6a0,_0x128ec4(0x221)));}}},{'usage':[a0_0x52e5cd(0x204)],'desc':a0_0x52e5cd(0x220),'commandType':a0_0x2088cd(0x1f0),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':![],'emoji':'📷','execute':async(_0x5dfe37,_0x1020de)=>{const _0x212897=a0_0x2088cd,_0x5bfc2d=a0_0x52e5cd,_0x232cbd=_0x1020de[_0x5bfc2d(0x2bb)]?.[_0x5bfc2d(0x202)]?.[_0x5bfc2d(0x200)]||_0x1020de[_0x5bfc2d(0x202)][_0x212897(0x19f)];try{const _0x19c2d1=await _0x5dfe37[_0x5bfc2d(0x230)](_0x232cbd,_0x212897(0x227));await _0x5dfe37[_0x5bfc2d(0x263)](_0x1020de[_0x5bfc2d(0x202)][_0x212897(0x19f)],{'image':{'url':_0x19c2d1}});}catch(_0x3eb2d1){global[_0x5bfc2d(0x217)]?.[_0x5bfc2d(0x223)]?(await kord[_0x212897(0x279)](_0x1020de,'🚫'),await kord[_0x212897(0x200)](_0x1020de,_0x3eb2d1,{'context':_0x5bfc2d(0x277),'info':_0x5bfc2d(0x26c)})):(console[_0x5bfc2d(0x298)](_0x5bfc2d(0x245),_0x3eb2d1),await global[_0x5bfc2d(0x212)][_0x212897(0x265)](_0x1020de,_0x5bfc2d(0x229)));}}},{'usage':[a0_0x52e5cd(0x238)],'desc':'Set\x20the\x20bot\x27s\x20work\x20mode\x20to\x20private.','commandType':a0_0x52e5cd(0x264),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'🔒',async 'execute'(_0x144b97,_0x2357c3,_0x56ac62){const _0x5df935=a0_0x2088cd,_0x4e1f3a=a0_0x52e5cd,_0x23f162=path[_0x4e1f3a(0x28b)](__dirname,_0x4e1f3a(0x211),_0x4e1f3a(0x211),_0x4e1f3a(0x211),_0x5df935(0x27a));fs[_0x4e1f3a(0x270)](_0x23f162,_0x4e1f3a(0x1cc),(_0xdea148,_0x404b54)=>{const _0xe60970=_0x5df935,_0x37a639=_0x4e1f3a;if(_0xdea148){global[_0x37a639(0x217)]?.[_0x37a639(0x223)]?(kord[_0x37a639(0x20a)](_0x2357c3,'🚫'),kord[_0x37a639(0x22a)](_0x2357c3,_0xdea148,{'context':_0xe60970(0x1ec),'info':_0x37a639(0x1d4)})):(console[_0x37a639(0x298)](_0x37a639(0x287),_0xdea148),kord[_0xe60970(0x1d2)](_0x2357c3,_0x37a639(0x1f0)));return;}const _0x4b6e61=_0x404b54[_0x37a639(0x2a2)](/WORK_MODE:\s*"(.*?)"/);if(!_0x4b6e61){global[_0x37a639(0x217)]?.[_0x37a639(0x223)]?(kord[_0x37a639(0x20a)](_0x2357c3,'🚫'),kord[_0x37a639(0x22a)](_0x2357c3,null,{'context':_0x37a639(0x2ba),'info':_0xe60970(0x25c)})):kord[_0x37a639(0x1cd)](_0x2357c3,_0x37a639(0x2cf));return;}const _0xbb52bd=_0x4b6e61[0x1];if(_0xbb52bd===_0xe60970(0x1d3)){global[_0x37a639(0x217)]?.[_0xe60970(0x22c)]?kord[_0x37a639(0x20a)](_0x2357c3,'🚫'):kord[_0xe60970(0x1d2)](_0x2357c3,_0xe60970(0x1c8));return;}const _0x527742=_0x404b54[_0x37a639(0x286)](/WORK_MODE:\s*"(.*?)"/,_0x37a639(0x22c));fs[_0xe60970(0x22b)](_0x23f162,_0x527742,_0x37a639(0x1cc),_0x206b40=>{const _0x2a566d=_0xe60970,_0x13b41b=_0x37a639;if(_0x206b40){global[_0x13b41b(0x217)]?.[_0x2a566d(0x22c)]?(kord[_0x2a566d(0x279)](_0x2357c3,'🚫'),kord[_0x13b41b(0x22a)](_0x2357c3,_0x206b40,{'context':_0x13b41b(0x2ba),'info':_0x13b41b(0x2b4)})):(console[_0x2a566d(0x21e)](_0x13b41b(0x285),_0x206b40),kord[_0x13b41b(0x1cd)](_0x2357c3,_0x13b41b(0x2b2)));return;}global[_0x2a566d(0x1ce)]?.[_0x13b41b(0x223)]?kord[_0x2a566d(0x279)](_0x2357c3,'✅'):kord[_0x13b41b(0x1cd)](_0x2357c3,_0x13b41b(0x2cd));});});}},{'usage':[a0_0x2088cd(0x25f)],'desc':a0_0x52e5cd(0x1d6),'commandType':a0_0x52e5cd(0x264),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'🌐',async 'execute'(_0x3f3396,_0x3dcfec,_0x5ebdef){const _0x2dd880=a0_0x52e5cd,_0x17838a=_0x5ebdef[0x0];if(!_0x17838a||_0x17838a!=='on'&&_0x17838a!==_0x2dd880(0x2d0)){global[_0x2dd880(0x217)]?.[_0x2dd880(0x223)]?kord[_0x2dd880(0x20a)](_0x3dcfec,'🚫'):kord[_0x2dd880(0x1cd)](_0x3dcfec,_0x2dd880(0x2aa));return;}const _0x460888=path[_0x2dd880(0x28b)](__dirname,_0x2dd880(0x211),_0x2dd880(0x211),_0x2dd880(0x211),_0x2dd880(0x2a8));fs[_0x2dd880(0x270)](_0x460888,_0x2dd880(0x1cc),(_0x2c598f,_0xa3c832)=>{const _0x2c608f=a0_0x1834,_0xd742f=_0x2dd880;if(_0x2c598f){global[_0xd742f(0x217)]?.[_0xd742f(0x223)]?(kord[_0xd742f(0x20a)](_0x3dcfec,'🚫'),kord[_0x2c608f(0x200)](_0x3dcfec,_0x2c598f,{'context':_0x2c608f(0x1b4),'info':_0xd742f(0x1d4)})):(console[_0xd742f(0x298)](_0xd742f(0x287),_0x2c598f),kord[_0xd742f(0x1cd)](_0x3dcfec,'Failed\x20to\x20read\x20Config.js.'));return;}const _0x189847=_0xa3c832[_0xd742f(0x2a2)](/WORK_MODE:\s*"(.*?)"/);if(!_0x189847){global[_0xd742f(0x217)]?.[_0xd742f(0x223)]?(kord[_0xd742f(0x20a)](_0x3dcfec,'🚫'),kord[_0xd742f(0x22a)](_0x3dcfec,null,{'context':_0xd742f(0x29b),'info':_0x2c608f(0x25c)})):kord[_0xd742f(0x1cd)](_0x3dcfec,_0x2c608f(0x298));return;}const _0x5bc54d=_0x189847[0x1];if(_0x17838a==='on'&&_0x5bc54d===_0xd742f(0x240)){global[_0xd742f(0x217)]?.[_0xd742f(0x223)]?kord[_0x2c608f(0x279)](_0x3dcfec,'🚫'):kord[_0xd742f(0x1cd)](_0x3dcfec,_0xd742f(0x280));return;}if(_0x17838a==='off'&&_0x5bc54d===_0xd742f(0x20f)){global[_0xd742f(0x217)]?.[_0xd742f(0x223)]?kord[_0xd742f(0x20a)](_0x3dcfec,'🚫'):kord[_0x2c608f(0x1d2)](_0x3dcfec,_0xd742f(0x207));return;}const _0x4c6361=_0x17838a==='on'?_0xd742f(0x240):_0xd742f(0x20f),_0xffb9c6=_0xa3c832[_0xd742f(0x286)](/WORK_MODE:\s*"(.*?)"/,_0xd742f(0x20d)+_0x4c6361+'\x22');fs['writeFile'](_0x460888,_0xffb9c6,_0xd742f(0x1cc),_0x540c82=>{const _0x5ba1b2=_0x2c608f,_0x2a9178=_0xd742f;if(_0x540c82){global[_0x2a9178(0x217)]?.[_0x2a9178(0x223)]?(kord[_0x2a9178(0x20a)](_0x3dcfec,'🚫'),kord[_0x2a9178(0x22a)](_0x3dcfec,_0x540c82,{'context':_0x5ba1b2(0x1b4),'info':_0x2a9178(0x2b4)})):(console[_0x2a9178(0x298)](_0x2a9178(0x285),_0x540c82),kord[_0x2a9178(0x1cd)](_0x3dcfec,_0x2a9178(0x2b2)));return;}global[_0x2a9178(0x217)]?.[_0x2a9178(0x223)]?kord[_0x2a9178(0x20a)](_0x3dcfec,'✅'):kord[_0x2a9178(0x1cd)](_0x3dcfec,_0x2a9178(0x28c)+_0x4c6361+'.');});});}},{'usage':[a0_0x52e5cd(0x1da)],'desc':'Set\x20multiple\x20command\x20prefixes\x20separated\x20by\x20spaces','commandType':a0_0x52e5cd(0x2bf),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'🔧','execute':async(_0x586b67,_0x40e2fa,_0x4540c4)=>{const _0x4ea8b1=a0_0x2088cd,_0xbdd10a=a0_0x52e5cd;if(_0x4540c4[_0xbdd10a(0x219)]===0x0){if(global[_0xbdd10a(0x217)]?.[_0xbdd10a(0x223)])kord[_0xbdd10a(0x20a)](_0x40e2fa,'❌'),kord[_0xbdd10a(0x22a)](_0x40e2fa,_0xbdd10a(0x2c5),{'context':_0xbdd10a(0x2ca)});else return await global[_0x4ea8b1(0x19d)][_0xbdd10a(0x1fd)](_0x40e2fa,_0xbdd10a(0x232));return;}const _0x4e086a=_0x4540c4[_0xbdd10a(0x28b)]('\x20')[_0xbdd10a(0x2b7)]('\x20')['map'](_0x26d981=>_0x26d981[_0xbdd10a(0x265)]()),_0x26fbe8=_0x4e086a[_0xbdd10a(0x2ab)](_0x48b9d7=>_0x48b9d7[_0xbdd10a(0x219)]>0x0&&_0x48b9d7[_0x4ea8b1(0x20e)]===0x1);if(_0x26fbe8[_0xbdd10a(0x219)]===0x0){if(global[_0xbdd10a(0x217)]?.[_0xbdd10a(0x223)])kord[_0xbdd10a(0x20a)](_0x40e2fa,'❌'),kord[_0x4ea8b1(0x200)](_0x40e2fa,_0x4ea8b1(0x1c1),{'context':_0xbdd10a(0x2ca)});else return await global[_0xbdd10a(0x212)][_0x4ea8b1(0x265)](_0x40e2fa,_0xbdd10a(0x250));return;}global[_0xbdd10a(0x217)][_0xbdd10a(0x2b1)]=_0x26fbe8,global[_0xbdd10a(0x217)]?.[_0xbdd10a(0x223)]?kord[_0xbdd10a(0x20a)](_0x40e2fa,'✅'):await global[_0xbdd10a(0x212)][_0xbdd10a(0x1fd)](_0x40e2fa,_0xbdd10a(0x1c0)+_0x26fbe8[_0xbdd10a(0x28b)](',\x20'));}},{'usage':['setprefix'],'desc':a0_0x52e5cd(0x289),'commandType':a0_0x52e5cd(0x2bf),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'🔧','execute':async(_0x53d6e3,_0x265c2b,_0x2046c4)=>{const _0x442c53=a0_0x2088cd,_0x5acd21=a0_0x52e5cd;if(_0x2046c4[_0x5acd21(0x219)]!==0x1){if(global[_0x5acd21(0x217)]?.[_0x5acd21(0x223)])kord[_0x442c53(0x279)](_0x265c2b,'❌'),kord[_0x5acd21(0x22a)](_0x265c2b,_0x5acd21(0x2c5),{'context':_0x5acd21(0x22b)});else return await global[_0x5acd21(0x212)][_0x5acd21(0x1fd)](_0x265c2b,_0x442c53(0x19e));return;}const _0x295beb=_0x2046c4[0x0];if(_0x295beb[_0x5acd21(0x219)]>0x1){if(global[_0x5acd21(0x217)]?.['INVINCIBLE_MODE'])kord[_0x5acd21(0x20a)](_0x265c2b,'❌'),kord['sendErr'](_0x265c2b,_0x5acd21(0x2ac),{'context':_0x442c53(0x22e)});else return await global[_0x5acd21(0x212)][_0x5acd21(0x1fd)](_0x265c2b,_0x5acd21(0x26a));return;}global[_0x5acd21(0x217)][_0x5acd21(0x2b1)]=[_0x295beb],global[_0x5acd21(0x217)]?.[_0x5acd21(0x223)]?kord[_0x5acd21(0x20a)](_0x265c2b,'✅'):await global[_0x442c53(0x19d)][_0x5acd21(0x1fd)](_0x265c2b,_0x5acd21(0x252)+_0x295beb);}},{'usage':[a0_0x52e5cd(0x1c4)],'desc':'Unarchive\x20a\x20chat','commandType':a0_0x52e5cd(0x2bf),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'📤','execute':async(_0x4c6e56,_0x5966d3)=>{const _0x308185=a0_0x2088cd,_0x3b11dd=a0_0x52e5cd;try{await _0x4c6e56[_0x308185(0x260)]({'archive':![]},_0x5966d3[_0x308185(0x18b)][_0x3b11dd(0x200)]),global[_0x308185(0x1ce)]?.['INVINCIBLE_MODE']?kord[_0x3b11dd(0x20a)](_0x5966d3,'✅'):await global[_0x3b11dd(0x212)][_0x308185(0x265)](_0x5966d3,_0x3b11dd(0x256));}catch(_0x5475bf){console[_0x3b11dd(0x298)](_0x3b11dd(0x1ea),_0x5475bf),global[_0x308185(0x1ce)]?.[_0x3b11dd(0x223)]?(await kord[_0x3b11dd(0x20a)](_0x5966d3,'🚫'),await kord[_0x3b11dd(0x22a)](_0x5966d3,_0x5475bf,{'context':'Unarchive\x20Chat','info':_0x3b11dd(0x2c9)})):await global[_0x3b11dd(0x212)][_0x308185(0x265)](_0x5966d3,'❌\x20Failed\x20to\x20unarchive\x20the\x20chat.');}}},{'usage':[a0_0x52e5cd(0x21d)],'desc':a0_0x2088cd(0x28c),'commandType':a0_0x52e5cd(0x2bf),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'📌','execute':async(_0xac1df5,_0x380424)=>{const _0x12e1d2=a0_0x2088cd,_0x41ddff=a0_0x52e5cd;try{await _0xac1df5['chatModify']({'pin':!![]},_0x380424[_0x41ddff(0x202)][_0x12e1d2(0x19f)]),global[_0x12e1d2(0x1ce)]?.[_0x12e1d2(0x22c)]?kord[_0x41ddff(0x20a)](_0x380424,'✅'):await global[_0x41ddff(0x212)][_0x41ddff(0x1fd)](_0x380424,_0x41ddff(0x1df));}catch(_0x356182){console[_0x41ddff(0x298)](_0x41ddff(0x1e5),_0x356182),global[_0x12e1d2(0x1ce)]?.[_0x41ddff(0x223)]?(await kord['react'](_0x380424,'🚫'),await kord[_0x12e1d2(0x200)](_0x380424,_0x356182,{'context':_0x41ddff(0x242),'info':_0x41ddff(0x1de)})):await global[_0x41ddff(0x212)][_0x41ddff(0x1fd)](_0x380424,_0x12e1d2(0x186));}}},{'usage':[a0_0x52e5cd(0x29f)],'desc':a0_0x52e5cd(0x25e),'commandType':a0_0x2088cd(0x1f0),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'📍','execute':async(_0x3841b7,_0x3a967f)=>{const _0x4d487e=a0_0x2088cd,_0x106766=a0_0x52e5cd;try{await _0x3841b7[_0x4d487e(0x260)]({'pin':![]},_0x3a967f[_0x106766(0x202)][_0x106766(0x200)]),global[_0x4d487e(0x1ce)]?.[_0x106766(0x223)]?kord[_0x106766(0x20a)](_0x3a967f,'✅'):await global[_0x106766(0x212)][_0x106766(0x1fd)](_0x3a967f,_0x106766(0x29e));}catch(_0x306b96){console[_0x106766(0x298)](_0x106766(0x21a),_0x306b96),global[_0x106766(0x217)]?.[_0x106766(0x223)]?(await kord[_0x4d487e(0x279)](_0x3a967f,'🚫'),await kord[_0x106766(0x22a)](_0x3a967f,_0x306b96,{'context':'unpin\x20Chat','info':_0x106766(0x2cb)})):await global[_0x106766(0x212)][_0x106766(0x1fd)](_0x3a967f,'❌\x20Failed\x20to\x20unpin\x20the\x20chat.');}}},{'usage':[a0_0x52e5cd(0x25a)],'desc':'Mark\x20chat\x20as\x20read','commandType':a0_0x52e5cd(0x2bf),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'✓','execute':async(_0x39cacc,_0x217884)=>{const _0x5464b3=a0_0x2088cd,_0x384caa=a0_0x52e5cd;try{await _0x39cacc[_0x384caa(0x274)]({'markRead':!![]},_0x217884[_0x5464b3(0x18b)][_0x5464b3(0x19f)]),global[_0x384caa(0x217)]?.[_0x5464b3(0x22c)]?kord[_0x384caa(0x20a)](_0x217884,'✅'):await global[_0x384caa(0x212)][_0x384caa(0x1fd)](_0x217884,_0x384caa(0x292));}catch(_0x3f3ab4){console['error'](_0x384caa(0x1e0),_0x3f3ab4),global[_0x5464b3(0x1ce)]?.[_0x384caa(0x223)]?(await kord[_0x384caa(0x20a)](_0x217884,'🚫'),await kord[_0x384caa(0x22a)](_0x217884,_0x3f3ab4,{'context':_0x384caa(0x2a3),'info':_0x384caa(0x248)})):await global[_0x384caa(0x212)][_0x5464b3(0x265)](_0x217884,_0x384caa(0x2d4));}}},{'usage':[a0_0x52e5cd(0x1d3)],'desc':a0_0x52e5cd(0x2d3),'commandType':a0_0x52e5cd(0x2bf),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'✗','execute':async(_0x13aac1,_0x5b5690)=>{const _0x13f4b2=a0_0x2088cd,_0x2dc511=a0_0x52e5cd;try{await _0x13aac1[_0x2dc511(0x274)]({'markRead':![]},_0x5b5690[_0x13f4b2(0x18b)][_0x2dc511(0x200)]),global[_0x2dc511(0x217)]?.[_0x2dc511(0x223)]?kord[_0x2dc511(0x20a)](_0x5b5690,'✅'):await global[_0x2dc511(0x212)][_0x2dc511(0x1fd)](_0x5b5690,_0x2dc511(0x2b9));}catch(_0x34c1ca){console[_0x2dc511(0x298)](_0x2dc511(0x23f),_0x34c1ca),global[_0x2dc511(0x217)]?.[_0x2dc511(0x223)]?(await kord[_0x2dc511(0x20a)](_0x5b5690,'🚫'),await kord[_0x2dc511(0x22a)](_0x5b5690,_0x34c1ca,{'context':_0x2dc511(0x2c8),'info':_0x13f4b2(0x210)})):await global[_0x2dc511(0x212)][_0x2dc511(0x1fd)](_0x5b5690,'❌\x20Failed\x20to\x20mark\x20chat\x20as\x20unread.');}}},{'usage':[a0_0x52e5cd(0x1fb)],'desc':a0_0x2088cd(0x1c6),'commandType':a0_0x52e5cd(0x2bf),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'🔔','execute':async(_0x14c84f,_0x1547ee)=>{const _0x125115=a0_0x2088cd,_0x46e2a0=a0_0x52e5cd;try{await _0x14c84f[_0x46e2a0(0x274)]({'mute':null},_0x1547ee[_0x46e2a0(0x202)][_0x46e2a0(0x200)]),global[_0x125115(0x1ce)]?.[_0x46e2a0(0x223)]?kord[_0x46e2a0(0x20a)](_0x1547ee,'✅'):await global['kord'][_0x125115(0x265)](_0x1547ee,_0x125115(0x19c));}catch(_0x56140c){console[_0x46e2a0(0x298)](_0x46e2a0(0x21e),_0x56140c),global[_0x46e2a0(0x217)]?.[_0x46e2a0(0x223)]?(await kord[_0x46e2a0(0x20a)](_0x1547ee,'🚫'),await kord[_0x46e2a0(0x22a)](_0x1547ee,_0x56140c,{'context':_0x125115(0x271),'info':_0x125115(0x21a)})):await global[_0x46e2a0(0x212)][_0x125115(0x265)](_0x1547ee,_0x46e2a0(0x2c4));}}},{'usage':[a0_0x2088cd(0x1fe),a0_0x52e5cd(0x2be)],'desc':a0_0x52e5cd(0x1cf),'commandType':a0_0x2088cd(0x1f0),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'👥','execute':async(_0xf5de01,_0x4261c9,_0x599c23)=>{const _0x390e9b=a0_0x2088cd,_0x40c054=a0_0x52e5cd;let _0x21e957,_0x48c0dc=[];if(_0x599c23[_0x40c054(0x219)]===0x0)_0x21e957=_0x40c054(0x1ca),_0x48c0dc=[_0xf5de01[_0x40c054(0x275)]['id'][_0x40c054(0x2b7)](':')[0x0]+_0x40c054(0x1c7)];else _0x599c23['length']===0x1?(_0x21e957=_0x599c23[0x0],_0x48c0dc=[_0xf5de01[_0x40c054(0x275)]['id'][_0x40c054(0x2b7)](':')[0x0]+_0x40c054(0x1c7)]):(_0x21e957=_0x599c23[0x0],_0x48c0dc=_0x599c23[_0x40c054(0x22e)](0x1)[_0x390e9b(0x190)](_0x23de18=>_0x23de18[_0x40c054(0x1f9)]('@')?_0x23de18:_0x23de18+_0x40c054(0x1c7)));try{const _0x1cdb6e=await _0xf5de01[_0x390e9b(0x1cc)](_0x21e957,_0x48c0dc),_0x46c89d=await _0xf5de01[_0x40c054(0x24b)](_0x1cdb6e['id']),_0x1a5435=_0x40c054(0x28d)+_0x46c89d;await global[_0x40c054(0x212)]['reply'](_0x4261c9,_0x40c054(0x271)+_0x21e957+'\x22\x20has\x20been\x20created\x20successfully!\x0aGroup\x20Link:\x20'+_0x1a5435);}catch(_0x412cee){global[_0x40c054(0x217)]?.[_0x40c054(0x223)]?(await kord[_0x40c054(0x20a)](_0x4261c9,'🚫'),await kord[_0x40c054(0x22a)](_0x4261c9,_0x412cee,{'context':_0x40c054(0x1ee),'info':_0x40c054(0x1d7)})):(console[_0x390e9b(0x21e)](_0x390e9b(0x24e),_0x412cee),await global['kord'][_0x40c054(0x1fd)](_0x4261c9,_0x390e9b(0x179)));}}},{'usage':[a0_0x2088cd(0x1c7)],'desc':a0_0x52e5cd(0x267),'commandType':a0_0x52e5cd(0x2bf),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'⭐','execute':async(_0x4f6550,_0x85968c)=>{const _0x4a503a=a0_0x2088cd,_0x59e22b=a0_0x52e5cd,_0x5ba66f=_0x85968c[_0x59e22b(0x2bb)]||_0x85968c[_0x59e22b(0x249)]?.[_0x59e22b(0x237)]?.[_0x59e22b(0x246)]?.[_0x59e22b(0x1fe)]||_0x85968c[_0x59e22b(0x249)]?.[_0x59e22b(0x246)]?.[_0x59e22b(0x1fe)];if(!_0x5ba66f){global[_0x59e22b(0x217)]?.['INVINCIBLE_MODE']?(await global[_0x59e22b(0x212)][_0x59e22b(0x20a)](_0x85968c,'❌'),await global[_0x59e22b(0x212)][_0x59e22b(0x22a)](_0x85968c,_0x59e22b(0x27e),{'context':_0x59e22b(0x2dc)})):await global[_0x4a503a(0x19d)][_0x4a503a(0x265)](_0x85968c,_0x4a503a(0x223));return;}try{const _0x58096a=_0x5ba66f[_0x4a503a(0x18b)]?.['id']||_0x85968c[_0x59e22b(0x249)]?.[_0x59e22b(0x237)]?.[_0x4a503a(0x1bb)]?.[_0x59e22b(0x24e)]||_0x85968c[_0x4a503a(0x1ef)]?.[_0x59e22b(0x246)]?.[_0x59e22b(0x24e)],_0x18a0da=_0x5ba66f[_0x59e22b(0x202)]?.[_0x59e22b(0x200)]||_0x85968c[_0x4a503a(0x1ef)]?.[_0x59e22b(0x237)]?.[_0x59e22b(0x246)]?.[_0x59e22b(0x200)]||_0x85968c[_0x59e22b(0x294)],_0x234a74=_0x5ba66f[_0x59e22b(0x202)]?.[_0x4a503a(0x1fa)]||_0x85968c[_0x59e22b(0x249)]?.[_0x59e22b(0x237)]?.[_0x59e22b(0x246)]?.[_0x59e22b(0x1ba)]===_0x4f6550['user']['id'];if(!_0x58096a||!_0x18a0da)throw new Error(_0x59e22b(0x23b));await _0x4f6550[_0x4a503a(0x260)]({'star':{'messages':[{'id':_0x58096a,'fromMe':_0x234a74||![]}],'star':!![]}},_0x18a0da),global[_0x59e22b(0x217)]?.[_0x4a503a(0x22c)]?await global[_0x59e22b(0x212)][_0x59e22b(0x20a)](_0x85968c,'✅'):await global[_0x59e22b(0x212)][_0x4a503a(0x265)](_0x85968c,_0x59e22b(0x2a4));}catch(_0x2a4f81){console[_0x59e22b(0x298)]('Error\x20saving\x20message:',_0x2a4f81),global[_0x59e22b(0x217)]?.[_0x4a503a(0x22c)]?(await global[_0x59e22b(0x212)][_0x4a503a(0x279)](_0x85968c,'🚫'),await global[_0x59e22b(0x212)][_0x59e22b(0x22a)](_0x85968c,_0x2a4f81,{'context':_0x59e22b(0x20c),'info':'Failed\x20to\x20star\x20chat'})):await global[_0x59e22b(0x212)][_0x59e22b(0x1fd)](_0x85968c,_0x4a503a(0x212));}}},{'usage':[a0_0x2088cd(0x1aa)],'desc':a0_0x2088cd(0x28a),'commandType':a0_0x52e5cd(0x2bf),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'🔒','execute':async(_0x4eab98,_0x375897,_0x37ff3f)=>{const _0x5c942b=a0_0x2088cd,_0x5a1c80=a0_0x52e5cd;if(_0x37ff3f[_0x5c942b(0x20e)]<0x2)return global[_0x5a1c80(0x217)]?.[_0x5c942b(0x22c)]?(await kord[_0x5c942b(0x279)](_0x375897,'🚫'),await kord[_0x5c942b(0x200)](_0x375897,_0x37ff3f,{'context':'Privacy\x20Settings','info':_0x5a1c80(0x1d2)})):await global['kord'][_0x5a1c80(0x1fd)](_0x375897,_0x5a1c80(0x24f));const _0x100a4a=_0x37ff3f[0x0][_0x5a1c80(0x1f6)](),_0x598000=_0x37ff3f[0x1][_0x5a1c80(0x1f6)](),_0x57bfb3=[_0x5c942b(0x184),_0x5a1c80(0x283),'status',_0x5a1c80(0x210),_0x5c942b(0x1eb),_0x5a1c80(0x297),_0x5c942b(0x266),_0x5a1c80(0x21f)];if(!_0x57bfb3['includes'](_0x100a4a))return global[_0x5a1c80(0x217)]?.[_0x5a1c80(0x223)]?(await kord[_0x5a1c80(0x20a)](_0x375897,'🚫'),await kord[_0x5a1c80(0x22a)](_0x375897,_0x100a4a,{'context':_0x5a1c80(0x1f8),'info':_0x5a1c80(0x225)})):await global[_0x5a1c80(0x212)][_0x5a1c80(0x1fd)](_0x375897,_0x5c942b(0x1cb));try{switch(_0x100a4a){case _0x5c942b(0x184):if(![_0x5a1c80(0x1f1),'contacts',_0x5c942b(0x252)][_0x5c942b(0x1d9)](_0x598000))throw new Error(_0x5a1c80(0x22d));await _0x4eab98[_0x5a1c80(0x2ae)](_0x598000);break;case _0x5a1c80(0x297):if(![_0x5a1c80(0x1f1),_0x5a1c80(0x1c8)][_0x5a1c80(0x1f9)](_0x598000))throw new Error(_0x5a1c80(0x1be));await _0x4eab98[_0x5c942b(0x27c)](_0x598000);break;case _0x5c942b(0x247):if(![_0x5c942b(0x284),_0x5c942b(0x213),_0x5a1c80(0x278)][_0x5a1c80(0x1f9)](_0x598000))throw new Error(_0x5a1c80(0x2d8));await _0x4eab98['updateProfilePicturePrivacy'](_0x598000);break;case'status':if(!['all',_0x5a1c80(0x1f3),_0x5a1c80(0x278)][_0x5a1c80(0x1f9)](_0x598000))throw new Error(_0x5a1c80(0x28f));await _0x4eab98[_0x5a1c80(0x1c9)](_0x598000);break;case _0x5c942b(0x1fd):if(![_0x5a1c80(0x1f1),_0x5c942b(0x252)][_0x5a1c80(0x1f9)](_0x598000))throw new Error(_0x5c942b(0x21b));await _0x4eab98[_0x5c942b(0x236)](_0x598000);break;case _0x5a1c80(0x1e8):if(![_0x5c942b(0x284),_0x5a1c80(0x1f3)][_0x5c942b(0x1d9)](_0x598000))throw new Error(_0x5a1c80(0x290));await _0x4eab98[_0x5a1c80(0x235)](_0x598000);break;case _0x5c942b(0x266):const _0x51bcb8=await _0x4eab98[_0x5a1c80(0x1bb)](!![]);await global[_0x5a1c80(0x212)][_0x5a1c80(0x1fd)](_0x375897,_0x5c942b(0x1ae)+JSON[_0x5a1c80(0x2b0)](_0x51bcb8,null,0x2));return;case _0x5a1c80(0x21f):const _0x148544={'24h':0x15180,'7d':0x93a80,'90d':0x76a700,'off':0x0};if(!_0x148544[_0x5a1c80(0x251)](_0x598000))throw new Error(_0x5a1c80(0x279));await _0x4eab98[_0x5a1c80(0x1bf)](_0x148544[_0x598000]);break;}await global[_0x5a1c80(0x212)]['reply'](_0x375897,_0x5a1c80(0x282)+_0x100a4a+_0x5a1c80(0x26e)+_0x598000+'\x22.');}catch(_0x435a0e){console[_0x5a1c80(0x298)]('Error\x20updating\x20privacy\x20settings:',_0x435a0e),global[_0x5a1c80(0x217)]?.['INVINCIBLE_MODE']?(await kord[_0x5a1c80(0x20a)](_0x375897,'🚫'),await kord[_0x5a1c80(0x22a)](_0x375897,_0x435a0e,{'context':_0x5a1c80(0x29c),'info':_0x5a1c80(0x1f2)})):await global[_0x5a1c80(0x212)][_0x5c942b(0x265)](_0x375897,_0x5a1c80(0x288));}}},{'usage':[a0_0x2088cd(0x1e0)],'desc':a0_0x52e5cd(0x20e),'commandType':a0_0x2088cd(0x1f0),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'🖼️','execute':async(_0x3be181,_0x4487cf,_0x434dbb)=>{const _0x5b022a=a0_0x2088cd,_0x51bdba=a0_0x52e5cd;let _0x2f438b,_0x2d00ed,_0x51b1e1;try{let _0x87fe1b,_0x1dbc3f;if(_0x4487cf[_0x51bdba(0x249)][_0x51bdba(0x237)]&&_0x4487cf[_0x5b022a(0x1ef)]['extendedTextMessage'][_0x51bdba(0x246)]&&_0x4487cf[_0x51bdba(0x249)][_0x51bdba(0x237)][_0x51bdba(0x246)][_0x51bdba(0x1fe)]){_0x87fe1b=await global[_0x51bdba(0x212)][_0x51bdba(0x27c)](_0x4487cf);if(_0x87fe1b)_0x2f438b=_0x87fe1b[_0x51bdba(0x1c6)],_0x2d00ed=_0x87fe1b[_0x51bdba(0x1bc)];else return global['settings']?.[_0x5b022a(0x22c)]?(await kord[_0x51bdba(0x20a)](_0x4487cf,'🚫'),await kord[_0x51bdba(0x22a)](_0x4487cf,null,{'context':_0x51bdba(0x1e6),'info':_0x51bdba(0x216)})):await global[_0x51bdba(0x212)][_0x5b022a(0x265)](_0x4487cf,_0x51bdba(0x203));}else{_0x1dbc3f=await global[_0x5b022a(0x19d)][_0x51bdba(0x243)](_0x4487cf);if(_0x1dbc3f)_0x2f438b=_0x1dbc3f[_0x5b022a(0x178)],_0x2d00ed=_0x1dbc3f['extension'];else return global[_0x51bdba(0x217)]?.['INVINCIBLE_MODE']?(await kord[_0x51bdba(0x20a)](_0x4487cf,'🚫'),await kord[_0x5b022a(0x200)](_0x4487cf,null,{'context':_0x51bdba(0x1e6),'info':_0x51bdba(0x2ad)})):await global[_0x51bdba(0x212)]['reply'](_0x4487cf,_0x5b022a(0x255));}_0x51b1e1=path[_0x51bdba(0x28b)](os['tmpdir'](),_0x51bdba(0x2db)+Date[_0x51bdba(0x284)]()+'.'+_0x2d00ed),await fsPromises[_0x51bdba(0x1c5)](_0x51b1e1,_0x2f438b),await updateProfilePicture(_0x3be181[_0x51bdba(0x275)]['id'][_0x5b022a(0x242)](':')[0x0]+_0x51bdba(0x1c7),_0x2f438b,_0x3be181),await global[_0x5b022a(0x19d)][_0x51bdba(0x1fd)](_0x4487cf,_0x5b022a(0x1af));}catch(_0x188c4e){console[_0x5b022a(0x21e)](_0x51bdba(0x262),_0x188c4e),global[_0x51bdba(0x217)]?.[_0x5b022a(0x22c)]?(await kord[_0x5b022a(0x279)](_0x4487cf,'🚫'),await kord[_0x5b022a(0x200)](_0x4487cf,_0x188c4e,{'context':_0x51bdba(0x1e6),'info':_0x51bdba(0x24d)})):await global[_0x51bdba(0x212)][_0x51bdba(0x1fd)](_0x4487cf,_0x51bdba(0x23d));}finally{if(_0x51b1e1)try{await fsPromises[_0x51bdba(0x28a)](_0x51b1e1);}catch(_0x1bdbf8){console[_0x5b022a(0x21e)](_0x51bdba(0x1f5),_0x1bdbf8);}}}},{'usage':['blocklist'],'desc':a0_0x52e5cd(0x2b5),'commandType':a0_0x2088cd(0x1f0),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':!![],'emoji':'🚫','execute':async(_0x126a51,_0x519f75)=>{const _0x5393e3=a0_0x2088cd,_0x16ce32=a0_0x52e5cd;try{const _0x12f173=await _0x126a51[_0x16ce32(0x205)]();if(_0x12f173[_0x16ce32(0x219)]===0x0)return global[_0x16ce32(0x217)]?.[_0x16ce32(0x223)]?(await kord[_0x16ce32(0x20a)](_0x519f75,'🚫'),await kord[_0x5393e3(0x200)](_0x519f75,null,{'context':_0x16ce32(0x1fa),'info':_0x16ce32(0x23e)})):await global['kord'][_0x16ce32(0x1fd)](_0x519f75,_0x5393e3(0x278));const _0xabbf0c=_0x12f173[_0x16ce32(0x201)]((_0x11c4b4,_0x597065)=>_0x597065+0x1+'.\x20'+_0x11c4b4)[_0x5393e3(0x27d)]('\x0a');await global[_0x16ce32(0x212)]['reply'](_0x519f75,_0x16ce32(0x2a1)+_0xabbf0c);}catch(_0x5a909c){console[_0x16ce32(0x298)](_0x16ce32(0x1d5),_0x5a909c),global[_0x16ce32(0x217)]?.[_0x16ce32(0x223)]?(await kord[_0x16ce32(0x20a)](_0x519f75,'🚫'),await kord[_0x16ce32(0x22a)](_0x519f75,_0x5a909c,{'context':_0x16ce32(0x291),'info':_0x16ce32(0x2d6)})):await global[_0x16ce32(0x212)][_0x16ce32(0x1fd)](_0x519f75,_0x16ce32(0x1d8));}}},{'usage':[a0_0x52e5cd(0x1c1)],'desc':a0_0x52e5cd(0x2d9),'commandType':a0_0x52e5cd(0x2bf),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'isOwnerOnly':![],'emoji':'📍','execute':async(_0x4c1488,_0x300e1a,_0x552a94)=>{const _0x51ac6f=a0_0x2088cd,_0x589284=a0_0x52e5cd;try{if(_0x552a94[_0x589284(0x219)]===0x0){const _0x2aa8a2=global[_0x589284(0x217)][_0x51ac6f(0x199)];if(!_0x2aa8a2)return global[_0x589284(0x217)]?.[_0x589284(0x223)]?(await kord[_0x589284(0x20a)](_0x300e1a,'🚫'),await kord[_0x589284(0x22a)](_0x300e1a,null,{'context':_0x589284(0x2cc),'info':_0x589284(0x29a)})):await global[_0x51ac6f(0x19d)][_0x589284(0x1fd)](_0x300e1a,_0x589284(0x214));const _0x5abb84=await axios[_0x589284(0x2bd)](_0x589284(0x1d0)+encodeURIComponent(_0x2aa8a2));if(_0x5abb84[_0x589284(0x276)]&&_0x5abb84[_0x589284(0x276)][0x0]){const {lat:_0x415036,lon:_0x2a9d55}=_0x5abb84[_0x51ac6f(0x26b)][0x0];await _0x4c1488[_0x589284(0x263)](_0x300e1a[_0x51ac6f(0x18b)][_0x589284(0x200)],{'location':{'degreesLatitude':parseFloat(_0x415036),'degreesLongitude':parseFloat(_0x2a9d55)}});}else{if(global[_0x589284(0x217)]?.[_0x589284(0x223)])return await kord[_0x51ac6f(0x279)](_0x300e1a,'🚫'),await kord[_0x589284(0x22a)](_0x300e1a,null,{'context':_0x51ac6f(0x258),'info':_0x589284(0x2d2)});else await global[_0x51ac6f(0x19d)][_0x589284(0x1fd)](_0x300e1a,_0x589284(0x25c));}return;}const _0x3eac22=_0x552a94[_0x51ac6f(0x27d)]('\x20'),_0x52cfc2=await axios[_0x589284(0x2bd)](_0x51ac6f(0x194)+encodeURIComponent(_0x3eac22));if(_0x52cfc2[_0x589284(0x276)]&&_0x52cfc2['data'][0x0]){const {lat:_0x200cbf,lon:_0x338983,display_name:_0x506d8c}=_0x52cfc2[_0x589284(0x276)][0x0];await _0x4c1488[_0x589284(0x263)](_0x300e1a[_0x51ac6f(0x18b)][_0x589284(0x200)],{'location':{'degreesLatitude':parseFloat(_0x200cbf),'degreesLongitude':parseFloat(_0x338983),'name':_0x506d8c}});}else{if(global[_0x589284(0x217)]?.[_0x51ac6f(0x22c)])return await kord[_0x51ac6f(0x279)](_0x300e1a,'🚫'),await kord['sendErr'](_0x300e1a,null,{'context':_0x589284(0x2cc),'info':'Location\x20not\x20found'});else await global[_0x589284(0x212)][_0x589284(0x1fd)](_0x300e1a,_0x51ac6f(0x18e));}}catch(_0x96daef){console[_0x589284(0x298)](_0x589284(0x254),_0x96daef),global[_0x51ac6f(0x1ce)]?.[_0x51ac6f(0x22c)]?(await kord[_0x589284(0x20a)](_0x300e1a,'🚫'),await kord[_0x589284(0x22a)](_0x300e1a,_0x96daef,{'context':_0x589284(0x2cc),'info':_0x589284(0x1d9)})):await global[_0x589284(0x212)][_0x589284(0x1fd)](_0x300e1a,_0x589284(0x27a));}}},{'usage':[a0_0x52e5cd(0x231)],'description':a0_0x52e5cd(0x2a0),async 'execute'(_0x3ad691,_0x2b89de,_0x522912){const _0x2474f3=a0_0x2088cd,_0x1660f7=a0_0x52e5cd;try{const _0x454520=global[_0x1660f7(0x217)],_0xb8b9df=_0x454520[_0x1660f7(0x21c)],_0x3e9e76=_0x454520[_0x1660f7(0x208)];if(!_0xb8b9df||!_0x3e9e76)return global[_0x2474f3(0x1ce)]?.[_0x1660f7(0x223)]?(await kord[_0x1660f7(0x20a)](_0x2b89de,'🚫'),await kord[_0x1660f7(0x22a)](_0x2b89de,null,{'context':_0x1660f7(0x1c3),'info':_0x1660f7(0x236)})):await _0x3ad691[_0x1660f7(0x263)](_0x2b89de[_0x1660f7(0x202)][_0x1660f7(0x200)],{'text':_0x1660f7(0x2ce)},{'quoted':_0x2b89de});const _0x171675=_0x1660f7(0x253)+_0x3e9e76+_0x1660f7(0x25d)+_0xb8b9df+':'+_0xb8b9df+_0x1660f7(0x2c0),_0xdc1882={'contacts':{'displayName':_0x3e9e76,'contacts':[{'vcard':_0x171675}]}};await _0x3ad691[_0x1660f7(0x263)](_0x2b89de[_0x1660f7(0x202)][_0x2474f3(0x19f)],_0xdc1882,{'quoted':_0x2b89de});}catch(_0x274bd1){console[_0x2474f3(0x21e)](_0x1660f7(0x25b),_0x274bd1),global[_0x1660f7(0x217)]?.[_0x1660f7(0x223)]?(await kord[_0x1660f7(0x20a)](_0x2b89de,'🚫'),await kord['sendErr'](_0x2b89de,_0x274bd1,{'context':_0x1660f7(0x1c3),'info':_0x1660f7(0x1ef)})):await _0x3ad691[_0x2474f3(0x1a1)](_0x2b89de[_0x1660f7(0x202)]['remoteJid'],{'text':_0x2474f3(0x1e3)+_0x274bd1[_0x1660f7(0x249)]},{'quoted':_0x2b89de});}}}];function a0_0xdd9e(_0x43448d,_0x272478){const _0x190ed5=a0_0x678d();return a0_0xdd9e=function(_0x4bc9cc,_0x18e98d){_0x4bc9cc=_0x4bc9cc-0x1ba;let _0x6e8b07=_0x190ed5[_0x4bc9cc];return _0x6e8b07;},a0_0xdd9e(_0x43448d,_0x272478);}async function updateProfilePicture(_0x337e2c,_0x34cba9,_0x4a781d){const _0x57241f=a0_0x2088cd,_0x445127=a0_0x52e5cd,{preview:_0x573585}=await generateProfilePicture(_0x34cba9);await _0x4a781d[_0x445127(0x2a6)]({'tag':'iq','attrs':{'to':_0x337e2c,'type':_0x445127(0x222),'xmlns':_0x57241f(0x238)},'content':[{'tag':_0x445127(0x27f),'attrs':{'type':_0x445127(0x224)},'content':_0x573585}]});}async function generateProfilePicture(_0x3a734a){const _0x49ea99=a0_0x2088cd,_0x3b38e6=a0_0x52e5cd,_0x5aa306=await jimp[_0x3b38e6(0x1dc)](_0x3a734a),_0x37874a=_0x5aa306[_0x49ea99(0x1e7)](),_0x2f30aa=_0x5aa306['getHeight'](),_0x105718=_0x5aa306[_0x49ea99(0x180)](0x0,0x0,_0x37874a,_0x2f30aa);return{'img':await _0x105718[_0x3b38e6(0x234)](0x144,0x2d0)['getBufferAsync'](jimp[_0x3b38e6(0x2d7)]),'preview':await _0x105718[_0x3b38e6(0x29d)]()[_0x3b38e6(0x20b)](jimp[_0x3b38e6(0x2d7)])};};function a0_0x678d(){const _0x36168b=a0_0x2088cd,_0x1ab42f=[_0x36168b(0x1cd),'unblock',_0x36168b(0x24f),_0x36168b(0x25b),_0x36168b(0x264),'Archive\x20Chat',_0x36168b(0x260),_0x36168b(0x202),'data',_0x36168b(0x289),_0x36168b(0x252),'Invalid\x20disappearing\x20mode\x20duration',_0x36168b(0x20c),'✅\x20Successfully\x20joined\x20the\x20group!',_0x36168b(0x288),_0x36168b(0x220),_0x36168b(0x24a),_0x36168b(0x215),_0x36168b(0x224),_0x36168b(0x1da),'✅\x20Privacy\x20setting\x20\x22',_0x36168b(0x247),'now',_0x36168b(0x1b7),_0x36168b(0x1e5),_0x36168b(0x24b),_0x36168b(0x189),_0x36168b(0x18a),_0x36168b(0x1ee),_0x36168b(0x27d),'Bot\x27s\x20work\x20mode\x20is\x20now\x20set\x20to\x20',_0x36168b(0x24c),_0x36168b(0x1f5),_0x36168b(0x181),_0x36168b(0x24d),_0x36168b(0x176),_0x36168b(0x20f),_0x36168b(0x237),_0x36168b(0x22d),'Join\x20a\x20group\x20via\x20invite\x20link',_0x36168b(0x26c),'online','error',_0x36168b(0x1b9),_0x36168b(0x254),_0x36168b(0x1b4),_0x36168b(0x281),_0x36168b(0x25d),_0x36168b(0x19a),_0x36168b(0x17e),_0x36168b(0x26f),_0x36168b(0x1c4),_0x36168b(0x205),'read\x20Chat',_0x36168b(0x240),_0x36168b(0x233),_0x36168b(0x1e2),'Error\x20broadcasting\x20to\x20',_0x36168b(0x27a),_0x36168b(0x1f1),'Please\x20provide\x20a\x20valid\x20argument!\x20Use\x20`.publicmode\x20on`\x20or\x20`.publicmode\x20off`.',_0x36168b(0x27b),_0x36168b(0x1dc),_0x36168b(0x1bf),_0x36168b(0x209),_0x36168b(0x251),'stringify',_0x36168b(0x225),_0x36168b(0x1d7),_0x36168b(0x18c),_0x36168b(0x235),_0x36168b(0x1dd),'axios',_0x36168b(0x242),_0x36168b(0x228),'✅\x20Chat\x20has\x20been\x20marked\x20as\x20unread.',_0x36168b(0x1ec),'quoted','Error\x20in\x20broadcastpm\x20command',_0x36168b(0x197),_0x36168b(0x1c5),_0x36168b(0x1f0),'\x0aEND:VCARD\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20',_0x36168b(0x269),_0x36168b(0x275),_0x36168b(0x1f7),_0x36168b(0x285),_0x36168b(0x262),_0x36168b(0x17f),_0x36168b(0x293),_0x36168b(0x193),_0x36168b(0x17d),_0x36168b(0x1ea),_0x36168b(0x1e4),_0x36168b(0x258),_0x36168b(0x1ac),_0x36168b(0x1a4),'Failed\x20to\x20determine\x20current\x20work\x20mode.',_0x36168b(0x1ad),'getQuotedText',_0x36168b(0x185),'Mark\x20chat\x20as\x20unread',_0x36168b(0x226),_0x36168b(0x201),_0x36168b(0x241),_0x36168b(0x23c),_0x36168b(0x297),_0x36168b(0x214),_0x36168b(0x268),'temp_',_0x36168b(0x291),_0x36168b(0x1cf),_0x36168b(0x286),_0x36168b(0x21f),_0x36168b(0x282),_0x36168b(0x17a),_0x36168b(0x1e8),_0x36168b(0x217),'location',_0x36168b(0x239),_0x36168b(0x1ba),'unarchive','writeFile',_0x36168b(0x178),'@s.whatsapp.net',_0x36168b(0x267),'updateStatusPrivacy',_0x36168b(0x192),_0x36168b(0x245),_0x36168b(0x23f),'freply',_0x36168b(0x17c),_0x36168b(0x23d),_0x36168b(0x194),'662123bMxdHt',_0x36168b(0x1fb),_0x36168b(0x296),_0x36168b(0x1d8),_0x36168b(0x1bc),_0x36168b(0x196),_0x36168b(0x1c3),_0x36168b(0x1d4),_0x36168b(0x187),_0x36168b(0x1f6),_0x36168b(0x276),'read',_0x36168b(0x182),_0x36168b(0x219),'✅\x20Chat\x20has\x20been\x20pinned.',_0x36168b(0x274),'5ikVVdc',_0x36168b(0x1a9),_0x36168b(0x177),_0x36168b(0x1e6),_0x36168b(0x25a),_0x36168b(0x1a5),_0x36168b(0x22f),_0x36168b(0x1eb),_0x36168b(0x20b),_0x36168b(0x23a),_0x36168b(0x229),_0x36168b(0x18f),_0x36168b(0x230),'Create\x20Group','Failed\x20to\x20retrieve\x20owner\x20contact',_0x36168b(0x221),'all',_0x36168b(0x1f8),_0x36168b(0x213),_0x36168b(0x261),'Error\x20deleting\x20temporary\x20file:',_0x36168b(0x1f2),_0x36168b(0x174),'Privacy\x20Settings','includes','Blocklist',_0x36168b(0x21d),_0x36168b(0x253),_0x36168b(0x265),_0x36168b(0x188),_0x36168b(0x1ca),_0x36168b(0x19f),'map','key','❌\x20Failed\x20to\x20download\x20the\x20quoted\x20media.',_0x36168b(0x248),_0x36168b(0x1e9),'broadcastgc',_0x36168b(0x1c8),'OWNER_NAME',_0x36168b(0x204),_0x36168b(0x279),'getBufferAsync',_0x36168b(0x1f3),_0x36168b(0x175),_0x36168b(0x249),_0x36168b(0x1d3),_0x36168b(0x1fd),'../','kord',_0x36168b(0x231),'❌\x20No\x20timezone\x20configured.',_0x36168b(0x207),_0x36168b(0x1de),_0x36168b(0x1ce),_0x36168b(0x1e1),'length',_0x36168b(0x195),'groupLeave',_0x36168b(0x259),_0x36168b(0x1d1),_0x36168b(0x272),_0x36168b(0x280),_0x36168b(0x1f4),'❌\x20Failed\x20to\x20join\x20the\x20group.',_0x36168b(0x222),_0x36168b(0x22c),'image','Invalid\x20privacy\x20setting\x20specified',_0x36168b(0x246),_0x36168b(0x292),'Archive\x20a\x20chat',_0x36168b(0x1a7),'sendErr','setprefix\x20command',_0x36168b(0x283),'Invalid\x20last_seen\x20value',_0x36168b(0x1a6),_0x36168b(0x1d5),'profilePictureUrl',_0x36168b(0x1b6),_0x36168b(0x26e),_0x36168b(0x234),_0x36168b(0x1a3),_0x36168b(0x294),_0x36168b(0x27f),_0x36168b(0x23e),_0x36168b(0x211),'❌\x20Failed\x20to\x20unblock\x20the\x20user.','Block\x20a\x20user',_0x36168b(0x26a),_0x36168b(0x1b0),_0x36168b(0x277),'No\x20blocked\x20users\x20found','Error\x20marking\x20chat\x20as\x20unread:',_0x36168b(0x1b2),_0x36168b(0x28b),_0x36168b(0x183),_0x36168b(0x191),'entries',_0x36168b(0x28e),_0x36168b(0x1bb),_0x36168b(0x28f),_0x36168b(0x244),_0x36168b(0x1ef),'❌\x20Failed\x20to\x20leave\x20the\x20group.',_0x36168b(0x208),'archive',_0x36168b(0x263),_0x36168b(0x1db),_0x36168b(0x21c),'❌\x20All\x20provided\x20prefixes\x20are\x20invalid.\x20Please\x20provide\x20single-character\x20prefixes.','hasOwnProperty',_0x36168b(0x1c2),_0x36168b(0x232),_0x36168b(0x1b5),_0x36168b(0x18d),_0x36168b(0x1c0),_0x36168b(0x295),_0x36168b(0x1b1),'groupFetchAllParticipating',_0x36168b(0x203),_0x36168b(0x1fc),'❌\x20Could\x20not\x20find\x20location\x20for\x20the\x20timezone.','\x0aTEL;type=CELL;type=VOICE;waid=',_0x36168b(0x20d),_0x36168b(0x287),'❌\x20Please\x20reply\x20to\x20a\x20message\x20or\x20mention\x20a\x20user\x20to\x20block.',_0x36168b(0x243),_0x36168b(0x206),'sendMessage',_0x36168b(0x1ed),'trim','113024DbBWcb',_0x36168b(0x1f9),_0x36168b(0x250),_0x36168b(0x1be),'❌\x20Prefix\x20must\x20be\x20a\x20single\x20character.',_0x36168b(0x26d),_0x36168b(0x28d),'path'];return a0_0x678d=function(){return _0x1ab42f;},a0_0x678d();}
+const fs = require('fs');
+const path = require('path');
+const axios = require('axios');
+const fsPromises = require('fs').promises
+const jimp = require('jimp');
+const os = require('os');
+
+
+module.exports = [
+    {
+      usage: ["archive"],
+      desc: "Archive a chat",
+      commandType: "User",
+      isGroupOnly: false,
+      isAdminOnly: false,
+      isPrivateOnly: false,
+      isOwnerOnly: true,
+      emoji: "📥",
+      execute: async (sock, m) => {
+        try {
+          await sock.chatModify({ archive: true }, m.key.remoteJid);
+          if (global.settings?.INVINCIBLE_MODE) {
+            await kord.react(m, "✅");
+          } else {
+            await global.kord.reply(m, "✅ Chat has been archived.");
+          }
+        } catch (error) {
+          if (global.settings?.INVINCIBLE_MODE) {
+            await kord.react(m, "🚫");
+            await kord.sendErr(m, error, {
+              context: "Archive Chat",
+              info: "Failed to archive chat"
+            });
+          } else {
+            console.error("Error archiving chat:", error);
+            await global.kord.reply(m, "❌ Failed to archive the chat.");
+          }
+        }
+      }
+    },
+    {
+      usage: ["block"],
+      desc: "Block a user",
+      commandType: "User",
+      isGroupOnly: false,
+      isAdminOnly: false,
+      isPrivateOnly: false,
+      isOwnerOnly: true,
+      emoji: "🚫",
+      execute: async (sock, m) => {
+        const user = m.key.remoteJid || null;
+        if (!user) {
+          if (global.settings?.INVINCIBLE_MODE) {
+            await kord.react(m, "🚫");
+            await kord.sendErr(m, user, {
+              context: "Block User",
+              info: "No user specified to block"
+            });
+          } else {
+            return await global.kord.reply(m, "❌ Please reply to a message or mention a user to block.");
+          }
+          return;
+        }
+        try {
+          await sock.updateBlockStatus(user, "block");
+          if (global.settings?.INVINCIBLE_MODE) {
+            await kord.react(m, "✅");
+          } else {
+            await global.kord.reply(m, `✅ User ${user} has been blocked.`);
+          }
+        } catch (error) {
+          if (global.settings?.INVINCIBLE_MODE) {
+            await kord.react(m, "🚫");
+            await kord.sendErr(m, error, {
+              context: "Block User",
+              info: "Failed to block user"
+            });
+          } else {
+            console.error("Error blocking user:", error);
+            await global.kord.reply(m, "❌ Failed to block the user.");
+          }
+        }
+      }
+    },
+    {
+      usage: ["unblock"],
+      desc: "Unblock a user",
+      commandType: "User",
+      isGroupOnly: false,
+      isAdminOnly: false,
+      isPrivateOnly: false,
+      isOwnerOnly: true,
+      emoji: "✅",
+      execute: async (sock, m) => {
+        const user = m.key.remoteJid || null;
+        if (!user) {
+          if (global.settings?.INVINCIBLE_MODE) {
+            await kord.react(m, "🚫");
+            await kord.sendErr(m, user, {
+              context: "Unblock User",
+              info: "No user specified to unblock"
+            });
+          } else {
+            return await global.kord.reply(m, "❌ Please reply to a message or mention a user to unblock.");
+          }
+          return;
+        }
+        try {
+          await sock.updateBlockStatus(user, "unblock");
+          if (global.settings?.INVINCIBLE_MODE) {
+            await kord.react(m, "✅");
+          } else {
+            await global.kord.reply(m, `✅ User ${user} has been unblocked.`);
+          }
+        } catch (error) {
+          if (global.settings?.INVINCIBLE_MODE) {
+            await kord.react(m, "🚫");
+            await kord.sendErr(m, error, {
+              context: "Unblock User",
+              info: "Failed to unblock user"
+            });
+          } else {
+            console.error("Error unblocking user:", error);
+            await global.kord.reply(m, "❌ Failed to unblock the user.");
+          }
+        }
+      }
+    },
+    {
+        usage: ["jid"],
+        desc: "Get JID of a user",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: false,
+        emoji: "🆔",
+        execute: async (sock, m) => {
+            const jid = m.key.remoteJid || m.sender;
+            await global.kord.reply(m, `${jid}`);
+        }
+    },
+    {
+        usage: ["clear"],
+        desc: "Clear chat",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: true, 
+        emoji: "🧹",
+        execute: async (sock, m) => {
+            try {
+                await sock.chatModify({ delete: true, lastMessages: [{ key: m.key, messageTimestamp: m.messageTimestamp }] }, m.key.remoteJid);
+                if (global.settings?.INVINCIBLE_MODE) {
+                  await kord.react(m, "✅")
+                } else {
+                await global.kord.reply(m, "✅ Chat has been cleared.");
+                }
+            } catch (error) {
+                console.error("Error clearing chat:", error);
+                if (global.settings?.INVINCIBLE_MODE) {
+                  await kord.react(m, "❌")
+                  await kord.sendErr(m, error, {
+                    context: "Error in clearing chat"
+                  });
+                } else {
+                await global.kord.reply(m, "❌ Failed to clear the chat.");
+                }
+            }
+        }
+    },
+    {
+        usage: ["forward"],
+        desc: "Forward a message to a number",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: true, 
+        emoji: "↪️",
+        execute: async (sock, m, args) => {
+            const quotedMessage = await global.kord.getQuotedMessage(m) || "No quoted text";
+            if (!quotedMessage) {
+              if (global.settings?.INVINCIBLE_MODE) {
+                  await kord.react(m, "❌")
+                  await kord.sendErr(m, quotedMessage, {
+                    context: "Error in forward command"
+                  });
+                } else {
+                return await global.kord.reply(m, "❌ Please reply to a message to forward it.");
+            }
+            return;
+            }
+            if (!args[0]) {
+              if (global.settings?.INVINCIBLE_MODE) {
+                  await kord.react(m, "❌")
+                  await kord.sendErr(m, "No number provided", {
+                    context: "Error in forward command"
+                  });
+                } else {
+                return await global.kord.reply(m, "❌ Please provide a number to forward the message to.");
+            }
+            return;
+            }
+            const jid = args[0].includes('@') ? args[0] : `${args[0]}@s.whatsapp.net`;
+            try {
+                await global.kord.forwardMessage(jid, { key: m.key, message: quotedMessage });
+                if (global.settings?.INVINCIBLE_MODE) {
+                  kord.react(m, "✅")
+                } else {
+                await global.kord.reply(m, "✅ Message has been forwarded.");
+                }
+            } catch (error) {
+                console.error("Error forwarding message:", error);
+                if (global.settings?.INVINCIBLE_MODE) {
+                  await kord.react(m, "❌")
+                  await kord.sendErr(m, error, {
+                    context: "Error in forward command"
+                  });
+                } else {
+                await global.kord.reply(m, "❌ Failed to forward the message.");
+                }
+            }
+        }
+    },
+    {
+        usage: ["broadcastgc"],
+        desc: "Broadcast a message to all groups",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: true, 
+        emoji: "📢",
+        execute: async (sock, m) => {
+            const quotedMessage = await global.kord.getQuotedMessage(m) || "No quoted text";
+            if (!quotedMessage) {
+              if (global.settings?.INVINCIBLE_MODE) {
+                  await kord.react(m, "❌")
+                  await kord.sendErr(m, quotedMessage, {
+                    context: "Error in broadcastgc command"
+                  });
+                } else {
+                return await global.kord.reply(m, "❌ Please reply to a message to broadcast.");
+            }
+            return;
+            }
+            const groups = Object.keys(await sock.groupFetchAllParticipating());
+            let successCount = 0;
+            for (let jid of groups) {
+                try {
+                    await global.kord.forwardMessage(jid, { key: m.key, message: quotedMessage });
+                    successCount++;
+                } catch (error) {
+                    console.error(`Error broadcasting to ${jid}:`, error);
+                    if (global.settings?.INVINCIBLE_MODE) {
+                      await kord.react(m, "❌")
+                      await kord.sendErr(m, error, {
+                        context: "Error in broadcastgc command"
+                      });
+                }
+            }
+            }
+            if (global.settings?.INVINCIBLE_MODE) {
+              await kord.react(m, "✅")
+            } else {
+            await global.kord.reply(m, `✅ Broadcast sent to ${successCount} groups.`);
+            }
+        }
+    },
+    {
+        usage: ["broadcastpm"],
+        desc: "Broadcast a message to all private chats",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: true, 
+        emoji: "📣",
+        execute: async (sock, m) => {
+            const quotedMessage = await global.kord.getQuotedMessage(m);
+            if (!quotedMessage) {
+              if (global.settings?.INVINCIBLE_MODE) {
+                await kord.react(m, "❌")
+                await kord.sendErr(m, quotedMessage, {
+                  context: "Error in broadcastpm command"
+                });
+                } else {
+                  return await global.kord.reply(m, "❌ Please reply to a message to broadcast.");
+                }
+                return;
+            }
+            const chats = Object.entries(await sock.chats).filter(([jid]) => !jid.endsWith('@g.us'));
+            let successCount = 0;
+            for (let [jid] of chats) {
+                try {
+                    await global.kord.forwardMessage(jid, { key: m.key, message: quotedMessage });
+                    successCount++;
+                } catch (error) {
+                    console.error(`Error broadcasting to ${jid}:`, error);
+                    if (global.settings?.INVINCIBLE_MODE) {
+                      await kord.react(m, "❌")
+                      await kord.sendErr(m, error, {
+                        context: "Error in broadcastgc command"
+                      });
+                }
+                }
+            }
+            if (global.settings?.INVINCIBLE_MODE) {
+              await kord.react(m, "✅")
+            } else {
+            await global.kord.reply(m, `✅ Broadcast sent to ${successCount} private chats.`);
+            }
+        }
+    },
+    {
+        usage: ["leave"],
+        desc: "Leave the group chat",
+        commandType: "User",
+        isGroupOnly: true,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: true, 
+        emoji: "👋",
+        execute: async (sock, m) => {
+            try {
+                await sock.groupLeave(m.key.remoteJid);
+            } catch (error) {
+                console.error("Error leaving group:", error);
+                if (global.settings?.INVINCIBLE_MODE) {
+                  await kord.react(m, "❌")
+                  await kord.sendErr(m, error, {
+                    context: "Error in leave command"
+                  });
+                } else {
+                await global.kord.reply(m, "❌ Failed to leave the group.");
+                }
+            }
+        }
+    },
+{
+  usage: ["join"],
+  desc: "Join a group via invite link",
+  commandType: "User",
+  isGroupOnly: false,
+  isAdminOnly: false,
+  isPrivateOnly: false,
+  isOwnerOnly: true,
+  emoji: "🚪",
+  execute: async (sock, m, args) => {
+    let inviteLink;
+    if (args[0]) {
+      inviteLink = args[0];
+    } else {
+      const quotedText = await global.kord.getQuotedText(m) || null;
+      if (!quotedText) {
+        if (global.settings?.INVINCIBLE_MODE) {
+          await kord.react(m, "❌");
+          await kord.sendErr(m, quotedText, {
+            context: "Join Command",
+            info: "No link provided or replied message was empty.",
+          });
+        } else {
+          return await global.kord.reply(
+            m,
+            "❌ Please provide a group invite link or reply to a message containing the link."
+          );
+        }
+        return;
+      }
+      inviteLink = quotedText;
+    }
+
+    const linkRegex = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i;
+    const [, code] = inviteLink.match(linkRegex) || [];
+    if (!code) {
+      if (global.settings?.INVINCIBLE_MODE) {
+        await kord.react(m, "❌");
+        await kord.sendErr(m, inviteLink, {
+          context: "Join Command",
+          info: "Invalid invite link format.",
+        });
+      } else {
+        return await global.kord.reply(m, "❌ Invalid invite link.");
+      }
+      return;
+    }
+
+    try {
+      await sock.groupAcceptInvite(code);
+      if (!global.settings?.INVINCIBLE_MODE) {
+        await global.kord.reply(m, "✅ Successfully joined the group!");
+      }
+    } catch (error) {
+      if (global.settings?.INVINCIBLE_MODE) {
+        await kord.react(m, "🚫");
+        await kord.sendErr(m, error, {
+          context: "Join Command",
+          info: "Failed to join the group.",
+        });
+      } else {
+        console.error("Error joining group:", error);
+        await global.kord.reply(m, "❌ Failed to join the group.");
+      }
+    }
+  },
+},
+{
+  usage: ["getpp"],
+  desc: "Get the profile picture of a user",
+  commandType: "User",
+  isGroupOnly: false,
+  isAdminOnly: false,
+  isPrivateOnly: false,
+  isOwnerOnly: false,
+  emoji: "📷",
+  execute: async (sock, m) => {
+
+    const jid = m.quoted?.key?.remoteJid || m.key.remoteJid;
+    try {
+      const pp = await sock.profilePictureUrl(jid, 'image');
+      await sock.sendMessage(m.key.remoteJid, { image: { url: pp } });
+    } catch (error) {
+      if (global.settings?.INVINCIBLE_MODE) {
+        await kord.react(m, "🚫");
+        await kord.sendErr(m, error, {
+          context: "Get Profile Picture",
+          info: "Error fetching profile picture"
+        });
+      } else {
+        console.error("Error fetching profile picture:", error);
+        await global.kord.reply(m, "❌ Failed to fetch the profile picture.");
+      }
+    }
+  }
+},
+{
+  usage: ["privatemode"],
+  desc: "Set the bot's work mode to private.",
+  commandType: "Bot",
+  isGroupOnly: false,
+  isAdminOnly: false,
+  isPrivateOnly: false,
+  isOwnerOnly: true,
+  emoji: "🔒",
+
+  async execute(sock, m, args) {
+
+    const configPath = path.join(__dirname, '../', '../', '../', 'Config.js');
+
+    fs.readFile(configPath, 'utf8', (err, data) => {
+      if (err) {
+        if (global.settings?.INVINCIBLE_MODE) {
+          kord.react(m, "🚫");
+          kord.sendErr(m, err, {
+            context: "Private Mode",
+            info: "Error reading Config.js"
+          });
+        } else {
+          console.error("Error reading Config.js file:", err);
+          kord.freply(m, "Failed to read Config.js.");
+        }
+        return;
+      }
+
+      const currentModeMatch = data.match(/WORK_MODE:\s*"(.*?)"/);
+      if (!currentModeMatch) {
+        if (global.settings?.INVINCIBLE_MODE) {
+          kord.react(m, "🚫");
+          kord.sendErr(m, null, {
+            context: "Private Mode",
+            info: "Failed to determine current work mode"
+          });
+        } else {
+          kord.freply(m, "Failed to determine current work mode.");
+        }
+        return;
+      }
+
+      const currentMode = currentModeMatch[1];
+      if (currentMode === 'Private') {
+        if (global.settings?.INVINCIBLE_MODE) {
+          kord.react(m, "🚫");
+        } else {
+          kord.freply(m, "Bot is already in Private mode.");
+        }
+        return;
+      }
+
+      const updatedData = data.replace(/WORK_MODE:\s*"(.*?)"/, 'WORK_MODE: "Private"');
+
+      fs.writeFile(configPath, updatedData, 'utf8', (err) => {
+        if (err) {
+          if (global.settings?.INVINCIBLE_MODE) {
+            kord.react(m, "🚫");
+            kord.sendErr(m, err, {
+              context: "Private Mode",
+              info: "Error writing to Config.js"
+            });
+          } else {
+            console.error("Error writing to Config.js file:", err);
+            kord.freply(m, "Failed to update Config.js.");
+          }
+          return;
+        }
+        
+        if (global.settings?.INVINCIBLE_MODE) {
+           kord.react(m, "✅")
+        } else {
+        kord.freply(m, "Bot's work mode is now set to Private.");
+        }
+      });
+    });
+  }
+},
+{
+  usage: ["publicmode"],
+  desc: "Switch the bot's work mode between public and private.",
+  commandType: "Bot",
+  isGroupOnly: false,
+  isAdminOnly: false,
+  isPrivateOnly: false,
+  isOwnerOnly: true,
+  emoji: "🌐",
+
+  async execute(sock, m, args) {
+
+    const mode = args[0];
+    if (!mode || (mode !== 'on' && mode !== 'off')) {
+      if (global.settings?.INVINCIBLE_MODE) {
+        kord.react(m, "🚫");
+      } else {
+        kord.freply(m, "Please provide a valid argument! Use `.publicmode on` or `.publicmode off`.");
+      }
+      return;
+    }
+
+    const configPath = path.join(__dirname, '../', '../', '../', 'Config.js');
+
+    fs.readFile(configPath, 'utf8', (err, data) => {
+      if (err) {
+        if (global.settings?.INVINCIBLE_MODE) {
+          kord.react(m, "🚫");
+          kord.sendErr(m, err, {
+            context: "Public Mode",
+            info: "Error reading Config.js"
+          });
+        } else {
+          console.error("Error reading Config.js file:", err);
+          kord.freply(m, "Failed to read Config.js.");
+        }
+        return;
+      }
+
+      const currentModeMatch = data.match(/WORK_MODE:\s*"(.*?)"/);
+      if (!currentModeMatch) {
+        if (global.settings?.INVINCIBLE_MODE) {
+          kord.react(m, "🚫");
+          kord.sendErr(m, null, {
+            context: "Public Mode",
+            info: "Failed to determine current work mode"
+          });
+        } else {
+          kord.freply(m, "Failed to determine current work mode.");
+        }
+        return;
+      }
+
+      const currentMode = currentModeMatch[1];
+      if (mode === 'on' && currentMode === 'Public') {
+        if (global.settings?.INVINCIBLE_MODE) {
+          kord.react(m, "🚫");
+        } else {
+          kord.freply(m, "Bot is already in Public mode.");
+        }
+        return;
+      }
+
+      if (mode === 'off' && currentMode === 'Private') {
+        if (global.settings?.INVINCIBLE_MODE) {
+          kord.react(m, "🚫");
+        } else {
+          kord.freply(m, "Bot is already in Private mode.");
+        }
+        return;
+      }
+
+      const newMode = mode === 'on' ? 'Public' : 'Private';
+
+      const updatedData = data.replace(/WORK_MODE:\s*"(.*?)"/, `WORK_MODE: "${newMode}"`);
+
+      fs.writeFile(configPath, updatedData, 'utf8', (err) => {
+        if (err) {
+          if (global.settings?.INVINCIBLE_MODE) {
+            kord.react(m, "🚫");
+            kord.sendErr(m, err, {
+              context: "Public Mode",
+              info: "Error writing to Config.js"
+            });
+          } else {
+            console.error("Error writing to Config.js file:", err);
+            kord.freply(m, "Failed to update Config.js.");
+          }
+          return;
+        }
+        
+        
+        if (global.settings?.INVINCIBLE_MODE) {
+          kord.react(m, "✅")
+        } else {
+        kord.freply(m, `Bot's work mode is now set to ${newMode}.`);
+        }
+      });
+    });
+  }
+},
+    {
+    usage: ["setmultiprefix"],
+    desc: "Set multiple command prefixes separated by spaces",
+    commandType: "User",
+    isGroupOnly: false,
+    isAdminOnly: false,
+    isPrivateOnly: false,
+    isOwnerOnly: true, 
+    emoji: "🔧",
+    execute: async (sock, m, args) => {
+        if (args.length === 0) {
+          if (global.settings?.INVINCIBLE_MODE) {
+            kord.react(m, "❌")
+            kord.sendErr(m, "No Prefix provided", {
+              context: "multiprefix command"
+            });
+          } else {
+            return await global.kord.reply(m, "❌ Please provide prefixes separated by spaces.");
+        }
+        return;
+        }
+
+        // Join the arguments into a single string and split by space
+        const newPrefixes = args.join(" ").split(" ").map(prefix => prefix.trim());
+
+        // Filter out empty prefixes and limit each prefix to a single character
+        const validPrefixes = newPrefixes.filter(prefix => prefix.length > 0 && prefix.length === 1);
+
+        if (validPrefixes.length === 0) {
+          if (global.settings?.INVINCIBLE_MODE) {
+            kord.react(m, "❌")
+            kord.sendErr(m, "Invalid Prefix", {
+              context: "multiprefix command"
+            });
+          } else {
+            return await global.kord.reply(m, "❌ All provided prefixes are invalid. Please provide single-character prefixes.");
+          } 
+          return;
+        }
+
+        // Update the PREFIX variable in the config.js
+        global.settings.PREFIX = validPrefixes;
+
+        // Optionally, save the updated settings to config.js file if necessary
+        // const fs = require('fs');
+        // fs.writeFileSync('./config.js', `PREFIX: [${validPrefixes.join(", ")}]`);
+        
+        if (global.settings?.INVINCIBLE_MODE) {
+          kord.react(m, "✅")
+        } else {
+        await global.kord.reply(m, `✅ Command prefixes have been set to: ${validPrefixes.join(", ")}`);
+        }
+    }
+},
+    {
+    usage: ["setprefix"],
+    desc: "Set a new command prefix",
+    commandType: "User",
+    isGroupOnly: false,
+    isAdminOnly: false,
+    isPrivateOnly: false,
+    isOwnerOnly: true, 
+    emoji: "🔧",
+    execute: async (sock, m, args) => {
+        if (args.length !== 1) {
+          if (global.settings?.INVINCIBLE_MODE) {
+            kord.react(m, "❌")
+            kord.sendErr(m, "No Prefix provided", {
+              context: "setprefix command"
+            });
+          } else {
+            return await global.kord.reply(m, "❌ Please provide a single prefix to set.");
+        }
+        return;
+        }
+
+        const newPrefix = args[0];
+        if (newPrefix.length > 1) {
+          if (global.settings?.INVINCIBLE_MODE) {
+            kord.react(m, "❌")
+            kord.sendErr(m, "Prefix must me A single character brr", {
+              context: "setprefix command"
+            });
+          } else {
+            return await global.kord.reply(m, "❌ Prefix must be a single character.");
+        }
+        return;
+        }
+
+        // Update the PREFIX variable in the config.js
+        global.settings.PREFIX = [newPrefix];
+
+        // Optionally, save the updated settings to config.js file if necessary
+        // const fs = require('fs');
+        // fs.writeFileSync('./config.js', `PREFIX: [${newPrefix}]`);
+        
+        if (global.settings?.INVINCIBLE_MODE) {
+          kord.react(m, "✅")
+        } else {
+        await global.kord.reply(m, `✅ Command prefix has been set to: ${newPrefix}`);
+        }
+    }
+},
+    {
+        usage: ["unarchive"],
+        desc: "Unarchive a chat",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: true,
+        emoji: "📤",
+        execute: async (sock, m) => {
+            try {
+                await sock.chatModify({ archive: false }, m.key.remoteJid);
+                if (global.settings?.INVINCIBLE_MODE) {
+                  kord.react(m, "✅")
+                } else {
+                await global.kord.reply(m, "✅ Chat has been unarchived.");
+                }
+            } catch (error) {
+                console.error("Error unarchiving chat:", error);
+                if (global.settings?.INVINCIBLE_MODE) {
+                  await kord.react(m, "🚫");
+                  await kord.sendErr(m, error, {
+                    context: "Unarchive Chat",
+                    info: "Failed to unarchive chat"
+                  });
+                } else {
+                  await global.kord.reply(m, "❌ Failed to unarchive the chat.");
+                }
+            }
+        }
+    },
+    {
+        usage: ["chatpin"],
+        desc: "Pin a chat",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: true,
+        emoji: "📌",
+        execute: async (sock, m) => {
+            try {
+                await sock.chatModify({ pin: true }, m.key.remoteJid);
+                if (global.settings?.INVINCIBLE_MODE) {
+                  kord.react(m, "✅")
+                } else {
+                await global.kord.reply(m, "✅ Chat has been pinned.");
+                }
+            } catch (error) {
+                console.error("Error pinning chat:", error);
+                if (global.settings?.INVINCIBLE_MODE) {
+                  await kord.react(m, "🚫");
+                  await kord.sendErr(m, error, {
+                    context: "Pin Chat",
+                    info: "Failed to Pin chat"
+                  });
+                } else {
+                await global.kord.reply(m, "❌ Failed to pin the chat.");
+                }
+            }
+        }
+    },
+    {
+        usage: ["unpin"],
+        desc: "Unpin a chat",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: true,
+        emoji: "📍",
+        execute: async (sock, m) => {
+            try {
+                await sock.chatModify({ pin: false }, m.key.remoteJid);
+                if (global.settings?.INVINCIBLE_MODE) {
+                  kord.react(m, "✅")
+                } else {
+                await global.kord.reply(m, "✅ Chat has been unpinned.");
+                }
+            } catch (error) {
+                console.error("Error unpinning chat:", error);
+                if (global.settings?.INVINCIBLE_MODE) {
+                  await kord.react(m, "🚫");
+                  await kord.sendErr(m, error, {
+                    context: "unpin Chat",
+                    info: "Failed to unpin chat"
+                  });
+                } else {
+                await global.kord.reply(m, "❌ Failed to unpin the chat.");
+                }
+            }
+        }
+    },
+    {
+        usage: ["markread"],
+        desc: "Mark chat as read",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: true,
+        emoji: "✓",
+        execute: async (sock, m) => {
+            try {
+                await sock.chatModify({ markRead: true }, m.key.remoteJid);
+                if (global.settings?.INVINCIBLE_MODE) {
+                  kord.react(m, "✅")
+                } else {
+                await global.kord.reply(m, "✅ Chat has been marked as read.");
+                }
+            } catch (error) {
+                console.error("Error marking chat as read:", error);
+                 if (global.settings?.INVINCIBLE_MODE) {
+                  await kord.react(m, "🚫");
+                  await kord.sendErr(m, error, {
+                    context: "read Chat",
+                    info: "Failed to read chat"
+                  });
+                } else {
+                await global.kord.reply(m, "❌ Failed to mark chat as read.");
+                }
+            }
+        }
+    },
+    {
+        usage: ["markunread"],
+        desc: "Mark chat as unread",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: true,
+        emoji: "✗",
+        execute: async (sock, m) => {
+            try {
+                await sock.chatModify({ markRead: false }, m.key.remoteJid);
+                if (global.settings?.INVINCIBLE_MODE) {
+                  kord.react(m, "✅")
+                } else {
+                await global.kord.reply(m, "✅ Chat has been marked as unread.");
+                }
+            } catch (error) {
+                console.error("Error marking chat as unread:", error);
+                 if (global.settings?.INVINCIBLE_MODE) {
+                  await kord.react(m, "🚫");
+                  await kord.sendErr(m, error, {
+                    context: "unread Chat",
+                    info: "Failed to unread chat"
+                  });
+                } else {
+                await global.kord.reply(m, "❌ Failed to mark chat as unread.");
+                }
+            }
+        }
+    },
+    {
+        usage: ["unmutechat"],
+        desc: "Unmute a chat",
+        commandType: "User",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        isOwnerOnly: true,
+        emoji: "🔔",
+        execute: async (sock, m) => {
+            try {
+                await sock.chatModify({ mute: null }, m.key.remoteJid);
+                if (global.settings?.INVINCIBLE_MODE) {
+                  kord.react(m, "✅")
+                } else {
+                await global.kord.reply(m, "✅ Chat has been unmuted.");
+                }
+            } catch (error) {
+                console.error("Error unmuting chat:", error);
+                if (global.settings?.INVINCIBLE_MODE) {
+                  await kord.react(m, "🚫");
+                  await kord.sendErr(m, error, {
+                    context: "unmute Chat",
+                    info: "Failed to unmute chat"
+                  });
+                } else {
+                await global.kord.reply(m, "❌ Failed to unmute the chat.");
+                }
+            }
+        }
+    },
+    {
+  usage: ["newgc", "creategc"],
+  desc: "Create a new group chat",
+  commandType: "User",
+  isGroupOnly: false,
+  isAdminOnly: false,
+  isPrivateOnly: false,
+  isOwnerOnly: true,
+  emoji: "👥",
+  execute: async (sock, m, args) => {
+
+    let groupName;
+    let participants = [];
+
+    // 
+    if (args.length === 0) {
+      groupName = "New Group";
+      participants = [sock.user.id.split(':')[0] + "@s.whatsapp.net"];
+    }
+    
+    else if (args.length === 1) {
+      groupName = args[0];
+      participants = [sock.user.id.split(':')[0] + "@s.whatsapp.net"];
+    }
+    else {
+      groupName = args[0];
+      participants = args.slice(1).map(num => num.includes('@') ? num : `${num}@s.whatsapp.net`);
+    }
+
+    try {
+      const group = await sock.groupCreate(groupName, participants);
+
+      const inviteCode = await sock.groupInviteCode(group.id);
+      const groupLink = `https://chat.whatsapp.com/${inviteCode}`;
+
+      await global.kord.reply(m, `✅ Group "${groupName}" has been created successfully!\nGroup Link: ${groupLink}`);
+    } catch (error) {
+      if (global.settings?.INVINCIBLE_MODE) {
+        await kord.react(m, "🚫");
+        await kord.sendErr(m, error, {
+          context: "Create Group",
+          info: "Failed to create group"
+        });
+      } else {
+        console.error("Error creating group:", error);
+        await global.kord.reply(m, "❌ Failed to create the group.");
+      }
+    }
+  }
+  },
+  {
+  usage: ["save"],
+  desc: "Save a message to starred messages",
+  commandType: "User",
+  isGroupOnly: false,
+  isAdminOnly: false,
+  isPrivateOnly: false,
+  isOwnerOnly: true,
+  emoji: "⭐",
+  execute: async (sock, m) => {
+    
+    const quotedMessage =
+      m.quoted ||
+      m.message?.extendedTextMessage?.contextInfo?.quotedMessage ||
+      m.message?.contextInfo?.quotedMessage;
+
+    
+    if (!quotedMessage) {
+      if (global.settings?.INVINCIBLE_MODE) {
+        await global.kord.react(m, "❌");
+        await global.kord.sendErr(m, "No Message to star", {
+          context: "star command"
+        });
+      } else {
+        await global.kord.reply(m, "❌ Please reply to a message to save it.");
+      }
+      return;
+    }
+
+    try {
+      
+      
+      const messageId =
+        quotedMessage.key?.id ||
+        m.message?.extendedTextMessage?.contextInfo?.stanzaId ||
+        m.message?.contextInfo?.stanzaId;
+
+      const chatId =
+        quotedMessage.key?.remoteJid ||
+        m.message?.extendedTextMessage?.contextInfo?.remoteJid ||
+        m.chat;
+
+     
+      const fromMe =
+        quotedMessage.key?.fromMe ||
+        m.message?.extendedTextMessage?.contextInfo?.participant === sock.user.id;
+
+      if (!messageId || !chatId) {
+        throw new Error('Could not determine message ID or chat');
+      }
+
+      await sock.chatModify({
+        star: {
+          messages: [{
+            id: messageId,
+            fromMe: fromMe || false
+          }],
+          star: true
+        }
+      }, chatId);
+
+      if (global.settings?.INVINCIBLE_MODE) {
+        await global.kord.react(m, "✅");
+      } else {
+        await global.kord.reply(m, "✅ Message has been saved to starred messages.");
+      }
+    } catch (error) {
+      console.error("Error saving message:", error);
+      if (global.settings?.INVINCIBLE_MODE) {
+        await global.kord.react(m, "🚫");
+        await global.kord.sendErr(m, error, {
+          context: "star Chat",
+          info: "Failed to star chat"
+        });
+      } else {
+        await global.kord.reply(m, "❌ Failed to save the message.");
+      }
+    }
+  }
+  },
+    {
+  usage: ["privacy"],
+  desc: "Configure privacy settings",
+  commandType: "User",
+  isGroupOnly: false,
+  isAdminOnly: false,
+  isPrivateOnly: false,
+  isOwnerOnly: true,
+  emoji: "🔒",
+  execute: async (sock, m, args) => {
+    if (args.length < 2) {
+      if (global.settings?.INVINCIBLE_MODE) {
+        await kord.react(m, "🚫");
+        return await kord.sendErr(m, args, {
+          context: "Privacy Settings",
+          info: "Insufficient arguments for privacy command"
+        });
+      } else {
+        return await global.kord.reply(m, "❌ Usage: .privacy [last_seen|profile|status|read_receipts|groups|online] [all|contacts|none]");
+      }
+    }
+
+    const setting = args[0].toLowerCase();
+    const value = args[1].toLowerCase();
+
+    const validSettings = [
+            'last_seen', 'profile', 'status',
+            'read_receipts', 'groups', 'online',
+            'fetch', 'disappearing'
+        ];
+
+    if (!validSettings.includes(setting)) {
+      if (global.settings?.INVINCIBLE_MODE) {
+        await kord.react(m, "🚫");
+        return await kord.sendErr(m, setting, {
+          context: "Privacy Settings",
+          info: "Invalid privacy setting specified"
+        });
+      } else {
+        return await global.kord.reply(m, "❌ Invalid privacy setting. Choose from: last_seen, profile, status, read_receipts, groups, online, fetch, disappearing");
+      }
+    }
+
+    try {
+      switch (setting) {
+        case 'last_seen':
+          if (!['all', 'contacts', 'none'].includes(value)) {
+            throw new Error("Invalid last_seen value");
+          }
+          await sock.updateLastSeenPrivacy(value);
+          break;
+
+        case 'online':
+          if (!['all', 'match_last_seen'].includes(value)) {
+            throw new Error("Invalid online value");
+          }
+          await sock.updateOnlinePrivacy(value);
+          break;
+
+        case 'profile':
+          if (!['all', 'contacts', 'none'].includes(value)) {
+            throw new Error("Invalid profile value");
+          }
+          await sock.updateProfilePicturePrivacy(value);
+          break;
+
+        case 'status':
+          if (!['all', 'contacts', 'none'].includes(value)) {
+            throw new Error("Invalid status value");
+          }
+          await sock.updateStatusPrivacy(value);
+          break;
+
+        case 'read_receipts':
+          if (!['all', 'none'].includes(value)) {
+            throw new Error("Invalid read_receipts value");
+          }
+          await sock.updateReadReceiptsPrivacy(value);
+          break;
+
+        case 'groups':
+          if (!['all', 'contacts'].includes(value)) {
+            throw new Error("Invalid groups value");
+          }
+          await sock.updateGroupsAddPrivacy(value);
+          break;
+
+        case 'fetch':
+          const privacySettings = await sock.fetchPrivacySettings(true);
+          await global.kord.reply(m, `📋 Current Privacy Settings:\n${JSON.stringify(privacySettings, null, 2)}`);
+          return;
+
+        case 'disappearing':
+          const validDurations = {
+            '24h': 86400,
+            '7d': 604800,
+            '90d': 7776000,
+            'off': 0
+          };
+          if (!validDurations.hasOwnProperty(value)) {
+            throw new Error("Invalid disappearing mode duration");
+          }
+          await sock.updateDefaultDisappearingMode(validDurations[value]);
+          break;
+      }
+
+      await global.kord.reply(m, `✅ Privacy setting "${setting}" has been updated to "${value}".`);
+    } catch (error) {
+      console.error("Error updating privacy settings:", error);
+
+      if (global.settings?.INVINCIBLE_MODE) {
+        await kord.react(m, "🚫");
+        await kord.sendErr(m, error, {
+          context: "Privacy Settings Update",
+          info: "Failed to update privacy settings"
+        });
+      } else {
+        await global.kord.reply(m, "❌ Failed to update privacy settings.");
+      }
+    }
+  }
+},
+    {
+  usage: ["fullpp"],
+  desc: "Set full screen profile picture",
+  commandType: "User",
+  isGroupOnly: false,
+  isAdminOnly: false,
+  isPrivateOnly: false,
+  isOwnerOnly: true,
+  emoji: "🖼️",
+  execute: async (sock, m, args) => {
+    let mediaBuffer, fileExtension, tempFilePath;
+
+    try {
+      let quotedMedia, mediaMsg;
+      if (m.message.extendedTextMessage && m.message.extendedTextMessage.contextInfo && m.message.extendedTextMessage.contextInfo.quotedMessage) {
+        quotedMedia = await global.kord.downloadQuotedMedia(m);
+
+        if (quotedMedia) {
+          mediaBuffer = quotedMedia.buffer;
+          fileExtension = quotedMedia.extension;
+        } else {
+          if (global.settings?.INVINCIBLE_MODE) {
+            await kord.react(m, "🚫");
+            return await kord.sendErr(m, null, {
+              context: "Full Profile Picture",
+              info: "Failed to download quoted media"
+            });
+          } else {
+            return await global.kord.reply(m, "❌ Failed to download the quoted media.");
+          }
+        }
+      } else {
+        // No quoted message, download media from the main message
+        mediaMsg = await global.kord.downloadMediaMsg(m);
+
+        if (mediaMsg) {
+          mediaBuffer = mediaMsg.buffer;
+          fileExtension = mediaMsg.extension;
+        } else {
+          if (global.settings?.INVINCIBLE_MODE) {
+            await kord.react(m, "🚫");
+            return await kord.sendErr(m, null, {
+              context: "Full Profile Picture",
+              info: "Failed to download media message"
+            });
+          } else {
+            return await global.kord.reply(m, "❌ Failed to download the media.");
+          }
+        }
+      }
+
+      // Create a temporary file path
+      tempFilePath = path.join(os.tmpdir(), `temp_${Date.now()}.${fileExtension}`);
+
+      // Save the media to the temp file
+      await fsPromises.writeFile(tempFilePath, mediaBuffer);
+
+      // Process and update profile picture
+      await updateProfilePicture(sock.user.id.split(':')[0] + "@s.whatsapp.net", mediaBuffer, sock);
+
+      await global.kord.reply(m, "✅ Full profile picture has been updated.");
+    } catch (error) {
+      console.error("Error in fullpp:", error);
+
+      if (global.settings?.INVINCIBLE_MODE) {
+        await kord.react(m, "🚫");
+        await kord.sendErr(m, error, {
+          context: "Full Profile Picture",
+          info: "Failed to update profile picture"
+        });
+      } else {
+        await global.kord.reply(m, "❌ Failed to update profile picture.");
+      }
+    } finally {
+      // Clean up: delete the temporary file
+      if (tempFilePath) {
+        try {
+          await fsPromises.unlink(tempFilePath);
+        } catch (unlinkError) {
+          console.error("Error deleting temporary file:", unlinkError);
+        }
+      }
+    }
+  }
+},
+{
+  usage: ["blocklist"],
+  desc: "View list of blocked users",
+  commandType: "User",
+  isGroupOnly: false,
+  isAdminOnly: false,
+  isPrivateOnly: false,
+  isOwnerOnly: true,
+  emoji: "🚫",
+  execute: async (sock, m) => {
+    try {
+      const blocked = await sock.fetchBlocklist();
+
+      if (blocked.length === 0) {
+        if (global.settings?.INVINCIBLE_MODE) {
+          await kord.react(m, "🚫");
+          return await kord.sendErr(m, null, {
+            context: "Blocklist",
+            info: "No blocked users found"
+          });
+        } else {
+          return await global.kord.reply(m, "No blocked users.");
+        }
+      }
+
+      const list = blocked.map((jid, i) => `${i + 1}. ${jid}`).join('\n');
+      await global.kord.reply(m, `📋 Blocked Users List:\n\n${list}`);
+    } catch (error) {
+      console.error("Error fetching blocklist:", error);
+
+      if (global.settings?.INVINCIBLE_MODE) {
+        await kord.react(m, "🚫");
+        await kord.sendErr(m, error, {
+          context: "Blocklist Fetch",
+          info: "Failed to fetch blocklist"
+        });
+      } else {
+        await global.kord.reply(m, "❌ Failed to fetch the blocklist.");
+      }
+    }
+  }
+},
+{
+  usage: ["location"],
+  desc: "Get and send location of a place or timezone",
+  commandType: "User",
+  isGroupOnly: false,
+  isAdminOnly: false,
+  isPrivateOnly: false,
+  isOwnerOnly: false,
+  emoji: "📍",
+  execute: async (sock, m, args) => {
+    try {
+      // If no args provided, use TIME_ZONE
+      if (args.length === 0) {
+        const timezone = global.settings.TIME_ZONE;
+
+        if (!timezone) {
+          if (global.settings?.INVINCIBLE_MODE) {
+            await kord.react(m, "🚫");
+            return await kord.sendErr(m, null, {
+              context: "Location",
+              info: "No timezone configured"
+            });
+          } else {
+            return await global.kord.reply(m, "❌ No timezone configured.");
+          }
+        }
+
+        // Convert timezone to location using geocoding API
+        const response = await axios.get(
+          `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(timezone)}`
+        );
+
+        if (response.data && response.data[0]) {
+          const { lat, lon } = response.data[0];
+          await sock.sendMessage(m.key.remoteJid, {
+            location: {
+              degreesLatitude: parseFloat(lat),
+              degreesLongitude: parseFloat(lon)
+            }
+          });
+        } else {
+          if (global.settings?.INVINCIBLE_MODE) {
+            await kord.react(m, "🚫");
+            return await kord.sendErr(m, null, {
+              context: "Location",
+              info: "Could not find location for the timezone"
+            });
+          } else {
+            await global.kord.reply(m, "❌ Could not find location for the timezone.");
+          }
+        }
+        return;
+      }
+
+      // If args provided, search for the place
+      const place = args.join(" ");
+      const response = await axios.get(
+        `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(place)}`
+      );
+
+      if (response.data && response.data[0]) {
+        const { lat, lon, display_name } = response.data[0];
+        await sock.sendMessage(m.key.remoteJid, {
+          location: {
+            degreesLatitude: parseFloat(lat),
+            degreesLongitude: parseFloat(lon),
+            name: display_name
+          }
+        });
+      } else {
+        if (global.settings?.INVINCIBLE_MODE) {
+          await kord.react(m, "🚫");
+          return await kord.sendErr(m, null, {
+            context: "Location",
+            info: "Location not found"
+          });
+        } else {
+          await global.kord.reply(m, "❌ Location not found.");
+        }
+      }
+    } catch (error) {
+      console.error("Error sending location:", error);
+
+      if (global.settings?.INVINCIBLE_MODE) {
+        await kord.react(m, "🚫");
+        await kord.sendErr(m, error, {
+          context: "Location",
+          info: "Failed to send location"
+        });
+      } else {
+        await global.kord.reply(m, "❌ Failed to send location.");
+      }
+    }
+  }
+},
+{
+  usage: ["owner"],
+  description: "Get the owner's contact information as a vCard.",
+  async execute(sock, message, args) {
+    try {
+      const settings = global.settings;
+      const ownerNumber = settings.OWNER_NUMBERS;
+      const ownerName = settings.OWNER_NAME;
+
+      if (!ownerNumber || !ownerName) {
+        if (global.settings?.INVINCIBLE_MODE) {
+          await kord.react(message, "🚫");
+          return await kord.sendErr(message, null, {
+            context: "Owner Contact",
+            info: "Owner details not configured"
+          });
+        } else {
+          return await sock.sendMessage(message.key.remoteJid, { text: "❌ Owner details not configured" }, { quoted: message });
+        }
+      }
+
+      const vcard = `
+BEGIN:VCARD
+VERSION:3.0
+FN:${ownerName}
+TEL;type=CELL;type=VOICE;waid=${ownerNumber}:${ownerNumber}
+END:VCARD
+            `;
+
+      const vcardMessage = {
+        contacts: {
+          displayName: ownerName,
+          contacts: [{ vcard }]
+        }
+      };
+      await sock.sendMessage(message.key.remoteJid, vcardMessage, { quoted: message });
+
+    } catch (error) {
+      console.error('Error executing owner command:', error);
+
+      if (global.settings?.INVINCIBLE_MODE) {
+        await kord.react(message, "🚫");
+        await kord.sendErr(message, error, {
+          context: "Owner Contact",
+          info: "Failed to retrieve owner contact"
+        });
+      } else {
+        await sock.sendMessage(message.key.remoteJid, { text: `❌ An error occurred: ${error.message}` }, { quoted: message });
+      }
+    }
+  }
+}
+];
+
+async function updateProfilePicture(jid, imageBuffer, sock) {
+    const { preview } = await generateProfilePicture(imageBuffer);
+    
+    await sock.query({
+        tag: 'iq',
+        attrs: {
+            to: jid,
+            type: "set",
+            xmlns: "w:profile:picture"
+        },
+        content: [{
+            tag: "picture",
+            attrs: { type: "image" },
+            content: preview
+        }]
+    });
+}
+
+async function generateProfilePicture(imageBuffer) {
+    const image = await jimp.read(imageBuffer);
+    const width = image.getWidth();
+    const height = image.getHeight();
+    const processedImage = image.crop(0, 0, width, height);
+
+    return {
+        img: await processedImage
+            .scaleToFit(324, 720)
+            .getBufferAsync(jimp.MIME_JPEG),
+        preview: await processedImage
+            .normalize()
+            .getBufferAsync(jimp.MIME_JPEG)
+    };
+};
