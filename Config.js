@@ -4,7 +4,7 @@ global.settings = {
   OWNER_NUMBERS: "2347046943219", // your number with country code
   OWNER_NAME: '𝑵𝑬𝑿𝑼𝑺', // your owner name 
   BOT_NAME: "𝑵𝑬𝑿𝑼𝑺", // your preferred bot name
-  SESSION_ID: 'kord_ai-676ea5dfbc57e65fbc53d816', // put your session id between the ''
+  SESSION_ID: 'kord_ai-676ed45ae53ab7b4328a3da6', // put your session id between the ''
   INVINCIBLE_MODE: true, // toogle invincible mode 
   WORK_MODE: "Public",
   TIME_ZONE: "Africa/Lagos",
