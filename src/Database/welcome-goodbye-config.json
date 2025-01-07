@@ -1,0 +1,33 @@
+{
+  "global": {
+    "welcomeEnabled": false,
+    "goodbyeEnabled": false,
+    "mentionUser": true,
+    "useProfilePicture": true,
+    "fallbackProfilePic": "https://files.catbox.moe/wpi099.png"
+  },
+  "groups": {
+    "120363216147505969@s.whatsapp.net": {
+      "welcomeEnabled": true,
+      "goodbyeEnabled": true,
+      "customWelcomeMessage": null,
+      "customGoodbyeMessage": null
+    },
+    "2347013159244@s.whatsapp.net": {
+      "welcomeEnabled": true,
+      "goodbyeEnabled": true,
+      "customWelcomeMessage": null,
+      "customGoodbyeMessage": null
+    }
+  },
+  "templates": {
+    "welcome": {
+      "default": "⿻ Hello @name,\n⦿ Welcome to *@group*! 🎉\n⿻ Hope you enjoy your stay here!\n\n> © ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ ʙʏ ᴋᴏʀᴅ ɪɴᴄ³²¹™",
+      "variants": []
+    },
+    "goodbye": {
+      "default": "⿻ Goodbye @name,\n⦿ We're sad to see you leave *@group*! 👋\n⿻ Hope you had a great time with us!\n\n> © ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ ʙʏ ᴋᴏʀᴅ ɪɴᴄ³²¹™",
+      "variants": []
+    }
+  }
+}

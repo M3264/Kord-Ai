@@ -4,7 +4,7 @@ global.settings = {
   OWNER_NUMBERS: "2349067339193", // your number with country code
   OWNER_NAME: 'Miracle', // your owner name 
   BOT_NAME: "KORD", // your preferred bot name
-  SESSION_ID: '', // put your session id between the ''
+  SESSION_ID: 'your_sessionid', // replace your_sessionid with yours and make sure its inside rhe quotes
   INVINCIBLE_MODE: false, // toogle invincible mode 
   WORK_MODE: "Public",
   TIME_ZONE: "Africa/Lagos",
@@ -12,6 +12,7 @@ global.settings = {
   READ_ALL_MESSAGES: false,
   AUTO_READ_STATUS: true,
   PREFIX: [".", "/", "!"],
+  GROUP_EVENTS: true,
   WELCOME_MESSAGE: "Hello! I'm KORD-AI, your friendly WhatsApp bot.",
   DEFAULT_TRANSLATION_LANG: "en",
   COMMAND_COOLDOWN_TIME_IN_MS: 0.01,
