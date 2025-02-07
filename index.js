@@ -2,7 +2,7 @@ const express = require('express');
 const http = require('http');
 const { kordAi } = require('./src/Utils/Kord');
 const path = require('path');
-const { kordStatistic } = require('./src/Plugin/kordStatistic');
+//const { kordStatistic } = require('./src/Plugin/kordStatistic');
 const { checkFFmpeg } = require('./src/Plugin/kordModule');
 const socketIo = require('socket.io');
 
@@ -19,13 +19,13 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/Public/index.html'));
 });
 
-io.on('connection', (socket) => {
+ io.on('connection', (socket) => {
     console.log('A user connected');
     // Handle disconnection
     socket.on('disconnect', () => {
         console.log('User disconnected');
     });
-});
+}); 
 
 app.use((err, req, res, next) => {
     console.error(err.stack);
@@ -37,7 +37,7 @@ app.use((err, req, res, next) => {
 // Start the server
 (async () => {
     try {
-        kordStatistic(app, io);
+      //  kordStatistic(app, io);
         checkFFmpeg((isInstalled) => {
             if (!isInstalled) {
                 checkDiskSpace((hasSpace) => {
