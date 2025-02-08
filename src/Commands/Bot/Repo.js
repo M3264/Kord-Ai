@@ -28,7 +28,7 @@ module.exports = {
         try {
             const repoOwner = "M3264";
             const repoName = "Kord-Ai";
-            const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}`;
+            const apiUrl = `https://api.github.com/repos/M3264/Kord-Ai`;
             const contributorsUrl = `${apiUrl}/contributors`;
             const languagesUrl = `${apiUrl}/languages`;
 
