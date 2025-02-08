@@ -24,7 +24,7 @@ module.exports = {
     isAdminOnly: false,
     isPrivateOnly: false,
     emoji: emojis.repo,
-    async execute(sock, m) {
+    async execute(sock, m, args, kord) {
         try {
             const repoOwner = "M3264";
             const repoName = "Kord-Ai";
