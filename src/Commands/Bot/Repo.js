@@ -1,1 +1,84 @@
-function a0_0x2867(){const _0x1f16bd=[')\x20(','json','/contributors','repo','entries','\x20KB)','Bot','M3264','2741010wWbpDl','map','7197561njHdRI','moment','https://api.github.com/repos/','🚨\x20An\x20error\x20occurred\x20while\x20fetching\x20repository\x20information.','\x20*Last\x20Updated:*\x20','login','No\x20description\x20available.','\x0a╔═══\x20*ᴋᴏʀᴅ-ᴀɪ\x20ʀᴇᴘᴏsɪᴛᴏʀʏ*\x20═══╗\x0a\x0a','updated_at','format','lastUpdate','\x20*Link:*\x20','312ujqysY','.\x20[','error','3805690LlLZFi','slice','sort','contributions','2221792CIzNaz','join','node-fetch','html_url','reply','95382obpoth','1249410fAVjER','toFixed','/languages','15lwjCcs','exports','Kord-Ai','3GLYIws','3832156WashrX'];a0_0x2867=function(){return _0x1f16bd;};return a0_0x2867();}const a0_0x1a802d=a0_0xd103;(function(_0x736f7,_0x51d912){const _0x1ea261=a0_0xd103,_0x366349=_0x736f7();while(!![]){try{const _0x5b9eda=parseInt(_0x1ea261(0x1a5))/0x1+parseInt(_0x1ea261(0x1ac))/0x2*(parseInt(_0x1ea261(0x1ab))/0x3)+-parseInt(_0x1ea261(0x19f))/0x4*(parseInt(_0x1ea261(0x1a8))/0x5)+parseInt(_0x1ea261(0x1b5))/0x6+-parseInt(_0x1ea261(0x1b7))/0x7+parseInt(_0x1ea261(0x198))/0x8*(parseInt(_0x1ea261(0x1a4))/0x9)+-parseInt(_0x1ea261(0x19b))/0xa;if(_0x5b9eda===_0x51d912)break;else _0x366349['push'](_0x366349['shift']());}catch(_0x2a0a5c){_0x366349['push'](_0x366349['shift']());}}}(a0_0x2867,0xea7fd));function a0_0xd103(_0xb2e3bc,_0xb793d5){const _0x286786=a0_0x2867();return a0_0xd103=function(_0xd103ef,_0xafd641){_0xd103ef=_0xd103ef-0x18e;let _0x122001=_0x286786[_0xd103ef];return _0x122001;},a0_0xd103(_0xb2e3bc,_0xb793d5);}const emojis={'info':'✨','repo':'🥰','star':'🌟','fork':'🔱','contributors':'🤝','error':'🚨','language':'🔠','issues':'🔍','lastUpdate':'🕒','license':'📜','owner':'👑','allContributors':'👥'},fetch=require(a0_0x1a802d(0x1a1)),moment=require(a0_0x1a802d(0x1b8));module[a0_0x1a802d(0x1a9)]={'usage':[a0_0x1a802d(0x1b0)],'desc':'Displays\x20detailed\x20information\x20about\x20the\x20bot\x27s\x20GitHub\x20repository.','commandType':a0_0x1a802d(0x1b3),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'emoji':emojis[a0_0x1a802d(0x1b0)],async 'execute'(_0x51d555,_0x23523f){const _0x1accdc=a0_0x1a802d;try{const _0x58d035=_0x1accdc(0x1b4),_0x54e651=_0x1accdc(0x1aa),_0x2bf729=_0x1accdc(0x18e)+_0x58d035+'/'+_0x54e651,_0x15d86f=_0x2bf729+_0x1accdc(0x1af),_0x43ac2d=_0x2bf729+_0x1accdc(0x1a7),[_0x3df15d,_0x55efa3,_0x2613fd]=await Promise['all']([fetch(_0x2bf729),fetch(_0x15d86f),fetch(_0x43ac2d)]),[_0x404f60,_0x1a1592,_0x69149d]=await Promise['all']([_0x3df15d[_0x1accdc(0x1ae)](),_0x55efa3['json'](),_0x2613fd[_0x1accdc(0x1ae)]()]),_0x41253c=_0x1a1592[_0x1accdc(0x19c)](0x0,0x5)[_0x1accdc(0x1b6)]((_0xa33ffa,_0x35985f)=>_0x35985f+0x1+_0x1accdc(0x199)+_0xa33ffa[_0x1accdc(0x191)]+']('+_0xa33ffa[_0x1accdc(0x1a2)]+_0x1accdc(0x1ad)+_0xa33ffa[_0x1accdc(0x19e)]+'\x20commits)')[_0x1accdc(0x1a0)]('\x0a'),_0x139e7b=_0x1a1592[_0x1accdc(0x1b6)](_0x31dd0a=>'['+_0x31dd0a[_0x1accdc(0x191)]+']('+_0x31dd0a[_0x1accdc(0x1a2)]+')')[_0x1accdc(0x1a0)](',\x20'),_0x26b97e=Object[_0x1accdc(0x1b1)](_0x69149d)[_0x1accdc(0x19d)]((_0x3eb6e3,_0x347f72)=>_0x347f72[0x1]-_0x3eb6e3[0x1])[_0x1accdc(0x19c)](0x0,0x3)[_0x1accdc(0x1b6)](([_0x31d4c9,_0x4a2f37])=>_0x31d4c9+'\x20('+(_0x4a2f37/0x400)[_0x1accdc(0x1a6)](0x2)+_0x1accdc(0x1b2))['join'](',\x20'),_0x2456d4=moment(_0x404f60[_0x1accdc(0x194)])[_0x1accdc(0x195)]('MMMM\x20Do\x20YYYY,\x20h:mm:ss\x20a'),_0x590599=_0x1accdc(0x193)+emojis['repo']+_0x1accdc(0x197)+_0x404f60['html_url']+'\x0a'+emojis['info']+'\x20*Description:*\x20'+(_0x404f60['description']||_0x1accdc(0x192))+'\x0a\x0a'+emojis[_0x1accdc(0x196)]+_0x1accdc(0x190)+_0x2456d4+'\x0a\x0a>\x20©\x20ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ\x20ʙʏ\x20ᴋᴏʀᴅ\x20ɪɴᴄ³²¹™\x0a\x0a╚════════════════════╝\x0a';await kord[_0x1accdc(0x1a3)](_0x590599);}catch(_0x1afb3d){await kord['react'](emojis[_0x1accdc(0x19a)]),await kord[_0x1accdc(0x1a3)](_0x1accdc(0x18f)),console[_0x1accdc(0x19a)]('Error\x20in\x20\x27repo\x27\x20command:',_0x1afb3d);}}};
+const emojis = {
+    info: '✨',
+    repo: '🥰',
+    star: '🌟',
+    fork: '🔱',
+    contributors: '🤝',
+    error: '🚨',
+    language: '🔠',
+    issues: '🔍',
+    lastUpdate: '🕒',
+    license: '📜',
+    owner: '👑',
+    allContributors: '👥'
+};
+
+const fetch = require('node-fetch');
+const moment = require('moment');
+
+module.exports = {
+    usage: ["repo"],
+    desc: "Displays detailed information about the bot's GitHub repository.",
+    commandType: "Bot",
+    isGroupOnly: false,
+    isAdminOnly: false,
+    isPrivateOnly: false,
+    emoji: emojis.repo,
+    async execute(sock, m) {
+        try {
+            const repoOwner = "M3264";
+            const repoName = "Kord-Ai";
+            const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}`;
+            const contributorsUrl = `${apiUrl}/contributors`;
+            const languagesUrl = `${apiUrl}/languages`;
+
+            const [repoResponse, contributorsResponse, languagesResponse] = await Promise.all([
+                fetch(apiUrl),
+                fetch(contributorsUrl),
+                fetch(languagesUrl)
+            ]);
+
+            const [repoData, contributorsData, languagesData] = await Promise.all([
+                repoResponse.json(),
+                contributorsResponse.json(),
+                languagesResponse.json()
+            ]);
+
+            const topContributors = contributorsData
+                .slice(0, 5)
+                .map((c, index) => `${index + 1}. [${c.login}](${c.html_url}) (${c.contributions} commits)`)
+                .join("\n");
+
+            const allContributors = contributorsData
+                .map(c => `[${c.login}](${c.html_url})`)
+                .join(", ");
+
+            const topLanguages = Object.entries(languagesData)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 3)
+                .map(([lang, bytes]) => `${lang} (${(bytes / 1024).toFixed(2)} KB)`)
+                .join(", ");
+
+            const lastUpdateDate = moment(repoData.updated_at).format('MMMM Do YYYY, h:mm:ss a');
+
+            const repoInfoMessage = `
+╔═══ *ᴋᴏʀᴅ-ᴀɪ ʀᴇᴘᴏsɪᴛᴏʀʏ* ═══╗
+
+${emojis.repo} *Link:* ${repoData.html_url}
+${emojis.info} *Description:* ${repoData.description || "No description available."}
+
+${emojis.lastUpdate} *Last Updated:* ${lastUpdateDate}
+
+> © ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ ʙʏ ᴋᴏʀᴅ ɪɴᴄ³²¹™
+
+╚════════════════════╝
+`;
+
+            await kord.reply(repoInfoMessage);
+        } catch (error) {
+            await kord.react(emojis.error);
+            await kord.reply("🚨 An error occurred while fetching repository information.");
+            console.error("Error in 'repo' command:", error);
+        }
+    }
+};
