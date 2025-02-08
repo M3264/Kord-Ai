@@ -49,8 +49,8 @@ module.exports = {
             const repoInfoMessage = `
 ╔═══ *ᴋᴏʀᴅ-ᴀɪ ʀᴇᴘᴏsɪᴛᴏʀʏ* ═══╗
 
-${emojis.repo} *Link:* ${repoData.html_url}
-${emojis.info} *Description:* ${repoData.description || "No description available."}
+${emojis.repo} *Link:* "https://gitHub.com/M3264/Kord-Ai"
+${emojis.info} *Description:* "Introducing Kord-Ai, A WhatsApp bot that automates interactions on WhatsApp by executing predefined commands or responding to user inputs. It can handle tasks like sending messages, sharing media, and managing group activities, offering convenience and efficiency for users and businesses."
 
 ${emojis.lastUpdate} *Last Updated:* ${lastUpdateDate}
 
