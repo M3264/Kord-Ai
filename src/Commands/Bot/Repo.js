@@ -44,21 +44,6 @@ module.exports = {
                 languagesResponse.json()
             ]);
 
-            const topContributors = contributorsData
-                .slice(0, 5)
-                .map((c, index) => `${index + 1}. [${c.login}](${c.html_url}) (${c.contributions} commits)`)
-                .join("\n");
-
-            const allContributors = contributorsData
-                .map(c => `[${c.login}](${c.html_url})`)
-                .join(", ");
-
-            const topLanguages = Object.entries(languagesData)
-                .sort((a, b) => b[1] - a[1])
-                .slice(0, 3)
-                .map(([lang, bytes]) => `${lang} (${(bytes / 1024).toFixed(2)} KB)`)
-                .join(", ");
-
             const lastUpdateDate = moment(repoData.updated_at).format('MMMM Do YYYY, h:mm:ss a');
 
             const repoInfoMessage = `
