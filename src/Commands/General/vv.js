@@ -1,1 +1,125 @@
-const a0_0x18f07a=a0_0x4954;function a0_0x4954(_0x35d084,_0x1de8e2){const _0x402d71=a0_0x402d();return a0_0x4954=function(_0x495400,_0x54d924){_0x495400=_0x495400-0xce;let _0x1883b9=_0x402d71[_0x495400];return _0x1883b9;},a0_0x4954(_0x35d084,_0x1de8e2);}(function(_0x3779ea,_0x2acbc8){const _0x23d545=a0_0x4954,_0x2f660f=_0x3779ea();while(!![]){try{const _0x322bb5=parseInt(_0x23d545(0xea))/0x1*(parseInt(_0x23d545(0xeb))/0x2)+-parseInt(_0x23d545(0xf0))/0x3+-parseInt(_0x23d545(0xdb))/0x4+-parseInt(_0x23d545(0xd6))/0x5*(-parseInt(_0x23d545(0x103))/0x6)+parseInt(_0x23d545(0xd0))/0x7+-parseInt(_0x23d545(0xd9))/0x8+parseInt(_0x23d545(0xf2))/0x9;if(_0x322bb5===_0x2acbc8)break;else _0x2f660f['push'](_0x2f660f['shift']());}catch(_0x15548d){_0x2f660f['push'](_0x2f660f['shift']());}}}(a0_0x402d,0xe6719));const {downloadMediaMessage}=require('@whiskeysockets/baileys');module['exports']={'usage':['viewonce','vv'],'desc':a0_0x18f07a(0xf1),'commandType':a0_0x18f07a(0xdf),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'emoji':a0_0x18f07a(0xd5),async 'execute'(_0x6bb124,_0x36c657,_0x526a04,_0x31995e){const _0x5c30d8=a0_0x18f07a;try{const _0x306eee=_0x36c657['message']?.[_0x5c30d8(0xde)]?.[_0x5c30d8(0xd8)]?.['quotedMessage'],_0x322930=_0x526a04[0x0]?.[_0x5c30d8(0xd3)]()===_0x5c30d8(0xdd),_0x9b7649=_0x36c657[_0x5c30d8(0xe3)][_0x5c30d8(0x101)]['endsWith'](_0x5c30d8(0xe7));if(!_0x306eee){if(global[_0x5c30d8(0xe9)]?.[_0x5c30d8(0xef)])return await _0x31995e[_0x5c30d8(0xfd)]('🚫'),await _0x31995e[_0x5c30d8(0xce)](null,{'context':_0x5c30d8(0xfc),'info':_0x5c30d8(0xf6)});return await _0x31995e['reply'](_0x5c30d8(0xfe));}const _0x3a57e3=_0x306eee[_0x5c30d8(0xfa)]||_0x306eee[_0x5c30d8(0x100)]||_0x306eee['audioMessage'];if(!_0x3a57e3?.[_0x5c30d8(0xff)]){if(global[_0x5c30d8(0xe9)]?.[_0x5c30d8(0xef)])return await _0x31995e[_0x5c30d8(0xfd)]('🚫'),await _0x31995e[_0x5c30d8(0xce)](null,{'context':_0x5c30d8(0xfc),'info':_0x5c30d8(0xd2)});return await _0x31995e['reply'](_0x5c30d8(0x102));}try{const _0x5ed36e=await _0x31995e[_0x5c30d8(0xed)](),_0x241350=_0x3a57e3[_0x5c30d8(0xe6)]||'';let _0x24c318;_0x322930?!_0x9b7649?_0x24c318=global[_0x5c30d8(0xe9)][_0x5c30d8(0xf8)]+_0x5c30d8(0xd4):_0x24c318=_0x36c657['key'][_0x5c30d8(0xf9)]:_0x24c318=_0x36c657[_0x5c30d8(0xe3)][_0x5c30d8(0x101)];if(_0x3a57e3['mimetype']['startsWith'](_0x5c30d8(0xfb)))await _0x6bb124[_0x5c30d8(0xe8)](_0x24c318,{'image':_0x5ed36e,'caption':_0x241350});else{if(_0x3a57e3[_0x5c30d8(0xe5)][_0x5c30d8(0xe1)](_0x5c30d8(0xe2)))await _0x6bb124[_0x5c30d8(0xe8)](_0x24c318,{'video':_0x5ed36e,'caption':_0x241350});else{if(_0x3a57e3[_0x5c30d8(0xe5)]['startsWith'](_0x5c30d8(0xcf)))await _0x6bb124[_0x5c30d8(0xe8)](_0x24c318,{'audio':_0x5ed36e,'ptt':_0x3a57e3['ptt']||![]});else{if(global[_0x5c30d8(0xe9)]?.[_0x5c30d8(0xef)])return await _0x31995e['react']('🚫'),await _0x31995e[_0x5c30d8(0xce)](null,{'context':_0x5c30d8(0xfc),'info':_0x5c30d8(0xd1)});return await _0x31995e[_0x5c30d8(0xdc)](_0x5c30d8(0xf3));}}}_0x322930&&await _0x31995e[_0x5c30d8(0xdc)](_0x5c30d8(0xe0)+(_0x9b7649?_0x5c30d8(0xd7):_0x5c30d8(0xee))),await _0x31995e[_0x5c30d8(0xfd)]('✨');}catch(_0x38dac6){if(global[_0x5c30d8(0xe9)]?.[_0x5c30d8(0xef)])return await _0x31995e[_0x5c30d8(0xfd)]('🚫'),await _0x31995e[_0x5c30d8(0xce)](_0x38dac6,{'context':_0x5c30d8(0xfc),'info':_0x5c30d8(0xe4)});return await _0x31995e[_0x5c30d8(0xdc)](_0x5c30d8(0xf4));}}catch(_0xc66df){if(global[_0x5c30d8(0xe9)]?.[_0x5c30d8(0xef)])return await _0x31995e[_0x5c30d8(0xfd)]('🚫'),await _0x31995e[_0x5c30d8(0xce)](_0xc66df,{'context':_0x5c30d8(0xfc),'info':_0x5c30d8(0xf5)});return console[_0x5c30d8(0xec)](_0x5c30d8(0xf7),_0xc66df),await _0x31995e[_0x5c30d8(0xdc)](_0x5c30d8(0xda));}}};function a0_0x402d(){const _0x8861eb=['INVINCIBLE_MODE','5632857YktJcH','Retrieve\x20and\x20resend\x20view-once\x20messages\x20(images/videos/voice\x20notes)\x20when\x20replied\x20with\x20`.vv`.\x20Use\x20`.vv\x20chat`\x20to\x20receive\x20in\x20private\x20chat.','36573057LVUdZX','Unsupported\x20media\x20type\x20in\x20view-once\x20message.','Failed\x20to\x20download\x20the\x20media\x20content.','Unexpected\x20error\x20in\x20processing\x20view-once\x20message','No\x20quoted\x20message\x20found!','Error\x20in\x20viewonce\x20command:','OWNER_NUMBERS','participant','imageMessage','image','ViewOnce\x20Command','react','Please\x20reply\x20to\x20a\x20view-once\x20media\x20message\x20with\x20`.vv`\x20or\x20`.vv\x20chat`\x20for\x20private\x20message.','viewOnce','videoMessage','remoteJid','The\x20replied\x20message\x20is\x20not\x20a\x20view-once\x20message.','132UrvhMR','sendErr','audio','4759601pMrRCA','Unsupported\x20media\x20type','Not\x20a\x20view-once\x20message','toLowerCase','@s.whatsapp.net','🕵️','91015UNCrFJ','your\x20DM!','contextInfo','11562928CPubQA','An\x20error\x20occurred\x20while\x20processing\x20the\x20view-once\x20message.','5305536EjFiCK','reply','chat','extendedTextMessage','Utility','Media\x20sent\x20to\x20','startsWith','video','key','Failed\x20to\x20download\x20media','mimetype','caption','@g.us','sendMessage','settings','8XNucdf','112296txLwIi','error','getbuff','owner\x27s\x20DM!'];a0_0x402d=function(){return _0x8861eb;};return a0_0x402d();}
+const { downloadMediaMessage } = require('@whiskeysockets/baileys');
+
+module.exports = {
+        usage: ["viewonce", "vv"],
+        desc: "Retrieve and resend view-once messages (images/videos/voice notes) when replied with `.vv`. Use `.vv chat` to receive in private chat.",
+        commandType: "Utility",
+        isGroupOnly: false,
+        isAdminOnly: false,
+        isPrivateOnly: false,
+        emoji: "🕵️",
+
+        async execute(sock, m, args, kord) {
+                try {
+                        const quotedMsg = m.message?.extendedTextMessage?.contextInfo?.quotedMessage;
+                        const sendToPrivate = args[0]?.toLowerCase() === 'chat';
+                        const isGroup = m.key.remoteJid.endsWith('@g.us');
+
+                        if (!quotedMsg) {
+                                if (global.settings?.INVINCIBLE_MODE) {
+                                        await kord.react("🚫");
+                                        return await kord.sendErr(null, {
+                                                context: "ViewOnce Command",
+                                                info: "No quoted message found!"
+                                        });
+                                }
+                                return await kord.reply("Please reply to a view-once media message with `.vv` or `.vv chat` for private message.");
+                        }
+
+                        // Check for media types with viewOnce flag
+                        const mediaMessage = quotedMsg.imageMessage ||
+                                quotedMsg.videoMessage ||
+                                quotedMsg.audioMessage;
+
+                        if (!mediaMessage?.viewOnce) {
+                                if (global.settings?.INVINCIBLE_MODE) {
+                                        await kord.react("🚫");
+                                        return await kord.sendErr(null, {
+                                                context: "ViewOnce Command",
+                                                info: "Not a view-once message"
+                                        });
+                                }
+                                return await kord.reply("The replied message is not a view-once message.");
+                        }
+
+                        try {
+                                // Get media buffer
+                                const buffer = await kord.getbuff();
+                                const caption = mediaMessage.caption || '';
+
+                                // Determine recipient based on context
+                                let recipient;
+                                if (sendToPrivate) {
+                                        if (!isGroup) {
+                                                // If in PM and .vv chat, send to owner
+                                                recipient = `${global.settings.OWNER_NUMBERS}@s.whatsapp.net`;
+                                               
+                                                
+                                        } else {
+                                                // If in group and .vv chat, send to sender's DM
+                                                recipient = m.key.participant
+                                        }
+                                } else {
+                                        // If not .vv chat, send to participant
+                                        recipient = m.key.remoteJid;
+                                }
+
+                                // Send media based on type
+                                if (mediaMessage.mimetype.startsWith('image')) {
+                                        await sock.sendMessage(recipient, {
+                                                image: buffer,
+                                                caption: caption
+                                        });
+                                } else if (mediaMessage.mimetype.startsWith('video')) {
+                                        await sock.sendMessage(recipient, {
+                                                video: buffer,
+                                                caption: caption
+                                        });
+                                } else if (mediaMessage.mimetype.startsWith('audio')) {
+                                        await sock.sendMessage(recipient, {
+                                                audio: buffer,
+                                                ptt: mediaMessage.ptt || false
+                                        });
+                                } else {
+                                        if (global.settings?.INVINCIBLE_MODE) {
+                                                await kord.react("🚫");
+                                                return await kord.sendErr(null, {
+                                                        context: "ViewOnce Command",
+                                                        info: "Unsupported media type"
+                                                });
+                                        }
+                                        return await kord.reply("Unsupported media type in view-once message.");
+                                }
+
+                                // Send confirmation message
+                                if (sendToPrivate) {
+                                 //       await kord.reply("Media sent to " + (isGroup ? "your DM!" : "owner's DM!"));
+                                }
+
+                                // React with success emoji if message was sent
+                                await kord.react("✨");
+
+                        } catch (downloadError) {
+                                if (global.settings?.INVINCIBLE_MODE) {
+                                        await kord.react("🚫");
+                                        return await kord.sendErr(downloadError, {
+                                                context: "ViewOnce Command",
+                                                info: "Failed to download media"
+                                        });
+                                }
+                                return await kord.reply("Failed to download the media content.");
+                        }
+
+                } catch (error) {
+                        if (global.settings?.INVINCIBLE_MODE) {
+                                await kord.react("🚫");
+                                return await kord.sendErr(error, {
+                                        context: "ViewOnce Command",
+                                        info: "Unexpected error in processing view-once message"
+                                });
+                        }
+                        console.error("Error in viewonce command:", error);
+                        return await kord.reply("An error occurred while processing the view-once message.");
+                }
+        }
+};
