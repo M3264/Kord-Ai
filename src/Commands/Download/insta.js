@@ -1,1 +1,108 @@
-const a0_0x599b4f=a0_0x351e;(function(_0x58556e,_0x48504e){const _0x22f486=a0_0x351e,_0x1ebdfd=_0x58556e();while(!![]){try{const _0x2b3c41=parseInt(_0x22f486(0x1da))/0x1+parseInt(_0x22f486(0x1b2))/0x2*(parseInt(_0x22f486(0x1b0))/0x3)+parseInt(_0x22f486(0x1d2))/0x4+-parseInt(_0x22f486(0x1b5))/0x5*(parseInt(_0x22f486(0x1ba))/0x6)+parseInt(_0x22f486(0x1cf))/0x7+parseInt(_0x22f486(0x1d9))/0x8+-parseInt(_0x22f486(0x1bd))/0x9*(parseInt(_0x22f486(0x1ca))/0xa);if(_0x2b3c41===_0x48504e)break;else _0x1ebdfd['push'](_0x1ebdfd['shift']());}catch(_0x5d719f){_0x1ebdfd['push'](_0x1ebdfd['shift']());}}}(a0_0x103c,0xda866));const fetch=require(a0_0x599b4f(0x1be)),fs=require('fs')[a0_0x599b4f(0x1cb)],path=require(a0_0x599b4f(0x1c6));function a0_0x351e(_0x59d743,_0x4a905c){const _0x103cd3=a0_0x103c();return a0_0x351e=function(_0x351ee1,_0x57acbf){_0x351ee1=_0x351ee1-0x1ab;let _0x22b5eb=_0x103cd3[_0x351ee1];return _0x22b5eb;},a0_0x351e(_0x59d743,_0x4a905c);}function a0_0x103c(){const _0x6d0873=['❌\x20*Download\x20Failed!*.','90ihGREP','promises','sendErr','sendVideo','react','5233137kwdxEc','settings','No\x20query','5248316IhDezW','Download\x20Instagram\x20media','instavid','error','video','unlink','General','13935064KbsUFT','51796mhgWtQ','❌\x20*Error\x20Occured!*.','exports','instadlvid','&type=video','now','>\x20©\x20ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ\x20ʙʏ\x20ᴋᴏʀᴅ\x20ɪɴᴄ³²¹™','instagram_','6ldvZoA','join','1216414Vxrukr','Download\x20Failed!','reply','160sfsxrh','❌*An\x20error\x20occurred!*.\x0a\x0a\x20Error:\x20${error}','success','*Please\x20provide\x20an\x20Instagram\x20URL!*.','data','84984YUymhs','https://api.kordai.us.kg/indown?url=','.mp4','3721437MyTPUV','node-fetch','buffer','No\x20query\x20Provided','Instagram\x20Download\x20Command','json','writeFile','Error\x20in\x20Instagram\x20downloader\x20command:','dirname','path','Instagram\x20Command','INVINCIBLE_MODE'];a0_0x103c=function(){return _0x6d0873;};return a0_0x103c();}module[a0_0x599b4f(0x1dc)]={'usage':[a0_0x599b4f(0x1d4),'igvid',a0_0x599b4f(0x1ab)],'desc':a0_0x599b4f(0x1d3),'commandType':a0_0x599b4f(0x1d8),'isGroupOnly':![],'isAdminOnly':![],'emoji':'✨',async 'execute'(_0x3bc3c0,_0x20670b,_0xdda1fa,_0x3658ca){const _0x26fdc9=a0_0x599b4f;if(!_0xdda1fa[0x0]){await _0x3658ca['react']('❌');if(global[_0x26fdc9(0x1d0)]?.[_0x26fdc9(0x1c8)])await _0x3658ca[_0x26fdc9(0x1cc)](_0x26fdc9(0x1d1),{'context':'Instagram\x20Command','text':_0x26fdc9(0x1c0)});else return await _0x3658ca[_0x26fdc9(0x1b4)](_0x26fdc9(0x1b8));return;}const _0x4b37ca=_0xdda1fa[0x0];try{const _0x510673=_0x26fdc9(0x1bb)+encodeURIComponent(_0x4b37ca)+_0x26fdc9(0x1ac),_0x438e49=await fetch(_0x510673),_0x50bba9=await _0x438e49[_0x26fdc9(0x1c2)]();if(!_0x50bba9[_0x26fdc9(0x1b7)]||!_0x50bba9[_0x26fdc9(0x1b9)]||!_0x50bba9[_0x26fdc9(0x1b9)]['video']){await _0x3658ca[_0x26fdc9(0x1ce)]('❌');if(global['settings']?.[_0x26fdc9(0x1c8)])await _0x3658ca[_0x26fdc9(0x1cc)](_0x50bba9,{'context':_0x26fdc9(0x1c7),'query':_0xdda1fa[0x0]});else return await _0x3658ca[_0x26fdc9(0x1b4)](_0x26fdc9(0x1db));return;}const _0x44939=_0x50bba9[_0x26fdc9(0x1b9)][_0x26fdc9(0x1d6)],_0x19ec81=await fetch(_0x44939);if(!_0x19ec81['ok']){await _0x3658ca[_0x26fdc9(0x1ce)]('❌');if(global[_0x26fdc9(0x1d0)]?.['INVINCIBLE_MODE'])await _0x3658ca[_0x26fdc9(0x1cc)](_0x26fdc9(0x1b3),{'context':_0x26fdc9(0x1c7),'query':_0xdda1fa[0x0],'mediaresponse':_0x19ec81});else return await _0x3658ca[_0x26fdc9(0x1b4)](_0x26fdc9(0x1c9));return;}const _0x29414f=await _0x19ec81[_0x26fdc9(0x1bf)](),_0x3587d8=_0x26fdc9(0x1af)+Date[_0x26fdc9(0x1ad)]()+_0x26fdc9(0x1bc),_0x3c89d7=path[_0x26fdc9(0x1b1)](__dirname,'../tmp/',_0x3587d8);try{await fs['access'](path[_0x26fdc9(0x1c5)](_0x3c89d7));}catch{await fs['mkdir'](path[_0x26fdc9(0x1c5)](_0x3c89d7),{'recursive':!![]});}await fs[_0x26fdc9(0x1c3)](_0x3c89d7,_0x29414f),await _0x3658ca[_0x26fdc9(0x1cd)](_0x3c89d7,_0x26fdc9(0x1ae)),await fs[_0x26fdc9(0x1d7)](_0x3c89d7);}catch(_0xc8c990){console[_0x26fdc9(0x1d5)](_0x26fdc9(0x1c4),_0xc8c990),await _0x3658ca[_0x26fdc9(0x1ce)]('❌'),global['settings']?.['INVINCIBLE_MODE']?await _0x3658ca[_0x26fdc9(0x1cc)](_0xc8c990,{'context':_0x26fdc9(0x1c1),'query':_0xdda1fa['join'][0x0]}):await _0x3658ca[_0x26fdc9(0x1b4)](_0x26fdc9(0x1b6));}}};
+const fetch = require('node-fetch');
+const fs = require('fs').promises;
+const path = require('path');
+
+
+module.exports = {
+    usage: ["instavid", "igvid", "instadlvid"],
+    desc: "Download Instagram media",
+    commandType: "General",
+    isGroupOnly: false,
+    isAdminOnly: false,
+    emoji: "✨",
+
+    async execute(sock, m, args, kord) {
+        if (!args[0]) {
+          await kord.react("❌");
+          if (global.settings?.INVINCIBLE_MODE) {
+            await kord.sendErr('No query', {
+                context: "Instagram Command",
+                text: "No query Provided"
+              });
+          } else {
+            return await kord.reply('*Please provide an Instagram URL!*.');
+        }
+        return;
+        }
+
+        const url = args[0];
+       // await kord.reply('> *✨`Loading..`💨*');
+
+        try {
+            const apiUrl = `https://ironman.koyeb.app/ironman/v3/dl/insta?url=${encodeURIComponent(url)}`;
+            const response = await fetch(apiUrl);
+            const data = await response.json();
+            
+            if (!data) {
+              await kord.react("❌");
+              if (global.settings?.INVINCIBLE_MODE) {
+              await kord.sendErr(data, {
+                context: "Instagram Command",
+                query: args[0]
+              });
+              } else {
+                return await kord.reply('_*Unknown Error!*_');
+            }
+            return;
+            }
+            
+            var title = data.title || "Instagram Media";
+            const downloadUrl = data.downloadUrls[0] || data.thumbnail;
+            
+            if (!downloadUrl) {
+              if (global.settings?.INVINCIBLE_MODE) {
+                await kord.sendErr(data, {
+                context: "Instagram Command",
+                query: args[0],
+                err: "no downloadUrl gotten"
+              });
+              } else {
+              return await kord.react("❌");
+            }
+            return;
+            }
+
+            // Fetch the media content
+            const mediaResponse = await fetch(downloadUrl);
+            if (!mediaResponse.ok) {
+              await kord.react("❌");
+              if (global.settings?.INVINCIBLE_MODE) {
+                await kord.sendErr("Download Failed!", {
+                context: "Instagram Command",
+                query: args[0],
+                mediaresponse: mediaResponse || "No found!"
+              });
+              } else {
+                return await kord.reply(`_*An Error Occured!*_`);
+            };
+            return;
+            }
+
+            const mediaBuffer = await mediaResponse.buffer();
+            const fileName = `instagram_${Date.now()}.mp4`;
+            const filePath = path.join(__dirname, '../tmp/', fileName);
+
+            try {
+                await fs.access(path.dirname(filePath));
+            } catch {
+                await fs.mkdir(path.dirname(filePath), { recursive: true });
+            }
+
+            await fs.writeFile(filePath, mediaBuffer);
+            await kord.sendVideo(filePath, `${title} \n\n> © ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ ʙʏ ᴋᴏʀᴅ ɪɴᴄ³²¹™`);
+            await fs.unlink(filePath);
+
+        } catch (error) {
+            console.error('Error in Instagram downloader command:', error);
+            await kord.react("❌");
+            if (global.settings?.INVINCIBLE_MODE) {
+            await kord.sendErr(error, {
+              context: "Instagram Download Command",
+              query: args.join[0]
+            });
+            } else {
+            await kord.reply('❌*An error occurred!*.\n\n Error: ${error}');
+        }
+    }
+    }
+}
