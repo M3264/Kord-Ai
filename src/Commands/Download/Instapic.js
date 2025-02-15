@@ -1,1 +1,112 @@
-const a0_0x53f655=a0_0x442b;(function(_0x278add,_0x5f3e31){const _0x4220e6=a0_0x442b,_0x4c2590=_0x278add();while(!![]){try{const _0x4fdbe4=parseInt(_0x4220e6(0x18e))/0x1+parseInt(_0x4220e6(0x191))/0x2+parseInt(_0x4220e6(0x17d))/0x3+parseInt(_0x4220e6(0x180))/0x4+parseInt(_0x4220e6(0x16e))/0x5+-parseInt(_0x4220e6(0x190))/0x6*(parseInt(_0x4220e6(0x179))/0x7)+parseInt(_0x4220e6(0x18c))/0x8*(-parseInt(_0x4220e6(0x182))/0x9);if(_0x4fdbe4===_0x5f3e31)break;else _0x4c2590['push'](_0x4c2590['shift']());}catch(_0x345151){_0x4c2590['push'](_0x4c2590['shift']());}}}(a0_0x5ae7,0xe830d));function a0_0x5ae7(){const _0x1df9f2=['❌\x20Could\x20not\x20retrieve\x20media\x20data.\x20Please\x20check\x20the\x20provided\x20Instagram\x20URL.','3246471gnZXbZ','❌\x20An\x20error\x20occurred\x20while\x20downloading\x20the\x20Instagram\x20image.','dirname','1586680vmSAen','node-fetch','620343DzUuwn','now','.jpg','igpic','reply','Instagram\x20Command','https://api.kordai.us.kg/indown?url=','Error\x20in\x20Instagram\x20downloader\x20command:','sendImage','react','288gmIKXh','instapic','870821FnlJki','unlink','11970zMFZwT','1532150eAAAGB','No\x20query\x20Provided','Please\x20provide\x20an\x20Instagram\x20post\x20URL\x20to\x20download.','writeFile','settings','path','INVINCIBLE_MODE','video','No\x20found!','❌\x20Failed\x20to\x20download\x20the\x20image\x20from\x20Instagram.','Download\x20Instagram\x20pictures','8994935MDLVRQ','data','success','../tmp/','no\x20downloadUrl\x20gotten','>\x20©\x20ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ\x20ʙʏ\x20ᴋᴏʀᴅ\x20ɪɴᴄ³²¹™','error','instadlpic','sendErr','mkdir','buffer','5201HnDCdM','No\x20query','thumbnail'];a0_0x5ae7=function(){return _0x1df9f2;};return a0_0x5ae7();}function a0_0x442b(_0x25c4ff,_0x2dc32f){const _0x5ae7c3=a0_0x5ae7();return a0_0x442b=function(_0x442b82,_0x1e2a2b){_0x442b82=_0x442b82-0x16a;let _0x355218=_0x5ae7c3[_0x442b82];return _0x355218;},a0_0x442b(_0x25c4ff,_0x2dc32f);}const fetch=require(a0_0x53f655(0x181)),fs=require('fs')['promises'],path=require(a0_0x53f655(0x196));module['exports']={'usage':[a0_0x53f655(0x18d),a0_0x53f655(0x185),a0_0x53f655(0x175)],'desc':a0_0x53f655(0x16d),'commandType':'General','isGroupOnly':![],'isAdminOnly':![],'emoji':'📥',async 'execute'(_0x1fb549,_0x5095d5,_0x45e326,_0x1e2111){const _0x69d59c=a0_0x53f655;if(!_0x45e326[0x0]){await _0x1e2111[_0x69d59c(0x18b)]('❌');if(global[_0x69d59c(0x195)]?.['INVINCIBLE_MODE'])await _0x1e2111[_0x69d59c(0x176)](_0x69d59c(0x17a),{'context':_0x69d59c(0x187),'text':_0x69d59c(0x192)});else return await _0x1e2111[_0x69d59c(0x186)](_0x69d59c(0x193));return;}const _0x592773=_0x45e326[0x0];try{const _0x55719b=_0x69d59c(0x188)+encodeURIComponent(_0x592773)+'&type=photo',_0x2f47b1=await fetch(_0x55719b),_0x1f82a8=await _0x2f47b1['json']();if(!_0x1f82a8[_0x69d59c(0x170)]||!_0x1f82a8[_0x69d59c(0x16f)]){await _0x1e2111[_0x69d59c(0x18b)]('❌');if(global['settings']?.[_0x69d59c(0x197)])await _0x1e2111[_0x69d59c(0x176)](_0x1f82a8,{'context':_0x69d59c(0x187),'query':_0x45e326[0x0]});else return await _0x1e2111['reply'](_0x69d59c(0x17c));return;}const _0x413899=_0x1f82a8[_0x69d59c(0x16f)][_0x69d59c(0x16a)]||_0x1f82a8['data'][_0x69d59c(0x17b)];if(!_0x413899){if(global[_0x69d59c(0x195)]?.['INVINCIBLE_MODE'])await _0x1e2111[_0x69d59c(0x176)](_0x1f82a8,{'context':_0x69d59c(0x187),'query':_0x45e326[0x0],'err':_0x69d59c(0x172)});else return await _0x1e2111[_0x69d59c(0x18b)]('❌');return;}const _0x498fe1=await fetch(_0x413899);if(!_0x498fe1['ok']){await _0x1e2111[_0x69d59c(0x18b)]('❌');if(global['settings']?.[_0x69d59c(0x197)])await _0x1e2111['sendErr']('Download\x20Failed!',{'context':_0x69d59c(0x187),'query':_0x45e326[0x0],'mediaresponse':_0x498fe1||_0x69d59c(0x16b)});else return await _0x1e2111['reply'](_0x69d59c(0x16c));return;}const _0x5862e3=await _0x498fe1[_0x69d59c(0x178)](),_0x18c59c='instagram_'+Date[_0x69d59c(0x183)]()+_0x69d59c(0x184),_0x32e3dd=path['join'](__dirname,_0x69d59c(0x171),_0x18c59c);try{await fs['access'](path[_0x69d59c(0x17f)](_0x32e3dd));}catch{await fs[_0x69d59c(0x177)](path[_0x69d59c(0x17f)](_0x32e3dd),{'recursive':!![]});}await fs[_0x69d59c(0x194)](_0x32e3dd,_0x5862e3),await _0x1e2111[_0x69d59c(0x18a)](_0x32e3dd,_0x69d59c(0x173)),await fs[_0x69d59c(0x18f)](_0x32e3dd);}catch(_0x1eb936){console[_0x69d59c(0x174)](_0x69d59c(0x189),_0x1eb936),await _0x1e2111[_0x69d59c(0x18b)]('❌'),global['settings']?.['INVINCIBLE_MODE']?await _0x1e2111[_0x69d59c(0x176)](_0x1eb936,{'context':_0x69d59c(0x187),'query':_0x45e326[0x0]}):await _0x1e2111[_0x69d59c(0x186)](_0x69d59c(0x17e));}}};
+const fetch = require('node-fetch');
+const fs = require('fs').promises;
+const path = require('path');
+
+module.exports = {
+    usage: ["instapic", "igpic", "instadlpic"],
+    desc: "Download Instagram pictures",
+    commandType: "General",
+    isGroupOnly: false,
+    isAdminOnly: false,
+    emoji: "📥",
+
+    async execute(sock, m, args, kord) {
+        if (!args[0]) {
+          await kord.react("❌");
+          if (global.settings?.INVINCIBLE_MODE) {
+            await kord.sendErr('No query', {
+                context: "Instagram Command",
+                text: "No query Provided"
+              });
+          } else {
+            return await kord.reply('Please provide an Instagram post URL to download.');
+        }
+        return;
+        }
+
+        const url = args[0];
+
+        try {
+            const apiUrl = `https://ironman.koyeb.app/ironman/v3/dl/insta?url=${encodeURIComponent(url)}`;
+            const response = await fetch(apiUrl);
+            const data = await response.json();
+            
+            if (!data) {
+              await kord.react("❌");
+              if (global.settings?.INVINCIBLE_MODE) {
+              await kord.sendErr(data, {
+                context: "Instagram Command",
+                query: args[0]
+              });
+              } else {
+                return await kord.reply('_*Unknown Error!*_');
+            }
+            return;
+            }
+            
+            var title = data.title || "Instagram Media";
+            const downloadUrl = data.downloadUrls[0] || data.thumbnail;
+            
+            if (!downloadUrl) {
+              if (global.settings?.INVINCIBLE_MODE) {
+                await kord.sendErr(data, {
+                context: "Instagram Command",
+                query: args[0],
+                err: "no downloadUrl gotten"
+              });
+              } else {
+              return await kord.react("❌");
+            }
+            return;
+            }
+
+            // Fetch the media content
+            const mediaResponse = await fetch(downloadUrl);
+            if (!mediaResponse.ok) {
+              await kord.react("❌");
+              if (global.settings?.INVINCIBLE_MODE) {
+                await kord.sendErr("Download Failed!", {
+                context: "Instagram Command",
+                query: args[0],
+                mediaresponse: mediaResponse || "No found!"
+              });
+              } else {
+                return await kord.reply('❌ Failed to download the image from Instagram.');
+            }
+            return;
+            }
+
+            const mediaBuffer = await mediaResponse.buffer();
+            const fileName = `instagram_${Date.now()}.jpg`;
+            const filePath = path.join(__dirname, '../tmp/', fileName);
+
+            // Ensure the directory exists
+            try {
+                await fs.access(path.dirname(filePath));
+            } catch {
+                await fs.mkdir(path.dirname(filePath), { recursive: true });
+            }
+
+            // Write the file to the temporary directory
+            await fs.writeFile(filePath, mediaBuffer);
+
+            // Send the image with the specific caption
+            await kord.sendImage(filePath, `${title} \n\n> © ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ ʙʏ ᴋᴏʀᴅ ɪɴᴄ³²¹™`);
+
+            // Clean up the file after sending
+            await fs.unlink(filePath);
+
+        } catch (error) {
+            console.error('Error in Instagram downloader command:', error);
+            await kord.react("❌");
+              if (global.settings?.INVINCIBLE_MODE) {
+                await kord.sendErr(error, {
+                context: "Instagram Command",
+                query: args[0],
+              });
+              } else {
+            await kord.reply('❌ An error occurred while downloading the Instagram image.');
+        }
+    }
+    }
+}
