@@ -1,1 +1,728 @@
-const a0_0x38e3e6=a0_0x1d03;(function(_0x3aa144,_0x1daf14){const _0x4e1037=a0_0x1d03,_0xeae2ae=_0x3aa144();while(!![]){try{const _0xc19f68=parseInt(_0x4e1037(0x142))/0x1+parseInt(_0x4e1037(0x151))/0x2+parseInt(_0x4e1037(0x132))/0x3*(-parseInt(_0x4e1037(0x157))/0x4)+parseInt(_0x4e1037(0x106))/0x5+-parseInt(_0x4e1037(0x138))/0x6*(-parseInt(_0x4e1037(0x13b))/0x7)+-parseInt(_0x4e1037(0xf5))/0x8*(parseInt(_0x4e1037(0x140))/0x9)+-parseInt(_0x4e1037(0x112))/0xa;if(_0xc19f68===_0x1daf14)break;else _0xeae2ae['push'](_0xeae2ae['shift']());}catch(_0x2bf51b){_0xeae2ae['push'](_0xeae2ae['shift']());}}}(a0_0xa525,0xeaa45));const fs=require('fs')[a0_0x38e3e6(0xe0)],path=require(a0_0x38e3e6(0xf0)),{downloadContentFromMessage,downloadMediaMessage,delay}=require(a0_0x38e3e6(0x141)),{streamToBuffer}=require(a0_0x38e3e6(0xe4)),fancyScriptFonts=require(a0_0x38e3e6(0x14e)),{writeExif,imageToWebp,videoToWebp,writeExifImg,writeExifVid}=require(a0_0x38e3e6(0x121)),{proto}=require(a0_0x38e3e6(0x141)),{prepareWAMessageMedia,generateWAMessageFromContent}=require(a0_0x38e3e6(0x141)),fss=require('fs'),fetch=require(a0_0x38e3e6(0xf6)),RED=a0_0x38e3e6(0x12b),RESET=a0_0x38e3e6(0x15d),settings=require(a0_0x38e3e6(0xdd)),packagejson=require(a0_0x38e3e6(0xff)),OWNER_NUMBERS=settings[a0_0x38e3e6(0x107)]||global[a0_0x38e3e6(0x136)]?.['OWNER_NUMBERS'];function a0_0x1d03(_0x18c19b,_0x31dcde){const _0xa5256d=a0_0xa525();return a0_0x1d03=function(_0x1d0303,_0x1ca181){_0x1d0303=_0x1d0303-0xd7;let _0x34bbf8=_0xa5256d[_0x1d0303];return _0x34bbf8;},a0_0x1d03(_0x18c19b,_0x31dcde);}!OWNER_NUMBERS&&console[a0_0x38e3e6(0xef)](RED+'CRITICAL:\x20OWNER_NUMBERS\x20is\x20not\x20set!'+RESET);const ownerJid=OWNER_NUMBERS?OWNER_NUMBERS+a0_0x38e3e6(0x109):null,version='1',getBuffer=async _0x1c6ba6=>{const _0x5e6bca=a0_0x38e3e6;try{const _0x5830e2=await fetch(_0x1c6ba6),_0x3e00a1=await _0x5830e2[_0x5e6bca(0x108)](),_0x2e91c5=Buffer[_0x5e6bca(0xfe)](_0x3e00a1);return _0x2e91c5;}catch(_0x32aca1){console[_0x5e6bca(0xef)](_0x5e6bca(0x15b),_0x32aca1);throw _0x32aca1;}};function kordMsg(_0x254072,_0x170da6){const _0x4a9349=a0_0x38e3e6;try{Object[_0x4a9349(0x101)](require[_0x4a9349(0xf3)])[_0x4a9349(0xd8)](_0x43703a=>{const _0xc26028=_0x4a9349;delete require[_0xc26028(0xf3)][_0x43703a];});const _0x264d61={'jid':_0x170da6[_0x4a9349(0xfa)][_0x4a9349(0xe8)],'sender':_0x170da6[_0x4a9349(0xfa)][_0x4a9349(0x12a)]||_0x170da6[_0x4a9349(0xfa)]['remoteJid'],'quotedMsg':_0x170da6?.[_0x4a9349(0x10f)]?.[_0x4a9349(0xe3)]?.[_0x4a9349(0x144)]?.[_0x4a9349(0x122)],'messageId':_0x170da6['key']['id'],'message':_0x170da6},_0x574c3f=0x14,_0x29942c=[],_0x3f15ec=async(_0x4d87ef,_0x514e7b={})=>{const _0x33cf99=_0x4a9349;try{return await _0x254072[_0x33cf99(0x152)](_0x33cf99(0x145),_0x264d61[_0x33cf99(0x12f)]),await delay(0xc8),await _0x254072[_0x33cf99(0x13a)](_0x264d61[_0x33cf99(0x12f)],_0x4d87ef,_0x514e7b);}catch(_0x3b5092){console[_0x33cf99(0xef)](RED+_0x33cf99(0x155)+_0x3b5092[_0x33cf99(0x10f)]+RESET);throw _0x3b5092;}},_0x377a53={'reply':async _0x110508=>{const _0xfb155d=_0x4a9349;try{const _0x132886=await fetch(_0xfb155d(0x163))[_0xfb155d(0x149)](_0x24392f=>_0x24392f[_0xfb155d(0x161)]()),_0xcb5357={'text':_0x110508,'contextInfo':{'forwardingScore':0x3e7,'isForwarded':!![],'mentionedJid':[_0x264d61[_0xfb155d(0xf1)]],'forwardedNewsletterMessageInfo':{'newsletterName':'饾檰饾檴饾檷饾樋-饾樇饾檮','newsletterJid':_0xfb155d(0xfb)},'externalAdReply':{'title':_0xfb155d(0xdc),'body':'銈?','mediaType':0x1,'thumbnail':_0x132886,'sourceUrl':_0xfb155d(0x12d)}}};return await _0x3f15ec(_0xcb5357,{'quoted':_0x264d61[_0xfb155d(0x10f)]});}catch(_0x19e404){console['error'](RED+'Error\x20in\x20enhanced\x20reply:\x20'+_0x19e404[_0xfb155d(0x10f)]+RESET);throw _0x19e404;}},'send':async _0xda4380=>_0x3f15ec({'text':_0xda4380}),'react':async _0x1b3c44=>_0x3f15ec({'react':{'text':_0x1b3c44,'key':_0x264d61[_0x4a9349(0x10f)][_0x4a9349(0xfa)]}}),'editMsg':async(_0xa1fcb,_0x16d205)=>_0x3f15ec({'edit':_0xa1fcb[_0x4a9349(0xfa)],'text':_0x16d205,'type':_0x4a9349(0x15c)}),'deleteMsg':async()=>{const _0x1518f7=_0x4a9349,_0x29f401=await _0x254072['groupMetadata'](_0x264d61[_0x1518f7(0x12f)]),_0x49dc83=_0x254072[_0x1518f7(0x162)]['id']['replace'](/:.*$/,'')+'@s.whatsapp.net',_0x3ee216=_0x29f401['participants'][_0x1518f7(0x153)](_0x3641b2=>_0x3641b2['id'][_0x1518f7(0x126)](_0x49dc83)&&_0x3641b2[_0x1518f7(0xf7)]);if(!_0x3ee216)throw new Error(_0x1518f7(0x15f));const _0x5048c1=_0x264d61['message']?.[_0x1518f7(0x10f)]?.[_0x1518f7(0xe3)]?.[_0x1518f7(0x144)]?.[_0x1518f7(0x122)];if(!_0x5048c1)throw new Error(_0x1518f7(0x14b));const _0x1133fd=_0x264d61[_0x1518f7(0x10f)][_0x1518f7(0xfa)][_0x1518f7(0x12a)]===_0x264d61[_0x1518f7(0x10f)]?.[_0x1518f7(0x10f)]?.[_0x1518f7(0xe3)]?.['contextInfo']?.['participant'],_0x4771b7=_0x264d61['message']?.[_0x1518f7(0x10f)]?.[_0x1518f7(0xe3)]?.[_0x1518f7(0x144)]?.['stanzaId'],_0x1ccdff={'key':{'remoteJid':_0x264d61['jid'],'fromMe':_0x1133fd,'id':_0x4771b7,'participant':_0x264d61[_0x1518f7(0x10f)]?.['message']?.[_0x1518f7(0xe3)]?.[_0x1518f7(0x144)]?.[_0x1518f7(0x12a)]}};await _0x254072[_0x1518f7(0x152)](_0x1518f7(0x145),_0x264d61[_0x1518f7(0x12f)]),await delay(0xc8);const _0x1d0e81=await _0x254072[_0x1518f7(0x13a)](_0x264d61['jid'],{'delete':_0x1ccdff['key']});return await delay(0x2ee),await _0x254072[_0x1518f7(0x13a)](_0x264d61[_0x1518f7(0x12f)],{'delete':_0x264d61[_0x1518f7(0x10f)]['key']}),_0x1d0e81;},'freply':async _0x26688f=>{const _0x2c91cf=_0x4a9349;try{const _0x1812b6=await fetch(_0x2c91cf(0x163))[_0x2c91cf(0x149)](_0x4840ec=>_0x4840ec[_0x2c91cf(0x161)]()),_0x2b444e=_0x264d61[_0x2c91cf(0x10f)][_0x2c91cf(0x10f)]['extendedTextMessage']?.[_0x2c91cf(0x144)]?.[_0x2c91cf(0x122)]?.[_0x2c91cf(0x124)]||_0x264d61[_0x2c91cf(0x10f)][_0x2c91cf(0x10f)][_0x2c91cf(0xe3)]?.['contextInfo']?.[_0x2c91cf(0x122)]?.['extendedTextMessage']?.['text']||_0x264d61[_0x2c91cf(0x10f)][_0x2c91cf(0x10f)][_0x2c91cf(0x124)]||'饾檰饾檴饾檷饾樋-饾樇饾檮',_0x4c3c15={'key':{'fromMe':![],'participant':_0x2c91cf(0x14c),'remoteJid':_0x2c91cf(0x131)},'message':{'conversation':_0x2b444e}},_0x3330df={'text':_0x26688f,'contextInfo':{'forwardingScore':0x3e7,'isForwarded':!![],'mentionedJid':[_0x264d61['sender']],'forwardedNewsletterMessageInfo':{'newsletterName':_0x2c91cf(0x102),'newsletterJid':'120363321914137077@newsletter'},'externalAdReply':{'title':_0x2c91cf(0xdc),'body':'銈?','mediaType':0x1,'thumbnail':_0x1812b6,'sourceUrl':_0x2c91cf(0x12d)}}};return await _0x3f15ec(_0x3330df,{'quoted':_0x4c3c15});}catch(_0x47f666){console['error'](RED+_0x2c91cf(0xec)+_0x47f666[_0x2c91cf(0x10f)]+RESET);throw _0x47f666;}},'sendImage':async(_0xfbc102,_0x2c9853)=>{const _0x3d0fa5=typeof _0xfbc102==='string'?{'image':{'url':_0xfbc102},'caption':_0x2c9853}:{'image':_0xfbc102,'caption':_0x2c9853};return _0x3f15ec(_0x3d0fa5);},'sendVideo':async(_0x572816,_0x16d90b)=>{const _0x163452=typeof _0x572816==='string'?{'video':{'url':_0x572816},'caption':_0x16d90b}:{'video':_0x572816,'caption':_0x16d90b};return _0x3f15ec(_0x163452);},'sendDocument':async(_0x5897c9,_0x482da0,_0x439681,_0x3e8429)=>{const _0xac782d=typeof _0x5897c9==='string'?{'document':{'url':_0x5897c9},'mimetype':_0x482da0,'fileName':_0x439681,'caption':_0x3e8429}:{'document':_0x5897c9,'mimetype':_0x482da0,'fileName':_0x439681,'caption':_0x3e8429};return _0x3f15ec(_0xac782d);},'sendAudio':async(_0x310bbc,_0x27dad9=![])=>{const _0x2b6542=_0x4a9349,_0x4884fc=typeof _0x310bbc==='string'?{'audio':{'url':_0x310bbc},'ptt':_0x27dad9,'mimetype':_0x2b6542(0xd9)}:{'audio':_0x310bbc,'ptt':_0x27dad9,'mimetype':_0x2b6542(0xd9)};return await _0x254072['sendPresenceUpdate'](_0x2b6542(0xde),_0x264d61[_0x2b6542(0x12f)]),await delay(0x190),_0x3f15ec(_0x4884fc,{'quoted':_0x264d61['message']});},'sendGif':async(_0x1f1a0c,_0x82017a=!![])=>{const _0x3cb81b=_0x4a9349;let _0x8e4abe;if(typeof _0x1f1a0c===_0x3cb81b(0x134)){const _0x2ebf9c=await fetch(_0x1f1a0c);_0x8e4abe=await _0x2ebf9c[_0x3cb81b(0x108)]();}else _0x8e4abe=_0x1f1a0c;return _0x3f15ec({'video':_0x8e4abe,'gifPlayback':_0x82017a});},'sendVideoAsSticker':async(_0x412185,_0x18cc30,_0x5cd4a4,_0x5a5b61={})=>{const _0x2b7a27=_0x4a9349;let _0x3eb9b7=Buffer[_0x2b7a27(0x156)](_0x18cc30)?_0x18cc30:/^data:.*?\/.*?;base64,/i[_0x2b7a27(0x104)](_0x18cc30)?Buffer['from'](_0x18cc30[_0x2b7a27(0x12e)]`,`[0x1],_0x2b7a27(0xe2)):/^https?:\/\//[_0x2b7a27(0x104)](_0x18cc30)?await await getBuffer(_0x18cc30):fss[_0x2b7a27(0x13e)](_0x18cc30)?fss[_0x2b7a27(0x120)](_0x18cc30):Buffer[_0x2b7a27(0x143)](0x0),_0x1254c0;return _0x5a5b61&&(_0x5a5b61['packname']||_0x5a5b61[_0x2b7a27(0x13c)])?_0x1254c0=await writeExifVid(_0x3eb9b7,_0x5a5b61):_0x1254c0=await videoToWebp(_0x3eb9b7),await _0x254072[_0x2b7a27(0x13a)](_0x412185,{'sticker':{'url':_0x1254c0},..._0x5a5b61},{'quoted':_0x5cd4a4}),_0x1254c0;},'sendImageAsSticker':async(_0x5d8768,_0x26c83f,_0x20bc91,_0x485583={})=>{const _0x5c7dc4=_0x4a9349;let _0x22cd8d=Buffer[_0x5c7dc4(0x156)](_0x26c83f)?_0x26c83f:/^data:.*?\/.*?;base64,/i[_0x5c7dc4(0x104)](_0x26c83f)?Buffer['from'](_0x26c83f[_0x5c7dc4(0x12e)]`,`[0x1],_0x5c7dc4(0xe2)):/^https?:\/\//[_0x5c7dc4(0x104)](_0x26c83f)?await await getBuffer(_0x26c83f):fss[_0x5c7dc4(0x13e)](_0x26c83f)?fss['readFileSync'](_0x26c83f):Buffer[_0x5c7dc4(0x143)](0x0),_0x56f01e;_0x485583&&(_0x485583['packname']||_0x485583['author'])?_0x56f01e=await writeExifImg(_0x22cd8d,_0x485583):_0x56f01e=await imageToWebp(_0x22cd8d),await _0x254072[_0x5c7dc4(0x13a)](_0x5d8768,{'sticker':{'url':_0x56f01e},..._0x485583},{'quoted':_0x20bc91})[_0x5c7dc4(0x149)](_0xb48e25=>{const _0x548c9b=_0x5c7dc4;return fss[_0x548c9b(0x111)](_0x56f01e),_0xb48e25;});},'sendSlide':async(_0x56d9dd,_0xba36ec,_0x550a03,_0x45e269)=>{const _0x57cbe3=_0x4a9349;try{if(!Array[_0x57cbe3(0x123)](_0x45e269)||!_0x45e269[_0x57cbe3(0x10b)])throw new Error(_0x57cbe3(0xdb));const _0x35c9b6=await Promise[_0x57cbe3(0x14d)](_0x45e269[_0x57cbe3(0xe6)](async([_0xfabcd,_0x38423f,_0x265c75,_0x50ee8c,_0x2938ba,_0x38f4e1,_0x410ff4,_0x46456e])=>{const _0x46ee16=_0x57cbe3,_0x1363d8=await prepareWAMessageMedia({'image':{'url':_0xfabcd}},{'upload':_0x254072[_0x46ee16(0x166)]});return{'headerType':0x1,'body':{'text':_0x265c75},'footer':{'text':_0x50ee8c},'header':{'title':_0x38423f,'hasMediaAttachment':!![],'mediaType':0x1,'mediaMessage':_0x1363d8},'nativeFlowMessage':{'buttons':[{'name':_0x410ff4,'buttonParamsJson':JSON['stringify'](buildButtonParams(_0x410ff4,_0x2938ba,_0x38f4e1,_0x46456e))}]}};})),_0x249920={'viewOnceMessage':{'message':{'messageContextInfo':{'deviceListMetadata':{},'deviceListMetadataVersion':0x2},'interactiveMessage':{'body':{'text':_0xba36ec},'footer':{'text':_0x550a03},'header':{'title':_0x56d9dd,'subtitle':_0x56d9dd,'hasMediaAttachment':![]},'carouselMessage':{'cards':_0x35c9b6},'contextInfo':{'mentionedJid':[_0x264d61[_0x57cbe3(0xf1)]],'forwardingScore':0x3e7,'isForwarded':!![],'forwardedNewsletterMessageInfo':{'newsletterJid':_0x57cbe3(0xfb),'newsletterName':'KORD-AI','serverMessageId':0x8f}}}}}},_0x57dcb3=await generateWAMessageFromContent(_0x264d61[_0x57cbe3(0x12f)],_0x249920,{'quoted':_0x264d61[_0x57cbe3(0x10f)],'userJid':_0x254072[_0x57cbe3(0x162)]['id']});return await _0x254072[_0x57cbe3(0xf8)](_0x264d61[_0x57cbe3(0x12f)],_0x57dcb3[_0x57cbe3(0x10f)],{'messageId':_0x57dcb3[_0x57cbe3(0xfa)]['id']});}catch(_0xd6c1){console[_0x57cbe3(0xef)](_0x57cbe3(0x128),_0xd6c1);throw _0xd6c1;}},'getbuff':async _0xdc5ff3=>{const _0x38190a=_0x4a9349;try{if(!_0xdc5ff3){const _0x27153b=_0x264d61[_0x38190a(0x10f)]?.[_0x38190a(0x10f)]?.['extendedTextMessage']?.['contextInfo']?.[_0x38190a(0x122)];if(!_0x27153b)throw new Error(_0x38190a(0x11a));const _0x3c56da=[_0x38190a(0xeb),'videoMessage',_0x38190a(0x110),_0x38190a(0x12c),_0x38190a(0x11e),_0x38190a(0x147)];let _0x2c4aca=null,_0x235c25=null;for(const _0x2384de of _0x3c56da){if(_0x27153b[_0x2384de]){_0x2c4aca=_0x27153b[_0x2384de],_0x235c25=_0x2384de;break;}if(_0x2384de===_0x38190a(0x147)&&_0x27153b[_0x2384de]?.[_0x38190a(0x10f)]?.[_0x38190a(0x12c)]){_0x2c4aca=_0x27153b[_0x2384de][_0x38190a(0x10f)][_0x38190a(0x12c)],_0x235c25=_0x38190a(0x12c);break;}}if(!_0x2c4aca)throw new Error('No\x20media\x20found\x20in\x20quoted\x20message');const _0x3315c0=_0x2c4aca[_0x38190a(0xdf)]?_0x2c4aca[_0x38190a(0xdf)][_0x38190a(0x12e)]('/')[0x0]:_0x235c25[_0x38190a(0x117)](_0x38190a(0xfd),''),_0x511896=await downloadContentFromMessage(_0x2c4aca,_0x3315c0);return await streamToBuffer(_0x511896);}if(Buffer[_0x38190a(0x156)](_0xdc5ff3))return _0xdc5ff3;if(typeof _0xdc5ff3===_0x38190a(0x134)&&/^data:.*?\/.*?;base64,/i[_0x38190a(0x104)](_0xdc5ff3))return Buffer[_0x38190a(0xfe)](_0xdc5ff3[_0x38190a(0x12e)](',')[0x1],_0x38190a(0xe2));if(typeof _0xdc5ff3===_0x38190a(0x134)&&/^https?:\/\//i[_0x38190a(0x104)](_0xdc5ff3)){const _0x270dbe=await fetch(_0xdc5ff3);if(!_0x270dbe['ok'])throw new Error(_0x38190a(0xed)+_0x270dbe['status']);const _0x54ce4f=await _0x270dbe['arrayBuffer']();return Buffer['from'](_0x54ce4f);}if(typeof _0xdc5ff3===_0x38190a(0x134)&&fss[_0x38190a(0x13e)](_0xdc5ff3))return fss[_0x38190a(0x120)](_0xdc5ff3);if(_0xdc5ff3?.[_0x38190a(0x10c)]&&typeof _0xdc5ff3[_0x38190a(0x10c)]===_0x38190a(0x146))return await streamToBuffer(_0xdc5ff3);throw new Error(_0x38190a(0x114));}catch(_0xf0b1e){console[_0x38190a(0xef)](RED+_0x38190a(0x115)+_0xf0b1e['message']+RESET);throw _0xf0b1e;}},'sendErr':async(_0x563493,_0x2b0f21={})=>{const _0x4df6a2=_0x4a9349;try{if(!ownerJid)return console['error'](RED+_0x4df6a2(0xea)+RESET),console[_0x4df6a2(0xef)](_0x4df6a2(0x10d)),null;const _0x3d827a=_0x563493 instanceof Error?_0x563493[_0x4df6a2(0x10f)]:String(_0x563493),_0x222f89=_0x4df6a2(0x10e)+packagejson[_0x4df6a2(0x13f)]+_0x4df6a2(0x11c)+(_0x2b0f21[_0x4df6a2(0x167)]||_0x4df6a2(0xee))+_0x4df6a2(0x159)+_0x3d827a+_0x4df6a2(0xf4)+(_0x264d61[_0x4df6a2(0x12f)]||_0x4df6a2(0x139))+_0x4df6a2(0x164)+(_0x264d61[_0x4df6a2(0xf1)]||_0x4df6a2(0x139))+_0x4df6a2(0x130)+JSON[_0x4df6a2(0x100)](_0x2b0f21,null,0x2)+'\x0a|----\x20>\x20漏\x20瑟纱岽涐磭薀薀瑟散岽嚿瘁磩岽嘰x20蕶蕪\x20岽嬦磸蕗岽匼x20瑟纱岽劼陈猜光劉\x20----|\x0a```';return console[_0x4df6a2(0x14a)](RED+_0x4df6a2(0x11f)+RESET,ownerJid),await _0x254072[_0x4df6a2(0x13a)](ownerJid,{'text':_0x222f89});}catch(_0x5f1f13){return console['error'](RED+_0x4df6a2(0x14f)+RESET,_0x5f1f13),null;}},'externalAdReply':async(_0x42d02d,_0x312727,_0x1ffceb,_0x5c43ab,_0x48a1d7)=>{const _0x4c7aa6=_0x4a9349,_0x41f612=typeof _0x48a1d7===_0x4c7aa6(0x134)?{'url':_0x48a1d7}:await fs[_0x4c7aa6(0x13d)](_0x48a1d7);return _0x3f15ec({'text':_0x42d02d,'contextInfo':{'externalAdReply':{'showAdAttribution':![],'renderLargerThumbnail':!![],'title':_0x312727,'body':_0x1ffceb,'previewType':0x0,'mediaType':_0x5c43ab,'thumbnail':_0x41f612,'mediaUrl':''}}});},'replyWithMention':async(_0x3a076a,_0x900afc)=>{const _0x5e5c4f=_0x4a9349,_0x579794=_0x900afc[_0x5e5c4f(0xe6)](_0x328976=>'@'+_0x328976)[_0x5e5c4f(0x15a)]('\x20');return _0x3f15ec({'text':_0x3a076a+'\x20'+_0x579794,'mentions':_0x579794},{'quoted':_0x264d61[_0x5e5c4f(0x10f)]});},'forwardMessage':async(_0x30f101,_0x3b2f35,_0x218415={})=>{const _0x261f02=_0x4a9349;return _0x254072['relayMessage'](_0x30f101,_0x3b2f35[_0x261f02(0x10f)],_0x218415);},'getQuotedMessage':async()=>{const _0x5423af=_0x4a9349,_0x31208c=_0x264d61[_0x5423af(0x10f)]?.[_0x5423af(0x10f)]?.[_0x5423af(0xe3)]?.[_0x5423af(0x144)]?.[_0x5423af(0x122)]||_0x264d61[_0x5423af(0x10f)]?.[_0x5423af(0x10f)]?.[_0x5423af(0x124)]?.[_0x5423af(0x144)]?.[_0x5423af(0x122)];return _0x31208c||null;},'getQuotedText':async()=>{const _0x50882f=_0x4a9349,_0x453d36=await _0x377a53[_0x50882f(0xe1)]();if(_0x453d36)return _0x453d36['extendedTextMessage']?.[_0x50882f(0xe9)]||_0x453d36[_0x50882f(0x124)]||null;return null;},'getQuotedMedia':async()=>{const _0xd42838=_0x4a9349,_0x285e96=_0x47e3ae=>{const _0x36caa1=a0_0x1d03;if(!_0x47e3ae)return null;const _0x2203b1=[_0x36caa1(0xeb),'videoMessage','audioMessage',_0x36caa1(0x12c)];for(const _0x50aecb of _0x2203b1){if(_0x47e3ae[_0x50aecb])return{'type':_0x50aecb,'message':_0x47e3ae[_0x50aecb]};}if(typeof _0x47e3ae==='object')for(const _0x23643f in _0x47e3ae){const _0x2be43e=_0x285e96(_0x47e3ae[_0x23643f]);if(_0x2be43e)return _0x2be43e;}return null;};for(const _0x511ca4 in _0x264d61[_0xd42838(0x10f)][_0xd42838(0x10f)]){const _0x294c34=_0x264d61[_0xd42838(0x10f)][_0xd42838(0x10f)][_0x511ca4];if(_0x294c34?.['contextInfo']?.[_0xd42838(0x122)]){const _0x241dde=_0x285e96(_0x294c34['contextInfo'][_0xd42838(0x122)]);if(_0x241dde)return _0x241dde;}}return![];},'replyid':async()=>{const _0x3f05f8=_0x4a9349;return _0x264d61['message']['message']?.[_0x3f05f8(0xe3)]?.['contextInfo']?.[_0x3f05f8(0x113)];},'getMessageType':async()=>{const _0x357912=_0x4a9349;return _0x264d61[_0x357912(0x10f)]['message']?Object[_0x357912(0x101)](_0x264d61[_0x357912(0x10f)][_0x357912(0x10f)])[0x0]:null;},'getQuotedMessageType':async()=>{const _0x3e0676=_0x4a9349;if(!_0x264d61[_0x3e0676(0x10f)]['message'])return null;const _0x43341c=Object[_0x3e0676(0x101)](_0x264d61[_0x3e0676(0x10f)][_0x3e0676(0x10f)])[0x0];return _0x264d61[_0x3e0676(0x10f)][_0x3e0676(0x10f)][_0x43341c]?.[_0x3e0676(0x144)]?.['quotedMessage'];},'getCaptionMessage':async()=>{const _0x3772bb=_0x4a9349;for(const _0x44c6c4 in _0x264d61[_0x3772bb(0x10f)][_0x3772bb(0x10f)]){const _0xd980df=_0x264d61[_0x3772bb(0x10f)]['message'][_0x44c6c4];if(_0xd980df?.[_0x3772bb(0x127)])return _0xd980df;}return null;},'getResponseText':async(_0x565072,_0x2148fb)=>{return new Promise((_0x15feb2,_0x3ad588)=>{const _0x219913=a0_0x1d03,_0x5152ac=_0x2148fb&&_0x2148fb>0x0?setTimeout(()=>{_0x254072['ev']['off']('messages.upsert',_0x374bfb),_0x3ad588(new Error('Timeout\x20exceeded\x20while\x20waiting\x20for\x20response'));},_0x2148fb):null,_0x374bfb=async({messages:_0x501b90})=>{const _0x2b27cc=a0_0x1d03,_0x36a325=_0x501b90[0x0],_0x4a755b=_0x264d61['jid'],_0x2f00f1=(_0x36a325[_0x2b27cc(0x10f)]?.[_0x2b27cc(0xe3)]?.['contextInfo']?.[_0x2b27cc(0x113)]===_0x565072[_0x2b27cc(0xfa)]['id']||_0x36a325['message']?.[_0x2b27cc(0x124)]?.[_0x2b27cc(0x144)]?.[_0x2b27cc(0x113)]===_0x565072[_0x2b27cc(0xfa)]['id'])&&(_0x4a755b[_0x2b27cc(0x105)](_0x2b27cc(0x137))?_0x264d61['sender']:_0x4a755b)===(_0x36a325[_0x2b27cc(0xfa)][_0x2b27cc(0xe8)][_0x2b27cc(0x105)](_0x2b27cc(0x137))?_0x36a325['key']['participant']:_0x36a325['key']['remoteJid']);if(_0x2f00f1){if(_0x5152ac)clearTimeout(_0x5152ac);_0x254072['ev'][_0x2b27cc(0x158)](_0x2b27cc(0x154),_0x374bfb);const _0x564550=_0x36a325[_0x2b27cc(0x10f)]?.[_0x2b27cc(0xe3)]?.[_0x2b27cc(0xe9)]||_0x36a325[_0x2b27cc(0x10f)]?.[_0x2b27cc(0x124)];_0x15feb2({'key':_0x36a325['key'],'message':_0x36a325['message'],'response':_0x564550});}};_0x29942c[_0x219913(0xf9)](_0x374bfb);if(_0x29942c[_0x219913(0x10b)]>_0x574c3f){const _0x267933=_0x29942c[_0x219913(0x125)]();_0x254072['ev']['off'](_0x219913(0x154),_0x267933);}_0x254072['ev']['on'](_0x219913(0x154),_0x374bfb);});},'downloadQuotedMedia':async()=>{const _0x32a532=_0x4a9349,_0x5a1398=await _0x377a53['getQuotedMedia']();if(!_0x5a1398)throw new Error(_0x32a532(0x116));const _0x11ceeb=_0xb6c085=>{const _0x5b826b=_0x32a532,_0x26c8f7={'imageMessage':'png','videoMessage':'mp4','audioMessage':_0x5b826b(0x135)};return _0x26c8f7[_0xb6c085]||_0x5b826b(0x10a);},_0x5a6082=_0x11ceeb(_0x5a1398[_0x32a532(0x150)]),_0x1fd3d2=_0x5a1398[_0x32a532(0x10f)][_0x32a532(0xdf)][_0x32a532(0x12e)]('/')[0x0],_0xfff57e=await downloadContentFromMessage(_0x5a1398[_0x32a532(0x10f)],_0x1fd3d2),_0x2ded3b=await streamToBuffer(_0xfff57e);return{'buffer':_0x2ded3b,'extension':_0x5a6082,'filename':_0x32a532(0xfc)+Date[_0x32a532(0x119)]()+'.'+_0x5a6082};},'downloadMediaMsg':async()=>{const _0x1d7356=_0x4a9349;if(!_0x264d61[_0x1d7356(0x10f)][_0x1d7356(0x10f)])return null;const _0x67cd34=Object[_0x1d7356(0x101)](_0x264d61[_0x1d7356(0x10f)][_0x1d7356(0x10f)])[0x0],_0x7050f5=[_0x1d7356(0xeb),_0x1d7356(0xe5),_0x1d7356(0x110),_0x1d7356(0x12c),_0x1d7356(0x147)];if(!_0x7050f5['includes'](_0x67cd34))return'Provide\x20a\x20valid\x20message\x20(quoted\x20messages\x20are\x20not\x20valid)';const _0x16e8d2=await downloadMediaMessage(_0x264d61['message'],'buffer',{},{'logger':console,'reuploadRequest':_0x254072[_0x1d7356(0x15e)]}),_0x27c57b=_0x2dcd06=>{const _0x41047a=_0x1d7356,_0x248ae5={'imageMessage':_0x264d61['message'][_0x41047a(0x10f)][_0x41047a(0xeb)]['mimetype']==='image/png'?_0x41047a(0x11b):'.jpeg','videoMessage':_0x41047a(0x11d),'audioMessage':_0x41047a(0x103),'documentMessage':'.'+_0x264d61['message'][_0x41047a(0x10f)][_0x41047a(0x12c)]['fileName']['split']('.')[_0x41047a(0xe7)](),'documentWithCaptionMessage':'.'+_0x264d61[_0x41047a(0x10f)][_0x41047a(0x10f)][_0x41047a(0x147)][_0x41047a(0x10f)]['documentMessage'][_0x41047a(0x160)][_0x41047a(0x12e)]('.')[_0x41047a(0xe7)]()};return _0x248ae5[_0x2dcd06];},_0x4b3848=_0x27c57b(_0x67cd34);return{'buffer':_0x16e8d2,'extension':_0x4b3848};},'changeFont':async(_0x33146d,_0x346872)=>{const _0x193c28=_0x4a9349;if(typeof _0x33146d!==_0x193c28(0x134)||typeof _0x346872!==_0x193c28(0x134))throw new Error(_0x193c28(0x133));const _0x39f236=fancyScriptFonts[_0x346872];if(!_0x39f236)throw new Error('Font\x20\x27'+_0x346872+_0x193c28(0x118));return await delay(0xa),_0x33146d[_0x193c28(0x12e)]('')[_0x193c28(0xe6)](_0x16eb17=>_0x39f236[_0x16eb17]||_0x16eb17)[_0x193c28(0x15a)]('');},'getFileSizeInMB':async()=>{const _0x5f7a7a=_0x4a9349;if(!_0x264d61['message']['message'])return null;for(const _0x2fe487 of Object[_0x5f7a7a(0x101)](_0x264d61[_0x5f7a7a(0x10f)][_0x5f7a7a(0x10f)])){const _0x5c1e62=_0x264d61[_0x5f7a7a(0x10f)]['message'][_0x2fe487];if(_0x5c1e62&&_0x5c1e62[_0x5f7a7a(0x165)]){const _0x180e9a=parseInt(_0x5c1e62[_0x5f7a7a(0x165)]);return _0x180e9a/(0x400*0x400);}}return null;},'saveFileToTemp':async(_0x52bce2,_0x19640e)=>{const _0x35bbf5=_0x4a9349;try{const _0x8f796c=path[_0x35bbf5(0x15a)](__dirname,_0x35bbf5(0xd7));await fs[_0x35bbf5(0xf2)](_0x8f796c,{'recursive':!![]});const _0x55a67e=path[_0x35bbf5(0x15a)](_0x8f796c,_0x19640e);return await fs['writeFile'](_0x55a67e,_0x52bce2),_0x55a67e;}catch(_0x30d62a){console[_0x35bbf5(0xef)](RED+_0x35bbf5(0x148)+_0x30d62a[_0x35bbf5(0x10f)]+RESET);throw _0x30d62a;}},'buildButtonParams':(_0x59e10a,_0xba571d,_0x276f4a,_0x1e3d3e)=>{const _0x40ef8a={'cta_url':{'display_text':_0xba571d,'url':_0x1e3d3e,'merchant_url':_0x1e3d3e},'cta_call':{'display_text':_0xba571d,'id':_0x276f4a},'quick_reply':{'display_text':_0xba571d,'id':_0x276f4a},'cta_copy':{'display_text':_0xba571d,'id':'','copy_code':_0x276f4a},'cta_reminder':{'display_text':_0xba571d,'id':_0x276f4a},'cta_cancel_reminder':{'display_text':_0xba571d,'id':_0x276f4a},'address_message':{'display_text':_0xba571d,'id':_0x276f4a},'send_location':{}};return _0x40ef8a[_0x59e10a]||{};}};return _0x377a53;}catch(_0x12e588){console[_0x4a9349(0xef)](RED+_0x4a9349(0xda)+_0x12e588[_0x4a9349(0x10f)]+RESET);throw _0x12e588;}}function a0_0xa525(){const _0x10f956=['Message','from','../../package.json','stringify','keys','饾檰饾檴饾檷饾樋-饾樇','.mp3','test','endsWith','7087360vJwJWQ','OWNER_NUMBERS','arrayBuffer','@s.whatsapp.net','bin','length','pipe','Please\x20set\x20OWNER_NUMBERS\x20in\x20environment\x20or\x20global\x20settings','\x0a```\x0a|----\x20KORD-AI\x20ERROR!\x20----|\x0aVersion:\x20','message','audioMessage','unlinkSync','32045800ErvCdO','stanzaId','Invalid\x20source\x20type\x20or\x20source\x20not\x20found','Error\x20in\x20getbuff:\x20','No\x20quoted\x20media\x20message\x20found.','replace','\x27\x20is\x20not\x20available\x20in\x20fancyScriptFonts.','now','No\x20source\x20provided\x20and\x20no\x20quoted\x20message\x20found','.png','\x0aCommand:\x20','.mp4','stickerMessage','Sending\x20Error\x20Report\x20to:','readFileSync','./exif.js','quotedMessage','isArray','conversation','shift','includes','caption','Error\x20in\x20sendSlide:','exports','participant','[31m','documentMessage','https://kordai.us.kg','split','jid','\x0aAdditional\x20Context:\x0a','status@broadcast','12GfVfYP','Both\x20\x27text\x27\x20and\x20\x27font\x27\x20must\x20be\x20of\x20type\x20string.','string','mp3','settings','@g.us','6hzcidV','Unknown','sendMessage','2718443TZeGQT','author','readFile','existsSync','version','759933uwXzNA','@whiskeysockets/baileys','1841561rSOVRu','alloc','contextInfo','composing','function','documentWithCaptionMessage','Error\x20in\x20saveFileToTemp:\x20','then','log','Please\x20reply\x20to\x20the\x20message\x20you\x20want\x20to\x20delete.','0@s.whatsapp.net','all','./kordFonts','Failed\x20to\x20send\x20error\x20report:','type','2793584ijzBVA','sendPresenceUpdate','some','messages.upsert','Error\x20sending\x20message:\x20','isBuffer','794064wTclRL','off','\x0aError\x20Report:\x20','join','Error\x20in\x20getBuffer:','MESSAGE_EDIT','[0m','updateMediaMessage','I\x20cannot\x20delete\x20messages\x20because\x20I\x20am\x20not\x20an\x20admin\x20in\x20this\x20group.','fileName','buffer','user','https://cdn.kordai.us.kg/serve/8jxjqKg4ZfQn.png','\x0aSender:\x20','fileLength','waUploadToServer','command','temp','forEach','audio/mpeg','Error\x20in\x20kordMsg:\x20','Slides\x20must\x20be\x20a\x20non-empty\x20array','Kord-Ai','../../Config.js','recording','mimetype','promises','getQuotedMessage','base64','extendedTextMessage','./kordStreamToBuffer','videoMessage','map','pop','remoteJid','text','CRITICAL:\x20Owner\x20JID\x20is\x20not\x20set!','imageMessage','Error\x20in\x20enhanced\x20freply:\x20','HTTP\x20error!\x20status:\x20','command\x20error','error','path','sender','mkdir','cache','\x0aChatJid:\x20','8vreEdc','node-fetch','admin','relayMessage','push','key','120363321914137077@newsletter','media_'];a0_0xa525=function(){return _0x10f956;};return a0_0xa525();}module[a0_0x38e3e6(0x129)]={'kordMsg':kordMsg};
+const fs = require('fs').promises;
+const path = require('path');
+const { downloadContentFromMessage, downloadMediaMessage, delay } = require('@whiskeysockets/baileys');
+const { streamToBuffer } = require('./kordStreamToBuffer');
+const fancyScriptFonts = require('./kordFonts');
+const { writeExif, imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./exif.js');
+const { proto } = require('@whiskeysockets/baileys');
+const { prepareWAMessageMedia, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
+const fss = require('fs');
+const fetch = require('node-fetch');
+const RED = '[31m';
+const RESET = '[0m';
+const settings = require('../../Config.js');
+const packagejson = require('../../package.json');
+const OWNER_NUMBERS = settings.OWNER_NUMBERS || global.settings?.OWNER_NUMBERS;
+const { jidDecode } = require("@whiskeysockets/baileys");
+
+if (!OWNER_NUMBERS) {
+  console.error(RED + 'CRITICAL: OWNER_NUMBERS is not set!' + RESET);
+}
+
+const ownerJid = OWNER_NUMBERS ? `${OWNER_NUMBERS}@s.whatsapp.net` : null;
+const version = '1';
+
+class MessageListener {
+  constructor(sock) {
+    this.sock = sock;
+    this.listeners = new Map();
+    this.kordListeners = new Set(); // Track Kord-specific listeners
+    this.setupMessageHandler();
+  }
+
+  setupMessageHandler() {
+    this.sock.ev.on('messages.upsert', async ({ messages }) => {
+      for (const message of messages) {
+        if (!message.message || message.message.protocolMessage) continue;
+
+        const sender = message.key.participant || message.key.remoteJid;
+        const chatId = message.key.remoteJid;
+
+        // Handle different message types
+        const messageTypes = {
+          text: message.message.conversation || message.message.extendedTextMessage?.text,
+          image: message.message.imageMessage,
+          video: message.message.videoMessage,
+          sticker: message.message.stickerMessage,
+          document: message.message.documentMessage,
+        };
+
+        // Notify relevant listeners
+        for (const [listenerId, listener] of this.listeners) {
+          try {
+            if (listener.type in messageTypes && messageTypes[listener.type]) {
+              await listener.callback({
+                content: messageTypes[listener.type],
+                sender,
+                chatId,
+                message,
+                reply: (text) => this.sock.sendMessage(chatId, { text }),
+              });
+            }
+          } catch (error) {
+            console.error(`Error in listener ${listenerId}:`, error);
+          }
+        }
+      }
+    });
+  }
+
+  listen(type, callback, isKordListener = false) {
+    const id = `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+    const listener = { type, callback };
+    this.listeners.set(id, listener);
+    
+    if (isKordListener) {
+      this.kordListeners.add(id);
+    }
+
+    // Return function to remove this specific listener
+    return () => {
+      this.listeners.delete(id);
+      if (isKordListener) {
+        this.kordListeners.delete(id);
+      }
+    };
+  }
+
+  removeAllListeners() {
+    this.listeners.clear();
+    this.kordListeners.clear();
+  }
+
+  stopListening(listenerRemover) {
+    if (typeof listenerRemover === 'function') {
+      listenerRemover();
+    }
+  }
+
+  removeKordListeners() {
+    for (const id of this.kordListeners) {
+      this.listeners.delete(id);
+    }
+    this.kordListeners.clear();
+  }
+}
+
+const getBuffer = async (url) => {
+  try {
+    const response = await fetch(url);
+    const arrayBuffer = await response.arrayBuffer();
+    return Buffer.from(arrayBuffer);
+  } catch (error) {
+    console.error('Error in getBuffer:', error);
+    throw error;
+  }
+};
+
+function kordMsg(sock, originalMessage) {
+  try {
+    // Clear previous cache/data
+    Object.keys(require.cache).forEach((key) => {
+      delete require.cache[key];
+    });
+
+    // Create message listener instance
+    const messageListener = new MessageListener(sock);
+
+    // Store the original message context
+    const ctx = {
+      jid: originalMessage.key.remoteJid,
+      sender: originalMessage.key.participant || originalMessage.key.remoteJid,
+      quotedMsg: originalMessage?.message?.extendedTextMessage?.contextInfo?.quotedMessage,
+      messageId: originalMessage.key.id,
+      message: originalMessage,
+    };
+
+    // Define constants for listener management
+    const MAX_LISTENERS = 20;
+    const listeners = [];
+
+    const sendMessage = async (content, options = {}) => {
+      try {
+        await sock.sendPresenceUpdate('composing', ctx.jid);
+        await delay(200);
+        return await sock.sendMessage(ctx.jid, content, options);
+      } catch (err) {
+        console.error(`${RED}Error sending message: ${err.message}${RESET}`);
+        throw err;
+      }
+    };
+    
+
+      const methods = {
+        reply: async (text) => {
+          try {
+            const thumbnail = await fetch("https://cdn.kordai.us.kg/serve/TlAqdcaBl4bm.png").then((res) => res.buffer());
+            const messageContent = {
+              text: text,
+              contextInfo: {
+                forwardingScore: 999,
+                isForwarded: true,
+                mentionedJid: [ctx.sender],
+                forwardedNewsletterMessageInfo: {
+                  newsletterName: "𝙆𝙊𝙍𝘿-𝘼𝙄",
+                  newsletterJid: "120363321914137077@newsletter",
+                },
+                externalAdReply: {
+                  title: "Kord-Ai",
+                  body: "シ",
+                  mediaType: 1,
+                  thumbnail,
+                  sourceUrl: "https://kordai.us.kg",
+                },
+              },
+            };
+            return await sendMessage(messageContent, { quoted: ctx.message });
+          } catch (err) {
+            console.error(`${RED}Error in enhanced reply: ${err.message}${RESET}`);
+            throw err;
+          }
+        },
+        send: async (text) => sendMessage({ text }),
+        react: async (emoji) => sendMessage({ react: { text: emoji, key: ctx.message.key } }),
+        editMsg: async (sentMessage, newMessage) => sendMessage({ edit: sentMessage.key, text: newMessage, type: "MESSAGE_EDIT" }),
+        deleteMsg: async () => {
+          const groupMetadata = await sock.groupMetadata(ctx.jid);
+          const botId = sock.user.id.replace(/:.*$/, "") + "@s.whatsapp.net";
+          const botIsAdmin = groupMetadata.participants.some((p) => p.id.includes(botId) && p.admin);
+          if (!botIsAdmin) {
+            throw new Error("I cannot delete messages because I am not an admin in this group.");
+          }
+          const quotedMsg = ctx.message?.message?.extendedTextMessage?.contextInfo?.quotedMessage;
+          if (!quotedMsg) {
+            throw new Error("Please reply to the message you want to delete.");
+          }
+          const isOwnMessage = ctx.message.key.participant === ctx.message?.message?.extendedTextMessage?.contextInfo?.participant;
+          const stanId = ctx.message?.message?.extendedTextMessage?.contextInfo?.stanzaId;
+          const messageToDelete = {
+            key: {
+              remoteJid: ctx.jid,
+              fromMe: isOwnMessage,
+              id: stanId,
+              participant: ctx.message?.message?.extendedTextMessage?.contextInfo?.participant,
+            },
+          };
+          await sock.sendPresenceUpdate('composing', ctx.jid);
+          await delay(200);
+          const response = await sock.sendMessage(ctx.jid, { delete: messageToDelete.key });
+          await delay(750);
+          await sock.sendMessage(ctx.jid, { delete: ctx.message.key });
+          return response;
+        },
+        listen: {
+      text: (callback) => messageListener.listen('text', callback, true),
+      image: (callback) => messageListener.listen('image', callback, true),
+      video: (callback) => messageListener.listen('video', callback, true),
+      sticker: (callback) => messageListener.listen('sticker', callback, true),
+      document: (callback) => messageListener.listen('document', callback, true),
+    },
+    stopListening: (listenerRemover) => messageListener.stopListening(listenerRemover),
+    removeKordListeners: () => messageListener.removeKordListeners(),
+
+        freply: async (text) => {
+          try {
+            const thumbnail = await fetch("https://cdn.kordai.us.kg/serve/TlAqdcaBl4bm.png").then((res) => res.buffer());
+            const quotedContent =
+              ctx.message.message.extendedTextMessage?.contextInfo?.quotedMessage?.conversation ||
+              ctx.message.message.extendedTextMessage?.contextInfo?.quotedMessage?.extendedTextMessage?.text ||
+              ctx.message.message.conversation ||
+              "𝙆𝙊𝙍𝘿-𝘼𝙄";
+            const quotedMsg = {
+              key: {
+                fromMe: false,
+                participant: "0@s.whatsapp.net",
+                remoteJid: "status@broadcast",
+              },
+              message: {
+                conversation: quotedContent,
+              },
+            };
+            const messageContent = {
+              text: text,
+              contextInfo: {
+                forwardingScore: 999,
+                isForwarded: true,
+                mentionedJid: [ctx.sender],
+                forwardedNewsletterMessageInfo: {
+                  newsletterName: "𝙆𝙊𝙍𝘿-𝘼",
+                  newsletterJid: "120363321914137077@newsletter",
+                },
+                externalAdReply: {
+                  title: "Kord-Ai",
+                  body: "シ",
+                  mediaType: 1,
+                  thumbnail,
+                  sourceUrl: "https://kordai.us.kg",
+                },
+              },
+            };
+            return await sendMessage(messageContent, { quoted: quotedMsg });
+          } catch (err) {
+            console.error(`${RED}Error in enhanced freply: ${err.message}${RESET}`);
+            throw err;
+          }
+        },
+        sendImage: async (bufferOrUrl, caption) => {
+          const options = typeof bufferOrUrl === 'string'
+            ? { image: { url: bufferOrUrl }, caption }
+            : { image: bufferOrUrl, caption };
+          return sendMessage(options);
+        },
+        sendVideo: async (bufferOrUrl, caption) => {
+          const options = typeof bufferOrUrl === 'string'
+            ? { video: { url: bufferOrUrl }, caption }
+            : { video: bufferOrUrl, caption };
+          return sendMessage(options);
+        },
+        sendDocument: async (bufferOrUrl, mimetype, fileName, caption) => {
+          const options = typeof bufferOrUrl === 'string'
+            ? { document: { url: bufferOrUrl }, mimetype, fileName, caption }
+            : { document: bufferOrUrl, mimetype, fileName, caption };
+          return sendMessage(options);
+        },
+        sendAudio: async (bufferOrUrl, ptt = false) => {
+          const options = typeof bufferOrUrl === 'string'
+            ? { audio: { url: bufferOrUrl }, ptt, mimetype: 'audio/mpeg' }
+            : { audio: bufferOrUrl, ptt, mimetype: 'audio/mpeg' };
+          await sock.sendPresenceUpdate('recording', ctx.jid);
+          await delay(400);
+          return sendMessage(options, { quoted: ctx.message });
+        },
+        sendGif: async (bufferOrUrl, playback = true) => {
+          let gifBuffer;
+          if (typeof bufferOrUrl === 'string') {
+            const response = await fetch(bufferOrUrl);
+            gifBuffer = await response.arrayBuffer();
+          } else {
+            gifBuffer = bufferOrUrl;
+          }
+          return sendMessage({ video: gifBuffer, gifPlayback: playback });
+        },
+        sendVideoAsSticker: async (jid, path, quoted, options = {}) => {
+        let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fss.existsSync(path) ? fss.readFileSync(path) : Buffer.alloc(0)
+        let buffer
+        if (options && (options.packname || options.author)) {
+          buffer = await writeExifVid(buff, options)
+        } else {
+          buffer = await videoToWebp(buff)
+        }
+        await sock.sendMessage(jid, { sticker: { url:
+        buffer }, ...options }, { quoted })
+        return buffer
+        
+      },
+      
+      sendImageAsSticker: async (jid, path, quoted, options = {}) => {
+        let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fss.existsSync(path) ? fss.readFileSync(path) : Buffer.alloc(0)
+        let buffer
+        if (options && (options.packname || options.author)) {
+          buffer = await writeExifImg(buff, options)
+          
+        } else {
+          buffer = await imageToWebp(buff)
+          
+        }
+        await sock.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
+        .then( response => {
+          fss.unlinkSync(buffer)
+          return response
+          
+        })
+      },
+        sendSlide: async (title, msgText, footer, slides) => {
+          try {
+            if (!Array.isArray(slides) || !slides.length) {
+              throw new Error('Slides must be a non-empty array');
+            }
+            const cards = await Promise.all(
+              slides.map(async ([imageUrl, slideTitle, bodyText, footerText, buttonText, commandId, buttonType, buttonUrl]) => {
+                const mediaMessage = await prepareWAMessageMedia(
+                  { image: { url: imageUrl } },
+                  { upload: sock.waUploadToServer }
+                );
+                return {
+                  headerType: 1,
+                  body: { text: bodyText },
+                  footer: { text: footerText },
+                  header: {
+                    title: slideTitle,
+                    hasMediaAttachment: true,
+                    mediaType: 1,
+                    mediaMessage,
+                  },
+                  nativeFlowMessage: {
+                    buttons: [
+                      {
+                        name: buttonType,
+                        buttonParamsJson: JSON.stringify(buildButtonParams(buttonType, buttonText, commandId, buttonUrl)),
+                      },
+                    ],
+                  },
+                };
+              })
+            );
+            const messageContent = {
+              viewOnceMessage: {
+                message: {
+                  messageContextInfo: {
+                    deviceListMetadata: {},
+                    deviceListMetadataVersion: 2,
+                  },
+                  interactiveMessage: {
+                    body: { text: msgText },
+                    footer: { text: footer },
+                    header: { title: title, subtitle: title, hasMediaAttachment: false },
+                    carouselMessage: { cards },
+                    contextInfo: {
+                      mentionedJid: [ctx.sender],
+                      forwardingScore: 999,
+                      isForwarded: true,
+                      forwardedNewsletterMessageInfo: {
+                        newsletterJid: '120363321914137077@newsletter',
+                        newsletterName: "KORD-AI",
+                        serverMessageId: 143,
+                      },
+                    },
+                  },
+                },
+              },
+            };
+            const generatedMessage = await generateWAMessageFromContent(
+              ctx.jid,
+              messageContent,
+              { quoted: ctx.message, userJid: sock.user.id }
+            );
+            return await sock.relayMessage(ctx.jid, generatedMessage.message, { messageId: generatedMessage.key.id });
+          } catch (error) {
+            console.error('Error in sendSlide:', error);
+            throw error;
+          }
+        },
+        getbuff: async (source) => {
+        try {
+                // If no source provided, try to get quoted media
+                if (!source) {
+                        // Get quoted message properly using message context
+                        const quotedMsg = ctx.message?.message?.extendedTextMessage?.contextInfo?.quotedMessage;
+                        if (!quotedMsg) throw new Error('No source provided and no quoted message found');
+
+                        // Find the media message with expanded media types
+                        const mediaTypes = [
+                    'imageMessage',
+                    'videoMessage',
+                    'audioMessage',
+                    'documentMessage',
+                    'stickerMessage',
+                    'documentWithCaptionMessage'
+                ];
+
+                        let mediaMsg = null;
+                        let mediaType = null;
+
+                        // Check for media in quoted message
+                        for (const type of mediaTypes) {
+                                if (quotedMsg[type]) {
+                                        mediaMsg = quotedMsg[type];
+                                        mediaType = type;
+                                        break;
+                                }
+                                // Special handling for document with caption
+                                if (type === 'documentWithCaptionMessage' && quotedMsg[type]?.message?.documentMessage) {
+                                        mediaMsg = quotedMsg[type].message.documentMessage;
+                                        mediaType = 'documentMessage';
+                                        break;
+                                }
+                        }
+
+                        if (!mediaMsg) throw new Error('No media found in quoted message');
+
+                        // Get the correct mimetype base
+                        const mimeTypeBase = mediaMsg.mimetype ? mediaMsg.mimetype.split('/')[0] : mediaType.replace('Message', '');
+
+                        // Download the media content
+                        const stream = await downloadContentFromMessage(mediaMsg, mimeTypeBase);
+                        return await streamToBuffer(stream);
+                }
+
+                // Handle Buffer
+                if (Buffer.isBuffer(source)) {
+                        return source;
+                }
+
+                // Handle base64
+                if (typeof source === 'string' && /^data:.*?\/.*?;base64,/i.test(source)) {
+                        return Buffer.from(source.split(',')[1], 'base64');
+                }
+
+                // Handle URL
+                if (typeof source === 'string' && /^https?:\/\//i.test(source)) {
+                        const response = await fetch(source);
+                        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                        const arrayBuffer = await response.arrayBuffer();
+                        return Buffer.from(arrayBuffer);
+                }
+
+                // Handle file path
+                if (typeof source === 'string' && fss.existsSync(source)) {
+                        return fss.readFileSync(source);
+                }
+
+                // Handle stream
+                if (source?.pipe && typeof source.pipe === 'function') {
+                        return await streamToBuffer(source);
+                }
+
+                throw new Error('Invalid source type or source not found');
+        } catch (error) {
+                console.error(`${RED}Error in getbuff: ${error.message}${RESET}`);
+                throw error;
+        }
+},
+        sendErr: async (error, additionalContext = {}) => {
+          try {
+            if (!ownerJid) {
+              console.error(RED + 'CRITICAL: Owner JID is not set!' + RESET);
+              console.error('Please set OWNER_NUMBERS in environment or global settings');
+              return null;
+            }
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            const errorReport = `
+\`\`\`
+|---- KORD-AI ERROR! ----|
+Version: ${packagejson.version}
+Command: ${additionalContext.command || 'command error'}
+Error Report: ${errorMessage}
+ChatJid: ${ctx.jid || 'Unknown'}
+Sender: ${ctx.sender || 'Unknown'}
+Additional Context:
+${JSON.stringify(additionalContext, null, 2)}
+|---- > © ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ ʙʏ ᴋᴏʀᴅ ɪɴᴄ³²¹™ ----|
+\`\`\``;
+            console.log(RED + 'Sending Error Report to:' + RESET, ownerJid);
+            return await sock.sendMessage(ownerJid, { text: errorReport });
+          } catch (sendError) {
+            console.error(RED + 'Failed to send error report:' + RESET, sendError);
+            return null;
+          }
+        },
+        externalAdReply: async (head, title, body, mediaType, thumbnailPath) => {
+          const urlOrPath = typeof thumbnailPath === 'string'
+            ? { url: thumbnailPath }
+            : await fs.readFile(thumbnailPath);
+          return sendMessage({
+            text: head,
+            contextInfo: {
+              externalAdReply: {
+                showAdAttribution: false,
+                renderLargerThumbnail: true,
+                title: title,
+                body: body,
+                previewType: 0,
+                mediaType: mediaType,
+                thumbnail: urlOrPath,
+                mediaUrl: '',
+              },
+            },
+          });
+        },
+        replyWithMention: async (text, users) => {
+          const mentions = users.map((u) => `@${u}`).join(' ');
+          return sendMessage({ text: `${text} ${mentions}`, mentions }, { quoted: ctx.message });
+        },
+        forwardMessage: async (jid, messageToForward, options = {}) => {
+          return sock.relayMessage(jid, messageToForward.message, options);
+        },
+        getQuotedMessage: async () => {
+                const quotedMessage =
+                        ctx.message?.message?.extendedTextMessage?.contextInfo?.quotedMessage ||
+                        ctx.message?.message?.conversation?.contextInfo?.quotedMessage;
+                return quotedMessage || null;
+        },
+
+        getQuotedText: async () => {
+                const quotedMessage = await methods.getQuotedMessage();
+                if (quotedMessage) {
+                        return (
+                                quotedMessage.extendedTextMessage?.text || quotedMessage.conversation || null
+                        );
+                }
+                return null;
+        },
+        getQuotedMedia: async () => {
+          const findMediaMessage = (obj) => {
+            if (!obj) return null;
+            const mediaTypes = ['imageMessage', 'videoMessage', 'audioMessage', 'documentMessage'];
+            for (const type of mediaTypes) {
+              if (obj[type]) return { type, message: obj[type] };
+            }
+            if (typeof obj === 'object') {
+              for (const key in obj) {
+                const result = findMediaMessage(obj[key]);
+                if (result) return result;
+              }
+            }
+            return null;
+          };
+          for (const key in ctx.message.message) {
+            const msg = ctx.message.message[key];
+            if (msg?.contextInfo?.quotedMessage) {
+              const media = findMediaMessage(msg.contextInfo.quotedMessage);
+              if (media) return media;
+            }
+          }
+          return false;
+        },
+        replyid: async () => {
+          return ctx.message.message?.extendedTextMessage?.contextInfo?.stanzaId;
+        },
+        getMessageType: async () => {
+          return ctx.message.message ? Object.keys(ctx.message.message)[0] : null;
+        },
+        getQuotedMessageType: async () => {
+          if (!ctx.message.message) return null;
+          const messageType = Object.keys(ctx.message.message)[0];
+          return ctx.message.message[messageType]?.contextInfo?.quotedMessage;
+        },
+        getCaptionMessage: async () => {
+          for (const key in ctx.message.message) {
+            const msg = ctx.message.message[key];
+            if (msg?.caption) return msg;
+          }
+          return null;
+        },
+        /*let quoted_sender = ''*/
+      getResponseText: async (sentMessage, timeout) => {
+        return new Promise((resolve, reject) => {
+          const timer = timeout && timeout > 0 ? setTimeout(() => {
+            sock.ev.off('messages.upsert', replyHandler);
+            reject(new Error('Timeout exceeded while waiting for response'));
+          }, timeout) : null;
+
+          const replyHandler = async ({ messages }) => {
+            const msg = messages[0];
+            const senderJid = ctx.jid;
+            const isValidReply = (
+              (msg.message?.extendedTextMessage?.contextInfo?.stanzaId === sentMessage.key.id ||
+                msg.message?.conversation?.contextInfo?.stanzaId === sentMessage.key.id) &&
+              (senderJid.endsWith('@g.us')
+                ? ctx.sender
+                : senderJid) ===
+                (msg.key.remoteJid.endsWith('@g.us') ? msg.key.participant : msg.key.remoteJid)
+            );
+
+            if (isValidReply) {
+              if (timer) clearTimeout(timer);
+              sock.ev.off('messages.upsert', replyHandler);
+              const responseText = msg.message?.extendedTextMessage?.text || msg.message?.conversation;
+              resolve({ key: msg.key, message: msg.message, response: responseText });
+            }
+          };
+
+          listeners.push(replyHandler);
+          if (listeners.length > MAX_LISTENERS) {
+            const oldestListener = listeners.shift();
+            sock.ev.off('messages.upsert', oldestListener);
+          }
+          sock.ev.on('messages.upsert', replyHandler);
+        });
+      },
+        
+        
+        downloadQuotedMedia: async () => {
+        const quotedMsg = await methods.getQuotedMedia();
+        if (!quotedMsg) throw new Error('No quoted media message found.');
+        const getExtension = (type) => {
+                const extensions = { imageMessage: 'png', videoMessage: 'mp4', audioMessage: 'mp3' };
+                return extensions[type] || 'bin';
+        };
+        const extension = getExtension(quotedMsg.type);
+        const mimeType = quotedMsg.message.mimetype.split('/')[0];
+        const mediaData = await downloadContentFromMessage(quotedMsg.message, mimeType);
+        const buffer = await streamToBuffer(mediaData);
+        return { buffer, extension, filename: `media_${Date.now()}.${extension}` };
+},
+        downloadMediaMsg: async () => {
+          if (!ctx.message.message) return null;
+          const messageType = Object.keys(ctx.message.message)[0];
+          const validTypes = ['imageMessage', 'videoMessage', 'audioMessage', 'documentMessage', 'documentWithCaptionMessage'];
+          if (!validTypes.includes(messageType)) {
+            return 'Provide a valid message (quoted messages are not valid)';
+          }
+          const buffer = await downloadMediaMessage(
+            ctx.message,
+            'buffer',
+            {},
+            { logger: console, reuploadRequest: sock.updateMediaMessage }
+          );
+          const getExtension = (type) => {
+            const extensions = {
+              imageMessage: ctx.message.message.imageMessage.mimetype === 'image/png' ? '.png' : '.jpeg',
+              videoMessage: '.mp4',
+              audioMessage: '.mp3',
+              documentMessage: `.${ctx.message.message.documentMessage.fileName.split('.').pop()}`,
+              documentWithCaptionMessage: `.${ctx.message.message.documentWithCaptionMessage.message.documentMessage.fileName.split('.').pop()}`,
+            };
+            return extensions[type];
+          };
+          const extension = getExtension(messageType);
+          return { buffer, extension };
+        },
+        changeFont: async (text, font) => {
+          if (typeof text !== 'string' || typeof font !== 'string') {
+            throw new Error("Both 'text' and 'font' must be of type string.");
+          }
+          const fontMap = fancyScriptFonts[font];
+          if (!fontMap) {
+            throw new Error(`Font '${font}' is not available in fancyScriptFonts.`);
+          }
+          await delay(10);
+          return text.split('').map((char) => fontMap[char] || char).join('');
+        },
+        getFileSizeInMB: async () => {
+          if (!ctx.message.message) return null;
+          for (const key of Object.keys(ctx.message.message)) {
+            const messageContent = ctx.message.message[key];
+            if (messageContent && messageContent.fileLength) {
+              const fileSizeBytes = parseInt(messageContent.fileLength);
+              return fileSizeBytes / (1024 * 1024); // Convert to MB
+            }
+          }
+          return null;
+        },
+        saveFileToTemp: async (bufferData, filename) => {
+          try {
+            const tempDir = path.join(__dirname, 'temp');
+            await fs.mkdir(tempDir, { recursive: true });
+            const tempPath = path.join(tempDir, filename);
+            await fs.writeFile(tempPath, bufferData);
+            return tempPath;
+          } catch (err) {
+            console.error(`${RED}Error in saveFileToTemp: ${err.message}${RESET}`);
+            throw err;
+          }
+        },
+        buildButtonParams: (buttonType, textCommand, command, url) => {
+          const params = {
+            cta_url: { display_text: textCommand, url, merchant_url: url },
+            cta_call: { display_text: textCommand, id: command },
+            quick_reply: { display_text: textCommand, id: command },
+            cta_copy: { display_text: textCommand, id: '', copy_code: command },
+            cta_reminder: { display_text: textCommand, id: command },
+            cta_cancel_reminder: { display_text: textCommand, id: command },
+            address_message: { display_text: textCommand, id: command },
+            send_location: {},
+          };
+          return params[buttonType] || {};
+        },
+      }
+      return methods;
+  } catch (err) {
+    console.error(`${RED}Error in kordMsg: ${err.message}${RESET}`);
+    throw err;
+  }
+}
+
+module.exports = {
+  kordMsg,
+}
