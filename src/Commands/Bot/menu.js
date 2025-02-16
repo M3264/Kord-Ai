@@ -1,1 +1,186 @@
-const a0_0x4d3256=a0_0x4a89;function a0_0x4a89(_0x3cfe99,_0x25b100){const _0x39850b=a0_0x3985();return a0_0x4a89=function(_0x4a893d,_0x1a06d1){_0x4a893d=_0x4a893d-0x123;let _0x538289=_0x39850b[_0x4a893d];return _0x538289;},a0_0x4a89(_0x3cfe99,_0x25b100);}(function(_0x226d2e,_0x28475c){const _0x3a6bf6=a0_0x4a89,_0x5e6e9f=_0x226d2e();while(!![]){try{const _0x364797=-parseInt(_0x3a6bf6(0x13f))/0x1+parseInt(_0x3a6bf6(0x171))/0x2*(parseInt(_0x3a6bf6(0x12b))/0x3)+-parseInt(_0x3a6bf6(0x174))/0x4*(-parseInt(_0x3a6bf6(0x137))/0x5)+-parseInt(_0x3a6bf6(0x176))/0x6+parseInt(_0x3a6bf6(0x13d))/0x7+-parseInt(_0x3a6bf6(0x12a))/0x8+-parseInt(_0x3a6bf6(0x12e))/0x9*(-parseInt(_0x3a6bf6(0x173))/0xa);if(_0x364797===_0x28475c)break;else _0x5e6e9f['push'](_0x5e6e9f['shift']());}catch(_0x584291){_0x5e6e9f['push'](_0x5e6e9f['shift']());}}}(a0_0x3985,0x1abba));const fs=require('fs'),path=require(a0_0x4d3256(0x169)),os=require('os'),moment=require(a0_0x4d3256(0x16d)),{getAllCommands}=require(a0_0x4d3256(0x144));module[a0_0x4d3256(0x156)]={'usage':[a0_0x4d3256(0x133),a0_0x4d3256(0x15b)],'desc':a0_0x4d3256(0x168),'commandType':a0_0x4d3256(0x162),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'emoji':'🔅',async 'execute'(_0x56ced6,_0x44a76,_0x30a5c8,_0x5ce430){const _0x446a72=a0_0x4d3256;try{const _0x5279da=await getAllCommands(),_0x2fc27c=_0x2f36e4=>{const _0xd80fb2=a0_0x4a89,_0x2c8595=new Map();_0x2f36e4[_0xd80fb2(0x14e)](_0x4015c5=>{const _0x4eb7e6=_0xd80fb2,_0x516bbc=_0x4015c5[_0x4eb7e6(0x177)]||'Uncategorized',_0x37d799=Array[_0x4eb7e6(0x172)](_0x4015c5['usage'])?_0x4015c5['usage']:[_0x4015c5['usage']];_0x37d799[_0x4eb7e6(0x14e)](_0x112596=>{const _0x276139=_0x4eb7e6;if(!_0x112596)return;const _0x3611cd=_0x516bbc+':'+_0x112596;!_0x2c8595[_0x276139(0x128)](_0x3611cd)&&_0x2c8595[_0x276139(0x131)](_0x3611cd,{'type':_0x516bbc,'usage':_0x112596,'desc':_0x4015c5[_0x276139(0x151)]||_0x276139(0x175)});});});const _0x2e5988={};return _0x2c8595['forEach'](_0x1943f5=>{const _0x3097d0=_0xd80fb2;!_0x2e5988[_0x1943f5[_0x3097d0(0x15e)]]&&(_0x2e5988[_0x1943f5['type']]=[]),_0x2e5988[_0x1943f5[_0x3097d0(0x15e)]][_0x3097d0(0x163)](_0x1943f5);}),Object[_0xd80fb2(0x158)](_0x2e5988)['map'](([_0x12713e,_0x3f9978])=>{const _0x77c9dd=_0xd80fb2,_0x4da6e6=_0x3f9978['sort']((_0x1c6b68,_0x11becd)=>_0x1c6b68[_0x77c9dd(0x124)][_0x77c9dd(0x135)](_0x11becd[_0x77c9dd(0x124)])),_0x425bfa=_0x4da6e6['map'](_0x6d5ffe=>_0x77c9dd(0x15a)+settings[_0x77c9dd(0x170)][0x0]+_0x6d5ffe[_0x77c9dd(0x124)])['join']('\x0a');return _0x77c9dd(0x16e)+_0x12713e['toUpperCase']()+_0x77c9dd(0x12d)+_0x425bfa+_0x77c9dd(0x13e);})['join']('\x0a\x0a');},_0x354b51=()=>{const _0x2419dc=a0_0x4a89,_0x4fd812=require(_0x2419dc(0x161)),_0x1890c1=process['memoryUsage'](),_0x2e4896=os['totalmem'](),_0x143c13=(_0x1890c1['heapUsed']/0x400/0x400)[_0x2419dc(0x13c)](0x2)+_0x2419dc(0x149)+(_0x2e4896/0x400/0x400/0x400)[_0x2419dc(0x13c)](0x2)+'\x20GB',_0x5bb0f9=formatSecondsToDHMS(process[_0x2419dc(0x160)]());return{'version':_0x4fd812[_0x2419dc(0x15d)],'memoryUsage':_0x143c13,'runtime':_0x5bb0f9,'totalCommands':_0x5279da[_0x2419dc(0x14a)]};},_0x4648cb=()=>{const _0x35ed4f=a0_0x4a89,_0x3a53b1=settings['TIME_ZONE']||'UTC';return{'currentTime':moment()['tz'](_0x3a53b1)[_0x35ed4f(0x142)](_0x35ed4f(0x138)),'currentDate':moment()['tz'](_0x3a53b1)[_0x35ed4f(0x142)](_0x35ed4f(0x16f))};},{version:_0x4866e9,memoryUsage:_0xc5735b,runtime:_0x5c2585,totalCommands:_0x22335b}=_0x354b51(),{currentTime:_0x43043b,currentDate:_0x3a2f3c}=_0x4648cb(),_0x3a3553=_0x44a76[_0x446a72(0x12c)]||_0x446a72(0x12f),_0x2cbd2b=String[_0x446a72(0x147)](0x200e),_0x562ff6=_0x2cbd2b['repeat'](0xfa1),_0x2e2340=_0x44a76[_0x446a72(0x140)]||_0x44a76['key'][_0x446a72(0x143)]||'',_0x5257ea='\x0a┌────═━┈\x20*'+settings[_0x446a72(0x16c)]+_0x446a72(0x126)+settings[_0x446a72(0x15f)]+_0x446a72(0x127)+_0x22335b+'\x0a\x20❦\x20▸\x20Uptime:-\x20'+_0x5c2585+_0x446a72(0x13b)+_0xc5735b+_0x446a72(0x148)+_0x4866e9+_0x446a72(0x146)+settings[_0x446a72(0x170)][0x0]+_0x446a72(0x123)+_0x3a3553+_0x446a72(0x139)+_0x43043b+_0x446a72(0x16b)+_0x3a2f3c+_0x446a72(0x125)+_0x562ff6,_0x44dcf0=_0x446a72(0x157);try{const _0x55a9d3=()=>{const _0x523cad=_0x446a72,_0x887f5b=[_0x523cad(0x167),_0x523cad(0x164),'sansBold',_0x523cad(0x153),_0x523cad(0x15c),_0x523cad(0x132)];return _0x887f5b[Math[_0x523cad(0x141)](Math[_0x523cad(0x136)]()*_0x887f5b[_0x523cad(0x14a)])];};if(!_0x5ce430||typeof _0x5ce430[_0x446a72(0x166)]!==_0x446a72(0x134))throw new Error(_0x446a72(0x152));const [_0x512523,_0x3e63c1,_0xca88bd]=await Promise[_0x446a72(0x14c)]([_0x5ce430[_0x446a72(0x166)](_0x2fc27c(_0x5279da),_0x55a9d3()),_0x5ce430[_0x446a72(0x166)](_0x5257ea,_0x55a9d3()),_0x5ce430[_0x446a72(0x166)](_0x44dcf0,_0x55a9d3())]),_0x316536=_0x3e63c1+'\x0a\x0a'+_0x512523+'\x0a\x0a'+_0xca88bd;if(!settings['BOT_NAME'])throw new Error(_0x446a72(0x159));await _0x56ced6['sendMessage'](_0x44a76['key'][_0x446a72(0x14b)],{'image':{'url':_0x446a72(0x14f)},'caption':_0x316536,'contextInfo':{'forwardingScore':0x3e7,'isForwarded':!![],'mentionedJid':[_0x2e2340],'forwardedNewsletterMessageInfo':{'newsletterName':_0x446a72(0x155),'newsletterJid':_0x446a72(0x129),'externalAdReply':{'title':settings[_0x446a72(0x16c)]+_0x446a72(0x150),'body':_0x446a72(0x145),'renderLargerThumbnail':![],'showAdAttribution':!![],'thumbnail':{'url':_0x446a72(0x14d)},'mediaType':0x1,'previewType':_0x446a72(0x165),'mediaUrl':''}}}});}catch(_0x57fc9a){console['error'](_0x446a72(0x16a),_0x57fc9a);throw _0x57fc9a;}}catch(_0x55834e){console[_0x446a72(0x13a)]('Error\x20displaying\x20menu:',_0x55834e),_0x5ce430&&typeof _0x5ce430[_0x446a72(0x154)]===_0x446a72(0x134)?await _0x5ce430['reply']('An\x20error\x20occurred\x20while\x20displaying\x20the\x20menu.\x20Please\x20try\x20again\x20later.'):console[_0x446a72(0x13a)](_0x446a72(0x130));}}};function formatSecondsToDHMS(_0xfb21ec){const _0x235b00=a0_0x4d3256,_0x2dfa65=Math['floor'](_0xfb21ec/(0xe10*0x18)),_0x225b09=Math[_0x235b00(0x141)](_0xfb21ec%(0xe10*0x18)/0xe10),_0x9914e1=Math['floor'](_0xfb21ec%0xe10/0x3c);return _0x2dfa65+'d\x20'+_0x225b09+'h\x20'+_0x9914e1+'m';}function a0_0x3985(){const _0x9e9503=['\x20➳\x20','help','smallBoldScript','version','type','OWNER_NAME','uptime','../../../package.json','Bot','push','mathBold','PHOTO','changeFont','smallItalicBoldScript','Display\x20the\x20bot\x27s\x20menu\x20with\x20categories\x20and\x20command\x20details.','path','Error\x20in\x20formatting\x20or\x20sending\x20menu:','\x0a\x20❦\x20▸\x20Date:-\x20','BOT_NAME','moment-timezone','\x20·\x20𓆩\x20*','DD/MM/YYYY','PREFIX','5748APtvuV','isArray','2440750dfxWuq','244bdbFEw','No\x20description\x20available','1287762VcMhJH','commandType','\x0a\x20❦\x20▸\x20User:\x20','usage','\x0a└──────═━┈┈━═──────┘\x0a','*\x20┈━═────┐\x0a\x20❦\x20▸\x20Owner:-\x20','\x0a\x20❦\x20▸\x20Plugins:-\x20','has','120363321914137077@newsletter','696416hjmNmd','78MzrzGM','pushName','*\x20𓆪\x20·\x0a╭\x20\x20\x20─┉─\x20•\x20─┉─\x20\x20\x20\x20╮\x0a','9xRiHDz','User','kord.reply\x20is\x20not\x20properly\x20defined','set','boldSerif','menu','function','localeCompare','random','7355kNJtXL','HH:mm:ss','\x0a\x20❦\x20▸\x20Time:-\x20','error','\x0a\x20❦\x20▸\x20Mem:-\x20','toFixed','683214JQPgvQ','\x0a╰\x20\x20\x20\x20─┉─\x20•\x20─┉─\x20\x20\x20╯','94955fBPwWl','sender','floor','format','participant','../../Plugin/kordLoadCmd','Your\x20WhatsApp\x20Assistant','\x0a\x20❦\x20▸\x20Prefix:\x20','fromCharCode','\x0a\x20❦\x20▸\x20Version:\x20','\x20GB/','length','remoteJid','all','https://files.catbox.moe/bteuhx.png','forEach','https://files.catbox.moe/r32ann.png','\x20Complete\x20Menu','desc','kord\x20object\x20or\x20changeFont\x20method\x20is\x20not\x20properly\x20defined','sansItalic','reply','𝙆𝙊𝙍𝘿-𝘼𝙄','exports','\x0a─➳➳➳➳➳※➳➳➳➳➳','entries','BOT_NAME\x20is\x20not\x20defined\x20in\x20settings'];a0_0x3985=function(){return _0x9e9503;};return a0_0x3985();}
+const fs = require('fs');
+const path = require('path');
+const os = require('os');
+const moment = require('moment-timezone');
+const { getAllCommands } = require('../../Plugin/kordLoadCmd');
+
+module.exports = {
+  usage: ["menu", "help"],
+  desc: "Display the bot's menu with categories and command details.",
+  commandType: "Bot",
+  isGroupOnly: false,
+  isAdminOnly: false,
+  isPrivateOnly: false,
+  emoji: "🔅",
+  async execute(sock, m, args, kord) {
+    try {
+      // Get commands with guaranteed reload
+      const commands = await getAllCommands();
+
+      const formatCommandsByType = (commands) => {
+        const uniqueCommands = new Map();
+        
+        commands.forEach(cmd => {
+          const type = cmd.commandType || "Uncategorized";
+          const usages = Array.isArray(cmd.usage) ? cmd.usage : [cmd.usage];
+          
+          usages.forEach(usage => {
+            if (!usage) return;
+            
+            const key = `${type}:${usage}`;
+            
+            if (!uniqueCommands.has(key)) {
+              uniqueCommands.set(key, {
+                type,
+                usage,
+                desc: cmd.desc || 'No description available'
+              });
+            }
+          });
+        });
+
+        const commandsByType = {};
+        uniqueCommands.forEach((cmd) => {
+          if (!commandsByType[cmd.type]) {
+            commandsByType[cmd.type] = [];
+          }
+          commandsByType[cmd.type].push(cmd);
+        });
+
+        return Object.entries(commandsByType)
+          .map(([type, cmds]) => {
+            const sortedCmds = cmds.sort((a, b) => a.usage.localeCompare(b.usage));
+            
+            const formattedCmds = sortedCmds
+              .map(cmd => ` ➳ ${settings.PREFIX[0]}${cmd.usage}`)
+              .join('\n');
+
+            return ` · 𓆩 *${type.toUpperCase()}* 𓆪 ·
+╭   ─┉─ • ─┉─    ╮
+${formattedCmds}
+╰    ─┉─ • ─┉─   ╯`;
+          })
+          .join('\n\n');
+      };
+
+      const getSystemInfo = () => {
+        const packageInfo = require('../../../package.json');
+        const used = process.memoryUsage();
+        const totalMem = os.totalmem();
+        const memoryUsage = `${(used.heapUsed / 1024 / 1024).toFixed(2)} GB/${(totalMem / 1024 / 1024 / 1024).toFixed(2)} GB`;
+        const runtime = formatSecondsToDHMS(process.uptime());
+        
+        return {
+          version: packageInfo.version,
+          memoryUsage,
+          runtime,
+          totalCommands: commands.length
+        };
+      };
+
+      const getTimeInfo = () => {
+        const timezone = settings.TIME_ZONE || 'UTC';
+        return {
+          currentTime: moment().tz(timezone).format('HH:mm:ss'),
+          currentDate: moment().tz(timezone).format('DD/MM/YYYY')
+        };
+      };
+
+      const { version, memoryUsage, runtime, totalCommands } = getSystemInfo();
+      const { currentTime, currentDate } = getTimeInfo();
+      const user = m.pushName || 'User';
+      const more = String.fromCharCode(8206);
+      const readmore = more.repeat(4001);
+      const sender = m.sender || m.key.participant || '';
+
+      const header = `
+┌────═━┈ *${settings.BOT_NAME}* ┈━═────┐
+ ❦ ▸ Owner:- ${settings.OWNER_NAME}
+ ❦ ▸ Plugins:- ${totalCommands}
+ ❦ ▸ Uptime:- ${runtime}
+ ❦ ▸ Mem:- ${memoryUsage}
+ ❦ ▸ Version: ${version}
+ ❦ ▸ Prefix: ${settings.PREFIX[0]}
+ ❦ ▸ User: ${user}
+ ❦ ▸ Time:- ${currentTime}
+ ❦ ▸ Date:- ${currentDate}
+└──────═━┈┈━═──────┘
+${readmore}`;
+
+      const footer = `
+─➳➳➳➳➳※➳➳➳➳➳`;
+
+      try {
+        const getRandomFont = () => {
+          const fonts = [
+            'smallItalicBoldScript',
+            'mathBold',
+            'sansBold',
+            'sansItalic',
+            'smallBoldScript',
+            'boldSerif'
+          ];
+          return fonts[Math.floor(Math.random() * fonts.length)];
+        };
+
+        if (!kord || typeof kord.changeFont !== 'function') {
+          throw new Error('kord object or changeFont method is not properly defined');
+        }
+
+        const [menuTextStyled, headerStyled, footerStyled] = await Promise.all([
+          kord.changeFont(formatCommandsByType(commands), getRandomFont()),
+          kord.changeFont(header, getRandomFont()),
+          kord.changeFont(footer, getRandomFont())
+        ]);
+
+        const completeMenu = `${headerStyled}\n\n${menuTextStyled}\n\n${footerStyled}`;
+
+        if (!settings.BOT_NAME) {
+          throw new Error('BOT_NAME is not defined in settings');
+        }
+
+        await sock.sendMessage(m.key.remoteJid, {
+          image: { url: "https://cdn.kordai.us.kg/serve/nqCgNgzzeflU.jpg" },
+          caption: completeMenu,
+          contextInfo: {
+            forwardingScore: 999,
+            isForwarded: true,
+            mentionedJid: [sender],
+            forwardedNewsletterMessageInfo: {
+              newsletterName: "𝙆𝙊𝙍𝘿-𝘼𝙄",
+              newsletterJid: "120363321914137077@newsletter",
+              externalAdReply: {
+                title: `${settings.BOT_NAME} Complete Menu`,
+                body: "Your WhatsApp Assistant",
+                renderLargerThumbnail: false,
+                showAdAttribution: true,
+                thumbnail: { url: "https://files.catbox.moe/bteuhx.png" },
+                mediaType: 1,
+                previewType: "PHOTO",
+                mediaUrl: ''
+              }
+            }
+          }
+        });
+
+      } catch (error) {
+        console.error("Error in formatting or sending menu:", error);
+        throw error;
+      }
+    } catch (error) {
+      console.error("Error displaying menu:", error);
+      if (kord && typeof kord.reply === 'function') {
+        await kord.reply("An error occurred while displaying the menu. Please try again later.");
+      } else {
+        console.error("kord.reply is not properly defined");
+      }
+    }
+  }
+};
+
+function formatSecondsToDHMS(seconds) {
+  const days = Math.floor(seconds / (3600 * 24));
+  const hours = Math.floor((seconds % (3600 * 24)) / 3600);
+  const minutes = Math.floor((seconds % 3600) / 60);
+  return `${days}d ${hours}h ${minutes}m`;
+}
