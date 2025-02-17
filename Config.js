@@ -12,6 +12,7 @@ global.settings = {
   READ_ALL_MESSAGES: false,
   AUTO_READ_STATUS: true,
   PREFIX: [".", "/", "!"],
+  REJECT_CALLS: false,
   GROUP_EVENTS: false,
   DEFAULT_TRANSLATION_LANG: "en",
   COMMAND_COOLDOWN_TIME_IN_MS: 0.01,
