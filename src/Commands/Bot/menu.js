@@ -140,7 +140,7 @@ ${readmore}`;
         }
 
         await sock.sendMessage(m.key.remoteJid, {
-          image: { url: "https://cdn.kordai.us.kg/serve/nqCgNgzzeflU.jpg" },
+          image: { url: "https://kord-cdn.vercel.app/serve/nqCgNgzzeflU.jpg" },
           caption: completeMenu,
           contextInfo: {
             forwardingScore: 999,
