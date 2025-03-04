@@ -1,1 +1,86 @@
-const a0_0x771655=a0_0x33d7;(function(_0x4395cf,_0x350cc5){const _0x532dbc=a0_0x33d7,_0x42fdce=_0x4395cf();while(!![]){try{const _0xf7e477=-parseInt(_0x532dbc(0xdd))/0x1+-parseInt(_0x532dbc(0xef))/0x2+parseInt(_0x532dbc(0xf1))/0x3+-parseInt(_0x532dbc(0xf2))/0x4+parseInt(_0x532dbc(0xee))/0x5*(-parseInt(_0x532dbc(0xdf))/0x6)+parseInt(_0x532dbc(0xf8))/0x7+parseInt(_0x532dbc(0xfd))/0x8*(parseInt(_0x532dbc(0xe7))/0x9);if(_0xf7e477===_0x350cc5)break;else _0x42fdce['push'](_0x42fdce['shift']());}catch(_0x41718c){_0x42fdce['push'](_0x42fdce['shift']());}}}(a0_0x3849,0x8a42d));const {remini}=require('../../Plugin/remini'),fs=require('fs')[a0_0x771655(0xe3)],{downloadMediaMessage}=require('@whiskeysockets/baileys');function a0_0x33d7(_0x185935,_0x49f40b){const _0x384992=a0_0x3849();return a0_0x33d7=function(_0x33d777,_0x682513){_0x33d777=_0x33d777-0xdd;let _0x2a13c4=_0x384992[_0x33d777];return _0x2a13c4;},a0_0x33d7(_0x185935,_0x49f40b);}function a0_0x3849(){const _0x272110=['❌\x20Oops!\x20Something\x20went\x20wrong.\x0a\x0aError:\x20','react','Utility','buffer','sendMessage','5618340zpnQgJ','remoteJid','length','enhance','extendedTextMessage','1254976lozjEz','contextInfo','Failed\x20to\x20download\x20media','./temp-image.jpg','INVINCIBLE_MODE','No\x20image\x20provided\x20for\x20enhancement','settings','Image\x20Enhance','1038946PTrTZG','logger','858hlUrRB','join','unlink','writeFile','promises','Failed\x20to\x20process\x20image','sendErr','❌\x20Please\x20reply\x20to\x20or\x20send\x20an\x20image\x20to\x20enhance\x20it.','171rIwyrR','remini','exports','>\x20©\x20ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ\x20ʙʏ\x20ᴋᴏʀᴅ\x20ɪɴᴄ³²¹™','key','imageMessage','message','39515fsTkpZ','1065556XAQBHb','quotedMessage','133569VquQSt','2238164rtVwpr'];a0_0x3849=function(){return _0x272110;};return a0_0x3849();}module[a0_0x771655(0xe9)]={'usage':[a0_0x771655(0xfb),'hd',a0_0x771655(0xe8)],'desc':'Enhance\x20an\x20image\x20using\x20AI.','commandType':a0_0x771655(0xf5),'isGroupOnly':![],'isAdminOnly':![],'isPrivateOnly':![],'emoji':'✨',async 'execute'(_0xdc67df,_0x11cb17,_0xb2bd15,_0x474450){const _0x3fcba7=a0_0x771655;let _0x5a668b;try{const _0x43621f=_0x11cb17[_0x3fcba7(0xed)]?.[_0x3fcba7(0xfc)]?.[_0x3fcba7(0xfe)]?.[_0x3fcba7(0xf0)],_0x553004=_0x43621f?.[_0x3fcba7(0xec)]||_0x11cb17[_0x3fcba7(0xed)]?.[_0x3fcba7(0xec)];if(!_0x553004)return global['settings']?.[_0x3fcba7(0x101)]?(await _0x474450['react']('🚫'),await _0x474450['sendErr'](null,{'context':_0x3fcba7(0x104),'info':_0x3fcba7(0x102)})):await _0xdc67df[_0x3fcba7(0xf7)](_0x11cb17['key']['remoteJid'],{'text':_0x3fcba7(0xe6)});global[_0x3fcba7(0x103)]?.[_0x3fcba7(0x101)]?await _0x474450[_0x3fcba7(0xf4)]('🔧'):await _0xdc67df[_0x3fcba7(0xf7)](_0x11cb17[_0x3fcba7(0xeb)][_0x3fcba7(0xf9)],{'text':'🛠️\x20Enhancing\x20the\x20image,\x20please\x20wait...'});const _0x1a59e3=await downloadMediaMessage({'message':_0x43621f||_0x11cb17[_0x3fcba7(0xed)]},_0x3fcba7(0xf6),{'logger':_0xdc67df[_0x3fcba7(0xde)]});if(!_0x1a59e3||_0x1a59e3[_0x3fcba7(0xfa)]===0x0)return global[_0x3fcba7(0x103)]?.[_0x3fcba7(0x101)]?(await _0x474450[_0x3fcba7(0xf4)]('🚫'),await _0x474450[_0x3fcba7(0xe5)](null,{'context':_0x3fcba7(0x104),'info':_0x3fcba7(0xff)})):await _0xdc67df[_0x3fcba7(0xf7)](_0x11cb17['key'][_0x3fcba7(0xf9)],{'text':'❌\x20Failed\x20to\x20download\x20the\x20image.'});_0x5a668b=_0x3fcba7(0x100),await fs[_0x3fcba7(0xe2)](_0x5a668b,_0x1a59e3);const _0x3d931e=await remini(_0x1a59e3,_0x3fcba7(0xfb));if(!_0x3d931e||!(_0x3d931e instanceof Buffer)||_0x3d931e[_0x3fcba7(0xfa)]===0x0)return global[_0x3fcba7(0x103)]?.[_0x3fcba7(0x101)]?(await _0x474450['react']('🚫'),await _0x474450[_0x3fcba7(0xe5)](null,{'context':_0x3fcba7(0x104),'info':_0x3fcba7(0xe4)})):await _0xdc67df['sendMessage'](_0x11cb17[_0x3fcba7(0xeb)][_0x3fcba7(0xf9)],{'text':'❌\x20Failed\x20to\x20enhance\x20the\x20image.'});await _0xdc67df['sendMessage'](_0x11cb17[_0x3fcba7(0xeb)][_0x3fcba7(0xf9)],{'image':_0x3d931e,'caption':_0x3fcba7(0xea)},{'quoted':_0x11cb17});}catch(_0x4f3cf9){console['error']('Error\x20in\x20enhance\x20command:',_0x4f3cf9),global[_0x3fcba7(0x103)]?.[_0x3fcba7(0x101)]?(await _0x474450[_0x3fcba7(0xf4)]('🚫'),await _0x474450['sendErr'](_0x4f3cf9,{'context':_0x3fcba7(0x104),'query':_0xb2bd15[_0x3fcba7(0xe0)]('\x20')})):await _0xdc67df[_0x3fcba7(0xf7)](_0x11cb17[_0x3fcba7(0xeb)]['remoteJid'],{'text':_0x3fcba7(0xf3)+_0x4f3cf9[_0x3fcba7(0xed)]});}finally{if(_0x5a668b)try{await fs[_0x3fcba7(0xe1)](_0x5a668b);}catch(_0x30f7a3){console['error']('Error\x20deleting\x20temporary\x20file:',_0x30f7a3);}}}};
+const axios = require('axios');
+const FormData = require('form-data');
+const { downloadMediaMessage } = require('@whiskeysockets/baileys');
+const mime = require('mime-types');
+
+module.exports = {
+  usage: ["enhance", "hd", "remini"],
+  desc: "Enhance an image using AI.",
+  commandType: "Utility",
+  isGroupOnly: false,
+  isAdminOnly: false,
+  isPrivateOnly: false,
+  emoji: "✨",
+  async execute(sock, m, args, kord) {
+    try {
+      const quotedMsg = m.message?.extendedTextMessage?.contextInfo?.quotedMessage;
+      const mediaMsg = quotedMsg?.imageMessage || m.message?.imageMessage;
+      if (!mediaMsg) {
+        if (global.settings?.INVINCIBLE_MODE) {
+          await kord.react("🚫");
+          return await kord.sendErr(null, { context: "Image Enhance", info: "No image provided for enhancement" });
+        } else {
+          return await sock.sendMessage(m.key.remoteJid, { text: '❌ Please reply to or send an image to enhance it.' });
+        }
+      }
+      if (global.settings?.INVINCIBLE_MODE) {
+        await kord.react("🔧");
+      } else {
+     //   await sock.sendMessage(m.key.remoteJid, { text: '🛠️ Enhancing the image, please wait...' });
+      }
+      const mediaBuffer = await downloadMediaMessage(
+        { message: quotedMsg || m.message },
+        'buffer',
+        { logger: sock.logger }
+      );
+      if (!mediaBuffer || mediaBuffer.length === 0) {
+        if (global.settings?.INVINCIBLE_MODE) {
+          await kord.react("🚫");
+          return await kord.sendErr(null, { context: "Image Enhance", info: "Failed to download media" });
+        } else {
+          return await sock.sendMessage(m.key.remoteJid, { text: '❌ Failed to download the image.' });
+        }
+      }
+      const mimeType = mediaMsg.mimetype;
+      const allowedMimeTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
+      if (!allowedMimeTypes.includes(mimeType)) {
+        return await sock.sendMessage(m.key.remoteJid, { text: '❌ Only JPG, JPEG, PNG, and WebP images are supported.' });
+      }
+      const formData = new FormData();
+      formData.append('image', mediaBuffer, { filename: 'image.jpg', contentType: mimeType });
+      formData.append('scale', '2');
+      const headers = {
+        'authority': 'api2.pixelcut.app',
+        'accept': 'application/json',
+        'accept-language': 'en-US,en;q=0.9',
+        'authorization': '',
+        'origin': 'https://www.pixelcut.ai',
+        'referer': 'https://www.pixelcut.ai/',
+        'sec-ch-ua': '"Not A(Brand";v="8", "Chromium";v="132"',
+        'sec-ch-ua-mobile': '?1',
+        'sec-ch-ua-platform': '"Android"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'cross-site',
+        'user-agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Mobile Safari/537.36',
+        'x-client-version': 'web',
+        ...formData.getHeaders()
+      };
+      const response = await axios.post("https://api2.pixelcut.app/image/upscale/v1", formData, { headers, maxBodyLength: Infinity });
+      if (!response.data || !response.data.result_url) {
+        console.error("Pixelcut API Response:", response.data);
+        throw new Error("Failed to get upscaled image URL from Pixelcut API");
+      }
+      const upscaledImageUrl = response.data.result_url;
+      await sock.sendMessage(m.key.remoteJid, { image: { url: upscaledImageUrl }, caption: '> © ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ ʙʏ ᴋᴏʀᴅ ɪɴᴄ³²¹™' }, { quoted: m });
+    } catch (error) {
+      console.error('Error in enhance command:', error);
+      if (global.settings?.INVINCIBLE_MODE) {
+        await kord.react("🚫");
+        await kord.sendErr(error, { context: "Image Enhance", query: args.join(" ") });
+      } else {
+        await sock.sendMessage(m.key.remoteJid, { text: `❌ Oops! Something went wrong.\n\nError: ${error.message}` });
+      }
+    }
+  }
+};
