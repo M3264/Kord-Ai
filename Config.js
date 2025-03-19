@@ -12,7 +12,7 @@ global.settings = {
   READ_ALL_MESSAGES: false, //commands are marked read
   AUTO_READ_STATUS: true,
   LOG_MESSAGES_AT_CONSOLE: false,
-  PREFIX: ["-"], 
+  PREFIX: ["."], 
   REJECT_CALLS: false,
   GROUP_EVENTS: true,
   DEFAULT_TRANSLATION_LANG: "en",
