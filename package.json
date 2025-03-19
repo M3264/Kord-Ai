@@ -20,7 +20,7 @@
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@iamtraction/google-translate": "^2.0.1",
     "@mistralai/mistralai": "^1.3.5",
-    "@whiskeysockets/baileys": "latest"
+    "@whiskeysockets/baileys": "latest",
     "acrcloud": "^1.4.0",
     "adm-zip": "^0.5.10",
     "archiver": "^7.0.1",
