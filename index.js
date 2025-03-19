@@ -1,7 +1,7 @@
 const { spawn } = require('child_process');
 
 if (!process.env.PM2_HOME && !process.env.STARTED_BY_NPM) {
-    console.log('Attempting to start with PM2...');
+  //  console.log('Attempting to start with PM2...');
     const pm2Process = spawn('npm', ['start'], {
         stdio: 'inherit',
         shell: true,
@@ -10,14 +10,14 @@ if (!process.env.PM2_HOME && !process.env.STARTED_BY_NPM) {
     
     pm2Process.on('error', (err) => {
         console.error('Failed to start PM2:', err);
-        console.log('Falling back to normal server startup...');
+    //    console.log('Falling back to normal server startup...');
         startServer();
     });
 
     pm2Process.on('exit', (code) => {
         if (code !== 0) {
             console.error('PM2 process exited with code:', code);
-            console.log('Falling back to normal server startup...');
+       //     console.log('Falling back to normal server startup...');
             startServer();
         }
     });

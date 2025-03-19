@@ -1,1 +1,22 @@
-{}
+{
+  "120363397312287205@g.us": {
+    "enabled": true,
+    "action": "warn",
+    "maxWarnings": 3,
+    "warnings": {
+      "2347013159244@s.whatsapp.net": 0
+    }
+  },
+  "120363216147505969@g.us": {
+    "enabled": false,
+    "action": "delete",
+    "maxWarnings": 3,
+    "warnings": {}
+  },
+  "120363401289282393@g.us": {
+    "enabled": false,
+    "action": "delete",
+    "maxWarnings": 3,
+    "warnings": {}
+  }
+}

@@ -1,37 +1,38 @@
 // hey there, kindly read this file till the end for better configuration
 
 global.settings = {
-  OWNER_NUMBERS: "1234564789", // your number with country code
-  OWNER_NAME: 'シ', // your owner name 
+  OWNER_NUMBERS: '2348160247341', // replace with your number with country code
+  OWNER_NAME: 'シ', // you owner name 
   BOT_NAME: 'Kord AI', // your preferred bot name
-  SESSION_ID: '', // replace your_sessionid with yours and make sure its inside the 
-  INVINCIBLE_MODE: true, // toogle invincible mode 
-  WORK_MODE: 'public',
+  SESSION_ID: '', // replace your_sessionid with yours and make sure its inside the ''
+  INVINCIBLE_MODE: false, // toogle invincible mode 
+  WORK_MODE: "public",
   TIME_ZONE: "Africa/Lagos",
   ANTI_VIEWONCE: true,
-  READ_ALL_MESSAGES: false,
+  READ_ALL_MESSAGES: false, //commands are marked read
   AUTO_READ_STATUS: true,
-  PREFIX: [".", "/", "!"],
+  LOG_MESSAGES_AT_CONSOLE: false,
+  PREFIX: ["-"], 
   REJECT_CALLS: false,
-  GROUP_EVENTS: false,
+  GROUP_EVENTS: true,
   DEFAULT_TRANSLATION_LANG: "en",
   COMMAND_COOLDOWN_TIME_IN_MS: 0.01,
   MAX_COMMANDS_PER_MINUTE: 100,
   MAX_DOWNLOAD_SIZE: 100,
   AUTO_LIKE_STATUS: true,
-  AUTO_LIKE_EMOJI: '✨',
+  AUTO_LIKE_EMOJI: '🫆',
   BANKING_DETAILS: {
     bank: "Kord-Ai Bank", // the name of your preferred bank
     acc_number: "1234567890", // account number for your preferred bank
     acc_name: "MyAccountName" // name of your bank
   },
-  /* You can also replace the numbers with your addresses if you're using crypto, a command for this will come soon. */
+  /* You can also replace the numkord_ai-Cc2TYTL6Tkf2bers with your addresses if you're using crypto, a command for this will come soon. */
   API_KEYS: {
     OPENWEATHERMAP_API_KEY: ''
   },
   isHackEnable: true,
   SAFE_SEARCH: true,
-  REJECT_CALLS: true,
+  REJECT_CALLS: false,
   SEND_WELCOME_MESSAGE: false,
   WELCOME_MESSAGE: "👋 Welcome to the group! We're glad to have you here. 😊",
   DELETE_WA_LINKS: false,

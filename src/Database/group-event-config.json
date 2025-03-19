@@ -24,5 +24,22 @@
       "fallbackProfilePic": "https://files.catbox.moe/wpi099.png"
     }
   },
-  "groups": {}
+  "groups": {
+    "120363216147505969@g.us": {
+      "events": {
+        "welcome": {
+          "enabled": false
+        },
+        "goodbye": {
+          "enabled": false
+        },
+        "promote": {
+          "enabled": false
+        },
+        "demote": {
+          "enabled": false
+        }
+      }
+    }
+  }
 }

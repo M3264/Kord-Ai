@@ -30,14 +30,14 @@
   <a href="https://github.com/M3264/Kord-Ai/fork"><img title="KORD-AI" src="https://img.shields.io/badge/FORK-KORD AI-h?color=blue&style=for-the-badge&logo=stackshare"></a>
 
 
- ### Version 1.6.1
+ ### Version 1.6.2
 
 
 ## How To Deploy?
 ---
 
 1. Get `SESSION ID`
-- Web: [Click Here](https://session.kordai.us.kg)
+- Web: [Click Here](https://session.kordai.biz.id)
 - Telegram Bot: [Click Here](https://t.me/kpair_bot)
 - Any one of the links above can be used
 
@@ -82,6 +82,7 @@
 
 ### Other Deploy Platforms Are Allowed e.g Bot-hosting.net and other panel
 - Bot File: [Click HERE](https://github.com/M3264/Kord-Ai/archive/refs/heads/master.zip)
+- Visit [here](https://kordai.biz.id/deploy) for steps
 --------
 
 
@@ -140,12 +141,13 @@
  
 <h2 align="center">  ❗❗ </h2>
 ---
-- *Note That Kord-Ai Is A Bot Made by M3264, Not Whatsapp, Beware of how you use it!
+- *Note That Kord-Ai Is A Bot Made by A Random Dev, Not Whatsapp, Beware of how you use it!
 
 
 #### Contact The Developer
 - Telegram:  https://t.me/M32669
 - Join the Whatsapp [Channel](https://whatsapp.com/channel/0029VaghjWRHVvTh35lfZ817)
+- Bot's Dashboard: https://kordai.biz.id
  
 
 - Star ⭐ repo if you like this bot.
