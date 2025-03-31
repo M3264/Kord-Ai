@@ -1,4 +1,6 @@
-const textMaker = require('../../Plugin/textmaker'); // Corrected import
+// are you a cloner or reader?
+
+const textMaker = require('../../Plugin/textmaker');
 const fetch = require('node-fetch');
 
 const createTextEffectCommand = (name, effectUrl, emoji, description, options = {}) => ({
@@ -110,10 +112,12 @@ const createTextEffectCommand = (name, effectUrl, emoji, description, options = 
             let result;
             if (options.hasRadio) {
                 const radioIndex = parseInt(radioOption);
-                const foundOption = options.radioOptions[radioIndex - 1];
+                const selectedOption = options.radioOptions[radioIndex - 1];
+                
+                const optionValue = selectedOption.dataTitle.toLowerCase();
                 
                 result = await textMaker(effectUrl, options.needsMultipleTexts ? textInputs : [textInputs[0]], 
-                    { [options.radioName]: foundOption.dataTitle });
+                    { [options.radioName]: optionValue });
             } else {
                 result = await textMaker(effectUrl, options.needsMultipleTexts ? textInputs : [textInputs[0]]);
             }
@@ -195,7 +199,7 @@ module.exports = [
     }),
     createTextEffectCommand("futuristiclight", "https://en.ephoto360.com/light-text-effect-futuristic-technology-style-648.html", "🤖", "futuristic technology text effect", {
         hasRadio: true,
-        radioName: "radio0[radio]",
+        radioName: "radio0",
         radioOptions: [
             { name: "radio0[radio]", value: "05acf523-6deb-4b9d-bb28-abc4354d0858", dataTitle: "Style 1" },
             { name: "radio0[radio]", value: "843a4fc2-059c-4283-87e4-c851c013073b", dataTitle: "Style 2" },
@@ -208,7 +212,7 @@ module.exports = [
     createTextEffectCommand("pubgmascot", "https://en.ephoto360.com/pubg-mascot-logo-maker-for-an-esports-team-612.html", "🎮", "PUBG mascot logo", { needsMultipleTexts: true, numTexts: 2 }),
     createTextEffectCommand("pubglogo", "https://en.ephoto360.com/pubg-logo-maker-cute-character-online-617.html", "🎮", "PUBG logo with cute character", {
         hasRadio: true,
-        radioName: "radio0[radio]",
+        radioName: "radio0",
         radioOptions: [
             { name: "radio0[radio]", value: "c566c68d-f8b9-4e0f-bb07-011da043d677", dataTitle: "Chicken" },
             { name: "radio0[radio]", value: "d4401b94-41d7-434c-af20-1ffca1aea281", dataTitle: "Soldier" }
@@ -220,7 +224,7 @@ module.exports = [
         needsMultipleTexts: true,
         numTexts: 3,
         hasRadio: true,
-        radioName: "radio0[radio]",
+        radioName: "radio0",
         radioOptions: [
               {
         "name": "radio0[radio]",
@@ -278,7 +282,7 @@ module.exports = [
         needsMultipleTexts: true,
         numTexts: 2,
         hasRadio: true,
-        radioName: "radio0[radio]",
+        radioName: "radio0",
         radioOptions: [
             { name: "radio0[radio]", value: "182a06fa-03e0-4c26-b1eb-fb9e46f3255a", dataTitle: "Banner 1" },
             { name: "radio0[radio]", value: "8b1be550-f6f4-43d8-bb23-58403fc079db", dataTitle: "Banner 2" },
@@ -289,7 +293,7 @@ module.exports = [
         needsMultipleTexts: false,
         numTexts: 1,
         hasRadio: true,
-        radioName: "radio0[radio]",
+        radioName: "radio0",
         radioOptions: [
             {
         "name": "radio0[radio]",
@@ -351,7 +355,7 @@ module.exports = [
         needsMultipleTexts: false,
         numTexts: 1,
         hasRadio: true,
-        radioName: "radio0[radio]",
+        radioName: "radio0",
         radioOptions: [
             {
         "name": "radio0[radio]",
@@ -455,7 +459,7 @@ module.exports = [
     }),
     createTextEffectCommand("neonlightsignature", "https://en.ephoto360.com/create-multicolored-neon-light-signatures-591.html", "✨", "multicolored neon light signature", {
         hasRadio: true,
-        radioName: "radio0[radio]",
+        radioName: "radio0",
         radioOptions: [
             { name: "radio0[radio]", value: "188eb364-5a04-446e-a779-0e2f427b7bc3", dataTitle: "1" },
             { name: "radio0[radio]", value: "a35d8b0d-bb89-4718-8723-71c5a9e9de4a", dataTitle: "2" },
@@ -472,7 +476,7 @@ module.exports = [
         needsMultipleTexts: true,
         numTexts: 2,
         hasRadio: true,
-        radioName: "radio0[radio]",
+        radioName: "radio0",
         radioOptions: [
             { name: "radio0[radio]", value: "1ad3c6ed-ba1e-4582-95cf-b5e2d7d1a125", dataTitle: "Blue" },
             { name: "radio0[radio]", value: "9a0f8a8a-d4b0-42bf-945f-06e75a2ac6a4", dataTitle: "Gold" },
@@ -493,7 +497,7 @@ module.exports = [
     }),
     createTextEffectCommand("metallogo", "https://en.ephoto360.com/metal-mascots-logo-maker-486.html", "🏆", "metal mascot logo", {
         hasRadio: true,
-        radioName: "radio0[radio]",
+        radioName: "radio0",
         radioOptions: [
             { name: "radio0[radio]", value: "206bc58d-00cc-4442-bc00-dcf221b40aa0", dataTitle: "Snake & Lion" },
             { name: "radio0[radio]", value: "de5f4f9c-95f0-411d-9ac9-5086409ad09a", dataTitle: "Dragon" },
@@ -508,7 +512,7 @@ module.exports = [
     }),
     createTextEffectCommand("blueneon", "https://en.ephoto360.com/create-blue-neon-logo-online-507.html", "💙", "blue neon logo", {
         hasRadio: true,
-        radioName: "radio0[radio]",
+        radioName: "radio0",
         radioOptions: [
             { name: "radio0[radio]", value: "2cb0949e-9e73-4e46-b149-e7e3927ba535", dataTitle: "Tiger" },
             { name: "radio0[radio]", value: "6e80d164-85bd-412f-ae4b-36c09a9fc6ad", dataTitle: "Shark" },
@@ -545,7 +549,7 @@ module.exports = [
         needsMultipleTexts: true,
         numTexts: 2,
         hasRadio: true,
-        radioName: "radio0[radio]",
+        radioName: "radio0",
         radioOptions: [
             { name: "radio0[radio]", value: "481e1fc1-600d-44d6-b82d-7ead83fb1f3a", dataTitle: "Bird" },
             { name: "radio0[radio]", value: "badd5200-1d09-450f-b7d5-d31e7e50c995", dataTitle: "Butterfly" },
@@ -554,7 +558,7 @@ module.exports = [
     }),
     createTextEffectCommand("starzodiac", "https://en.ephoto360.com/create-star-zodiac-wallpaper-mobile-online-604.html", "🌟", "star zodiac wallpaper", {
         hasRadio: true,
-        radioName: "radio0[radio]",
+        radioName: "radio0",
         radioOptions: [
             { name: "radio0[radio]", value: "a57c8514-b6e6-4507-be7d-f9929bdbdbb0", dataTitle: "Aquarius" },
             { name: "radio0[radio]", value: "60fb40f8-c477-4e69-a5cd-2662e455924e", dataTitle: "Aries" },
@@ -567,7 +571,7 @@ module.exports = [
         needsMultipleTexts: true,
         numTexts: 2,
         hasRadio: true,
-        radioName: "radio0[radio]",
+        radioName: "radio0",
         radioOptions: [
             { name: "radio0[radio]", value: "d4764301-5311-47c6-82aa-5aa36e9e9500", dataTitle: "Style 1" },
             { name: "radio0[radio]", value: "483b9b2a-2c87-4714-a7a7-6d0cc7b70d26", dataTitle: "Style 2" },
@@ -578,7 +582,7 @@ module.exports = [
         needsMultipleTexts: false,
         numTexts: 1,
         hasRadio: true,
-        radioName: "radio0[radio]",
+        radioName: "radio0",
         radioOptions: [
             { name: "radio0[radio]", value: "984dd03e-220d-4335-a6ba-7ac56b092240", dataTitle: "Style 1" },
             { name: "radio0[radio]", value: "71074346-5cb3-4b7d-9b8b-a84e4f142ba4", dataTitle: "Style 2" },
@@ -605,7 +609,7 @@ module.exports = [
         needsMultipleTexts: true,
         numTexts: 2,
         hasRadio: true,
-        radioName: "radio0[radio]",
+        radioName: "radio0",
         radioOptions: [
             { name: "radio0[radio]", value: "b5843159-7265-445a-8890-bbde408fab8e", dataTitle: "A" },
             { name: "radio0[radio]", value: "4925f62e-1446-4496-aa17-bafea9d7fc2c", dataTitle: "B" },
@@ -616,7 +620,7 @@ module.exports = [
         needsMultipleTexts: false,
         numTexts: 1,
         hasRadio: true,
-        radioName: "radio0[radio]",
+        radioName: "radio0",
         radioOptions: [
       {
         "name": "radio0[radio]",
