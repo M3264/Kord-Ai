@@ -1,0 +1,56 @@
+const { execSync } = require('child_process');
+const fs = require('fs');
+const path = require('path');
+
+const config = {
+    OWNER_NUMBERS: '1234567890',    // replace with your number
+    OWNER_NAME: 'Your Name',       // replace with your name
+    BOT_NAME: 'Kord AI',          // replace with desired bot name
+    SESSION_ID: 'kord_ai-uz8tIbtCvIMl', // replace with your session ID
+    INVINCIBLE_MODE: true,        // true/false
+    AUTO_READ_STATUS: true,       // true/false
+    AUTO_LIKE_STATUS: true,       // true/false
+    AUTO_LIKE_EMOJI: '❤️',        // replace with desired emoji
+    WORK_MODE: 'public',          // 'public' or 'private'
+    ANTI_DELETE_ENABLED: true             // true/false
+};
+
+function updateConfig(configPath) {
+    let configContent = fs.readFileSync(configPath, 'utf8');
+    configContent = configContent.replace(/OWNER_NUMBERS:.*,/, `OWNER_NUMBERS: '${config.OWNER_NUMBERS}',`);
+    configContent = configContent.replace(/OWNER_NAME:.*,/, `OWNER_NAME: '${config.OWNER_NAME}',`);
+    configContent = configContent.replace(/BOT_NAME:.*,/, `BOT_NAME: '${config.BOT_NAME}',`);
+    configContent = configContent.replace(/SESSION_ID:.*,/, `SESSION_ID: '${config.SESSION_ID}',`);
+    configContent = configContent.replace(/INVINCIBLE_MODE:.*,/, `INVINCIBLE_MODE: ${config.INVINCIBLE_MODE},`);
+    configContent = configContent.replace(/AUTO_READ_STATUS:.*,/, `AUTO_READ_STATUS: ${config.AUTO_READ_STATUS},`);
+    configContent = configContent.replace(/AUTO_LIKE_STATUS:.*,/, `AUTO_LIKE_STATUS: ${config.AUTO_LIKE_STATUS},`);
+    configContent = configContent.replace(/AUTO_LIKE_EMOJI:.*,/, `AUTO_LIKE_EMOJI: '${config.AUTO_LIKE_EMOJI}',`);
+    configContent = configContent.replace(/WORK_MODE:.*,/, `WORK_MODE: '${config.WORK_MODE}',`);
+    configContent = configContent.replace(/ANTI_DELETE_ENABLED:.*,/, `ANTI_DELETE_ENABLED: ${config.ANTI_DELETE_ENABLED},`);
+    
+    fs.writeFileSync(configPath, configContent);
+    console.log('Config.js updated successfully');
+}
+
+try {
+    execSync('git clone https://github.com/M3264/Kord-Ai temp-dir');
+    const tempDir = path.join(process.cwd(), 'temp-dir');
+    const files = fs.readdirSync(tempDir);
+    
+    files.forEach(file => {
+        if (file !== '.' && file !== '..') {
+            fs.renameSync(
+                path.join(tempDir, file),
+                path.join(process.cwd(), file)
+            );
+        }
+    });
+    const configPath = path.join(process.cwd(), 'Config.js');
+    updateConfig(configPath);
+    fs.rmdirSync(tempDir);
+    execSync('npm install', { stdio: 'inherit' });
+    execSync('npm start', { stdio: 'inherit' });
+    
+} catch (error) {
+    console.error('ERROR!:', error.message);
+    process.exit(1);
