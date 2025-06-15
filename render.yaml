@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: kord-bot
+    repo: https://github.com/M3264/Kord-Ai.git
+    branch: master
+    env: docker
+    dockerfilePath: Dockerfile
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: SESSION_ID
+        required: true
+      - key: OWNER_NUMBER
+        required: true
+      - key: WORKTYPE
+        required: true
+      - key: PREFIX
+        required: true
+      - key: TIMEZONE
+        required: true
+      - key: OWNER_NAME
+        required: true
+      - key: BOT_NAME
+        required: true
+      - key: RENDER_API_KEY
+        required: true

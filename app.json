@@ -1,0 +1,133 @@
+{
+  "name": "Kord",
+  "version": "2.0.0",
+  "description": "Kord Multi-Device WhatsApp Bot",
+  "logo": "https://cdn.kordai.biz.id/serve/UAkzzmMoZwY0.png",
+  "keywords": ["whatsapp", "bot", "kord"],
+  "repository": "https://github.com/M3264/Kord",
+  "website": "https://kord-ai.web.id",
+  "success_url": "/",
+  "stack": "container",
+  "env": {
+    "SESSION_ID": {
+      "description": "Session ID gotten from pair web: https://kord-ai.web.id/session",
+      "required": true
+    },
+    "OWNER_NUMBER": {
+      "description": "Owner number of user with country code",
+      "required": true
+    },
+    "WORKTYPE": {
+      "description": "Either private or public",
+      "required": true
+    },
+    "PREFIX": {
+      "description": "Use format: [.!?] for multiple and . for default",
+      "required": true
+    },
+    "ALWAYS_ONLINE": {
+      "description": "Makes the bot mark account online always",
+      "required": false
+    },
+    "MONGODB_URI": {
+      "description": "MongoDB URL for economy commands, without it economy commands won't work",
+      "required": false
+    },
+    "STATUS_VIEW": {
+      "description": "Automatically view status",
+      "required": false
+    },
+    "SAVE_STATUS": {
+      "description": "Automatically send status updates to owner",
+      "required": false
+    },
+    "ERROR_MSG": {
+      "description": "Send error to owner when command fails",
+      "required": false
+    },
+    "TIMEZONE": {
+      "description": "Set time zone for menu, cron jobs",
+      "required": true
+    },
+    "CAPTION": {
+      "description": "Caption for media bot sends",
+      "required": false
+    },
+    "STICKER_PACKNAME": {
+      "description": "Name for sticker pack",
+      "required": false
+    },
+    "STICKER_AUTHOR": {
+      "description": "Author name shown in sticker info",
+      "required": true
+    },
+    "BOT_PRESENCE": {
+      "description": "Set 'available' for online, 'composing' for typing",
+      "required": false
+    },
+    "CMD_REACT": {
+      "description": "React to commands",
+      "required": false
+    },
+    "READ_MESSAGE": {
+      "description": "Read commands and messages",
+      "required": false
+    },
+    "OWNER_NAME": {
+      "description": "Display name of the bot owner",
+      "required": true
+    },
+    "BOT_NAME": {
+      "description": "Display name of the bot",
+      "required": true
+    },
+    "RENDER_API_KEY": {
+      "description": "Set if you're deploying on Render",
+      "required": true
+    },
+    "ANTIDELETE": {
+      "description": "Sends deleted message to owner's DM",
+      "required": false
+    },
+    "ANTIDELETE_INCHAT": {
+      "description": "Sends deleted message to the same chat it was deleted",
+      "required": false
+    },
+    "AUDIO_DATA": {
+      "description": "Audio data for take command, syntax: Kord;Bot",
+      "required": false
+    },
+    "SUDO": {
+      "description": "Number of allowed users if bot is private, syntax: 2341234567;234654321",
+      "required": false
+    },
+    "MODS": {
+      "description": "Number of allowed owners if bot is private or not, same syntax as sudo",
+      "required": false
+    },
+    "REJECT_CALL": {
+      "description": "Automatically reject calls",
+      "required": false
+    },
+    "WARNCOUNT": {
+      "description": "Warn counts before action",
+      "required": false
+    },
+    "LANG_CODE": {
+      "description": "Language code for translate command and some other features",
+      "required": false
+    },
+    "VV_CMD": {
+      "description": "Emoji to automatically send replied viewOnce to owner",
+      "required": false
+    },
+    "RES_TYPE": {
+      "description": "How bot responds in some commands, use text/poll",
+      "required": false
+    },
+    "LOG_MESSAGES": {
+      "description": "Log messages at console",
+      "required": false
+    }
+  }
+}
