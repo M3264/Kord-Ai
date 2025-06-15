@@ -8,19 +8,19 @@ services:
     plan: free
     autoDeploy: true
     envVars:
-      - key: SESSION_ID
-        required: true
-      - key: OWNER_NUMBER
-        required: true
-      - key: WORKTYPE
-        required: true
-      - key: PREFIX
-        required: true
-      - key: TIMEZONE
-        required: true
-      - key: OWNER_NAME
-        required: true
-      - key: BOT_NAME
-        required: true
-      - key: RENDER_API_KEY
-        required: true
+  - key: SESSION_ID
+    value: ""
+  - key: OWNER_NUMBER
+    value: ""
+  - key: WORKTYPE
+    value: ""
+  - key: PREFIX
+    value: ""
+  - key: TIMEZONE
+    value: ""
+  - key: OWNER_NAME
+    value: ""
+  - key: BOT_NAME
+    value: ""
+  - key: RENDER_API_KEY
+    value: ""
