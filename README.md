@@ -39,13 +39,13 @@ If you encounter any issue, reach out directly:
 
 ## 📢 Community
 
+- **WhatsApp Chat Group**  
+  [Join Group](https://chat.whatsapp.com/GXUhk1vRI5nL5E2wjJOMqC)
+ 
 - **WhatsApp Channel**  
   [Join Now](https://whatsapp.com/channel/0029VaghjWRHVvTh35lfZ817)
 
 - **Telegram Channel**  
   [Join Now](https://t.me/kordai_channel)
-
-- **WhatsApp Chat Group**  
-  [Join Group](https://chat.whatsapp.com/H04L7iGsxlUFT0aZXrbvzX)
 
 ---
