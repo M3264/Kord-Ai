@@ -16,7 +16,7 @@ A powerful, multi-device WhatsApp bot built with Baileys. Fast to set up and eas
 ### 1. Get a Session ID
 
 Visit:  
-**[https://kord-ai.web.id/session](https://kord-ai.web.id/session)**  
+**[https://kord-ai.web.id/session](https://www.kord-ai.web.id/session)**  
 Paste the session ID in your `config.env`
 
 ---
@@ -24,11 +24,11 @@ Paste the session ID in your `config.env`
 ### 2. Choose a Deployment Method
 
 Go to:  
-**[https://kord-ai.web.id/deploy](https://kord-ai.web.id/deploy)**
+**[https://kord-ai.web.id/deploy](https://www.kord-ai.web.id/deploy)**
 
-- For **Render**: [kord-ai.web.id/deploy (render)](https://kord-ai.web.id/deploy)
-- For **Panel**: [kord-ai.web.id/deploy (panel)](https://kord-ai.web.id/deploy)
-- For **VPS**: [kord-ai.web.id/deploy (vps)](https://kord-ai.web.id/deploy)
+- For **Render**: [kord-ai.web.id/deploy (render)](https://www.kord-ai.web.id/deploy)
+- For **Panel**: [kord-ai.web.id/deploy (panel)](https://www.kord-ai.web.id/deploy)
+- For **VPS**: [kord-ai.web.id/deploy (vps)](https://www.kord-ai.web.id/deploy)
 
 You can also deploy on any other platform that supports Node.js.  
 If you encounter any issue, reach out directly:
