@@ -11,6 +11,8 @@ module.exports = {
     MONGODB_URI: process.env.MONGODB_URI || "",
     STATUS_VIEW: process.env.STATUS_VIEW || true,
     SAVE_STATUS: process.env.SAVE_STATUS || false,
+    LIKE_STATUS: process.env.SAVE_STATUS || false,
+    STATUS_EMOJI: process.env.STATUS_EMOJI || "🥏",
     ERROR_MSG: process.env.ERROR_MSG || true,
     TIMEZONE: process.env.TIMEZONE || "Africa/Lagos",
     CAPTION: process.env.CAPTION || "",
@@ -33,6 +35,7 @@ module.exports = {
     VV_CMD: process.env.VV_CMD || "👀",
     RES_TYPE: process.env.RES_TYPE || "text",
     CMD_REACT: process.env.CMD_REACT || "off",
-    LOG_MESSAGES: process.env.LOG_MESSAGES || "off" // on/off
+    LOG_MESSAGES: process.env.LOG_MESSAGES || "off",
+    STARTUP_MSG: process.env.STARTUP_MSG || "on"
 }
 
