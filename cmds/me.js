@@ -1,1 +1,382 @@
-const a0_0x47b249=a0_0x205b;function a0_0x205b(_0xf17882,_0x31721f){const _0x2d7d10=a0_0x2d7d();return a0_0x205b=function(_0x205b28,_0x39c739){_0x205b28=_0x205b28-0xd2;let _0x3febd3=_0x2d7d10[_0x205b28];return _0x3febd3;},a0_0x205b(_0xf17882,_0x31721f);}(function(_0x49e7dd,_0x318c53){const _0x465a7f=a0_0x205b,_0x379296=_0x49e7dd();while(!![]){try{const _0x1e9603=-parseInt(_0x465a7f(0x11f))/0x1*(parseInt(_0x465a7f(0x143))/0x2)+-parseInt(_0x465a7f(0x13b))/0x3+-parseInt(_0x465a7f(0x107))/0x4*(parseInt(_0x465a7f(0x12c))/0x5)+parseInt(_0x465a7f(0x13e))/0x6*(parseInt(_0x465a7f(0x106))/0x7)+parseInt(_0x465a7f(0x11e))/0x8+-parseInt(_0x465a7f(0x11d))/0x9*(parseInt(_0x465a7f(0x13a))/0xa)+parseInt(_0x465a7f(0x126))/0xb*(parseInt(_0x465a7f(0x133))/0xc);if(_0x1e9603===_0x318c53)break;else _0x379296['push'](_0x379296['shift']());}catch(_0xc4494b){_0x379296['push'](_0x379296['shift']());}}}(a0_0x2d7d,0x42123));const {kord,commands,wtype,getData,storeData,prefix,secondsToHms,isBotAdmin,config,updateBot}=require(a0_0x47b249(0xe6)),{exec}=require(a0_0x47b249(0xfa)),pre=prefix,core=require(a0_0x47b249(0xe6)),path=require(a0_0x47b249(0x10d)),fs=require('fs'),{warn}=require('../core/db');function a0_0x2d7d(){const _0x2131ec=['videoMessage','OWNER_NAME','download','client','ping','No\x20Kord\x20processes\x20found\x20running.','extendedTextMessage','error','\x20ago!..*_','╚════════════════════════```','audioMessage','all','image','*\x0a_','status','@g.us','update\x20bot','kord-v2','online','_𝌫\x20shutting\x20down..._','../core','error:\x20','isGroup','restarts','fakeObj','_reply\x20or\x20mention\x20a\x20user_','forEach','*𝌫\x20Restarts*:\x20','unban','version','_\x0a\x0a','audio','video','memoryUsage','getQuotedObj','unbans\x20an\x20already\x20banned\x20user','imageMessage','Error\x20in\x20runtime\x20command:','npx\x20pm2\x20status\x20kord-v2','pushName','child_process','includes','banned','*Process\x20#','uptime','Error:\x20','_user\x20is\x20not\x20banned\x20currently_','_user\x20is\x20now\x20banned_','map','bot','resends\x20the\x20a\x20replied\x20messges\x20of\x20the\x20quoted\x20msg','mentionedJid','63evnDfr','413004dVJnMn','npx\x20pm2\x20stop\x20kord-v2','BEGIN:VCARD\x0aVERSION:3.0\x0aFN:','BOT_NAME','ms_*','filter','path','Error\x20in\x20runtime:\x20','trim','\x20|\x20Memory:\x20','shut\x20the\x20bot\x20down\x20(you\x27ll\x20have\x20to\x20restart\x20on\x20server)','p-status','ban','checks\x20process\x20status','cpu','repeat','sends\x20owner\x20contact','sendMessage','round','_𝌫\x20restarting..._','mtype','split','10557XSPhiH','4304616EgcHfB','20127sRiwxK','memory','send','reply','*𝌫\x20Uptime*:\x20','quoted','pid','8028372CBwplA','cmd','\x0aTEL;type=CELL;type=VOICE;waid=','now','OWNER_NUMBER','process','10ZgEHgQ','*:\x20','*𝌫\x20CPU*:\x20','list','check\x20the\x20bot\x20ping','╠\x20📅\x20Time:\x20','🙂‍↔️','12zWKtcf','╠\x0a╠\x20✨\x20Bot\x20is\x20running\x20smoothly!\x0a','chat','\x20|\x20','sender','toLowerCase','\x20*Status*:\x20','1880NWpBwx','1286352KJQuIn','╠\x20⏰\x20Uptime:\x20','\x0aEND:VCARD','80106HZEJLy','\x20MB\x0a','_user\x20is\x20now\x20unbaned_','shows\x20the\x20list\x20of\x20available\x20comamnds\x20and\x20their\x20description','caption','26HFoNva','status@broadcast','\x20Runtime','From:\x20','https://kord-ai.web.id','╠\x20💾\x20Memory:\x20','restart|reboot','push','repo|sc|script','checks\x20the\x20bot\x27s\x20uptime','shutdown','send\x20repository\x20link\x20of\x20the\x20bot','*𝌫\x20Memory*:\x20','get\x20runtime\x20of\x20bot\x20with\x20cool\x20display','desc','name','length','*_reply\x20to\x20a\x20message\x20that\x20replies\x20to\x20a\x20message_*','_No\x20quoted\x20message\x20found._','npx\x20pm2\x20restart\x20kord-v2','restart\x20ths\x20bot','save','text','heapUsed','╔═════《\x20My\x20Repository\x20》═════╗\x0a╠\x20Link:\x20https://github.com/M3264/Kord-Ai\x0a╠\x20Description:\x20WhatsApp\x20Bot\x20built\x20with\x20Baileys\x0a╚═════════════════════════════╝','stringify','isArray','error..:\x20'];a0_0x2d7d=function(){return _0x2131ec;};return a0_0x2d7d();}kord({'cmd':a0_0x47b249(0xd6),'desc':a0_0x47b249(0x130),'react':a0_0x47b249(0x132),'fromMe':wtype,'type':'bot'},async(_0xcfac40,_0x20e150)=>{const _0x19962a=a0_0x47b249,_0x406ce1=performance['now'](),_0x3e25c7=await _0xcfac40['send']('kord!'),_0x4ef55c=performance[_0x19962a(0x129)](),_0x21bda8=Math[_0x19962a(0x119)](_0x4ef55c-_0x406ce1);_0x3e25c7['edit']('*_々\x20Pong!\x20'+_0x21bda8+_0x19962a(0x10b));}),kord({'cmd':a0_0x47b249(0x113),'desc':'bans\x20a\x20user\x20from\x20using\x20the\x20bot','fromMe':!![],'type':'bot'},async(_0x23cf70,_0x2a6301)=>{const _0x3835ff=a0_0x47b249;let _0x4667f4;if(_0x23cf70[_0x3835ff(0xe8)]){if(_0x23cf70[_0x3835ff(0x105)]?.[_0x3835ff(0x153)])_0x4667f4=_0x23cf70[_0x3835ff(0x105)][0x0];else{if(_0x23cf70[_0x3835ff(0x124)]?.[_0x3835ff(0x137)])_0x4667f4=_0x23cf70['quoted'][_0x3835ff(0x137)];else return _0x23cf70[_0x3835ff(0x121)](_0x3835ff(0xeb));}}else _0x2a6301?_0x4667f4=_0x2a6301['replace'](/[^\d]/g,''):_0x4667f4=_0x23cf70['chat'];if(!_0x4667f4)return _0x23cf70[_0x3835ff(0x121)](_0x3835ff(0xeb));let _0x400c58=await getData('banned');if(!Array['isArray'](_0x400c58))_0x400c58=[];let _0x408a3b=_0x400c58['includes'](_0x4667f4);return _0x408a3b?_0x23cf70[_0x3835ff(0x121)]('_user\x20is\x20already\x20banned_'):(_0x400c58[_0x3835ff(0x14a)](_0x4667f4),await storeData(_0x3835ff(0xfc),JSON[_0x3835ff(0x15c)](_0x400c58,null,0x2)),_0x23cf70[_0x3835ff(0x121)](_0x3835ff(0x101)));}),kord({'cmd':a0_0x47b249(0xee),'desc':a0_0x47b249(0xf5),'fromMe':!![],'type':a0_0x47b249(0x103)},async(_0x29a562,_0x43bebf)=>{const _0x10844b=a0_0x47b249;let _0x55a9fc;if(_0x29a562[_0x10844b(0x135)]['endsWith'](_0x10844b(0xe1))){if(_0x29a562[_0x10844b(0x105)]?.[_0x10844b(0x153)])_0x55a9fc=_0x29a562[_0x10844b(0x105)][0x0];else{if(_0x29a562[_0x10844b(0x124)]?.[_0x10844b(0x137)])_0x55a9fc=_0x29a562[_0x10844b(0x124)][_0x10844b(0x137)];else return _0x29a562['send'](_0x10844b(0xeb));}}else _0x43bebf?_0x55a9fc=_0x43bebf['replace'](/[^\d]/g,''):_0x55a9fc=_0x29a562['chat'];if(!_0x55a9fc)return _0x29a562['send'](_0x10844b(0xeb));let _0x23fcdc=await getData(_0x10844b(0xfc));if(!Array[_0x10844b(0x15d)](_0x23fcdc))_0x23fcdc=[];let _0x743cda=_0x23fcdc['includes'](_0x55a9fc);if(!_0x743cda)return _0x29a562[_0x10844b(0x121)](_0x10844b(0x100));return _0x23fcdc=_0x23fcdc['filter'](_0x40f368=>_0x40f368!==_0x55a9fc),await storeData('banned',JSON[_0x10844b(0x15c)](_0x23fcdc,null,0x2)),_0x29a562[_0x10844b(0x121)](_0x10844b(0x140));}),kord({'cmd':a0_0x47b249(0xfe),'desc':a0_0x47b249(0x14c),'react':'💨','fromMe':wtype,'type':a0_0x47b249(0x103)},async(_0x153bcf,_0x3432e3)=>{const _0x4daccb=a0_0x47b249;var _0x8e6e99=await secondsToHms(process[_0x4daccb(0xfe)]());return _0x153bcf[_0x4daccb(0x121)]('_*Active\x20since\x20'+_0x8e6e99+_0x4daccb(0xda));}),kord({'cmd':a0_0x47b249(0x124),'desc':a0_0x47b249(0x104),'fromMe':wtype,'type':'tools'},async(_0x2ee32d,_0x43bed0)=>{const _0x4b9d36=a0_0x47b249;try{if(!_0x2ee32d[_0x4b9d36(0x124)])return _0x2ee32d['send']('*_reply\x20to\x20a\x20replied\x20message_*');const _0x8dfb04=await _0x2ee32d[_0x4b9d36(0xf4)]();if(!_0x8dfb04)return _0x2ee32d['send'](_0x4b9d36(0x154));_0x8dfb04['quoted']?.[_0x4b9d36(0xea)]?await _0x2ee32d['forwardMessage'](_0x2ee32d['chat'],_0x8dfb04[_0x4b9d36(0x124)][_0x4b9d36(0xea)]):await _0x2ee32d[_0x4b9d36(0x121)](_0x4b9d36(0x155));}catch(_0x22f918){console[_0x4b9d36(0xd9)](_0x22f918),_0x2ee32d['send'](''+_0x22f918);}}),kord({'cmd':a0_0x47b249(0x12f),'desc':a0_0x47b249(0x141),'react':'☯️','fromMe':wtype,'type':'help'},async(_0x1188c9,_0x27dbd2)=>{const _0xbb7ac5=a0_0x47b249;let _0x5e8e8d=0x1;return list='',commands['map'](_0x4cd052=>{const _0x1c4c8c=a0_0x205b;if(_0x4cd052['cmd']&&_0x4cd052[_0x1c4c8c(0x151)]){const _0x429a48=_0x4cd052[_0x1c4c8c(0x127)]['split']('|')[0x0][_0x1c4c8c(0x10f)]();list+=_0x5e8e8d++ +'\x20*'+_0x429a48+_0x1c4c8c(0xdf)+_0x4cd052[_0x1c4c8c(0x151)]+_0x1c4c8c(0xf0);}else{const _0x54845b=_0x4cd052['cmd']?_0x4cd052['cmd']['split']('|')[0x0]['trim']():'';list+=_0x5e8e8d++ +'\x20*'+_0x54845b+'*\x0a';}}),_0x1188c9[_0xbb7ac5(0x121)](list);}),kord({'cmd':a0_0x47b249(0x149),'desc':a0_0x47b249(0x157),'fromMe':!![],'type':a0_0x47b249(0x12b)},async(_0x1e3cb5,_0x4ca223)=>{const _0x50aa3=a0_0x47b249;try{await _0x1e3cb5[_0x50aa3(0x121)](_0x50aa3(0x11a)),exec(_0x50aa3(0x156),_0x442802=>{if(_0x442802){_0x1e3cb5['send']('error:\x20'+_0x442802);return;}});}catch(_0x331077){return console[_0x50aa3(0xd9)],await _0x1e3cb5[_0x50aa3(0x121)](_0x50aa3(0x15e)+_0x331077);}}),kord({'cmd':a0_0x47b249(0x14d),'desc':a0_0x47b249(0x111),'fromMe':!![],'type':a0_0x47b249(0x12b)},async(_0xf02070,_0x2a0b4d)=>{const _0x451d16=a0_0x47b249;try{await _0xf02070[_0x451d16(0x121)](_0x451d16(0xe5)),exec(_0x451d16(0x108),_0x4513c2=>{const _0x135b4d=_0x451d16;if(_0x4513c2){_0xf02070[_0x135b4d(0x121)](_0x135b4d(0xe7)+_0x4513c2);return;}});}catch(_0x112d9b){return console['error'],await _0xf02070[_0x451d16(0x121)]('error..:\x20'+_0x112d9b);}}),kord({'cmd':a0_0x47b249(0x112),'desc':a0_0x47b249(0x114),'fromMe':!![],'type':a0_0x47b249(0x12b)},async(_0x18e1b7,_0x4de238)=>{const _0xba7ac3=a0_0x47b249;try{exec(_0xba7ac3(0xf8),async(_0x165f87,_0x301925,_0x5cd7e3)=>{const _0x1865af=_0xba7ac3;if(_0x165f87){await _0x18e1b7[_0x1865af(0x121)](_0x1865af(0xff)+_0x165f87);return;}const _0x3cf34e=_0x301925[_0x1865af(0x11c)]('\x0a')[_0x1865af(0x10c)](_0xf00a4a=>_0xf00a4a[_0x1865af(0xfb)](_0x1865af(0xe3)));if(_0x3cf34e[_0x1865af(0x153)]===0x0){await _0x18e1b7[_0x1865af(0x121)](_0x1865af(0xd7));return;}const _0x445f8d=_0x3cf34e[_0x1865af(0x102)](_0x6a86e1=>{const _0x4a1874=_0x1865af,_0x7100b5=_0x6a86e1[_0x4a1874(0x11c)]('│')[_0x4a1874(0x102)](_0x2b6d0b=>_0x2b6d0b[_0x4a1874(0x10f)]())[_0x4a1874(0x10c)](Boolean);if(_0x7100b5[_0x4a1874(0x153)]<0x9)return null;return{'id':_0x7100b5[0x0],'name':_0x7100b5[0x1],'namespace':_0x7100b5[0x2],'version':_0x7100b5[0x3],'mode':_0x7100b5[0x4],'pid':_0x7100b5[0x5],'uptime':_0x7100b5[0x6],'restarts':_0x7100b5[0x7],'status':_0x7100b5[0x8],'cpu':_0x7100b5[0x9],'memory':_0x7100b5[0xa]};})[_0x1865af(0x10c)](Boolean);let _0x20bbcf='*❊\x20Bot\x20Status*\x0a\x0a';_0x445f8d[_0x1865af(0xec)]((_0x4b0a72,_0x11ed7a)=>{const _0x1349c4=_0x1865af,_0x317111=_0x4b0a72[_0x1349c4(0xe0)]&&_0x4b0a72['status']['toLowerCase']()['includes'](_0x1349c4(0xe4))?'✓':'✗';_0x20bbcf+=_0x1349c4(0xfd)+_0x4b0a72['id']+_0x1349c4(0x12d)+_0x4b0a72[_0x1349c4(0x152)]+'\x0a',_0x20bbcf+=_0x317111+_0x1349c4(0x139)+_0x4b0a72['status']+'\x0a',_0x20bbcf+='*𝌫\x20Mode*:\x20'+_0x4b0a72['mode']+'\x0a',_0x20bbcf+=_0x1349c4(0x12e)+_0x4b0a72[_0x1349c4(0x115)]+'\x0a',_0x20bbcf+=_0x1349c4(0x14f)+_0x4b0a72[_0x1349c4(0x120)]+'\x0a',_0x20bbcf+=_0x1349c4(0x123)+_0x4b0a72[_0x1349c4(0xfe)]+'\x0a',_0x20bbcf+='*𝌫\x20Version*:\x20'+_0x4b0a72[_0x1349c4(0xef)]+'\x0a',_0x20bbcf+=_0x1349c4(0xed)+_0x4b0a72[_0x1349c4(0xe9)]+'\x0a',_0x11ed7a<_0x445f8d[_0x1349c4(0x153)]-0x1&&(_0x20bbcf+='\x0a'+'─'[_0x1349c4(0x116)](0x14)+'\x0a\x0a');}),await _0x18e1b7['send'](_0x20bbcf);});}catch(_0x8fb4c1){return console[_0xba7ac3(0xd9)](_0x8fb4c1),await _0x18e1b7[_0xba7ac3(0x121)](_0xba7ac3(0xff)+_0x8fb4c1);}}),kord({'cmd':'runtime','desc':a0_0x47b249(0x150),'fromMe':wtype,'type':a0_0x47b249(0x103)},async(_0x5cf78a,_0x17e317)=>{const _0x33683e=a0_0x47b249;try{const _0x1a30bf=process[_0x33683e(0xfe)](),_0x58247c=await secondsToHms(_0x1a30bf),_0x32a506=process[_0x33683e(0xf3)](),_0x1f18ec=(_0x32a506[_0x33683e(0x15a)]/0x400/0x400)['toFixed'](0x2),_0x5cbaf7=new Date()['toLocaleString']();let _0x5bfb67='```╔════════════════════════╗\x0a╠\x20🤖\x20'+config()[_0x33683e(0x10a)]+'\x20RUNTIME\x20Status\x20\x20\x20\x20\x20╣\x0a╠════════════════════════╝\x0a';return _0x5bfb67+=_0x33683e(0x13c)+_0x58247c+'\x0a',_0x5bfb67+=_0x33683e(0x148)+_0x1f18ec+_0x33683e(0x13f),_0x5bfb67+='╠\x20🔄\x20Process\x20ID:\x20'+process[_0x33683e(0x125)]+'\x0a',_0x5bfb67+=_0x33683e(0x131)+_0x5cbaf7+'\x0a',_0x5bfb67+='╠\x20🚀\x20Node:\x20'+process[_0x33683e(0xef)]+'\x0a',_0x5bfb67+='╠\x20💻\x20Platform:\x20'+process['platform']+'\x0a',_0x5bfb67+=_0x33683e(0x134),_0x5bfb67+=_0x33683e(0xdb),await _0x5cf78a['client'][_0x33683e(0x118)](_0x5cf78a[_0x33683e(0x135)],{'text':_0x5bfb67,'contextInfo':{'externalAdReply':{'title':config()[_0x33683e(0x10a)]+_0x33683e(0x145),'body':'Uptime:\x20'+_0x58247c+_0x33683e(0x110)+_0x1f18ec+'MB','mediaType':0x1,'renderLargerThumbnail':![],'showAdAttribution':![],'sourceUrl':_0x33683e(0x147)}}});}catch(_0x5c467c){console['error'](_0x33683e(0xf7),_0x5c467c),await _0x5cf78a[_0x33683e(0x121)](_0x33683e(0x10e)+_0x5c467c);}}),kord({'on':a0_0x47b249(0xdd),'fromMe':![]},async(_0x484dba,_0x140418)=>{const _0x53bc58=a0_0x47b249;if(_0x140418['toLowerCase']()[_0x53bc58(0xfb)](_0x53bc58(0x158))||_0x140418[_0x53bc58(0x138)]()[_0x53bc58(0xfb)](_0x53bc58(0xd4))||_0x140418['toLowerCase']()[_0x53bc58(0xfb)](_0x53bc58(0x121))){const _0x8f2f6b=_0x484dba['quoted'][_0x53bc58(0x11b)];if(_0x484dba[_0x53bc58(0x124)][_0x53bc58(0x135)]!==_0x53bc58(0x144))return;const _0x10b3f5=_0x8f2f6b!==_0x53bc58(0xd8)?await _0x484dba[_0x53bc58(0x124)][_0x53bc58(0xd4)]():null,_0x1232ea=_0x484dba['quoted'][_0x53bc58(0x142)]||_0x484dba[_0x53bc58(0x124)][_0x53bc58(0x159)]||'';let _0x21a1e5='text',_0x25a234=_0x1232ea;if(_0x8f2f6b===_0x53bc58(0xf6))_0x21a1e5=_0x53bc58(0xde),_0x25a234=_0x10b3f5;else{if(_0x8f2f6b===_0x53bc58(0xd2))_0x21a1e5=_0x53bc58(0xf2),_0x25a234=_0x10b3f5;else _0x8f2f6b===_0x53bc58(0xdc)&&(_0x21a1e5=_0x53bc58(0xf1),_0x25a234=_0x10b3f5);}return await _0x484dba[_0x53bc58(0x122)](_0x25a234,{'adType':_0x21a1e5,'caption':_0x1232ea,'title':'sᴛᴀᴛᴜs\x20sᴀᴠᴇʀ','body':_0x53bc58(0x146)+(_0x484dba[_0x53bc58(0x124)][_0x53bc58(0xf9)]||'')+_0x53bc58(0x136)+_0x484dba['quoted'][_0x53bc58(0x135)][_0x53bc58(0x11c)]('@')[0x0],'renderLargerThumbnail':![],'showAdAttribution':!![],'mediaType':0x1},'ad');}}),kord({'cmd':'owner','desc':a0_0x47b249(0x117),'fromMe':wtype,'type':a0_0x47b249(0x103)},async(_0x3e70d1,_0x2106b3)=>{const _0x2b7d23=a0_0x47b249,_0x4464bd=_0x2b7d23(0x109)+config()[_0x2b7d23(0xd3)]+_0x2b7d23(0x128)+config()[_0x2b7d23(0x12a)]+':'+config()[_0x2b7d23(0x12a)]+_0x2b7d23(0x13d),_0x512168={'contacts':{'displayName':config()[_0x2b7d23(0xd3)],'contacts':[{'vcard':_0x4464bd}]}};return await _0x3e70d1[_0x2b7d23(0xd5)][_0x2b7d23(0x118)](_0x3e70d1[_0x2b7d23(0x135)],_0x512168,{'quoted':_0x3e70d1});}),kord({'cmd':a0_0x47b249(0x14b),'desc':a0_0x47b249(0x14e),'fromMe':wtype,'type':a0_0x47b249(0x103)},async(_0x3362dd,_0x441ff0)=>{const _0x5c0c12=a0_0x47b249,_0x10669e=_0x5c0c12(0x15b);return await _0x3362dd['send'](_0x10669e);}),kord({'cmd':'update','desc':a0_0x47b249(0xe2),'fromMe':!![],'type':'bot'},async(_0x5ee1f9,_0x3f6208)=>{await updateBot(_0x5ee1f9,_0x3f6208);});
+const { kord,
+  commands,
+  wtype,
+  getData,
+  storeData,
+  prefix,
+  secondsToHms,
+  isBotAdmin,
+  config,
+  updateBot
+} = require("../core")
+const { exec } = require("child_process")
+const pre = prefix
+const core = require("../core")
+const path = require('path')
+const fs = require('fs')
+const { warn } = require("../core/db")
+
+kord({
+  cmd: 'ping',
+  desc: 'check the bot ping',
+  react: "🙂‍↔️",
+  fromMe: wtype,
+  type: 'bot'
+}, async (m, text) => {
+  const start = performance.now();
+  const msg = await m.send("```pinging...```");
+  const end = performance.now();
+  const ping = Math.round(end - start);
+   msg.edit(`*_々 Pong! ${ping}ms_*`);
+});
+
+kord({
+  cmd: "ban",
+  desc: "bans a user from using the bot",
+  fromMe: true,
+  type: "bot"
+}, async (m, text) => {
+  let user;
+  if (m.isGroup) {
+    if (m.mentionedJid?.length) {
+  user = m.mentionedJid[0]
+  } else if (m.quoted?.sender) {
+  user = m.quoted.sender
+  } else {
+  return m.send("_reply or mention a user_");
+}
+  } else if (text) {
+    user = text.replace(/[^\d]/g, '');
+  } else {
+    user = m.chat
+  }
+  
+  if (!user) return m.send("_reply or mention a user_")
+  let sdata = await getData("banned");
+if (!Array.isArray(sdata)) sdata = [];
+let isExist = sdata.includes(user);
+  if (isExist) {
+    return m.send("_user is already banned_")
+  } else {
+    sdata.push(user)
+    await storeData("banned", JSON.stringify(sdata, null, 2))
+    return m.send("_user is now banned_")
+  }
+})
+
+kord({
+  cmd: "unban",
+  desc: "unbans an already banned user",
+  fromMe: true,
+  type: "bot",
+  }, async (m, text) => {
+    let user;
+if (m.chat.endsWith("@g.us")) {
+  if (m.mentionedJid?.length) {
+  user = m.mentionedJid[0];
+} else if (m.quoted?.sender) {
+  user = m.quoted.sender;
+} else {
+  return m.send("_reply or mention a user_");
+}
+} else if (text) {
+  user = text.replace(/[^\d]/g, '');
+} else {
+  user = m.chat
+}
+
+  if (!user) return m.send("_reply or mention a user_")
+  let sdata = await getData("banned");
+if (!Array.isArray(sdata)) sdata = [];
+let isExist = sdata.includes(user);
+  if (!isExist) return m.send("_user is not banned currently_")
+  sdata = sdata.filter(entry => entry !== user)
+  await storeData("banned", JSON.stringify(sdata, null, 2))
+  return m.send("_user is now unbaned_")
+  }
+)
+
+
+
+kord({
+  cmd: 'uptime',
+  desc: 'checks the bot\'s uptime',
+  react: '💨',
+  fromMe: wtype,
+  type: 'bot'
+}, async(m, text) => {
+  var uptime = await secondsToHms(process.uptime())
+  return m.send(`_*Active since ${uptime} ago!..*_`)
+})
+
+kord({
+  cmd: 'quoted',
+  desc: 'resends the a replied messges of the quoted msg',
+  fromMe: wtype,
+  type: 'tools'
+}, async(m, text) => {
+  try {
+      if (!m.quoted) return m.send("*_reply to a replied message_*")
+      const qu = await m.getQuotedObj();
+      if (!qu) return m.send("*_reply to a message that replies to a message_*")
+      if (qu.quoted?.fakeObj) {
+    await m.forwardMessage(m.chat, qu.quoted.fakeObj);
+      } else {
+    await m.send("_No quoted message found._");
+      }
+    } catch (e) {
+      console.error(e)
+      m.send(`${e}`)
+    }
+})
+
+kord({
+  cmd: "list",
+  desc: "shows the list of available comamnds and their description",
+  react: "☯️",
+  fromMe: wtype,
+  type: 'help',
+}, async (m, text) => {
+  let count = 1
+      list = ""
+  commands.map((cmd => {
+  if (cmd.cmd && cmd.desc) {
+    const firstAlias = cmd.cmd.split('|')[0].trim();
+    list += `${count++} *${firstAlias}*\n_${cmd.desc}_\n\n`;
+  } else {
+    const fallback = cmd.cmd ? cmd.cmd.split('|')[0].trim() : '';
+    list += `${count++} *${fallback}*\n`;
+  }
+}));
+return m.send(list)
+})
+
+kord({
+  cmd: "restart|reboot",
+  desc: "restart ths bot",
+  fromMe: true,
+  type: "process",
+}, async (m, text) => {
+  try {
+    await m.send("_𝌫 restarting..._")
+    exec("npx pm2 restart kord-v2", (err) => {
+        if (err) {
+          m.send(`error: ${err}`);
+          return;
+        }
+    });
+  } catch (err) {
+    console.error
+    return await m.send(`error..: ${err}`)
+  }
+})
+
+kord({
+  cmd: "shutdown",
+  desc: "shut the bot down (you'll have to restart on server)",
+  fromMe: true,
+  type: "process",
+}, async (m, text) => {
+  try {
+    await m.send("_𝌫 shutting down..._")
+    exec("npx pm2 stop kord-v2", (err) => {
+        if (err) {
+          m.send(`error: ${err}`);
+          return;
+        }
+    });
+  } catch (err) {
+    console.error
+    return await m.send(`error..: ${err}`)
+  }
+})
+
+
+kord({
+  cmd: "p-status",
+  desc: "checks process status",
+  fromMe: true,
+  type: "process"
+}, async (m, text) => {
+  try {
+    exec("npx pm2 status kord-v2", async (err, stdout, stderr) => {
+      if (err) {
+        await m.send(`Error: ${err}`);
+        return;
+      }
+      const lines = stdout.split('\n').filter(line => line.includes('kord-v2'));
+      if (lines.length === 0) {
+        await m.send("No Kord processes found running.");
+        return;
+      }
+      const processInfoList = lines.map(line => {
+        const parts = line.split('│').map(part => part.trim()).filter(Boolean);
+        
+        if (parts.length < 9) {
+          return null;
+        }
+        
+        return {
+          id: parts[0],
+          name: parts[1],
+          namespace: parts[2],
+          version: parts[3],
+          mode: parts[4], 
+          pid: parts[5],
+          uptime: parts[6],
+          restarts: parts[7],
+          status: parts[8],
+          cpu: parts[9],
+          memory: parts[10]
+        };
+      }).filter(Boolean);
+      
+      let statusMsg = `*❊ Bot Status*\n\n`;
+      
+      processInfoList.forEach((proc, index) => {
+        const statusSymbol = proc.status && proc.status.toLowerCase().includes('online') ? '✓' : '✗';
+        
+        statusMsg += `*Process #${proc.id}*: ${proc.name}\n`;
+        statusMsg += `${statusSymbol} *Status*: ${proc.status}\n`;
+        statusMsg += `*𝌫 Mode*: ${proc.mode}\n`;
+        statusMsg += `*𝌫 CPU*: ${proc.cpu}\n`;
+        statusMsg += `*𝌫 Memory*: ${proc.memory}\n`;
+        statusMsg += `*𝌫 Uptime*: ${proc.uptime}\n`;
+        statusMsg += `*𝌫 Version*: ${proc.version}\n`;
+        statusMsg += `*𝌫 Restarts*: ${proc.restarts}\n`;
+        
+        if (index < processInfoList.length - 1) {
+          statusMsg += `\n${'─'.repeat(20)}\n\n`;
+        }
+      });
+      await m.send(statusMsg);
+    });
+  } catch (e) {
+    console.error(e);
+    return await m.send(`Error: ${e}`);
+  }
+});
+
+kord({
+  cmd: "runtime",
+  desc: "get runtime of bot with cool display",
+  fromMe: wtype,
+  type: "bot",
+}, async (m, text) => {
+  try {
+    const uptimeSeconds = process.uptime();
+    const uptime = await secondsToHms(uptimeSeconds)
+    const memoryUsage = process.memoryUsage();
+    const memoryMB = (memoryUsage.heapUsed / 1024 / 1024).toFixed(2);
+    const currentTime = new Date().toLocaleString();
+    
+    let msg = `\`\`\`╔════════════════════════╗\n╠ 🤖 ${config().BOT_NAME} RUNTIME Status     ╣\n╠════════════════════════╝\n`
+    msg += `╠ ⏰ Uptime: ${uptime}\n`;
+    msg += `╠ 💾 Memory: ${memoryMB} MB\n`;
+    msg += `╠ 🔄 Process ID: ${process.pid}\n`;
+    msg += `╠ 📅 Time: ${currentTime}\n`;
+    msg += `╠ 🚀 Node: ${process.version}\n`;
+    msg += `╠ 💻 Platform: ${process.platform}\n`;
+    msg += "╠\n╠ ✨ Bot is running smoothly!\n";
+    msg += "╚════════════════════════```";
+
+    return await m.client.sendMessage(m.chat, {
+  text: msg,
+  contextInfo: {
+    externalAdReply: {
+      title: `${config().BOT_NAME} Runtime`,
+      body: `Uptime: ${uptime} | Memory: ${memoryMB}MB`,
+      mediaType: 1,
+      renderLargerThumbnail: false,
+      showAdAttribution: false,
+      sourceUrl: "https://kord-ai.web.id"
+    }
+  }
+})
+    
+  } catch (error) {
+    console.error('Error in runtime command:', error);
+    await m.send(`Error in runtime: ${error}`);
+  }
+});
+
+
+kord({
+  on: "all",
+  fromMe: false,
+}, async (m, text) => {
+  if (text.toLowerCase().includes("save") || text.toLowerCase().includes("download") || text.toLowerCase().includes("send")) {
+    const mtype = m.quoted.mtype
+    if (m.quoted.chat !== "status@broadcast") return
+    const buffer = mtype !== "extendedTextMessage" ? await m.quoted.download() : null
+    const caption = m.quoted.caption || m.quoted.text || ""
+    let adType = "text"
+    let content = caption
+    if (mtype === "imageMessage") {
+      adType = "image"
+      content = buffer
+    } else if (mtype === "videoMessage") {
+      adType = "video"
+      content = buffer
+    } else if (mtype === "audioMessage") {
+      adType = "audio"
+      content = buffer
+    }
+    return await m.reply(content, {
+      adType: adType,
+      caption: caption,
+      title: 'sᴛᴀᴛᴜs sᴀᴠᴇʀ',
+      body: 'From: ' + (m.quoted.pushName || '') + ' | ' + m.quoted.chat.split("@")[0],
+      renderLargerThumbnail: false,
+      showAdAttribution: true,
+      mediaType: 1
+    }, "ad")
+  }
+})
+
+
+kord({
+  cmd: "owner",
+  desc: "sends owner contact",
+  fromMe: wtype,
+  type: "bot"
+}, async (m, text) => {
+  const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:${config().OWNER_NAME}
+TEL;type=CELL;type=VOICE;waid=${config().OWNER_NUMBER}:${config().OWNER_NUMBER}
+END:VCARD`
+
+  const contactMsg = {
+    contacts: {
+      displayName: config().OWNER_NAME,
+      contacts: [{ vcard }]
+    }
+  }
+
+  return await m.client.sendMessage(m.chat, contactMsg, { quoted: m })
+})
+
+kord({
+  cmd: "repo|sc|script",
+  desc: "send repository link of the bot",
+  fromMe: wtype,
+  type: "bot"
+}, async (m, text) => {
+  const msg = 
+`╔═════《 My Repository 》═════╗
+╠ Link: https://github.com/M3264/Kord-Ai
+╠ Description: WhatsApp Bot built with Baileys
+╚═════════════════════════════╝`
+
+  return await m.send(msg)
+})
+
+kord({
+    cmd: "update",
+    desc: "update bot",
+    fromMe: true,
+    type: "bot",
+}, async (m, text) => {
+    await updateBot(m, text)
+})
