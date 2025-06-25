@@ -269,7 +269,12 @@ kord({
   type: "utilities",
 }, async (m, text) => {
   try {
-    if (!m.quoted?.viewOnce || !m.quoted?.viewOnceMessageV2 ) return await m.send("_*𝌫 Reply To A Viewonce Message*_");
+    if (
+  !m.quoted?.viewOnce &&
+  !m.quoted?.viewOnceMessageV2 &&
+  !m.quoted?.viewOnceMessageV2Extension
+)
+  return await m.send("_*𝌫 Reply To A Viewonce Message*_");
     var damn = await m.client.dlandsave(m.quoted);
     let msg;
     if (m.quoted.image) {
@@ -296,7 +301,12 @@ kord({
 }, async (m, text) => {
   try {
     if (text.toLowerCase().includes(config().VV_CMD)) {
-      if (!m.quoted?.viewOnce || !m.quoted?.viewOnceMessageV2  ) return;
+      if (
+  !m.quoted?.viewOnce &&
+  !m.quoted?.viewOnceMessageV2 &&
+  !m.quoted?.viewOnceMessageV2Extension
+)
+  return
       var damn = await m.client.dlandsave(m.quoted);
       let msg;
       if (m.quoted.image) {
