@@ -270,23 +270,26 @@ kord({
 }, async (m, text) => {
   try {
     if (
-  !m.quoted?.viewOnce &&
-  !m.quoted?.viewOnceMessageV2 &&
-  !m.quoted?.viewOnceMessageV2Extension
-)
-  return await m.send("_*𝌫 Reply To A Viewonce Message*_");
-    var damn = await m.client.dlandsave(m.quoted);
+      !m.quoted?.viewOnce &&
+      !m.quoted?.viewOnceMessageV2 &&
+      m.quoted?.mtype !== 'viewOnceMessageV2Extension'
+    )
+      return await m.send("_*𝌫 Reply To A Viewonce Message*_");
+
+    const damn = await m.client.dlandsave(m.quoted);
     let msg;
-    if (m.quoted.image) {
+
+    if (m.quoted.image || m.quoted.type === "imageMessage") {
       msg = { image: { url: damn }, caption: m.quoted.caption || "" };
-    } else if (m.quoted.video) {
+    } else if (m.quoted.video || m.quoted.type === "videoMessage") {
       msg = { video: { url: damn }, caption: m.quoted.caption || "" };
-    } else if (m.quoted.audio) {
+    } else if (m.quoted.audio || m.quoted?.message?.audioMessage) {
       msg = { audio: { url: damn }, ptt: false, caption: m.quoted.caption || "" };
     } else {
       await require("fs").promises.unlink(damn);
       return await m.send("_*Unsupported media type*_");
     }
+
     await m.client.sendMessage(m.chat, msg, { quoted: m });
     await require("fs").promises.unlink(damn);
   } catch (err) {
@@ -302,30 +305,32 @@ kord({
   try {
     if (text.toLowerCase().includes(config().VV_CMD)) {
       if (
-  !m.quoted?.viewOnce &&
-  !m.quoted?.viewOnceMessageV2 &&
-  !m.quoted?.viewOnceMessageV2Extension
-)
-  return
-      var damn = await m.client.dlandsave(m.quoted);
-      let msg;
-      if (m.quoted.image) {
-        msg = { image: { url: damn }, caption: m.quoted.caption || "" };
-      } else if (m.quoted.video) {
-        msg = { video: { url: damn }, caption: m.quoted.caption || "" };
-      } else if (m.quoted.audio) {
-        msg = { audio: { url: damn }, ptt: false, caption: m.quoted.caption || "" };
+        !m.quoted?.viewOnce &&
+        !m.quoted?.viewOnceMessageV2 &&
+        m.quoted?.mtype !== "viewOnceMessageV2Extension"
+      ) return
+
+      const damn = await m.client.dlandsave(m.quoted)
+      let msg
+
+      if (m.quoted.image || m.quoted.type === "imageMessage") {
+        msg = { image: { url: damn }, caption: m.quoted.caption || "" }
+      } else if (m.quoted.video || m.quoted.type === "videoMessage") {
+        msg = { video: { url: damn }, caption: m.quoted.caption || "" }
+      } else if (m.quoted.audio || m.quoted?.message?.audioMessage) {
+        msg = { audio: { url: damn }, ptt: false, caption: m.quoted.caption || "" }
       } else {
-        await require("fs").promises.unlink(damn);
-        return;
+        await require("fs").promises.unlink(damn)
+        return
       }
-      await m.client.sendMessage(m.ownerJid, msg, { quoted: m.data });
-      await require("fs").promises.unlink(damn);
+
+      await m.client.sendMessage(m.ownerJid, msg, { quoted: m.data })
+      await require("fs").promises.unlink(damn)
     }
   } catch (e) {
-    console.error("Error in vv", e);
+    console.error("Error in vv", e)
   }
-});
+})
 
 kord({
   cmd: "pdf",
