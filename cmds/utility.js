@@ -1,1 +1,641 @@
-const a0_0x1fea6f=a0_0x2773;(function(_0x1205e6,_0xd6abec){const _0x2166e5=a0_0x2773,_0x55e65a=_0x1205e6();while(!![]){try{const _0x31bd90=parseInt(_0x2166e5(0x197))/0x1*(-parseInt(_0x2166e5(0x191))/0x2)+-parseInt(_0x2166e5(0x1fc))/0x3*(-parseInt(_0x2166e5(0x15d))/0x4)+-parseInt(_0x2166e5(0x1f7))/0x5*(parseInt(_0x2166e5(0x1a1))/0x6)+-parseInt(_0x2166e5(0x1a7))/0x7*(parseInt(_0x2166e5(0x13f))/0x8)+-parseInt(_0x2166e5(0x178))/0x9*(parseInt(_0x2166e5(0x206))/0xa)+-parseInt(_0x2166e5(0x130))/0xb+parseInt(_0x2166e5(0x1b0))/0xc;if(_0x31bd90===_0xd6abec)break;else _0x55e65a['push'](_0x55e65a['shift']());}catch(_0x5dc76b){_0x55e65a['push'](_0x55e65a['shift']());}}}(a0_0x2fcb,0xe0600));function a0_0x2773(_0x20d273,_0x398be9){const _0x2fcbff=a0_0x2fcb();return a0_0x2773=function(_0x2773bf,_0x4266bf){_0x2773bf=_0x2773bf-0x11b;let _0x4cac14=_0x2fcbff[_0x2773bf];return _0x4cac14;},a0_0x2773(_0x20d273,_0x398be9);}const {kord,extractUrlsFromString,getJson,talkNote,prefix,wtype,config,ss}=require(a0_0x1fea6f(0x1ba)),fs=require('fs'),path=require(a0_0x1fea6f(0x1ce)),PDFDocument=require(a0_0x1fea6f(0x169)),fetch=require(a0_0x1fea6f(0x148)),{tiny,fancytext,listall}=require(a0_0x1fea6f(0x1a9)),os=require('os'),sharp=require(a0_0x1fea6f(0x132)),ffmpeg=require(a0_0x1fea6f(0x162)),http=require('http'),{getDevice}=require(a0_0x1fea6f(0x126));function a0_0x2fcb(){const _0xed7c9a=['*reply\x20to\x20text/provide\x20text\x20with\x20lang\x20code*\x0a_example:\x20','Helvetica','ngl','error','VV_CMD','ip|ipbot','&device=mobile','temp_max','get\x20ip\x20for\x20the\x20bot','url','wind','readmore\x20Hello\x20this\x20is\x20visible\x20|readmore|\x20this\x20is\x20hidden_','sendMessage','react','document','_*provide\x20or\x20reply\x20some\x20text*_\x0a_example:\x20','end','_what\x20do\x20you\x20want\x20to\x20define?_','./text.pdf','viewOnce','toLocaleTimeString','humidity','save','*_Your\x20Shortened\x20URL_*\x0a\x0a','buffer','unlinkSync','speed','error:\x20','_reply\x20to\x20a\x20user\x20or\x20mention\x20a\x20user.._','_Provide\x20a\x20link_','\x0a```','https://tinyurl.com/api-create.php?url=','https://kord-api.vercel.app/ngl?username=','sea_level','_*Images\x20saved!*_\x0a_Total\x20Images:\x20','\x0a\x20\x0a>\x20definitions\x20might\x20not\x20be\x20accurate','Failed\x20to\x20save\x20image:\x20','vv\x20plugin','*THE\x20BIBLE*\x0a\x0a_*Reference:\x20','clouds','2365kikLJz','*Compression\x20Error:*\x20','>\x20Could\x20not\x20add\x20image\x20','°N,\x20','https://puppeteer-on-vercel-roan.vercel.app/ss?url=','3RKVQEP','finish','success','\x20=\x20','bible','>\x20here\x27s\x20your\x20screenshot','-vf\x20scale=-2:480','No\x20valid\x20images\x20were\x20found\x20to\x20convert','en-US','resend\x20a\x20viewonce\x20media\x20as\x20a\x20normal\x20media','76060kcfwpM','_*reply\x20to\x20an\x20image/video*_','\x20hPa\x0a➣\x20Ground\x20Level\x20:\x20','°C\x20/\x20','list','\x0a♜\x20Sunset\x20\x20\x20\x20\x20\x20\x20:\x20','pdf','screenshots\x20a\x20given\x20url\x20live\x20page(Mobile\x20version)','readdirSync','2-digit','now','send\x20message\x20to\x20the\x20ngl\x20api\x20(username\x20and\x20message)','baileys','tinyurl|shorten-url','-maxrate\x20800k','addPage','>\x20compressed\x20image..','https://ab-text-voice.abrahamdw882.workers.dev/?q=','-bufsize\x201200k','perform\x20a\x20calculation','search\x20wiki','media','16255470DdLrGE','utilities','sharp','pipe','define|whatis','Error\x20in\x20vv','convert\x20audio\x20or\x20video\x20to\x20text','all','http://api.urbandictionary.com/v0/define?term=','sstab','text\x20to\x20speech','\x20username:hello,\x20i\x20am\x20a\x20boy_','dlandsave','Failed\x20to\x20send\x20PDF:\x20','caption','24008TvQIby','LANG_CODE','sys','*sorry,\x20i\x20encountered\x20an\x20error..*','grnd_level','*provide\x20reference*\x0a_example:\x20bible\x20john\x203:16_','https://kord-api.vercel.app/translate?text=','sunset','.jpg','node-fetch','main','https://en.wikipedia.org/api/rest_v1/page/summary/','\x20hPa\x0a➣\x20Sea\x20Level\x20\x20\x20\x20:\x20','key','return\x20walink\x20of\x20either\x20replied/mention/chat\x20user','upload','defines\x20given\x20text','Result:\x20','fromCharCode','\x0a◈\x20_*Word:*_\x20','chat','axios','compress','sender','video',')\x0a➥\x20Coordinates\x20\x20:\x20✷\x20','error\x20in\x20compress\x20cmd','\x20hPa\x0a\x0a✱\x20Visibility\x20\x20\x20:\x20','jpeg','&message=','501736fElrrT','description','temp_min','*compressed\x20video\x20...*','endsWith','fluent-ffmpeg','https://wa.me/','\x20m/s\x20↣\x20','justify','compress\x20image/video','font','toLowerCase','pdfkit','length','match','_*provide\x20msg*_\x0a_example:\x20','°C\x0a✱\x20Min\x20/\x20Max\x20\x20\x20\x20:\x20','test','lat','existsSync','error!\x20','createWriteStream','text','-preset\x20faster','title','data','%\x0a\x0a♜\x20Sunrise\x20\x20\x20\x20\x20\x20:\x20','603uDUeRy','renameSync','repeat','-crf\x2028','Invalid\x20characters\x20in\x20calculation','&code=','uploads\x20quoted\x20media\x20to\x20Kord\x27s\x20Cdn\x20and\x20sends\x20access\x20url(temporarily)','%\x0a✪\x20Pressure\x20\x20\x20\x20\x20:\x20','application/pdf','readFileSync','https://api.openweathermap.org/data/2.5/weather?q=','_reply\x20to\x20a\x20media\x20message_','image','lon','_*error!*_','Kord-Ai','*Fancy\x20text\x20generator*\x0a\x0a_*Example:\x20.fancy\x201\x20kord*_\x0a\x0a','_*reply/provide\x20a\x20valid\x20link!*_','*error!*','quoted','forEach','mentionedJid','wm|walink','temp','Converts\x20image\x20to\x20PDF\x20or\x20text\x20to\x20PDF','42422bURyRO','change\x20font\x20of\x20text','indexOf','visibility','url|tourl|upload','promises','23zZldSz','slice','client','center','join','copyFileSync','*provide\x20both\x20username\x20and\x20message*\x0a_example:\x20','*provide\x20a\x20query\x20to\x20search*','*_\x0a```','reply','978mjZCbB','makes\x20shortened\x20url\x20Using\x20the\x20tinyurl\x20api','-c:a\x20aac','send','N/A','split','3682ZHGNHC','wiki','../core/store/style-font','weather','sunrise','message','tts','°\x0a✽\x20Cloud\x20Cover\x20\x20:\x20','&voicename=henry','59093472sJOBQF','-b:a\x2096k','°C\x20✛\x20Feels\x20like\x20','&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en','screenshots\x20a\x20given\x20url\x20live\x20page(tab\x20view)','feels_like','trim','map','\x20en\x20bonjour','replace','../core','reference','\x20→\x20','country','@g.us','error\x20in\x20translate:','audio','_No\x20images\x20found\x20in\x20pdf\x20folder._','toFile','outputOptions','_provide\x20a\x20location_','_reply\x20to\x20an\x20audio\x20or\x20video_','coord','screenshots\x20a\x20given\x20url\x20live\x20page','api.ipify.org','unlink','ssphone','_*𝌫\x20Reply\x20To\x20A\x20Viewonce\x20Message*_','\x20km\x0a➙\x20Wind\x20\x20\x20\x20\x20\x20\x20\x20\x20:\x20','-b:v\x20500k','path'];a0_0x2fcb=function(){return _0xed7c9a;};return a0_0x2fcb();}kord({'cmd':'ss','desc':a0_0x1fea6f(0x1c7),'fromMe':wtype,'type':a0_0x1fea6f(0x131)},async(_0x5f09d7,_0x4c64bb)=>{const _0x5db683=a0_0x1fea6f;try{let _0x4a48be;!_0x4c64bb?_0x4a48be=_0x5f09d7[_0x5db683(0x18b)]?.['text']:_0x4a48be=_0x4c64bb;if(!_0x4a48be)return _0x5f09d7[_0x5db683(0x1a4)]('_*reply/provide\x20a\x20valid\x20link!*_');_0x5f09d7['react']('⏰');var _0x19e9c3=await extractUrlsFromString(_0x4a48be),_0x286aaa=_0x19e9c3[0x0],_0x531bfe=await fetch(_0x5db683(0x1fb)+encodeURIComponent(_0x286aaa)+'&device=desktop'),_0x3956ed=await _0x531bfe['buffer']();return _0x5f09d7[_0x5db683(0x1a4)](_0x3956ed,{'caption':_0x5db683(0x201),'quoted':_0x5f09d7},'image');}catch(_0xad7f8a){return console[_0x5db683(0x1d2)](_0xad7f8a),_0x5f09d7[_0x5db683(0x1a4)](''+_0xad7f8a);}}),kord({'cmd':a0_0x1fea6f(0x139),'desc':a0_0x1fea6f(0x1b4),'fromMe':wtype,'type':a0_0x1fea6f(0x131)},async(_0x167e19,_0x3ece0c)=>{const _0xb0cd16=a0_0x1fea6f;try{let _0xb034ef;!_0x3ece0c?_0xb034ef=_0x167e19[_0xb0cd16(0x18b)]?.[_0xb0cd16(0x173)]:_0xb034ef=_0x3ece0c;if(!_0xb034ef)return _0x167e19[_0xb0cd16(0x1a4)](_0xb0cd16(0x189));_0x167e19[_0xb0cd16(0x1dc)]('⏰');var _0x11325e=await extractUrlsFromString(_0xb034ef),_0x27a1a3=_0x11325e[0x0],_0x4716d3=await fetch(_0xb0cd16(0x1fb)+encodeURIComponent(_0x27a1a3)+'&device=tablet'),_0x4aa04f=await _0x4716d3[_0xb0cd16(0x1e7)]();return _0x167e19['send'](_0x4aa04f,{'caption':'>\x20here\x27s\x20your\x20screenshot','quoted':_0x167e19},'image');}catch(_0x3442cd){return console[_0xb0cd16(0x1d2)](_0x3442cd),_0x167e19[_0xb0cd16(0x1a4)](''+_0x3442cd);}}),kord({'cmd':a0_0x1fea6f(0x1ca),'desc':a0_0x1fea6f(0x121),'fromMe':wtype,'type':a0_0x1fea6f(0x131)},async(_0x3326a1,_0x1881d5)=>{const _0x5c0170=a0_0x1fea6f;try{let _0x39d810;!_0x1881d5?_0x39d810=_0x3326a1[_0x5c0170(0x18b)]?.[_0x5c0170(0x173)]:_0x39d810=_0x1881d5;if(!_0x39d810)return _0x3326a1[_0x5c0170(0x1a4)]('_*reply/provide\x20a\x20valid\x20link!*_');_0x3326a1[_0x5c0170(0x1dc)]('⏰');var _0x5441a0=await extractUrlsFromString(_0x39d810),_0x5797c6=_0x5441a0[0x0],_0x1d6214=await fetch(_0x5c0170(0x1fb)+encodeURIComponent(_0x5797c6)+_0x5c0170(0x1d5)),_0x5a3747=await _0x1d6214[_0x5c0170(0x1e7)]();return _0x3326a1[_0x5c0170(0x1a4)](_0x5a3747,{'caption':_0x5c0170(0x201),'quoted':_0x3326a1},_0x5c0170(0x184));}catch(_0xabca1c){return console[_0x5c0170(0x1d2)](_0xabca1c),_0x3326a1[_0x5c0170(0x1a4)](''+_0xabca1c);}}),kord({'cmd':a0_0x1fea6f(0x1ad),'desc':a0_0x1fea6f(0x13a),'fromMe':wtype,'type':a0_0x1fea6f(0x131)},async(_0x1d9723,_0x3f194c)=>{const _0x4f8281=a0_0x1fea6f;try{if(!_0x3f194c)return _0x1d9723[_0x4f8281(0x1a4)]('_*What\x20do\x20you\x20want\x20me\x20to\x20say?*_');var _0x375c4a=await _0x1d9723['axios'](_0x4f8281(0x12b)+encodeURIComponent(_0x3f194c)+_0x4f8281(0x1af));return await _0x1d9723['send'](_0x375c4a[_0x4f8281(0x1d8)],{'mimetype':'audio/mpeg','ptt':!![],'quoted':_0x1d9723},_0x4f8281(0x1c0));}catch(_0x1eb1d0){return console['error'](err),await _0x1d9723[_0x4f8281(0x1a4)](_0x4f8281(0x186));}}),kord({'cmd':'audio2text|text','desc':a0_0x1fea6f(0x136),'fromMe':wtype,'type':a0_0x1fea6f(0x131)},async(_0x4f06d1,_0x2993f4)=>{const _0x19075d=a0_0x1fea6f;if(!(_0x4f06d1[_0x19075d(0x18b)]['audio']||_0x4f06d1[_0x19075d(0x18b)][_0x19075d(0x157)]))return await _0x4f06d1[_0x19075d(0x1a4)](_0x19075d(0x1c5));var _0x14b5f4=await _0x4f06d1[_0x19075d(0x199)][_0x19075d(0x13c)](_0x4f06d1[_0x19075d(0x18b)]),_0x260b2b=await talkNote(_0x14b5f4),_0x495f20=_0x260b2b[_0x19075d(0x173)];await _0x4f06d1[_0x19075d(0x1a4)](''+_0x495f20),await require('fs')[_0x19075d(0x196)][_0x19075d(0x1c9)](_0x14b5f4);}),kord({'cmd':a0_0x1fea6f(0x18e),'desc':a0_0x1fea6f(0x14d),'fromMe':wtype,'type':a0_0x1fea6f(0x131)},async(_0x163107,_0x1f5754)=>{const _0x456fce=a0_0x1fea6f;try{let _0x4beea1;if(_0x163107[_0x456fce(0x18d)]&&_0x163107['mentionedJid'][0x0])_0x4beea1=_0x163107[_0x456fce(0x18d)][0x0]['replace'](/[^0-9]/g,'');else{if(_0x163107[_0x456fce(0x18b)])_0x4beea1=_0x163107[_0x456fce(0x18b)][_0x456fce(0x156)][_0x456fce(0x1b9)](/[^0-9]/g,'');else{if(_0x163107[_0x456fce(0x153)]['endsWith'](_0x456fce(0x1be)))return _0x163107['send'](_0x456fce(0x1eb));_0x4beea1=_0x163107[_0x456fce(0x153)]['split']('@')[0x0];}}const _0x1eb148=_0x456fce(0x163)+_0x4beea1;return await _0x163107[_0x456fce(0x1a4)](_0x1eb148);}catch(_0x397567){return console['error'](_0x397567),_0x397567;}}),kord({'cmd':a0_0x1fea6f(0x195),'desc':'uploads\x20quoted\x20media\x20to\x20Kord\x27s\x20Cdn\x20and\x20sends\x20access\x20url(safe)','fromMe':wtype,'react':'🔗','type':a0_0x1fea6f(0x131)},async(_0x54b5dc,_0x599aa1)=>{const _0x562687=a0_0x1fea6f;if(!_0x54b5dc[_0x562687(0x18b)][_0x562687(0x12f)])return _0x54b5dc[_0x562687(0x1a4)]('_reply\x20to\x20a\x20media\x20message_');var _0x11ce7c=await _0x54b5dc[_0x562687(0x199)][_0x562687(0x13c)](_0x54b5dc[_0x562687(0x18b)]),_0x5396d8=await _0x54b5dc[_0x562687(0x14e)](_0x11ce7c);await _0x54b5dc[_0x562687(0x1a4)](''+_0x5396d8),await require('fs')['promises'][_0x562687(0x1c9)](_0x11ce7c);}),kord({'cmd':'temp-url|temp-upload','desc':a0_0x1fea6f(0x17e),'fromMe':wtype,'react':'♻️','type':a0_0x1fea6f(0x131)},async(_0x4fa5b2,_0x4c9cb8)=>{const _0x17632e=a0_0x1fea6f;if(!_0x4fa5b2[_0x17632e(0x18b)]['media'])return _0x4fa5b2[_0x17632e(0x1a4)](_0x17632e(0x183));var _0x49170b=await _0x4fa5b2[_0x17632e(0x199)]['dlandsave'](_0x4fa5b2[_0x17632e(0x18b)]),_0x1fb9c9=await _0x4fa5b2[_0x17632e(0x14e)](_0x49170b,_0x17632e(0x18f));await _0x4fa5b2['send'](''+_0x1fb9c9),await require('fs')[_0x17632e(0x196)][_0x17632e(0x1c9)](_0x49170b);}),kord({'cmd':'readmore','desc':'adds\x20readmore\x20to\x20given\x20text','fromMe':wtype,'type':a0_0x1fea6f(0x131)},async(_0xf1e602,_0x145c9a)=>{const _0x398329=a0_0x1fea6f;let _0x48ca72=_0x145c9a||_0xf1e602[_0x398329(0x18b)]?.['text'];if(!_0x48ca72)return _0xf1e602[_0x398329(0x1a4)](_0x398329(0x1de)+prefix+_0x398329(0x1da));const _0x583a59=String[_0x398329(0x151)](0x200e)[_0x398329(0x17a)](0xfa1),_0x1a3ee8=_0x48ca72[_0x398329(0x1b9)](/(\|readmore\|)/i,_0x583a59);return await _0xf1e602[_0x398329(0x1a4)](_0x1a3ee8);}),kord({'cmd':a0_0x1fea6f(0x134),'desc':a0_0x1fea6f(0x14f),'react':'🧩','fromMe':wtype,'type':a0_0x1fea6f(0x131)},async(_0xd5cce6,_0x729afa)=>{const _0x1e6379=a0_0x1fea6f;if(!_0x729afa)return _0xd5cce6[_0x1e6379(0x1a4)](_0x1e6379(0x1e0));const _0x370f93=_0x729afa?.[_0x1e6379(0x1b6)]()?.[_0x1e6379(0x1a6)](/\s+/)[0x0];var _0x244c66=await _0xd5cce6[_0x1e6379(0x154)](_0x1e6379(0x138)+_0x370f93),_0x35c1d4=_0x244c66[_0x1e6379(0x11e)][0x0];const _0x4cbdf0=_0x1e6379(0x152)+_0x370f93+'\x0a◈\x20_*Definition:*_\x20'+_0x35c1d4['definition'][_0x1e6379(0x1b9)](/\[/g,'')[_0x1e6379(0x1b9)](/\]/g,'')+'\x0a◈\x20_*Example:*_\x20'+_0x35c1d4['example']['replace'](/\[/g,'')[_0x1e6379(0x1b9)](/\]/g,'')+_0x1e6379(0x1f2);return await _0xd5cce6[_0x1e6379(0x1a4)](_0x4cbdf0);}),kord({'cmd':a0_0x1fea6f(0x1aa),'desc':'gives\x20the\x20weather\x20information\x20about\x20given\x20country','react':'🌦️','fromMe':wtype,'type':a0_0x1fea6f(0x131)},async(_0x1ab023,_0x23e60d)=>{const _0x58d54c=a0_0x1fea6f;if(!_0x23e60d)return await _0x1ab023[_0x58d54c(0x1a4)](_0x58d54c(0x1c4));const _0x3750d4=await _0x1ab023[_0x58d54c(0x154)](_0x58d54c(0x182)+_0x23e60d+_0x58d54c(0x1b3)),_0x11f9fb=_0x3750d4,_0x199f61=new Date(_0x11f9fb[_0x58d54c(0x141)][_0x58d54c(0x1ab)]*0x3e8)['toLocaleTimeString'](_0x58d54c(0x204),{'hour':_0x58d54c(0x123),'minute':_0x58d54c(0x123)}),_0x14ebd7=new Date(_0x11f9fb['sys'][_0x58d54c(0x146)]*0x3e8)[_0x58d54c(0x1e3)](_0x58d54c(0x204),{'hour':_0x58d54c(0x123),'minute':_0x58d54c(0x123)}),_0x4b877e=('```\x0a✤\x20Weather\x20Report\x20✤\x0a➥\x20Location\x20\x20\x20\x20\x20:\x20✪\x20'+_0x11f9fb['name']+'\x20('+_0x11f9fb['sys'][_0x58d54c(0x1bd)]+_0x58d54c(0x158)+_0x11f9fb[_0x58d54c(0x1c6)][_0x58d54c(0x16f)]+_0x58d54c(0x1fa)+_0x11f9fb[_0x58d54c(0x1c6)][_0x58d54c(0x185)]+'°E\x0a➥\x20Condition\x20\x20\x20\x20:\x20✭\x20'+_0x11f9fb[_0x58d54c(0x1aa)][0x0][_0x58d54c(0x149)]+_0x58d54c(0x1bc)+_0x11f9fb[_0x58d54c(0x1aa)][0x0][_0x58d54c(0x15e)]+'\x0a\x0a✽\x20Temperature\x20\x20:\x20'+_0x11f9fb[_0x58d54c(0x149)][_0x58d54c(0x18f)]+_0x58d54c(0x1b2)+_0x11f9fb[_0x58d54c(0x149)][_0x58d54c(0x1b5)]+_0x58d54c(0x16d)+_0x11f9fb['main'][_0x58d54c(0x15f)]+_0x58d54c(0x11d)+_0x11f9fb[_0x58d54c(0x149)][_0x58d54c(0x1d6)]+'°C\x0a✚\x20Humidity\x20\x20\x20\x20\x20:\x20'+_0x11f9fb[_0x58d54c(0x149)][_0x58d54c(0x1e4)]+_0x58d54c(0x17f)+_0x11f9fb[_0x58d54c(0x149)]['pressure']+_0x58d54c(0x14b)+(_0x11f9fb['main'][_0x58d54c(0x1f0)]||_0x58d54c(0x1a5))+_0x58d54c(0x11c)+(_0x11f9fb['main'][_0x58d54c(0x143)]||_0x58d54c(0x1a5))+_0x58d54c(0x15a)+_0x11f9fb[_0x58d54c(0x194)]/0x3e8+_0x58d54c(0x1cc)+_0x11f9fb[_0x58d54c(0x1d9)][_0x58d54c(0x1e9)]+_0x58d54c(0x164)+_0x11f9fb['wind']['deg']+_0x58d54c(0x1ae)+_0x11f9fb[_0x58d54c(0x1f6)]['all']+_0x58d54c(0x177)+_0x199f61+_0x58d54c(0x11f)+_0x14ebd7+_0x58d54c(0x1ed))[_0x58d54c(0x1b6)]();return await _0x1ab023[_0x58d54c(0x1a4)](_0x4b877e);}),kord({'cmd':a0_0x1fea6f(0x127),'desc':a0_0x1fea6f(0x1a2),'fromMe':wtype,'type':a0_0x1fea6f(0x131)},async(_0x161b02,_0x1120b6)=>{const _0x38d5f1=a0_0x1fea6f;if(!_0x1120b6)return _0x161b02[_0x38d5f1(0x1a4)](_0x38d5f1(0x1ec));try{link=_0x1120b6[_0x38d5f1(0x1a6)]('\x20')[0x0];let _0x2bc0c1=await _0x161b02[_0x38d5f1(0x154)](_0x38d5f1(0x1ee)+link);return await _0x161b02[_0x38d5f1(0x1a4)](_0x38d5f1(0x1e6)+_0x2bc0c1);}catch(_0x66634c){console['log'](_0x66634c);}}),kord({'cmd':'vv','desc':a0_0x1fea6f(0x205),'fromMe':wtype,'react':'🔓','type':a0_0x1fea6f(0x131)},async(_0x2e7abc,_0x1ebf00)=>{const _0x4fc963=a0_0x1fea6f;try{if(!_0x2e7abc[_0x4fc963(0x18b)]?.[_0x4fc963(0x1e2)])return await _0x2e7abc['send'](_0x4fc963(0x1cb));var _0x5927cd=await _0x2e7abc['client'][_0x4fc963(0x13c)](_0x2e7abc[_0x4fc963(0x18b)]);let _0x2174a7;if(_0x2e7abc[_0x4fc963(0x18b)]['image'])_0x2174a7={'image':{'url':_0x5927cd},'caption':_0x2e7abc[_0x4fc963(0x18b)][_0x4fc963(0x13e)]||''};else{if(_0x2e7abc[_0x4fc963(0x18b)][_0x4fc963(0x157)])_0x2174a7={'video':{'url':_0x5927cd},'caption':_0x2e7abc[_0x4fc963(0x18b)][_0x4fc963(0x13e)]||''};else{if(_0x2e7abc['quoted'][_0x4fc963(0x1c0)])_0x2174a7={'audio':{'url':_0x5927cd},'ptt':![],'caption':_0x2e7abc['quoted']['caption']||''};else return await require('fs')['promises'][_0x4fc963(0x1c9)](_0x5927cd),await _0x2e7abc[_0x4fc963(0x1a4)]('_*Unsupported\x20media\x20type*_');}}await _0x2e7abc['client']['sendMessage'](_0x2e7abc[_0x4fc963(0x153)],_0x2174a7,{'quoted':_0x2e7abc}),await require('fs')[_0x4fc963(0x196)]['unlink'](_0x5927cd);}catch(_0x2bc728){console['error'](_0x4fc963(0x1f4),_0x2bc728);}}),kord({'on':a0_0x1fea6f(0x137),'fromMe':!![]},async(_0x182bda,_0x515d49)=>{const _0x20c40e=a0_0x1fea6f;try{if(_0x515d49[_0x20c40e(0x168)]()['includes'](config()[_0x20c40e(0x1d3)])){if(!_0x182bda[_0x20c40e(0x18b)]?.['viewOnce'])return;var _0x5a2d62=await _0x182bda['client'][_0x20c40e(0x13c)](_0x182bda[_0x20c40e(0x18b)]);let _0x3ba6f0;if(_0x182bda[_0x20c40e(0x18b)][_0x20c40e(0x184)])_0x3ba6f0={'image':{'url':_0x5a2d62},'caption':_0x182bda[_0x20c40e(0x18b)]['caption']||''};else{if(_0x182bda['quoted'][_0x20c40e(0x157)])_0x3ba6f0={'video':{'url':_0x5a2d62},'caption':_0x182bda[_0x20c40e(0x18b)]['caption']||''};else{if(_0x182bda[_0x20c40e(0x18b)]['audio'])_0x3ba6f0={'audio':{'url':_0x5a2d62},'ptt':![],'caption':_0x182bda[_0x20c40e(0x18b)][_0x20c40e(0x13e)]||''};else{await require('fs')[_0x20c40e(0x196)][_0x20c40e(0x1c9)](_0x5a2d62);return;}}}await _0x182bda[_0x20c40e(0x199)][_0x20c40e(0x1db)](_0x182bda['ownerJid'],_0x3ba6f0,{'quoted':_0x182bda['data']}),await require('fs')[_0x20c40e(0x196)][_0x20c40e(0x1c9)](_0x5a2d62);}}catch(_0xbe6f43){console[_0x20c40e(0x1d2)](_0x20c40e(0x135),_0xbe6f43);}}),kord({'cmd':'pdf','desc':a0_0x1fea6f(0x190),'fromMe':wtype,'type':a0_0x1fea6f(0x131)},async(_0x35b00b,_0x5103be)=>{const _0x1df661=a0_0x1fea6f;try{if(_0x5103be&&!_0x5103be['startsWith']('send')){const _0x4eed05=new PDFDocument(),_0x5334ba=_0x1df661(0x1e1),_0x1d82d8=fs[_0x1df661(0x172)](_0x5334ba);_0x4eed05[_0x1df661(0x133)](_0x1d82d8),_0x4eed05['font'](_0x1df661(0x1d0),0xc)[_0x1df661(0x173)](_0x5103be,0x32,0x32,{'align':_0x1df661(0x165)}),_0x4eed05[_0x1df661(0x1df)](),await new Promise(_0x59a8ed=>_0x1d82d8['on'](_0x1df661(0x1fd),_0x59a8ed));try{const _0x2d8944=fs[_0x1df661(0x181)](_0x5334ba);await _0x35b00b[_0x1df661(0x1a4)](_0x2d8944,{'mimetype':_0x1df661(0x180),'fileName':'text.pdf','quoted':_0x35b00b},'document');}catch(_0x467f24){await _0x35b00b[_0x1df661(0x1a4)](_0x1df661(0x13d)+_0x467f24[_0x1df661(0x1ac)]);}finally{try{fs[_0x1df661(0x1e8)](_0x5334ba);}catch(_0x35548f){}}return;}const _0x158f5f='./pdf';if(!fs[_0x1df661(0x170)](_0x158f5f))fs['mkdirSync'](_0x158f5f);if(_0x5103be===_0x1df661(0x1a4)){const _0x3c4c00=fs[_0x1df661(0x122)](_0x158f5f)['filter'](_0xcbee35=>_0xcbee35[_0x1df661(0x168)]()[_0x1df661(0x161)](_0x1df661(0x147)))[_0x1df661(0x1b7)](_0x267d1c=>path[_0x1df661(0x19b)](_0x158f5f,_0x267d1c));if(_0x3c4c00[_0x1df661(0x16a)]===0x0)return await _0x35b00b[_0x1df661(0x1a4)](_0x1df661(0x1c1));const _0x3da4a8=new PDFDocument(),_0x227d9f='./image.pdf',_0x1b3301=fs[_0x1df661(0x172)](_0x227d9f);_0x3da4a8[_0x1df661(0x133)](_0x1b3301);let _0x3cc300=0x0;for(const _0x5ac82b of _0x3c4c00){try{_0x3da4a8[_0x1df661(0x129)](),_0x3da4a8[_0x1df661(0x184)](_0x5ac82b,{'fit':[0x1f4,0x2bc],'align':_0x1df661(0x19a),'valign':_0x1df661(0x19a)}),_0x3cc300++;}catch(_0xba2282){await _0x35b00b[_0x1df661(0x1a4)](_0x1df661(0x1f9)+path['basename'](_0x5ac82b)+':\x20'+_0xba2282['message']);}}_0x3cc300===0x0&&_0x3da4a8[_0x1df661(0x173)](_0x1df661(0x203),0x64,0x64);_0x3da4a8[_0x1df661(0x1df)](),await new Promise(_0xaf0638=>_0x1b3301['on']('finish',_0xaf0638));try{const _0x34c916=fs[_0x1df661(0x181)](_0x227d9f);await _0x35b00b[_0x1df661(0x1a4)](_0x34c916,{'mimetype':_0x1df661(0x180),'fileName':'image.pdf','quoted':_0x35b00b},_0x1df661(0x1dd));}catch(_0x468069){await _0x35b00b[_0x1df661(0x1a4)]('Failed\x20to\x20send\x20PDF:\x20'+_0x468069[_0x1df661(0x1ac)]);}try{fs['unlinkSync'](_0x227d9f),fs['readdirSync'](_0x158f5f)[_0x1df661(0x18c)](_0x56145a=>{const _0x527529=_0x1df661;fs[_0x527529(0x1e8)](path[_0x527529(0x19b)](_0x158f5f,_0x56145a));}),fs['rmdirSync'](_0x158f5f);}catch(_0x378cb0){}}else{if(!_0x35b00b[_0x1df661(0x18b)]?.[_0x1df661(0x184)])return await _0x35b00b[_0x1df661(0x1a4)]('_*𝌫\x20Provide\x20text/reply\x20to\x20a\x20image*_\x0aExample:\x20```.pdf\x20this\x20is\x20a\x20text```\x0aUse\x20```.pdf\x20send```\x20to\x20get\x20the\x20pdf');const _0x2eca5f=await _0x35b00b['client']['dlandsave'](_0x35b00b['quoted']);if(!fs[_0x1df661(0x170)](_0x2eca5f))return await _0x35b00b[_0x1df661(0x1a4)]('Error:\x20Downloaded\x20file\x20does\x20not\x20exist.');let _0x5e7448=0x0,_0x49595a;do{_0x49595a=path[_0x1df661(0x19b)](_0x158f5f,_0x1df661(0x120)+(_0x5e7448===0x0?'':_0x5e7448)+'.jpg'),_0x5e7448++;}while(fs[_0x1df661(0x170)](_0x49595a));try{fs[_0x1df661(0x19c)](_0x2eca5f,_0x49595a),fs[_0x1df661(0x1e8)](_0x2eca5f);}catch(_0x3c780a){try{fs[_0x1df661(0x179)](_0x2eca5f,_0x49595a);}catch(_0x56fb0b){return fs[_0x1df661(0x1e8)](_0x2eca5f),await _0x35b00b[_0x1df661(0x1a4)](_0x1df661(0x1f3)+_0x56fb0b[_0x1df661(0x1ac)]);}}await _0x35b00b[_0x1df661(0x1a4)](_0x1df661(0x1f1)+fs[_0x1df661(0x122)](_0x158f5f)[_0x1df661(0x16a)]+'_');}}catch(_0x48b89b){await _0x35b00b[_0x1df661(0x1a4)](_0x1df661(0x1ea)+(_0x48b89b['message']||_0x48b89b));}}),kord({'cmd':'calc|calculate','desc':a0_0x1fea6f(0x12d),'fromMe':wtype,'type':a0_0x1fea6f(0x131)},async(_0x290f88,_0x3ad240)=>{const _0x303d68=a0_0x1fea6f;if(!_0x3ad240)return await _0x290f88['send']('❏\x20i\x20need\x20a\x20calculation.\x0a_example:_\x20.calc\x202+3');if(!/^[\d\s\+\-\*\/\(\)\.]+$/[_0x303d68(0x16e)](_0x3ad240))return await _0x290f88[_0x303d68(0x1a4)](_0x303d68(0x17c));const _0x5447ac=eval(_0x3ad240);await _0x290f88[_0x303d68(0x1a4)](_0x303d68(0x150)+_0x3ad240+_0x303d68(0x1ff)+_0x5447ac);}),kord({'cmd':'trt|translate','desc':'translate\x20text\x20to\x20english/given\x20lang\x20code','fromMe':wtype,'type':a0_0x1fea6f(0x131)},async(_0x195156,_0x2ea8fd,_0x1f2e2a)=>{const _0x733970=a0_0x1fea6f;try{if(!_0x2ea8fd)return await _0x195156[_0x733970(0x1a4)]('*reply\x20to\x20text/provide\x20text\x20with\x20lang\x20code*\x0a_example:\x20'+_0x1f2e2a+'\x20en\x20bonjour');var _0x47c662=_0x2ea8fd?.[_0x733970(0x1b6)]()?.['split'](/\s+/)[0x0],_0x59cd9f=_0x2ea8fd?.[_0x733970(0x1a6)]('\x20'),_0x4f0c2c=_0x59cd9f[0x0]||config()[_0x733970(0x140)],_0x1352f1=_0x195156[_0x733970(0x18b)]?.[_0x733970(0x173)]||_0x59cd9f[_0x733970(0x198)](0x1)[_0x733970(0x19b)]('\x20');if(!_0x59cd9f&&!_0x1352f1)return await _0x195156[_0x733970(0x1a4)](_0x733970(0x1cf)+_0x1f2e2a+_0x733970(0x1b8));var _0x4bd088=await _0x195156[_0x733970(0x154)](_0x733970(0x145)+_0x1352f1+_0x733970(0x17d)+_0x4f0c2c);if(_0x4bd088['status']==0x190)return await _0x195156['send']('*invalid\x20language\x20code\x20provided*');return await _0x195156[_0x733970(0x1a4)](''+_0x4bd088['translated']);}catch(_0x5cc73b){return console[_0x733970(0x1d2)](_0x733970(0x1bf),_0x5cc73b),await _0x195156[_0x733970(0x1a4)]('*error\x20ocuurred:*\x20'+_0x5cc73b);}}),kord({'cmd':a0_0x1fea6f(0x1d1),'desc':a0_0x1fea6f(0x125),'fromMe':wtype,'type':a0_0x1fea6f(0x131)},async(_0x53045b,_0x145e50,_0x15293b)=>{const _0x4c0a11=a0_0x1fea6f;if(!_0x145e50)return await _0x53045b[_0x4c0a11(0x1a4)](_0x4c0a11(0x19d)+_0x15293b+'\x20username:hello,\x20i\x20am\x20a\x20boy_');var _0x36c28a=_0x145e50['split'](':'),_0x4572d8=_0x36c28a[0x0]?.[_0x4c0a11(0x1b6)](),_0xff0725=_0x36c28a[_0x4c0a11(0x198)](0x1)[_0x4c0a11(0x19b)](':')[_0x4c0a11(0x1b6)]();if(!_0xff0725)return await _0x53045b[_0x4c0a11(0x1a4)](_0x4c0a11(0x16c)+_0x15293b+_0x4c0a11(0x13b));var _0x441da9=await _0x53045b['axios'](_0x4c0a11(0x1ef)+encodeURIComponent(_0x4572d8)+_0x4c0a11(0x15c)+encodeURIComponent(_0xff0725));return _0x441da9?.[_0x4c0a11(0x1fe)]?await _0x53045b['send']('*Message\x20Sent!*'):await _0x53045b[_0x4c0a11(0x1a4)](_0x4c0a11(0x142));}),kord({'cmd':a0_0x1fea6f(0x1d4),'desc':a0_0x1fea6f(0x1d7),'fromMe':wtype,'type':a0_0x1fea6f(0x131)},async _0x11ea4d=>{const _0xc30bbd=a0_0x1fea6f;http['get']({'host':_0xc30bbd(0x1c8),'port':0x50,'path':'/'},function(_0x1058ff){const _0xb88db9=_0xc30bbd;let _0xad8cfd='';_0x1058ff['on'](_0xb88db9(0x176),function(_0x3e4979){_0xad8cfd+=_0x3e4979;}),_0x1058ff['on'](_0xb88db9(0x1df),function(){const _0x4419cb=_0xb88db9;_0x11ea4d[_0x4419cb(0x1a4)]('*My\x20public\x20IP\x20address\x20is:*\x20'+_0xad8cfd);});})['on']('error',function(_0x18b740){const _0x41440e=_0xc30bbd;_0x11ea4d[_0x41440e(0x1a4)](_0x41440e(0x171)+_0x18b740);});}),kord({'cmd':a0_0x1fea6f(0x1a8),'desc':a0_0x1fea6f(0x12e),'fromMe':wtype,'type':a0_0x1fea6f(0x131)},async(_0x5aa2b3,_0x218345)=>{const _0x4edb9e=a0_0x1fea6f;if(!_0x218345)return await _0x5aa2b3[_0x4edb9e(0x1a4)](_0x4edb9e(0x19e));const _0x4da58b=await _0x5aa2b3[_0x4edb9e(0x154)](_0x4edb9e(0x14a)+encodeURIComponent(_0x218345));if(!_0x4da58b)return await _0x5aa2b3['send'](_0x4edb9e(0x18a));return await _0x5aa2b3[_0x4edb9e(0x1a4)]('_*'+_0x4da58b[_0x4edb9e(0x175)]+_0x4edb9e(0x19f)+_0x4da58b['extract']+'```');}),kord({'cmd':a0_0x1fea6f(0x200),'desc':'get\x20verse/verses\x20from\x20the\x20bible','fromMe':wtype,'type':'utilities'},async(_0x5c9bc1,_0x505318)=>{const _0x5d10c8=a0_0x1fea6f;if(!_0x505318)return await _0x5c9bc1[_0x5d10c8(0x1a4)](_0x5d10c8(0x144));var _0x123de7=_0x505318[_0x5d10c8(0x1b6)]();if(!_0x123de7)return await _0x5c9bc1[_0x5d10c8(0x1a4)](_0x5d10c8(0x144));var _0x1e0202=await _0x5c9bc1[_0x5d10c8(0x154)]('https://bible-api.com/'+encodeURIComponent(_0x123de7));return await _0x5c9bc1[_0x5d10c8(0x1a4)](_0x5d10c8(0x1f5)+_0x1e0202[_0x5d10c8(0x1bb)]+'*_\x0a'+_0x1e0202['text'][_0x5d10c8(0x1b6)]());}),kord({'cmd':a0_0x1fea6f(0x167),'desc':a0_0x1fea6f(0x192),'fromMe':wtype,'type':a0_0x1fea6f(0x131)},async(_0x4b10b0,_0x12cfea)=>{const _0x52da53=a0_0x1fea6f;if(!_0x12cfea){let _0x249c48=_0x52da53(0x188);return listall(_0x52da53(0x187))['forEach']((_0x8299ce,_0x5555c5)=>{_0x249c48+=_0x5555c5+0x1+'\x20'+_0x8299ce+'\x0a';}),await _0x4b10b0[_0x52da53(0x1a4)](''+_0x249c48);}const _0x516af2=parseInt(_0x12cfea[_0x52da53(0x1a6)]('\x20')[0x0],0xa);if(isNaN(_0x516af2))return await _0x4b10b0[_0x52da53(0x1a4)]('*invalid\x20font\x20number!*\x0a_example:\x20fancy\x201\x20kord_');const _0x49ee8f=await fancytext(_0x12cfea[_0x52da53(0x198)](_0x12cfea[_0x52da53(0x193)]('\x20')+0x1),_0x516af2);return await _0x4b10b0['send'](''+_0x49ee8f);}),kord({'cmd':a0_0x1fea6f(0x155),'desc':a0_0x1fea6f(0x166),'fromMe':wtype,'type':'utilities'},async(_0x33b773,_0xed5f9a)=>{const _0x2b60ac=a0_0x1fea6f;try{if(!(_0x33b773[_0x2b60ac(0x184)]||_0x33b773[_0x2b60ac(0x157)]||_0x33b773[_0x2b60ac(0x18b)][_0x2b60ac(0x184)]||_0x33b773[_0x2b60ac(0x18b)][_0x2b60ac(0x157)]))return await _0x33b773['send'](_0x2b60ac(0x11b));var _0x50ce7a=await _0x33b773[_0x2b60ac(0x199)][_0x2b60ac(0x13c)](_0x33b773[_0x2b60ac(0x184)]||_0x33b773[_0x2b60ac(0x157)]?_0x33b773:_0x33b773[_0x2b60ac(0x18b)]['image']||_0x33b773['quoted'][_0x2b60ac(0x157)]?_0x33b773[_0x2b60ac(0x18b)]:null),_0xd212b6=_0x50ce7a['split']('.')[0x1],_0xfdb1db=path[_0x2b60ac(0x19b)](bin,'compressed_'+Date[_0x2b60ac(0x124)]()+'.'+_0xd212b6);try{if(_0xd212b6[_0x2b60ac(0x16b)](/(jpg|jpeg|png|webp)/))await sharp(_0x50ce7a)['resize']({'width':0x320})[_0x2b60ac(0x15b)]({'quality':0x3c})[_0x2b60ac(0x1c2)](_0xfdb1db),await _0x33b773['send'](fs[_0x2b60ac(0x181)](_0xfdb1db),{'caption':_0x2b60ac(0x12a)},_0x2b60ac(0x184));else _0xd212b6[_0x2b60ac(0x16b)](/(mp4|mkv|avi)/)&&(await _0x33b773[_0x2b60ac(0x1a0)]('*_Compressing\x20video..._*\x20This\x20might\x20take\x20minutes.'),await new Promise((_0x1ad873,_0x3c19ae)=>{const _0x2f7e62=_0x2b60ac;ffmpeg(_0x50ce7a)[_0x2f7e62(0x1c3)](['-c:v\x20libx264',_0x2f7e62(0x174),_0x2f7e62(0x17b),_0x2f7e62(0x1cd),_0x2f7e62(0x128),_0x2f7e62(0x12c),_0x2f7e62(0x202),_0x2f7e62(0x1a3),_0x2f7e62(0x1b1)])[_0x2f7e62(0x1e5)](_0xfdb1db)['on'](_0x2f7e62(0x1df),_0x1ad873)['on'](_0x2f7e62(0x1d2),_0x3c19ae);}),await _0x33b773[_0x2b60ac(0x1a4)](fs[_0x2b60ac(0x181)](_0xfdb1db),{'caption':_0x2b60ac(0x160)},_0x2b60ac(0x157)));}catch(_0x6a439d){return await _0x33b773[_0x2b60ac(0x1a4)](_0x2b60ac(0x1f8)+_0x6a439d);}finally{if(fs[_0x2b60ac(0x170)](_0x50ce7a))fs[_0x2b60ac(0x1e8)](_0x50ce7a);if(fs[_0x2b60ac(0x170)](_0xfdb1db))fs[_0x2b60ac(0x1e8)](_0xfdb1db);}}catch(_0xbde456){return console[_0x2b60ac(0x1d2)](_0x2b60ac(0x159),_0xbde456),await _0x33b773['send']('*error!*\x0a'+_0xbde456);}}),kord({'cmd':'getdevice|device','desc':'Get\x20device\x20of\x20sender\x20or\x20quoted','fromMe':wtype,'type':a0_0x1fea6f(0x131)},async _0x4c90d9=>{const _0x470988=a0_0x1fea6f,_0x5c255f=_0x4c90d9[_0x470988(0x18b)]?.['id']||_0x4c90d9[_0x470988(0x14c)]?.['id'],_0x21b883=getDevice(_0x5c255f);await _0x4c90d9[_0x470988(0x1a0)]('Device:\x20*'+_0x21b883+'*');});
+const { kord, extractUrlsFromString, getJson, talkNote, prefix, wtype, config, ss } = require("../core")
+const fs = require("fs");
+const path = require("path");
+const PDFDocument = require("pdfkit")
+const fetch = require("node-fetch")
+const { tiny, fancytext, listall } = require('../core/store/style-font');
+const os = require('os');
+const sharp = require('sharp');
+const ffmpeg = require('fluent-ffmpeg');
+const http = require('http')
+const { getDevice } = require('baileys')
+
+
+kord({
+        cmd: "ss",
+        desc: "screenshots a given url live page",
+        fromMe: wtype,
+        type: "utilities",
+}, async (m, text) => {
+       try {
+        let lik;
+        if (!text) { 
+           lik = m.quoted?.text
+        } else {
+        lik = text
+        }
+        if (!lik) return m.send("_*reply/provide a valid link!*_")
+         m.react("⏰")
+        var links = await extractUrlsFromString(lik)
+        var link = links[0]
+        
+        var img = await fetch(`https://puppeteer-on-vercel-roan.vercel.app/ss?url=${encodeURIComponent(link)}&device=desktop`) //or mobile or tablet 
+        var imgbuff = await img.buffer()
+        return m.send(imgbuff, {caption: "> here\'s your screenshot", quoted: m}, "image")
+       } catch (err) {
+               console.error(err)
+               return m.send(`${err}`)
+       }
+})
+
+kord({
+        cmd: "sstab",
+        desc: "screenshots a given url live page(tab view)",
+        fromMe: wtype,
+        type: "utilities",
+}, async (m, text) => {
+        try {
+                let lik;
+                if (!text) {
+                        lik = m.quoted?.text
+                } else {
+                        lik = text
+                }
+                if (!lik) return m.send("_*reply/provide a valid link!*_")
+                m.react("⏰")
+                var links = await extractUrlsFromString(lik)
+                var link = links[0]
+                
+                var img = await fetch(`https://puppeteer-on-vercel-roan.vercel.app/ss?url=${encodeURIComponent(link)}&device=tablet`)  //or mobile or tablet 
+                var imgbuff = await img.buffer()
+                return m.send(imgbuff, {caption: "> here\'s your screenshot", quoted: m}, "image")
+        } catch (err) {
+                console.error(err)
+                return m.send(`${err}`)
+        }
+})
+
+kord({
+        cmd: "ssphone",
+        desc: "screenshots a given url live page(Mobile version)",
+        fromMe: wtype,
+        type: "utilities",
+}, async (m, text) => {
+        try {
+                let lik;
+                if (!text) {
+                        lik = m.quoted?.text
+                } else {
+                        lik = text
+                }
+                if (!lik) return m.send("_*reply/provide a valid link!*_")
+                m.react("⏰")
+                var links = await extractUrlsFromString(lik)
+                var link = links[0]
+                
+                var img = await fetch(`https://puppeteer-on-vercel-roan.vercel.app/ss?url=${encodeURIComponent(link)}&device=mobile`)  //or mobile or tablet 
+                var imgbuff = await img.buffer()
+                return m.send(imgbuff, {caption: "> here\'s your screenshot", quoted: m}, "image")
+        } catch (err) {
+                console.error(err)
+                return m.send(`${err}`)
+        }
+})
+
+
+kord({
+  cmd: "tts",
+  desc: "text to speech",
+  fromMe: wtype,
+  type: "utilities",
+}, async (m, text) => {
+  try {
+  if (!text) return m.send("_*What do you want me to say?*_")
+  var res = await m.axios(`https://ab-text-voice.abrahamdw882.workers.dev/?q=${encodeURIComponent(text)}&voicename=henry`)
+  return await m.send(res.url, { mimetype: "audio/mpeg", ptt: true, quoted: m}, "audio")
+  } catch(e) {
+    console.error(err)
+    return await m.send(`_*error!*_`)
+  }
+})
+
+kord({
+  cmd: "audio2text|text",
+  desc: "convert audio or video to text",
+  fromMe: wtype,
+  type: "utilities",
+}, async (m, text) => {
+  if (!(m.quoted.audio || m.quoted.video)) return await m.send("_reply to an audio or video_")
+  var p = await m.client.dlandsave(m.quoted)
+  var t = await talkNote(p)
+  var c = t.text
+  await m.send(`${c}`)
+  await require("fs").promises.unlink(p); 
+})
+
+kord({
+        cmd: "wm|walink",
+        desc: "return walink of either replied/mention/chat user",
+        fromMe: wtype,
+        type: "utilities",
+}, async (m, text) => {
+     try {
+             let wan;
+      if (m.mentionedJid && m.mentionedJid[0]) {
+         wan = m.mentionedJid[0].replace(/[^0-9]/g, '')
+      } else if (m.quoted) {
+        wan = m.quoted.sender.replace(/[^0-9]/g, '')
+      } else {
+        if (m.chat.endsWith("@g.us")) return m.send("_reply to a user or mention a user.._")
+        wan = m.chat.split("@")[0]
+      }
+      const waLink = `https://wa.me/${wan}`
+      return await m.send(waLink)
+     } catch (e) {
+             console.error(e)
+             return e
+     }   
+})
+
+kord({
+        cmd: "url|tourl|upload",
+        desc: "uploads quoted media to Kord\'s Cdn and sends access url(safe)",
+        fromMe: wtype,
+        react: "🔗",
+        type: "utilities",
+}, async (m, text) => {
+        if (!m.quoted.media) return m.send("_reply to a media message_")
+        var path = await m.client.dlandsave(m.quoted)
+        var url = await m.upload(path)
+        await m.send(`${url}`);
+        await require("fs").promises.unlink(path);
+})
+
+kord({
+        cmd: "temp-url|temp-upload",
+        desc: "uploads quoted media to Kord\'s Cdn and sends access url(temporarily)",
+        fromMe: wtype,
+        react: "♻️",
+        type: "utilities",
+}, async (m, text) => {
+        if (!m.quoted.media) return m.send("_reply to a media message_")
+        var path = await m.client.dlandsave(m.quoted)
+        var url = await m.upload(path, "temp")
+        await m.send(`${url}`);
+        await require("fs").promises.unlink(path);
+})
+
+kord({
+        cmd: "readmore",
+        desc: "adds readmore to given text",
+        fromMe: wtype,
+        type: "utilities",
+}, async (m, text) => {
+        let txt = text || m.quoted?.text;
+        if (!txt) return m.send(`_*provide or reply some text*_\n_example: ${prefix}readmore Hello this is visible |readmore| this is hidden_`);
+        
+        const readmoreChar = String.fromCharCode(8206).repeat(4001);
+        const rtext = txt.replace(/(\|readmore\|)/i, readmoreChar);
+        return await m.send(rtext);
+});
+
+
+kord({
+        cmd: "define|whatis",
+        desc: "defines given text",
+        react: "🧩",
+        fromMe: wtype,
+        type: "utilities",
+}, async (m, text) => {
+        if (!text) return m.send("_what do you want to define?_")
+        const fWword = text?.trim()?.split(/\s+/)[0];
+        var res = await m.axios(`http://api.urbandictionary.com/v0/define?term=${fWword}`);
+        var def = res.list[0]
+        const reply = `
+◈ _*Word:*_ ${fWword}
+◈ _*Definition:*_ ${def.definition.replace(/\[/g, "").replace(/\]/g, "")}
+◈ _*Example:*_ ${def.example.replace(/\[/g, "").replace(/\]/g, "")}
+ 
+> definitions might not be accurate`;
+        return await m.send(reply)
+})
+
+kord({
+        cmd: "weather",
+        desc: "gives the weather information about given country",
+        react: "🌦️",
+        fromMe: wtype,
+        type: "utilities",
+}, async (m, text) => {
+        if (!text) return await m.send("_provide a location_");
+                const res = await m.axios(`https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`);
+                const w = res
+                const sunrise = new Date(w.sys.sunrise * 1000).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+                const sunset = new Date(w.sys.sunset * 1000).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+                const report = `\`\`\`
+✤ Weather Report ✤
+➥ Location     : ✪ ${w.name} (${w.sys.country})
+➥ Coordinates  : ✷ ${w.coord.lat}°N, ${w.coord.lon}°E
+➥ Condition    : ✭ ${w.weather[0].main} → ${w.weather[0].description}
+
+✽ Temperature  : ${w.main.temp}°C ✛ Feels like ${w.main.feels_like}°C
+✱ Min / Max    : ${w.main.temp_min}°C / ${w.main.temp_max}°C
+✚ Humidity     : ${w.main.humidity}%
+✪ Pressure     : ${w.main.pressure} hPa
+➣ Sea Level    : ${w.main.sea_level || "N/A"} hPa
+➣ Ground Level : ${w.main.grnd_level || "N/A"} hPa
+
+✱ Visibility   : ${w.visibility / 1000} km
+➙ Wind         : ${w.wind.speed} m/s ↣ ${w.wind.deg}°
+✽ Cloud Cover  : ${w.clouds.all}%
+
+♜ Sunrise      : ${sunrise}
+♜ Sunset       : ${sunset}
+\`\`\``.trim();
+                return await m.send(report)
+});
+
+kord({
+        cmd: "tinyurl|shorten-url",
+        desc: "makes shortened url Using the tinyurl api",
+        fromMe: wtype,
+        type: "utilities",
+}, async (m, text) => {
+        if (!text) return m.send('_Provide a link_')
+try {
+        link = text.split(" ")[0];
+        let h = await m.axios(`https://tinyurl.com/api-create.php?url=${link}`);
+       return await m.send(`*_Your Shortened URL_*\n\n${h}`);
+} catch (e) {
+        console.log(e);
+}
+})
+
+kord({
+  cmd: "vv",
+  desc: "resend a viewonce media as a normal media",
+  fromMe: wtype,
+  react: "🔓",
+  type: "utilities",
+}, async (m, text) => {
+  try {
+    if (!m.quoted?.viewOnce || !m.quoted?.viewOnceMessageV2 ) return await m.send("_*𝌫 Reply To A Viewonce Message*_");
+    var damn = await m.client.dlandsave(m.quoted);
+    let msg;
+    if (m.quoted.image) {
+      msg = { image: { url: damn }, caption: m.quoted.caption || "" };
+    } else if (m.quoted.video) {
+      msg = { video: { url: damn }, caption: m.quoted.caption || "" };
+    } else if (m.quoted.audio) {
+      msg = { audio: { url: damn }, ptt: false, caption: m.quoted.caption || "" };
+    } else {
+      await require("fs").promises.unlink(damn);
+      return await m.send("_*Unsupported media type*_");
+    }
+    await m.client.sendMessage(m.chat, msg, { quoted: m });
+    await require("fs").promises.unlink(damn);
+  } catch (err) {
+    console.error("vv plugin", err);
+  }
+});
+
+
+kord({
+  on: "all",
+  fromMe: true,
+}, async (m, text) => {
+  try {
+    if (text.toLowerCase().includes(config().VV_CMD)) {
+      if (!m.quoted?.viewOnce || !m.quoted?.viewOnceMessageV2  ) return;
+      var damn = await m.client.dlandsave(m.quoted);
+      let msg;
+      if (m.quoted.image) {
+        msg = { image: { url: damn }, caption: m.quoted.caption || "" };
+      } else if (m.quoted.video) {
+        msg = { video: { url: damn }, caption: m.quoted.caption || "" };
+      } else if (m.quoted.audio) {
+        msg = { audio: { url: damn }, ptt: false, caption: m.quoted.caption || "" };
+      } else {
+        await require("fs").promises.unlink(damn);
+        return;
+      }
+      await m.client.sendMessage(m.ownerJid, msg, { quoted: m.data });
+      await require("fs").promises.unlink(damn);
+    }
+  } catch (e) {
+    console.error("Error in vv", e);
+  }
+});
+
+kord({
+  cmd: "pdf",
+  desc: "Converts image to PDF or text to PDF",
+  fromMe: wtype,
+  type: "utilities",
+}, async (m, text) => {
+  try {
+    if (text && !text.startsWith("send")) {
+      const pdf = new PDFDocument();
+      const p = "./text.pdf";
+      const writeStream = fs.createWriteStream(p);
+
+      pdf.pipe(writeStream);
+      pdf.font("Helvetica", 12).text(text, 50, 50, { align: "justify" });
+      pdf.end();
+
+      await new Promise(resolve => writeStream.on('finish', resolve));
+      
+      try {
+        const buffer = fs.readFileSync(p);
+        await m.send(
+          buffer,
+          { mimetype: "application/pdf", fileName: "text.pdf", quoted: m },
+          "document"
+        );
+      } catch (sendErr) {
+        await m.send(`Failed to send PDF: ${sendErr.message}`);
+      } finally {
+        try {
+          fs.unlinkSync(p);
+        } catch (unlinkErr) {}
+      }
+      
+      return;
+    }
+
+    const dir = "./pdf";
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir);
+
+    if (text === "send") {
+      const jpgFiles = fs.readdirSync(dir)
+        .filter(file => file.toLowerCase().endsWith('.jpg'))
+        .map(file => path.join(dir, file));
+      
+      if (jpgFiles.length === 0) {
+        return await m.send("_No images found in pdf folder._");
+      }
+      
+      const doc = new PDFDocument();
+      const outputPath = "./image.pdf";
+      const writeStream = fs.createWriteStream(outputPath);
+      
+      doc.pipe(writeStream);
+      
+      let imagesAdded = 0;
+      for (const jpgPath of jpgFiles) {
+        try {
+          doc.addPage();
+          doc.image(jpgPath, {
+            fit: [500, 700],
+            align: 'center',
+            valign: 'center'
+          });
+          imagesAdded++;
+        } catch (imgErr) {
+          await m.send(`> Could not add image ${path.basename(jpgPath)}: ${imgErr.message}`);
+        }
+      }
+      
+      if (imagesAdded === 0) {
+        doc.text("No valid images were found to convert", 100, 100);
+      }
+      
+      doc.end();
+      
+      await new Promise(resolve => writeStream.on('finish', resolve));
+      
+      try {
+        const buffer = fs.readFileSync(outputPath);
+        await m.send(
+          buffer,
+          { mimetype: "application/pdf", fileName: "image.pdf", quoted: m },
+          "document"
+        );
+      } catch (sendErr) {
+        await m.send(`Failed to send PDF: ${sendErr.message}`);
+      }
+      
+      try {
+        fs.unlinkSync(outputPath);
+        fs.readdirSync(dir).forEach(file => {
+          fs.unlinkSync(path.join(dir, file));
+        });
+        fs.rmdirSync(dir);
+      } catch (cleanupErr) {}
+    } else {
+      if (!m.quoted?.image) {
+        return await m.send(
+          "_*𝌫 Provide text/reply to a image*_\nExample: ```.pdf this is a text```\nUse ```.pdf send``` to get the pdf"
+        );
+      }
+
+      const p = await m.client.dlandsave(m.quoted);
+      if (!fs.existsSync(p)) {
+        return await m.send("Error: Downloaded file does not exist.");
+      }
+
+      let index = 0, imgPath;
+      do {
+        imgPath = path.join(dir, `pdf${index === 0 ? "" : index}.jpg`);
+        index++;
+      } while (fs.existsSync(imgPath));
+
+      try {
+        fs.copyFileSync(p, imgPath);
+        fs.unlinkSync(p);
+      } catch (copyErr) {
+        try {
+          fs.renameSync(p, imgPath);
+        } catch (renameErr) {
+          fs.unlinkSync(p);
+          return await m.send(`Failed to save image: ${renameErr.message}`);
+        }
+      }
+      
+      await m.send(`_*Images saved!*_\n_Total Images: ${fs.readdirSync(dir).length}_`);
+    }
+  } catch (err) {
+    await m.send(`error: ${err.message || err}`);
+  }
+});
+
+
+kord({
+  cmd: "calc|calculate",
+  desc: "perform a calculation",
+  fromMe: wtype,
+  type: "utilities",
+}, async (m, text) => {
+  if (!text) return await m.send('❏ i need a calculation.\n_example:_ .calc 2+3')
+  if (!/^[\d\s\+\-\*\/\(\)\.]+$/.test(text)) {
+        return await m.send('Invalid characters in calculation');
+      }
+      const result = eval(text);
+      await m.send(`Result: ${text} = ${result}`);
+})
+
+kord({
+    cmd: "trt|translate",
+    desc: "translate text to english/given lang code",
+    fromMe: wtype,
+    type: "utilities",
+}, async (m, text, c) => {
+    try{
+        if (!text) return await m.send(`*reply to text/provide text with lang code*\n_example: ${c} en bonjour`)
+        var f = text?.trim()?.split(/\s+/)[0]
+        var a = text?.split(" ")
+        var code = a[0] || config().LANG_CODE
+        var t = m.quoted?.text || a.slice(1).join(" ")
+        if (!a && !t) return await m.send(`*reply to text/provide text with lang code*\n_example: ${c} en bonjour`)
+        var res = await m.axios(`https://kord-api.vercel.app/translate?text=${t}&code=${code}`)
+        if (res.status == 400) return await m.send("*invalid language code provided*")
+        return await m.send(`${res.translated}`)
+    } catch (err) {
+        console.error("error in translate:", err)
+        return await m.send(`*error ocuurred:* ${err}`)
+    }
+})
+
+kord({
+    cmd: "ngl",
+    desc: "send message to the ngl api (username and message)",
+    fromMe: wtype,
+    type: "utilities",
+}, async (m, text, c) => {
+    if (!text) return await m.send(`*provide both username and message*\n_example: ${c} username:hello, i am a boy_`)
+    var a = text.split(":")
+    var user = a[0]?.trim()
+    var msg = a.slice(1).join(":").trim()
+    if (!msg) return await m.send(`_*provide msg*_\n_example: ${c} username:hello, i am a boy_`)
+
+    var res = await m.axios(`https://kord-api.vercel.app/ngl?username=${encodeURIComponent(user)}&message=${encodeURIComponent(msg)}`)
+    if (res?.success) {
+        return await m.send(`*Message Sent!*`)
+    } else {
+        return await m.send(`*sorry, i encountered an error..*`)
+    }
+})
+
+kord({
+    cmd: "ip|ipbot",
+    desc: "get ip for the bot",
+    fromMe: wtype,
+    type: "utilities",
+}, async (m) => {
+    http.get({
+        'host': 'api.ipify.org',
+        'port': 80,
+        'path': '/'
+    }, function(resp) {
+        let data = '';
+        resp.on('data', function(chunk) {
+            data += chunk;
+        });
+        resp.on('end', function() {
+            m.send(`*My public IP address is:* ${data}`);
+        });
+    }).on('error', function(err) {
+        m.send(`error! ${err}`)
+    })
+})
+
+kord({
+  cmd: "wiki",
+  desc: "search wiki",
+  fromMe: wtype,
+  type: "utilities",
+}, async (m, text) => {
+    if (!text) return await m.send("*provide a query to search*")
+      const data = await m.axios(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(text)}`);
+      if (!data) return await m.send("*error!*")
+      
+      return await m.send(`_*${data.title}*_\n\`\`\`${data.extract}\`\`\``)
+})
+
+kord({
+  cmd: "bible",
+  desc: "get verse/verses from the bible",
+  fromMe: wtype,
+  type: "utilities",
+}, async (m, text) => {
+  if (!text) return await m.send("*provide reference*\n_example: bible john 3:16_")
+  var r = text.trim()
+  if (!r) return await m.send("*provide reference*\n_example: bible john 3:16_")
+  var res = await m.axios(`https://bible-api.com/${encodeURIComponent(r)}`)
+  return await m.send(`*THE BIBLE*\n\n_*Reference: ${res.reference}*_\n${res.text.trim()}`)
+})
+
+kord({
+  cmd: "font",
+  desc: "change font of text",
+  fromMe: wtype,
+  type: "utilities",
+}, async (m, text) => {
+  if (!text) {
+    let texxt = "*Fancy text generator*\n\n_*Example: .fancy 1 kord*_\n\n"
+        listall("Kord-Ai").forEach((txt, num) => {
+          texxt += `${num + 1} ${txt}\n`;
+        }); 
+        return await m.send(`${texxt}`)
+  }
+  const num = parseInt(text.split(" ")[0], 10);
+  if (isNaN(num)) return await m.send("*invalid font number!*\n_example: fancy 1 kord_")
+  
+  const txt = await fancytext(text.slice(text.indexOf(' ') + 1), num);
+  return await m.send(`${txt}`)
+})
+
+kord({
+  cmd: "compress",
+  desc: "compress image/video",
+  fromMe: wtype,
+  type: "utilities",
+}, async (m, text) => {
+  try {
+    if (!(m.image || m.video || m.quoted.image || m.quoted.video)) return await m.send("_*reply to an image/video*_")
+    var pth = await m.client.dlandsave((m.image || m.video) ? m : (m.quoted.image || m.quoted.video) ? m.quoted : null)
+    var ext = pth.split(".")[1]
+    var opath = path.join(bin, `compressed_${Date.now()}.${ext}`)
+    try {
+      if (ext.match(/(jpg|jpeg|png|webp)/)) {
+                await sharp(pth)
+                    .resize({ width: 800 })
+                    .jpeg({ quality: 60 })
+                    .toFile(opath);
+          await m.send(fs.readFileSync(opath), { caption: "> compressed image.."}, 'image')
+      } else if (ext.match(/(mp4|mkv|avi)/)) {
+                await m.reply("*_Compressing video..._* This might take minutes.")
+                await new Promise((resolve, reject) => {
+                    ffmpeg(pth)
+                        .outputOptions([
+                            '-c:v libx264',
+                            '-preset faster',
+                            '-crf 28',
+                            '-b:v 500k',
+                            '-maxrate 800k',
+                            '-bufsize 1200k',
+                            '-vf scale=-2:480',
+                            '-c:a aac',
+                            '-b:a 96k'
+                        ])
+                        .save(opath)
+                        .on('end', resolve)
+                        .on('error', reject);
+                });
+             await m.send(fs.readFileSync(opath), { caption: "*compressed video ...*"}, "video")
+    }
+    } catch (err) {
+      return await m.send(`*Compression Error:* ${err}`)
+    } finally {
+            if (fs.existsSync(pth)) fs.unlinkSync(pth);
+            if (fs.existsSync(opath)) fs.unlinkSync(opath);
+        } 
+  } catch (er) {
+    console.error("error in compress cmd", er)
+    return await m.send(`*error!*\n${er}`)
+  }
+})
+
+
+
+
+kord({
+  cmd: 'getdevice|device',
+  desc: 'Get device of sender or quoted',
+  fromMe: wtype,
+  type: 'utilities'
+}, async (m) => {
+  const id = m.quoted?.id || m.key?.id
+  const device = getDevice(id)
+  await m.reply(`Device: *${device}*`)
+})
