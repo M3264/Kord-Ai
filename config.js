@@ -36,6 +36,15 @@ module.exports = {
     RES_TYPE: process.env.RES_TYPE || "text",
     CMD_REACT: process.env.CMD_REACT || "off",
     LOG_MESSAGES: process.env.LOG_MESSAGES || "off",
-    STARTUP_MSG: process.env.STARTUP_MSG || "on"
+    STARTUP_MSG: process.env.STARTUP_MSG || "on",
+    WELCOME_MESSAGE: process.env.WELCOME_MESSAGE ||  `╭━━━々 𝚆 𝙴 𝙻 𝙲 𝙾 𝙼 𝙴 々━━━╮
+┃ ➺ *々 Welcome @user! to @gname*
+┃ ➺ *々 Members: @count*
+┃ ➺ We Hope You Have A Nice Time Here!
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+    GOODBYE_MESSAGE: process.env.GOODBYE_MESSAGE || `╭━━━々 𝙶 𝙾 𝙾 𝙳 𝙱 𝚈 𝙴 々━━━╮
+┃ ➺ *々 @user! left @gname!*
+┃ ➺ *々 Members: @count*
+┃ ➺ We Hope He/She Had A Nice Time Here!
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━`
 }
-

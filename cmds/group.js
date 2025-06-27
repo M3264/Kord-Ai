@@ -114,8 +114,8 @@ kord({
   
   if (!text && !m.quoted?.sender) return await m.send(`_*✘ Reply to user or provide number*_\n_Example: ${cmd} 23412345xxx_`);
   
-  const user = text || m.quoted?.sender;
-  const cleanNumber = user.replace(/[^0-9]/g, '') + '@s.whatsapp.net';
+  const user = text || m.quoted?.sender
+const cleanNumber = (user.includes('@') ? user.split('@')[0] : user).replace(/\D/g, '') + '@s.whatsapp.net'
   const userInfo = await m.client.onWhatsApp(cleanNumber);
   
   if (!userInfo.length) return await m.send('_✘ User is not on WhatsApp_');
@@ -165,9 +165,9 @@ kord({
       await m.send("_*✓ Kicking all users in 10 seconds*_\n_Use restart command to cancel_")
       await sleep(10000)
       let { participants } = await m.client.groupMetadata(m.chat);
-      participants = participants.filter(p => p.id !== m.user.jid);
+      participants = participants.filter(p => p.jid !== m.user.jid);
       for (let key of participants) {
-        const jid = parsedJid(key.id);
+        const jid = parsedJid(key.jid);
         await m.client.groupParticipantsUpdate(m.chat, [jid], "remove");
         if (config().KICK_AND_BLOCK) await m.client.updateBlockStatus(jid, "block");
         await m.send(`_*✓ @${jid[0].split("@")[0]} kicked*_`, { mentions: [jid] });
@@ -284,14 +284,14 @@ kord({
 }, async (m, text, cmd, store) => {
   if (!m.isGroup) return await m.send(`@${m.sender.split("@")[0]}`, { mentions: [m.sender] });   
   const { participants } = await m.client.groupMetadata(m.chat);
-  let admins = participants.filter(v => v.admin !== null).map(v => v.id);
+  let admins = participants.filter(v => v.admin !== null).map(v => v.jid);
   let msg = "";
   
   if (text === "all" || text === "everyone") {
     participants.forEach((p, i) => {
-      msg += `❐ ${i + 1}. @${p.id.split('@')[0]}\n`;
+      msg += `❐ ${i + 1}. @${p.jid.split('@')[0]}\n`;
     });
-    await m.send(msg, { mentions: participants.map(a => a.id) });
+    await m.send(msg, { mentions: participants.map(a => a.jid) });
   } 
   else if (text === "admin" || text === "admins") {
     admins.forEach((admin, i) => {
@@ -304,13 +304,13 @@ kord({
   } 
   else if (text) {
     const message = text || m.quoted.text;
-    return await m.send(message, { mentions: participants.map(a => a.id) });
+    return await m.send(message, { mentions: participants.map(a => a.jid) });
   } 
   else if (m.quoted) {
     return await m.forwardMessage(
             m.chat,
             await store.findMsg(m.quoted.id),
-            { contextInfo: { mentionedJid: participants.map(a => a.id) }, quoted: m }
+            { contextInfo: { mentionedJid: participants.map(a => a.jid) }, quoted: m }
         );
   } else { 
   return await m.send(`✘ Usage:\ntag all\ntag admins\ntag me\ntag <message>\ntag (reply to message)`);
@@ -326,12 +326,12 @@ kord({
   type: "group"
 }, async (m, text) => {
   const { participants } = await m.client.groupMetadata(m.chat);
-  let admins = participants.filter(v => v.admin !== null).map(v => v.id);
+  let admins = participants.filter(v => v.admin !== null).map(v => v.jid);
   let msg = `❴ ⇛ *TAGALL* ⇚ ❵\n*Message:* ${text ? text : "blank"}*Caller:* @${m.sender.split("@")[0]}\n\n`
   participants.forEach((p, i) => {
-      msg += `❧ ${i + 1}. @${p.id.split('@')[0]}\n`;
+      msg += `❧ ${i + 1}. @${p.jid.split('@')[0]}\n`;
     });
-    await m.send(msg, { mentions: participants.map(a => a.id) });
+    await m.send(msg, { mentions: participants.map(a => a.jid) });
 })
 
 
@@ -630,7 +630,7 @@ kord({
 ┃ ➺ *々 Members: @count*
 ┃ ➺ We Hope You Have A Nice Time Here!
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
-            goodbye: `╭━━━々 𝙶 𝙾 𝙾 𝙳 𝙱 𝚈 𝙴 々━━━╮
+    goodbye: `╭━━━々 𝙶 𝙾 𝙾 𝙳 𝙱 𝚈 𝙴 々━━━╮
 ┃ ➺ *々 @user! left @gname!*
 ┃ ➺ *々 Members: @count*
 ┃ ➺ We Hope He/She Had A Nice Time Here!
@@ -644,6 +644,7 @@ kord({
     return await m.send(`*_Group Events Settings_*
 _*Usage:*_
 _events on/off - Enable/disable all events_
+_events clear - clear the group events settings_
 _events welcome on/off - Toggle welcome messages_
 _events goodbye on/off - Toggle goodbye messages_
 _events promote on/off - Toggle promotion alerts_
@@ -655,6 +656,12 @@ _events setgoodbye text - Set goodbye message_`);
   }
   if (cmd === "on" || cmd === "enable") {
     gdata[jid].events = true;
+    gdata[jid].add = true,
+    gdata[jid].remove = true,
+    gdata[jid].promote = true,
+    gdata[jid].demote = true,
+    gdata[jid].antipromote = true,
+    gdata[jid].antidemote = true,
     await storeData('group_events', gdata);
     return await m.send("✓ Group events notifications enabled");
   }
@@ -663,8 +670,13 @@ _events setgoodbye text - Set goodbye message_`);
     await storeData('group_events', gdata);
     return await m.send("✓ Group events notifications disabled");
   }
+  if (cmd === "clear") {
+    delete gdata[jid].events
+    await storeData('group_events', gdata);
+    return await m.send("✓ Group events notifications cleared");
+  }
   if (cmd === "status") {
-    return await m.send(`*Events Status:* ${status}
+    return await m.send(`*Events Status:* ${gdata[jid].events ? "on" : "off"}
 *Welcome:* ${gdata[jid].add ? "on" : "off"}
 *Goodbye:* ${gdata[jid].remove ? "on" : "off"}
 *Promote:* ${gdata[jid].promote ? "on" : "off"}
@@ -929,17 +941,28 @@ kord({
   type: "group",
 }, async (m, text) => {
   try {
+    
     var botAd = await isBotAdmin(m)
     if (!botAd) return await m.send("_*✘Bot Needs To Be Admin!*_")
-    var user = m.mentionedJid[0] || m.quoted.sender || text
-    if (!user) return await m.send("_✘ Reply to or mention a member_")
+    var user = m.mentionedJid[0] || m.quoted.sender || `${text.split(" ")[0]}@s.whatsapp.net`
+    if (!user) return await m.send("_✘ Reply to or mention a member_\n_to remove use:_\n_akick 234xxxxxxx remove_")
     const jid = parsedJid(user)
+    if (text.includes("remove")) {
+      let sdata = await getData("akick");
+if (!Array.isArray(sdata)) sdata = [];
+let isExist = sdata.includes(user);
+  if (!isExist) return m.send("_user is not in auto kick_")
+  sdata = sdata.filter(entry => entry !== user)
+  await storeData("akick", JSON.stringify(sdata, null, 2))
+  return m.send("_user is now free_")
+    }
     var d = await getData("akick") || []
     d.push(jid)
     await storeData("akick", d)
     await m.client.groupParticipantsUpdate(m.chat, [jid[0]], "remove")
     if (config().KICK_AND_BLOCK) await m.client.updateBlockStatus(jid[0], "block")
     await m.send(`_*✓ @${jid[0].split("@")[0]} kicked*_`, { mentions: [jid[0]] })
+    
   } catch (e) {
     console.error(e)
     return await m.send(`error in akick ${e}`)
