@@ -151,22 +151,26 @@ kord({
 return m.send(list)
 })
 
+const pm2 = require('pm2')
+
 kord({
   cmd: "restart|reboot",
   desc: "restart ths bot",
   fromMe: true,
   type: "process",
-}, async (m, text) => {
+}, async (m) => {
   try {
     await m.send("_𝌫 restarting..._")
-    exec("npx pm2 restart kord-v2", (err) => {
-        if (err) {
-          m.send(`error: ${err}`);
-          return;
-        }
-    });
+    await new Promise((resolve, reject) => {
+      pm2.connect(err => {
+        if (err) return reject(err)
+        pm2.restart('kord-v2', (err) => {
+          pm2.disconnect()
+          return err ? reject(err) : resolve()
+        })
+      })
+    })
   } catch (err) {
-    console.error
     return await m.send(`error..: ${err}`)
   }
 })
@@ -176,17 +180,19 @@ kord({
   desc: "shut the bot down (you'll have to restart on server)",
   fromMe: true,
   type: "process",
-}, async (m, text) => {
+}, async (m) => {
   try {
     await m.send("_𝌫 shutting down..._")
-    exec("npx pm2 stop kord-v2", (err) => {
-        if (err) {
-          m.send(`error: ${err}`);
-          return;
-        }
-    });
+    await new Promise((resolve, reject) => {
+      pm2.connect(err => {
+        if (err) return reject(err)
+        pm2.stop('kord-v2', (err) => {
+          pm2.disconnect()
+          return err ? reject(err) : resolve()
+        })
+      })
+    })
   } catch (err) {
-    console.error
     return await m.send(`error..: ${err}`)
   }
 })
