@@ -1,3 +1,12 @@
+/* 
+ * Copyright © 2025 Mirage
+ * This file is part of Kord and is licensed under the GNU GPLv3.
+ * And I hope you know what you're doing here.
+ * You may not use this file except in compliance with the License.
+ * See the LICENSE file or https://www.gnu.org/licenses/gpl-3.0.html
+ * -------------------------------------------------------------------------------
+ */
+
 const { kord, wtype, prefix, sleep, extractUrlsFromString, fb, ytaudio, config, ytvideo, xdl, tt, insta, mediaFire, rand, getBuffer } = require("../core")
 const yts = require("yt-search")
 const { Sticker, StickerTypes } = require("wa-sticker-formatter");

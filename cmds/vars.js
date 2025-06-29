@@ -1,3 +1,12 @@
+/* 
+ * Copyright © 2025 Mirage
+ * This file is part of Kord and is licensed under the GNU GPLv3.
+ * And I hope you know what you're doing here.
+ * You may not use this file except in compliance with the License.
+ * See the LICENSE file or https://www.gnu.org/licenses/gpl-3.0.html
+ * -------------------------------------------------------------------------------
+ */
+
 const { kord, wtype, updateConfig, prefix, updateEnv, updateEnvSudo, addEnvSudo, removeEnvSudo, replaceEnvSudo, getEnvValue, envExists, listEnvKeys, toBoolean, getPlatformInfo, setVar, updateVar, delVar, getVars, config, myMods
   } = require("../core")
   const fs = require("fs")
