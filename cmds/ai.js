@@ -1,1 +1,357 @@
-const a0_0x5234a8=a0_0x5b3a;(function(_0xd00df3,_0x2744c8){const _0x3783a5=a0_0x5b3a,_0x366535=_0xd00df3();while(!![]){try{const _0x381262=-parseInt(_0x3783a5(0x181))/0x1*(parseInt(_0x3783a5(0x1af))/0x2)+-parseInt(_0x3783a5(0x176))/0x3+-parseInt(_0x3783a5(0x17d))/0x4*(-parseInt(_0x3783a5(0x195))/0x5)+parseInt(_0x3783a5(0x19b))/0x6+-parseInt(_0x3783a5(0x17f))/0x7*(-parseInt(_0x3783a5(0x1d0))/0x8)+-parseInt(_0x3783a5(0x193))/0x9*(parseInt(_0x3783a5(0x163))/0xa)+parseInt(_0x3783a5(0x1c0))/0xb*(parseInt(_0x3783a5(0x189))/0xc);if(_0x381262===_0x2744c8)break;else _0x366535['push'](_0x366535['shift']());}catch(_0x40125c){_0x366535['push'](_0x366535['shift']());}}}(a0_0x3961,0xda8eb));const {kord,wtype,chatWithAi,gemini,chatgpt,getData,storeData,prefix}=require(a0_0x5234a8(0x165)),axios=require(a0_0x5234a8(0x1c8));kord({'cmd':a0_0x5234a8(0x187),'desc':a0_0x5234a8(0x1d4),'fromMe':wtype,'type':'ai'},async(_0x1c4ac2,_0x4f4947)=>{const _0x5a365e=a0_0x5234a8;var _0xe098e7=_0x4f4947||_0x1c4ac2[_0x5a365e(0x18a)]?.[_0x5a365e(0x1a1)];if(!_0xe098e7)return await _0x1c4ac2[_0x5a365e(0x166)](_0x5a365e(0x1a8));return await _0x1c4ac2[_0x5a365e(0x166)](await chatWithAi(_0xe098e7,_0x5a365e(0x1b6)));}),kord({'cmd':a0_0x5234a8(0x188),'desc':a0_0x5234a8(0x1ae),'fromMe':wtype,'type':'ai'},async(_0x6547e5,_0x5c7102)=>{const _0x2208a8=a0_0x5234a8;var _0x19d84c=_0x5c7102||_0x6547e5['quoted']?.[_0x2208a8(0x1a1)];if(!_0x19d84c)return await _0x6547e5[_0x2208a8(0x166)]('Hi!,\x20What\x27s\x20Your\x20Prompt?');return await _0x6547e5[_0x2208a8(0x166)](await chatWithAi(_0x19d84c,'gpt-3.5-turbo'));}),kord({'cmd':a0_0x5234a8(0x191),'desc':a0_0x5234a8(0x1a5),'fromMe':wtype,'type':'ai'},async(_0x33e058,_0x315e06)=>{const _0x48fe5e=a0_0x5234a8;var _0x5b5d59=_0x315e06||_0x33e058[_0x48fe5e(0x18a)]?.[_0x48fe5e(0x1a1)];if(!_0x5b5d59)return await _0x33e058[_0x48fe5e(0x166)](_0x48fe5e(0x1a8));return await _0x33e058[_0x48fe5e(0x166)](await chatWithAi(_0x5b5d59,'Llama-2-int8'));}),kord({'cmd':a0_0x5234a8(0x17c),'desc':a0_0x5234a8(0x1a5),'fromMe':wtype,'type':'ai'},async(_0x366e34,_0xa56c7d)=>{const _0x5999fd=a0_0x5234a8;var _0x51da62=_0xa56c7d||_0x366e34[_0x5999fd(0x18a)]?.['text'];if(!_0x51da62)return await _0x366e34[_0x5999fd(0x166)](_0x5999fd(0x1a8));return await _0x366e34[_0x5999fd(0x166)](await chatWithAi(_0x51da62,_0x5999fd(0x1d6)));}),kord({'cmd':a0_0x5234a8(0x1c4),'desc':a0_0x5234a8(0x1a6),'fromMe':wtype,'type':'ai'},async(_0xfb8965,_0x23c416)=>{const _0x54aae2=a0_0x5234a8;var _0x28000f=_0x23c416||_0xfb8965[_0x54aae2(0x18a)]?.[_0x54aae2(0x1a1)];if(!_0x28000f)return await _0xfb8965[_0x54aae2(0x166)](_0x54aae2(0x1a8));return await _0xfb8965[_0x54aae2(0x166)](await chatWithAi(_0x28000f,_0x54aae2(0x178)));}),kord({'cmd':'llama3','desc':a0_0x5234a8(0x1a5),'fromMe':wtype,'type':'ai'},async(_0x5b5725,_0x15b0bb)=>{const _0x1c4e33=a0_0x5234a8;var _0x5c700c=_0x15b0bb||_0x5b5725[_0x1c4e33(0x18a)]?.[_0x1c4e33(0x1a1)];if(!_0x5c700c)return await _0x5b5725['send']('Hi!,\x20What\x27s\x20Your\x20Prompt?');return await _0x5b5725['send'](await chatWithAi(_0x5c700c,'Llama-2-awq'));}),kord({'cmd':a0_0x5234a8(0x179),'desc':a0_0x5234a8(0x1a9),'fromMe':wtype,'type':'ai'},async(_0x3a4d6a,_0x537b29)=>{const _0x3e39ed=a0_0x5234a8;var _0x5bbbd9=_0x537b29||_0x3a4d6a[_0x3e39ed(0x18a)]?.['text'];if(!_0x5bbbd9)return await _0x3a4d6a['send']('Hi!,\x20What\x27s\x20Your\x20Prompt?');return await _0x3a4d6a[_0x3e39ed(0x166)](await chatWithAi(_0x5bbbd9,_0x3e39ed(0x18c)));}),kord({'cmd':'zephyr','desc':a0_0x5234a8(0x1c1),'fromMe':wtype,'type':'ai'},async(_0xadf807,_0x42cbe0)=>{const _0x20d363=a0_0x5234a8;var _0x52d7a5=_0x42cbe0||_0xadf807[_0x20d363(0x18a)]?.[_0x20d363(0x1a1)];if(!_0x52d7a5)return await _0xadf807[_0x20d363(0x166)](_0x20d363(0x1a8));return await _0xadf807[_0x20d363(0x166)](await chatWithAi(_0x52d7a5,_0x20d363(0x18d)));});const API_BASE_URL=a0_0x5234a8(0x19c);async function getAIResponse(_0x5cce3b,_0x5df610){const _0x3f99a5=a0_0x5234a8;try{const _0xfdf143=await axios[_0x3f99a5(0x173)](API_BASE_URL+_0x3f99a5(0x19d),{'message':_0x5cce3b,'chatId':_0x5df610},{'headers':{'Content-Type':_0x3f99a5(0x182)},'timeout':0x7530});if(_0xfdf143[_0x3f99a5(0x175)][_0x3f99a5(0x1c6)])return _0xfdf143[_0x3f99a5(0x175)][_0x3f99a5(0x175)][_0x3f99a5(0x170)];else throw new Error(_0xfdf143[_0x3f99a5(0x175)][_0x3f99a5(0x169)]||_0x3f99a5(0x16c));}catch(_0x82ad7f){console['error']('AI\x20API\x20Error:',_0x82ad7f[_0x3f99a5(0x1b3)]);if(_0x82ad7f[_0x3f99a5(0x177)]==='ECONNABORTED')throw new Error(_0x3f99a5(0x1aa));else{if(_0x82ad7f['response']?.[_0x3f99a5(0x1bc)]===0x1ad)throw new Error(_0x3f99a5(0x1c7));else{if(_0x82ad7f[_0x3f99a5(0x170)]?.[_0x3f99a5(0x1bc)]>=0x1f4)throw new Error(_0x3f99a5(0x1a2));else throw new Error(_0x3f99a5(0x17a));}}}}async function clearChatHistory(_0x2881cf){const _0x57a3b4=a0_0x5234a8;try{const _0x1d58a0=await axios[_0x57a3b4(0x183)](API_BASE_URL+_0x57a3b4(0x194)+_0x2881cf,{'timeout':0x2710});return _0x1d58a0['data'][_0x57a3b4(0x1c6)];}catch(_0x557e91){return console[_0x57a3b4(0x169)](_0x57a3b4(0x16f),_0x557e91[_0x57a3b4(0x1b3)]),![];}}async function getAIStatus(){const _0x72c482=a0_0x5234a8;try{const _0x5d3e06=await axios['get'](API_BASE_URL+'/ai/status',{'timeout':0x2710});return _0x5d3e06[_0x72c482(0x175)][_0x72c482(0x175)];}catch(_0x3111bc){return console[_0x72c482(0x169)](_0x72c482(0x1c3),_0x3111bc['message']),null;}}function a0_0x5b3a(_0x27601b,_0x3dfe88){const _0x396145=a0_0x3961();return a0_0x5b3a=function(_0x5b3a4a,_0x324d83){_0x5b3a4a=_0x5b3a4a-0x163;let _0xb2d387=_0x396145[_0x5b3a4a];return _0xb2d387;},a0_0x5b3a(_0x27601b,_0x3dfe88);}var chatc={'active':![],'global':![],'activeChats':['1234@g.us']};!getData(a0_0x5234a8(0x186))&&storeData(a0_0x5234a8(0x186),JSON[a0_0x5234a8(0x1b1)](chatc,null,0x2));kord({'cmd':a0_0x5234a8(0x1bf),'desc':'activate\x20chatbot\x20in\x20chat','fromMe':!![],'type':'ai'},async(_0x194a42,_0x165489,_0x32d374)=>{const _0x475899=a0_0x5234a8;try{if(!_0x165489)return _0x194a42['btnText'](_0x475899(0x1ab),{[_0x32d374+_0x475899(0x167)]:_0x475899(0x16e),[_0x32d374+_0x475899(0x19e)]:_0x475899(0x17b),[_0x32d374+_0x475899(0x197)]:'On\x20(All\x20chats)',[_0x32d374+_0x475899(0x1a0)]:'Off\x20(All\x20chats)',[_0x32d374+_0x475899(0x174)]:_0x475899(0x1a4),[_0x32d374+'\x20clear']:_0x475899(0x1b9)});const _0x43206f=_0x165489[_0x475899(0x16a)]('\x20');if(_0x43206f&&_0x43206f[_0x475899(0x164)]>0x0){const _0x7ab1fc=_0x43206f[0x0][_0x475899(0x1d1)](),_0x1f6b1c=_0x43206f[_0x475899(0x164)]>0x1?_0x43206f[0x1]:null;if(_0x7ab1fc==='on'&&_0x1f6b1c===_0x475899(0x1b7))return chatc[_0x475899(0x19a)]=!![],await storeData('chatbot_cfg',JSON[_0x475899(0x1b1)](chatc,null,0x2)),await _0x194a42[_0x475899(0x166)](_0x475899(0x1cb));else{if(_0x7ab1fc==='off'&&_0x1f6b1c===_0x475899(0x1b7))return chatc[_0x475899(0x19a)]=![],await storeData(_0x475899(0x186),JSON[_0x475899(0x1b1)](chatc,null,0x2)),await _0x194a42[_0x475899(0x166)](_0x475899(0x198));else{if(_0x7ab1fc==='on')return chatc[_0x475899(0x172)]=!![],!chatc['activeChats'][_0x475899(0x190)](_0x194a42['chat'])&&chatc[_0x475899(0x1ca)][_0x475899(0x18f)](_0x194a42[_0x475899(0x1a7)]),await storeData('chatbot_cfg',JSON[_0x475899(0x1b1)](chatc,null,0x2)),await _0x194a42[_0x475899(0x166)](_0x475899(0x1b0));else{if(_0x7ab1fc===_0x475899(0x1b5))return chatc[_0x475899(0x1ca)]=chatc[_0x475899(0x1ca)]['filter'](_0x1a801a=>_0x1a801a!==_0x194a42[_0x475899(0x1a7)]),await clearChatHistory(_0x194a42[_0x475899(0x1a7)]),await storeData(_0x475899(0x186),JSON[_0x475899(0x1b1)](chatc,null,0x2)),await _0x194a42[_0x475899(0x166)](_0x475899(0x1bb));else{if(_0x7ab1fc==='status'){const _0x455dbd=await getAIStatus();return _0x455dbd?await _0x194a42[_0x475899(0x166)](_0x475899(0x1d7)+_0x455dbd[_0x475899(0x1bc)]+'\x0a•\x20Active\x20Sessions:\x20'+_0x455dbd[_0x475899(0x1a3)]+_0x475899(0x1cc)+new Date(_0x455dbd[_0x475899(0x1b4)])[_0x475899(0x1d2)]()):await _0x194a42[_0x475899(0x166)](_0x475899(0x1d3));}else{if(_0x7ab1fc==='clear'){const _0x98f5c7=await clearChatHistory(_0x194a42['chat']);return _0x98f5c7?await _0x194a42['send'](_0x475899(0x199)):await _0x194a42[_0x475899(0x166)]('_Failed\x20to\x20clear\x20chat\x20history_');}else return _0x194a42[_0x475899(0x1cd)](_0x475899(0x1ab),{[_0x32d374+'\x20on']:_0x475899(0x16e),[_0x32d374+'\x20off']:'OFF',[_0x32d374+_0x475899(0x197)]:'On\x20(All\x20chats)',[_0x32d374+'\x20off\x20all']:_0x475899(0x171),[_0x32d374+_0x475899(0x174)]:_0x475899(0x1a4),[_0x32d374+_0x475899(0x196)]:_0x475899(0x1b9)});}}}}}}else return _0x194a42['btnText'](_0x475899(0x1ab),{[_0x32d374+_0x475899(0x167)]:_0x475899(0x16e),[_0x32d374+_0x475899(0x19e)]:_0x475899(0x17b),[_0x32d374+_0x475899(0x197)]:_0x475899(0x18b),[_0x32d374+_0x475899(0x1a0)]:_0x475899(0x171),[_0x32d374+_0x475899(0x174)]:_0x475899(0x1a4),[_0x32d374+'\x20clear']:_0x475899(0x1b9)});}catch(_0x1b6e20){return console[_0x475899(0x169)](_0x1b6e20),await _0x194a42[_0x475899(0x166)](_0x475899(0x19f)+_0x1b6e20[_0x475899(0x1b3)]);}}),kord({'on':a0_0x5234a8(0x1a1),'fromMe':![]},async(_0x47cac7,_0x32e826)=>{const _0x599bb0=a0_0x5234a8;try{const _0x1b1fd4=await getData(_0x599bb0(0x186))||{'global':![],'activeChats':[]};if(!_0x1b1fd4)return;const _0x32b5c6=(_0x1b1fd4?.['global']||_0x1b1fd4?.[_0x599bb0(0x1ca)][_0x599bb0(0x190)](_0x47cac7['chat']))&&(_0x47cac7[_0x599bb0(0x18a)]?.[_0x599bb0(0x1bd)]||_0x47cac7[_0x599bb0(0x1c9)]?.[_0x599bb0(0x190)](_0x47cac7[_0x599bb0(0x1ba)]['jid']));if(!_0x32b5c6)return;const _0x329397=setInterval(()=>{const _0x3e81dd=_0x599bb0;try{_0x47cac7[_0x3e81dd(0x16d)][_0x3e81dd(0x1b2)](_0x3e81dd(0x1c2),_0x47cac7[_0x3e81dd(0x1a7)]);}catch(_0x491b6c){}},0x3e8);try{const _0x391a9e=await getAIResponse(_0x32e826,_0x47cac7[_0x599bb0(0x1a7)]);return clearInterval(_0x329397),await _0x47cac7[_0x599bb0(0x166)](_0x391a9e);}catch(_0x513396){clearInterval(_0x329397),console[_0x599bb0(0x169)](_0x599bb0(0x185),_0x513396);let _0x54853e=_0x599bb0(0x192);if(_0x513396[_0x599bb0(0x1b3)]['includes'](_0x599bb0(0x1ce)))_0x54853e=_0x599bb0(0x1cf);else{if(_0x513396['message']['includes'](_0x599bb0(0x1ac)))_0x54853e='Too\x20many\x20requests,\x20please\x20wait\x20a\x20moment';else _0x513396[_0x599bb0(0x1b3)]['includes'](_0x599bb0(0x168))&&(_0x54853e=_0x599bb0(0x1b8));}return await _0x47cac7[_0x599bb0(0x166)](_0x54853e);}}catch(_0x821ac7){console[_0x599bb0(0x169)](_0x599bb0(0x1c5),_0x821ac7);}}),kord({'cmd':a0_0x5234a8(0x184),'desc':a0_0x5234a8(0x180),'fromMe':!![],'type':'ai'},async _0x4298f3=>{const _0x30111d=a0_0x5234a8;try{const _0x143f77=_0x30111d(0x17e),_0x42631a=await getAIResponse(_0x143f77,_0x30111d(0x18e)+Date[_0x30111d(0x1ad)]());await _0x4298f3[_0x30111d(0x166)](_0x30111d(0x1d5)+_0x143f77+_0x30111d(0x16b)+_0x42631a);}catch(_0x2014b6){await _0x4298f3['send'](_0x30111d(0x1be)+_0x2014b6['message']);}});function a0_0x3961(){const _0x269dfc=['composing','AI\x20status\x20error:','mistral','Message\x20handling\x20error:','success','Rate\x20limit\x20exceeded\x20-\x20please\x20wait\x20a\x20moment','axios','mentionedJid','activeChats','_*Chatbot\x20enabled\x20for\x20all\x20chats!*_','\x0a•\x20Last\x20Updated:\x20','btnText','timeout','Response\x20took\x20too\x20long,\x20please\x20try\x20again','16hpavNj','toLowerCase','toLocaleString','_Unable\x20to\x20fetch\x20AI\x20status_','chat\x20with\x20ai\x20(gemma)','*AI\x20Test\x20Successful!*\x0a\x0a*Sent:*\x20','Llama-2-int8','*AI\x20Status:*\x0a•\x20Status:\x20','11688850TyqbuV','length','../core','send','\x20on','server\x20error','error','split','\x0a*Response:*\x20','API\x20request\x20failed','client','✅ON','Clear\x20history\x20error:','response','Off\x20(All\x20chats)','active','post','\x20status','data','585897xDxBIM','code','Mistral','hermes','Failed\x20to\x20get\x20AI\x20response','OFF','llama2','3514244KAuWfU','Hello,\x20this\x20is\x20a\x20test\x20message','1901879cFoubf','test\x20AI\x20connectivity','478EpYsck','application/json','delete','aitest','AI\x20response\x20error:','chatbot_cfg','gemma','gpt','36fLWqNM','quoted','On\x20(All\x20chats)','OpenHermes','Zephyr','test_','push','includes','llama','hmm,\x20i\x20can\x27t\x20process\x20that\x20rn,\x20try\x20again','9IPKUnU','/ai/history/','10cvhdXt','\x20clear','\x20on\x20all','_*Chatbot\x20disabled\x20for\x20all\x20chats!*_','_Chat\x20history\x20cleared\x20successfully_','global','1530960rJcpEv','https://kord-api.vercel.app','/ai/chat','\x20off','An\x20error\x20occurred:\x20','\x20off\x20all','text','Server\x20error\x20-\x20please\x20try\x20again\x20later','activeSessions','📊\x20Status','chat\x20with\x20ai\x20(llama)','chat\x20with\x20ai\x20(mistral)','chat','Hi!,\x20What\x27s\x20Your\x20Prompt?','chat\x20with\x20ai\x20(hermes)','Request\x20timeout\x20-\x20please\x20try\x20again','Toggle\x20chatbot','rate\x20limit','now','chat\x20with\x20ai\x20(gpt)','4706zPxzPy','_Chatbot\x20is\x20now\x20active\x20in\x20this\x20chat_','stringify','sendPresenceUpdate','message','timestamp','off','Gemma','all','AI\x20service\x20is\x20temporarily\x20unavailable','🗑️\x20Clear\x20History','user','_Chatbot\x20deactivated\x20in\x20this\x20chat_','status','fromMe','*AI\x20Test\x20Failed:*\x20','chatbot','3037661blpzXI','chat\x20with\x20ai\x20(Zephyr)'];a0_0x3961=function(){return _0x269dfc;};return a0_0x3961();}
+const { kord,
+ wtype,
+ chatWithAi,
+ gemini,
+ chatgpt,
+ getData,
+ storeData,
+ prefix,
+ commands
+} = require("../core")
+const axios = require('axios') 
+
+kord({
+        cmd: "gemma",
+        desc: "chat with ai (gemma)",
+        fromMe: wtype,
+        type: "ai",
+}, async (m, text) => {
+        var prompt = text || m.quoted?.text
+        if (!prompt) return await m.send("Hi!, What's Your Prompt?")
+        return await m.send(await chatWithAi(prompt, "Gemma"))
+})
+
+kord({
+        cmd: "gpt",
+        desc: "chat with ai (gpt)",
+        fromMe: wtype,
+        type: "ai",
+}, async (m, text) => {
+        var prompt = text || m.quoted?.text
+        if (!prompt) return await m.send("Hi!, What's Your Prompt?")
+        return await m.send(await chatWithAi(prompt, "gpt-3.5-turbo"))
+})
+
+
+kord({
+        cmd: "llama",
+        desc: "chat with ai (llama)",
+        fromMe: wtype,
+        type: "ai",
+}, async (m, text) => {
+        var prompt = text || m.quoted?.text
+        if (!prompt) return await m.send("Hi!, What's Your Prompt?")
+        return await m.send(await chatWithAi(prompt, "Llama-2-int8"))
+})
+
+
+kord({
+        cmd: "llama2",
+        desc: "chat with ai (llama)",
+        fromMe: wtype,
+        type: "ai",
+}, async (m, text) => {
+        var prompt = text || m.quoted?.text
+        if (!prompt) return await m.send("Hi!, What's Your Prompt?")
+        return await m.send(await chatWithAi(prompt, "Llama-2-int8"))
+})
+
+kord({
+        cmd: "mistral",
+        desc: "chat with ai (mistral)",
+        fromMe: wtype,
+        type: "ai",
+}, async (m, text) => {
+        var prompt = text || m.quoted?.text
+        if (!prompt) return await m.send("Hi!, What's Your Prompt?")
+        return await m.send(await chatWithAi(prompt, "Mistral"))
+})
+
+
+kord({
+        cmd: "llama3",
+        desc: "chat with ai (llama)",
+        fromMe: wtype,
+        type: "ai",
+}, async (m, text) => {
+        var prompt = text || m.quoted?.text
+        if (!prompt) return await m.send("Hi!, What's Your Prompt?")
+                return await m.send(await chatWithAi(prompt, "Llama-2-awq"))
+})
+
+kord({
+        cmd: "hermes",
+        desc: "chat with ai (hermes)",
+        fromMe: wtype,
+        type: "ai",
+}, async (m, text) => {
+        var prompt = text || m.quoted?.text
+        if (!prompt) return await m.send("Hi!, What's Your Prompt?")
+        return await m.send(await chatWithAi(prompt, "OpenHermes"))
+})
+
+kord({
+        cmd: "zephyr",
+        desc: "chat with ai (Zephyr)",
+        fromMe: wtype,
+        type: "ai",
+}, async (m, text) => {
+        var prompt = text || m.quoted?.text
+        if (!prompt) return await m.send("Hi!, What's Your Prompt?")
+        return await m.send(await chatWithAi(prompt, "Zephyr"))
+})
+
+const API_BASE_URL = 'https://api.mistral.ai/v1'
+const API_KEY = 'AA46jQW0VLsz2x7FW7sCUnBVIpBaa1qW'
+const AGENT_ID = 'ag:4151fcb9:20250104:untitled-agent:d1bde2e5'
+
+const chatHistories = new Map()
+
+function stripThoughts(text) {
+  return text.replace(/<think>[\s\S]*?<\/think>/gi, '').trim()
+}
+
+async function getAIResponse(m, quoted) {
+  const chatId = m.chat || m.chatId || m.key?.remoteJid || 'unknown'
+  const rawMessage = JSON.stringify(m, null, 2)
+  const rawQuoted = quoted ? JSON.stringify(quoted, null, 2) : null
+
+  let message = rawQuoted
+    ? `Message:\n${rawMessage}\n\nQuoted:\n${rawQuoted}`
+    : `Message:\n${rawMessage}`
+
+  try {
+    if (!chatHistories.has(chatId)) chatHistories.set(chatId, [])
+    const history = chatHistories.get(chatId)
+    history.push({ role: 'user', content: message })
+
+    const contextMessages = history.slice(-10)
+    const messages = [
+      {
+        role: 'system',
+        content: "You're a WhatsApp bot. You receive raw JSON of messages and quoted messages. Respond with useful answers in WhatsApp format using *bold*, _italic_, ~strikethrough~, and ```monospace```."
+      },
+      ...contextMessages
+    ]
+
+    const res = await axios.post(`${API_BASE_URL}/agents/completions`, {
+      agent_id: AGENT_ID,
+      messages,
+      max_tokens: 500,
+      stream: false,
+      tool_choice: 'auto',
+      parallel_tool_calls: true,
+      prompt_mode: 'reasoning'
+    }, {
+      headers: {
+        Authorization: `Bearer ${API_KEY}`,
+        'Content-Type': 'application/json'
+      },
+      timeout: 30000
+    })
+
+    const raw = res.data?.choices?.[0]?.message?.content
+    const output = stripThoughts(raw)
+
+    if (output) {
+      history.push({ role: 'assistant', content: output })
+      chatHistories.set(chatId, history.slice(-10))
+      return output
+    } else {
+      throw new Error('Empty response')
+    }
+  } catch (e) {
+    console.error('Mistral AI Error:', e.message)
+    if (e.code === 'ECONNABORTED') throw new Error('Request timeout - try again')
+    if (e.response?.status === 429) throw new Error('Rate limit exceeded - wait a moment')
+    if (e.response?.status >= 500) throw new Error('Server error - try later')
+    throw new Error('Failed to get AI response')
+  }
+}
+
+function clearChatHistory(chatId) {
+  chatHistories.delete(chatId)
+  return true
+}
+
+async function getAIStatus() {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/ai/status`, {
+      timeout: 10000
+    })
+    return response.data.data
+  } catch (error) {
+    console.error('AI status error:', error.message)
+    return null
+  }
+}
+
+var chatc = {
+    active: false,
+    global: false,
+    activeChats: [
+        '1234@g.us'
+    ],
+}
+
+if (!getData("chatbot_cfg")) {
+    storeData("chatbot_cfg", JSON.stringify(chatc, null, 2))
+}
+
+kord({
+  cmd: "chatbot",
+  desc: "activate chatbot in chat",
+  fromMe: true,
+  type: "ai",
+}, async (m, text, cmd) => {
+  try {
+    if (!text) return m.btnText("Toggle chatbot", {
+      [`${cmd} on`]: "✅ON",
+      [`${cmd} off`]: "OFF",
+      [`${cmd} on all`]: "On (All chats)",
+      [`${cmd} off all`]: "Off (All chats)",
+      [`${cmd} status`]: "📊 Status",
+      [`${cmd} clear`]: "🗑️ Clear History"
+    })
+    
+    const args = text.split(" ")
+    if (args && args.length > 0) {
+      const option = args[0].toLowerCase()
+      const value = args.length > 1 ? args[1] : null
+      
+      if (option === 'on' && value === 'all') {
+        chatc.global = true
+        await storeData('chatbot_cfg', JSON.stringify(chatc, null, 2))
+        return await m.send('_*Chatbot enabled for all chats!*_')
+      } else if (option === 'off' && value === 'all') {
+        chatc.global = false
+        await storeData('chatbot_cfg', JSON.stringify(chatc, null, 2))
+        return await m.send('_*Chatbot disabled for all chats!*_')
+      } else if (option === "on") {
+        chatc.active = true
+        if (!chatc.activeChats.includes(m.chat)) {
+          chatc.activeChats.push(m.chat)
+        }
+        await storeData('chatbot_cfg', JSON.stringify(chatc, null, 2))
+        return await m.send('_Chatbot is now active in this chat_')
+      } else if (option === 'off') {
+        chatc.activeChats = chatc.activeChats.filter(jid => jid !== m.chat)
+         clearChatHistory(m.chat)
+        await storeData('chatbot_cfg', JSON.stringify(chatc, null, 2))
+        return await m.send("_Chatbot deactivated in this chat_")
+      } else if (option === 'status') {
+        const status = await getAIStatus()
+        if (status) {
+          return await m.send(`*AI Status:*\n• Status: ${status.status}\n• Active Sessions: ${status.activeSessions}\n• Last Updated: ${new Date(status.timestamp).toLocaleString()}`)
+        } else {
+          return await m.send('_Unable to fetch AI status_')
+        }
+      } else if (option === 'clear') {
+        const cleared =  clearChatHistory(m.chat)
+        if (cleared) {
+          return await m.send('_Chat history cleared successfully_')
+        } else {
+          return await m.send('_Failed to clear chat history_')
+        }
+      } else {
+        return m.btnText("Toggle chatbot", {
+          [`${cmd} on`]: "✅ON",
+          [`${cmd} off`]: "OFF",
+          [`${cmd} on all`]: "On (All chats)",
+          [`${cmd} off all`]: "Off (All chats)",
+          [`${cmd} status`]: "📊 Status",
+          [`${cmd} clear`]: "🗑️ Clear History"
+        })
+      }
+    } else {
+      return m.btnText("Toggle chatbot", {
+        [`${cmd} on`]: "✅ON",
+        [`${cmd} off`]: "OFF",
+        [`${cmd} on all`]: "On (All chats)",
+        [`${cmd} off all`]: "Off (All chats)",
+        [`${cmd} status`]: "📊 Status",
+        [`${cmd} clear`]: "🗑️ Clear History"
+      })
+    }
+  } catch (err) {
+    console.error(err)
+    return await m.send(`An error occurred: ${err.message}`)
+  }
+})
+
+kord({
+  on: "text",
+  fromMe: false,
+}, async (m, text) => {
+  try {
+    const config = await getData("chatbot_cfg") || { global: false, activeChats: [] }
+    if (!config) return
+
+    const shouldRespond = (config.global || config.activeChats.includes(m.chat)) &&
+                          (m.quoted?.fromMe || m.mentionedJid?.includes(m.user.jid))
+    if (!shouldRespond) return
+
+    const typingInterval = setInterval(() => {
+      try {
+        m.client.sendPresenceUpdate("composing", m.chat)
+      } catch {}
+    }, 1000)
+
+    try {
+      const fullResponse = await getAIResponse(text, m.chat)
+      clearInterval(typingInterval)
+
+      const [messagePart, codePart] = fullResponse.split("$$")
+
+      if (messagePart?.trim()) await m.send(messagePart.trim())
+
+      if (codePart?.trim()) {
+        try {
+          const sock = m.client
+          const command = m.command
+          const store = global.store
+
+          await (async () => {
+            await eval(`(async () => { ${codePart.trim()} })()`)
+          })()
+        } catch (e) {
+          console.error("Eval error:", e)
+          console.log("evaled:", codePart.trim())
+        }
+      }
+    } catch (error) {
+      clearInterval(typingInterval)
+      console.error("AI response error:", error)
+
+      let errorMessage = "hmm, i can't process that rn, try again"
+
+      if (error.message.includes('timeout')) {
+        errorMessage = "Response took too long, please try again"
+      } else if (error.message.includes('rate limit')) {
+        errorMessage = "Too many requests, please wait a moment"
+      } else if (error.message.includes('server error')) {
+        errorMessage = "AI service is temporarily unavailable"
+      }
+
+      return await m.send(errorMessage)
+    }
+  } catch (err) {
+    console.error("Message handling error:", err)
+  }
+})
+
+
+kord({
+  cmd: "aitest",
+  desc: "test AI connectivity",
+  fromMe: true,
+  type: "ai",
+}, async (m) => {
+  try {
+    const testMessage = "Hello, this is a test message"
+    const response = await getAIResponse(testMessage, `test_${Date.now()}`)
+    await m.send(`*AI Test Successful!*\n\n*Sent:* ${testMessage}\n*Response:* ${response}`)
+  } catch (error) {
+    await m.send(`*AI Test Failed:* ${error.message}`)
+  }
+})

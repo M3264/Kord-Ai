@@ -1,1 +1,317 @@
-const a0_0x3e3be5=a0_0x5500;function a0_0x5500(_0x585d86,_0x5e57cc){const _0xa3ad3a=a0_0xa3ad();return a0_0x5500=function(_0x5500c9,_0x3f2764){_0x5500c9=_0x5500c9-0x1ed;let _0x396ddd=_0xa3ad3a[_0x5500c9];return _0x396ddd;},a0_0x5500(_0x585d86,_0x5e57cc);}(function(_0x419481,_0x295323){const _0x3c251a=a0_0x5500,_0x4f141a=_0x419481();while(!![]){try{const _0x16f7c8=-parseInt(_0x3c251a(0x23f))/0x1+-parseInt(_0x3c251a(0x217))/0x2+-parseInt(_0x3c251a(0x250))/0x3*(-parseInt(_0x3c251a(0x234))/0x4)+-parseInt(_0x3c251a(0x237))/0x5*(-parseInt(_0x3c251a(0x1ef))/0x6)+-parseInt(_0x3c251a(0x20e))/0x7*(-parseInt(_0x3c251a(0x254))/0x8)+parseInt(_0x3c251a(0x24e))/0x9+parseInt(_0x3c251a(0x212))/0xa*(-parseInt(_0x3c251a(0x228))/0xb);if(_0x16f7c8===_0x295323)break;else _0x4f141a['push'](_0x4f141a['shift']());}catch(_0x5b2472){_0x4f141a['push'](_0x4f141a['shift']());}}}(a0_0xa3ad,0xa03dc));const {kord,wtype,isAdmin,prefix,isBotAdmin}=require(a0_0x3e3be5(0x24d));function a0_0xa3ad(){const _0x4f3d4b=['profilePictureUrl','fetchBlocklist','match_last_seen','../core','2572164rfJsRV','isGroup','9VGVzmC','to\x20change\x20online\x20privacy','setname\x20Mirage_','chatModify','8rRWqtK','timestamp','updateOnlinePrivacy','chat','none','image','updateProfileStatus','updateLastSeenPrivacy','@g.us','4408050eQvftR','_*provide\x20a\x20name\x20to\x20set!*_\x0a_Example:\x20','archive','jid\x20to\x20get\x20the\x20jid\x20of\x20a\x20chat','to\x20change\x20lastseen\x20privacy','privacy\x20for\x20group\x20add','message','updateProfileName','\x20all_\x0a_to\x20change\x20*status*\x20\x20privacy\x20settings_','contact_blacklist','allow-gcadd|groupadd','privacy\x20setting\x20profile\x20picture','gets\x20jid\x20of\x20either\x20replied\x20user\x20or\x20present\x20chat','setbio\x20urgent\x20calls\x20only._','clear','_profile\x20pic\x20removed.._','\x20all_\x0a_to\x20change\x20*profile\x20picture*\x20\x20privacy\x20settings_','removes\x20profile\x20picture','_I\x20don\x27t\x20know\x20you.._','forward\x20a\x20message','set\x20bio\x20for\x20profile','_Profile\x20name\x20updated\x20to\x20','updateBlockStatus','set\x20profile\x20name','block','messageTimestamp','@s.whatsapp.net','newsletter','reply','\x20all_\x0a_to\x20change\x20last\x20seen\x20privacy\x20settings_','_I\x27m\x20not\x20admin.._','4075127ORTHBu','privacy','send','delete','20ZZUymQ','\x202348033221144@s.whatsapp.net_\x0a\x0ause\x20','updateProfilePicture','mypp','\x20all_\x0a_to\x20change\x20*group\x20add*\x20\x20privacy\x20settings_','170742rbmknt','isCreator','block\x20a\x20user','client','_chat\x20unarchived_','*\x20values_','forward|fwrd','read','unblock','user','all','length','includes','delete|del|dlt','unarchive','downloadMediaMessage','_Chat\x20Unpined_','7075189qyAiRx','_*Provide\x20a\x20number/jid!*_\x0a_example\x20','join','_action\x20must\x20be\x20*','_Privacy\x20Updated\x20to\x20*','➟\x20+','privacy\x20for\x20read\x20message','_reply\x20to\x20the\x20msg\x20you\x20want\x20to\x20forward.._','setname','jid','fromMe','delete\x20a\x20replied\x20message','1560388BvBKww','forwardMessage','\x202348033221144_\x0a_','5RYYSAk','_chat\x20archived_','archive\x20a\x20chat','unarchive\x20a\x20chat','quoted','_*Example:-*\x20','getpp','_Chat\x20Cleared_','744806BasaNf','updateProfilePicturePrivacy','download','unpin\x20a\x20chat','_You\x27re\x20not\x20admin.._','sender','contacts','loadMessage','lastseen','replace','key'];a0_0xa3ad=function(){return _0x4f3d4b;};return a0_0xa3ad();}kord({'cmd':a0_0x3e3be5(0x224),'desc':a0_0x3e3be5(0x233),'fromMe':wtype,'type':a0_0x3e3be5(0x220)},async(_0x44e08f,_0x32e4b2)=>{const _0x252e59=a0_0x3e3be5;if(!_0x44e08f[_0x252e59(0x23b)])return await _0x44e08f[_0x252e59(0x210)]('_Reply\x20to\x20a\x20message\x20to\x20delete_');if(_0x44e08f[_0x252e59(0x24f)]){if(_0x44e08f[_0x252e59(0x23b)][_0x252e59(0x232)]&&_0x44e08f[_0x252e59(0x218)])return await _0x44e08f['send'](_0x44e08f[_0x252e59(0x23b)],{},_0x252e59(0x211)),await _0x44e08f[_0x252e59(0x210)](_0x44e08f,{},_0x252e59(0x211));let _0x58696f=await isAdmin(_0x44e08f),_0x512aa2=await isBotAdmin(_0x44e08f);if(!_0x512aa2)return await _0x44e08f[_0x252e59(0x210)](_0x252e59(0x20d));if(!_0x58696f)return await _0x44e08f[_0x252e59(0x210)](_0x252e59(0x243));return await _0x44e08f[_0x252e59(0x210)](_0x44e08f[_0x252e59(0x23b)],{},_0x252e59(0x211)),await _0x44e08f[_0x252e59(0x210)](_0x44e08f,{},_0x252e59(0x211));}if(!_0x44e08f['isCreator'])return await _0x44e08f[_0x252e59(0x210)](_0x252e59(0x201));return await _0x44e08f[_0x252e59(0x210)](_0x44e08f[_0x252e59(0x23b)],{},_0x252e59(0x211)),await _0x44e08f[_0x252e59(0x210)](_0x44e08f,{},_0x252e59(0x211));}),kord({'cmd':a0_0x3e3be5(0x1f1),'desc':a0_0x3e3be5(0x239),'fromMe':!![],'type':'user'},async(_0x41566b,_0x22ce41)=>{const _0x55347c=a0_0x3e3be5,_0xfe0369={'message':_0x41566b['message'],'key':_0x41566b[_0x55347c(0x249)],'messageTimestamp':_0x41566b[_0x55347c(0x255)]};return await _0x41566b[_0x55347c(0x21a)][_0x55347c(0x253)]({'archive':!![],'lastMessages':[_0xfe0369]},_0x41566b[_0x55347c(0x257)]),await _0x41566b[_0x55347c(0x210)](_0x55347c(0x238));}),kord({'cmd':a0_0x3e3be5(0x225),'desc':a0_0x3e3be5(0x23a),'fromMe':!![],'type':a0_0x3e3be5(0x220)},async(_0x518f72,_0x34c673)=>{const _0x4afbb1=a0_0x3e3be5,_0x5b77e8={'message':_0x518f72[_0x4afbb1(0x1f5)],'key':_0x518f72[_0x4afbb1(0x249)],'messageTimestamp':_0x518f72[_0x4afbb1(0x255)]};return await _0x518f72['client'][_0x4afbb1(0x253)]({'archive':![],'lastMessages':[_0x5b77e8]},_0x518f72[_0x4afbb1(0x257)]),await _0x518f72[_0x4afbb1(0x210)](_0x4afbb1(0x21b));}),kord({'cmd':a0_0x3e3be5(0x231),'desc':a0_0x3e3be5(0x1fb),'fromMe':wtype,'type':a0_0x3e3be5(0x220)},async _0x2bf016=>{const _0x27bd6f=a0_0x3e3be5;if(_0x2bf016[_0x27bd6f(0x23b)]['sender'])return await _0x2bf016[_0x27bd6f(0x210)](_0x2bf016[_0x27bd6f(0x23b)]['sender']);else return await _0x2bf016['send'](_0x2bf016['chat']);}),kord({'cmd':'pp|setpp','desc':'changes\x20profile\x20pic\x20to\x20replied\x20photo','fromMe':!![],'type':'user'},async(_0x2619b5,_0x1204fb)=>{const _0x33b580=a0_0x3e3be5;if(!_0x2619b5['quoted'][_0x33b580(0x259)]&&!_0x2619b5[_0x33b580(0x259)])return await _0x2619b5[_0x33b580(0x210)]('_reply\x20to\x20a\x20picture_');if(_0x2619b5['quoted'][_0x33b580(0x259)])var _0x326c32=await _0x2619b5[_0x33b580(0x23b)][_0x33b580(0x241)]();else _0x326c32=await _0x2619b5[_0x33b580(0x21a)][_0x33b580(0x226)](_0x2619b5);return await _0x2619b5[_0x33b580(0x21a)][_0x33b580(0x214)](_0x2619b5[_0x33b580(0x220)][_0x33b580(0x231)],_0x326c32),await _0x2619b5[_0x33b580(0x210)]('_profile\x20pic\x20changed_');}),kord({'cmd':'removepp','desc':a0_0x3e3be5(0x200),'fromMe':!![],'type':'user'},async(_0xeb7acd,_0x4bec24)=>{const _0x30ae1c=a0_0x3e3be5;return await _0xeb7acd[_0x30ae1c(0x21a)]['removeProfilePicture'](_0xeb7acd[_0x30ae1c(0x220)][_0x30ae1c(0x231)]),await _0xeb7acd[_0x30ae1c(0x210)](_0x30ae1c(0x1fe));}),kord({'cmd':a0_0x3e3be5(0x1fd),'desc':'clear\x20a\x20chat','fromMe':!![],'type':a0_0x3e3be5(0x220)},async(_0x522925,_0x14ce65)=>{const _0x33c0c2=a0_0x3e3be5;await _0x522925[_0x33c0c2(0x21a)]['chatModify']({'delete':!![],'lastMessages':[{'key':_0x522925[_0x33c0c2(0x249)],'messageTimestamp':_0x522925[_0x33c0c2(0x208)]}]},_0x522925['chat']),await _0x522925[_0x33c0c2(0x210)](_0x33c0c2(0x23e));}),kord({'cmd':'pinchat|chatpin','desc':'pin\x20a\x20chat','fromMe':!![],'type':a0_0x3e3be5(0x220)},async(_0x79a5a6,_0x45cacd)=>{const _0x305a21=a0_0x3e3be5;await _0x79a5a6[_0x305a21(0x21a)][_0x305a21(0x253)]({'pin':!![]},_0x79a5a6[_0x305a21(0x257)]),await _0x79a5a6[_0x305a21(0x210)]('_Chat\x20Pined_');}),kord({'cmd':'unpinchat|unchatpin','desc':a0_0x3e3be5(0x242),'fromMe':!![],'type':a0_0x3e3be5(0x220)},async(_0x4fec15,_0x58f50b)=>{const _0x2ad7e0=a0_0x3e3be5;await _0x4fec15['client']['chatModify']({'pin':![]},_0x4fec15[_0x2ad7e0(0x257)]),await _0x4fec15[_0x2ad7e0(0x210)](_0x2ad7e0(0x227));}),kord({'cmd':a0_0x3e3be5(0x207),'desc':a0_0x3e3be5(0x219),'fromMe':!![],'type':a0_0x3e3be5(0x220)},async(_0x7c0421,_0x4db10f)=>{const _0x3858ce=a0_0x3e3be5;_0x7c0421[_0x3858ce(0x24f)]&&_0x7c0421['quoted']?.[_0x3858ce(0x244)]?await _0x7c0421[_0x3858ce(0x21a)][_0x3858ce(0x205)](_0x7c0421[_0x3858ce(0x23b)]?.[_0x3858ce(0x244)],_0x3858ce(0x207)):await _0x7c0421[_0x3858ce(0x21a)]['updateBlockStatus'](_0x7c0421[_0x3858ce(0x257)],_0x3858ce(0x207));}),kord({'cmd':'unblock','desc':'unblock\x20a\x20user','fromMe':!![],'type':a0_0x3e3be5(0x220)},async(_0x1ecec2,_0x23c2c6)=>{const _0x418dd3=a0_0x3e3be5;_0x1ecec2['isGroup']&&_0x1ecec2[_0x418dd3(0x23b)]?.[_0x418dd3(0x244)]?await _0x1ecec2[_0x418dd3(0x21a)]['updateBlockStatus'](_0x1ecec2['quoted']?.[_0x418dd3(0x244)],_0x418dd3(0x21f)):await _0x1ecec2[_0x418dd3(0x21a)][_0x418dd3(0x205)](_0x1ecec2[_0x418dd3(0x257)],'unblock');}),kord({'cmd':'blocklist','desc':'fetches\x20list\x20of\x20blocked\x20numbers','fromMe':!![],'type':'user'},async(_0x470e1a,_0x443f77)=>{const _0x58e053=a0_0x3e3be5,_0xd6de7f=await _0x470e1a[_0x58e053(0x21a)][_0x58e053(0x24b)]();if(!_0xd6de7f?.[_0x58e053(0x222)])return await _0x470e1a['send']('_No\x20blocked\x20users\x20found!_');const _0x1e4c6a='_*❏\x20Block\x20List\x20❏*_\x0a\x0a'+_0xd6de7f['map'](_0x3051fa=>_0x58e053(0x22d)+_0x3051fa[_0x58e053(0x248)](_0x58e053(0x209),''))[_0x58e053(0x22a)]('\x0a');return await _0x470e1a[_0x58e053(0x210)](_0x1e4c6a);}),kord({'cmd':a0_0x3e3be5(0x230),'desc':a0_0x3e3be5(0x206),'fromMe':!![],'type':a0_0x3e3be5(0x220)},async(_0x6812e8,_0x3143f4)=>{const _0xb513d4=a0_0x3e3be5;q=_0x3143f4;if(!q)return await _0x6812e8['send'](_0xb513d4(0x1f0)+prefix+_0xb513d4(0x252));await _0x6812e8['client'][_0xb513d4(0x1f6)](q),await _0x6812e8[_0xb513d4(0x20b)](_0xb513d4(0x204)+q+'_');}),kord({'cmd':'bio|setbio','desc':a0_0x3e3be5(0x203),'fromMe':!![],'type':a0_0x3e3be5(0x220)},async(_0x2cee15,_0x194dab)=>{const _0x29418e=a0_0x3e3be5;let _0x168342=_0x194dab;if(!_0x168342)return await _0x2cee15[_0x29418e(0x210)]('*_Provide\x20A\x20Text*_\x0a_example:\x20'+prefix+_0x29418e(0x1fc));await _0x2cee15['client'][_0x29418e(0x25a)](_0x168342),await _0x2cee15[_0x29418e(0x210)]('_Bio\x20updated_');}),kord({'cmd':a0_0x3e3be5(0x23d),'desc':'get\x20profile\x20pic\x20of\x20a\x20user/group','fromMe':!![],'type':a0_0x3e3be5(0x220)},async(_0x43e899,_0x13000f)=>{const _0x5a7093=a0_0x3e3be5;if(_0x43e899['isGroup']&&!_0x43e899['quoted']['sender']){var _0x580442=await _0x43e899[_0x5a7093(0x21a)][_0x5a7093(0x24a)](_0x43e899[_0x5a7093(0x257)],_0x5a7093(0x259));return await _0x43e899['send'](_0x580442,{},'image');}else{if(_0x43e899[_0x5a7093(0x24f)]&&_0x43e899[_0x5a7093(0x23b)][_0x5a7093(0x244)]){var _0x580442=await _0x43e899['client'][_0x5a7093(0x24a)](_0x43e899[_0x5a7093(0x23b)][_0x5a7093(0x244)],'image');return await _0x43e899[_0x5a7093(0x210)](_0x580442,{},_0x5a7093(0x259));}else{if(_0x43e899[_0x5a7093(0x23b)][_0x5a7093(0x244)]){var _0x580442=await _0x43e899[_0x5a7093(0x21a)][_0x5a7093(0x24a)](_0x43e899[_0x5a7093(0x23b)][_0x5a7093(0x244)],_0x5a7093(0x259));return await _0x43e899[_0x5a7093(0x210)](_0x580442,{},_0x5a7093(0x259));}else{var _0x580442=await _0x43e899[_0x5a7093(0x21a)][_0x5a7093(0x24a)](_0x43e899[_0x5a7093(0x257)],_0x5a7093(0x259));return await _0x43e899[_0x5a7093(0x210)](_0x580442,{},_0x5a7093(0x259));}}}}),kord({'cmd':a0_0x3e3be5(0x21d),'desc':a0_0x3e3be5(0x202),'fromMe':!![],'type':a0_0x3e3be5(0x220)},async(_0x5f502b,_0x4e3613,_0x579135,_0x2814c0)=>{const _0x4930e9=a0_0x3e3be5;if(!_0x5f502b['quoted'])return await _0x5f502b[_0x4930e9(0x210)](_0x4930e9(0x22f));if(!_0x4e3613)return await _0x5f502b[_0x4930e9(0x210)](_0x4930e9(0x229)+_0x579135+_0x4930e9(0x236)+_0x579135+_0x4930e9(0x213)+prefix+_0x4930e9(0x1f2));let _0x1a70cc;_0x4e3613[_0x4930e9(0x223)](_0x4930e9(0x1ee))||_0x4e3613['includes'](_0x4930e9(0x209))||_0x4e3613[_0x4930e9(0x223)](_0x4930e9(0x20a))?_0x1a70cc=_0x4e3613:_0x1a70cc=_0x4e3613+_0x4930e9(0x209),await _0x5f502b[_0x4930e9(0x235)](_0x1a70cc,await _0x2814c0[_0x4930e9(0x246)](_0x5f502b[_0x4930e9(0x257)],_0x5f502b[_0x4930e9(0x23b)]));}),kord({'cmd':a0_0x3e3be5(0x247),'fromMe':!![],'desc':a0_0x3e3be5(0x1f3),'type':'privacy'},async(_0xfa4037,_0x29e391,_0x277039)=>{const _0x572d5c=a0_0x3e3be5;if(!_0x29e391)return await _0xfa4037[_0x572d5c(0x210)]('_*Example:-*\x20'+_0x277039+_0x572d5c(0x20c));const _0x35c9c1=[_0x572d5c(0x221),_0x572d5c(0x245),_0x572d5c(0x1f8),_0x572d5c(0x258)];if(!_0x35c9c1[_0x572d5c(0x223)](_0x29e391))return await _0xfa4037[_0x572d5c(0x210)](_0x572d5c(0x22b)+_0x35c9c1['join']('/')+'*\x20values_');await _0xfa4037['client'][_0x572d5c(0x1ed)](_0x29e391),await _0xfa4037[_0x572d5c(0x210)]('_Privacy\x20settings\x20*last\x20seen*\x20Updated\x20to\x20*'+_0x29e391+'*_');}),kord({'cmd':'online','fromMe':!![],'desc':a0_0x3e3be5(0x251),'type':a0_0x3e3be5(0x20f)},async(_0x5d2a5b,_0xa40787,_0x394b80)=>{const _0xf9f993=a0_0x3e3be5;if(!_0xa40787)return await _0x5d2a5b[_0xf9f993(0x210)](_0xf9f993(0x23c)+_0x394b80+'\x20all_\x0a_to\x20change\x20*online*\x20\x20privacy\x20settings_');const _0x5d528b=[_0xf9f993(0x221),_0xf9f993(0x24c)];if(!_0x5d528b['includes'](_0xa40787))return await _0x5d2a5b[_0xf9f993(0x210)](_0xf9f993(0x22b)+_0x5d528b[_0xf9f993(0x22a)]('/')+_0xf9f993(0x21c));await _0x5d2a5b[_0xf9f993(0x21a)][_0xf9f993(0x256)](_0xa40787),await _0x5d2a5b[_0xf9f993(0x210)](_0xf9f993(0x22c)+_0xa40787+'*_');}),kord({'cmd':a0_0x3e3be5(0x215),'fromMe':!![],'desc':a0_0x3e3be5(0x1fa),'type':a0_0x3e3be5(0x20f)},async(_0x45b682,_0x585840,_0x2fe290)=>{const _0xcc2e11=a0_0x3e3be5;if(!_0x585840)return await _0x45b682[_0xcc2e11(0x210)]('_*Example:-*\x20'+_0x2fe290+_0xcc2e11(0x1ff));const _0x292621=['all',_0xcc2e11(0x245),_0xcc2e11(0x1f8),_0xcc2e11(0x258)];if(!_0x292621['includes'](_0x585840))return await _0x45b682[_0xcc2e11(0x210)]('_action\x20must\x20be\x20*'+_0x292621[_0xcc2e11(0x22a)]('/')+_0xcc2e11(0x21c));await _0x45b682[_0xcc2e11(0x21a)][_0xcc2e11(0x240)](_0x585840),await _0x45b682[_0xcc2e11(0x210)](_0xcc2e11(0x22c)+_0x585840+'*_');}),kord({'cmd':'mystatus','fromMe':!![],'desc':'privacy\x20for\x20my\x20status','type':a0_0x3e3be5(0x20f)},async(_0x319396,_0x3c6bb1,_0x254431)=>{const _0x36478e=a0_0x3e3be5;if(!_0x3c6bb1)return await _0x319396[_0x36478e(0x210)]('_*Example:-*\x20'+_0x254431+_0x36478e(0x1f7));const _0x371057=[_0x36478e(0x221),_0x36478e(0x245),_0x36478e(0x1f8),'none'];if(!_0x371057[_0x36478e(0x223)](_0x3c6bb1))return await _0x319396[_0x36478e(0x210)]('_action\x20must\x20be\x20*'+_0x371057[_0x36478e(0x22a)]('/')+_0x36478e(0x21c));await _0x319396[_0x36478e(0x21a)]['updateStatusPrivacy'](_0x3c6bb1),await _0x319396[_0x36478e(0x210)](_0x36478e(0x22c)+_0x3c6bb1+'*_');}),kord({'cmd':a0_0x3e3be5(0x21e),'fromMe':!![],'desc':a0_0x3e3be5(0x22e),'type':a0_0x3e3be5(0x20f)},async(_0x1e8810,_0x98ff89,_0x4b2961)=>{const _0x1b23fb=a0_0x3e3be5;if(!_0x98ff89)return await _0x1e8810['send'](_0x1b23fb(0x23c)+_0x4b2961+'\x20all_\x0a_to\x20change\x20*read\x20and\x20receipts\x20message*\x20\x20privacy\x20settings_');const _0x31a2da=['all',_0x1b23fb(0x258)];if(!_0x31a2da['includes'](_0x98ff89))return await _0x1e8810[_0x1b23fb(0x210)](_0x1b23fb(0x22b)+_0x31a2da['join']('/')+'*\x20values_');await _0x1e8810[_0x1b23fb(0x21a)]['updateReadReceiptsPrivacy'](_0x98ff89),await _0x1e8810[_0x1b23fb(0x210)](_0x1b23fb(0x22c)+_0x98ff89+'*_');}),kord({'cmd':a0_0x3e3be5(0x1f9),'fromMe':!![],'desc':a0_0x3e3be5(0x1f4),'type':a0_0x3e3be5(0x20f)},async(_0x4227fc,_0x33016d,_0x1fa41f)=>{const _0x9fa265=a0_0x3e3be5;if(!_0x33016d)return await _0x4227fc[_0x9fa265(0x210)](_0x9fa265(0x23c)+_0x1fa41f+_0x9fa265(0x216));const _0x4e73e0=['all','contacts','contact_blacklist',_0x9fa265(0x258)];if(!_0x4e73e0[_0x9fa265(0x223)](_0x33016d))return await _0x4227fc[_0x9fa265(0x210)](_0x9fa265(0x22b)+_0x4e73e0[_0x9fa265(0x22a)]('/')+_0x9fa265(0x21c));await _0x4227fc[_0x9fa265(0x21a)]['updateGroupsAddPrivacy'](_0x33016d),await _0x4227fc['send']('_Privacy\x20Updated\x20to\x20*'+_0x33016d+'*_');});
+const { kord, wtype, isAdmin, prefix, isBotAdmin} = require("../core")
+
+kord({
+  cmd: "delete|del|dlt",
+  desc: "delete a replied message",
+  fromMe: wtype,
+  type: "user",
+}, async (m, text) => {
+  if (!m.quoted) return await m.send("_Reply to a message to delete_")
+
+  if (m.isGroup) {
+    if (m.quoted.fromMe && m.isCreator) {
+      await m.send(m.quoted, {}, "delete")
+      return await m.send(m, {}, "delete")
+    }
+
+    let ad = await isAdmin(m)
+    let botAd = await isBotAdmin(m)
+    if (!botAd) return await m.send("_I'm not admin.._")
+    if (!ad) return await m.send("_You're not admin.._")
+
+    await m.send(m.quoted, {}, "delete")
+    return await m.send(m, {}, "delete")
+  }
+
+  if (!m.isCreator) return await m.send("_I don't know you.._")
+  await m.send(m.quoted, {}, "delete")
+  if (m.fromMe) {
+  return await m.send(m, {}, "delete")
+  } else return
+})
+
+
+kord({
+        cmd: "archive",
+        desc: "archive a chat",
+        fromMe: true,
+        type: "user",
+}, async (m, text) => {
+        const lmsg = {
+        message: m.message,
+        key: m.key,
+        messageTimestamp: m.timestamp };
+await m.client.chatModify({
+        archive: true,
+        lastMessages: [lmsg]
+}, m.chat);
+return await m.send('_chat archived_')
+})
+
+kord({
+        cmd: "unarchive",
+        desc: "unarchive a chat",
+        fromMe: true,
+        type: "user",
+}, async (m, text) => {
+        const lmsg = {
+        message: m.message,
+        key: m.key,
+        messageTimestamp: m.timestamp };
+await m.client.chatModify({
+        archive: false,
+        lastMessages: [lmsg]
+}, m.chat);
+return await m.send('_chat unarchived_')
+})
+
+
+kord({
+        cmd: "jid",
+        desc: "gets jid of either replied user or present chat",
+        fromMe: wtype,
+        type: "user",
+}, async (m) => {
+        if (m.quoted.sender) return await m.send(m.quoted.sender);
+        else return await m.send(m.chat);
+})
+
+kord({
+        cmd: "pp|setpp",
+        desc: "changes profile pic to replied photo",
+        fromMe: true,
+        type: "user",
+}, async (m, text) => {
+        if (!m.quoted.image && !m.image) return await m.send("_reply to a picture_")
+        if (m.quoted.image) {
+        var picpath = await m.quoted.download()
+        } else {
+        picpath = await m.client.downloadMediaMessage(m)
+        }
+        await m.client.updateProfilePicture(m.user.jid, picpath);
+        return await m.send("_profile pic changed_")
+})
+
+kord({
+        cmd: "removepp",
+        desc: "removes profile picture",
+        fromMe: true,
+        type: "user",
+}, async (m, text) => {
+        await m.client.removeProfilePicture(m.user.jid);
+        return await m.send("_profile pic removed.._");
+})
+
+kord({
+        cmd: "clear",
+        desc: "clear a chat",
+        fromMe: true,
+        type: "user",
+}, async (m, text) => {
+        await m.client.chatModify({
+        delete: true,
+        lastMessages: [{
+                key: m.key,
+                messageTimestamp: m.messageTimestamp
+        }]
+}, m.chat)
+await m.send('_Chat Cleared_')        
+})
+
+kord({
+        cmd: "pinchat|chatpin",
+        desc: "pin a chat",
+        fromMe: true,
+        type: "user"
+}, async (m, text) => {
+        await m.client.chatModify({
+        pin: true
+        }, m.chat);
+        await m.send('_Chat Pined_')
+})
+
+kord({
+        cmd: "unpinchat|unchatpin",
+        desc: "unpin a chat",
+        fromMe: true,
+        type: "user"
+}, async (m, text) => {
+        await m.client.chatModify({
+                pin: false
+        }, m.chat);
+        await m.send('_Chat Unpined_')
+})
+
+kord({
+        cmd: "block",
+        desc: 'block a user',
+        fromMe: true,
+        type: 'user',
+}, async (m, text) => {
+        if (m.isGroup && m.quoted?.sender) {
+                await m.client.updateBlockStatus(m.quoted?.sender, "block")
+        } else {
+                await m.client.updateBlockStatus(m.chat, "block")
+        }
+})
+
+kord({
+        cmd: "unblock",
+        desc: 'unblock a user',
+        fromMe: true,
+        type: 'user',
+}, async (m, text) => {
+        if (m.isGroup && m.quoted?.sender) {
+                await m.client.updateBlockStatus(m.quoted?.sender, "unblock")
+        } else {
+                await m.client.updateBlockStatus(m.chat, "unblock")
+        }
+})
+
+kord({
+        cmd: "blocklist",
+        desc: "fetches list of blocked numbers",
+        fromMe: true,
+        type: 'user',
+}, async (m, text) => {
+        const num = await m.client.fetchBlocklist();
+        if (!num?.length) return await m.send("_No blocked users found!_");
+        const blockList = `_*❏ Block List ❏*_\n\n${num.map(n => `➟ +${n.replace('@s.whatsapp.net', '')}`).join('\n')}`;
+        return await m.send(blockList);        
+})
+
+kord({
+        cmd: "setname",
+        desc: "set profile name",
+        fromMe: true,
+        type: "user",
+}, async (m, text) => {
+        q = text
+if (!q) return await m.send(`_*provide a name to set!*_\n_Example: ${prefix}setname Mirage_`);
+        await m.client.updateProfileName(q);
+        await m.reply(`_Profile name updated to ${q}_`);        
+})
+
+kord({
+        cmd: "bio|setbio",
+        desc: "set bio for profile",
+        fromMe: true,
+        type: "user",
+}, async (m, text) => {
+        let query = text
+    if (!query) return await m.send(`*_Provide A Text*_\n_example: ${prefix}setbio urgent calls only._`);
+    await m.client.updateProfileStatus(query);
+    await m.send('_Bio updated_');        
+})
+
+kord({
+  cmd: "getpp",
+  desc: "get profile pic of a user/group",
+  fromMe: true,
+  type: "user",
+}, async (m, text) => {
+  if (m.isGroup && !m.quoted.sender) {
+    var pic = await m.client.profilePictureUrl(m.chat, 'image')
+    return await m.send(pic, {}, "image")
+  } else if (m.isGroup && m.quoted.sender) {
+    var pic = await m.client.profilePictureUrl(m.quoted.sender, 'image')
+    return await m.send(pic, {}, "image")
+  } else if (m.quoted.sender) {
+    var pic = await m.client.profilePictureUrl(m.quoted.sender, 'image')
+    return await m.send(pic, {}, "image")
+  } else {
+    var pic = await m.client.profilePictureUrl(m.chat, 'image')
+    return await m.send(pic, {}, "image")
+  }
+})
+
+
+kord({
+        cmd: "forward|fwrd",
+        desc: "forward a message",
+        fromMe: true,
+        type: "user",
+}, async (m, text, cmd, store) => {
+        if (!m.quoted) return await m.send("_reply to the msg you want to forward.._")
+        if (!text) return await m.send(`_*Provide a number/jid!*_\n_example ${cmd} 2348033221144_\n_${cmd} 2348033221144@s.whatsapp.net_\n\nuse ${prefix}jid to get the jid of a chat`)
+        let jidd
+        if (text.includes("@g.us") || text.includes("@s.whatsapp.net") || text.includes("newsletter")) {
+        jidd = text;
+} else {
+        jidd = `${text}@s.whatsapp.net`;
+}
+        await m.forwardMessage(jidd, await store.loadMessage(m.chat, m.quoted))
+})
+
+kord({
+	cmd: 'lastseen',
+	fromMe: true,
+	desc: 'to change lastseen privacy',
+	type: 'privacy'
+}, async (message, match, cmd) => {
+	if (!match) return await message.send(`_*Example:-* ${cmd} all_\n_to change last seen privacy settings_`);
+	const available_privacy = ['all', 'contacts', 'contact_blacklist', 'none'];
+	if (!available_privacy.includes(match)) return await message.send(`_action must be *${available_privacy.join('/')}* values_`);
+	await message.client.updateLastSeenPrivacy(match)
+	await message.send(`_Privacy settings *last seen* Updated to *${match}*_`);
+})
+kord({
+	cmd: 'online',
+	fromMe: true,
+	desc: 'to change online privacy',
+	type: 'privacy'
+}, async (message, match, cmd) => {
+	if (!match) return await message.send(`_*Example:-* ${cmd} all_\n_to change *online*  privacy settings_`);
+	const available_privacy = ['all', 'match_last_seen'];
+	if (!available_privacy.includes(match)) return await message.send(`_action must be *${available_privacy.join('/')}* values_`);
+	await message.client.updateOnlinePrivacy(match)
+	await message.send(`_Privacy Updated to *${match}*_`);
+})
+kord({
+	cmd: 'mypp',
+	fromMe: true,
+	desc: 'privacy setting profile picture',
+	type: 'privacy'
+}, async (message, match, cmd) => {
+	if (!match) return await message.send(`_*Example:-* ${cmd} all_\n_to change *profile picture*  privacy settings_`);
+	const available_privacy = ['all', 'contacts', 'contact_blacklist', 'none'];
+	if (!available_privacy.includes(match)) return await message.send(`_action must be *${available_privacy.join('/')}* values_`);
+	await message.client.updateProfilePicturePrivacy(match)
+	await message.send(`_Privacy Updated to *${match}*_`);
+})
+kord({
+	cmd: 'mystatus',
+	fromMe: true,
+	desc: 'privacy for my status',
+	type: 'privacy'
+}, async (message, match, cmd) => {
+	if (!match) return await message.send(`_*Example:-* ${cmd} all_\n_to change *status*  privacy settings_`);
+	const available_privacy = ['all', 'contacts', 'contact_blacklist', 'none'];
+	if (!available_privacy.includes(match)) return await message.send(`_action must be *${available_privacy.join('/')}* values_`);
+	await message.client.updateStatusPrivacy(match)
+	await message.send(`_Privacy Updated to *${match}*_`);
+})
+kord({
+	cmd: 'read',
+	fromMe: true,
+	desc: 'privacy for read message',
+	type: 'privacy'
+}, async (message, match, cmd) => {
+	if (!match) return await message.send(`_*Example:-* ${cmd} all_\n_to change *read and receipts message*  privacy settings_`);
+	const available_privacy = ['all', 'none'];
+	if (!available_privacy.includes(match)) return await message.send(`_action must be *${available_privacy.join('/')}* values_`);
+	await message.client.updateReadReceiptsPrivacy(match)
+	await message.send(`_Privacy Updated to *${match}*_`);
+})
+kord({
+	cmd: 'allow-gcadd|groupadd',
+	fromMe: true,
+	desc: 'privacy for group add',
+	type: 'privacy'
+}, async (message, match, cmd) => {
+	if (!match) return await message.send(`_*Example:-* ${cmd} all_\n_to change *group add*  privacy settings_`);
+	const available_privacy = ['all', 'contacts', 'contact_blacklist', 'none'];
+	if (!available_privacy.includes(match)) return await message.send(`_action must be *${available_privacy.join('/')}* values_`);
+	await message.client.updateGroupsAddPrivacy(match)
+	await message.send(`_Privacy Updated to *${match}*_`);
+})

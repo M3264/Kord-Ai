@@ -1,1 +1,587 @@
-function a0_0x3aec(_0x3aca1b,_0x290097){var _0x2cd3a3=a0_0x2cd3();return a0_0x3aec=function(_0x3aecd7,_0x3f3ee0){_0x3aecd7=_0x3aecd7-0xac;var _0x2a47bd=_0x2cd3a3[_0x3aecd7];return _0x2a47bd;},a0_0x3aec(_0x3aca1b,_0x290097);}var a0_0x44296c=a0_0x3aec;(function(_0x19f165,_0x5eebb5){var _0x310f7e=a0_0x3aec,_0x22bbca=_0x19f165();while(!![]){try{var _0x514e72=parseInt(_0x310f7e(0xc7))/0x1+parseInt(_0x310f7e(0x100))/0x2*(-parseInt(_0x310f7e(0x107))/0x3)+parseInt(_0x310f7e(0xbc))/0x4*(parseInt(_0x310f7e(0xfc))/0x5)+parseInt(_0x310f7e(0xb4))/0x6+parseInt(_0x310f7e(0xd5))/0x7*(parseInt(_0x310f7e(0xde))/0x8)+parseInt(_0x310f7e(0x101))/0x9*(parseInt(_0x310f7e(0xe5))/0xa)+parseInt(_0x310f7e(0xf4))/0xb*(-parseInt(_0x310f7e(0xc6))/0xc);if(_0x514e72===_0x5eebb5)break;else _0x22bbca['push'](_0x22bbca['shift']());}catch(_0x3f9a52){_0x22bbca['push'](_0x22bbca['shift']());}}}(a0_0x2cd3,0xe88d2));function a0_0x2cd3(){var _0xf466b0=[':*\x20','Exchange\x20Rates\x20from\x20AUD:\x0a','curr-rates|currency-rates','\x20ADA\x0a','ltc-usdt','⭑\x20*24h\x20Low:*\x20$','eth-usdt','⭑\x20*BCH-USDT\x20Market\x20Stats*\x0a\x0a','https://api.kucoin.com/api/v1/market/stats?symbol=LTC-USDT','⭑\x20*24h\x20High:*\x20$','494070ygRYig','btc-usdt','https://api.kucoin.com/api/v1/market/stats?symbol=ETH-USDT','get\x20rate\x20of\x20currency','⭑\x20*Last\x20Price:*\x20$','crypto',':\x0a\x0a','Fetches\x20market\x20stats\x20for\x20the\x20ADA-USDT\x20pair\x20from\x20KuCoin','656ibbWNz','-\x20GBP\x20to\x20','https://open.er-api.com/v6/latest/CAD','*error!*\x0a','Fetches\x20market\x20stats\x20for\x20the\x20DOGE-USDT\x20pair\x20from\x20KuCoin','Exchange\x20Rates\x20from\x20CAD:\x0a','-\x20JPY\x20to\x20','⭑\x20*BTC-USDT\x20Market\x20Stats*\x0a\x0a','link-usdt','error\x20in\x20currency\x20rate','52620TPMFTH','934746EurNDn','https://api.kucoin.com/api/v1/market/stats?symbol=LINK-USDT','Fetches\x20and\x20sends\x20exchange\x20rates\x20from\x20CNY\x20to\x20other\x20currencies','Exchange\x20Rates\x20from\x20CNY:\x0a','https://api.kucoin.com/api/v1/market/stats?symbol=XRP-USDT','bch-usdt','error','Fetches\x20market\x20stats\x20for\x20the\x20LTC-USDT\x20pair\x20from\x20KuCoin','https://open.er-api.com/v6/latest/CNY','message','Fetches\x20and\x20sends\x20exchange\x20rates\x20from\x20NGN\x20to\x20other\x20currencies','https://api.kucoin.com/api/v1/market/stats?symbol=DOGE-USDT','-\x20INR\x20to\x20','cny-rates','63bsUIGf','⭑\x20Error:\x20','https://open.er-api.com/v6/latest/AUD','Exchange\x20Rates\x20from\x20INR:\x0a','ngn-rates','⭑\x20*24h\x20Change:*\x20','Fetches\x20and\x20sends\x20exchange\x20rates\x20from\x20JPY\x20to\x20other\x20currencies','Fetches\x20market\x20stats\x20for\x20the\x20BCH-USDT\x20pair\x20from\x20KuCoin','-\x20CNY\x20to\x20','916728EtDRKO','\x20ETH\x0a','\x20DOGE\x0a','Fetches\x20and\x20sends\x20exchange\x20rates\x20from\x20EUR\x20to\x20other\x20currencies','https://api.kucoin.com/api/v1/market/stats?symbol=BTC-USDT','\x20BTC\x0a','changeRate','9122140HWScLW','-\x20EUR\x20to\x20','low','\x20LTC\x0a','Exchange\x20Rates\x20from\x20JPY:\x0a','doge-usdt','send','\x20BCH\x0a','*provide\x20currency\x20code*\x20e.g\x20USD,\x20EUR,\x20NGN','https://open.er-api.com/v6/latest/EUR','*-\x20','⭑\x20*DOGE-USDT\x20Market\x20Stats*\x0a\x0a','https://open.er-api.com/v6/latest/JPY','aud-rates','⭑\x20*LTC-USDT\x20Market\x20Stats*\x0a\x0a','5313TKTlgN','last','toUpperCase','entries','-\x20NGN\x20to\x20','https://api.kucoin.com/api/v1/market/stats?symbol=ADA-USDT','../core','⭑\x20*XRP-USDT\x20Market\x20Stats*\x0a\x0a','42210WRTepR','⭑\x20*ETH-USDT\x20Market\x20Stats*\x0a\x0a','vol','cad-rates','82234xqkHph','9YneidX','Fetches\x20and\x20sends\x20exchange\x20rates\x20from\x20INR\x20to\x20other\x20currencies','Fetches\x20and\x20sends\x20exchange\x20rates\x20from\x20AUD\x20to\x20other\x20currencies','⭑\x20*ADA-USDT\x20Market\x20Stats*\x0a\x0a','⭑\x20*24h\x20Volume:*\x20','Exchange\x20Rates\x20from\x20GBP:\x0a','93ZfodFC','-\x20AUD\x20to\x20','Fetches\x20and\x20sends\x20exchange\x20rates\x20from\x20CAD\x20to\x20other\x20currencies','Exchange\x20Rates\x20from\x20','Error:\x20','eur-rates','ada-usdt','rates','⭑\x20*LINK-USDT\x20Market\x20Stats*\x0a\x0a','jpy-rates','axios','toFixed','high','\x20XRP\x0a','Fetches\x20market\x20stats\x20for\x20the\x20ETH-USDT\x20pair\x20from\x20KuCoin','*check\x20the\x20code\x20and\x20try\x20again*','xrp-usdt','Exchange\x20Rates\x20from\x20USD:\x0a','-\x20USD\x20to\x20','Fetches\x20and\x20sends\x20exchange\x20rates\x20from\x20USD\x20to\x20other\x20currencies'];a0_0x2cd3=function(){return _0xf466b0;};return a0_0x2cd3();}const {wtype,kord}=require(a0_0x44296c(0xfa));kord({'cmd':a0_0x44296c(0xac),'desc':a0_0x44296c(0xb7),'fromMe':wtype,'type':'crypto'},async(_0x3fe4c5,_0x8f9a7b)=>{var _0x402147=a0_0x44296c;if(!_0x8f9a7b)return await _0x3fe4c5[_0x402147(0xeb)](_0x402147(0xed));_0x8f9a7b=_0x8f9a7b[_0x402147(0xf6)]();try{const _0x8125c2=await _0x3fe4c5['axios']('https://open.er-api.com/v6/latest/'+_0x8f9a7b);if(!_0x8125c2['rates'])return await _0x3fe4c5[_0x402147(0xeb)](_0x402147(0x116));const _0x41e23c=_0x8125c2['rates'];let _0x1e5bc6=_0x402147(0x10a)+_0x8f9a7b+_0x402147(0xba);for(const [_0x3f8b77,_0x13c6ea]of Object[_0x402147(0xf7)](_0x41e23c)){_0x1e5bc6+=_0x402147(0xef)+_0x8f9a7b+'\x20to\x20'+_0x3f8b77+_0x402147(0x11b)+_0x13c6ea[_0x402147(0x112)](0x2)+'\x0a';}return await _0x3fe4c5['send'](''+_0x1e5bc6);}catch(_0x58b32c){return console[_0x402147(0xcd)](_0x402147(0xc5),_0x58b32c),await _0x3fe4c5[_0x402147(0xeb)](_0x402147(0xbf)+_0x58b32c);}}),kord({'cmd':'btc-usdt','desc':'Fetches\x20market\x20stats\x20for\x20the\x20BTC-USDT\x20pair\x20from\x20KuCoin','fromMe':wtype,'type':a0_0x44296c(0xb9)},async(_0x3d8473,_0x4d91c4)=>{var _0x306b41=a0_0x44296c;try{var _0x4fcdab=await _0x3d8473[_0x306b41(0x111)](_0x306b41(0xe2));let _0x2654c2=_0x306b41(0xc3);return _0x2654c2+=_0x306b41(0xb8)+parseFloat(_0x4fcdab['last'])['toFixed'](0x2)+'\x0a',_0x2654c2+='⭑\x20*24h\x20Change:*\x20'+parseFloat(_0x4fcdab[_0x306b41(0xe4)])[_0x306b41(0x112)](0x2)+'%\x0a',_0x2654c2+=_0x306b41(0xb3)+parseFloat(_0x4fcdab[_0x306b41(0x113)])['toFixed'](0x2)+'\x0a',_0x2654c2+='⭑\x20*24h\x20Low:*\x20$'+parseFloat(_0x4fcdab[_0x306b41(0xe7)])['toFixed'](0x2)+'\x0a',_0x2654c2+='⭑\x20*24h\x20Volume:*\x20'+parseFloat(_0x4fcdab['vol'])[_0x306b41(0x112)](0x2)+_0x306b41(0xe3),await _0x3d8473[_0x306b41(0xeb)](_0x2654c2);}catch(_0x10d32a){return await _0x3d8473[_0x306b41(0xeb)]('⭑\x20Error:\x20'+_0x10d32a[_0x306b41(0xd0)]);}}),kord({'cmd':a0_0x44296c(0xb0),'desc':a0_0x44296c(0x115),'fromMe':wtype,'type':'crypto'},async(_0x48dab3,_0x23ae32)=>{var _0x21ea17=a0_0x44296c;try{var _0x5a638d=await _0x48dab3[_0x21ea17(0x111)](_0x21ea17(0xb6));let _0x1dce23=_0x21ea17(0xfd);return _0x1dce23+='⭑\x20*Last\x20Price:*\x20$'+parseFloat(_0x5a638d[_0x21ea17(0xf5)])['toFixed'](0x2)+'\x0a',_0x1dce23+='⭑\x20*24h\x20Change:*\x20'+parseFloat(_0x5a638d[_0x21ea17(0xe4)])[_0x21ea17(0x112)](0x2)+'%\x0a',_0x1dce23+=_0x21ea17(0xb3)+parseFloat(_0x5a638d[_0x21ea17(0x113)])[_0x21ea17(0x112)](0x2)+'\x0a',_0x1dce23+='⭑\x20*24h\x20Low:*\x20$'+parseFloat(_0x5a638d[_0x21ea17(0xe7)])[_0x21ea17(0x112)](0x2)+'\x0a',_0x1dce23+=_0x21ea17(0x105)+parseFloat(_0x5a638d[_0x21ea17(0xfe)])[_0x21ea17(0x112)](0x2)+'\x20ETH\x0a',await _0x48dab3['send'](_0x1dce23);}catch(_0x5c56ca){return await _0x48dab3['send']('⭑\x20Error:\x20'+_0x5c56ca[_0x21ea17(0xd0)]);}}),kord({'cmd':a0_0x44296c(0xae),'desc':a0_0x44296c(0xce),'fromMe':wtype,'type':a0_0x44296c(0xb9)},async(_0x34cdc2,_0x567444)=>{var _0x43b19a=a0_0x44296c;try{var _0x46c7b8=await _0x34cdc2[_0x43b19a(0x111)](_0x43b19a(0xb2));let _0x2e6634='⭑\x20*LTC-USDT\x20Market\x20Stats*\x0a\x0a';return _0x2e6634+='⭑\x20*Last\x20Price:*\x20$'+parseFloat(_0x46c7b8[_0x43b19a(0xf5)])['toFixed'](0x2)+'\x0a',_0x2e6634+=_0x43b19a(0xda)+parseFloat(_0x46c7b8['changeRate'])[_0x43b19a(0x112)](0x2)+'%\x0a',_0x2e6634+=_0x43b19a(0xb3)+parseFloat(_0x46c7b8[_0x43b19a(0x113)])[_0x43b19a(0x112)](0x2)+'\x0a',_0x2e6634+=_0x43b19a(0xaf)+parseFloat(_0x46c7b8[_0x43b19a(0xe7)])[_0x43b19a(0x112)](0x2)+'\x0a',_0x2e6634+=_0x43b19a(0x105)+parseFloat(_0x46c7b8[_0x43b19a(0xfe)])['toFixed'](0x2)+_0x43b19a(0xe8),await _0x34cdc2[_0x43b19a(0xeb)](_0x2e6634);}catch(_0x454767){return await _0x34cdc2[_0x43b19a(0xeb)]('⭑\x20Error:\x20'+_0x454767[_0x43b19a(0xd0)]);}}),kord({'cmd':a0_0x44296c(0x117),'desc':'Fetches\x20market\x20stats\x20for\x20the\x20XRP-USDT\x20pair\x20from\x20KuCoin','fromMe':wtype,'type':a0_0x44296c(0xb9)},async(_0x2ff295,_0x13e045)=>{var _0x3d944e=a0_0x44296c;try{var _0x4fb6b1=await _0x2ff295['axios'](_0x3d944e(0xcb));let _0x4f8d63=_0x3d944e(0xfb);return _0x4f8d63+=_0x3d944e(0xb8)+parseFloat(_0x4fb6b1[_0x3d944e(0xf5)])[_0x3d944e(0x112)](0x2)+'\x0a',_0x4f8d63+=_0x3d944e(0xda)+parseFloat(_0x4fb6b1[_0x3d944e(0xe4)])[_0x3d944e(0x112)](0x2)+'%\x0a',_0x4f8d63+=_0x3d944e(0xb3)+parseFloat(_0x4fb6b1[_0x3d944e(0x113)])[_0x3d944e(0x112)](0x2)+'\x0a',_0x4f8d63+=_0x3d944e(0xaf)+parseFloat(_0x4fb6b1['low'])[_0x3d944e(0x112)](0x2)+'\x0a',_0x4f8d63+='⭑\x20*24h\x20Volume:*\x20'+parseFloat(_0x4fb6b1[_0x3d944e(0xfe)])['toFixed'](0x2)+_0x3d944e(0x114),await _0x2ff295['send'](_0x4f8d63);}catch(_0x1ad8ba){return await _0x2ff295[_0x3d944e(0xeb)](_0x3d944e(0xd6)+_0x1ad8ba[_0x3d944e(0xd0)]);}}),kord({'cmd':a0_0x44296c(0xea),'desc':a0_0x44296c(0xc0),'fromMe':wtype,'type':'crypto'},async(_0x1fd85a,_0x483768)=>{var _0x5b624f=a0_0x44296c;try{var _0x87dd25=await _0x1fd85a[_0x5b624f(0x111)](_0x5b624f(0xd2));let _0x10db25='⭑\x20*DOGE-USDT\x20Market\x20Stats*\x0a\x0a';return _0x10db25+=_0x5b624f(0xb8)+parseFloat(_0x87dd25[_0x5b624f(0xf5)])[_0x5b624f(0x112)](0x2)+'\x0a',_0x10db25+=_0x5b624f(0xda)+parseFloat(_0x87dd25[_0x5b624f(0xe4)])[_0x5b624f(0x112)](0x2)+'%\x0a',_0x10db25+=_0x5b624f(0xb3)+parseFloat(_0x87dd25[_0x5b624f(0x113)])[_0x5b624f(0x112)](0x2)+'\x0a',_0x10db25+=_0x5b624f(0xaf)+parseFloat(_0x87dd25[_0x5b624f(0xe7)])[_0x5b624f(0x112)](0x2)+'\x0a',_0x10db25+='⭑\x20*24h\x20Volume:*\x20'+parseFloat(_0x87dd25[_0x5b624f(0xfe)])['toFixed'](0x2)+'\x20DOGE\x0a',await _0x1fd85a[_0x5b624f(0xeb)](_0x10db25);}catch(_0x35ef8f){return await _0x1fd85a[_0x5b624f(0xeb)]('⭑\x20Error:\x20'+_0x35ef8f[_0x5b624f(0xd0)]);}}),kord({'cmd':a0_0x44296c(0xcc),'desc':'Fetches\x20market\x20stats\x20for\x20the\x20BCH-USDT\x20pair\x20from\x20KuCoin','fromMe':wtype,'type':a0_0x44296c(0xb9)},async(_0x5f16ec,_0x27bbb8)=>{var _0x277d61=a0_0x44296c;try{var _0x3ac9f8=await _0x5f16ec[_0x277d61(0x111)]('https://api.kucoin.com/api/v1/market/stats?symbol=BCH-USDT');let _0x1d1d77='⭑\x20*BCH-USDT\x20Market\x20Stats*\x0a\x0a';return _0x1d1d77+=_0x277d61(0xb8)+parseFloat(_0x3ac9f8[_0x277d61(0xf5)])[_0x277d61(0x112)](0x2)+'\x0a',_0x1d1d77+=_0x277d61(0xda)+parseFloat(_0x3ac9f8['changeRate'])[_0x277d61(0x112)](0x2)+'%\x0a',_0x1d1d77+=_0x277d61(0xb3)+parseFloat(_0x3ac9f8[_0x277d61(0x113)])[_0x277d61(0x112)](0x2)+'\x0a',_0x1d1d77+=_0x277d61(0xaf)+parseFloat(_0x3ac9f8[_0x277d61(0xe7)])[_0x277d61(0x112)](0x2)+'\x0a',_0x1d1d77+='⭑\x20*24h\x20Volume:*\x20'+parseFloat(_0x3ac9f8[_0x277d61(0xfe)])['toFixed'](0x2)+_0x277d61(0xec),await _0x5f16ec[_0x277d61(0xeb)](_0x1d1d77);}catch(_0x25ed3d){return await _0x5f16ec[_0x277d61(0xeb)]('⭑\x20Error:\x20'+_0x25ed3d['message']);}}),kord({'cmd':'ada-usdt','desc':'Fetches\x20market\x20stats\x20for\x20the\x20ADA-USDT\x20pair\x20from\x20KuCoin','fromMe':wtype,'type':a0_0x44296c(0xb9)},async(_0x5e6ab7,_0x5581de)=>{var _0x4c982c=a0_0x44296c;try{var _0x5c225e=await _0x5e6ab7[_0x4c982c(0x111)](_0x4c982c(0xf9));let _0x16e384=_0x4c982c(0x104);return _0x16e384+='⭑\x20*Last\x20Price:*\x20$'+parseFloat(_0x5c225e[_0x4c982c(0xf5)])['toFixed'](0x2)+'\x0a',_0x16e384+='⭑\x20*24h\x20Change:*\x20'+parseFloat(_0x5c225e[_0x4c982c(0xe4)])['toFixed'](0x2)+'%\x0a',_0x16e384+=_0x4c982c(0xb3)+parseFloat(_0x5c225e[_0x4c982c(0x113)])['toFixed'](0x2)+'\x0a',_0x16e384+='⭑\x20*24h\x20Low:*\x20$'+parseFloat(_0x5c225e['low'])[_0x4c982c(0x112)](0x2)+'\x0a',_0x16e384+='⭑\x20*24h\x20Volume:*\x20'+parseFloat(_0x5c225e[_0x4c982c(0xfe)])[_0x4c982c(0x112)](0x2)+_0x4c982c(0xad),await _0x5e6ab7[_0x4c982c(0xeb)](_0x16e384);}catch(_0x5df779){return await _0x5e6ab7[_0x4c982c(0xeb)]('⭑\x20Error:\x20'+_0x5df779[_0x4c982c(0xd0)]);}}),kord({'cmd':'link-usdt','desc':'Fetches\x20market\x20stats\x20for\x20the\x20LINK-USDT\x20pair\x20from\x20KuCoin','fromMe':wtype,'type':a0_0x44296c(0xb9)},async(_0x1c8e45,_0x4ee4f2)=>{var _0x592f76=a0_0x44296c;try{var _0xc29d9d=await _0x1c8e45[_0x592f76(0x111)](_0x592f76(0xc8));let _0x42b420=_0x592f76(0x10f);return _0x42b420+=_0x592f76(0xb8)+parseFloat(_0xc29d9d[_0x592f76(0xf5)])['toFixed'](0x2)+'\x0a',_0x42b420+='⭑\x20*24h\x20Change:*\x20'+parseFloat(_0xc29d9d[_0x592f76(0xe4)])[_0x592f76(0x112)](0x2)+'%\x0a',_0x42b420+=_0x592f76(0xb3)+parseFloat(_0xc29d9d[_0x592f76(0x113)])[_0x592f76(0x112)](0x2)+'\x0a',_0x42b420+=_0x592f76(0xaf)+parseFloat(_0xc29d9d['low'])[_0x592f76(0x112)](0x2)+'\x0a',_0x42b420+='⭑\x20*24h\x20Volume:*\x20'+parseFloat(_0xc29d9d[_0x592f76(0xfe)])[_0x592f76(0x112)](0x2)+'\x20LINK\x0a',await _0x1c8e45[_0x592f76(0xeb)](_0x42b420);}catch(_0x33ee82){return await _0x1c8e45['send'](_0x592f76(0xd6)+_0x33ee82[_0x592f76(0xd0)]);}}),kord({'cmd':a0_0x44296c(0xb5),'desc':'Fetches\x20market\x20stats\x20for\x20the\x20BTC-USDT\x20pair\x20from\x20KuCoin','fromMe':wtype,'type':a0_0x44296c(0xb9)},async(_0x2afa00,_0x4f828d)=>{var _0x2fffb3=a0_0x44296c;try{var _0x2af396=await _0x2afa00['axios']('https://api.kucoin.com/api/v1/market/stats?symbol=BTC-USDT');let _0x54762d=_0x2fffb3(0xc3);return _0x54762d+=_0x2fffb3(0xb8)+parseFloat(_0x2af396[_0x2fffb3(0xf5)])['toFixed'](0x2)+'\x0a',_0x54762d+=_0x2fffb3(0xda)+parseFloat(_0x2af396['changeRate'])['toFixed'](0x2)+'%\x0a',_0x54762d+='⭑\x20*24h\x20High:*\x20$'+parseFloat(_0x2af396[_0x2fffb3(0x113)])['toFixed'](0x2)+'\x0a',_0x54762d+='⭑\x20*24h\x20Low:*\x20$'+parseFloat(_0x2af396[_0x2fffb3(0xe7)])[_0x2fffb3(0x112)](0x2)+'\x0a',_0x54762d+=_0x2fffb3(0x105)+parseFloat(_0x2af396[_0x2fffb3(0xfe)])['toFixed'](0x2)+'\x20BTC\x0a',await _0x2afa00[_0x2fffb3(0xeb)](_0x54762d);}catch(_0x169d9c){return await _0x2afa00['send'](_0x2fffb3(0xd6)+_0x169d9c[_0x2fffb3(0xd0)]);}}),kord({'cmd':a0_0x44296c(0xb0),'desc':a0_0x44296c(0x115),'fromMe':wtype,'type':a0_0x44296c(0xb9)},async(_0x508a49,_0x37c4e9)=>{var _0x425e61=a0_0x44296c;try{var _0x11f863=await _0x508a49['axios']('https://api.kucoin.com/api/v1/market/stats?symbol=ETH-USDT');let _0x13ac56='⭑\x20*ETH-USDT\x20Market\x20Stats*\x0a\x0a';return _0x13ac56+=_0x425e61(0xb8)+parseFloat(_0x11f863[_0x425e61(0xf5)])['toFixed'](0x2)+'\x0a',_0x13ac56+='⭑\x20*24h\x20Change:*\x20'+parseFloat(_0x11f863[_0x425e61(0xe4)])[_0x425e61(0x112)](0x2)+'%\x0a',_0x13ac56+='⭑\x20*24h\x20High:*\x20$'+parseFloat(_0x11f863[_0x425e61(0x113)])[_0x425e61(0x112)](0x2)+'\x0a',_0x13ac56+=_0x425e61(0xaf)+parseFloat(_0x11f863[_0x425e61(0xe7)])['toFixed'](0x2)+'\x0a',_0x13ac56+=_0x425e61(0x105)+parseFloat(_0x11f863[_0x425e61(0xfe)])[_0x425e61(0x112)](0x2)+_0x425e61(0xdf),await _0x508a49[_0x425e61(0xeb)](_0x13ac56);}catch(_0x533fe2){return await _0x508a49[_0x425e61(0xeb)](_0x425e61(0xd6)+_0x533fe2[_0x425e61(0xd0)]);}}),kord({'cmd':'ltc-usdt','desc':'Fetches\x20market\x20stats\x20for\x20the\x20LTC-USDT\x20pair\x20from\x20KuCoin','fromMe':wtype,'type':a0_0x44296c(0xb9)},async(_0x219917,_0x415731)=>{var _0x2ffa30=a0_0x44296c;try{var _0x575654=await _0x219917[_0x2ffa30(0x111)]('https://api.kucoin.com/api/v1/market/stats?symbol=LTC-USDT');let _0x31893c=_0x2ffa30(0xf3);return _0x31893c+=_0x2ffa30(0xb8)+parseFloat(_0x575654[_0x2ffa30(0xf5)])[_0x2ffa30(0x112)](0x2)+'\x0a',_0x31893c+='⭑\x20*24h\x20Change:*\x20'+parseFloat(_0x575654[_0x2ffa30(0xe4)])[_0x2ffa30(0x112)](0x2)+'%\x0a',_0x31893c+=_0x2ffa30(0xb3)+parseFloat(_0x575654[_0x2ffa30(0x113)])[_0x2ffa30(0x112)](0x2)+'\x0a',_0x31893c+=_0x2ffa30(0xaf)+parseFloat(_0x575654['low'])['toFixed'](0x2)+'\x0a',_0x31893c+=_0x2ffa30(0x105)+parseFloat(_0x575654['vol'])[_0x2ffa30(0x112)](0x2)+_0x2ffa30(0xe8),await _0x219917[_0x2ffa30(0xeb)](_0x31893c);}catch(_0xd79f0c){return await _0x219917[_0x2ffa30(0xeb)]('⭑\x20Error:\x20'+_0xd79f0c[_0x2ffa30(0xd0)]);}}),kord({'cmd':a0_0x44296c(0x117),'desc':'Fetches\x20market\x20stats\x20for\x20the\x20XRP-USDT\x20pair\x20from\x20KuCoin','fromMe':wtype,'type':'crypto'},async(_0x547387,_0x2bc14c)=>{var _0x407939=a0_0x44296c;try{var _0x564f01=await _0x547387[_0x407939(0x111)]('https://api.kucoin.com/api/v1/market/stats?symbol=XRP-USDT');let _0x84ac39=_0x407939(0xfb);return _0x84ac39+='⭑\x20*Last\x20Price:*\x20$'+parseFloat(_0x564f01[_0x407939(0xf5)])[_0x407939(0x112)](0x2)+'\x0a',_0x84ac39+='⭑\x20*24h\x20Change:*\x20'+parseFloat(_0x564f01[_0x407939(0xe4)])['toFixed'](0x2)+'%\x0a',_0x84ac39+=_0x407939(0xb3)+parseFloat(_0x564f01[_0x407939(0x113)])[_0x407939(0x112)](0x2)+'\x0a',_0x84ac39+=_0x407939(0xaf)+parseFloat(_0x564f01[_0x407939(0xe7)])[_0x407939(0x112)](0x2)+'\x0a',_0x84ac39+=_0x407939(0x105)+parseFloat(_0x564f01[_0x407939(0xfe)])['toFixed'](0x2)+'\x20XRP\x0a',await _0x547387['send'](_0x84ac39);}catch(_0x18030a){return await _0x547387[_0x407939(0xeb)]('⭑\x20Error:\x20'+_0x18030a[_0x407939(0xd0)]);}}),kord({'cmd':a0_0x44296c(0xea),'desc':a0_0x44296c(0xc0),'fromMe':wtype,'type':a0_0x44296c(0xb9)},async(_0x542945,_0x5ee3d1)=>{var _0x916250=a0_0x44296c;try{var _0x2606d0=await _0x542945['axios'](_0x916250(0xd2));let _0x36e7b3=_0x916250(0xf0);return _0x36e7b3+=_0x916250(0xb8)+parseFloat(_0x2606d0['last'])[_0x916250(0x112)](0x2)+'\x0a',_0x36e7b3+=_0x916250(0xda)+parseFloat(_0x2606d0[_0x916250(0xe4)])[_0x916250(0x112)](0x2)+'%\x0a',_0x36e7b3+=_0x916250(0xb3)+parseFloat(_0x2606d0[_0x916250(0x113)])[_0x916250(0x112)](0x2)+'\x0a',_0x36e7b3+=_0x916250(0xaf)+parseFloat(_0x2606d0[_0x916250(0xe7)])[_0x916250(0x112)](0x2)+'\x0a',_0x36e7b3+=_0x916250(0x105)+parseFloat(_0x2606d0[_0x916250(0xfe)])[_0x916250(0x112)](0x2)+_0x916250(0xe0),await _0x542945[_0x916250(0xeb)](_0x36e7b3);}catch(_0x5fbcc1){return await _0x542945[_0x916250(0xeb)](_0x916250(0xd6)+_0x5fbcc1[_0x916250(0xd0)]);}}),kord({'cmd':a0_0x44296c(0xcc),'desc':a0_0x44296c(0xdc),'fromMe':wtype,'type':a0_0x44296c(0xb9)},async(_0x8900e5,_0x2b35b8)=>{var _0x4c1470=a0_0x44296c;try{var _0x5c76c9=await _0x8900e5['axios']('https://api.kucoin.com/api/v1/market/stats?symbol=BCH-USDT');let _0x16eddb=_0x4c1470(0xb1);return _0x16eddb+='⭑\x20*Last\x20Price:*\x20$'+parseFloat(_0x5c76c9[_0x4c1470(0xf5)])[_0x4c1470(0x112)](0x2)+'\x0a',_0x16eddb+=_0x4c1470(0xda)+parseFloat(_0x5c76c9[_0x4c1470(0xe4)])[_0x4c1470(0x112)](0x2)+'%\x0a',_0x16eddb+=_0x4c1470(0xb3)+parseFloat(_0x5c76c9[_0x4c1470(0x113)])[_0x4c1470(0x112)](0x2)+'\x0a',_0x16eddb+=_0x4c1470(0xaf)+parseFloat(_0x5c76c9[_0x4c1470(0xe7)])[_0x4c1470(0x112)](0x2)+'\x0a',_0x16eddb+=_0x4c1470(0x105)+parseFloat(_0x5c76c9[_0x4c1470(0xfe)])['toFixed'](0x2)+_0x4c1470(0xec),await _0x8900e5[_0x4c1470(0xeb)](_0x16eddb);}catch(_0x477b2b){return await _0x8900e5[_0x4c1470(0xeb)](_0x4c1470(0xd6)+_0x477b2b[_0x4c1470(0xd0)]);}}),kord({'cmd':a0_0x44296c(0x10d),'desc':a0_0x44296c(0xbb),'fromMe':wtype,'type':a0_0x44296c(0xb9)},async(_0x5e21d4,_0x3852e7)=>{var _0x2e3de7=a0_0x44296c;try{var _0x414079=await _0x5e21d4['axios'](_0x2e3de7(0xf9));let _0x271827=_0x2e3de7(0x104);return _0x271827+=_0x2e3de7(0xb8)+parseFloat(_0x414079[_0x2e3de7(0xf5)])[_0x2e3de7(0x112)](0x2)+'\x0a',_0x271827+='⭑\x20*24h\x20Change:*\x20'+parseFloat(_0x414079[_0x2e3de7(0xe4)])[_0x2e3de7(0x112)](0x2)+'%\x0a',_0x271827+='⭑\x20*24h\x20High:*\x20$'+parseFloat(_0x414079['high'])['toFixed'](0x2)+'\x0a',_0x271827+='⭑\x20*24h\x20Low:*\x20$'+parseFloat(_0x414079[_0x2e3de7(0xe7)])[_0x2e3de7(0x112)](0x2)+'\x0a',_0x271827+=_0x2e3de7(0x105)+parseFloat(_0x414079[_0x2e3de7(0xfe)])[_0x2e3de7(0x112)](0x2)+_0x2e3de7(0xad),await _0x5e21d4[_0x2e3de7(0xeb)](_0x271827);}catch(_0x225e26){return await _0x5e21d4[_0x2e3de7(0xeb)](_0x2e3de7(0xd6)+_0x225e26['message']);}}),kord({'cmd':a0_0x44296c(0xc4),'desc':'Fetches\x20market\x20stats\x20for\x20the\x20LINK-USDT\x20pair\x20from\x20KuCoin','fromMe':wtype,'type':a0_0x44296c(0xb9)},async(_0x44b802,_0x4e6786)=>{var _0x558e0d=a0_0x44296c;try{var _0x581c3a=await _0x44b802[_0x558e0d(0x111)]('https://api.kucoin.com/api/v1/market/stats?symbol=LINK-USDT');let _0x48ec19=_0x558e0d(0x10f);return _0x48ec19+=_0x558e0d(0xb8)+parseFloat(_0x581c3a[_0x558e0d(0xf5)])[_0x558e0d(0x112)](0x2)+'\x0a',_0x48ec19+=_0x558e0d(0xda)+parseFloat(_0x581c3a['changeRate'])[_0x558e0d(0x112)](0x2)+'%\x0a',_0x48ec19+=_0x558e0d(0xb3)+parseFloat(_0x581c3a[_0x558e0d(0x113)])[_0x558e0d(0x112)](0x2)+'\x0a',_0x48ec19+=_0x558e0d(0xaf)+parseFloat(_0x581c3a[_0x558e0d(0xe7)])[_0x558e0d(0x112)](0x2)+'\x0a',_0x48ec19+=_0x558e0d(0x105)+parseFloat(_0x581c3a[_0x558e0d(0xfe)])[_0x558e0d(0x112)](0x2)+'\x20LINK\x0a',await _0x44b802[_0x558e0d(0xeb)](_0x48ec19);}catch(_0x12b4e6){return await _0x44b802[_0x558e0d(0xeb)](_0x558e0d(0xd6)+_0x12b4e6[_0x558e0d(0xd0)]);}}),kord({'cmd':a0_0x44296c(0xd9),'desc':a0_0x44296c(0xd1),'fromMe':wtype,'type':a0_0x44296c(0xb9)},async(_0x23fc2f,_0x5a2bfb)=>{var _0x560ce8=a0_0x44296c;try{var _0x8a379d=await _0x23fc2f[_0x560ce8(0x111)]('https://open.er-api.com/v6/latest/NGN'),_0x372d16=_0x8a379d[_0x560ce8(0x10e)];let _0x3ae8af='Exchange\x20Rates\x20from\x20NGN:\x0a';for(const [_0x21d18c,_0x131f4b]of Object['entries'](_0x372d16)){_0x3ae8af+=_0x560ce8(0xf8)+_0x21d18c+':\x20'+_0x131f4b[_0x560ce8(0x112)](0x2)+'\x0a';}return await _0x23fc2f['send'](_0x3ae8af);}catch(_0x169ac1){return await _0x23fc2f[_0x560ce8(0xeb)](_0x560ce8(0x10b)+_0x169ac1['message']);}}),kord({'cmd':a0_0x44296c(0x10c),'desc':a0_0x44296c(0xe1),'fromMe':wtype,'type':'crypto'},async(_0x8ff967,_0x5917e3)=>{var _0x1e9d25=a0_0x44296c;try{var _0x3fd15a=await _0x8ff967['axios'](_0x1e9d25(0xee)),_0x2ffe5d=_0x3fd15a[_0x1e9d25(0x10e)];let _0x256020='Exchange\x20Rates\x20from\x20EUR:\x0a';for(const [_0x59a7b1,_0x437d31]of Object[_0x1e9d25(0xf7)](_0x2ffe5d)){_0x256020+=_0x1e9d25(0xe6)+_0x59a7b1+':\x20'+_0x437d31[_0x1e9d25(0x112)](0x2)+'\x0a';}return await _0x8ff967['send'](_0x256020);}catch(_0x1b321d){return await _0x8ff967[_0x1e9d25(0xeb)](_0x1e9d25(0x10b)+_0x1b321d[_0x1e9d25(0xd0)]);}}),kord({'cmd':'usd-rates','desc':a0_0x44296c(0x11a),'fromMe':wtype,'type':'crypto'},async(_0x341de8,_0x14cce7)=>{var _0x4495ec=a0_0x44296c;try{var _0xe578c7=await _0x341de8[_0x4495ec(0x111)]('https://open.er-api.com/v6/latest/USD'),_0x4e670a=_0xe578c7[_0x4495ec(0x10e)];let _0x3b5636=_0x4495ec(0x118);for(const [_0x4fcb81,_0x2b9770]of Object[_0x4495ec(0xf7)](_0x4e670a)){_0x3b5636+=_0x4495ec(0x119)+_0x4fcb81+':\x20'+_0x2b9770[_0x4495ec(0x112)](0x2)+'\x0a';}return await _0x341de8[_0x4495ec(0xeb)](_0x3b5636);}catch(_0x1fe68a){return await _0x341de8[_0x4495ec(0xeb)]('Error:\x20'+_0x1fe68a[_0x4495ec(0xd0)]);}}),kord({'cmd':'gbp-rates','desc':'Fetches\x20and\x20sends\x20exchange\x20rates\x20from\x20GBP\x20to\x20other\x20currencies','fromMe':wtype,'type':a0_0x44296c(0xb9)},async(_0x348175,_0x219ba4)=>{var _0x324875=a0_0x44296c;try{var _0x1d555b=await _0x348175[_0x324875(0x111)]('https://open.er-api.com/v6/latest/GBP'),_0x3a2478=_0x1d555b[_0x324875(0x10e)];let _0x58df50=_0x324875(0x106);for(const [_0x144658,_0x5c1559]of Object[_0x324875(0xf7)](_0x3a2478)){_0x58df50+=_0x324875(0xbd)+_0x144658+':\x20'+_0x5c1559[_0x324875(0x112)](0x2)+'\x0a';}return await _0x348175[_0x324875(0xeb)](_0x58df50);}catch(_0x5c2f97){return await _0x348175[_0x324875(0xeb)](_0x324875(0x10b)+_0x5c2f97[_0x324875(0xd0)]);}}),kord({'cmd':a0_0x44296c(0x110),'desc':a0_0x44296c(0xdb),'fromMe':wtype,'type':a0_0x44296c(0xb9)},async(_0x695e63,_0x1be3d0)=>{var _0x36c705=a0_0x44296c;try{var _0x19da7c=await _0x695e63[_0x36c705(0x111)](_0x36c705(0xf1)),_0x22ad0e=_0x19da7c[_0x36c705(0x10e)];let _0x34815e=_0x36c705(0xe9);for(const [_0x4ca272,_0x186952]of Object[_0x36c705(0xf7)](_0x22ad0e)){_0x34815e+=_0x36c705(0xc2)+_0x4ca272+':\x20'+_0x186952[_0x36c705(0x112)](0x2)+'\x0a';}return await _0x695e63[_0x36c705(0xeb)](_0x34815e);}catch(_0x46b4e7){return await _0x695e63[_0x36c705(0xeb)](_0x36c705(0x10b)+_0x46b4e7['message']);}}),kord({'cmd':'inr-rates','desc':a0_0x44296c(0x102),'fromMe':wtype,'type':'crypto'},async(_0x4da6c5,_0x2f64c3)=>{var _0x280cb9=a0_0x44296c;try{var _0x1ee003=await _0x4da6c5['axios']('https://open.er-api.com/v6/latest/INR'),_0x3c5d96=_0x1ee003[_0x280cb9(0x10e)];let _0x4a9497=_0x280cb9(0xd8);for(const [_0x22d6e1,_0x820722]of Object[_0x280cb9(0xf7)](_0x3c5d96)){_0x4a9497+=_0x280cb9(0xd3)+_0x22d6e1+':\x20'+_0x820722[_0x280cb9(0x112)](0x2)+'\x0a';}return await _0x4da6c5[_0x280cb9(0xeb)](_0x4a9497);}catch(_0x5626ae){return await _0x4da6c5[_0x280cb9(0xeb)]('Error:\x20'+_0x5626ae[_0x280cb9(0xd0)]);}}),kord({'cmd':a0_0x44296c(0xf2),'desc':a0_0x44296c(0x103),'fromMe':wtype,'type':a0_0x44296c(0xb9)},async(_0x3c91b7,_0x3896f9)=>{var _0xe37b28=a0_0x44296c;try{var _0x4e8571=await _0x3c91b7[_0xe37b28(0x111)](_0xe37b28(0xd7)),_0x46ef5a=_0x4e8571['rates'];let _0x375d9f=_0xe37b28(0x11c);for(const [_0x429b96,_0x39b663]of Object['entries'](_0x46ef5a)){_0x375d9f+=_0xe37b28(0x108)+_0x429b96+':\x20'+_0x39b663[_0xe37b28(0x112)](0x2)+'\x0a';}return await _0x3c91b7['send'](_0x375d9f);}catch(_0x5d5660){return await _0x3c91b7['send'](_0xe37b28(0x10b)+_0x5d5660['message']);}}),kord({'cmd':a0_0x44296c(0xff),'desc':a0_0x44296c(0x109),'fromMe':wtype,'type':a0_0x44296c(0xb9)},async(_0x4de1ef,_0x21b990)=>{var _0x36ad71=a0_0x44296c;try{var _0x17a797=await _0x4de1ef['axios'](_0x36ad71(0xbe)),_0xaca883=_0x17a797['rates'];let _0x4b78ff=_0x36ad71(0xc1);for(const [_0x13b773,_0x154554]of Object['entries'](_0xaca883)){_0x4b78ff+='-\x20CAD\x20to\x20'+_0x13b773+':\x20'+_0x154554[_0x36ad71(0x112)](0x2)+'\x0a';}return await _0x4de1ef['send'](_0x4b78ff);}catch(_0x5638a9){return await _0x4de1ef[_0x36ad71(0xeb)](_0x36ad71(0x10b)+_0x5638a9['message']);}}),kord({'cmd':a0_0x44296c(0xd4),'desc':a0_0x44296c(0xc9),'fromMe':wtype,'type':a0_0x44296c(0xb9)},async(_0x193e90,_0xd21e63)=>{var _0x3d5b9c=a0_0x44296c;try{var _0x4ca1f9=await _0x193e90[_0x3d5b9c(0x111)](_0x3d5b9c(0xcf)),_0x4aafd4=_0x4ca1f9[_0x3d5b9c(0x10e)];let _0x3f11de=_0x3d5b9c(0xca);for(const [_0x11871a,_0xadb080]of Object['entries'](_0x4aafd4)){_0x3f11de+=_0x3d5b9c(0xdd)+_0x11871a+':\x20'+_0xadb080[_0x3d5b9c(0x112)](0x2)+'\x0a';}return await _0x193e90['send'](_0x3f11de);}catch(_0x540686){return await _0x193e90[_0x3d5b9c(0xeb)](_0x3d5b9c(0x10b)+_0x540686[_0x3d5b9c(0xd0)]);}});
+const { wtype, kord } = require("../core")
+
+
+
+kord({
+  cmd: 'curr-rates|currency-rates',
+  desc: "get rate of currency",
+  fromMe: wtype,
+  type: "crypto",
+}, async (m, text) => {
+  if (!text) return await m.send("*provide currency code* e.g USD, EUR, NGN")
+  text = text.toUpperCase()
+  
+  try {
+    const response = await m.axios(`https://open.er-api.com/v6/latest/${text}`)
+    if (!response.rates) {
+          return await m.send(`*check the code and try again*`)
+        }
+    const rates = response.rates
+        let message = `Exchange Rates from ${text}:\n\n`;
+        for (const [currency, rate] of Object.entries(rates)) {
+          message += `*- ${text} to ${currency}:* ${rate.toFixed(2)}\n`
+        }
+        return await m.send(`${message}`)
+  } catch (e) {
+    console.error("error in currency rate", e)
+    return await m.send(`*error!*\n${e}`)
+  }
+})
+
+
+kord({
+  cmd: "btc-usdt",
+  desc: "Fetches market stats for the BTC-USDT pair from KuCoin",
+  fromMe: wtype,
+  type: "crypto",
+}, async (m, text) => {
+  try {
+    var response = await m.axios("https://api.kucoin.com/api/v1/market/stats?symbol=BTC-USDT")
+    
+
+    let message = `⭑ *BTC-USDT Market Stats*\n\n`
+    message += `⭑ *Last Price:* $${parseFloat(response.last).toFixed(2)}\n`
+    message += `⭑ *24h Change:* ${parseFloat(response.changeRate).toFixed(2)}%\n`
+    message += `⭑ *24h High:* $${parseFloat(response.high).toFixed(2)}\n`
+    message += `⭑ *24h Low:* $${parseFloat(response.low).toFixed(2)}\n`
+    message += `⭑ *24h Volume:* ${parseFloat(response.vol).toFixed(2)} BTC\n`
+
+    return await m.send(message)
+  } catch (error) {
+    return await m.send(`⭑ Error: ${error.message}`)
+  }
+})
+
+kord({
+  cmd: "eth-usdt",
+  desc: "Fetches market stats for the ETH-USDT pair from KuCoin",
+  fromMe: wtype,
+  type: "crypto",
+}, async (m, text) => {
+  try {
+    var response = await m.axios("https://api.kucoin.com/api/v1/market/stats?symbol=ETH-USDT")
+    
+
+    let message = `⭑ *ETH-USDT Market Stats*\n\n`
+    message += `⭑ *Last Price:* $${parseFloat(response.last).toFixed(2)}\n`
+    message += `⭑ *24h Change:* ${parseFloat(response.changeRate).toFixed(2)}%\n`
+    message += `⭑ *24h High:* $${parseFloat(response.high).toFixed(2)}\n`
+    message += `⭑ *24h Low:* $${parseFloat(response.low).toFixed(2)}\n`
+    message += `⭑ *24h Volume:* ${parseFloat(response.vol).toFixed(2)} ETH\n`
+
+    return await m.send(message)
+  } catch (error) {
+    return await m.send(`⭑ Error: ${error.message}`)
+  }
+})
+
+kord({
+  cmd: "ltc-usdt",
+  desc: "Fetches market stats for the LTC-USDT pair from KuCoin",
+  fromMe: wtype,
+  type: "crypto",
+}, async (m, text) => {
+  try {
+    var response = await m.axios("https://api.kucoin.com/api/v1/market/stats?symbol=LTC-USDT")
+    
+
+    let message = `⭑ *LTC-USDT Market Stats*\n\n`
+    message += `⭑ *Last Price:* $${parseFloat(response.last).toFixed(2)}\n`
+    message += `⭑ *24h Change:* ${parseFloat(response.changeRate).toFixed(2)}%\n`
+    message += `⭑ *24h High:* $${parseFloat(response.high).toFixed(2)}\n`
+    message += `⭑ *24h Low:* $${parseFloat(response.low).toFixed(2)}\n`
+    message += `⭑ *24h Volume:* ${parseFloat(response.vol).toFixed(2)} LTC\n`
+
+    return await m.send(message)
+  } catch (error) {
+    return await m.send(`⭑ Error: ${error.message}`)
+  }
+})
+
+kord({
+  cmd: "xrp-usdt",
+  desc: "Fetches market stats for the XRP-USDT pair from KuCoin",
+  fromMe: wtype,
+  type: "crypto",
+}, async (m, text) => {
+  try {
+    var response = await m.axios("https://api.kucoin.com/api/v1/market/stats?symbol=XRP-USDT")
+    
+
+    let message = `⭑ *XRP-USDT Market Stats*\n\n`
+    message += `⭑ *Last Price:* $${parseFloat(response.last).toFixed(2)}\n`
+    message += `⭑ *24h Change:* ${parseFloat(response.changeRate).toFixed(2)}%\n`
+    message += `⭑ *24h High:* $${parseFloat(response.high).toFixed(2)}\n`
+    message += `⭑ *24h Low:* $${parseFloat(response.low).toFixed(2)}\n`
+    message += `⭑ *24h Volume:* ${parseFloat(response.vol).toFixed(2)} XRP\n`
+
+    return await m.send(message)
+  } catch (error) {
+    return await m.send(`⭑ Error: ${error.message}`)
+  }
+})
+
+kord({
+  cmd: "doge-usdt",
+  desc: "Fetches market stats for the DOGE-USDT pair from KuCoin",
+  fromMe: wtype,
+  type: "crypto",
+}, async (m, text) => {
+  try {
+    var response = await m.axios("https://api.kucoin.com/api/v1/market/stats?symbol=DOGE-USDT")
+    
+
+    let message = `⭑ *DOGE-USDT Market Stats*\n\n`
+    message += `⭑ *Last Price:* $${parseFloat(response.last).toFixed(2)}\n`
+    message += `⭑ *24h Change:* ${parseFloat(response.changeRate).toFixed(2)}%\n`
+    message += `⭑ *24h High:* $${parseFloat(response.high).toFixed(2)}\n`
+    message += `⭑ *24h Low:* $${parseFloat(response.low).toFixed(2)}\n`
+    message += `⭑ *24h Volume:* ${parseFloat(response.vol).toFixed(2)} DOGE\n`
+
+    return await m.send(message)
+  } catch (error) {
+    return await m.send(`⭑ Error: ${error.message}`)
+  }
+})
+
+kord({
+  cmd: "bch-usdt",
+  desc: "Fetches market stats for the BCH-USDT pair from KuCoin",
+  fromMe: wtype,
+  type: "crypto",
+}, async (m, text) => {
+  try {
+    var response = await m.axios("https://api.kucoin.com/api/v1/market/stats?symbol=BCH-USDT")
+    
+
+    let message = `⭑ *BCH-USDT Market Stats*\n\n`
+    message += `⭑ *Last Price:* $${parseFloat(response.last).toFixed(2)}\n`
+    message += `⭑ *24h Change:* ${parseFloat(response.changeRate).toFixed(2)}%\n`
+    message += `⭑ *24h High:* $${parseFloat(response.high).toFixed(2)}\n`
+    message += `⭑ *24h Low:* $${parseFloat(response.low).toFixed(2)}\n`
+    message += `⭑ *24h Volume:* ${parseFloat(response.vol).toFixed(2)} BCH\n`
+
+    return await m.send(message)
+  } catch (error) {
+    return await m.send(`⭑ Error: ${error.message}`)
+  }
+})
+
+kord({
+  cmd: "ada-usdt",
+  desc: "Fetches market stats for the ADA-USDT pair from KuCoin",
+  fromMe: wtype,
+  type: "crypto",
+}, async (m, text) => {
+  try {
+    var response = await m.axios("https://api.kucoin.com/api/v1/market/stats?symbol=ADA-USDT")
+    
+
+    let message = `⭑ *ADA-USDT Market Stats*\n\n`
+    message += `⭑ *Last Price:* $${parseFloat(response.last).toFixed(2)}\n`
+    message += `⭑ *24h Change:* ${parseFloat(response.changeRate).toFixed(2)}%\n`
+    message += `⭑ *24h High:* $${parseFloat(response.high).toFixed(2)}\n`
+    message += `⭑ *24h Low:* $${parseFloat(response.low).toFixed(2)}\n`
+    message += `⭑ *24h Volume:* ${parseFloat(response.vol).toFixed(2)} ADA\n`
+
+    return await m.send(message)
+  } catch (error) {
+    return await m.send(`⭑ Error: ${error.message}`)
+  }
+})
+
+kord({
+  cmd: "link-usdt",
+  desc: "Fetches market stats for the LINK-USDT pair from KuCoin",
+  fromMe: wtype,
+  type: "crypto",
+}, async (m, text) => {
+  try {
+    var response = await m.axios("https://api.kucoin.com/api/v1/market/stats?symbol=LINK-USDT")
+    
+
+    let message = `⭑ *LINK-USDT Market Stats*\n\n`
+    message += `⭑ *Last Price:* $${parseFloat(response.last).toFixed(2)}\n`
+    message += `⭑ *24h Change:* ${parseFloat(response.changeRate).toFixed(2)}%\n`
+    message += `⭑ *24h High:* $${parseFloat(response.high).toFixed(2)}\n`
+    message += `⭑ *24h Low:* $${parseFloat(response.low).toFixed(2)}\n`
+    message += `⭑ *24h Volume:* ${parseFloat(response.vol).toFixed(2)} LINK\n`
+
+    return await m.send(message)
+  } catch (error) {
+    return await m.send(`⭑ Error: ${error.message}`)
+  }
+})
+
+kord({
+  cmd: "btc-usdt",
+  desc: "Fetches market stats for the BTC-USDT pair from KuCoin",
+  fromMe: wtype,
+  type: "crypto",
+}, async (m, text) => {
+  try {
+    var response = await m.axios("https://api.kucoin.com/api/v1/market/stats?symbol=BTC-USDT")
+    
+
+    let message = `⭑ *BTC-USDT Market Stats*\n\n`
+    message += `⭑ *Last Price:* $${parseFloat(response.last).toFixed(2)}\n`
+    message += `⭑ *24h Change:* ${parseFloat(response.changeRate).toFixed(2)}%\n`
+    message += `⭑ *24h High:* $${parseFloat(response.high).toFixed(2)}\n`
+    message += `⭑ *24h Low:* $${parseFloat(response.low).toFixed(2)}\n`
+    message += `⭑ *24h Volume:* ${parseFloat(response.vol).toFixed(2)} BTC\n`
+
+    return await m.send(message)
+  } catch (error) {
+    return await m.send(`⭑ Error: ${error.message}`)
+  }
+})
+
+kord({
+  cmd: "eth-usdt",
+  desc: "Fetches market stats for the ETH-USDT pair from KuCoin",
+  fromMe: wtype,
+  type: "crypto",
+}, async (m, text) => {
+  try {
+    var response = await m.axios("https://api.kucoin.com/api/v1/market/stats?symbol=ETH-USDT")
+    
+
+    let message = `⭑ *ETH-USDT Market Stats*\n\n`
+    message += `⭑ *Last Price:* $${parseFloat(response.last).toFixed(2)}\n`
+    message += `⭑ *24h Change:* ${parseFloat(response.changeRate).toFixed(2)}%\n`
+    message += `⭑ *24h High:* $${parseFloat(response.high).toFixed(2)}\n`
+    message += `⭑ *24h Low:* $${parseFloat(response.low).toFixed(2)}\n`
+    message += `⭑ *24h Volume:* ${parseFloat(response.vol).toFixed(2)} ETH\n`
+
+    return await m.send(message)
+  } catch (error) {
+    return await m.send(`⭑ Error: ${error.message}`)
+  }
+})
+
+kord({
+  cmd: "ltc-usdt",
+  desc: "Fetches market stats for the LTC-USDT pair from KuCoin",
+  fromMe: wtype,
+  type: "crypto",
+}, async (m, text) => {
+  try {
+    var response = await m.axios("https://api.kucoin.com/api/v1/market/stats?symbol=LTC-USDT")
+    
+
+    let message = `⭑ *LTC-USDT Market Stats*\n\n`
+    message += `⭑ *Last Price:* $${parseFloat(response.last).toFixed(2)}\n`
+    message += `⭑ *24h Change:* ${parseFloat(response.changeRate).toFixed(2)}%\n`
+    message += `⭑ *24h High:* $${parseFloat(response.high).toFixed(2)}\n`
+    message += `⭑ *24h Low:* $${parseFloat(response.low).toFixed(2)}\n`
+    message += `⭑ *24h Volume:* ${parseFloat(response.vol).toFixed(2)} LTC\n`
+
+    return await m.send(message)
+  } catch (error) {
+    return await m.send(`⭑ Error: ${error.message}`)
+  }
+})
+
+kord({
+  cmd: "xrp-usdt",
+  desc: "Fetches market stats for the XRP-USDT pair from KuCoin",
+  fromMe: wtype,
+  type: "crypto",
+}, async (m, text) => {
+  try {
+    var response = await m.axios("https://api.kucoin.com/api/v1/market/stats?symbol=XRP-USDT")
+    
+
+    let message = `⭑ *XRP-USDT Market Stats*\n\n`
+    message += `⭑ *Last Price:* $${parseFloat(response.last).toFixed(2)}\n`
+    message += `⭑ *24h Change:* ${parseFloat(response.changeRate).toFixed(2)}%\n`
+    message += `⭑ *24h High:* $${parseFloat(response.high).toFixed(2)}\n`
+    message += `⭑ *24h Low:* $${parseFloat(response.low).toFixed(2)}\n`
+    message += `⭑ *24h Volume:* ${parseFloat(response.vol).toFixed(2)} XRP\n`
+
+    return await m.send(message)
+  } catch (error) {
+    return await m.send(`⭑ Error: ${error.message}`)
+  }
+})
+
+kord({
+  cmd: "doge-usdt",
+  desc: "Fetches market stats for the DOGE-USDT pair from KuCoin",
+  fromMe: wtype,
+  type: "crypto",
+}, async (m, text) => {
+  try {
+    var response = await m.axios("https://api.kucoin.com/api/v1/market/stats?symbol=DOGE-USDT")
+    
+
+    let message = `⭑ *DOGE-USDT Market Stats*\n\n`
+    message += `⭑ *Last Price:* $${parseFloat(response.last).toFixed(2)}\n`
+    message += `⭑ *24h Change:* ${parseFloat(response.changeRate).toFixed(2)}%\n`
+    message += `⭑ *24h High:* $${parseFloat(response.high).toFixed(2)}\n`
+    message += `⭑ *24h Low:* $${parseFloat(response.low).toFixed(2)}\n`
+    message += `⭑ *24h Volume:* ${parseFloat(response.vol).toFixed(2)} DOGE\n`
+
+    return await m.send(message)
+  } catch (error) {
+    return await m.send(`⭑ Error: ${error.message}`)
+  }
+})
+
+kord({
+  cmd: "bch-usdt",
+  desc: "Fetches market stats for the BCH-USDT pair from KuCoin",
+  fromMe: wtype,
+  type: "crypto",
+}, async (m, text) => {
+  try {
+    var response = await m.axios("https://api.kucoin.com/api/v1/market/stats?symbol=BCH-USDT")
+    
+
+    let message = `⭑ *BCH-USDT Market Stats*\n\n`
+    message += `⭑ *Last Price:* $${parseFloat(response.last).toFixed(2)}\n`
+    message += `⭑ *24h Change:* ${parseFloat(response.changeRate).toFixed(2)}%\n`
+    message += `⭑ *24h High:* $${parseFloat(response.high).toFixed(2)}\n`
+    message += `⭑ *24h Low:* $${parseFloat(response.low).toFixed(2)}\n`
+    message += `⭑ *24h Volume:* ${parseFloat(response.vol).toFixed(2)} BCH\n`
+
+    return await m.send(message)
+  } catch (error) {
+    return await m.send(`⭑ Error: ${error.message}`)
+  }
+})
+
+kord({
+  cmd: "ada-usdt",
+  desc: "Fetches market stats for the ADA-USDT pair from KuCoin",
+  fromMe: wtype,
+  type: "crypto",
+}, async (m, text) => {
+  try {
+    var response = await m.axios("https://api.kucoin.com/api/v1/market/stats?symbol=ADA-USDT")
+    
+
+    let message = `⭑ *ADA-USDT Market Stats*\n\n`
+    message += `⭑ *Last Price:* $${parseFloat(response.last).toFixed(2)}\n`
+    message += `⭑ *24h Change:* ${parseFloat(response.changeRate).toFixed(2)}%\n`
+    message += `⭑ *24h High:* $${parseFloat(response.high).toFixed(2)}\n`
+    message += `⭑ *24h Low:* $${parseFloat(response.low).toFixed(2)}\n`
+    message += `⭑ *24h Volume:* ${parseFloat(response.vol).toFixed(2)} ADA\n`
+
+    return await m.send(message)
+  } catch (error) {
+    return await m.send(`⭑ Error: ${error.message}`)
+  }
+})
+
+kord({
+  cmd: "link-usdt",
+  desc: "Fetches market stats for the LINK-USDT pair from KuCoin",
+  fromMe: wtype,
+  type: "crypto",
+}, async (m, text) => {
+  try {
+    var response = await m.axios("https://api.kucoin.com/api/v1/market/stats?symbol=LINK-USDT")
+    
+
+    let message = `⭑ *LINK-USDT Market Stats*\n\n`
+    message += `⭑ *Last Price:* $${parseFloat(response.last).toFixed(2)}\n`
+    message += `⭑ *24h Change:* ${parseFloat(response.changeRate).toFixed(2)}%\n`
+    message += `⭑ *24h High:* $${parseFloat(response.high).toFixed(2)}\n`
+    message += `⭑ *24h Low:* $${parseFloat(response.low).toFixed(2)}\n`
+    message += `⭑ *24h Volume:* ${parseFloat(response.vol).toFixed(2)} LINK\n`
+
+    return await m.send(message)
+  } catch (error) {
+    return await m.send(`⭑ Error: ${error.message}`)
+  }
+})
+
+kord({
+  cmd: "ngn-rates",
+  desc: "Fetches and sends exchange rates from NGN to other currencies",
+  fromMe: wtype,
+  type: "crypto",
+}, async (m, text) => {
+  try {
+    var response = await m.axios("https://open.er-api.com/v6/latest/NGN")
+    var rates = response.rates
+
+    let message = 'Exchange Rates from NGN:\n'
+    for (const [currency, rate] of Object.entries(rates)) {
+      message += `- NGN to ${currency}: ${rate.toFixed(2)}\n`
+    }
+
+    return await m.send(message)
+  } catch (error) {
+    return await m.send(`Error: ${error.message}`)
+  }
+})
+
+kord({
+  cmd: "eur-rates",
+  desc: "Fetches and sends exchange rates from EUR to other currencies",
+  fromMe: wtype,
+  type: "crypto",
+}, async (m, text) => {
+  try {
+    var response = await m.axios("https://open.er-api.com/v6/latest/EUR")
+    var rates = response.rates
+
+    let message = 'Exchange Rates from EUR:\n'
+    for (const [currency, rate] of Object.entries(rates)) {
+      message += `- EUR to ${currency}: ${rate.toFixed(2)}\n`
+    }
+
+    return await m.send(message)
+  } catch (error) {
+    return await m.send(`Error: ${error.message}`)
+  }
+})
+
+kord({
+  cmd: "usd-rates",
+  desc: "Fetches and sends exchange rates from USD to other currencies",
+  fromMe: wtype,
+  type: "crypto",
+}, async (m, text) => {
+  try {
+    var response = await m.axios("https://open.er-api.com/v6/latest/USD")
+    var rates = response.rates
+
+    let message = 'Exchange Rates from USD:\n'
+    for (const [currency, rate] of Object.entries(rates)) {
+      message += `- USD to ${currency}: ${rate.toFixed(2)}\n`
+    }
+
+    return await m.send(message)
+  } catch (error) {
+    return await m.send(`Error: ${error.message}`)
+  }
+})
+
+kord({
+  cmd: "gbp-rates",
+  desc: "Fetches and sends exchange rates from GBP to other currencies",
+  fromMe: wtype,
+  type: "crypto",
+}, async (m, text) => {
+  try {
+    var response = await m.axios("https://open.er-api.com/v6/latest/GBP")
+    var rates = response.rates
+
+    let message = 'Exchange Rates from GBP:\n'
+    for (const [currency, rate] of Object.entries(rates)) {
+      message += `- GBP to ${currency}: ${rate.toFixed(2)}\n`
+    }
+
+    return await m.send(message)
+  } catch (error) {
+    return await m.send(`Error: ${error.message}`)
+  }
+})
+
+kord({
+  cmd: "jpy-rates",
+  desc: "Fetches and sends exchange rates from JPY to other currencies",
+  fromMe: wtype,
+  type: "crypto",
+}, async (m, text) => {
+  try {
+    var response = await m.axios("https://open.er-api.com/v6/latest/JPY")
+    var rates = response.rates
+
+    let message = 'Exchange Rates from JPY:\n'
+    for (const [currency, rate] of Object.entries(rates)) {
+      message += `- JPY to ${currency}: ${rate.toFixed(2)}\n`
+    }
+
+    return await m.send(message)
+  } catch (error) {
+    return await m.send(`Error: ${error.message}`)
+  }
+})
+
+kord({
+  cmd: "inr-rates",
+  desc: "Fetches and sends exchange rates from INR to other currencies",
+  fromMe: wtype,
+  type: "crypto",
+}, async (m, text) => {
+  try {
+    var response = await m.axios("https://open.er-api.com/v6/latest/INR")
+    var rates = response.rates
+
+    let message = 'Exchange Rates from INR:\n'
+    for (const [currency, rate] of Object.entries(rates)) {
+      message += `- INR to ${currency}: ${rate.toFixed(2)}\n`
+    }
+
+    return await m.send(message)
+  } catch (error) {
+    return await m.send(`Error: ${error.message}`)
+  }
+})
+
+kord({
+  cmd: "aud-rates",
+  desc: "Fetches and sends exchange rates from AUD to other currencies",
+  fromMe: wtype,
+  type: "crypto",
+}, async (m, text) => {
+  try {
+    var response = await m.axios("https://open.er-api.com/v6/latest/AUD")
+    var rates = response.rates
+
+    let message = 'Exchange Rates from AUD:\n'
+    for (const [currency, rate] of Object.entries(rates)) {
+      message += `- AUD to ${currency}: ${rate.toFixed(2)}\n`
+    }
+
+    return await m.send(message)
+  } catch (error) {
+    return await m.send(`Error: ${error.message}`)
+  }
+})
+
+kord({
+  cmd: "cad-rates",
+  desc: "Fetches and sends exchange rates from CAD to other currencies",
+  fromMe: wtype,
+  type: "crypto",
+}, async (m, text) => {
+  try {
+    var response = await m.axios("https://open.er-api.com/v6/latest/CAD")
+    var rates = response.rates
+
+    let message = 'Exchange Rates from CAD:\n'
+    for (const [currency, rate] of Object.entries(rates)) {
+      message += `- CAD to ${currency}: ${rate.toFixed(2)}\n`
+    }
+
+    return await m.send(message)
+  } catch (error) {
+    return await m.send(`Error: ${error.message}`)
+  }
+})
+
+kord({
+  cmd: "cny-rates",
+  desc: "Fetches and sends exchange rates from CNY to other currencies",
+  fromMe: wtype,
+  type: "crypto",
+}, async (m, text) => {
+  try {
+    var response = await m.axios("https://open.er-api.com/v6/latest/CNY")
+    var rates = response.rates
+
+    let message = 'Exchange Rates from CNY:\n'
+    for (const [currency, rate] of Object.entries(rates)) {
+      message += `- CNY to ${currency}: ${rate.toFixed(2)}\n`
+    }
+
+    return await m.send(message)
+  } catch (error) {
+    return await m.send(`Error: ${error.message}`)
+  }
+})

@@ -1,1 +1,127 @@
-function a0_0x311d(){const _0x3d3f13=['platform','menu\x20to\x20see\x20all\x20categories','floor','text','2859365fzLHzH','\x0a\x0a\x20\x20\x20\x20\x20┏\x20','toFixed','fromCharCode','```┌────═━┈\x20','OWNER_NAME','toLocaleTimeString','join','../core','\x20┏\x20','toString','BOT_NAME','toLowerCase','\x0a\x20✇\x20▸\x20Version:\x20v','160847srZEbM','list\x20of\x20commands','32982ALGagV','119VqNDkw','trim','forEach','\x0a\x20✇\x20▸\x20Plugins:\x20','repeat','toLocaleDateString','padStart','\x20┓\x20\x0a┍\x20\x20\x20─┉─\x20•\x20─┉─\x20\x20\x20\x20┑\x20\x0a','menu','\x0a┕\x20\x20\x20\x20─┉─\x20•\x20─┉─\x20\x20\x20┙\x20','\x0a└──────═━┈┈━═──────┘```\x0a','\x0a\x20✇\x20▸\x20Uptime:\x20','replace','map','log','toUpperCase','includes','\x0a\x20✇\x20▸\x20User:\x20','\x20┓\x0a┍\x20\x20\x20─┉─\x20•\x20─┉─\x20\x20\x20\x20┑\x20\x0a','push','1121920vDGylx','split','client','\x0a└───────═━┈┈━═──────┘```\x0a','all','2870884aonidQ','menu\x20[category]\x20for\x20specific\x20commands','freemem','\x0a\x20✇\x20▸\x20Memory:\x20','\x0a\x20✇\x20▸\x20Prefix:\x20','keys','\x0a\x20✇\x20▸\x20Platform:\x20','pow','\x0a┕\x20\x20\x20\x20─┉─\x20•\x20─┉─\x20\x20\x20┙\x20\x0a\x0aTip:\x20Use\x20','length','pushName','18519352TUhhUD','\x0a└────────═━┈┈━═────────┘```\x0a','488166YmVMOV','send','\x0a\x20✇\x20▸\x20Commands:\x20','sansItalic','\x20┈━═────┐\x0a\x20✇\x20▸\x20Owner:\x20'];a0_0x311d=function(){return _0x3d3f13;};return a0_0x311d();}const a0_0x12d0ad=a0_0x3b8d;(function(_0x48903e,_0x35ce65){const _0x162a19=a0_0x3b8d,_0x4d7aa1=_0x48903e();while(!![]){try{const _0x502e41=parseInt(_0x162a19(0xcf))/0x1+-parseInt(_0x162a19(0xa6))/0x2+-parseInt(_0x162a19(0xb8))/0x3+-parseInt(_0x162a19(0xab))/0x4+-parseInt(_0x162a19(0xc1))/0x5+-parseInt(_0x162a19(0xd1))/0x6*(parseInt(_0x162a19(0xd2))/0x7)+parseInt(_0x162a19(0xb6))/0x8;if(_0x502e41===_0x35ce65)break;else _0x4d7aa1['push'](_0x4d7aa1['shift']());}catch(_0x33d442){_0x4d7aa1['push'](_0x4d7aa1['shift']());}}}(a0_0x311d,0x5a191));const os=require('os'),{changeFont}=require(a0_0x12d0ad(0xc9)),{prefix,kord,wtype,secondsToHms,config,commands}=require(a0_0x12d0ad(0xc9)),{version}=require('../package.json'),format=_0x17b85f=>{const _0x49c737=a0_0x12d0ad,_0x5b6fc6=['B','KB','MB','GB'];if(_0x17b85f===0x0)return'0\x20B';const _0x2e3c01=Math[_0x49c737(0xbf)](Math[_0x49c737(0xa0)](_0x17b85f)/Math[_0x49c737(0xa0)](0x400));return parseFloat((_0x17b85f/Math[_0x49c737(0xb2)](0x400,_0x2e3c01))[_0x49c737(0xc3)](0x1))+'\x20'+_0x5b6fc6[_0x2e3c01];};function clockString(_0x2dffc9){const _0x1cf5ab=a0_0x12d0ad;let _0x4d321b=isNaN(_0x2dffc9)?'--':Math['floor'](_0x2dffc9/0x36ee80),_0x470239=isNaN(_0x2dffc9)?'--':Math['floor'](_0x2dffc9%0x36ee80/0xea60),_0x5e2dc4=isNaN(_0x2dffc9)?'--':Math[_0x1cf5ab(0xbf)](_0x2dffc9%0xea60/0x3e8);return[_0x4d321b,_0x470239,_0x5e2dc4]['map'](_0x1ea48f=>_0x1ea48f[_0x1cf5ab(0xcb)]()[_0x1cf5ab(0x98)](0x2,0x0))[_0x1cf5ab(0xc8)](':');}const getRandomFont=()=>{const _0x21b432=a0_0x12d0ad;return _0x21b432(0xbb);};function a0_0x3b8d(_0x152f8f,_0x1591c4){const _0x311dbd=a0_0x311d();return a0_0x3b8d=function(_0x3b8d0c,_0x3be731){_0x3b8d0c=_0x3b8d0c-0x96;let _0x1e3082=_0x311dbd[_0x3b8d0c];return _0x1e3082;},a0_0x3b8d(_0x152f8f,_0x1591c4);}kord({'cmd':a0_0x12d0ad(0x9a),'desc':a0_0x12d0ad(0xd0),'react':'💬','fromMe':wtype,'type':'help'},async _0xafcafb=>{const _0x440052=a0_0x12d0ad,_0x3f5d36={};commands[_0x440052(0xd4)](({cmd:_0x382079,type:_0x1c3a9a})=>{const _0x3db8db=_0x440052;if(!_0x382079)return;const _0x507ab5=_0x382079[_0x3db8db(0xa7)]('|')[0x0][_0x3db8db(0xd3)](),_0xb5c5ee=_0x1c3a9a||'other';if(!_0x3f5d36[_0xb5c5ee])_0x3f5d36[_0xb5c5ee]=[];_0x3f5d36[_0xb5c5ee][_0x3db8db(0xa5)](_0x507ab5);});const _0x1e399f=_0xafcafb[_0x440052(0xc0)]?_0xafcafb['text'][_0x440052(0xcd)]()[_0x440052(0xd3)]():null,_0x49f892=Object[_0x440052(0xb0)](_0x3f5d36)[_0x440052(0x9f)](_0x2f1e0c=>_0x2f1e0c[_0x440052(0xcd)]()),_0x3b9096=String[_0x440052(0xc4)](0x200e),_0x94e42f=_0x3b9096[_0x440052(0x96)](0xfa1);if(_0x1e399f&&_0x49f892[_0x440052(0xa2)](_0x1e399f)){const _0x2d1423=Object['keys'](_0x3f5d36)['find'](_0x55a65a=>_0x55a65a['toLowerCase']()===_0x1e399f),_0x5cd372=await changeFont(_0x2d1423[_0x440052(0xa1)](),'monospace'),_0x10a445=_0x3f5d36[_0x2d1423]['map'](_0x155a2a=>'│\x20'+prefix+_0x155a2a[_0x440052(0x9e)](/[^a-zA-Z0-9-+]/g,''))['join']('\x0a'),_0x4cda90=await changeFont(_0x10a445,getRandomFont());let _0x13b511='```┌────═━┈\x20'+config()['BOT_NAME']+'\x20┈━═────┐\x0a\x20✇\x20▸\x20Category:\x20'+_0x2d1423['toUpperCase']()+_0x440052(0xba)+_0x3f5d36[_0x2d1423][_0x440052(0xb4)]+'\x0a\x20✇\x20▸\x20Prefix:\x20'+prefix+_0x440052(0x9c)+_0x94e42f+_0x440052(0xc2)+_0x5cd372+'\x20┓\x20\x0a┍\x20\x20\x20─┉─\x20•\x20─┉─\x20\x20\x20\x20┑\x20\x0a'+_0x4cda90+_0x440052(0xb3)+prefix+_0x440052(0xbe);const _0x322227='\x20\x20\x20\x20\x20┏\x20'+_0x5cd372+_0x440052(0x99)+_0x4cda90+_0x440052(0xb3)+prefix+_0x440052(0xbe),_0x253b98=await changeFont(_0x322227,getRandomFont()),_0x12a953=_0x440052(0xc5)+config()[_0x440052(0xcc)]+'\x20┈━═────┐\x0a\x20✇\x20▸\x20Category:\x20'+_0x2d1423[_0x440052(0xa1)]()+_0x440052(0xba)+_0x3f5d36[_0x2d1423]['length']+_0x440052(0xaf)+prefix+_0x440052(0xb7)+_0x94e42f+'\x0a\x0a'+_0x253b98;return _0xafcafb[_0x440052(0xb9)](_0x12a953);}const _0x9e91ca=new Date()[_0x440052(0x97)](),_0x49ad84=new Date()[_0x440052(0xc7)](),_0x20a962=await secondsToHms(process['uptime']()),_0x2edd6f=format(os['totalmem']()-os[_0x440052(0xad)]());let _0x2a6d95=_0x440052(0xc5)+config()['BOT_NAME']+_0x440052(0xbc)+config()[_0x440052(0xc6)]+_0x440052(0xa3)+_0xafcafb[_0x440052(0xb5)]+_0x440052(0xd5)+commands[_0x440052(0xb4)]+_0x440052(0x9d)+_0x20a962+_0x440052(0xae)+_0x2edd6f+_0x440052(0xce)+version+_0x440052(0xb1)+_0xafcafb[_0x440052(0xa8)][_0x440052(0xbd)]()+_0x440052(0xa9)+_0x94e42f+'\x0a\x0a';const _0x31365b=Object['keys'](_0x3f5d36)[_0x440052(0x9f)](async _0x2da30c=>{const _0x43b648=_0x440052,_0x3ef6f0=_0x3f5d36[_0x2da30c][_0x43b648(0x9f)](_0x34a2d0=>'│\x20'+prefix+_0x34a2d0[_0x43b648(0x9e)](/[^a-zA-Z0-9-+]/g,''))['join']('\x0a'),_0xbc4847=await changeFont(_0x3ef6f0,getRandomFont()),_0x3cbe16=await changeFont(_0x2da30c[_0x43b648(0xa1)](),'monospace');return _0x43b648(0xca)+_0x3cbe16+_0x43b648(0xa4)+_0xbc4847+_0x43b648(0x9b);}),_0x23a967=await Promise[_0x440052(0xaa)](_0x31365b);_0x2a6d95+=_0x23a967[_0x440052(0xc8)]('\x0a\x0a'),_0x2a6d95+='\x0a\x0aTip:\x20Use\x20'+prefix+_0x440052(0xac);const _0x4545a8=_0x2a6d95[_0x440052(0xd3)]();return _0xafcafb[_0x440052(0xb9)](_0x4545a8);});
+const os = require("os")
+const { changeFont } = require("../core")
+const { prefix, kord, wtype, secondsToHms, config, commands } = require("../core")
+const { version } = require("../package.json")
+
+const format = (bytes) => {
+  const sizes = ["B", "KB", "MB", "GB"]
+  if (bytes === 0) return "0 B"
+  const i = Math.floor(Math.log(bytes) / Math.log(1024))
+  return parseFloat((bytes / Math.pow(1024, i)).toFixed(1)) + " " + sizes[i]
+}
+
+function clockString(ms) {
+  let h = isNaN(ms) ? "--" : Math.floor(ms / 3600000)
+  let m = isNaN(ms) ? "--" : Math.floor(ms % 3600000 / 60000)
+  let s = isNaN(ms) ? "--" : Math.floor(ms % 60000 / 1000)
+  return [h, m, s].map(v => v.toString().padStart(2, 0)).join(":")
+}
+
+const getRandomFont = () => {
+  return "sansItalic"
+}
+
+kord({
+  cmd: "menu|help",
+  desc: "list of commands",
+  react: "💬",
+  fromMe: wtype,
+  type: "help",
+}, async (m) => {
+  const types = {}
+  commands.forEach(({ cmd, type }) => {
+    if (!cmd) return
+    const main = cmd.split("|")[0].trim()
+    const cat = type || "other"
+    if (!types[cat]) types[cat] = []
+    types[cat].push(main)
+  })
+
+  const requestedType = m.text ? m.text.toLowerCase().trim() : null
+  const availableTypes = Object.keys(types).map(t => t.toLowerCase())
+  
+  const more = String.fromCharCode(8206)
+  const readmore = more.repeat(4001)
+  
+  if (requestedType && availableTypes.includes(requestedType)) {
+    const actualType = Object.keys(types).find(t => t.toLowerCase() === requestedType)
+    
+    const at = await changeFont(actualType.toUpperCase(), "monospace")
+    const cmdList = types[actualType].map(cmd => 
+      `│ ${prefix}${cmd.replace(/[^a-zA-Z0-9-+]/g, "")}`
+    ).join('\n')
+    const formattedCmds = await changeFont(cmdList, getRandomFont())
+    
+    let menu = `\`\`\`┌────═━┈ ${config().BOT_NAME} ┈━═────┐
+ ✇ ▸ Category: ${actualType.toUpperCase()}
+ ✇ ▸ Commands: ${types[actualType].length}
+ ✇ ▸ Prefix: ${prefix}
+└──────═━┈┈━═──────┘\`\`\`
+${readmore}
+
+     ┏ ${at} ┓ 
+┍   ─┉─ • ─┉─    ┑ 
+${formattedCmds}
+┕    ─┉─ • ─┉─   ┙ 
+
+Tip: Use ${prefix}menu to see all categories`
+    
+    const bodyContent = `     ┏ ${at} ┓ 
+┍   ─┉─ • ─┉─    ┑ 
+${formattedCmds}
+┕    ─┉─ • ─┉─   ┙ 
+
+Tip: Use ${prefix}menu to see all categories`
+    
+    const styledBody = await changeFont(bodyContent, getRandomFont())
+    const final = `\`\`\`┌────═━┈ ${config().BOT_NAME} ┈━═────┐
+ ✇ ▸ Category: ${actualType.toUpperCase()}
+ ✇ ▸ Commands: ${types[actualType].length}
+ ✇ ▸ Prefix: ${prefix}
+└────────═━┈┈━═────────┘\`\`\`
+${readmore}
+
+${styledBody}`
+    return m.send(final)
+  }
+  
+  const date = new Date().toLocaleDateString()
+  const time = new Date().toLocaleTimeString()
+  const uptime = await secondsToHms(process.uptime())
+  const memoryUsage = format(os.totalmem() - os.freemem())
+  
+  let menu = `\`\`\`┌────═━┈ ${config().BOT_NAME} ┈━═────┐
+ ✇ ▸ Owner: ${config().OWNER_NAME}
+ ✇ ▸ User: ${m.pushName}
+ ✇ ▸ Plugins: ${commands.length}
+ ✇ ▸ Uptime: ${uptime}
+ ✇ ▸ Memory: ${memoryUsage}
+ ✇ ▸ Version: v${version}
+ ✇ ▸ Platform: ${m.client.platform()}
+└───────═━┈┈━═──────┘\`\`\`
+${readmore}
+
+`
+
+  const categoryList = Object.keys(types).map(async (type) => {
+    const cmdList = types[type].map(cmd => 
+      `│ ${prefix}${cmd.replace(/[^a-zA-Z0-9-+]/g, "")}`
+    ).join('\n')
+    const formattedCmds = await changeFont(cmdList, getRandomFont())
+    const tty = await changeFont(type.toUpperCase(), "monospace")
+    
+    return ` ┏ ${tty} ┓
+┍   ─┉─ • ─┉─    ┑ 
+${formattedCmds}
+┕    ─┉─ • ─┉─   ┙ `
+  })
+
+  const resolvedCategoryList = await Promise.all(categoryList)
+  menu += resolvedCategoryList.join('\n\n')
+
+
+  menu += `\n\nTip: Use ${prefix}menu [category] for specific commands`
+
+  const final = menu.trim()
+  return m.send(final)
+})

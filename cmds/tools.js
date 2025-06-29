@@ -1,1 +1,585 @@
-const a0_0x67fbe3=a0_0x2aad;(function(_0x2cc6d4,_0x6f7979){const _0x3589a9=a0_0x2aad,_0x4cf0fd=_0x2cc6d4();while(!![]){try{const _0x21ad03=-parseInt(_0x3589a9(0x1a6))/0x1*(-parseInt(_0x3589a9(0x160))/0x2)+-parseInt(_0x3589a9(0x190))/0x3+-parseInt(_0x3589a9(0x1a3))/0x4*(parseInt(_0x3589a9(0x13f))/0x5)+-parseInt(_0x3589a9(0x166))/0x6+-parseInt(_0x3589a9(0x154))/0x7+-parseInt(_0x3589a9(0x1c9))/0x8+parseInt(_0x3589a9(0x19b))/0x9;if(_0x21ad03===_0x6f7979)break;else _0x4cf0fd['push'](_0x4cf0fd['shift']());}catch(_0x1c2408){_0x4cf0fd['push'](_0x4cf0fd['shift']());}}}(a0_0x6d1c,0x98421));const {kord,commands,wtype,prefix,getData,storeData,changeFont,formatTime,config}=require(a0_0x67fbe3(0x174)),path=require(a0_0x67fbe3(0x19a)),fs=require('fs'),pre=prefix;kord({'cmd':a0_0x67fbe3(0x149),'desc':a0_0x67fbe3(0x19e),'fromMe':!![],'type':a0_0x67fbe3(0x1b8)},async(_0x1e1aa4,_0x3d0c39)=>{const _0x80f275=a0_0x67fbe3;if(!_0x1e1aa4[_0x80f275(0x156)]['sticker'])return await _0x1e1aa4[_0x80f275(0x170)](_0x80f275(0x15f)+prefix+'setcmd\x20command_\x0a_example:\x20'+prefix+_0x80f275(0x129));if(!_0x3d0c39)return await _0x1e1aa4[_0x80f275(0x170)](_0x80f275(0x17f));var _0x57ed27=_0x3d0c39?.[_0x80f275(0x1a0)]()?.[_0x80f275(0x1a9)](/\s+/)[0x0],_0x553f58=_0x1e1aa4['quoted']['fileSha256']?Buffer[_0x80f275(0x18a)](_0x1e1aa4[_0x80f275(0x156)][_0x80f275(0x1ad)])['toString'](_0x80f275(0x191)):null;if(!_0x553f58)return await _0x1e1aa4[_0x80f275(0x170)](_0x80f275(0x1b2));const _0x355076=await getData(_0x80f275(0x132)),_0x1cd3f4=_0x355076||{};return _0x1cd3f4[_0x553f58]=_0x3d0c39,await storeData('stk_cmd',JSON['stringify'](_0x1cd3f4,null,0x2)),await _0x1e1aa4['send']('❏\x20Sticker\x20set\x20to\x20*'+_0x57ed27+'*');}),kord({'cmd':a0_0x67fbe3(0x14b),'desc':a0_0x67fbe3(0x164),'fromMe':!![],'type':a0_0x67fbe3(0x1b8)},async _0x46eb9a=>{const _0xa7c08=a0_0x67fbe3;if(!_0x46eb9a['quoted'][_0xa7c08(0x16b)])return await _0x46eb9a[_0xa7c08(0x170)]('_Reply\x20to\x20a\x20sticker\x20to\x20delete\x20its\x20command_');const _0x2f427c=_0x46eb9a[_0xa7c08(0x156)][_0xa7c08(0x1ad)]?Buffer[_0xa7c08(0x18a)](_0x46eb9a[_0xa7c08(0x156)][_0xa7c08(0x1ad)])[_0xa7c08(0x16d)](_0xa7c08(0x191)):null;if(!_0x2f427c)return await _0x46eb9a[_0xa7c08(0x170)](_0xa7c08(0x193));const _0x5e28f7=await getData(_0xa7c08(0x132)),_0x24b85d=_0x5e28f7||{};if(!_0x24b85d[_0x2f427c])return await _0x46eb9a[_0xa7c08(0x170)](_0xa7c08(0x1bf));const _0x844d81=_0x24b85d[_0x2f427c];return delete _0x24b85d[_0x2f427c],await storeData('stk_cmd',JSON['stringify'](_0x24b85d,null,0x2)),await _0x46eb9a[_0xa7c08(0x170)](_0xa7c08(0x19f)+_0x844d81+'*');}),kord({'cmd':a0_0x67fbe3(0x138),'desc':a0_0x67fbe3(0x176),'fromMe':!![],'type':a0_0x67fbe3(0x1b8)},async _0xf65f31=>{const _0x3e1301=a0_0x67fbe3,_0xab3ddf=await getData(_0x3e1301(0x132)),_0x2c183c=_0xab3ddf||{},_0x483dd9=Object['entries'](_0x2c183c);if(_0x483dd9[_0x3e1301(0x14d)]===0x0)return await _0xf65f31[_0x3e1301(0x170)](_0x3e1301(0x1c1));let _0x56b5fe=_0x3e1301(0x197);for(const [_0x1a1307,_0x338b7b]of _0x483dd9){_0x56b5fe+=_0x3e1301(0x1a4)+_0x338b7b+_0x3e1301(0x142)+_0x1a1307['slice'](0x0,0x10)+_0x3e1301(0x17c);}return await _0xf65f31['send'](_0x56b5fe[_0x3e1301(0x1a0)]());}),kord({'cmd':'permit','desc':a0_0x67fbe3(0x1b7),'fromMe':!![],'type':a0_0x67fbe3(0x1b8)},async(_0x695011,_0x4a191c)=>{const _0x41e013=a0_0x67fbe3;try{const _0x2b4424=_0x4a191c['split']('\x20');if(!_0x2b4424||_0x2b4424['length']===0x0)return await _0x695011[_0x41e013(0x170)](_0x41e013(0x19c)+pre+_0x41e013(0x1c8)+pre+_0x41e013(0x1a1)+pre+'permit-cmd\x20remove\x20cmd\x20CommandName_\x0a_'+pre+_0x41e013(0x16c)+pre+_0x41e013(0x144)+pre+_0x41e013(0x16e)+pre+_0x41e013(0x13e));const _0x373468=_0x2b4424[0x0]['toLowerCase'](),_0x35194b=_0x2b4424[_0x41e013(0x14d)]>0x1?_0x2b4424['slice'](0x1)[_0x41e013(0x15a)]('\x20'):null,_0x40ee5e=_0x695011['chat'];var _0x55c3b4=await getData(_0x41e013(0x1cb));if(!Array[_0x41e013(0x1a8)](_0x55c3b4))_0x55c3b4=[];let _0x572776=_0x55c3b4[_0x41e013(0x1c5)](_0x438df5=>_0x438df5['chatJid']===_0x40ee5e);if(_0x373468===_0x41e013(0x1c4)){if(_0x55c3b4[_0x41e013(0x14d)]===0x0)return await _0x695011['send']('_No\x20permissions\x20set\x20for\x20any\x20chat._');const _0x2d6e09=_0x55c3b4['filter'](_0x16f685=>_0x16f685[_0x41e013(0x185)]===_0x40ee5e);if(_0x2d6e09['length']===0x0)return await _0x695011[_0x41e013(0x170)](_0x41e013(0x171));let _0x200771=_0x41e013(0x194);return _0x2d6e09[_0x41e013(0x145)]((_0x406b99,_0x1aa996)=>{const _0x36babe=_0x41e013;_0x200771+=_0x1aa996+0x1+'.\x20'+(_0x406b99[_0x36babe(0x15e)]?_0x36babe(0x189)+_0x406b99[_0x36babe(0x15e)]:'')+(_0x406b99[_0x36babe(0x1ba)]?_0x36babe(0x17d)+_0x406b99[_0x36babe(0x1ba)]:'')+'\x0a';}),await _0x695011['send'](_0x200771);}if(_0x373468==='all'){const _0x425d51=[...new Set(commands['map'](_0x40fcf5=>_0x40fcf5[_0x41e013(0x12a)]))],_0x299428=_0x55c3b4[_0x41e013(0x131)](_0x4a3ad4=>_0x4a3ad4['chatJid']===_0x40ee5e&&_0x4a3ad4['cmdType'])[_0x41e013(0x13b)](_0x1be874=>_0x1be874[_0x41e013(0x15e)]),_0x1d2379=_0x425d51[_0x41e013(0x131)](_0x35689f=>!_0x299428[_0x41e013(0x1b3)](_0x35689f));if(_0x1d2379[_0x41e013(0x14d)]===0x0)return await _0x695011['send'](_0x41e013(0x167));return _0x1d2379[_0x41e013(0x145)](_0x294dd3=>{const _0x42abd8=_0x41e013;_0x55c3b4[_0x42abd8(0x1bc)]({'chatJid':_0x40ee5e,'cmdType':_0x294dd3,'cmd':''});}),await storeData(_0x41e013(0x1cb),JSON[_0x41e013(0x15c)](_0x55c3b4,null,0x2)),await _0x695011[_0x41e013(0x170)]('_*All\x20command\x20types\x20('+_0x1d2379['length']+_0x41e013(0x12f)+_0x1d2379[_0x41e013(0x15a)](',\x20')+'_');}if(_0x373468===_0x41e013(0x1b1)){if(!_0x35194b)return await _0x695011[_0x41e013(0x170)](_0x41e013(0x1b0)+pre+'permit-cmd\x20remove\x20cmdtype\x20CommandType_\x0a_'+pre+_0x41e013(0x15d)+pre+_0x41e013(0x141));if(_0x35194b[_0x41e013(0x1a5)]()===_0x41e013(0x180))return _0x55c3b4=_0x55c3b4[_0x41e013(0x131)](_0x20dd0c=>_0x20dd0c['chatJid']!==_0x40ee5e),await storeData(_0x41e013(0x1cb),JSON[_0x41e013(0x15c)](_0x55c3b4,null,0x2)),await _0x695011['send'](_0x41e013(0x146));const _0x3716a6=_0x35194b[_0x41e013(0x1a9)]('\x20'),_0x50d7f8=_0x3716a6[0x0][_0x41e013(0x1a5)](),_0x135bb4=_0x3716a6[_0x41e013(0x17a)](0x1)['join']('\x20');if(_0x50d7f8===_0x41e013(0x168)){const _0x39355d=[...new Set(commands[_0x41e013(0x13b)](_0x496c66=>_0x496c66[_0x41e013(0x12a)]))];if(!_0x39355d['includes'](_0x135bb4))return await _0x695011['send'](_0x41e013(0x1b4)+_0x39355d[_0x41e013(0x15a)]('\x0a')+'_');const _0x53d99d=_0x55c3b4[_0x41e013(0x14d)];_0x55c3b4=_0x55c3b4[_0x41e013(0x131)](_0x57e628=>!(_0x57e628['chatJid']===_0x40ee5e&&_0x57e628['cmdType']===_0x135bb4));if(_0x53d99d===_0x55c3b4[_0x41e013(0x14d)])return await _0x695011[_0x41e013(0x170)](_0x41e013(0x195)+_0x135bb4+_0x41e013(0x136));return await storeData(_0x41e013(0x1cb),JSON[_0x41e013(0x15c)](_0x55c3b4,null,0x2)),await _0x695011[_0x41e013(0x170)](_0x41e013(0x195)+_0x135bb4+'\x22\x20is\x20no\x20longer\x20permitted\x20in\x20this\x20chat*_');}if(_0x50d7f8===_0x41e013(0x1ba)){const _0x638e4=[...new Set(commands['flatMap'](_0xbe9d24=>_0xbe9d24['cmd']?.[_0x41e013(0x1a9)]('|')||[])[_0x41e013(0x13b)](_0x3b84e7=>_0x3b84e7[_0x41e013(0x1a0)]())[_0x41e013(0x131)](Boolean))][_0x41e013(0x187)]();if(!_0x638e4['includes'](_0x135bb4))return await _0x695011[_0x41e013(0x170)]('_*cmd\x20not\x20found!*_\x20_use\x20'+pre+_0x41e013(0x13c));const _0x115fc5=_0x55c3b4[_0x41e013(0x14d)];_0x55c3b4=_0x55c3b4['filter'](_0x43000c=>!(_0x43000c[_0x41e013(0x185)]===_0x40ee5e&&_0x43000c[_0x41e013(0x1ba)]===_0x135bb4));if(_0x115fc5===_0x55c3b4[_0x41e013(0x14d)])return await _0x695011['send'](_0x41e013(0x181)+_0x135bb4+_0x41e013(0x136));return await storeData(_0x41e013(0x1cb),JSON['stringify'](_0x55c3b4,null,0x2)),await _0x695011[_0x41e013(0x170)](_0x41e013(0x181)+_0x135bb4+'\x22\x20is\x20no\x20longer\x20permitted\x20in\x20this\x20chat*_');}const _0x1ed6e8=parseInt(_0x35194b)-0x1,_0x1effba=_0x55c3b4['filter'](_0x4f490b=>_0x4f490b[_0x41e013(0x185)]===_0x40ee5e);if(isNaN(_0x1ed6e8)||_0x1ed6e8<0x0||_0x1ed6e8>=_0x1effba['length'])return await _0x695011[_0x41e013(0x170)](_0x41e013(0x157)+pre+_0x41e013(0x186)+pre+_0x41e013(0x198)+pre+_0x41e013(0x141));const _0x16aa61=_0x1effba[_0x1ed6e8];return _0x55c3b4=_0x55c3b4['filter'](_0x55feb9=>!(_0x55feb9[_0x41e013(0x185)]===_0x40ee5e&&_0x55feb9['cmdType']===_0x16aa61[_0x41e013(0x15e)]&&_0x55feb9['cmd']===_0x16aa61[_0x41e013(0x1ba)])),await storeData(_0x41e013(0x1cb),JSON[_0x41e013(0x15c)](_0x55c3b4,null,0x2)),await _0x695011[_0x41e013(0x170)](_0x41e013(0x17b)+(_0x16aa61[_0x41e013(0x15e)]||_0x16aa61[_0x41e013(0x1ba)])+'_');}if(_0x373468==='cmdtype'){if(!_0x35194b){const _0x431303=[...new Set(commands[_0x41e013(0x13b)](_0x714ccb=>_0x714ccb['type']))];return await _0x695011[_0x41e013(0x170)](_0x41e013(0x1b6)+_0x431303['join']('\x0a'));}const _0x1bdd04=[...new Set(commands[_0x41e013(0x13b)](_0x2b76ac=>_0x2b76ac[_0x41e013(0x12a)]))];if(!_0x1bdd04[_0x41e013(0x1b3)](_0x35194b))return await _0x695011['send'](_0x41e013(0x1b4)+_0x1bdd04[_0x41e013(0x15a)]('\x0a')+'_');const _0x39962b=_0x55c3b4['some'](_0x53f921=>_0x53f921[_0x41e013(0x185)]===_0x40ee5e&&_0x53f921[_0x41e013(0x15e)]===_0x35194b);if(_0x39962b)return await _0x695011[_0x41e013(0x170)](_0x41e013(0x195)+_0x35194b+_0x41e013(0x14e));const _0x2fce76={'chatJid':_0x40ee5e,'cmdType':_0x35194b,'cmd':''};return _0x55c3b4[_0x41e013(0x1bc)](_0x2fce76),await storeData(_0x41e013(0x1cb),JSON[_0x41e013(0x15c)](_0x55c3b4,null,0x2)),await _0x695011[_0x41e013(0x170)]('_*cmd\x20type\x20\x22'+_0x35194b+_0x41e013(0x16a));}if(_0x373468===_0x41e013(0x1ba)){if(!_0x35194b)return await _0x695011[_0x41e013(0x170)]('_*specify\x20a\x20command*_');const _0x30d335=[...new Set(commands[_0x41e013(0x130)](_0x2e8bd0=>_0x2e8bd0[_0x41e013(0x1ba)]?.['split']('|')||[])[_0x41e013(0x13b)](_0x145ba9=>_0x145ba9[_0x41e013(0x1a0)]())[_0x41e013(0x131)](Boolean))][_0x41e013(0x187)]();if(!_0x30d335[_0x41e013(0x1b3)](_0x35194b))return await _0x695011[_0x41e013(0x170)]('_*cmd\x20not\x20found!*_\x20_use\x20'+pre+_0x41e013(0x13c));const _0x3c8c6b=_0x55c3b4[_0x41e013(0x1bb)](_0x23c82c=>_0x23c82c[_0x41e013(0x185)]===_0x40ee5e&&_0x23c82c[_0x41e013(0x1ba)]===_0x35194b);if(_0x3c8c6b)return await _0x695011[_0x41e013(0x170)]('_*cmd\x20\x22'+_0x35194b+_0x41e013(0x14e));const _0x26ea91={'chatJid':_0x40ee5e,'cmdType':'','cmd':_0x35194b};return _0x55c3b4[_0x41e013(0x1bc)](_0x26ea91),await storeData(_0x41e013(0x1cb),JSON[_0x41e013(0x15c)](_0x55c3b4,null,0x2)),await _0x695011[_0x41e013(0x170)](_0x41e013(0x181)+_0x35194b+_0x41e013(0x16a));}const _0x2bd619=[...new Set(commands[_0x41e013(0x13b)](_0x221698=>_0x221698[_0x41e013(0x12a)]))];if(_0x2bd619['includes'](_0x373468)){const _0x538df5=_0x55c3b4['some'](_0x1923a4=>_0x1923a4[_0x41e013(0x185)]===_0x40ee5e&&_0x1923a4[_0x41e013(0x15e)]===_0x373468);if(_0x538df5)return await _0x695011[_0x41e013(0x170)]('_*cmd\x20type\x20\x22'+_0x373468+'\x22\x20is\x20already\x20permitted\x20in\x20this\x20chat*_');const _0x1b2118={'chatJid':_0x40ee5e,'cmdType':_0x373468,'cmd':''};return _0x55c3b4['push'](_0x1b2118),await storeData(_0x41e013(0x1cb),JSON[_0x41e013(0x15c)](_0x55c3b4,null,0x2)),await _0x695011[_0x41e013(0x170)]('_*cmd\x20type\x20\x22'+_0x373468+_0x41e013(0x16a));}const _0x18d723=[...new Set(commands[_0x41e013(0x130)](_0x35df4c=>_0x35df4c['cmd']?.[_0x41e013(0x1a9)]('|')||[])[_0x41e013(0x13b)](_0x2e4bbc=>_0x2e4bbc['trim']())[_0x41e013(0x131)](Boolean))][_0x41e013(0x187)]();if(_0x18d723[_0x41e013(0x1b3)](_0x373468)){const _0x441b6e=_0x55c3b4['some'](_0x14e3f0=>_0x14e3f0[_0x41e013(0x185)]===_0x40ee5e&&_0x14e3f0['cmd']===_0x373468);if(_0x441b6e)return await _0x695011[_0x41e013(0x170)](_0x41e013(0x181)+_0x373468+'\x22\x20is\x20already\x20permitted\x20in\x20this\x20chat*_');const _0x3f7523={'chatJid':_0x40ee5e,'cmdType':'','cmd':_0x373468};return _0x55c3b4['push'](_0x3f7523),await storeData(_0x41e013(0x1cb),JSON[_0x41e013(0x15c)](_0x55c3b4,null,0x2)),await _0x695011[_0x41e013(0x170)]('_*cmd\x20\x22'+_0x373468+_0x41e013(0x16a));}return await _0x695011[_0x41e013(0x170)](_0x41e013(0x12c)+pre+_0x41e013(0x1c8)+pre+_0x41e013(0x1a1)+pre+'permit-cmd\x20remove\x20cmd\x20CommandName_\x0a_'+pre+_0x41e013(0x16c)+pre+_0x41e013(0x1c0)+pre+_0x41e013(0x13e));}catch(_0x19ece3){console['error'](_0x19ece3),await _0x695011[_0x41e013(0x170)](_0x41e013(0x18d)+_0x19ece3[_0x41e013(0x199)]);}}),kord({'cmd':a0_0x67fbe3(0x184),'type':'tools','desc':'set\x20action\x20to\x20be\x20done\x20when\x20owner\x20is\x20mentioned','fromMe':!![]},async(_0x41fa97,_0x3b1e3a)=>{const _0x49756e=a0_0x67fbe3;try{var _0x4b59cb=await getData(_0x49756e(0x169))||{'active':![],'action':'','emoji':'🤍','text':''};const _0x31f1e6=_0x3b1e3a[_0x49756e(0x1a9)]('\x20');if(_0x31f1e6&&_0x31f1e6[_0x49756e(0x14d)]>0x0){const _0x120cff=_0x31f1e6[0x0][_0x49756e(0x1a5)](),_0x4f0a7d=_0x31f1e6[_0x49756e(0x14d)]>0x1?_0x31f1e6[0x1]:null,_0x2885bf=_0x31f1e6[_0x49756e(0x17a)](0x1)[_0x49756e(0x15a)]('\x20');if(_0x120cff===_0x49756e(0x155))return _0x4b59cb[_0x49756e(0x1ae)]=![],await storeData(_0x49756e(0x169),JSON['stringify'](_0x4b59cb,null,0x2)),await _0x41fa97['send']('_Mention\x20Action\x20Has\x20Been\x20Turned\x20Off!_');else{if(_0x120cff===_0x49756e(0x1aa)||_0x120cff===_0x49756e(0x158)){var _0x474337=await getData('mention_config')||{'active':![],'action':'','emoji':'','text':''};return _0x41fa97[_0x49756e(0x170)]('*Mention\x20Status:*\x0a\x0a\x20```Active:\x20'+_0x474337[_0x49756e(0x1ae)]+_0x49756e(0x172)+_0x474337[_0x49756e(0x135)]+'\x0aEmoji:\x20'+_0x474337['emoji']+_0x49756e(0x1c6)+_0x474337[_0x49756e(0x173)]+_0x49756e(0x1a2));}else{if(_0x120cff===_0x49756e(0x148)||_0x120cff===_0x49756e(0x153)){var _0x3efee0=_0x4f0a7d;return _0x4b59cb[_0x49756e(0x1ae)]=!![],_0x4b59cb[_0x49756e(0x135)]=_0x49756e(0x153),_0x4b59cb['emoji']=_0x3efee0,await storeData(_0x49756e(0x169),JSON[_0x49756e(0x15c)](_0x4b59cb,null,0x2)),await _0x41fa97['send'](_0x49756e(0x188));}else{if(_0x120cff==='-text'||_0x120cff===_0x49756e(0x173)){var _0x4f9e77=_0x2885bf;return _0x4b59cb['active']=!![],_0x4b59cb[_0x49756e(0x135)]='text',_0x4b59cb[_0x49756e(0x173)]=_0x4f9e77,await storeData(_0x49756e(0x169),JSON['stringify'](_0x4b59cb,null,0x2)),await _0x41fa97[_0x49756e(0x170)]('_Query\x20Saved!_');}else return await _0x41fa97['send'](_0x49756e(0x177));}}}}else return await _0x41fa97[_0x49756e(0x170)](_0x49756e(0x163));}catch(_0x348f6f){console[_0x49756e(0x134)](_0x348f6f),_0x41fa97['send'](''+_0x348f6f);}}),kord({'on':a0_0x67fbe3(0x180)},async(_0xaffb6a,_0x2c74ca)=>{const _0x5bb742=a0_0x67fbe3;var _0x4a8b93=await getData(_0x5bb742(0x169))||{};if(!_0x4a8b93[_0x5bb742(0x1ae)])return;var _0x38dcce=_0xaffb6a[_0x5bb742(0x14f)];if(_0x2c74ca['includes'](config()[_0x5bb742(0x139)])||_0x2c74ca[_0x5bb742(0x1b3)](_0xaffb6a[_0x5bb742(0x1c3)])){if(_0x4a8b93[_0x5bb742(0x135)]==='react'){var _0x18ce6c=_0x4a8b93['emoji'];return await _0xaffb6a[_0x5bb742(0x161)][_0x5bb742(0x19d)](_0x38dcce,{'react':{'text':_0x18ce6c,'key':_0xaffb6a[_0x5bb742(0x13a)]}});}else{if(_0x4a8b93[_0x5bb742(0x135)]===_0x5bb742(0x173)){var _0x280969=_0x4a8b93[_0x5bb742(0x173)];return await _0xaffb6a['client'][_0x5bb742(0x19d)](_0x38dcce,{'text':_0x280969},{'quoted':_0xaffb6a});}}}});async function loadAfkData(){const _0x500301=a0_0x67fbe3;try{const _0x4b8d63=await getData(_0x500301(0x1b5));if(!_0x4b8d63||typeof _0x4b8d63!==_0x500301(0x151))return{'users':{},'owner':{'active':![],'message':'','lastseen':''}};return _0x4b8d63;}catch(_0x406640){return console[_0x500301(0x134)](_0x500301(0x1ac),_0x406640),{'users':{},'owner':{'active':![],'message':'','lastseen':''}};}}async function saveAfkData(_0x15e05c){const _0x42b5b2=a0_0x67fbe3;try{await storeData('afk_config',JSON['stringify'](_0x15e05c,null,0x2));}catch(_0x2b02dc){console[_0x42b5b2(0x134)]('Error\x20saving\x20AFK\x20data:',_0x2b02dc);}}function a0_0x6d1c(){const _0x8106ab=['off','quoted','*_Invalid\x20removal\x20format_*\x0a_Use:\x20','status','\x20is\x20now\x20afk..\x0a_Reason:_\x20','join','has','stringify','permit-cmd\x20remove\x20cmd\x20CommandName_\x0a_','cmdType','_Reply\x20to\x20a\x20sticker\x20with\x20','1242062yuEOiX','client','global','_\x20*Provide\x20an\x20Option*_\x0a_.mention\x20off_\x0a_.mention\x20-status_\x0a_.mention\x20-react\x20🤍_\x20(reacts\x20when\x20the\x20owner\x20is\x20mentioned)\x0a_.mention\x20-text\x20Your\x20Text_\x20(sends\x20custom\x20text\x20when\x20owner\x20is\x20mentioned,\x20Example:\x20\x27Your\x20Text\x20\x27)','Remove/unbind\x20a\x20command\x20from\x20a\x20sticker','users','1314186vrjtDh','_*All\x20command\x20types\x20are\x20already\x20permitted\x20in\x20this\x20chat*_','cmdtype','mention_config','\x22\x20is\x20now\x20permitted\x20in\x20this\x20chat*_','sticker','permit-cmd\x20remove\x20all_\x0a_','toString','permit-cmd\x20cmd\x20CommandName_\x0a_','User:\x20','send','_No\x20permissions\x20set\x20for\x20this\x20chat_','\x0aAction:\x20','text','../core/','set\x20afk\x20message','List\x20all\x20sticker-bound\x20commands','_*Invalid\x20Option!!!*_\x0a\x0a_*Provide\x20an\x20Option*_\x0a_.mention\x20off_\x0a_.mention\x20-status_\x0a_.mention\x20-react\x20🤍_\x20(reacts\x20when\x20the\x20owner\x20is\x20mentioned)\x0a_.mention\x20-text\x20Your\x20Text_\x20(sends\x20custom\x20text\x20when\x20owner\x20is\x20mentioned,\x20Example:\x20\x27Your\x20Text\x20\x27)','afk\x20off','findMsg','slice','_Permission\x20removed:\x20','...`\x0a\x0a','cmd:\x20','afkData','_provide\x20a\x20command\x20also.._','all','_*cmd\x20\x22','emojis.json','areact_config','mention','chatJid','permit-cmd\x20remove\x20cmdtype\x20CommandType_\x0a_or:\x20','sort','_Query\x20Saved!_','cmd\x20Type:\x20','from','_*Auto\x20React\x20Has\x20Benn\x20Enabled\x20Globally!*_','store','Error:\x20','Not\x20specified','\x20ago','1465932ggvOLE','hex','\x0a*Last\x20seen:*\x20','_hash\x20not\x20found_','_*Permitted\x20Commands\x20for\x20this\x20chat*_\x0a\x0a','_*cmd\x20type\x20\x22','!\x0aYou\x20were\x20afk\x20for:\x20*','❏\x20*Sticker\x20Commands:*\x0a\x0a','permit-cmd\x20remove\x20cmd\x20CommandName_\x0a_or:\x20','message','path','27828945BkIrgj','*_Permit\x20Command_*\x0a\x0aUsage:\x0a_','sendMessage','bind\x20a\x20command\x20to\x20a\x20sticker\x20(whenevrr\x20that\x20stk\x20is\x20sent,\x20the\x20binded\x20command\x20is\x20executed)','*cmd\x20deleted!*\x0a_from:_\x20*','trim','permit-cmd\x20remove\x20cmdtype\x20CommandType_\x0a_','```','3095580UFDUSD','❏\x20*','toLowerCase','1fuydav','_*Auto\x20react\x20Has\x20been\x20disabled\x20for\x20this\x20group!*_\x0a\x0a>\x20Use\x20`.areact\x20off\x20global`\x20to\x20turn\x20on\x20for\x20all\x20groups','isArray','split','-status','owner','Error\x20loading\x20AFK\x20data:','fileSha256','active','utf-8','*_specify\x20what\x20to\x20remove._*\x0a_example:\x20','remove','couldn\x27t\x20get\x20stk\x20hash','includes','_*Invalid\x20command\x20type!!*_\x0a_Available\x20types:_\x0a_','afk_config','_*specify\x20command\x20type.*_\x20Available\x20types:\x0a','permit\x20a\x20command\x20or\x20command\x20group\x20to\x20work\x20even\x20when\x20bot\x20is\x20private','tools','forwardMessage','cmd','some','push','Welcome\x20back\x20@','stop','_no\x20cmd\x20found\x20for\x20that\x20sticker.._','permit-cmd\x20cmdType/cmd_\x0a_','_No\x20sticker\x20commands\x20have\x20been\x20set\x20yet._','automatically\x20react\x20to\x20messages','ownerJid','list','find','\x0aText:\x20','afk','permit-cmd\x20list_\x0a_','3866744pVZicS','floor','permit_cmd','getname','activeChats','setcmd\x20ping_','type','reactionMessage','```INVALID```\x20\x0a*_Permit\x20Command_*\x0a\x0aUsage:\x0a_','getTime','sender','\x20types)\x20are\x20now\x20permitted\x20in\x20this\x20chat*_\x0a\x0a_Added:\x20','flatMap','filter','stk_cmd','an\x20error\x20occured:\x20','error','action','\x22\x20was\x20not\x20permitted\x20in\x20this\x20chat*_','emojis','listcmd|listcmds','OWNER_NUMBER','key','map','menu\x20to\x20see\x20available\x20commands_','areact|autoreact|autoreaction','permit-cmd\x20all_','5Xwosnd','lastseen','permit-cmd\x20remove\x20all_','*\x0a_↳\x20hash:_\x20`','_*Avaliable\x20Options:*_\x0a`.areact\x20on`\x20(to\x20turn\x20on\x20for\x20the\x20present\x20chat)\x0a`.areact\x20on\x20global`\x20global\x20(to\x20turn\x20on\x20for\x20all\x20chats)\x0a`.areact\x20off`\x20(to\x20turn\x20off\x20for\x20the\x20present\x20chat)\x0a`.areact\x20off\x20global`\x20(to\x20turn\x20off\x20for\x20all\x20chats)\x0a`.areact\x20status`\x20(to\x20view\x20rhe\x20settings\x20for\x20the\x20present\x20chat)','permit-cmd\x20cmdtype\x20CommandType_\x0a_','forEach','_*All\x20permissions\x20for\x20this\x20chat\x20have\x20been\x20removed!*_',')\x20tagged/reply\x20during\x20afk,\x20Message\x20above:','-react','setcmd','readFileSync','delcmd','_*Choose\x20A\x20Valid\x20Option!!*_\x0a\x20\x20\x20\x20\x20\x20\x0a_*Avaliable\x20Options:*_\x0a`.areact\x20on`\x20(to\x20turn\x20on\x20for\x20the\x20present\x20chat)\x0a`.areact\x20on\x20global`\x20global\x20(to\x20turn\x20on\x20for\x20all\x20chats)\x0a`.areact\x20off`\x20(to\x20turn\x20off\x20for\x20the\x20present\x20chat)\x0a`.areact\x20off\x20global`\x20(to\x20turn\x20off\x20for\x20all\x20chats)\x0a`.areact\x20status`\x20(to\x20view\x20rhe\x20settings\x20for\x20the\x20present\x20chat)','length','\x22\x20is\x20already\x20permitted\x20in\x20this\x20chat*_','chat','_*Auto\x20react\x20Has\x20been\x20disabled\x20globally*_','object','round','react','7872018aFYYxP'];a0_0x6d1c=function(){return _0x8106ab;};return a0_0x6d1c();}kord({'cmd':a0_0x67fbe3(0x1c7),'desc':a0_0x67fbe3(0x175),'fromMe':!![],'type':a0_0x67fbe3(0x1b8)},async(_0x370d68,_0x28b416)=>{const _0x3d0b2c=a0_0x67fbe3,_0x25f9c2=!_0x28b416?'':_0x28b416;global[_0x3d0b2c(0x17e)]=await loadAfkData();if(_0x25f9c2[_0x3d0b2c(0x1a5)]()===_0x3d0b2c(0x155)||_0x25f9c2[_0x3d0b2c(0x1a5)]()===_0x3d0b2c(0x1be))return _0x370d68['sender']===_0x370d68['ownerJid']?global[_0x3d0b2c(0x17e)][_0x3d0b2c(0x1ab)][_0x3d0b2c(0x1ae)]=![]:global[_0x3d0b2c(0x17e)][_0x3d0b2c(0x165)][_0x370d68[_0x3d0b2c(0x12e)]]&&(global[_0x3d0b2c(0x17e)][_0x3d0b2c(0x165)][_0x370d68[_0x3d0b2c(0x12e)]][_0x3d0b2c(0x1ae)]=![]),await saveAfkData(global[_0x3d0b2c(0x17e)]),await _0x370d68['send'](_0x3d0b2c(0x178));const _0x1f883a=Math['round'](new Date()['getTime']()/0x3e8);return _0x370d68['sender']===_0x370d68[_0x3d0b2c(0x1c3)]?(global[_0x3d0b2c(0x17e)][_0x3d0b2c(0x1ab)]={'active':!![],'message':_0x25f9c2,'lastseen':_0x1f883a},await saveAfkData(global[_0x3d0b2c(0x17e)]),await _0x370d68[_0x3d0b2c(0x170)]('owner\x20is\x20now\x20afk..')):(!global[_0x3d0b2c(0x17e)][_0x3d0b2c(0x165)]&&(global[_0x3d0b2c(0x17e)]['users']={}),global[_0x3d0b2c(0x17e)]['users'][_0x370d68[_0x3d0b2c(0x12e)]]={'active':!![],'jid':_0x370d68['chat'],'message':_0x25f9c2,'lastseen':_0x1f883a},await saveAfkData(global[_0x3d0b2c(0x17e)]),await _0x370d68['send']('@'+_0x370d68[_0x3d0b2c(0x12e)]['split']('@')[0x0]+_0x3d0b2c(0x159)+_0x25f9c2,{'mentions':[_0x370d68['sender']]}));}),kord({'on':a0_0x67fbe3(0x180)},async(_0x44389d,_0x337112,_0x488703,_0x2d9128)=>{const _0x4ca92a=a0_0x67fbe3,_0x584016=_0x44389d[_0x4ca92a(0x12e)],_0x5b7078=await loadAfkData()||{'users':{},'owner':{'active':![],'message':'','lastseen':''}};if(_0x44389d['message']&&_0x44389d[_0x4ca92a(0x199)][_0x4ca92a(0x12b)])return;if(_0x5b7078[_0x4ca92a(0x165)]&&_0x5b7078[_0x4ca92a(0x165)][_0x584016]&&_0x5b7078[_0x4ca92a(0x165)][_0x584016][_0x4ca92a(0x1ae)]){_0x5b7078[_0x4ca92a(0x165)][_0x584016][_0x4ca92a(0x1ae)]=![],await saveAfkData(_0x5b7078);const _0x3c024d=Math[_0x4ca92a(0x152)](new Date()[_0x4ca92a(0x12d)]()/0x3e8)-_0x5b7078[_0x4ca92a(0x165)][_0x584016][_0x4ca92a(0x140)],_0x3b706d=formatTime(_0x3c024d);await _0x44389d[_0x4ca92a(0x170)](_0x4ca92a(0x1bd)+_0x584016[_0x4ca92a(0x1a9)]('@')[0x0]+_0x4ca92a(0x196)+_0x3b706d+'*',{'mentions':[_0x584016]});}if(_0x5b7078[_0x4ca92a(0x1ab)]&&_0x5b7078[_0x4ca92a(0x1ab)][_0x4ca92a(0x1ae)]&&(_0x337112['includes'](_0x44389d[_0x4ca92a(0x1c3)])||_0x337112[_0x4ca92a(0x1b3)](_0x44389d[_0x4ca92a(0x1c3)][_0x4ca92a(0x1a9)]('@')[0x0])||_0x44389d[_0x4ca92a(0x156)]&&_0x44389d[_0x4ca92a(0x156)][_0x4ca92a(0x12e)]===_0x44389d['ownerJid'])){const _0x1030fe=Math['round'](new Date()[_0x4ca92a(0x12d)]()/0x3e8)-_0x5b7078['owner'][_0x4ca92a(0x140)],_0x5bb3d3=formatTime(_0x1030fe);await _0x44389d['send']('*Owner\x20is\x20currently\x20AFK.*\x0a*Reason:*\x20'+(_0x5b7078['owner'][_0x4ca92a(0x199)]||'Not\x20specified')+'\x0a*Last\x20seen:*\x20'+_0x5bb3d3+_0x4ca92a(0x18f));var _0x414478=await _0x44389d[_0x4ca92a(0x1b9)](_0x44389d['ownerJid'],await global[_0x4ca92a(0x18c)][_0x4ca92a(0x179)](_0x44389d['id']),{'quoted':_0x44389d});await _0x44389d[_0x4ca92a(0x161)]['sendMessage'](_0x44389d[_0x4ca92a(0x1c3)],{'text':_0x4ca92a(0x16f)+await global[_0x4ca92a(0x18c)][_0x4ca92a(0x1cc)](_0x44389d[_0x4ca92a(0x12e)])+'('+_0x44389d[_0x4ca92a(0x12e)][_0x4ca92a(0x1a9)]('@')[0x0]+_0x4ca92a(0x147)},{'quoted':_0x414478});}for(const _0x182f03 in _0x5b7078[_0x4ca92a(0x165)]){if(_0x5b7078[_0x4ca92a(0x165)][_0x182f03]&&_0x5b7078['users'][_0x182f03][_0x4ca92a(0x1ae)]&&(_0x337112['includes'](_0x182f03)||_0x337112[_0x4ca92a(0x1b3)](_0x182f03['split']('@')[0x0])||_0x44389d[_0x4ca92a(0x156)]&&_0x44389d[_0x4ca92a(0x156)][_0x4ca92a(0x12e)]===_0x182f03)){const _0x108ea3=Math['round'](new Date()['getTime']()/0x3e8)-_0x5b7078[_0x4ca92a(0x165)][_0x182f03][_0x4ca92a(0x140)],_0x39a561=formatTime(_0x108ea3);await _0x44389d[_0x4ca92a(0x170)]('@'+_0x182f03[_0x4ca92a(0x1a9)]('@')[0x0]+'\x20*is\x20currently\x20AFK*.\x0a*Reason:*\x20'+(_0x5b7078[_0x4ca92a(0x165)][_0x182f03]['message']||_0x4ca92a(0x18e))+_0x4ca92a(0x192)+_0x39a561+_0x4ca92a(0x18f),{'mentions':[_0x182f03]});}}_0x44389d['sender']===_0x44389d['ownerJid']&&_0x5b7078[_0x4ca92a(0x1ab)]&&_0x5b7078[_0x4ca92a(0x1ab)]['active']&&(_0x5b7078[_0x4ca92a(0x1ab)][_0x4ca92a(0x1ae)]=![],await saveAfkData(_0x5b7078));});function a0_0x2aad(_0x777e9a,_0x20da50){const _0x6d1c79=a0_0x6d1c();return a0_0x2aad=function(_0x2aad74,_0x328d97){_0x2aad74=_0x2aad74-0x128;let _0x241bf5=_0x6d1c79[_0x2aad74];return _0x241bf5;},a0_0x2aad(_0x777e9a,_0x20da50);}var areact={'active':![],'global':![],'activeChats':['1234@g.us']};!getData(a0_0x67fbe3(0x183))&&storeData('areact_config',JSON[a0_0x67fbe3(0x15c)](areact,null,0x2));kord({'cmd':a0_0x67fbe3(0x13d),'desc':a0_0x67fbe3(0x1c2),'fromMe':!![],'type':a0_0x67fbe3(0x1b8)},async(_0x36ad13,_0x6a1679)=>{const _0x271d76=a0_0x67fbe3;try{const _0x343ce2=_0x6a1679[_0x271d76(0x1a9)]('\x20');if(_0x343ce2&&_0x343ce2[_0x271d76(0x14d)]>0x0){const _0x2234f0=_0x343ce2[0x0]['toLowerCase'](),_0x395408=_0x343ce2[_0x271d76(0x14d)]>0x1?_0x343ce2[0x1]:null,_0x4e880b=_0x343ce2['slice'](0x1)[_0x271d76(0x15a)]('\x20');if(_0x2234f0==='on'&&_0x395408===_0x271d76(0x162))return areact[_0x271d76(0x162)]=!![],await storeData(_0x271d76(0x183),JSON[_0x271d76(0x15c)](areact,null,0x2)),await _0x36ad13['send'](_0x271d76(0x18b));else{if(_0x2234f0===_0x271d76(0x155)&&_0x395408===_0x271d76(0x162))return areact[_0x271d76(0x162)]=![],await storeData(_0x271d76(0x183),JSON[_0x271d76(0x15c)](areact,null,0x2)),await _0x36ad13[_0x271d76(0x170)](_0x271d76(0x150));else{if(_0x2234f0==='on')return areact[_0x271d76(0x1ae)]=!![],areact['activeChats']['push'](_0x36ad13[_0x271d76(0x14f)]),await storeData(_0x271d76(0x183),JSON['stringify'](areact,null,0x2)),await _0x36ad13[_0x271d76(0x170)]('_*Auto\x20react\x20Has\x20been\x20Enabled\x20for\x20this\x20group!*_\x0a\x0a>\x20Use\x20`.areact\x20global`\x20to\x20turn\x20on\x20for\x20all\x20groups');else{if(_0x2234f0==='off')return areact[_0x271d76(0x128)]=areact[_0x271d76(0x128)][_0x271d76(0x131)](_0xaf1a54=>_0xaf1a54!==_0x36ad13['chat']),await storeData('areact_config',JSON[_0x271d76(0x15c)](areact,null,0x2)),await _0x36ad13[_0x271d76(0x170)](_0x271d76(0x1a7));else{if(_0x2234f0==='status'){var _0xb828d3=await getData(_0x271d76(0x183)),_0x1efc9f=_0xb828d3[_0x271d76(0x1ae)],_0x5f007e=_0xb828d3['global'],_0x52b8a9=new Set(_0xb828d3[_0x271d76(0x128)]||[]),_0x44ed03=_0x52b8a9['has'](_0x36ad13[_0x271d76(0x14f)]);await _0x36ad13[_0x271d76(0x170)]('_*AUto\x20React\x20Settings*_\x0a\x0a```Active:\x20'+_0x1efc9f+'\x0aGlobal?:\x20'+_0x5f007e+'\x0aActive\x20Here?:'+_0x44ed03+_0x271d76(0x1a2));}else _0x36ad13['send'](_0x271d76(0x14c));}}}}}else _0x36ad13[_0x271d76(0x170)](_0x271d76(0x143));}catch(_0x1c1982){return console[_0x271d76(0x134)](_0x1c1982),await _0x36ad13[_0x271d76(0x170)](_0x271d76(0x133)+_0x1c1982);}}),kord({'on':a0_0x67fbe3(0x180),'fromMe':![]},async(_0x7c5b04,_0x2fa754)=>{const _0xbdea68=a0_0x67fbe3;!await getData('areact_config')&&await storeData(_0xbdea68(0x183),JSON[_0xbdea68(0x15c)](areact,null,0x2));const _0x2be982=path[_0xbdea68(0x15a)](__dirname,'..','core','store',_0xbdea68(0x182)),_0x3a3f13=JSON['parse'](fs[_0xbdea68(0x14a)](_0x2be982,_0xbdea68(0x1af)))[_0xbdea68(0x137)],_0x217e68=_0x3a3f13[Math[_0xbdea68(0x1ca)](Math['random']()*_0x3a3f13['length'])],_0x2352e3=_0x7c5b04['chat'];var _0xb8b908=await getData(_0xbdea68(0x183)),_0x1b5fc7=new Set(_0xb8b908['activeChats']||[]);if(!_0x1b5fc7[_0xbdea68(0x15b)](_0x2352e3)&&!_0xb8b908[_0xbdea68(0x162)])return;else{if(_0x1b5fc7[_0xbdea68(0x15b)](_0x2352e3)&&!_0xb8b908[_0xbdea68(0x162)])await _0x7c5b04[_0xbdea68(0x153)](_0x217e68);else _0xb8b908[_0xbdea68(0x162)]&&await _0x7c5b04['react'](_0x217e68);}});
+const { kord,
+commands,
+wtype,
+prefix,
+getData,
+storeData,
+changeFont,
+formatTime,
+config
+} = require("../core/")
+const path = require("path")
+const fs = require("fs")
+
+const pre = prefix
+
+
+kord({
+  cmd: "setcmd",
+  desc: "bind a command to a sticker (whenevrr that stk is sent, the binded command is executed)",
+  fromMe: true,
+  type: "tools",
+}, async (m, text) => {
+  if (!m.quoted.sticker) return await m.send(`_Reply to a sticker with ${prefix}setcmd command_\n_example: ${prefix}setcmd ping_`)
+  if (!text) return await m.send(`_provide a command also.._`) 
+  var f = text?.trim()?.split(/\s+/)[0];
+  var hash = m.quoted.fileSha256 ? Buffer.from(m.quoted.fileSha256).toString('hex') : null;
+  if (!hash) return await m.send("couldn't get stk hash")
+  const data = await getData("stk_cmd");
+  const stk_cmd = data || {}
+  stk_cmd[hash] = text
+  await storeData("stk_cmd", JSON.stringify(stk_cmd, null, 2))
+  return await m.send(`❏ Sticker set to *${f}*`)
+})
+
+kord({
+  cmd: "delcmd",
+  desc: "Remove/unbind a command from a sticker",
+  fromMe: true,
+  type: "tools",
+}, async (m) => {
+  if (!m.quoted.sticker) {
+    return await m.send(`_Reply to a sticker to delete its command_`);
+  }
+  const hash = m.quoted.fileSha256 ? Buffer.from(m.quoted.fileSha256).toString("hex") : null;
+  if (!hash) return await m.send(`_hash not found_`);
+  const data = await getData("stk_cmd");
+  const stk_cmd = data || {}
+  if (!stk_cmd[hash]) {
+    return await m.send(`_no cmd found for that sticker.._`);
+  }
+  const oldCmd = stk_cmd[hash];
+  delete stk_cmd[hash];
+  await storeData("stk_cmd", JSON.stringify(stk_cmd, null, 2));
+  return await m.send(`*cmd deleted!*\n_from:_ *${oldCmd}*`);
+});
+
+kord({
+  cmd: "listcmd|listcmds",
+  desc: "List all sticker-bound commands",
+  fromMe: true,
+  type: "tools",
+}, async (m) => {
+  const data = await getData("stk_cmd");
+  const stk_cmd = data || {}
+  const entries = Object.entries(stk_cmd);
+  if (entries.length === 0) {
+    return await m.send(`_No sticker commands have been set yet._`);
+  }
+  let text = `❏ *Sticker Commands:*\n\n`;
+  for (const [hash, cmd] of entries) {
+    text += `❏ *${cmd}*\n_↳ hash:_ \`${hash.slice(0, 16)}...\`\n\n`;
+  }
+  return await m.send(text.trim());
+});
+
+
+
+kord({
+  cmd: "permit",
+  desc: "permit a command or command group to work even when bot is private",
+  fromMe: true,
+  type: "tools",
+}, async (m, text) => {
+  try {
+    const args = text.split(" ");
+
+      if (!args || args.length === 0) {
+        return await m.send(`*_Permit Command_*\n\nUsage:\n_${pre}permit-cmd list_\n_${pre}permit-cmd remove cmdtype CommandType_\n_${pre}permit-cmd remove cmd CommandName_\n_${pre}permit-cmd remove all_\n_${pre}permit-cmd cmdtype CommandType_\n_${pre}permit-cmd cmd CommandName_\n_${pre}permit-cmd all_`)
+      }
+
+      const option = args[0].toLowerCase();
+      const value = args.length > 1 ? args.slice(1).join(" ") : null;
+      const chatJid = m.chat;
+      var pmdata = await getData("permit_cmd");
+      if (!Array.isArray(pmdata)) pmdata = [];
+      let isExist = pmdata.find(entry => entry.chatJid === chatJid);
+
+      if (option === "list") {
+        if (pmdata.length === 0) {
+          return await m.send("_No permissions set for any chat._");
+        }
+        const thisChat = pmdata.filter(entry => entry.chatJid === chatJid);
+        if (thisChat.length === 0) {
+          return await m.send("_No permissions set for this chat_");
+        }
+        let listMsg = "_*Permitted Commands for this chat*_\n\n";
+        thisChat.forEach((entry, i) => {
+          listMsg += `${i+1}. ${entry.cmdType ? `cmd Type: ${entry.cmdType}` : ''}${entry.cmd ? `cmd: ${entry.cmd}` : ''}\n`;
+        });
+        return await m.send(listMsg);
+      }
+
+      if (option === "all") {
+        const cmdTypes = [...new Set(commands.map(cmd => cmd.type))];
+        const existingTypes = pmdata.filter(entry => entry.chatJid === chatJid && entry.cmdType).map(entry => entry.cmdType);
+        const typesToAdd = cmdTypes.filter(type => !existingTypes.includes(type));
+        
+        if (typesToAdd.length === 0) {
+          return await m.send("_*All command types are already permitted in this chat*_");
+        }
+
+        typesToAdd.forEach(cmdType => {
+          pmdata.push({
+            chatJid,
+            cmdType,
+            cmd: ""
+          });
+        });
+
+        await storeData("permit_cmd", JSON.stringify(pmdata, null, 2));
+        return await m.send(`_*All command types (${typesToAdd.length} types) are now permitted in this chat*_\n\n_Added: ${typesToAdd.join(", ")}_`);
+      }
+
+      if (option === "remove") {
+        if (!value) {
+          return await m.send(`*_specify what to remove._*\n_example: ${pre}permit-cmd remove cmdtype CommandType_\n_${pre}permit-cmd remove cmd CommandName_\n_${pre}permit-cmd remove all_`);
+        }
+        if (value.toLowerCase() === "all") {
+          pmdata = pmdata.filter(entry => entry.chatJid !== chatJid);
+          await storeData("permit_cmd", JSON.stringify(pmdata, null, 2));
+          return await m.send("_*All permissions for this chat have been removed!*_");
+        }
+        const removeArgs = value.split(" ");
+        const removeType = removeArgs[0].toLowerCase();
+        const removeName = removeArgs.slice(1).join(" ");
+        if (removeType === "cmdtype") {
+          const cmdTypes = [...new Set(commands.map(cmd => cmd.type))];
+          if (!cmdTypes.includes(removeName)) {
+            return await m.send(`_*Invalid command type!!*_\n_Available types:_\n_${cmdTypes.join("\n")}_`);
+          }
+          const beforeLength = pmdata.length;
+          pmdata = pmdata.filter(entry => !(entry.chatJid === chatJid && entry.cmdType === removeName));
+          if (beforeLength === pmdata.length) {
+            return await m.send(`_*cmd type "${removeName}" was not permitted in this chat*_`);
+        }
+          await storeData("permit_cmd", JSON.stringify(pmdata, null, 2));
+          return await m.send(`_*cmd type "${removeName}" is no longer permitted in this chat*_`);
+        }
+        if (removeType === "cmd") {
+          const usages =  [
+  ...new Set(
+    commands
+      .flatMap(cmd => cmd.cmd?.split('|') || [])
+      .map(cmd => cmd.trim())
+      .filter(Boolean)
+  )
+].sort();
+          if (!usages.includes(removeName)) {
+            return await m.send(`_*cmd not found!*_ _use ${pre}menu to see available commands_`);
+          }
+          const beforeLength = pmdata.length;
+          pmdata = pmdata.filter(entry => !(entry.chatJid === chatJid && entry.cmd === removeName));
+          if (beforeLength === pmdata.length) {
+            return await m.send(`_*cmd "${removeName}" was not permitted in this chat*_`);
+          }
+          await storeData("permit_cmd", JSON.stringify(pmdata, null, 2));
+          return await m.send(`_*cmd "${removeName}" is no longer permitted in this chat*_`);
+        }
+        const index = parseInt(value) - 1;
+        const thisChat = pmdata.filter(entry => entry.chatJid === chatJid);
+        if (isNaN(index) || index < 0 || index >= thisChat.length) {
+          return await m.send(`*_Invalid removal format_*\n_Use: ${pre}permit-cmd remove cmdtype CommandType_\n_or: ${pre}permit-cmd remove cmd CommandName_\n_or: ${pre}permit-cmd remove all_`);
+        }
+        const targetEntry = thisChat[index];
+        pmdata = pmdata.filter(entry => 
+          !(entry.chatJid === chatJid && 
+            entry.cmdType === targetEntry.cmdType && 
+            entry.cmd === targetEntry.cmd)
+        );
+        await storeData("permit_cmd", JSON.stringify(pmdata, null, 2));
+        return await m.send(`_Permission removed: ${targetEntry.cmdType || targetEntry.cmd}_`);
+      }
+      if (option === "cmdtype") {
+        if (!value) {
+          const cmdTypes = [...new Set(commands.map(cmd => cmd.type))];
+          return await m.send(`_*specify command type.*_ Available types:\n${cmdTypes.join("\n")}`);
+        }
+        const cmdTypes = [...new Set(commands.map(cmd => cmd.type))];
+        if (!cmdTypes.includes(value)) {
+          return await m.send(`_*Invalid command type!!*_\n_Available types:_\n_${cmdTypes.join("\n")}_`);
+        }
+        const alreadyPermitted = pmdata.some(entry => 
+          entry.chatJid === chatJid && entry.cmdType === value
+        );
+        if (alreadyPermitted) {
+          return await m.send(`_*cmd type "${value}" is already permitted in this chat*_`);
+        }
+        const entry = {
+          chatJid,
+          cmdType: value,
+          cmd: ""
+        };
+        pmdata.push(entry);
+        await storeData("permit_cmd", JSON.stringify(pmdata, null, 2));
+        return await m.send(`_*cmd type "${value}" is now permitted in this chat*_`);
+      }
+      if (option === "cmd") {
+        if (!value) {
+          return await m.send(`_*specify a command*_`);
+        }
+        const usages = [
+  ...new Set(
+    commands
+      .flatMap(cmd => cmd.cmd?.split('|') || [])
+      .map(cmd => cmd.trim())
+      .filter(Boolean)
+  )
+].sort();
+        if (!usages.includes(value)) {
+          return await m.send(`_*cmd not found!*_ _use ${pre}menu to see available commands_`);
+        }
+        const alreadyPermitted = pmdata.some(entry => 
+          entry.chatJid === chatJid && entry.cmd === value
+        );
+        
+        if (alreadyPermitted) {
+          return await m.send(`_*cmd "${value}" is already permitted in this chat*_`);
+        }
+        const entry = {
+          chatJid,
+          cmdType: "",
+          cmd: value
+        };
+        pmdata.push(entry);
+        await storeData("permit_cmd", JSON.stringify(pmdata, null, 2));
+        return await m.send(`_*cmd "${value}" is now permitted in this chat*_`);
+      }
+      const cmdTypes = [...new Set(commands.map(cmd => cmd.type))];
+      if (cmdTypes.includes(option)) {
+        const alreadyPermitted = pmdata.some(entry => 
+          entry.chatJid === chatJid && entry.cmdType === option
+        );
+        if (alreadyPermitted) {
+          return await m.send(`_*cmd type "${option}" is already permitted in this chat*_`);
+        }
+        const entry = {
+          chatJid,
+          cmdType: option,
+          cmd: ""
+        };
+        pmdata.push(entry);
+        await storeData("permit_cmd", JSON.stringify(pmdata, null, 2));
+        return await m.send(`_*cmd type "${option}" is now permitted in this chat*_`);
+      } 
+      const usages = [
+  ...new Set(
+    commands
+      .flatMap(cmd => cmd.cmd?.split('|') || [])
+      .map(cmd => cmd.trim())
+      .filter(Boolean)
+  )
+].sort();
+      if (usages.includes(option)) {
+        const alreadyPermitted = pmdata.some(entry => 
+          entry.chatJid === chatJid && entry.cmd === option
+        );
+        if (alreadyPermitted) {
+          return await m.send(`_*cmd "${option}" is already permitted in this chat*_`);
+        }
+        const entry = {
+          chatJid,
+          cmdType: "",
+          cmd: option
+        };
+        pmdata.push(entry);
+        await storeData("permit_cmd", JSON.stringify(pmdata, null, 2));
+        return await m.send(`_*cmd "${option}" is now permitted in this chat*_`);
+      }
+      return await m.send(`\`\`\`INVALID\`\`\` \n*_Permit Command_*\n\nUsage:\n_${pre}permit-cmd list_\n_${pre}permit-cmd remove cmdtype CommandType_\n_${pre}permit-cmd remove cmd CommandName_\n_${pre}permit-cmd remove all_\n_${pre}permit-cmd cmdType/cmd_\n_${pre}permit-cmd all_`);
+    } catch(err) {
+      console.error(err);
+      await m.send(`Error: ${err.message}`);
+    }
+})
+
+kord({
+  cmd: "mention",
+  type: "tools",
+  desc: "set action to be done when owner is mentioned",
+  fromMe: true,
+}, async (m, text) => {
+  try {
+    
+    var mData =  await getData("mention_config") || {
+  active: false,
+  action: "",
+  emoji: "🤍",
+  text: ""
+};
+    const args = text.split(" ");
+      if (args && args.length > 0) {
+  const option = args[0].toLowerCase();
+  const value = args.length > 1 ? args[1] : null;
+  const fArgs = args.slice(1).join(" ")
+    if (option === "off")  {
+      mData.active = false;
+      await storeData('mention_config', JSON.stringify(mData, null, 2))
+      return await m.send("_Mention Action Has Been Turned Off!_");
+       } else if (option === "-status" || option === "status") {
+          var info = await getData('mention_config') || {active: false, action: "", emoji: "", text: ""}
+          return m.send(`*Mention Status:*\n\n \`\`\`Active: ${info.active}\nAction: ${info.action}\nEmoji: ${info.emoji}\nText: ${info.text}\`\`\``)
+        } else if (option === "-react" || option === "react") {
+          var emoji = value
+          mData.active = true;
+          mData.action = "react";
+          mData.emoji = emoji
+          await storeData('mention_config', JSON.stringify(mData, null, 2))
+          return await m.send(`_Query Saved!_`);
+        } else if (option === "-text"  || option === "text") {
+          var sentText = fArgs
+          mData.active = true;
+          mData.action = "text";
+          mData.text = sentText;
+          await storeData('mention_config', JSON.stringify(mData, null, 2))
+          return await m.send(`_Query Saved!_`);
+        } else {
+          return await m.send(`_*Invalid Option!!!*_
+
+_*Provide an Option*_
+_.mention off_
+_.mention -status_
+_.mention -react 🤍_ (reacts when the owner is mentioned)
+_.mention -text Your Text_ (sends custom text when owner is mentioned, Example: \'Your Text \')`);
+        }
+      } else {
+        return await m.send(`_ *Provide an Option*_
+_.mention off_
+_.mention -status_
+_.mention -react 🤍_ (reacts when the owner is mentioned)
+_.mention -text Your Text_ (sends custom text when owner is mentioned, Example: \'Your Text \')`);
+      }
+    } catch (e) {
+    console.error(e)
+    m.send(`${e}`)
+  } 
+})
+kord({
+  on: "all"
+}, async (m, text) => {
+  var MData = await getData("mention_config") || {}
+          if (!MData.active) {
+            return;
+          }
+          var jidd = m.chat
+          if (text.includes(config().OWNER_NUMBER) || text.includes(m.ownerJid)) {
+            if (MData.action === "react") {
+            var pEmoji = MData.emoji
+            return await m.client.sendMessage(jidd, { react: { text: pEmoji, key: m.key } })
+            } else if (MData.action === "text") {
+              var pText = MData.text
+              return await m.client.sendMessage(jidd, { text: pText }, { quoted: m })
+            }
+          }
+})
+
+async function loadAfkData() {
+  try {
+    const data = await getData("afk_config");
+    if (!data || typeof data !== 'object') {
+      return { users: {}, owner: { active: false, message: "", lastseen: "" } };
+    }
+    return data;
+  } catch (err) {
+    console.error("Error loading AFK data:", err);
+    return { users: {}, owner: { active: false, message: "", lastseen: "" } };
+  }
+}
+
+async function saveAfkData(data) {
+  try {
+    await storeData("afk_config", JSON.stringify(data, null, 2));
+  } catch (err) {
+    console.error("Error saving AFK data:", err);
+  }
+}
+
+kord({
+  cmd: "afk",
+  desc: "set afk message",
+  fromMe: true,
+  type: "tools"
+}, async (m, text) => {
+  const txt = !text ? "" : text;
+  global.afkData = await loadAfkData();
+  if (txt.toLowerCase() === "off" || txt.toLowerCase() === "stop") {
+    if (m.sender === m.ownerJid) {
+      global.afkData.owner.active = false;
+    } else {
+      if (global.afkData.users[m.sender]) {
+        global.afkData.users[m.sender].active = false;
+      }
+    }
+    await saveAfkData(global.afkData);
+    return await m.send("afk off");
+  }
+  
+  const currentTime = Math.round((new Date()).getTime() / 1000);
+  
+  if (m.sender === m.ownerJid) {
+    global.afkData.owner = {
+      active: true,
+      message: txt,
+      lastseen: currentTime
+    };
+    await saveAfkData(global.afkData);
+    return await m.send(`owner is now afk..`);
+  } else {
+    if (!global.afkData.users) {
+      global.afkData.users = {};
+    }
+    
+    global.afkData.users[m.sender] = {
+      active: true,
+      jid: m.chat,
+      message: txt,
+      lastseen: currentTime
+    };
+    
+    await saveAfkData(global.afkData);
+    return await m.send(`@${m.sender.split("@")[0]} is now afk..\n_Reason:_ ${txt}`, {mentions: [m.sender]});
+  }
+})
+
+kord({
+  on: "all",
+}, async (message, text, c, store) => {
+  const user = message.sender;
+  const afkData = await loadAfkData() || { users: {}, owner: { active: false, message: "", lastseen: "" } };
+  
+  if (message.message && message.message.reactionMessage) return;
+  
+  if (afkData.users && afkData.users[user] && afkData.users[user].active) {
+    afkData.users[user].active = false;
+    await saveAfkData(afkData);
+    const timeDiff = Math.round((new Date()).getTime() / 1000) - afkData.users[user].lastseen;
+    const timeStr = formatTime(timeDiff);
+    await message.send(`Welcome back @${user.split("@")[0]}!\nYou were afk for: *${timeStr}*`, {mentions: [user]});
+  }
+  
+  if (afkData.owner && afkData.owner.active && (text.includes(message.ownerJid) || text.includes(message.ownerJid.split('@')[0]) || (message.quoted && message.quoted.sender === message.ownerJid))) {
+    const timeDiff = Math.round((new Date()).getTime() / 1000) - afkData.owner.lastseen;
+    const timeStr = formatTime(timeDiff);
+    await message.send(`*Owner is currently AFK.*\n*Reason:* ${afkData.owner.message || "Not specified"}\n*Last seen:* ${timeStr} ago`);
+    var mesa = await message.forwardMessage(
+            message.ownerJid,
+            await global.store.findMsg(message.id),
+            { quoted: message }
+        );
+     await message.client.sendMessage(message.ownerJid, { text: `User: ${await global.store.getname(message.sender)}(${message.sender.split("@")[0]}) tagged/reply during afk, Message above:` }, { quoted: mesa });
+  }
+  
+  for (const mentionedUser in afkData.users) {
+    if (afkData.users[mentionedUser] && 
+        afkData.users[mentionedUser].active && 
+        (text.includes(mentionedUser) || 
+         text.includes(mentionedUser.split('@')[0]) || 
+         (message.quoted && message.quoted.sender === mentionedUser))) {
+      
+      const timeDiff = Math.round((new Date()).getTime() / 1000) - afkData.users[mentionedUser].lastseen;
+      const timeStr = formatTime(timeDiff);
+      await message.send(`@${mentionedUser.split("@")[0]} *is currently AFK*.\n*Reason:* ${afkData.users[mentionedUser].message || "Not specified"}\n*Last seen:* ${timeStr} ago`, {mentions: [mentionedUser]});
+    }
+  }
+  
+  if (message.sender === message.ownerJid && afkData.owner && afkData.owner.active) {
+    afkData.owner.active = false;
+    await saveAfkData(afkData);
+  }
+})
+
+var areact = {
+    active: false,
+    global: false,
+    activeChats: [
+        '1234@g.us'
+    ],
+}
+
+if (!getData("areact_config")) {
+     storeData("areact_config", JSON.stringify(areact, null, 2));
+    }
+    
+kord({
+  cmd: "areact|autoreact|autoreaction",
+  desc: "automatically react to messages",
+  fromMe: true,
+  type: "tools",
+}, async (m, text) => {
+  try {
+  const args = text.split(" ");
+  if (args && args.length > 0) {
+                const option = args[0].toLowerCase();
+                const value = args.length > 1 ? args[1] : null;
+                const fArgs = args.slice(1).join(" ")
+        if (option === 'on' && value === 'global') {
+            areact.global = true;
+            await storeData('areact_config', JSON.stringify(areact, null, 2))
+            return await m.send('_*Auto React Has Benn Enabled Globally!*_')
+        } else if (option === 'off' && value === 'global') {
+            areact.global = false;
+            await storeData('areact_config', JSON.stringify(areact, null, 2))
+            return await m.send('_*Auto react Has been disabled globally*_')
+        } else if(option === 'on') {
+      areact.active = true;
+      areact.activeChats.push(m.chat)
+      await storeData('areact_config', JSON.stringify(areact, null, 2))
+      return await m.send('_*Auto react Has been Enabled for this group!*_\n\n> Use \`.areact global\` to turn on for all groups')
+    } else if (option === 'off') {
+      
+      areact.activeChats = areact.activeChats.filter(jid => jid !== m.chat);
+      await storeData('areact_config', JSON.stringify(areact, null, 2))
+      return await m.send('_*Auto react Has been disabled for this group!*_\n\n> Use \`.areact off global\` to turn on for all groups')
+    } else if(option === "status") {
+      var sareact = await getData('areact_config')
+      var actif = sareact.active
+      var sglobal = sareact.global
+     var sactifChat = new Set(sareact.activeChats || []);
+      var sactiveChats = sactifChat.has(m.chat)
+      await m.send(`_*AUto React Settings*_\n\n\`\`\`Active: ${actif}\nGlobal?: ${sglobal}\nActive Here?:${sactiveChats}\`\`\``)
+    } else {
+      m.send(`_*Choose A Valid Option!!*_
+      
+_*Avaliable Options:*_
+\`.areact on\` (to turn on for the present chat)
+\`.areact on global\` global (to turn on for all chats)
+\`.areact off\` (to turn off for the present chat)
+\`.areact off global\` (to turn off for all chats)
+\`.areact status\` (to view rhe settings for the present chat)`)
+    }
+            } else {
+m.send(`_*Avaliable Options:*_
+\`.areact on\` (to turn on for the present chat)
+\`.areact on global\` global (to turn on for all chats)
+\`.areact off\` (to turn off for the present chat)
+\`.areact off global\` (to turn off for all chats)
+\`.areact status\` (to view rhe settings for the present chat)`)
+            }
+  } catch(e) {
+    console.error(e)
+    return await m.send(`an error occured: ${e}`)
+  }
+})
+
+kord({
+  on: "all",
+  fromMe: false,
+}, async(m, text) =>{
+  if (!await getData("areact_config")) {
+    await storeData("areact_config", JSON.stringify(areact, null, 2));
+    }
+   const ePath = path.join(__dirname, "..", "core", "store", 'emojis.json');
+     const emojiList = JSON.parse(fs.readFileSync(ePath, 'utf-8')).emojis;
+    const randomEmoji = emojiList[Math.floor(Math.random() * emojiList.length)];
+   const presentJid = m.chat
+   var aReact = await getData('areact_config')
+   var activeChats = new Set(aReact.activeChats || []);
+   if (!activeChats.has(presentJid) && !aReact.global) {
+     return;
+   } else if (activeChats.has(presentJid) && !aReact.global) {
+    await m.react(randomEmoji);
+   } else if (aReact.global) {
+     await m.react(randomEmoji)
+   }
+})
+

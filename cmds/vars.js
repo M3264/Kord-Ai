@@ -1,1 +1,483 @@
-var a0_0x316cdd=a0_0x3eae;function a0_0x24f7(){var _0x3bb90e=['1091106oSGfsh','*All\x20Vars*\x0a\x0a','_Mod\x20list\x20is\x20empty_','\x20on','readmsg','ANTIDELETE_INCHAT','set\x20bot\x20to\x20private\x20or\x20public','send','*\x20_to_\x20*','*\x0a_Restarting..._','startupmsg','trim','_User\x20is\x20not\x20a\x20mod_','delmod','\x20public','5202560MhhkEB','..*','turn\x20on/off\x20reject\x20call','split','button','Off','Command\x20React','turn\x20on/off\x20likestatus','*Toggle\x20on/off*','\x20removed\x20from\x20sudo\x20list...\x0a_Restarting```','push','_User\x20is\x20already\x20a\x20mod_','message','Use\x20either\x20public\x20or\x20private','alwaysonline','*provide\x20the\x20var\x20name\x20and\x20value*\x0a_example:\x20','mentionedJid','4jOSMTT','STATUS_VIEW','platform','\x20added\x20to\x20sudo\x20list...\x0a_Restarting```','public','add\x20a\x20user\x20to\x20mod','_Reply/mention/provide\x20a\x20user_','delvar','keys','includes','ownerJid','Always\x20Online','*_\x0a\x0a>\x20restarting..','toLowerCase','turn\x20on/off\x20antidelete','❑\x20@','_Bot\x20is\x20already\x20private.._','\x20added\x20to\x20sudo\x20list...```','STATUS_EMOJI','env','turn\x20on/off\x20readstatus','SUDO','「\x20SUDO\x20LIST\x20」\x0a','*Toggle\x20private/public*','*Config\x20set\x20successfully!*\x0a\x0a_Created\x20','Anti\x20Delete','_Sudo\x20list\x20is\x20empty_','MODS','map','*All\x20Vars\x20(Render)*\x0a\x0a','turn\x20on/off\x20antidelete\x20in\x20chat','Save\x20Status','setmod|addmod','delsudo','delete\x20a\x20variable/setting','cmdreact','filter','render','\x20removed\x20from\x20sudo\x20list...```','private','ALWAYS_ONLINE','length','_*successfully\x20deleted\x20','readstatus','27837zSFkVf','\x20off','WORKTYPE','_User\x20is\x20not\x20a\x20sudo_','antideletechat','\x20added\x20to\x20mod\x20list...```','poll','rejectcall','_User\x20is\x20already\x20a\x20sudo_','RES_TYPE','Read\x20Status','832iclHsZ','quoted','175710kRcRka','*Error\x20setting\x20variable:*\x20','../core','2SaDBdx','getmods','OFF','*use\x20','setvar\x20SESSION_ID=kord-ai_321','value','get\x20all\x20sudos','```','\x20already\x20set\x20to\x20','*Error\x20deleting\x20variable:*\x20','CMD_REACT','*_Config\x20Successfully\x20Set_*\x20*','setsudo','reply','get\x20all\x20variables\x20from\x20config.js/config.env','getsudo|allsudo','likestatus','*:\x20','2643670CylsiY','allvar','error','turn\x20on/off\x20read\x20message','delete\x20user\x20from\x20mod\x20list','false','\x20added\x20to\x20mod\x20list...\x0a_Restarting```','sender','client','Reject\x20Call','readmsg|read','\x20on/off*','_*Invalid\x20variable!...*_','join','*Config\x20set\x20successfully!*','mode','3462bMMKVq','turn\x20on/off\x20always\x20online','setvar\x20SESSION_ID\x20kord-ai_321','STARTUP_MSG','set\x20a\x20config\x20in\x20config.env/config.js','6741zapviq','*Error\x20getting\x20variables:*\x20','key','get\x20all\x20mods','\x20set\x20to\x20','turn\x20on/off\x20save\x20status','\x20removed\x20from\x20mod\x20list...\x0a_Restarting```','config','error:\x20','LIKE_STATUS','add\x20a\x20user\x20to\x20sudo','toUpperCase','@s.whatsapp.net','Like\x20Status','btnText','20135907KEYTGV','_*\x27','savestatus','get\x20all\x20variables/settings','SAVE_STATUS'];a0_0x24f7=function(){return _0x3bb90e;};return a0_0x24f7();}(function(_0x546e77,_0x156ec3){var _0x363365=a0_0x3eae,_0x15be89=_0x546e77();while(!![]){try{var _0x423190=-parseInt(_0x363365(0x127))/0x1+parseInt(_0x363365(0x12a))/0x2*(parseInt(_0x363365(0x165))/0x3)+-parseInt(_0x363365(0xee))/0x4*(-parseInt(_0x363365(0x13c))/0x5)+parseInt(_0x363365(0x14c))/0x6*(parseInt(_0x363365(0x151))/0x7)+-parseInt(_0x363365(0x125))/0x8*(-parseInt(_0x363365(0x11a))/0x9)+parseInt(_0x363365(0x174))/0xa+-parseInt(_0x363365(0x160))/0xb;if(_0x423190===_0x156ec3)break;else _0x15be89['push'](_0x15be89['shift']());}catch(_0x829654){_0x15be89['push'](_0x15be89['shift']());}}}(a0_0x24f7,0x45478));function a0_0x3eae(_0x8bf884,_0x7559ef){var _0x24f7da=a0_0x24f7();return a0_0x3eae=function(_0x3eaee8,_0x12e86e){_0x3eaee8=_0x3eaee8-0xeb;var _0x4e0a99=_0x24f7da[_0x3eaee8];return _0x4e0a99;},a0_0x3eae(_0x8bf884,_0x7559ef);}const {kord,wtype,updateConfig,prefix,updateEnv,updateEnvSudo,addEnvSudo,removeEnvSudo,replaceEnvSudo,getEnvValue,envExists,listEnvKeys,toBoolean,getPlatformInfo,setVar,updateVar,delVar,getVars,config,myMods}=require(a0_0x316cdd(0x129)),fs=require('fs');kord({'cmd':'setvar','desc':a0_0x316cdd(0x150),'fromMe':!![],'type':a0_0x316cdd(0x158)},async(_0x3c847d,_0x1b2c46)=>{var _0x51eb6e=a0_0x316cdd;if(!_0x1b2c46)return await _0x3c847d[_0x51eb6e(0x16c)](_0x51eb6e(0xec)+prefix+_0x51eb6e(0x12e));var [_0x6a5dd7,..._0x283f38]=_0x1b2c46[_0x51eb6e(0x177)]('=');_0x6a5dd7=_0x6a5dd7[_0x51eb6e(0x15c)]();var _0x1a55f4=_0x283f38[_0x51eb6e(0x149)]('=')[_0x51eb6e(0x170)]();if(!_0x6a5dd7||!_0x1a55f4)return await _0x3c847d[_0x51eb6e(0x16c)](_0x51eb6e(0xec)+prefix+_0x51eb6e(0x14e));const _0x136dae=getPlatformInfo();if(_0x136dae['platform']===_0x51eb6e(0x113))try{await _0x3c847d[_0x51eb6e(0x16c)](_0x51eb6e(0x135)+_0x6a5dd7[_0x51eb6e(0x15c)]()+_0x51eb6e(0x16d)+_0x1a55f4+_0x51eb6e(0x16e)),await setVar(_0x6a5dd7[_0x51eb6e(0x15c)](),_0x1a55f4);}catch(_0x46e95d){await _0x3c847d[_0x51eb6e(0x16c)](_0x51eb6e(0x128)+_0x46e95d[_0x51eb6e(0x180)]);}else{var _0x4ce4b6=await envExists();return _0x4ce4b6?!process['env'][_0x6a5dd7]?(await updateEnv(_0x6a5dd7,_0x1a55f4),await _0x3c847d[_0x51eb6e(0x16c)](_0x51eb6e(0x106)+_0x6a5dd7+'\x20with\x20value\x20'+_0x1a55f4+'_')):(await updateEnv(_0x6a5dd7,_0x1a55f4),await _0x3c847d['send']('*Config\x20set\x20successfully!*')):(await updateConfig(_0x6a5dd7,_0x1a55f4),await _0x3c847d['send'](_0x51eb6e(0x14a)));}}),kord({'cmd':'getvar','desc':a0_0x316cdd(0x138),'fromMe':!![],'type':'config'},async(_0x1ea68c,_0x317ed0)=>{var _0x24a1e7=a0_0x316cdd;if(!_0x317ed0)return _0x1ea68c['reply']('_*provide\x20var\x20name...*_\x0a_example:\x20getvar\x20SUDO_');const _0x16efdb=_0x317ed0[_0x24a1e7(0x170)]()[_0x24a1e7(0x15c)]();if(typeof _0x16efdb!=='string'||!_0x16efdb['trim']())await _0x1ea68c[_0x24a1e7(0x137)](_0x24a1e7(0x148));else{if(await envExists())return await _0x1ea68c[_0x24a1e7(0x16c)]('*'+_0x16efdb+_0x24a1e7(0x13b)+process[_0x24a1e7(0x101)][_0x16efdb]);else{if(config()[_0x16efdb])return await _0x1ea68c[_0x24a1e7(0x16c)]('*'+_0x16efdb+'*:\x20'+config()[_0x16efdb]);else await _0x1ea68c[_0x24a1e7(0x137)](_0x24a1e7(0x161)+_0x16efdb+'\x27\x20not\x20found\x20in\x20config*_');}}}),kord({'cmd':a0_0x316cdd(0xf5),'desc':a0_0x316cdd(0x110),'fromMe':!![],'type':a0_0x316cdd(0x158)},async(_0x521970,_0x4171a2)=>{var _0x2f1d71=a0_0x316cdd;const _0x4181d3=_0x4171a2[_0x2f1d71(0x170)]()[_0x2f1d71(0x15c)](),_0x3acf99=getPlatformInfo();if(_0x3acf99[_0x2f1d71(0xf0)]==='render')try{await _0x521970['send']('_*successfully\x20deleted\x20'+_0x4181d3+_0x2f1d71(0xfa)),await delVar(_0x4181d3);}catch(_0x40d3cc){await _0x521970[_0x2f1d71(0x16c)](_0x2f1d71(0x133)+_0x40d3cc[_0x2f1d71(0x180)]);}else{var _0x5cec75=await envExists();_0x5cec75?await updateEnv(_0x4181d3,null,{'remove':!![]}):await updateConfig(_0x4181d3,null,{'remove':!![]}),await _0x521970[_0x2f1d71(0x16c)](_0x2f1d71(0x118)+_0x4181d3+'*_');}}),kord({'cmd':a0_0x316cdd(0x13d),'desc':a0_0x316cdd(0x163),'fromMe':!![],'type':a0_0x316cdd(0x158)},async(_0x550f0f,_0x1f16c4)=>{var _0x3419fd=a0_0x316cdd;const _0x4ef14e=getPlatformInfo();if(_0x4ef14e['platform']==='render')try{const _0x2f678e=await getVars();if(_0x2f678e['success']){var _0x4e7756=_0x3419fd(0x10b);for(var _0x4b1dcc of _0x2f678e['data']){const _0x1d22de=_0x4b1dcc['envVar'];_0x4e7756+='*'+_0x1d22de[_0x3419fd(0x153)]+_0x3419fd(0x13b)+_0x1d22de[_0x3419fd(0x12f)]+'\x0a';}return await _0x550f0f['send'](_0x4e7756);}}catch(_0xfc0e7d){await _0x550f0f[_0x3419fd(0x16c)](_0x3419fd(0x152)+_0xfc0e7d[_0x3419fd(0x180)]);return;}if(await envExists()){var _0x5805ed=await listEnvKeys(),_0x56a74c=_0x3419fd(0x166);for(var _0x33acd6 of _0x5805ed){_0x56a74c+='*'+_0x33acd6+'*:\x20'+process[_0x3419fd(0x101)][_0x33acd6]+'\x0a';}return await _0x550f0f[_0x3419fd(0x16c)](''+_0x56a74c);}else{const _0x509592='*All\x20Vars*\x0a\x0a'+Object[_0x3419fd(0xf6)](config())[_0x3419fd(0x10a)](_0x51786a=>'*'+_0x51786a+':*\x20'+config()[_0x51786a])[_0x3419fd(0x149)]('\x0a');return await _0x550f0f[_0x3419fd(0x16c)](''+_0x509592);}});async function updateAllConfig(_0xa113d3,_0x3a9781,_0x46e86c){var _0x152df2=a0_0x316cdd;const _0x3c896a=getPlatformInfo();if(_0x3c896a[_0x152df2(0xf0)]===_0x152df2(0x113))try{await _0x46e86c['send']('*_'+_0xa113d3+_0x152df2(0x155)+_0x3a9781+'_*\x0a_Restarting..._'),process[_0x152df2(0x101)][_0xa113d3]?await setVar(_0xa113d3,_0x3a9781):await setVar(_0xa113d3,_0x3a9781);}catch(_0x22f48f){await _0x46e86c[_0x152df2(0x16c)]('*Error\x20updating\x20variable:*\x20'+_0x22f48f[_0x152df2(0x180)]);}else{var _0x324f3f=await envExists();return _0x324f3f?!process[_0x152df2(0x101)][_0xa113d3]?(await updateEnv(_0xa113d3,_0x3a9781),await _0x46e86c['send']('*_'+_0xa113d3+_0x152df2(0x155)+_0x3a9781+'_*')):(await updateEnv(_0xa113d3,_0x3a9781),await _0x46e86c[_0x152df2(0x16c)]('*_'+_0xa113d3+'\x20set\x20to\x20'+_0x3a9781+'_*')):(await updateConfig(_0xa113d3,_0x3a9781),await _0x46e86c[_0x152df2(0x16c)]('*_'+_0xa113d3+_0x152df2(0x155)+_0x3a9781+'_*'));}}function toggle(_0x2ccadb,_0x392a7a,_0x4cc4ca){return async(_0xf56396,_0xc2d6f7,_0x5e3755)=>{var _0x4082a5=a0_0x3eae;const _0x192687=[...myMods()[_0x4082a5(0x10a)](_0x52b4d7=>_0x52b4d7+_0x4082a5(0x15d)),_0xf56396[_0x4082a5(0xf8)]];_0xc2d6f7=_0xc2d6f7['split']('\x20')[0x0];if(!_0xc2d6f7)return config()[_0x4082a5(0x123)][_0x4082a5(0xfb)]()===_0x4082a5(0x178)?await _0xf56396[_0x4082a5(0x15f)](_0x4082a5(0x17c),{[_0x5e3755+_0x4082a5(0x168)]:'ON',[_0x5e3755+_0x4082a5(0x11b)]:_0x4082a5(0x12c)}):config()[_0x4082a5(0x123)][_0x4082a5(0xfb)]()==_0x4082a5(0x120)?await _0xf56396[_0x4082a5(0x16c)]({'name':_0x4082a5(0x17c),'values':[{'name':'on','id':_0x2ccadb+_0x4082a5(0x168)},{'name':_0x4082a5(0x179),'id':_0x2ccadb+_0x4082a5(0x11b)}],'withPrefix':!![],'onlyOnce':!![],'participates':_0x192687,'selectableCount':!![]},{},'poll'):await _0xf56396[_0x4082a5(0x16c)](_0x4082a5(0x12d)+_0x5e3755+_0x4082a5(0x147));var _0x329f57=toBoolean(_0xc2d6f7),_0x117c4d=process[_0x4082a5(0x101)][_0x392a7a],_0xb67ca5=config()[_0x392a7a];if(_0x117c4d!==undefined&&toBoolean(_0x117c4d)==_0x329f57||_0xb67ca5!==undefined&&toBoolean(_0xb67ca5)==_0x329f57)return await _0xf56396[_0x4082a5(0x16c)]('*'+_0x4cc4ca+_0x4082a5(0x132)+_0xc2d6f7+_0x4082a5(0x175));await updateAllConfig(_0x392a7a,_0xc2d6f7,_0xf56396);};}kord({'cmd':'readstatus','desc':a0_0x316cdd(0x102),'fromMe':!![],'type':a0_0x316cdd(0x158)},toggle(a0_0x316cdd(0x119),a0_0x316cdd(0xef),a0_0x316cdd(0x124))),kord({'cmd':a0_0x316cdd(0x13a),'desc':a0_0x316cdd(0x17b),'fromMe':!![],'type':a0_0x316cdd(0x158)},toggle(a0_0x316cdd(0x13a),a0_0x316cdd(0x15a),a0_0x316cdd(0x15e))),kord({'cmd':'startupmsg','desc':'turn\x20on/off\x20startupmsg','fromMe':!![],'type':a0_0x316cdd(0x158)},toggle(a0_0x316cdd(0x16f),a0_0x316cdd(0x14f),'Startup\x20Msg')),kord({'cmd':a0_0x316cdd(0xeb),'desc':a0_0x316cdd(0x14d),'fromMe':!![],'type':'config'},toggle(a0_0x316cdd(0xeb),a0_0x316cdd(0x116),a0_0x316cdd(0xf9))),kord({'cmd':'antidelete','desc':a0_0x316cdd(0xfc),'fromMe':!![],'type':a0_0x316cdd(0x158)},toggle('antidelete','ANTIDELETE',a0_0x316cdd(0x107))),kord({'cmd':a0_0x316cdd(0x11e),'desc':a0_0x316cdd(0x10c),'fromMe':!![],'type':a0_0x316cdd(0x158)},toggle('antidelete-inchat',a0_0x316cdd(0x16a),'Anti\x20Delete\x20In\x20Chat')),kord({'cmd':a0_0x316cdd(0x162),'desc':a0_0x316cdd(0x156),'fromMe':!![],'type':'config'},toggle('savestatus',a0_0x316cdd(0x164),a0_0x316cdd(0x10d))),kord({'cmd':a0_0x316cdd(0x111),'desc':'turn\x20on/off\x20command\x20react','fromMe':!![],'type':a0_0x316cdd(0x158)},toggle('cmdreact',a0_0x316cdd(0x134),a0_0x316cdd(0x17a))),kord({'cmd':a0_0x316cdd(0x146),'desc':a0_0x316cdd(0x13f),'fromMe':!![],'type':a0_0x316cdd(0x158)},toggle(a0_0x316cdd(0x169),'READ_MESSAGE','Read\x20Message')),kord({'cmd':a0_0x316cdd(0x121),'desc':a0_0x316cdd(0x176),'fromMe':!![],'type':a0_0x316cdd(0x158)},toggle(a0_0x316cdd(0x121),'REJECT_CALL',a0_0x316cdd(0x145))),kord({'cmd':a0_0x316cdd(0x136),'desc':a0_0x316cdd(0x15b),'fromMe':!![],'type':a0_0x316cdd(0x158)},async(_0x13843c,_0xd514)=>{var _0x558c1f=a0_0x316cdd,_0x21041c=_0x13843c[_0x558c1f(0xed)][0x0]||_0x13843c[_0x558c1f(0x126)][_0x558c1f(0x143)]||_0xd514;if(!_0x21041c)return await _0x13843c[_0x558c1f(0x16c)](_0x558c1f(0xf4));var _0x100d43=_0x21041c['split']('@')[0x0];const _0x465f7b=config()['SUDO']||'',_0x4c7f3f=_0x465f7b?_0x465f7b['split'](',')[_0x558c1f(0x10a)](_0x412583=>_0x412583['trim']())['filter'](_0x22672f=>_0x22672f):[];if(_0x4c7f3f[_0x558c1f(0xf7)](_0x100d43))return await _0x13843c[_0x558c1f(0x16c)](_0x558c1f(0x122));var _0x6f3eee=[..._0x4c7f3f,_0x100d43],_0x38d26d=_0x6f3eee['join'](',');if(_0x13843c['client'][_0x558c1f(0xf0)]==_0x558c1f(0x113))try{await _0x13843c['send'](_0x558c1f(0x131)+_0x100d43+_0x558c1f(0xf1)),await setVar(_0x558c1f(0x103),_0x38d26d);}catch(_0x4f5030){return console[_0x558c1f(0x13e)](_0x4f5030),await _0x13843c[_0x558c1f(0x16c)](_0x558c1f(0x159)+_0x4f5030);}var _0x5df365=await envExists();return _0x5df365?(await updateEnv(_0x558c1f(0x103),_0x38d26d),await _0x13843c[_0x558c1f(0x16c)](_0x558c1f(0x131)+_0x100d43+'\x20added\x20to\x20sudo\x20list...```')):(await updateConfig(_0x558c1f(0x103),_0x38d26d,{'replace':!![]}),await _0x13843c[_0x558c1f(0x16c)]('```'+_0x100d43+_0x558c1f(0xff)));}),kord({'cmd':a0_0x316cdd(0x10f),'desc':'delete\x20user\x20from\x20sudo\x20list','fromMe':!![],'type':a0_0x316cdd(0x158)},async(_0x1fc3a0,_0x571aad)=>{var _0x342c7c=a0_0x316cdd,_0x589227=_0x1fc3a0[_0x342c7c(0xed)][0x0]||_0x1fc3a0[_0x342c7c(0x126)][_0x342c7c(0x143)]||_0x571aad;if(!_0x589227)return await _0x1fc3a0['send'](_0x342c7c(0xf4));var _0x1f3248=_0x589227[_0x342c7c(0x177)]('@')[0x0];const _0x59f964=config()[_0x342c7c(0x103)]||'',_0x58a4da=_0x59f964?_0x59f964[_0x342c7c(0x177)](',')['map'](_0x332ff4=>_0x332ff4[_0x342c7c(0x170)]())[_0x342c7c(0x112)](_0x5eef7b=>_0x5eef7b):[];if(!_0x58a4da[_0x342c7c(0xf7)](_0x1f3248))return await _0x1fc3a0[_0x342c7c(0x16c)](_0x342c7c(0x11d));var _0xfdce57=_0x58a4da[_0x342c7c(0x112)](_0x252073=>_0x252073!==_0x1f3248),_0x5215b8=_0xfdce57[_0x342c7c(0x117)]==0x0?_0x342c7c(0x141):_0xfdce57['join'](',');if(_0x1fc3a0[_0x342c7c(0x144)][_0x342c7c(0xf0)]=='render')try{await _0x1fc3a0['send'](_0x342c7c(0x131)+_0x1f3248+_0x342c7c(0x17d)),await setVar('SUDO',_0x5215b8);}catch(_0x6bad64){return console[_0x342c7c(0x13e)](_0x6bad64),await _0x1fc3a0[_0x342c7c(0x16c)](_0x342c7c(0x159)+_0x6bad64);}var _0x455219=await envExists();return _0x455219?(await updateEnv(_0x342c7c(0x103),_0x5215b8),await _0x1fc3a0[_0x342c7c(0x16c)](_0x342c7c(0x131)+_0x1f3248+_0x342c7c(0x114))):(await updateConfig(_0x342c7c(0x103),_0x5215b8,{'replace':!![]}),await _0x1fc3a0[_0x342c7c(0x16c)](_0x342c7c(0x131)+_0x1f3248+_0x342c7c(0x114)));}),kord({'cmd':a0_0x316cdd(0x139),'desc':a0_0x316cdd(0x130),'fromMe':!![],'type':a0_0x316cdd(0x158)},async(_0x208d3d,_0x110264)=>{var _0x2289a5=a0_0x316cdd,_0x44a485=(config()['SUDO']||'')[_0x2289a5(0x177)](',')[_0x2289a5(0x10a)](_0x2bffe1=>_0x2bffe1[_0x2289a5(0x170)]())[_0x2289a5(0x112)](_0x1f384a=>_0x1f384a);if(_0x44a485[_0x2289a5(0x117)]==0x0)return await _0x208d3d[_0x2289a5(0x16c)](_0x2289a5(0x108));var _0x581035=_0x2289a5(0x104),_0x3c17fc=[];for(var _0x1d6c37 of _0x44a485){var _0x5a411b=_0x1d6c37['trim']()+_0x2289a5(0x15d);_0x581035+=_0x2289a5(0xfd)+_0x1d6c37+'\x0a',_0x3c17fc[_0x2289a5(0x17e)](_0x5a411b);}var _0x137bbe=_0x2289a5(0x131)+_0x581035+_0x2289a5(0x131);return await _0x208d3d['send'](_0x137bbe,{'mentions':_0x3c17fc});}),kord({'cmd':a0_0x316cdd(0x10e),'desc':a0_0x316cdd(0xf3),'fromMe':!![],'type':a0_0x316cdd(0x158)},async(_0x180d51,_0x16990c)=>{var _0x4d521f=a0_0x316cdd,_0x2c76ba=_0x180d51[_0x4d521f(0xed)][0x0]||_0x180d51[_0x4d521f(0x126)][_0x4d521f(0x143)]||_0x16990c;if(!_0x2c76ba)return await _0x180d51['send']('_Reply/mention/provide\x20a\x20user_');var _0x592cb7=_0x2c76ba[_0x4d521f(0x177)]('@')[0x0];const _0x1aa69e=config()[_0x4d521f(0x109)]||'',_0x4a1e61=_0x1aa69e?_0x1aa69e[_0x4d521f(0x177)](',')['map'](_0x4a4554=>_0x4a4554['trim']())['filter'](_0x241275=>_0x241275):[];if(_0x4a1e61['includes'](_0x592cb7))return await _0x180d51[_0x4d521f(0x16c)](_0x4d521f(0x17f));var _0x122654=[..._0x4a1e61,_0x592cb7],_0xca238e=_0x122654[_0x4d521f(0x149)](',');if(_0x180d51[_0x4d521f(0x144)]['platform']==_0x4d521f(0x113))try{await _0x180d51[_0x4d521f(0x16c)](_0x4d521f(0x131)+_0x592cb7+_0x4d521f(0x142)),await setVar(_0x4d521f(0x109),_0xca238e);}catch(_0x3a4905){return console[_0x4d521f(0x13e)](_0x3a4905),await _0x180d51[_0x4d521f(0x16c)](_0x4d521f(0x159)+_0x3a4905);}var _0x50e12f=await envExists();return _0x50e12f?(await updateEnv('MODS',_0xca238e),await _0x180d51[_0x4d521f(0x16c)](_0x4d521f(0x131)+_0x592cb7+_0x4d521f(0x11f))):(await updateConfig('MODS',_0xca238e,{'replace':!![]}),await _0x180d51[_0x4d521f(0x16c)]('```'+_0x592cb7+_0x4d521f(0x11f)));}),kord({'cmd':a0_0x316cdd(0x172),'desc':a0_0x316cdd(0x140),'fromMe':!![],'type':a0_0x316cdd(0x158)},async(_0x2503a1,_0x40544d)=>{var _0x5b01e0=a0_0x316cdd,_0x40b40d=_0x2503a1['mentionedJid'][0x0]||_0x2503a1[_0x5b01e0(0x126)]['sender']||_0x40544d;if(!_0x40b40d)return await _0x2503a1[_0x5b01e0(0x16c)]('_Reply/mention/provide\x20a\x20user_');var _0x609a46=_0x40b40d[_0x5b01e0(0x177)]('@')[0x0];const _0x24e593=config()[_0x5b01e0(0x109)]||'',_0x2d2d46=_0x24e593?_0x24e593['split'](',')[_0x5b01e0(0x10a)](_0x267e92=>_0x267e92['trim']())[_0x5b01e0(0x112)](_0x240746=>_0x240746):[];if(!_0x2d2d46[_0x5b01e0(0xf7)](_0x609a46))return await _0x2503a1['send'](_0x5b01e0(0x171));var _0x37b13e=_0x2d2d46[_0x5b01e0(0x112)](_0x5aeb5b=>_0x5aeb5b!==_0x609a46),_0x3215df=_0x37b13e['length']==0x0?'false':_0x37b13e[_0x5b01e0(0x149)](',');if(_0x2503a1[_0x5b01e0(0x144)][_0x5b01e0(0xf0)]=='render')try{await _0x2503a1[_0x5b01e0(0x16c)](_0x5b01e0(0x131)+_0x609a46+_0x5b01e0(0x157)),await setVar(_0x5b01e0(0x109),_0x3215df);}catch(_0x3b6cf0){return console[_0x5b01e0(0x13e)](_0x3b6cf0),await _0x2503a1[_0x5b01e0(0x16c)](_0x5b01e0(0x159)+_0x3b6cf0);}var _0x29db00=await envExists();return _0x29db00?(await updateEnv('MODS',_0x3215df),await _0x2503a1[_0x5b01e0(0x16c)](_0x5b01e0(0x131)+_0x609a46+'\x20removed\x20from\x20mod\x20list...```')):(await updateConfig(_0x5b01e0(0x109),_0x3215df,{'replace':!![]}),await _0x2503a1['send'](_0x5b01e0(0x131)+_0x609a46+'\x20removed\x20from\x20mod\x20list...```'));}),kord({'cmd':a0_0x316cdd(0x12b),'desc':a0_0x316cdd(0x154),'fromMe':!![],'type':'config'},async(_0x2ba609,_0x5419bb)=>{var _0x1961ae=a0_0x316cdd,_0x8d0631=(config()[_0x1961ae(0x109)]||'')[_0x1961ae(0x177)](',')[_0x1961ae(0x10a)](_0x1b1329=>_0x1b1329[_0x1961ae(0x170)]())['filter'](_0x34db7c=>_0x34db7c);if(_0x8d0631[_0x1961ae(0x117)]==0x0)return await _0x2ba609[_0x1961ae(0x16c)](_0x1961ae(0x167));var _0x49e0d5='「\x20MOD\x20LIST\x20」\x0a',_0x181b6d=[];for(var _0x3f37d5 of _0x8d0631){_0x49e0d5+=_0x1961ae(0xfd)+_0x3f37d5+'\x0a',_0x181b6d[_0x1961ae(0x17e)](_0x3f37d5+'@s.whatsapp.net');}var _0x31ee0b=_0x1961ae(0x131)+_0x49e0d5+_0x1961ae(0x131);return await _0x2ba609[_0x1961ae(0x16c)](_0x31ee0b,{'mentions':_0x181b6d});}),kord({'cmd':a0_0x316cdd(0x14b),'desc':a0_0x316cdd(0x16b),'fromMe':!![],'type':a0_0x316cdd(0x158)},async(_0x472bbe,_0x34cb5e)=>{var _0x23bd56=a0_0x316cdd;const _0x57196d=[...myMods()[_0x23bd56(0x10a)](_0x24b0f8=>_0x24b0f8+_0x23bd56(0x15d)),_0x472bbe['ownerJid']];var _0x574bc8=_0x23bd56(0x14b);if(!_0x34cb5e)return config()[_0x23bd56(0x123)][_0x23bd56(0xfb)]()==_0x23bd56(0x120)?await _0x472bbe[_0x23bd56(0x16c)]({'name':_0x23bd56(0x105),'values':[{'name':_0x23bd56(0x115),'id':_0x574bc8+'\x20private'},{'name':_0x23bd56(0xf2),'id':_0x574bc8+_0x23bd56(0x173)}],'withPrefix':!![],'onlyOnce':!![],'participates':[_0x472bbe[_0x23bd56(0xf8)]],'selectableCount':!![]},{},_0x23bd56(0x120)):await _0x472bbe['send'](_0x23bd56(0x181));if(_0x34cb5e[_0x23bd56(0xfb)]()==_0x23bd56(0x115)){if(config()['WORKTYPE'][_0x23bd56(0xfb)]()=='private')return await _0x472bbe[_0x23bd56(0x16c)](_0x23bd56(0xfe));else await updateAllConfig(_0x23bd56(0x11c),_0x23bd56(0x115),_0x472bbe);}else{if(_0x34cb5e[_0x23bd56(0xfb)]()==_0x23bd56(0xf2)){if(config()[_0x23bd56(0x11c)]['toLowerCase']()==_0x23bd56(0xf2))return await _0x472bbe['send']('_Bot\x20is\x20already\x20public.._');else await updateAllConfig('WORKTYPE',_0x23bd56(0xf2),_0x472bbe);}else return config()[_0x23bd56(0x123)]['toLowerCase']()==_0x23bd56(0x120)?await _0x472bbe[_0x23bd56(0x16c)]({'name':'*Toggle\x20private/public*','values':[{'name':_0x23bd56(0x115),'id':_0x574bc8+'\x20private'},{'name':_0x23bd56(0xf2),'id':_0x574bc8+'\x20public'}],'withPrefix':!![],'onlyOnce':!![],'participates':_0x57196d,'selectableCount':!![]},{},_0x23bd56(0x120)):await _0x472bbe[_0x23bd56(0x16c)](_0x23bd56(0x181));}}),kord({'cmd':'statusemoji','desc':'set\x20like\x20status\x20emoji','fromMe':!![],'type':a0_0x316cdd(0x158)},async(_0x218459,_0x1ae615)=>{var _0x2e22b5=a0_0x316cdd;if(!_0x1ae615)return await _0x218459['send']('_provide\x20an\x20emoji:emojis_\x0a_example:\x20statusemoji\x20🤍\x20or\x20statusemoji\x20🤍,🥏');await updateAllConfig(_0x2e22b5(0x100),_0x1ae615,_0x218459);});
+const { kord, wtype, updateConfig, prefix, updateEnv, updateEnvSudo, addEnvSudo, removeEnvSudo, replaceEnvSudo, getEnvValue, envExists, listEnvKeys, toBoolean, getPlatformInfo, setVar, updateVar, delVar, getVars, config, myMods
+  } = require("../core")
+  const fs = require("fs")
+  
+  
+  
+kord({
+  cmd: "setvar",
+  desc: "set a config in config.env/config.js",
+  fromMe: true,
+  type: "config",
+}, async (m, text)=> {
+  if (!text)  return await m.send(`*provide the var name and value*\n_example: ${prefix}setvar SESSION_ID=kord-ai_321`)
+  var [key, ...args] = text.split("=")
+  key = key.toUpperCase()
+  var value = args.join("=").trim()
+  if (!key || !value) return await m.send(`*provide the var name and value*\n_example: ${prefix}setvar SESSION_ID kord-ai_321`) 
+  const platformInfo = getPlatformInfo()
+  if (platformInfo.platform === "render") {
+    try {
+      await m.send(`*_Config Successfully Set_* *${key.toUpperCase()}* _to_ *${value}*\n_Restarting..._`)
+      await setVar(key.toUpperCase(), value)
+    } catch (error) {
+      await m.send(`*Error setting variable:* ${error.message}`)
+    }
+  } else {
+    var isExist = await envExists()
+    if (isExist) {
+      if (!process.env[key]) {
+        await updateEnv(key, value)
+        return await m.send(`*Config set successfully!*\n\n_Created ${key} with value ${value}_`)
+      } else {
+        await updateEnv(key, value)
+        return await m.send(`*Config set successfully!*`)
+      }
+    } else {
+      await updateConfig(key, value)
+      return await m.send(`*Config set successfully!*`)
+    }
+  }
+})
+
+kord({
+  cmd: "getvar",
+  desc: "get all variables from config.js/config.env",
+  fromMe: true,
+  type: "config",
+}, async (m, text) => {
+  if (!text) return m.reply("_*provide var name...*_\n_example: getvar SUDO_")
+  const key = text.trim().toUpperCase()
+  if (typeof key !== 'string' || !key.trim()) {
+    await m.reply("_*Invalid variable!...*_")
+  } else if (await envExists()) {
+    return await m.send(`*${key}*: ${process.env[key]}`)
+  } else if (config()[key]) {
+    return await m.send(`*${key}*: ${config()[key]}`)
+  } else {
+    await m.reply(`_*'${key}' not found in config*_`)
+  }
+})
+
+kord({
+  cmd: 'delvar',
+  desc: "delete a variable/setting",
+  fromMe: true,
+  type: "config",
+}, async (m, text) => {
+  const key = text.trim().toUpperCase()
+  const platformInfo = getPlatformInfo()
+  if (platformInfo.platform === "render") {
+    try {
+      await m.send(`_*successfully deleted ${key}*_\n\n> restarting..`)
+      await delVar(key)
+    } catch (error) {
+      await m.send(`*Error deleting variable:* ${error.message}`)
+    }
+  } else {
+    var isExist = await envExists()
+    if (isExist) {
+      await updateEnv(key, null, { remove: true})
+    } else {
+      await updateConfig(key, null, {remove: true})
+    }
+    await m.send(`_*successfully deleted ${key}*_`)
+  }
+})
+
+kord({
+  cmd: "allvar",
+  desc: "get all variables/settings",
+  fromMe: true,
+  type: "config",
+}, async (m, text)=> {
+  const platformInfo = getPlatformInfo()
+  
+  if (platformInfo.platform === "render") {
+    try {
+      const result = await getVars()
+      if (result.success) {
+  var data = '*All Vars (Render)*\n\n'
+  for (var item of result.data) {
+    const variable = item.envVar
+    data += `*${variable.key}*: ${variable.value}\n`
+  }
+  return await m.send(data)
+}
+    } catch (error) {
+      await m.send(`*Error getting variables:* ${error.message}`)
+      return
+    }
+  }
+  if (await envExists()) {
+    var h = await listEnvKeys()
+      var daa = '*All Vars*\n\n'
+    for (var hh of h) {
+      daa += `*${hh}*: ${process.env[hh]}\n`
+    }
+    return await m.send(`${daa}`)
+  } else {
+    const data = '*All Vars*\n\n' + Object.keys(config())
+    .map(key => `*${key}:* ${config()[key]}`)
+    .join('\n')
+    return await m.send(`${data}`)
+  }
+})
+
+async function updateAllConfig(key, value, m) {
+  const platformInfo = getPlatformInfo()
+  if (platformInfo.platform === "render") {
+    try {
+      await m.send(`*_${key} set to ${value}_*\n_Restarting..._`)
+      if (process.env[key]) {
+        await setVar(key, value)
+      } else {
+        await setVar(key, value)
+      }
+    } catch (error) {
+      await m.send(`*Error updating variable:* ${error.message}`)
+    }
+  } else {
+    var isExist = await envExists()
+    if (isExist) {
+      if (!process.env[key]) {
+        await updateEnv(key, value)
+        return await m.send(`*_${key} set to ${value}_*`)
+      } else {
+        await updateEnv(key, value)
+        return await m.send(`*_${key} set to ${value}_*`)
+      }
+    } else {
+      await updateConfig(key, value)
+      return await m.send(`*_${key} set to ${value}_*`)
+    }
+  }
+}
+
+function toggle(cmdName, envKey, displayName) {
+  return async (m, text, cmd) => {
+    const allowed = [...myMods().map(x => x + '@s.whatsapp.net'), m.ownerJid]
+    text = text.split(" ")[0]
+    if (!text) {
+      return config().RES_TYPE.toLowerCase() === "button" ? await m.btnText("*Toggle on/off*", {
+        [`${cmd} on`]: "ON",
+        [`${cmd} off`]: "OFF",
+      }) : config().RES_TYPE.toLowerCase() == "poll" ? await m.send({
+        name: "*Toggle on/off*",
+        values: [{name: "on", id: `${cmdName} on`}, {name: "Off", id: `${cmdName} off`}],
+        withPrefix: true,
+        onlyOnce: true,
+        participates: allowed,
+        selectableCount: true,
+      }, {}, "poll") : await m.send(`*use ${cmd} on/off*`)
+    }
+    
+    var t = toBoolean(text)
+    var envVal = process.env[envKey]
+    var configVal = config()[envKey]
+    if ((envVal !== undefined && toBoolean(envVal) == t) || (configVal !== undefined && toBoolean(configVal) == t)) {
+  return await m.send(`*${displayName} already set to ${text}..*`)
+    }
+    
+    await updateAllConfig(envKey, text, m)
+  }
+}
+
+kord({
+  cmd: "readstatus",
+  desc: "turn on/off readstatus",
+  fromMe: true,
+  type: "config",
+}, toggle("readstatus", "STATUS_VIEW", "Read Status"))
+
+kord({
+  cmd: "likestatus",
+  desc: "turn on/off likestatus",
+  fromMe: true,
+  type: "config",
+}, toggle("likestatus", "LIKE_STATUS", "Like Status"))
+
+kord({
+  cmd: "startupmsg",
+  desc: "turn on/off startupmsg",
+  fromMe: true,
+  type: "config",
+}, toggle("startupmsg", "STARTUP_MSG", "Startup Msg"))
+
+
+kord({
+  cmd: "alwaysonline",
+  desc: "turn on/off always online",
+  fromMe: true,
+  type: "config",
+}, toggle("alwaysonline", "ALWAYS_ONLINE", "Always Online"))
+
+kord({
+  cmd: "antidelete",
+  desc: "turn on/off antidelete",
+  fromMe: true,
+  type: "config",
+}, toggle("antidelete", "ANTIDELETE", "Anti Delete"))
+
+kord({
+  cmd: "antideletechat",
+  desc: "turn on/off antidelete in chat",
+  fromMe: true,
+  type: "config",
+}, toggle("antidelete-inchat", "ANTIDELETE_INCHAT", "Anti Delete In Chat"))
+
+kord({
+  cmd: "savestatus",
+  desc: "turn on/off save status",
+  fromMe: true,
+  type: "config",
+}, toggle("savestatus", "SAVE_STATUS", "Save Status"))
+
+kord({
+  cmd: "cmdreact",
+  desc: "turn on/off command react",
+  fromMe: true,
+  type: "config",
+}, toggle("cmdreact", "CMD_REACT", "Command React"))
+
+kord({
+  cmd: "readmsg|read",
+  desc: "turn on/off read message",
+  fromMe: true,
+  type: "config",
+}, toggle("readmsg", "READ_MESSAGE", "Read Message"))
+
+kord({
+  cmd: "rejectcall",
+  desc: "turn on/off reject call",
+  fromMe: true,
+  type: "config",
+}, toggle("rejectcall", "REJECT_CALL", "Reject Call"))
+
+kord({
+  cmd: "setsudo",
+  desc: "add a user to sudo",
+  fromMe: true,
+  type: "config",
+}, async (m, text) => {
+  var usr = m.mentionedJid[0] || m.quoted.sender || text
+  if (!usr) return await m.send("_Reply/mention/provide a user_")
+  var user = usr.split("@")[0]
+  const cSudo = config().SUDO || ""
+  const cNumbers = cSudo ? cSudo.split(',').map(n => n.trim()).filter(n => n) : []
+  if (cNumbers.includes(user)) return await m.send("_User is already a sudo_")
+  var un = [...cNumbers, user]
+  var nsn = un.join(",")
+  if (m.client.platform == "render") {
+     
+    try {
+    await m.send(`\`\`\`${user} added to sudo list...\n_Restarting\`\`\``)
+    await setVar("SUDO", nsn)
+    } catch (er) {
+      console.error(er)
+      return await m.send(`error: ${er}`)
+    }}
+    var isExist = await envExists()
+    if (isExist) {
+      await updateEnv("SUDO", nsn)
+     return await m.send(`\`\`\`${user} added to sudo list...\`\`\``)
+  } else {
+    await updateConfig("SUDO", nsn, { replace: true })
+    return await m.send(`\`\`\`${user} added to sudo list...\`\`\``)
+  }
+})
+
+kord({
+  cmd: "delsudo",
+  desc: "delete user from sudo list",
+  fromMe: true,
+  type: "config",
+}, async (m, text) => {
+  var usr = m.mentionedJid[0] || m.quoted.sender || text
+  if (!usr) return await m.send("_Reply/mention/provide a user_")
+  var user = usr.split("@")[0]
+  const cSudo = config().SUDO || ""
+  const cNumbers = cSudo ? cSudo.split(',').map(n => n.trim()).filter(n => n) : []
+  if (!cNumbers.includes(user)) return await m.send("_User is not a sudo_")
+  var un = cNumbers.filter(num => num !== user) 
+  var nsn = un.length == 0 ? "false" : un.join(",")
+  if (m.client.platform == "render") {
+    try {
+    await m.send(`\`\`\`${user} removed from sudo list...\n_Restarting\`\`\``)
+    await setVar("SUDO", nsn)
+    } catch (er) {
+      console.error(er)
+      return await m.send(`error: ${er}`)
+    }}
+    var isExist = await envExists()
+    if (isExist) {
+      await updateEnv("SUDO", nsn)
+     return await m.send(`\`\`\`${user} removed from sudo list...\`\`\``)
+  } else {
+    await updateConfig("SUDO", nsn, { replace: true })
+    return await m.send(`\`\`\`${user} removed from sudo list...\`\`\``)
+  }
+})
+
+
+kord({
+  cmd: "getsudo|allsudo",
+  desc: "get all sudos",
+  fromMe: true,
+  type: "config",
+}, async (m, text) => {
+  var sudo = (config().SUDO || "")
+    .split(",")
+    .map(n => n.trim())
+    .filter(n => n)
+  if (sudo.length == 0) return await m.send("_Sudo list is empty_")
+  var msg = "「 SUDO LIST 」\n"
+  var mj = []
+  for (var s of sudo) {
+  var jid = s.trim() + '@s.whatsapp.net'
+    msg += `❑ @${s}\n`
+    mj.push(jid)
+  }
+  var fmsg = `\`\`\`${msg}\`\`\``
+      return await m.send(fmsg, {mentions: mj})
+})
+
+kord({
+  cmd: "setmod|addmod",
+  desc: "add a user to mod",
+  fromMe: true,
+  type: "config",
+}, async (m, text) => {
+  var usr = m.mentionedJid[0] || m.quoted.sender || text
+  if (!usr) return await m.send("_Reply/mention/provide a user_")
+  var user = usr.split("@")[0]
+  const cMod = config().MODS || ""
+  const cNumbers = cMod ? cMod.split(',').map(n => n.trim()).filter(n => n) : []
+  if (cNumbers.includes(user)) return await m.send("_User is already a mod_")
+  var un = [...cNumbers, user]
+  var nsn = un.join(",")
+  if (m.client.platform == "render") {
+    try {
+      await m.send(`\`\`\`${user} added to mod list...\n_Restarting\`\`\``)
+      await setVar("MODS", nsn)
+    } catch (er) {
+      console.error(er)
+      return await m.send(`error: ${er}`)
+    }
+  }
+  var isExist = await envExists()
+  if (isExist) {
+    await updateEnv("MODS", nsn)
+    return await m.send(`\`\`\`${user} added to mod list...\`\`\``)
+  } else {
+    await updateConfig("MODS", nsn, { replace: true })
+    return await m.send(`\`\`\`${user} added to mod list...\`\`\``)
+  }
+})
+
+kord({
+  cmd: "delmod",
+  desc: "delete user from mod list",
+  fromMe: true,
+  type: "config",
+}, async (m, text) => {
+  var usr = m.mentionedJid[0] || m.quoted.sender || text
+  if (!usr) return await m.send("_Reply/mention/provide a user_")
+  var user = usr.split("@")[0]
+  const cMod = config().MODS || ""
+  const cNumbers = cMod ? cMod.split(',').map(n => n.trim()).filter(n => n) : []
+  if (!cNumbers.includes(user)) return await m.send("_User is not a mod_")
+  var un = cNumbers.filter(num => num !== user)
+  var nsn = un.length == 0 ? "false" : un.join(",")
+  if (m.client.platform == "render") {
+    try {
+      await m.send(`\`\`\`${user} removed from mod list...\n_Restarting\`\`\``)
+      await setVar("MODS", nsn)
+    } catch (er) {
+      console.error(er)
+      return await m.send(`error: ${er}`)
+    }
+  }
+  var isExist = await envExists()
+  if (isExist) {
+    await updateEnv("MODS", nsn)
+    return await m.send(`\`\`\`${user} removed from mod list...\`\`\``)
+  } else {
+    await updateConfig("MODS", nsn, { replace: true })
+    return await m.send(`\`\`\`${user} removed from mod list...\`\`\``)
+  }
+})
+
+kord({
+  cmd: "getmods",
+  desc: "get all mods",
+  fromMe: true,
+  type: "config",
+}, async (m, text) => {
+  var modList = (config().MODS || "")
+    .split(",")
+    .map(n => n.trim())
+    .filter(n => n)
+
+  if (modList.length == 0)
+    return await m.send("_Mod list is empty_")
+  var msg = "「 MOD LIST 」\n"
+  var mentionJids = []
+  for (var u of modList) {
+    msg += `❑ @${u}\n`
+    mentionJids.push(u + '@s.whatsapp.net')
+  }
+  var fmsg = `\`\`\`${msg}\`\`\``
+  return await m.send(fmsg, {
+    mentions: mentionJids
+  })
+})
+
+
+kord({
+  cmd: "mode",
+  desc: "set bot to private or public",
+  fromMe: true,
+  type: "config",
+}, async (m, text) => {
+  const allowed = [...myMods().map(x => x + '@s.whatsapp.net'), m.ownerJid]
+  var cmdName = "mode"
+  if (!text) return config().RES_TYPE.toLowerCase() == "poll" ? await m.send({
+        name: "*Toggle private/public*",
+        values: [{name: "private", id: `${cmdName} private`}, {name: "public", id: `${cmdName} public`}],
+        withPrefix: true,
+        onlyOnce: true,
+        participates: [m.ownerJid, ],
+        selectableCount: true,
+      }, {}, "poll") : await m.send("Use either public or private")
+  if (text.toLowerCase() == "private") {
+    if (config().WORKTYPE.toLowerCase() == "private") return await m.send("_Bot is already private.._") 
+    else {
+      await updateAllConfig("WORKTYPE", "private", m)
+    }
+  } else if (text.toLowerCase() == "public") {
+    if (config().WORKTYPE.toLowerCase() == "public") return await m.send("_Bot is already public.._") 
+    else {
+      await updateAllConfig("WORKTYPE", "public", m)
+    } 
+  } else {
+    return config().RES_TYPE.toLowerCase() == "poll" ? await m.send({
+        name: "*Toggle private/public*",
+        values: [{name: "private", id: `${cmdName} private`}, {name: "public", id: `${cmdName} public`}],
+        withPrefix: true,
+        onlyOnce: true,
+        participates: allowed,
+        selectableCount: true,
+      }, {}, "poll") : await m.send("Use either public or private")
+  }
+})
+
+kord({
+  cmd: "statusemoji",
+  desc: "set like status emoji",
+  fromMe: true,
+  type: "config",
+}, async (m, text) => {
+  if (!text) return await m.send("_provide an emoji:emojis_\n_example: statusemoji 🤍 or statusemoji 🤍,🥏")
+  await updateAllConfig("STATUS_EMOJI", text, m)
+})

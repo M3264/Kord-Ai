@@ -1,1 +1,960 @@
-const a0_0x490849=a0_0x31ea;function a0_0x31ea(_0x4db0a6,_0x1d43ad){const _0x3ae359=a0_0x3ae3();return a0_0x31ea=function(_0x31eae0,_0x47dc7f){_0x31eae0=_0x31eae0-0x172;let _0x583d2a=_0x3ae359[_0x31eae0];return _0x583d2a;},a0_0x31ea(_0x4db0a6,_0x1d43ad);}(function(_0x103ea7,_0x5390c2){const _0x36494a=a0_0x31ea,_0x1c25b6=_0x103ea7();while(!![]){try{const _0x436aa3=parseInt(_0x36494a(0x1c5))/0x1+-parseInt(_0x36494a(0x1f9))/0x2+-parseInt(_0x36494a(0x1d5))/0x3*(parseInt(_0x36494a(0x233))/0x4)+parseInt(_0x36494a(0x243))/0x5*(-parseInt(_0x36494a(0x236))/0x6)+parseInt(_0x36494a(0x1d2))/0x7+-parseInt(_0x36494a(0x1bc))/0x8*(parseInt(_0x36494a(0x25a))/0x9)+parseInt(_0x36494a(0x209))/0xa;if(_0x436aa3===_0x5390c2)break;else _0x1c25b6['push'](_0x1c25b6['shift']());}catch(_0x313734){_0x1c25b6['push'](_0x1c25b6['shift']());}}}(a0_0x3ae3,0xa89cc));function a0_0x3ae3(){const _0x43dea5=['\x20day','4ARpzCf','*\x0a\x0a','title','33654bCZDhF','score','forEach','name','_*successfully\x20cleared\x20your\x20watchlist*_\x20✅','season|animeseason','manga','sad','track\x20anime\x20you\x27re\x20currently\x20watching','synopsis','fun','../core','\x20hugged\x20@','950OnORER','Unknown','shinobu','get\x20anime\x20from\x20specific\x20season','📊\x20*Score:*\x20','bully','📅\x20Date:\x20','happy','video','\x20danced\x20with\x20@','buffer','\x20winked\x20at\x20@','_*provide\x20anime\x20name\x20to\x20check\x20airing\x20status*_','data','\x20bullied\x20@','\x20-\x20','existsSync','similarity','gif','parse','large_image_url','👤\x20*','_*error\x20searching\x20for\x20character*_\x20❌','369WWusZT','megumin','💫\x20*Status:*\x20','/schedule','search\x20for\x20manga\x20information\x20from\x20MyAnimeList','wink','punch','Here\x27s\x20your\x20waifu!\x20(Cringe)','length','hug','floor','\x20slapped\x20@','https://api.jikan.moe/v4/anime/','rating','random','_*provide\x20manga\x20name\x20to\x20search!*_','cry','send\x20waifu\x20pat\x20animation','\x20kissed\x20@','send\x20waifu\x20handhold\x20animation','https://animechan.xyz/api/random','send\x20waifu\x20awoo','📑\x20*Chapters:*\x20','send\x20waifu\x20blush\x20animation','https://api.jikan.moe/v4/top/anime?filter=airing&limit=5','animequote','angry','\x20airs\x20in:\x20','animewatch|watching','client','upload','animerec|recommend','jpg','https://api.trace.moe/search?url=','https://nekos.best/api/v2/','⭐\x20*Score:*\x20','join','send\x20shinobu\x20waifu','🔍\x20*Similarity:*\x20','_*failed\x20to\x20get\x20anime\x20gif*_\x20😢','_*your\x20watchlist\x20is\x20empty*_\x0aAdd\x20anime\x20with\x20.animewatch\x20<anime\x20name>\x20|\x20<episode>','log',')\x20to\x20watchlist*_\x20✅','🕒\x20Time:\x20','🎬\x20*BECAUSE\x20YOU\x20LIKE\x20','react','about','dance','character|animechar','📺\x20*ANIME\x20FROM\x20','type','\x20\x20\x20Type:\x20','\x20waifu','buff','send\x20waifu\x20bite\x20animation','winter','send\x20waifu\x20cry\x20animation','No\x20information\x20available','promises','send\x20waifu\x20wink\x20animation','image_url','_*error\x20checking\x20airing\x20status*_\x20❌','_*format:*_\x20.season\x20<year>\x20<season>','toUpperCase','path','📺\x20*Title:*\x20','_*provide\x20valid\x20year\x20between\x201990-2030*_','?t=','from','stringify','\x20hour','../data/watchlist.json','_*error\x20getting\x20recommendations*_\x20❌','.\x20*','lick','🎯\x20*Found\x20match!*\x0a\x0a','padStart','clear','📅\x20*Published:*\x20','⏰\x20Episode\x20','https://api.jikan.moe/v4/seasons/','🔖\x20*Type:*\x20','slap','send\x20waifu\x20kiss\x20animation','*_\x20✅','_*error\x20fetching\x20anime\x20info!*_','filename','_*error\x20updating\x20watchlist*_\x20❌','\x20anime\x20gif','\x20patted\x20@','cringe','📺\x20*YOUR\x20ANIME\x20WATCHLIST*\x20📺\x0a\x0a','53112LfjceW','📺\x20*','smug','sender','blush','_*no\x20manga\x20found\x20with\x20that\x20name!*_','🎬\x20*Episode:*\x20','\x20kicked\x20@','&limit=1','129162UHkQPo','node-fetch','https://api.jikan.moe/v4/anime?q=','anilist','quote','\x20is\x20not\x20currently\x20airing*_','animenews','_*provide\x20anime\x20name\x20to\x20search!*_','🎬\x20*ANIME\x20RECOMMENDATIONS*\x20🎬\x0a\x0a','send\x20waifu\x20dance\x20animation','string','send\x20random\x20anime\x20girl\x20image','\x20blush','2150659TPWXKV','\x20made\x20@','_*updated\x20','3761439clSCof','send','cuddle','json','check\x20when\x20next\x20episode\x20airs','map','entry','search\x20anime\x20by\x20image\x20(reply\x20to\x20image)','\x20minute','url','_*no\x20schedule\x20information\x20available\x20for\x20','send\x20waifu\x20high-five\x20animation','split','/recommendations','pat','findIndex','result','📺\x20*Anime:*\x20','image','🗓️','results','send\x20waifu\x20kill\x20animation','includes','waifu','_*couldn\x27t\x20identify\x20anime\x20from\x20image*_','\x20to\x20episode\x20','search\x20for\x20anime\x20info\x20from\x20MyAnimeList','>\x20here\x27s\x20your\x20','toString','toFixed','*\x20🎬\x0a\x0a','min','animegif|animatedgif','\x20\x20\x20Episode:\x20','📝\x20*Synopsis:*\x20','https://media.trace.moe/video/','1610040rZoENt','error','search\x20for\x20anime\x20character\x20info','quoted','media','status','episode','📅\x20*Aired:*\x20','toLowerCase','send\x20waifu\x20cringe','https://api.jikan.moe/v4/characters?q=','🔗\x20*Link:*\x20','published','episodes','\x20\x20\x20Votes:\x20','send\x20waifu\x20bully\x20animation','36509790cExBai','character','\x20killed\x20@','N/A','📝\x20*About:*\x20','_*no\x20upcoming\x20episodes\x20found\x20for\x20','keys','\x20cry','get\x20random\x20anime\x20quotes','writeFileSync','https://api.jikan.moe/v4/manga?q=','_*no\x20recommendations\x20found*_\x20😔','\x20held\x20hands\x20with\x20@','waifu|animegirl','_*failed\x20to\x20get\x20anime\x20quote*_\x20😢','_*provide\x20season\x20info:*_\x20.season\x20<year>\x20<season>\x0aSeasons:\x20winter,\x20spring,\x20summer,\x20fall','_*no\x20anime\x20found\x20for\x20','awoo','_*format:*_\x20.animewatch\x20<anime\x20name>\x20|\x20<episode>','push','anime','animesearch|animeinfo','images','trim','toTimeString','https://api.waifu.pics/sfw/','Currently\x20Airing','✨\x20*Nicknames:*\x20','mal_id','send\x20waifu\x20hug\x20animation','\x20licked\x20@','kiss','🎬\x20*','💬\x20*Quote:*\x20','latest\x20anime\x20news\x20from\x20MyAnimeList','_*invalid\x20season!\x20Choose:*_\x20winter,\x20spring,\x20summer,\x20fall','?limit=10','send\x20waifu\x20lick\x20animation','mentionedJid','send\x20waifu\x20kick\x20animation','send\x20megumin\x20waifu'];a0_0x3ae3=function(){return _0x43dea5;};return a0_0x3ae3();}const {kord,extractUrlsFromString,fetchWaifu,getJson,prefix,wtype,ss}=require(a0_0x490849(0x241)),fs=require('fs'),path=require(a0_0x490849(0x1a0)),fetch=require(a0_0x490849(0x1c6));kord({'cmd':a0_0x490849(0x21d),'desc':a0_0x490849(0x1ef),'fromMe':wtype,'react':'🔍','type':a0_0x490849(0x21d)},async(_0x216f58,_0x4098cd)=>{const _0x4ce94c=a0_0x490849;if(!_0x4098cd)return _0x216f58[_0x4ce94c(0x1d6)](_0x4ce94c(0x1cc));_0x216f58['react']('⏳');try{const _0x14812f=await fetch('https://api.jikan.moe/v4/anime?q='+encodeURIComponent(_0x4098cd)+_0x4ce94c(0x1c4)),_0x308c50=await _0x14812f[_0x4ce94c(0x1d8)]();if(_0x308c50[_0x4ce94c(0x250)][_0x4ce94c(0x262)]<0x1)return _0x216f58[_0x4ce94c(0x1d6)]('_*no\x20results\x20found!*_');const _0x4ed8d5=_0x308c50[_0x4ce94c(0x250)][0x0];let _0x2baa11=_0x4ce94c(0x229)+_0x4ed8d5[_0x4ce94c(0x235)]+'*\x0a';return _0x2baa11+=_0x4ce94c(0x1b1)+_0x4ed8d5[_0x4ce94c(0x192)]+'\x0a',_0x2baa11+=_0x4ce94c(0x247)+_0x4ed8d5['score']+'\x0a',_0x2baa11+='🎯\x20*Episodes:*\x20'+_0x4ed8d5[_0x4ce94c(0x206)]+'\x0a',_0x2baa11+=_0x4ce94c(0x200)+_0x4ed8d5['aired']['string']+'\x0a',_0x2baa11+='🔞\x20*Rated:*\x20'+_0x4ed8d5[_0x4ce94c(0x267)]+'\x0a',_0x2baa11+=_0x4ce94c(0x25c)+_0x4ed8d5[_0x4ce94c(0x1fe)]+'\x0a\x0a',_0x2baa11+='📝\x20*Synopsis:*\x20'+_0x4ed8d5['synopsis'],_0x216f58[_0x4ce94c(0x1d6)](_0x4ed8d5[_0x4ce94c(0x21f)][_0x4ce94c(0x180)][_0x4ce94c(0x257)],{'caption':_0x2baa11},_0x4ce94c(0x1e7));}catch(_0x3193ff){return console[_0x4ce94c(0x1fa)](_0x3193ff),_0x216f58[_0x4ce94c(0x1d6)](_0x4ce94c(0x1b5));}}),kord({'cmd':a0_0x490849(0x216),'desc':a0_0x490849(0x1d0),'fromMe':wtype,'react':'💕','type':'anime'},async(_0x5317fa,_0x573bd5)=>{const _0x1b40d0=a0_0x490849;_0x5317fa[_0x1b40d0(0x18d)]('⌛');try{const _0x234e65=[_0x1b40d0(0x1ec),'neko','shinobu','megumin',_0x1b40d0(0x248),_0x1b40d0(0x1d7),_0x1b40d0(0x26a),_0x1b40d0(0x263),_0x1b40d0(0x228),'pat',_0x1b40d0(0x1be),'highfive'];let _0x5bb796=_0x573bd5||_0x234e65[Math[_0x1b40d0(0x264)](Math[_0x1b40d0(0x268)]()*_0x234e65[_0x1b40d0(0x262)])];if(!_0x234e65[_0x1b40d0(0x1eb)](_0x5bb796))_0x5bb796=_0x1b40d0(0x1ec);const _0x90f89e=await fetch(_0x1b40d0(0x222)+_0x5bb796),_0x405911=await _0x90f89e['json']();return _0x5317fa['send'](_0x405911[_0x1b40d0(0x1de)],{'caption':_0x1b40d0(0x1f0)+_0x5bb796+_0x1b40d0(0x194)},_0x1b40d0(0x1e7));}catch(_0x585933){return console['log'](_0x585933),_0x5317fa[_0x1b40d0(0x1d6)]('_*failed\x20to\x20fetch\x20waifu*_\x20😔');}}),kord({'cmd':a0_0x490849(0x23c),'desc':a0_0x490849(0x25e),'fromMe':wtype,'react':'📚','type':a0_0x490849(0x21d)},async(_0x654813,_0x189791)=>{const _0x3f9fb1=a0_0x490849;if(!_0x189791)return _0x654813['send'](_0x3f9fb1(0x269));_0x654813[_0x3f9fb1(0x18d)]('🔎');try{const _0x574e7c=await fetch(_0x3f9fb1(0x213)+encodeURIComponent(_0x189791)+_0x3f9fb1(0x1c4)),_0x570360=await _0x574e7c[_0x3f9fb1(0x1d8)]();if(_0x570360[_0x3f9fb1(0x250)][_0x3f9fb1(0x262)]<0x1)return _0x654813[_0x3f9fb1(0x1d6)](_0x3f9fb1(0x1c1));const _0x3e993d=_0x570360['data'][0x0];let _0x5d94d3='📕\x20*'+_0x3e993d[_0x3f9fb1(0x235)]+'*\x0a';return _0x5d94d3+=_0x3f9fb1(0x1b1)+_0x3e993d[_0x3f9fb1(0x192)]+'\x0a',_0x5d94d3+=_0x3f9fb1(0x183)+_0x3e993d['score']+'\x0a',_0x5d94d3+=_0x3f9fb1(0x176)+(_0x3e993d['chapters']||_0x3f9fb1(0x244))+'\x0a',_0x5d94d3+='📰\x20*Volumes:*\x20'+(_0x3e993d['volumes']||_0x3f9fb1(0x244))+'\x0a',_0x5d94d3+=_0x3f9fb1(0x1ae)+_0x3e993d[_0x3f9fb1(0x205)][_0x3f9fb1(0x1cf)]+'\x0a',_0x5d94d3+=_0x3f9fb1(0x25c)+_0x3e993d['status']+'\x0a\x0a',_0x5d94d3+=_0x3f9fb1(0x1f7)+_0x3e993d[_0x3f9fb1(0x23f)],_0x654813[_0x3f9fb1(0x1d6)](_0x3e993d[_0x3f9fb1(0x21f)]['jpg'][_0x3f9fb1(0x257)],{'caption':_0x5d94d3},'image');}catch(_0x1ea7be){return console[_0x3f9fb1(0x1fa)](_0x1ea7be),_0x654813[_0x3f9fb1(0x1d6)]('_*error\x20occurred\x20while\x20fetching\x20manga\x20info*_');}}),kord({'cmd':a0_0x490849(0x179),'desc':a0_0x490849(0x211),'type':a0_0x490849(0x21d),'fromMe':wtype,'react':'💭'},async _0xd87213=>{const _0x49f26a=a0_0x490849;try{const _0x592a51=await fetch(_0x49f26a(0x174)),_0x51c170=await _0x592a51['json'](),_0x35548b=_0x49f26a(0x22a)+_0x51c170[_0x49f26a(0x1c9)]+'\x0a\x0a'+('👤\x20*Character:*\x20'+_0x51c170[_0x49f26a(0x20a)]+'\x0a')+(_0x49f26a(0x1e6)+_0x51c170[_0x49f26a(0x21d)]);return _0xd87213[_0x49f26a(0x1d6)](_0x35548b);}catch(_0x1e2d2b){return console[_0x49f26a(0x189)](_0x1e2d2b),_0xd87213['send'](_0x49f26a(0x217));}}),kord({'cmd':a0_0x490849(0x1cb),'desc':a0_0x490849(0x22b),'fromMe':wtype,'type':a0_0x490849(0x21d),'react':'📰'},async(_0x2dd32a,_0x3a51d2)=>{const _0x72886d=a0_0x490849;_0x2dd32a[_0x72886d(0x18d)]('🔄');try{const _0x5d3557=await fetch(_0x72886d(0x178)),_0x595605=await _0x5d3557['json']();if(!_0x595605[_0x72886d(0x250)]||_0x595605[_0x72886d(0x250)][_0x72886d(0x262)]<0x1)return _0x2dd32a['send']('_*no\x20trending\x20anime\x20found!*_');let _0x35dc60='🌟\x20*TOP\x20TRENDING\x20ANIME\x20RIGHT\x20NOW*\x20🌟\x0a\x0a';for(const _0x4f23c2 of _0x595605[_0x72886d(0x250)]){_0x35dc60+='📺\x20*'+_0x4f23c2[_0x72886d(0x235)]+'*\x0a',_0x35dc60+=_0x72886d(0x183)+_0x4f23c2[_0x72886d(0x237)]+'\x0a',_0x35dc60+=_0x72886d(0x204)+_0x4f23c2[_0x72886d(0x1de)]+'\x0a\x0a';}return _0x2dd32a[_0x72886d(0x1d6)](_0x35dc60);}catch(_0x36c8fa){return console[_0x72886d(0x189)](_0x36c8fa),_0x2dd32a[_0x72886d(0x1d6)]('_*error\x20fetching\x20anime\x20news*_');}}),kord({'cmd':a0_0x490849(0x190),'desc':a0_0x490849(0x1fb),'fromMe':wtype,'type':a0_0x490849(0x21d),'react':'👤'},async(_0xa89c1a,_0x1a0da6)=>{const _0x3107e3=a0_0x490849;if(!_0x1a0da6)return _0xa89c1a[_0x3107e3(0x1d6)]('_*provide\x20character\x20name\x20to\x20search!*_');_0xa89c1a[_0x3107e3(0x18d)]('🔍');try{const _0x4e4e65=await fetch(_0x3107e3(0x203)+encodeURIComponent(_0x1a0da6)+_0x3107e3(0x1c4)),_0x4bc63e=await _0x4e4e65[_0x3107e3(0x1d8)]();if(_0x4bc63e[_0x3107e3(0x250)][_0x3107e3(0x262)]<0x1)return _0xa89c1a[_0x3107e3(0x1d6)]('_*no\x20character\x20found\x20with\x20that\x20name!*_');const _0x4dd4ed=_0x4bc63e[_0x3107e3(0x250)][0x0];let _0x1440c4=_0x3107e3(0x258)+_0x4dd4ed[_0x3107e3(0x239)]+_0x3107e3(0x234);return _0x4dd4ed['nicknames'][_0x3107e3(0x262)]>0x0&&(_0x1440c4+=_0x3107e3(0x224)+_0x4dd4ed['nicknames'][_0x3107e3(0x184)](',\x20')+'\x0a\x0a'),_0x1440c4+=_0x3107e3(0x20d)+(_0x4dd4ed[_0x3107e3(0x18e)]||_0x3107e3(0x199)),_0xa89c1a['send'](_0x4dd4ed[_0x3107e3(0x21f)][_0x3107e3(0x180)][_0x3107e3(0x19c)],{'caption':_0x1440c4},'image');}catch(_0x350e8a){return console[_0x3107e3(0x1fa)](_0x350e8a),_0xa89c1a['send'](_0x3107e3(0x259));}}),kord({'cmd':a0_0x490849(0x21e),'desc':a0_0x490849(0x1dc),'fromMe':wtype,'react':'🔍','type':a0_0x490849(0x21d)},async _0x45e77f=>{const _0x2e0054=a0_0x490849;if(!_0x45e77f[_0x2e0054(0x1fc)]||!_0x45e77f[_0x2e0054(0x1fc)][_0x2e0054(0x1fd)])return _0x45e77f['send']('_*reply\x20to\x20anime\x20image\x20to\x20search*_');_0x45e77f['react']('⏳');try{const _0x422ec6=await _0x45e77f[_0x2e0054(0x17d)]['dlandsave'](_0x45e77f[_0x2e0054(0x1fc)]),_0x197d6b=await _0x45e77f[_0x2e0054(0x17e)](_0x422ec6,'temp'),_0x209981=await fetch(_0x2e0054(0x181)+encodeURIComponent(_0x197d6b)),_0x3ad8d4=await _0x209981[_0x2e0054(0x1d8)]();if(!_0x3ad8d4[_0x2e0054(0x1e5)]||_0x3ad8d4[_0x2e0054(0x1e5)][_0x2e0054(0x262)]<0x1)return _0x45e77f[_0x2e0054(0x1d6)](_0x2e0054(0x1ed));const _0x23d8c0=_0x3ad8d4[_0x2e0054(0x1e5)][0x0],_0x33017e=await fetch(_0x2e0054(0x1f8)+_0x23d8c0[_0x2e0054(0x1c8)]+'/'+encodeURIComponent(_0x23d8c0[_0x2e0054(0x1b6)])+_0x2e0054(0x1a3)+_0x23d8c0['from']+'&token='+_0x23d8c0[_0x2e0054(0x24b)]),_0xec1f60=await _0x33017e[_0x2e0054(0x24d)]();let _0x270e4c=_0x2e0054(0x1ab);_0x270e4c+=_0x2e0054(0x1a1)+_0x23d8c0[_0x2e0054(0x1b6)]+'\x0a',_0x270e4c+='⏰\x20*Timestamp:*\x20'+_0x5da22a(_0x23d8c0[_0x2e0054(0x1a4)])+_0x2e0054(0x252)+_0x5da22a(_0x23d8c0['to'])+'\x0a',_0x270e4c+=_0x2e0054(0x186)+(_0x23d8c0[_0x2e0054(0x254)]*0x64)[_0x2e0054(0x1f2)](0x2)+'%\x0a',_0x270e4c+=_0x2e0054(0x1c2)+(_0x23d8c0[_0x2e0054(0x1ff)]||'Unknown'),await _0x45e77f[_0x2e0054(0x1d6)](_0xec1f60,{'caption':_0x270e4c,'gifPlayback':!![]},_0x2e0054(0x24b)),await fs[_0x2e0054(0x19a)]['unlink'](_0x422ec6);}catch(_0x2ebd0d){return console[_0x2e0054(0x1fa)](_0x2ebd0d),_0x45e77f[_0x2e0054(0x1d6)]('_*error\x20while\x20searching\x20anime*_\x20❌');}function _0x5da22a(_0x45b2a8){const _0x528768=_0x2e0054,_0x2ccdd6=Math[_0x528768(0x264)](_0x45b2a8/0x3c),_0x40a1ed=Math['floor'](_0x45b2a8%0x3c);return _0x2ccdd6[_0x528768(0x1f1)]()['padStart'](0x2,'0')+':'+_0x40a1ed[_0x528768(0x1f1)]()[_0x528768(0x1ac)](0x2,'0');}}),kord({'cmd':a0_0x490849(0x17c),'desc':a0_0x490849(0x23e),'fromMe':wtype,'type':a0_0x490849(0x21d),'react':'📝'},async(_0x4b85cf,_0x179ab1)=>{const _0x4aba74=a0_0x490849,_0x360376=path[_0x4aba74(0x184)](__dirname,_0x4aba74(0x1a7));let _0x31e1a1={};try{fs[_0x4aba74(0x253)](_0x360376)&&(_0x31e1a1=JSON[_0x4aba74(0x256)](fs['readFileSync'](_0x360376)));if(!_0x31e1a1[_0x4b85cf[_0x4aba74(0x1bf)]])_0x31e1a1[_0x4b85cf[_0x4aba74(0x1bf)]]=[];if(!_0x179ab1){if(_0x31e1a1[_0x4b85cf[_0x4aba74(0x1bf)]][_0x4aba74(0x262)]===0x0)return _0x4b85cf['send'](_0x4aba74(0x188));let _0x487961=_0x4aba74(0x1bb);return _0x31e1a1[_0x4b85cf[_0x4aba74(0x1bf)]][_0x4aba74(0x238)]((_0x1dc244,_0x48ff5f)=>{const _0x4fbd5b=_0x4aba74;_0x487961+=_0x48ff5f+0x1+_0x4fbd5b(0x1a9)+_0x1dc244[_0x4fbd5b(0x235)]+'*\x0a',_0x487961+=_0x4fbd5b(0x1f6)+_0x1dc244['episode']+'\x0a';}),_0x4b85cf[_0x4aba74(0x1d6)](_0x487961);}if(_0x179ab1[_0x4aba74(0x201)]()===_0x4aba74(0x1ad))return _0x31e1a1[_0x4b85cf[_0x4aba74(0x1bf)]]=[],fs[_0x4aba74(0x212)](_0x360376,JSON['stringify'](_0x31e1a1,null,0x2)),_0x4b85cf['send'](_0x4aba74(0x23a));const _0x52b177=_0x179ab1[_0x4aba74(0x1e1)]('|')[_0x4aba74(0x1da)](_0x13b6b3=>_0x13b6b3[_0x4aba74(0x220)]());if(_0x52b177[_0x4aba74(0x262)]<0x2)return _0x4b85cf['send'](_0x4aba74(0x21b));const _0x54e033=_0x52b177[0x0],_0x318276=_0x52b177[0x1],_0x1ea2a0=_0x31e1a1[_0x4b85cf[_0x4aba74(0x1bf)]][_0x4aba74(0x1e4)](_0x55d6f2=>_0x55d6f2['title'][_0x4aba74(0x201)]()===_0x54e033[_0x4aba74(0x201)]());return _0x1ea2a0!==-0x1?(_0x31e1a1[_0x4b85cf[_0x4aba74(0x1bf)]][_0x1ea2a0][_0x4aba74(0x1ff)]=_0x318276,fs[_0x4aba74(0x212)](_0x360376,JSON[_0x4aba74(0x1a5)](_0x31e1a1,null,0x2)),_0x4b85cf[_0x4aba74(0x1d6)](_0x4aba74(0x1d4)+_0x54e033+_0x4aba74(0x1ee)+_0x318276+_0x4aba74(0x1b4))):(_0x31e1a1[_0x4b85cf[_0x4aba74(0x1bf)]][_0x4aba74(0x21c)]({'title':_0x54e033,'episode':_0x318276}),fs[_0x4aba74(0x212)](_0x360376,JSON[_0x4aba74(0x1a5)](_0x31e1a1,null,0x2)),_0x4b85cf['send']('_*added\x20'+_0x54e033+'\x20(episode\x20'+_0x318276+_0x4aba74(0x18a)));}catch(_0xdf1ea){return console[_0x4aba74(0x1fa)](_0xdf1ea),_0x4b85cf[_0x4aba74(0x1d6)](_0x4aba74(0x1b7));}}),kord({'cmd':a0_0x490849(0x1f5),'desc':'sends\x20random\x20anime\x20gif\x20based\x20on\x20category','fromMe':wtype,'type':a0_0x490849(0x21d),'react':'🎬'},async(_0x65596b,_0xea849c)=>{const _0x284ca3=a0_0x490849;_0x65596b[_0x284ca3(0x18d)]('⏳');try{const _0x246ac0=[_0x284ca3(0x24a),_0x284ca3(0x23d),_0x284ca3(0x17a),_0x284ca3(0x18f),_0x284ca3(0x263),_0x284ca3(0x228),_0x284ca3(0x260),_0x284ca3(0x1b2)];let _0x2690fe=_0xea849c[_0x284ca3(0x201)]();if(!_0xea849c||!_0x246ac0[_0x284ca3(0x1eb)](_0x2690fe))_0x2690fe=_0x246ac0[Math[_0x284ca3(0x264)](Math[_0x284ca3(0x268)]()*_0x246ac0[_0x284ca3(0x262)])];const _0x39760a=await fetch(_0x284ca3(0x182)+_0x2690fe),_0x40514b=await _0x39760a[_0x284ca3(0x1d8)]();if(!_0x40514b[_0x284ca3(0x1e9)]||_0x40514b[_0x284ca3(0x1e9)][_0x284ca3(0x262)]<0x1)return _0x65596b[_0x284ca3(0x1d6)]('_*no\x20gif\x20found*_\x20😔');return _0x65596b[_0x284ca3(0x1d6)](_0x40514b['results'][0x0][_0x284ca3(0x1de)],{'caption':'>\x20'+_0x2690fe+_0x284ca3(0x1b8),'gifPlayback':!![]},_0x284ca3(0x24b));}catch(_0xd527e5){return console[_0x284ca3(0x189)](_0xd527e5),_0x65596b[_0x284ca3(0x1d6)](_0x284ca3(0x187));}}),kord({'cmd':a0_0x490849(0x23b),'desc':a0_0x490849(0x246),'fromMe':wtype,'type':a0_0x490849(0x21d),'react':a0_0x490849(0x1e8)},async(_0x17d85b,_0x49f7fd)=>{const _0x1222a5=a0_0x490849;if(!_0x49f7fd)return _0x17d85b[_0x1222a5(0x1d6)](_0x1222a5(0x218));_0x17d85b[_0x1222a5(0x18d)]('🔍');try{const _0x34c23d=_0x49f7fd[_0x1222a5(0x1e1)]('\x20');if(_0x34c23d[_0x1222a5(0x262)]<0x2)return _0x17d85b[_0x1222a5(0x1d6)](_0x1222a5(0x19e));const _0x979c85=_0x34c23d[0x0],_0x5bd551=_0x34c23d[0x1]['toLowerCase'](),_0x2f3e94=[_0x1222a5(0x197),'spring','summer','fall'];if(!_0x2f3e94[_0x1222a5(0x1eb)](_0x5bd551))return _0x17d85b[_0x1222a5(0x1d6)](_0x1222a5(0x22c));if(isNaN(_0x979c85)||_0x979c85<0x7c6||_0x979c85>0x7ee)return _0x17d85b[_0x1222a5(0x1d6)](_0x1222a5(0x1a2));const _0x5c6db5=await fetch(_0x1222a5(0x1b0)+_0x979c85+'/'+_0x5bd551+_0x1222a5(0x22d)),_0x5b7db2=await _0x5c6db5['json']();if(!_0x5b7db2[_0x1222a5(0x250)]||_0x5b7db2['data'][_0x1222a5(0x262)]<0x1)return _0x17d85b['send'](_0x1222a5(0x219)+_0x5bd551+'\x20'+_0x979c85+'*_');let _0xeb7338=_0x1222a5(0x191)+_0x5bd551[_0x1222a5(0x19f)]()+'\x20'+_0x979c85+'*\x20📺\x0a\x0a';for(let _0x2e79a9=0x0;_0x2e79a9<_0x5b7db2[_0x1222a5(0x250)][_0x1222a5(0x262)];_0x2e79a9++){const _0x4d81bc=_0x5b7db2[_0x1222a5(0x250)][_0x2e79a9];_0xeb7338+=_0x2e79a9+0x1+'.\x20*'+_0x4d81bc['title']+'*\x0a',_0xeb7338+=_0x1222a5(0x193)+_0x4d81bc[_0x1222a5(0x192)]+'\x20|\x20Score:\x20'+(_0x4d81bc[_0x1222a5(0x237)]||_0x1222a5(0x20c))+'\x0a';if(_0x2e79a9<0x9)_0xeb7338+='\x0a';}return _0x17d85b[_0x1222a5(0x1d6)](_0xeb7338);}catch(_0x215a55){return console['error'](_0x215a55),_0x17d85b[_0x1222a5(0x1d6)]('_*error\x20fetching\x20season\x20data*_\x20❌');}}),kord({'cmd':a0_0x490849(0x17f),'desc':'get\x20anime\x20recommendations','fromMe':wtype,'type':a0_0x490849(0x21d),'react':'🎯'},async(_0xa7f095,_0x5236cc)=>{const _0x1a36db=a0_0x490849;_0xa7f095[_0x1a36db(0x18d)]('⏳');try{let _0x386020='https://api.jikan.moe/v4/recommendations/anime',_0x59ee02=0x5;if(_0x5236cc){const _0x4a616b=await fetch(_0x1a36db(0x1c7)+encodeURIComponent(_0x5236cc)+_0x1a36db(0x1c4)),_0x13b4bb=await _0x4a616b['json']();_0x13b4bb['data']&&_0x13b4bb[_0x1a36db(0x250)][_0x1a36db(0x262)]>0x0&&(_0x386020=_0x1a36db(0x266)+_0x13b4bb[_0x1a36db(0x250)][0x0][_0x1a36db(0x225)]+_0x1a36db(0x1e2),_0x59ee02=0x5);}const _0x573f25=await fetch(_0x386020),_0x23a4d5=await _0x573f25[_0x1a36db(0x1d8)]();if(!_0x23a4d5['data']||_0x23a4d5['data']['length']<0x1)return _0xa7f095['send'](_0x1a36db(0x214));let _0x4dc9e5=_0x5236cc?_0x1a36db(0x18c)+_0x5236cc[_0x1a36db(0x19f)]()+_0x1a36db(0x1f3):_0x1a36db(0x1cd);for(let _0x598537=0x0;_0x598537<Math['min'](_0x23a4d5[_0x1a36db(0x250)]['length'],_0x59ee02);_0x598537++){const _0x43c5ce=_0x5236cc?_0x23a4d5[_0x1a36db(0x250)][_0x598537]['entry']:_0x23a4d5['data'][_0x598537][_0x1a36db(0x1db)][0x0];_0x4dc9e5+=_0x598537+0x1+_0x1a36db(0x1a9)+_0x43c5ce[_0x1a36db(0x235)]+'*\x0a';_0x5236cc&&(_0x4dc9e5+=_0x1a36db(0x207)+_0x23a4d5[_0x1a36db(0x250)][_0x598537]['votes']+'\x0a');if(_0x598537<Math[_0x1a36db(0x1f4)](_0x23a4d5[_0x1a36db(0x250)][_0x1a36db(0x262)],_0x59ee02)-0x1)_0x4dc9e5+='\x0a';}return _0xa7f095[_0x1a36db(0x1d6)](_0x4dc9e5);}catch(_0x42033f){return console[_0x1a36db(0x1fa)](_0x42033f),_0xa7f095[_0x1a36db(0x1d6)](_0x1a36db(0x1a8));}}),kord({'cmd':'airing|nextep','desc':a0_0x490849(0x1d9),'fromMe':wtype,'type':a0_0x490849(0x21d),'react':'📅'},async(_0x2a3457,_0x46875f)=>{const _0x1acf02=a0_0x490849;if(!_0x46875f)return _0x2a3457[_0x1acf02(0x1d6)](_0x1acf02(0x24f));_0x2a3457['react']('🕒');try{const _0xe6f8e2=await fetch(_0x1acf02(0x1c7)+encodeURIComponent(_0x46875f)+'&status=airing&limit=1'),_0x4ba2a8=await _0xe6f8e2[_0x1acf02(0x1d8)]();if(!_0x4ba2a8[_0x1acf02(0x250)]||_0x4ba2a8[_0x1acf02(0x250)]['length']<0x1)return _0x2a3457[_0x1acf02(0x1d6)]('_*couldn\x27t\x20find\x20airing\x20info\x20for\x20'+_0x46875f+'*_');const _0x37bf88=_0x4ba2a8['data'][0x0];if(_0x37bf88[_0x1acf02(0x1fe)]!==_0x1acf02(0x223))return _0x2a3457['send']('_*'+_0x37bf88[_0x1acf02(0x235)]+_0x1acf02(0x1ca));const _0xd3f081=await fetch(_0x1acf02(0x266)+_0x37bf88['mal_id']+_0x1acf02(0x25d)),_0x8a193e=await _0xd3f081['json']();if(!_0x8a193e['data']||Object[_0x1acf02(0x20f)](_0x8a193e[_0x1acf02(0x250)])[_0x1acf02(0x262)]===0x0)return _0x2a3457[_0x1acf02(0x1d6)](_0x1acf02(0x1df)+_0x37bf88[_0x1acf02(0x235)]+'*_');const _0x25d028=new Date();let _0x6fba1=null,_0x20ce63=null;for(const _0x2cb64e in _0x8a193e[_0x1acf02(0x250)]){if(_0x8a193e['data'][_0x2cb64e]?.[_0x1acf02(0x262)]>0x0){const _0x374aa0=new Date(_0x8a193e[_0x1acf02(0x250)][_0x2cb64e][0x0]['aired']);_0x374aa0>_0x25d028&&((!_0x20ce63||_0x374aa0<_0x20ce63)&&(_0x20ce63=_0x374aa0,_0x6fba1=_0x8a193e['data'][_0x2cb64e][0x0]));}}if(!_0x6fba1)return _0x2a3457[_0x1acf02(0x1d6)](_0x1acf02(0x20e)+_0x37bf88[_0x1acf02(0x235)]+'*_');const _0x9ce140=_0x589a73(_0x25d028,_0x20ce63),_0x44de51=_0x1acf02(0x1bd)+_0x37bf88['title']+_0x1acf02(0x234)+(_0x1acf02(0x1af)+_0x6fba1['episode']+_0x1acf02(0x17b)+_0x9ce140+'\x0a')+(_0x1acf02(0x249)+_0x20ce63['toDateString']()+'\x0a')+(_0x1acf02(0x18b)+_0x20ce63[_0x1acf02(0x221)]()[_0x1acf02(0x1e1)]('\x20')[0x0]);return _0x2a3457[_0x1acf02(0x1d6)](_0x44de51);}catch(_0x66ee1e){return console[_0x1acf02(0x1fa)](_0x66ee1e),_0x2a3457[_0x1acf02(0x1d6)](_0x1acf02(0x19d));}function _0x589a73(_0x5ef443,_0x11038a){const _0x2fd124=_0x1acf02,_0x40d80d=_0x11038a-_0x5ef443,_0x21e773=Math[_0x2fd124(0x264)](_0x40d80d/(0x3e8*0x3c*0x3c*0x18)),_0x27d291=Math[_0x2fd124(0x264)](_0x40d80d%(0x3e8*0x3c*0x3c*0x18)/(0x3e8*0x3c*0x3c)),_0xdbad63=Math[_0x2fd124(0x264)](_0x40d80d%(0x3e8*0x3c*0x3c)/(0x3e8*0x3c));let _0x48747c='';if(_0x21e773>0x0)_0x48747c+=_0x21e773+_0x2fd124(0x232)+(_0x21e773>0x1?'s':'')+'\x20';if(_0x27d291>0x0)_0x48747c+=_0x27d291+_0x2fd124(0x1a6)+(_0x27d291>0x1?'s':'')+'\x20';return _0x48747c+=_0xdbad63+_0x2fd124(0x1dd)+(_0xdbad63>0x1?'s':''),_0x48747c;}}),kord({'cmd':a0_0x490849(0x1b2),'desc':'send\x20waifu\x20slap\x20animation','fromMe':wtype,'type':a0_0x490849(0x240)},async(_0x30809a,_0xf85482)=>{const _0x340dc8=a0_0x490849;let _0x39bca6=_0x30809a[_0x340dc8(0x22f)][0x0]||_0x30809a[_0x340dc8(0x1fc)]?.[_0x340dc8(0x1bf)],_0x593651=await fetchWaifu('slap');if(!_0x39bca6){if(_0x593651[_0x340dc8(0x255)])return await _0x30809a[_0x340dc8(0x1d6)](_0x593651[_0x340dc8(0x195)],{'gifPlayback':!![]},_0x340dc8(0x24b));return await _0x30809a[_0x340dc8(0x1d6)](_0x593651['buff'],{},_0x340dc8(0x1e7));}let _0x359374='@'+_0x30809a[_0x340dc8(0x1bf)][_0x340dc8(0x1e1)]('@')[0x0]+_0x340dc8(0x265)+_0x39bca6['split']('@')[0x0];if(_0x593651[_0x340dc8(0x255)])return await _0x30809a['send'](_0x593651['buff'],{'caption':_0x359374,'gifPlayback':!![],'mentions':[_0x30809a['sender'],_0x39bca6]},_0x340dc8(0x24b));return await _0x30809a[_0x340dc8(0x1d6)](_0x593651[_0x340dc8(0x195)],{'caption':_0x359374,'mentions':[_0x30809a[_0x340dc8(0x1bf)],_0x39bca6]},_0x340dc8(0x1e7));}),kord({'cmd':a0_0x490849(0x26a),'desc':a0_0x490849(0x198),'fromMe':wtype,'type':'fun'},async(_0x391dae,_0x589e25)=>{const _0x385376=a0_0x490849;let _0x2a84e0=_0x391dae[_0x385376(0x22f)][0x0]||_0x391dae[_0x385376(0x1fc)]?.[_0x385376(0x1bf)],_0x1c5307=await fetchWaifu('cry');if(!_0x2a84e0){if(_0x1c5307[_0x385376(0x255)])return await _0x391dae[_0x385376(0x1d6)](_0x1c5307['buff'],{'gifPlayback':!![]},_0x385376(0x24b));return await _0x391dae[_0x385376(0x1d6)](_0x1c5307['buff'],{},_0x385376(0x1e7));}let _0x3e03c5='@'+_0x391dae[_0x385376(0x1bf)][_0x385376(0x1e1)]('@')[0x0]+'\x20made\x20@'+_0x2a84e0[_0x385376(0x1e1)]('@')[0x0]+_0x385376(0x210);if(_0x1c5307[_0x385376(0x255)])return await _0x391dae['send'](_0x1c5307['buff'],{'caption':_0x3e03c5,'gifPlayback':!![],'mentions':[_0x391dae[_0x385376(0x1bf)],_0x2a84e0]},_0x385376(0x24b));return await _0x391dae['send'](_0x1c5307[_0x385376(0x195)],{'caption':_0x3e03c5,'mentions':[_0x391dae[_0x385376(0x1bf)],_0x2a84e0]},_0x385376(0x1e7));}),kord({'cmd':a0_0x490849(0x263),'desc':a0_0x490849(0x226),'fromMe':wtype,'type':a0_0x490849(0x240)},async(_0x59aa96,_0x58ee1f)=>{const _0xdd9196=a0_0x490849;let _0x292bc0=_0x59aa96[_0xdd9196(0x22f)][0x0]||_0x59aa96[_0xdd9196(0x1fc)]?.[_0xdd9196(0x1bf)],_0x4e2fb1=await fetchWaifu(_0xdd9196(0x263));if(!_0x292bc0){if(_0x4e2fb1[_0xdd9196(0x255)])return await _0x59aa96[_0xdd9196(0x1d6)](_0x4e2fb1[_0xdd9196(0x195)],{'gifPlayback':!![]},_0xdd9196(0x24b));return await _0x59aa96[_0xdd9196(0x1d6)](_0x4e2fb1['buff'],{},_0xdd9196(0x1e7));}let _0x1b6cee='@'+_0x59aa96[_0xdd9196(0x1bf)][_0xdd9196(0x1e1)]('@')[0x0]+_0xdd9196(0x242)+_0x292bc0[_0xdd9196(0x1e1)]('@')[0x0];if(_0x4e2fb1[_0xdd9196(0x255)])return await _0x59aa96[_0xdd9196(0x1d6)](_0x4e2fb1[_0xdd9196(0x195)],{'caption':_0x1b6cee,'gifPlayback':!![],'mentions':[_0x59aa96[_0xdd9196(0x1bf)],_0x292bc0]},_0xdd9196(0x24b));return await _0x59aa96['send'](_0x4e2fb1['buff'],{'caption':_0x1b6cee,'mentions':[_0x59aa96[_0xdd9196(0x1bf)],_0x292bc0]},_0xdd9196(0x1e7));}),kord({'cmd':a0_0x490849(0x228),'desc':a0_0x490849(0x1b3),'fromMe':wtype,'type':a0_0x490849(0x240)},async(_0x22e798,_0x7e17a6)=>{const _0x377ac0=a0_0x490849;let _0x522d27=_0x22e798[_0x377ac0(0x22f)][0x0]||_0x22e798[_0x377ac0(0x1fc)]?.[_0x377ac0(0x1bf)],_0x33de0d=await fetchWaifu('kiss');if(!_0x522d27){if(_0x33de0d[_0x377ac0(0x255)])return await _0x22e798[_0x377ac0(0x1d6)](_0x33de0d[_0x377ac0(0x195)],{'gifPlayback':!![]},_0x377ac0(0x24b));return await _0x22e798['send'](_0x33de0d[_0x377ac0(0x195)],{},_0x377ac0(0x1e7));}let _0xdee517='@'+_0x22e798['sender'][_0x377ac0(0x1e1)]('@')[0x0]+_0x377ac0(0x172)+_0x522d27['split']('@')[0x0];if(_0x33de0d[_0x377ac0(0x255)])return await _0x22e798['send'](_0x33de0d[_0x377ac0(0x195)],{'caption':_0xdee517,'gifPlayback':!![],'mentions':[_0x22e798[_0x377ac0(0x1bf)],_0x522d27]},_0x377ac0(0x24b));return await _0x22e798[_0x377ac0(0x1d6)](_0x33de0d['buff'],{'caption':_0xdee517,'mentions':[_0x22e798[_0x377ac0(0x1bf)],_0x522d27]},_0x377ac0(0x1e7));}),kord({'cmd':a0_0x490849(0x1aa),'desc':a0_0x490849(0x22e),'fromMe':wtype,'type':a0_0x490849(0x240)},async(_0x259db0,_0x14226f)=>{const _0x1dd4e2=a0_0x490849;let _0x49a215=_0x259db0[_0x1dd4e2(0x22f)][0x0]||_0x259db0[_0x1dd4e2(0x1fc)]?.[_0x1dd4e2(0x1bf)],_0x34fbad=await fetchWaifu(_0x1dd4e2(0x1aa));if(!_0x49a215){if(_0x34fbad['gif'])return await _0x259db0[_0x1dd4e2(0x1d6)](_0x34fbad[_0x1dd4e2(0x195)],{'gifPlayback':!![]},'video');return await _0x259db0['send'](_0x34fbad[_0x1dd4e2(0x195)],{},_0x1dd4e2(0x1e7));}let _0x364557='@'+_0x259db0['sender'][_0x1dd4e2(0x1e1)]('@')[0x0]+_0x1dd4e2(0x227)+_0x49a215['split']('@')[0x0];if(_0x34fbad[_0x1dd4e2(0x255)])return await _0x259db0[_0x1dd4e2(0x1d6)](_0x34fbad[_0x1dd4e2(0x195)],{'caption':_0x364557,'gifPlayback':!![],'mentions':[_0x259db0[_0x1dd4e2(0x1bf)],_0x49a215]},_0x1dd4e2(0x24b));return await _0x259db0['send'](_0x34fbad[_0x1dd4e2(0x195)],{'caption':_0x364557,'mentions':[_0x259db0[_0x1dd4e2(0x1bf)],_0x49a215]},_0x1dd4e2(0x1e7));}),kord({'cmd':a0_0x490849(0x1e3),'desc':a0_0x490849(0x26b),'fromMe':wtype,'type':a0_0x490849(0x240)},async(_0x521746,_0x2e55d7)=>{const _0x2f2608=a0_0x490849;let _0x197aa7=_0x521746[_0x2f2608(0x22f)][0x0]||_0x521746[_0x2f2608(0x1fc)]?.[_0x2f2608(0x1bf)],_0x10a431=await fetchWaifu(_0x2f2608(0x1e3));if(!_0x197aa7){if(_0x10a431[_0x2f2608(0x255)])return await _0x521746['send'](_0x10a431['buff'],{'gifPlayback':!![]},_0x2f2608(0x24b));return await _0x521746[_0x2f2608(0x1d6)](_0x10a431[_0x2f2608(0x195)],{},_0x2f2608(0x1e7));}let _0x111e09='@'+_0x521746[_0x2f2608(0x1bf)]['split']('@')[0x0]+_0x2f2608(0x1b9)+_0x197aa7[_0x2f2608(0x1e1)]('@')[0x0];if(_0x10a431[_0x2f2608(0x255)])return await _0x521746[_0x2f2608(0x1d6)](_0x10a431[_0x2f2608(0x195)],{'caption':_0x111e09,'gifPlayback':!![],'mentions':[_0x521746[_0x2f2608(0x1bf)],_0x197aa7]},_0x2f2608(0x24b));return await _0x521746['send'](_0x10a431['buff'],{'caption':_0x111e09,'mentions':[_0x521746[_0x2f2608(0x1bf)],_0x197aa7]},_0x2f2608(0x1e7));}),kord({'cmd':a0_0x490849(0x1c0),'desc':a0_0x490849(0x177),'fromMe':wtype,'type':a0_0x490849(0x240)},async(_0x45eb7f,_0x4da506)=>{const _0x305472=a0_0x490849;let _0x41c06c=_0x45eb7f[_0x305472(0x22f)][0x0]||_0x45eb7f['quoted']?.[_0x305472(0x1bf)],_0x22342f=await fetchWaifu('blush');if(!_0x41c06c){if(_0x22342f[_0x305472(0x255)])return await _0x45eb7f[_0x305472(0x1d6)](_0x22342f[_0x305472(0x195)],{'gifPlayback':!![]},_0x305472(0x24b));return await _0x45eb7f[_0x305472(0x1d6)](_0x22342f['buff'],{},_0x305472(0x1e7));}let _0x1b0d0c='@'+_0x45eb7f[_0x305472(0x1bf)][_0x305472(0x1e1)]('@')[0x0]+_0x305472(0x1d3)+_0x41c06c[_0x305472(0x1e1)]('@')[0x0]+_0x305472(0x1d1);if(_0x22342f['gif'])return await _0x45eb7f[_0x305472(0x1d6)](_0x22342f[_0x305472(0x195)],{'caption':_0x1b0d0c,'gifPlayback':!![],'mentions':[_0x45eb7f[_0x305472(0x1bf)],_0x41c06c]},'video');return await _0x45eb7f[_0x305472(0x1d6)](_0x22342f[_0x305472(0x195)],{'caption':_0x1b0d0c,'mentions':[_0x45eb7f[_0x305472(0x1bf)],_0x41c06c]},_0x305472(0x1e7));}),kord({'cmd':'kill','desc':a0_0x490849(0x1ea),'fromMe':wtype,'type':a0_0x490849(0x240)},async(_0x1b48dc,_0x25f3fc)=>{const _0x3b2ce3=a0_0x490849;let _0x12604a=_0x1b48dc[_0x3b2ce3(0x22f)][0x0]||_0x1b48dc[_0x3b2ce3(0x1fc)]?.[_0x3b2ce3(0x1bf)],_0x1bb0ab=await fetchWaifu('kill');if(!_0x12604a){if(_0x1bb0ab[_0x3b2ce3(0x255)])return await _0x1b48dc['send'](_0x1bb0ab[_0x3b2ce3(0x195)],{'gifPlayback':!![]},_0x3b2ce3(0x24b));return await _0x1b48dc[_0x3b2ce3(0x1d6)](_0x1bb0ab[_0x3b2ce3(0x195)],{},'image');}let _0x35ecd0='@'+_0x1b48dc[_0x3b2ce3(0x1bf)][_0x3b2ce3(0x1e1)]('@')[0x0]+_0x3b2ce3(0x20b)+_0x12604a['split']('@')[0x0];if(_0x1bb0ab[_0x3b2ce3(0x255)])return await _0x1b48dc[_0x3b2ce3(0x1d6)](_0x1bb0ab['buff'],{'caption':_0x35ecd0,'gifPlayback':!![],'mentions':[_0x1b48dc[_0x3b2ce3(0x1bf)],_0x12604a]},_0x3b2ce3(0x24b));return await _0x1b48dc['send'](_0x1bb0ab[_0x3b2ce3(0x195)],{'caption':_0x35ecd0,'mentions':[_0x1b48dc['sender'],_0x12604a]},_0x3b2ce3(0x1e7));}),kord({'cmd':'kik','desc':a0_0x490849(0x230),'fromMe':wtype,'type':a0_0x490849(0x240)},async(_0x3bcfe3,_0x205fb1)=>{const _0x45ac3f=a0_0x490849;let _0x40359c=_0x3bcfe3['mentionedJid'][0x0]||_0x3bcfe3['quoted']?.[_0x45ac3f(0x1bf)],_0x3aa0e5=await fetchWaifu('kick');if(!_0x40359c){if(_0x3aa0e5[_0x45ac3f(0x255)])return await _0x3bcfe3['send'](_0x3aa0e5[_0x45ac3f(0x195)],{'gifPlayback':!![]},_0x45ac3f(0x24b));return await _0x3bcfe3[_0x45ac3f(0x1d6)](_0x3aa0e5[_0x45ac3f(0x195)],{},_0x45ac3f(0x1e7));}let _0x4778b4='@'+_0x3bcfe3[_0x45ac3f(0x1bf)][_0x45ac3f(0x1e1)]('@')[0x0]+_0x45ac3f(0x1c3)+_0x40359c[_0x45ac3f(0x1e1)]('@')[0x0];if(_0x3aa0e5['gif'])return await _0x3bcfe3[_0x45ac3f(0x1d6)](_0x3aa0e5[_0x45ac3f(0x195)],{'caption':_0x4778b4,'gifPlayback':!![],'mentions':[_0x3bcfe3['sender'],_0x40359c]},_0x45ac3f(0x24b));return await _0x3bcfe3[_0x45ac3f(0x1d6)](_0x3aa0e5[_0x45ac3f(0x195)],{'caption':_0x4778b4,'mentions':[_0x3bcfe3[_0x45ac3f(0x1bf)],_0x40359c]},_0x45ac3f(0x1e7));}),kord({'cmd':'bite','desc':a0_0x490849(0x196),'fromMe':wtype,'type':a0_0x490849(0x240)},async(_0x485e6f,_0x10f92b)=>{const _0x1ccd23=a0_0x490849;let _0xb2087c=_0x485e6f[_0x1ccd23(0x22f)][0x0]||_0x485e6f[_0x1ccd23(0x1fc)]?.[_0x1ccd23(0x1bf)],_0x13bb7d=await fetchWaifu('bite');if(!_0xb2087c){if(_0x13bb7d[_0x1ccd23(0x255)])return await _0x485e6f[_0x1ccd23(0x1d6)](_0x13bb7d[_0x1ccd23(0x195)],{'gifPlayback':!![]},_0x1ccd23(0x24b));return await _0x485e6f[_0x1ccd23(0x1d6)](_0x13bb7d['buff'],{},_0x1ccd23(0x1e7));}let _0xd65829='@'+_0x485e6f[_0x1ccd23(0x1bf)][_0x1ccd23(0x1e1)]('@')[0x0]+'\x20bit\x20@'+_0xb2087c[_0x1ccd23(0x1e1)]('@')[0x0];if(_0x13bb7d[_0x1ccd23(0x255)])return await _0x485e6f[_0x1ccd23(0x1d6)](_0x13bb7d[_0x1ccd23(0x195)],{'caption':_0xd65829,'gifPlayback':!![],'mentions':[_0x485e6f['sender'],_0xb2087c]},_0x1ccd23(0x24b));return await _0x485e6f[_0x1ccd23(0x1d6)](_0x13bb7d[_0x1ccd23(0x195)],{'caption':_0xd65829,'mentions':[_0x485e6f[_0x1ccd23(0x1bf)],_0xb2087c]},_0x1ccd23(0x1e7));}),kord({'cmd':'high-five','desc':a0_0x490849(0x1e0),'fromMe':wtype,'type':a0_0x490849(0x240)},async(_0x1a3cad,_0x2de469)=>{const _0x1c1f49=a0_0x490849;let _0x4c9843=_0x1a3cad['mentionedJid'][0x0]||_0x1a3cad[_0x1c1f49(0x1fc)]?.[_0x1c1f49(0x1bf)],_0x504088=await fetchWaifu('high-five');if(!_0x4c9843){if(_0x504088[_0x1c1f49(0x255)])return await _0x1a3cad['send'](_0x504088['buff'],{'gifPlayback':!![]},_0x1c1f49(0x24b));return await _0x1a3cad['send'](_0x504088[_0x1c1f49(0x195)],{},'image');}let _0x185032='@'+_0x1a3cad['sender'][_0x1c1f49(0x1e1)]('@')[0x0]+'\x20high-fived\x20@'+_0x4c9843[_0x1c1f49(0x1e1)]('@')[0x0];if(_0x504088[_0x1c1f49(0x255)])return await _0x1a3cad[_0x1c1f49(0x1d6)](_0x504088[_0x1c1f49(0x195)],{'caption':_0x185032,'gifPlayback':!![],'mentions':[_0x1a3cad[_0x1c1f49(0x1bf)],_0x4c9843]},'video');return await _0x1a3cad[_0x1c1f49(0x1d6)](_0x504088[_0x1c1f49(0x195)],{'caption':_0x185032,'mentions':[_0x1a3cad[_0x1c1f49(0x1bf)],_0x4c9843]},_0x1c1f49(0x1e7));}),kord({'cmd':'handhold','desc':a0_0x490849(0x173),'fromMe':wtype,'type':'fun'},async(_0x4b079b,_0x4b628f)=>{const _0x21b62f=a0_0x490849;let _0x57f176=_0x4b079b[_0x21b62f(0x22f)][0x0]||_0x4b079b[_0x21b62f(0x1fc)]?.[_0x21b62f(0x1bf)],_0x1c3fa3=await fetchWaifu('handhold');if(!_0x57f176){if(_0x1c3fa3[_0x21b62f(0x255)])return await _0x4b079b[_0x21b62f(0x1d6)](_0x1c3fa3[_0x21b62f(0x195)],{'gifPlayback':!![]},_0x21b62f(0x24b));return await _0x4b079b[_0x21b62f(0x1d6)](_0x1c3fa3['buff'],{},_0x21b62f(0x1e7));}let _0x5e7e8e='@'+_0x4b079b[_0x21b62f(0x1bf)][_0x21b62f(0x1e1)]('@')[0x0]+_0x21b62f(0x215)+_0x57f176[_0x21b62f(0x1e1)]('@')[0x0];if(_0x1c3fa3[_0x21b62f(0x255)])return await _0x4b079b['send'](_0x1c3fa3[_0x21b62f(0x195)],{'caption':_0x5e7e8e,'gifPlayback':!![],'mentions':[_0x4b079b[_0x21b62f(0x1bf)],_0x57f176]},_0x21b62f(0x24b));return await _0x4b079b[_0x21b62f(0x1d6)](_0x1c3fa3[_0x21b62f(0x195)],{'caption':_0x5e7e8e,'mentions':[_0x4b079b['sender'],_0x57f176]},_0x21b62f(0x1e7));}),kord({'cmd':a0_0x490849(0x18f),'desc':a0_0x490849(0x1ce),'fromMe':wtype,'type':a0_0x490849(0x240)},async(_0x185c8c,_0x3977a4)=>{const _0x3d1b9f=a0_0x490849;let _0x340154=_0x185c8c[_0x3d1b9f(0x22f)][0x0]||_0x185c8c[_0x3d1b9f(0x1fc)]?.[_0x3d1b9f(0x1bf)],_0xa2ea2e=await fetchWaifu(_0x3d1b9f(0x18f));if(!_0x340154){if(_0xa2ea2e[_0x3d1b9f(0x255)])return await _0x185c8c[_0x3d1b9f(0x1d6)](_0xa2ea2e['buff'],{'gifPlayback':!![]},_0x3d1b9f(0x24b));return await _0x185c8c[_0x3d1b9f(0x1d6)](_0xa2ea2e[_0x3d1b9f(0x195)],{},_0x3d1b9f(0x1e7));}let _0x5ade4d='@'+_0x185c8c[_0x3d1b9f(0x1bf)][_0x3d1b9f(0x1e1)]('@')[0x0]+_0x3d1b9f(0x24c)+_0x340154['split']('@')[0x0];if(_0xa2ea2e[_0x3d1b9f(0x255)])return await _0x185c8c[_0x3d1b9f(0x1d6)](_0xa2ea2e[_0x3d1b9f(0x195)],{'caption':_0x5ade4d,'gifPlayback':!![],'mentions':[_0x185c8c[_0x3d1b9f(0x1bf)],_0x340154]},_0x3d1b9f(0x24b));return await _0x185c8c[_0x3d1b9f(0x1d6)](_0xa2ea2e[_0x3d1b9f(0x195)],{'caption':_0x5ade4d,'mentions':[_0x185c8c[_0x3d1b9f(0x1bf)],_0x340154]},_0x3d1b9f(0x1e7));}),kord({'cmd':a0_0x490849(0x248),'desc':a0_0x490849(0x208),'fromMe':wtype,'type':'fun'},async(_0x33a538,_0x33201d)=>{const _0x3e92dd=a0_0x490849;let _0x32419c=_0x33a538[_0x3e92dd(0x22f)][0x0]||_0x33a538[_0x3e92dd(0x1fc)]?.[_0x3e92dd(0x1bf)],_0x10225a=await fetchWaifu(_0x3e92dd(0x248));if(!_0x32419c){if(_0x10225a[_0x3e92dd(0x255)])return await _0x33a538[_0x3e92dd(0x1d6)](_0x10225a['buff'],{'gifPlayback':!![]},_0x3e92dd(0x24b));return await _0x33a538['send'](_0x10225a[_0x3e92dd(0x195)],{},_0x3e92dd(0x1e7));}let _0x224c0b='@'+_0x33a538[_0x3e92dd(0x1bf)]['split']('@')[0x0]+_0x3e92dd(0x251)+_0x32419c['split']('@')[0x0];if(_0x10225a['gif'])return await _0x33a538[_0x3e92dd(0x1d6)](_0x10225a[_0x3e92dd(0x195)],{'caption':_0x224c0b,'gifPlayback':!![],'mentions':[_0x33a538[_0x3e92dd(0x1bf)],_0x32419c]},'video');return await _0x33a538['send'](_0x10225a[_0x3e92dd(0x195)],{'caption':_0x224c0b,'mentions':[_0x33a538[_0x3e92dd(0x1bf)],_0x32419c]},'image');}),kord({'cmd':a0_0x490849(0x25f),'desc':a0_0x490849(0x19b),'fromMe':wtype,'type':a0_0x490849(0x240)},async(_0xf62f77,_0x32856c)=>{const _0x1d4683=a0_0x490849;let _0xd0e46c=_0xf62f77[_0x1d4683(0x22f)][0x0]||_0xf62f77[_0x1d4683(0x1fc)]?.[_0x1d4683(0x1bf)],_0x2118f5=await fetchWaifu('wink');if(!_0xd0e46c){if(_0x2118f5[_0x1d4683(0x255)])return await _0xf62f77[_0x1d4683(0x1d6)](_0x2118f5[_0x1d4683(0x195)],{'gifPlayback':!![]},_0x1d4683(0x24b));return await _0xf62f77['send'](_0x2118f5[_0x1d4683(0x195)],{},'image');}let _0x2bc411='@'+_0xf62f77[_0x1d4683(0x1bf)][_0x1d4683(0x1e1)]('@')[0x0]+_0x1d4683(0x24e)+_0xd0e46c['split']('@')[0x0];if(_0x2118f5[_0x1d4683(0x255)])return await _0xf62f77['send'](_0x2118f5[_0x1d4683(0x195)],{'caption':_0x2bc411,'gifPlayback':!![],'mentions':[_0xf62f77[_0x1d4683(0x1bf)],_0xd0e46c]},'video');return await _0xf62f77['send'](_0x2118f5[_0x1d4683(0x195)],{'caption':_0x2bc411,'mentions':[_0xf62f77[_0x1d4683(0x1bf)],_0xd0e46c]},_0x1d4683(0x1e7));}),kord({'cmd':a0_0x490849(0x1d7),'desc':'send\x20waifu\x20cuddle\x20animation','fromMe':wtype,'type':a0_0x490849(0x240)},async(_0x430c5f,_0x577f4e)=>{const _0x18cf0d=a0_0x490849;let _0x42dbbb=_0x430c5f[_0x18cf0d(0x22f)][0x0]||_0x430c5f[_0x18cf0d(0x1fc)]?.[_0x18cf0d(0x1bf)],_0x504166=await fetchWaifu(_0x18cf0d(0x1d7));if(!_0x42dbbb){if(_0x504166[_0x18cf0d(0x255)])return await _0x430c5f['send'](_0x504166[_0x18cf0d(0x195)],{'gifPlayback':!![]},_0x18cf0d(0x24b));return await _0x430c5f[_0x18cf0d(0x1d6)](_0x504166[_0x18cf0d(0x195)],{},_0x18cf0d(0x1e7));}let _0x41b92e='@'+_0x430c5f['sender']['split']('@')[0x0]+'\x20cuddled\x20with\x20@'+_0x42dbbb[_0x18cf0d(0x1e1)]('@')[0x0];if(_0x504166[_0x18cf0d(0x255)])return await _0x430c5f['send'](_0x504166[_0x18cf0d(0x195)],{'caption':_0x41b92e,'gifPlayback':!![],'mentions':[_0x430c5f[_0x18cf0d(0x1bf)],_0x42dbbb]},_0x18cf0d(0x24b));return await _0x430c5f[_0x18cf0d(0x1d6)](_0x504166[_0x18cf0d(0x195)],{'caption':_0x41b92e,'mentions':[_0x430c5f[_0x18cf0d(0x1bf)],_0x42dbbb]},_0x18cf0d(0x1e7));}),kord({'cmd':a0_0x490849(0x21a),'desc':a0_0x490849(0x175),'fromMe':wtype,'type':'fun'},async(_0x32006f,_0x5ada14)=>{const _0x59bc0f=a0_0x490849;let _0x4ec836=await fetchWaifu(_0x59bc0f(0x21a)),_0x263aae='Here\x27s\x20your\x20waifu!\x20(Awoo)';if(_0x4ec836[_0x59bc0f(0x255)])return await _0x32006f[_0x59bc0f(0x1d6)](_0x4ec836['buff'],{'caption':_0x263aae,'gifPlayback':!![]},_0x59bc0f(0x24b));return await _0x32006f[_0x59bc0f(0x1d6)](_0x4ec836[_0x59bc0f(0x195)],{'caption':_0x263aae},_0x59bc0f(0x1e7));}),kord({'cmd':a0_0x490849(0x1ba),'desc':a0_0x490849(0x202),'fromMe':wtype,'type':a0_0x490849(0x240)},async(_0x752b39,_0x56806)=>{const _0x555550=a0_0x490849;let _0x488965=await fetchWaifu(_0x555550(0x1ba)),_0x431d15=_0x555550(0x261);if(_0x488965[_0x555550(0x255)])return await _0x752b39['send'](_0x488965[_0x555550(0x195)],{'caption':_0x431d15,'gifPlayback':!![]},_0x555550(0x24b));return await _0x752b39[_0x555550(0x1d6)](_0x488965[_0x555550(0x195)],{'caption':_0x431d15},_0x555550(0x1e7));}),kord({'cmd':a0_0x490849(0x25b),'desc':a0_0x490849(0x231),'fromMe':wtype,'type':a0_0x490849(0x240)},async(_0x323740,_0x42a285)=>{const _0x6caa26=a0_0x490849;let _0x2c89fa=await fetchWaifu(_0x6caa26(0x25b)),_0x42c753='Here\x27s\x20your\x20waifu!\x20(Megumin)';if(_0x2c89fa[_0x6caa26(0x255)])return await _0x323740[_0x6caa26(0x1d6)](_0x2c89fa[_0x6caa26(0x195)],{'caption':_0x42c753,'gifPlayback':!![]},_0x6caa26(0x24b));return await _0x323740[_0x6caa26(0x1d6)](_0x2c89fa[_0x6caa26(0x195)],{'caption':_0x42c753},_0x6caa26(0x1e7));}),kord({'cmd':a0_0x490849(0x245),'desc':a0_0x490849(0x185),'fromMe':wtype,'type':a0_0x490849(0x240)},async(_0x355f42,_0x3ed314)=>{const _0x612958=a0_0x490849;let _0x524ed9=await fetchWaifu(_0x612958(0x245)),_0x48e4e4='Here\x27s\x20your\x20waifu!\x20(Shinobu)';if(_0x524ed9[_0x612958(0x255)])return await _0x355f42[_0x612958(0x1d6)](_0x524ed9[_0x612958(0x195)],{'caption':_0x48e4e4,'gifPlayback':!![]},'video');return await _0x355f42[_0x612958(0x1d6)](_0x524ed9[_0x612958(0x195)],{'caption':_0x48e4e4},_0x612958(0x1e7));});
+const { kord, extractUrlsFromString, fetchWaifu, getJson, prefix, wtype, ss } = require("../core")
+const fs = require("fs");
+const path = require("path");
+const fetch = require("node-fetch")
+
+kord({
+    cmd: "anime",
+    desc: "search for anime info from MyAnimeList",
+    fromMe: wtype,
+    react: "🔍",
+    type: "anime",
+}, async (m, text) => {
+    if(!text) return m.send("_*provide anime name to search!*_")
+    m.react("⏳")
+    try {
+        const res = await fetch(`https://api.jikan.moe/v4/anime?q=${encodeURIComponent(text)}&limit=1`)
+        const json = await res.json()
+        
+        if(json.data.length < 1) return m.send("_*no results found!*_")
+        const anime = json.data[0]
+        let caption = `🎬 *${anime.title}*\n`
+        caption += `🔖 *Type:* ${anime.type}\n`
+        caption += `📊 *Score:* ${anime.score}\n`
+        caption += `🎯 *Episodes:* ${anime.episodes}\n`
+        caption += `📅 *Aired:* ${anime.aired.string}\n`
+        caption += `🔞 *Rated:* ${anime.rating}\n`
+        caption += `💫 *Status:* ${anime.status}\n\n`
+        caption += `📝 *Synopsis:* ${anime.synopsis}`
+        
+        return m.send(anime.images.jpg.large_image_url, {caption}, "image")
+    } catch(err) {
+        console.error(err)
+        return m.send("_*error fetching anime info!*_")
+    }
+})
+
+kord({
+    cmd: "waifu|animegirl",
+    desc: "send random anime girl image",
+    fromMe: wtype,
+    react: "💕",
+    type: "anime"
+}, async(m, text) => {
+    m.react("⌛")
+    try {
+        const categories = ["waifu", "neko", "shinobu", "megumin", "bully", "cuddle", "cry", "hug", "kiss", "pat", "smug", "highfive"]
+        let category = text || categories[Math.floor(Math.random() * categories.length)]
+        if(!categories.includes(category)) category = "waifu"
+        
+        const res = await fetch(`https://api.waifu.pics/sfw/${category}`)
+        const json = await res.json()
+        return m.send(json.url, {caption: `> here's your ${category} waifu`}, "image")
+    } catch(e) {
+        console.log(e)
+        return m.send("_*failed to fetch waifu*_ 😔")
+    }
+})
+
+kord({
+    cmd: "manga",
+    desc: "search for manga information from MyAnimeList",
+    fromMe: wtype,
+    react: "📚",
+    type: "anime",
+}, async (m, text) => {
+    if(!text) return m.send("_*provide manga name to search!*_")
+    m.react("🔎")
+
+    try {
+        const resp = await fetch(`https://api.jikan.moe/v4/manga?q=${encodeURIComponent(text)}&limit=1`)
+        const data = await resp.json()
+
+        if(data.data.length < 1) return m.send("_*no manga found with that name!*_")
+        const manga = data.data[0]
+
+        let txt = `📕 *${manga.title}*\n`
+        txt += `🔖 *Type:* ${manga.type}\n`
+        txt += `⭐ *Score:* ${manga.score}\n`
+        txt += `📑 *Chapters:* ${manga.chapters || "Unknown"}\n`
+        txt += `📰 *Volumes:* ${manga.volumes || "Unknown"}\n`
+        txt += `📅 *Published:* ${manga.published.string}\n`
+        txt += `💫 *Status:* ${manga.status}\n\n`
+        txt += `📝 *Synopsis:* ${manga.synopsis}`
+
+        return m.send(manga.images.jpg.large_image_url, {caption: txt}, "image")
+    } catch(err) {
+        console.error(err)
+        return m.send("_*error occurred while fetching manga info*_")
+    }
+})
+
+kord({
+    cmd: "animequote",
+    desc: "get random anime quotes",
+    type: "anime",
+    fromMe: wtype,
+    react: "💭"
+}, async(m) => {
+    try {
+        const res = await fetch("https://animechan.xyz/api/random")
+        const quote = await res.json()
+
+        const msg = `💬 *Quote:* ${quote.quote}\n\n`
+                + `👤 *Character:* ${quote.character}\n`
+                + `📺 *Anime:* ${quote.anime}`
+
+        return m.send(msg)
+    } catch(e) {
+        console.log(e)
+        return m.send("_*failed to get anime quote*_ 😢")
+    }
+})
+
+kord({
+    cmd: "animenews",
+    desc: "latest anime news from MyAnimeList",
+    fromMe: wtype,
+    type: "anime",
+    react: "📰"
+}, async(m, text) => {
+    m.react("🔄")
+    try {
+        const res = await fetch("https://api.jikan.moe/v4/top/anime?filter=airing&limit=5")
+        const data = await res.json()
+        if(!data.data || data.data.length < 1) return m.send("_*no trending anime found!*_")
+
+        let msg = "🌟 *TOP TRENDING ANIME RIGHT NOW* 🌟\n\n"
+        for(const anime of data.data) {
+            msg += `📺 *${anime.title}*\n`
+            msg += `⭐ *Score:* ${anime.score}\n`
+            msg += `🔗 *Link:* ${anime.url}\n\n`
+        }
+
+        return m.send(msg)
+    } catch(err) {
+        console.log(err)
+        return m.send("_*error fetching anime news*_")
+    }
+})
+
+kord({
+    cmd: "character|animechar",
+    desc: "search for anime character info",
+    fromMe: wtype,
+    type: "anime",
+    react: "👤"
+}, async(m, text) => {
+    if(!text) return m.send("_*provide character name to search!*_")
+    m.react("🔍")
+    try {
+        const res = await fetch(`https://api.jikan.moe/v4/characters?q=${encodeURIComponent(text)}&limit=1`)
+        const json = await res.json()
+
+        if(json.data.length < 1) return m.send("_*no character found with that name!*_")
+        const char = json.data[0]
+
+        let info = `👤 *${char.name}*\n\n`
+        if(char.nicknames.length > 0) {
+            info += `✨ *Nicknames:* ${char.nicknames.join(", ")}\n\n`
+        }
+        info += `📝 *About:* ${char.about || "No information available"}`
+
+        return m.send(char.images.jpg.image_url, {caption: info}, "image")
+    } catch(e) {
+        console.error(e)
+        return m.send("_*error searching for character*_ ❌")
+    }
+})
+
+kord({
+    cmd: "animesearch|animeinfo",
+    desc: "search anime by image (reply to image)",
+    fromMe: wtype,
+    react: "🔍",
+    type: "anime"
+}, async(m) => {
+    if(!m.quoted || !m.quoted.media) return m.send("_*reply to anime image to search*_")
+    m.react("⏳")
+    try {
+        const path = await m.client.dlandsave(m.quoted)
+        const url = await m.upload(path, "temp")
+        const trace = await fetch(`https://api.trace.moe/search?url=${encodeURIComponent(url)}`)
+        const result = await trace.json()
+
+        if(!result.result || result.result.length < 1) return m.send("_*couldn't identify anime from image*_")
+
+        const match = result.result[0]
+        const preview = await fetch(`https://media.trace.moe/video/${match.anilist}/${encodeURIComponent(match.filename)}?t=${match.from}&token=${match.video}`)
+        const buffer = await preview.buffer()
+
+        let text = `🎯 *Found match!*\n\n`
+        text += `📺 *Title:* ${match.filename}\n`
+        text += `⏰ *Timestamp:* ${formatTime(match.from)} - ${formatTime(match.to)}\n`
+        text += `🔍 *Similarity:* ${(match.similarity * 100).toFixed(2)}%\n`
+        text += `🎬 *Episode:* ${match.episode || "Unknown"}`
+
+        await m.send(buffer, {caption: text, gifPlayback: true}, "video")
+        await fs.promises.unlink(path)
+    } catch(e) {
+        console.error(e)
+        return m.send("_*error while searching anime*_ ❌")
+    }
+
+    function formatTime(seconds) {
+        const min = Math.floor(seconds / 60)
+        const sec = Math.floor(seconds % 60)
+        return `${min.toString().padStart(2, "0")}:${sec.toString().padStart(2, "0")}`
+    }
+})
+
+kord({
+    cmd: "animewatch|watching",
+    desc: "track anime you're currently watching",
+    fromMe: wtype,
+    type: "anime",
+    react: "📝"
+}, async(m, text) => {
+    const watchlistFile = path.join(__dirname, "../data/watchlist.json")
+    let watchlist = {}
+
+    try {
+        if(fs.existsSync(watchlistFile)) {
+            watchlist = JSON.parse(fs.readFileSync(watchlistFile))
+        }
+
+        if(!watchlist[m.sender]) watchlist[m.sender] = []
+
+        if(!text) {
+            if(watchlist[m.sender].length === 0) return m.send("_*your watchlist is empty*_\nAdd anime with .animewatch <anime name> | <episode>")
+            let list = "📺 *YOUR ANIME WATCHLIST* 📺\n\n"
+            watchlist[m.sender].forEach((anime, i) => {
+                list += `${i+1}. *${anime.title}*\n`
+                list += `   Episode: ${anime.episode}\n`
+            })
+            return m.send(list)
+        }
+
+        if(text.toLowerCase() === "clear") {
+            watchlist[m.sender] = []
+            fs.writeFileSync(watchlistFile, JSON.stringify(watchlist, null, 2))
+            return m.send("_*successfully cleared your watchlist*_ ✅")
+        }
+
+        const parts = text.split("|").map(p => p.trim())
+        if(parts.length < 2) return m.send("_*format:*_ .animewatch <anime name> | <episode>")
+
+        const animeName = parts[0]
+        const episode = parts[1]
+
+        const existingIndex = watchlist[m.sender].findIndex(a => a.title.toLowerCase() === animeName.toLowerCase())
+        if(existingIndex !== -1) {
+            watchlist[m.sender][existingIndex].episode = episode
+            fs.writeFileSync(watchlistFile, JSON.stringify(watchlist, null, 2))
+            return m.send(`_*updated ${animeName} to episode ${episode}*_ ✅`)
+        } else {
+            watchlist[m.sender].push({title: animeName, episode: episode})
+            fs.writeFileSync(watchlistFile, JSON.stringify(watchlist, null, 2))
+            return m.send(`_*added ${animeName} (episode ${episode}) to watchlist*_ ✅`)
+        }
+    } catch(err) {
+        console.error(err)
+        return m.send("_*error updating watchlist*_ ❌")
+    }
+})
+
+kord({
+    cmd: "animegif|animatedgif",
+    desc: "sends random anime gif based on category",
+    fromMe: wtype,
+    type: "anime",
+    react: "🎬"
+}, async(m, text) => {
+    m.react("⏳")
+    try {
+        const categories = ["happy", "sad", "angry", "dance", "hug", "kiss", "punch", "slap"]
+        let category = text.toLowerCase()
+        if(!text || !categories.includes(category)) category = categories[Math.floor(Math.random() * categories.length)]
+
+        const res = await fetch(`https://nekos.best/api/v2/${category}`)
+        const json = await res.json()
+        if(!json.results || json.results.length < 1) return m.send("_*no gif found*_ 😔")
+
+        return m.send(json.results[0].url, {caption: `> ${category} anime gif`, gifPlayback: true}, "video")
+    } catch(e) {
+        console.log(e)
+        return m.send("_*failed to get anime gif*_ 😢")
+    }
+})
+
+kord({
+    cmd: "season|animeseason",
+    desc: "get anime from specific season",
+    fromMe: wtype,
+    type: "anime",
+    react: "🗓️"
+}, async(m, text) => {
+    if(!text) return m.send("_*provide season info:*_ .season <year> <season>\nSeasons: winter, spring, summer, fall")
+    m.react("🔍")
+
+    try {
+        const args = text.split(" ")
+        if(args.length < 2) return m.send("_*format:*_ .season <year> <season>")
+
+        const year = args[0]
+        const season = args[1].toLowerCase()
+        const validSeasons = ["winter", "spring", "summer", "fall"]
+
+        if(!validSeasons.includes(season)) return m.send("_*invalid season! Choose:*_ winter, spring, summer, fall")
+        if(isNaN(year) || year < 1990 || year > 2030) return m.send("_*provide valid year between 1990-2030*_")
+
+        const res = await fetch(`https://api.jikan.moe/v4/seasons/${year}/${season}?limit=10`)
+        const json = await res.json()
+
+        if(!json.data || json.data.length < 1) return m.send(`_*no anime found for ${season} ${year}*_`)
+
+        let msg = `📺 *ANIME FROM ${season.toUpperCase()} ${year}* 📺\n\n`
+        for(let i = 0; i < json.data.length; i++) {
+            const anime = json.data[i]
+            msg += `${i+1}. *${anime.title}*\n`
+            msg += `   Type: ${anime.type} | Score: ${anime.score || "N/A"}\n`
+            if(i < 9) msg += "\n"
+        }
+
+        return m.send(msg)
+    } catch(e) {
+        console.error(e)
+        return m.send("_*error fetching season data*_ ❌")
+    }
+})
+
+kord({
+    cmd: "animerec|recommend",
+    desc: "get anime recommendations",
+    fromMe: wtype,
+    type: "anime",
+    react: "🎯"
+}, async(m, text) => {
+    m.react("⏳")
+    try {
+        let url = "https://api.jikan.moe/v4/recommendations/anime"
+        let limit = 5
+
+        if(text) {
+            const res = await fetch(`https://api.jikan.moe/v4/anime?q=${encodeURIComponent(text)}&limit=1`)
+            const json = await res.json()
+            if(json.data && json.data.length > 0) {
+                url = `https://api.jikan.moe/v4/anime/${json.data[0].mal_id}/recommendations`
+                limit = 5
+            }
+        }
+
+        const res = await fetch(url)
+        const json = await res.json()
+
+        if(!json.data || json.data.length < 1) return m.send("_*no recommendations found*_ 😔")
+
+        let msg = text ? `🎬 *BECAUSE YOU LIKE ${text.toUpperCase()}* 🎬\n\n` : "🎬 *ANIME RECOMMENDATIONS* 🎬\n\n"
+        for(let i = 0; i < Math.min(json.data.length, limit); i++) {
+            const rec = text ? json.data[i].entry : json.data[i].entry[0]
+            msg += `${i+1}. *${rec.title}*\n`
+            if(text) {
+                msg += `   Votes: ${json.data[i].votes}\n`
+            }
+            if(i < Math.min(json.data.length, limit)-1) msg += "\n"
+        }
+
+        return m.send(msg)
+    } catch(e) {
+        console.error(e)
+        return m.send("_*error getting recommendations*_ ❌")
+    }
+})
+
+kord({
+    cmd: "airing|nextep",
+    desc: "check when next episode airs",
+    fromMe: wtype,
+    type: "anime",
+    react: "📅"
+}, async(m, text) => {
+    if(!text) return m.send("_*provide anime name to check airing status*_")
+    m.react("🕒")
+
+    try {
+        const res = await fetch(`https://api.jikan.moe/v4/anime?q=${encodeURIComponent(text)}&status=airing&limit=1`)
+        const json = await res.json()
+
+        if(!json.data || json.data.length < 1) return m.send(`_*couldn't find airing info for ${text}*_`)
+
+        const anime = json.data[0]
+        if(anime.status !== "Currently Airing") return m.send(`_*${anime.title} is not currently airing*_`)
+
+        const schedule = await fetch(`https://api.jikan.moe/v4/anime/${anime.mal_id}/schedule`)
+        const scheduleJson = await schedule.json()
+
+        if(!scheduleJson.data || Object.keys(scheduleJson.data).length === 0) 
+            return m.send(`_*no schedule information available for ${anime.title}*_`)
+
+        const now = new Date()
+        let nextEp = null
+        let nextDate = null
+
+        for(const day in scheduleJson.data) {
+            if(scheduleJson.data[day]?.length > 0) {
+                const epDate = new Date(scheduleJson.data[day][0].aired)
+                if(epDate > now) {
+                    if(!nextDate || epDate < nextDate) {
+                        nextDate = epDate
+                        nextEp = scheduleJson.data[day][0]
+                    }
+                }
+            }
+        }
+
+        if(!nextEp) return m.send(`_*no upcoming episodes found for ${anime.title}*_`)
+
+        const timeUntil = timeDifference(now, nextDate)
+        const msg = `📺 *${anime.title}*\n\n`
+                + `⏰ Episode ${nextEp.episode} airs in: ${timeUntil}\n`
+                + `📅 Date: ${nextDate.toDateString()}\n`
+                + `🕒 Time: ${nextDate.toTimeString().split(' ')[0]}`
+
+        return m.send(msg)
+    } catch(e) {
+        console.error(e)
+        return m.send("_*error checking airing status*_ ❌")
+    }
+
+    function timeDifference(current, future) {
+        const diff = future - current
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24))
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
+        
+        let result = ""
+        if(days > 0) result += `${days} day${days > 1 ? 's' : ''} `
+        if(hours > 0) result += `${hours} hour${hours > 1 ? 's' : ''} `
+        result += `${minutes} minute${minutes > 1 ? 's' : ''}`
+        
+        return result
+    }
+})
+
+
+
+kord({
+    cmd: "slap",
+    desc: "send waifu slap animation",
+    fromMe: wtype,
+    type: "fun",
+}, async (m, text) => {
+    let target = m.mentionedJid[0] || m.quoted?.sender;
+    let pic = await fetchWaifu("slap");
+    if (!target) {
+        if (pic.gif) {
+            return await m.send(pic.buff, { gifPlayback: true }, "video");
+        }
+        return await m.send(pic.buff, {}, "image");
+    }
+    let caption = `@${m.sender.split("@")[0]} slapped @${target.split("@")[0]}`;
+    if (pic.gif) {
+        return await m.send(pic.buff, {
+            caption: caption,
+            gifPlayback: true,
+            mentions: [m.sender, target]
+        }, "video");
+    }
+    return await m.send(pic.buff, {
+        caption: caption,
+        mentions: [m.sender, target]
+    }, "image");
+});
+
+kord({
+    cmd: "cry",
+    desc: "send waifu cry animation",
+    fromMe: wtype,
+    type: "fun",
+}, async (m, text) => {
+    let target = m.mentionedJid[0] || m.quoted?.sender;
+    let pic = await fetchWaifu("cry");
+    if (!target) {
+        if (pic.gif) {
+            return await m.send(pic.buff, { gifPlayback: true }, "video");
+        }
+        return await m.send(pic.buff, {}, "image");
+    }
+    let caption = `@${m.sender.split("@")[0]} made @${target.split("@")[0]} cry`;
+    if (pic.gif) {
+        return await m.send(pic.buff, {
+            caption: caption,
+            gifPlayback: true,
+            mentions: [m.sender, target]
+        }, "video");
+    }
+    return await m.send(pic.buff, {
+        caption: caption,
+        mentions: [m.sender, target]
+    }, "image");
+});
+
+kord({
+    cmd: "hug",
+    desc: "send waifu hug animation",
+    fromMe: wtype,
+    type: "fun",
+}, async (m, text) => {
+    let target = m.mentionedJid[0] || m.quoted?.sender;
+    let pic = await fetchWaifu("hug");
+    if (!target) {
+        if (pic.gif) {
+            return await m.send(pic.buff, { gifPlayback: true }, "video");
+        }
+        return await m.send(pic.buff, {}, "image");
+    }
+    let caption = `@${m.sender.split("@")[0]} hugged @${target.split("@")[0]}`;
+    if (pic.gif) {
+        return await m.send(pic.buff, {
+            caption: caption,
+            gifPlayback: true,
+            mentions: [m.sender, target]
+        }, "video");
+    }
+    return await m.send(pic.buff, {
+        caption: caption,
+        mentions: [m.sender, target]
+    }, "image");
+});
+
+kord({
+    cmd: "kiss",
+    desc: "send waifu kiss animation",
+    fromMe: wtype,
+    type: "fun",
+}, async (m, text) => {
+    let target = m.mentionedJid[0] || m.quoted?.sender;
+    let pic = await fetchWaifu("kiss");
+    if (!target) {
+        if (pic.gif) {
+            return await m.send(pic.buff, { gifPlayback: true }, "video");
+        }
+        return await m.send(pic.buff, {}, "image");
+    }
+    let caption = `@${m.sender.split("@")[0]} kissed @${target.split("@")[0]}`;
+    if (pic.gif) {
+        return await m.send(pic.buff, {
+            caption: caption,
+            gifPlayback: true,
+            mentions: [m.sender, target]
+        }, "video");
+    }
+    return await m.send(pic.buff, {
+        caption: caption,
+        mentions: [m.sender, target]
+    }, "image");
+});
+
+kord({
+    cmd: "lick",
+    desc: "send waifu lick animation",
+    fromMe: wtype,
+    type: "fun",
+}, async (m, text) => {
+    let target = m.mentionedJid[0] || m.quoted?.sender;
+    let pic = await fetchWaifu("lick");
+    if (!target) {
+        if (pic.gif) {
+            return await m.send(pic.buff, { gifPlayback: true }, "video");
+        }
+        return await m.send(pic.buff, {}, "image");
+    }
+    let caption = `@${m.sender.split("@")[0]} licked @${target.split("@")[0]}`;
+    if (pic.gif) {
+        return await m.send(pic.buff, {
+            caption: caption,
+            gifPlayback: true,
+            mentions: [m.sender, target]
+        }, "video");
+    }
+    return await m.send(pic.buff, {
+        caption: caption,
+        mentions: [m.sender, target]
+    }, "image");
+});
+
+kord({
+    cmd: "pat",
+    desc: "send waifu pat animation",
+    fromMe: wtype,
+    type: "fun",
+}, async (m, text) => {
+    let target = m.mentionedJid[0] || m.quoted?.sender;
+    let pic = await fetchWaifu("pat");
+    if (!target) {
+        if (pic.gif) {
+            return await m.send(pic.buff, { gifPlayback: true }, "video");
+        }
+        return await m.send(pic.buff, {}, "image");
+    }
+    let caption = `@${m.sender.split("@")[0]} patted @${target.split("@")[0]}`;
+    if (pic.gif) {
+        return await m.send(pic.buff, {
+            caption: caption,
+            gifPlayback: true,
+            mentions: [m.sender, target]
+        }, "video");
+    }
+    return await m.send(pic.buff, {
+        caption: caption,
+        mentions: [m.sender, target]
+    }, "image");
+});
+
+kord({
+    cmd: "blush",
+    desc: "send waifu blush animation",
+    fromMe: wtype,
+    type: "fun",
+}, async (m, text) => {
+    let target = m.mentionedJid[0] || m.quoted?.sender;
+    let pic = await fetchWaifu("blush");
+    if (!target) {
+        if (pic.gif) {
+            return await m.send(pic.buff, { gifPlayback: true }, "video");
+        }
+        return await m.send(pic.buff, {}, "image");
+    }
+    let caption = `@${m.sender.split("@")[0]} made @${target.split("@")[0]} blush`;
+    if (pic.gif) {
+        return await m.send(pic.buff, {
+            caption: caption,
+            gifPlayback: true,
+            mentions: [m.sender, target]
+        }, "video");
+    }
+    return await m.send(pic.buff, {
+        caption: caption,
+        mentions: [m.sender, target]
+    }, "image");
+});
+
+kord({
+    cmd: "kill",
+    desc: "send waifu kill animation",
+    fromMe: wtype,
+    type: "fun",
+}, async (m, text) => {
+    let target = m.mentionedJid[0] || m.quoted?.sender;
+    let pic = await fetchWaifu("kill");
+    if (!target) {
+        if (pic.gif) {
+            return await m.send(pic.buff, { gifPlayback: true }, "video");
+        }
+        return await m.send(pic.buff, {}, "image");
+    }
+    let caption = `@${m.sender.split("@")[0]} killed @${target.split("@")[0]}`;
+    if (pic.gif) {
+        return await m.send(pic.buff, {
+            caption: caption,
+            gifPlayback: true,
+            mentions: [m.sender, target]
+        }, "video");
+    }
+    return await m.send(pic.buff, {
+        caption: caption,
+        mentions: [m.sender, target]
+    }, "image");
+});
+
+kord({
+    cmd: "kik",
+    desc: "send waifu kick animation",
+    fromMe: wtype,
+    type: "fun",
+}, async (m, text) => {
+    let target = m.mentionedJid[0] || m.quoted?.sender;
+    let pic = await fetchWaifu("kick");
+    if (!target) {
+        if (pic.gif) {
+            return await m.send(pic.buff, { gifPlayback: true }, "video");
+        }
+        return await m.send(pic.buff, {}, "image");
+    }
+    let caption = `@${m.sender.split("@")[0]} kicked @${target.split("@")[0]}`;
+    if (pic.gif) {
+        return await m.send(pic.buff, {
+            caption: caption,
+            gifPlayback: true,
+            mentions: [m.sender, target]
+        }, "video");
+    }
+    return await m.send(pic.buff, {
+        caption: caption,
+        mentions: [m.sender, target]
+    }, "image");
+});
+
+kord({
+    cmd: "bite",
+    desc: "send waifu bite animation",
+    fromMe: wtype,
+    type: "fun",
+}, async (m, text) => {
+    let target = m.mentionedJid[0] || m.quoted?.sender;
+    let pic = await fetchWaifu("bite");
+    if (!target) {
+        if (pic.gif) {
+            return await m.send(pic.buff, { gifPlayback: true }, "video");
+        }
+        return await m.send(pic.buff, {}, "image");
+    }
+    let caption = `@${m.sender.split("@")[0]} bit @${target.split("@")[0]}`;
+    if (pic.gif) {
+        return await m.send(pic.buff, {
+            caption: caption,
+            gifPlayback: true,
+            mentions: [m.sender, target]
+        }, "video");
+    }
+    return await m.send(pic.buff, {
+        caption: caption,
+        mentions: [m.sender, target]
+    }, "image");
+});
+
+kord({
+    cmd: "high-five",
+    desc: "send waifu high-five animation",
+    fromMe: wtype,
+    type: "fun",
+}, async (m, text) => {
+    let target = m.mentionedJid[0] || m.quoted?.sender;
+    let pic = await fetchWaifu("high-five");
+    if (!target) {
+        if (pic.gif) {
+            return await m.send(pic.buff, { gifPlayback: true }, "video");
+        }
+        return await m.send(pic.buff, {}, "image");
+    }
+    let caption = `@${m.sender.split("@")[0]} high-fived @${target.split("@")[0]}`;
+    if (pic.gif) {
+        return await m.send(pic.buff, {
+            caption: caption,
+            gifPlayback: true,
+            mentions: [m.sender, target]
+        }, "video");
+    }
+    return await m.send(pic.buff, {
+        caption: caption,
+        mentions: [m.sender, target]
+    }, "image");
+});
+
+kord({
+    cmd: "handhold",
+    desc: "send waifu handhold animation",
+    fromMe: wtype,
+    type: "fun",
+}, async (m, text) => {
+    let target = m.mentionedJid[0] || m.quoted?.sender;
+    let pic = await fetchWaifu("handhold");
+    if (!target) {
+        if (pic.gif) {
+            return await m.send(pic.buff, { gifPlayback: true }, "video");
+        }
+        return await m.send(pic.buff, {}, "image");
+    }
+    let caption = `@${m.sender.split("@")[0]} held hands with @${target.split("@")[0]}`;
+    if (pic.gif) {
+        return await m.send(pic.buff, {
+            caption: caption,
+            gifPlayback: true,
+            mentions: [m.sender, target]
+        }, "video");
+    }
+    return await m.send(pic.buff, {
+        caption: caption,
+        mentions: [m.sender, target]
+    }, "image");
+});
+
+kord({
+    cmd: "dance",
+    desc: "send waifu dance animation",
+    fromMe: wtype,
+    type: "fun",
+}, async (m, text) => {
+    let target = m.mentionedJid[0] || m.quoted?.sender;
+    let pic = await fetchWaifu("dance");
+    if (!target) {
+        if (pic.gif) {
+            return await m.send(pic.buff, { gifPlayback: true }, "video");
+        }
+        return await m.send(pic.buff, {}, "image");
+    }
+    let caption = `@${m.sender.split("@")[0]} danced with @${target.split("@")[0]}`;
+    if (pic.gif) {
+        return await m.send(pic.buff, {
+            caption: caption,
+            gifPlayback: true,
+            mentions: [m.sender, target]
+        }, "video");
+    }
+    return await m.send(pic.buff, {
+        caption: caption,
+        mentions: [m.sender, target]
+    }, "image");
+});
+
+kord({
+    cmd: "bully",
+    desc: "send waifu bully animation",
+    fromMe: wtype,
+    type: "fun",
+}, async (m, text) => {
+    let target = m.mentionedJid[0] || m.quoted?.sender;
+    let pic = await fetchWaifu("bully");
+    if (!target) {
+        if (pic.gif) {
+            return await m.send(pic.buff, { gifPlayback: true }, "video");
+        }
+        return await m.send(pic.buff, {}, "image");
+    }
+    let caption = `@${m.sender.split("@")[0]} bullied @${target.split("@")[0]}`;
+    if (pic.gif) {
+        return await m.send(pic.buff, {
+            caption: caption,
+            gifPlayback: true,
+            mentions: [m.sender, target]
+        }, "video");
+    }
+    return await m.send(pic.buff, {
+        caption: caption,
+        mentions: [m.sender, target]
+    }, "image");
+});
+
+kord({
+    cmd: "wink",
+    desc: "send waifu wink animation",
+    fromMe: wtype,
+    type: "fun",
+}, async (m, text) => {
+    let target = m.mentionedJid[0] || m.quoted?.sender;
+    let pic = await fetchWaifu("wink");
+    if (!target) {
+        if (pic.gif) {
+            return await m.send(pic.buff, { gifPlayback: true }, "video");
+        }
+        return await m.send(pic.buff, {}, "image");
+    }
+    let caption = `@${m.sender.split("@")[0]} winked at @${target.split("@")[0]}`;
+    if (pic.gif) {
+        return await m.send(pic.buff, {
+            caption: caption,
+            gifPlayback: true,
+            mentions: [m.sender, target]
+        }, "video");
+    }
+    return await m.send(pic.buff, {
+        caption: caption,
+        mentions: [m.sender, target]
+    }, "image");
+});
+
+kord({
+    cmd: "cuddle",
+    desc: "send waifu cuddle animation",
+    fromMe: wtype,
+    type: "fun",
+}, async (m, text) => {
+    let target = m.mentionedJid[0] || m.quoted?.sender;
+    let pic = await fetchWaifu("cuddle");
+    if (!target) {
+        if (pic.gif) {
+            return await m.send(pic.buff, { gifPlayback: true }, "video");
+        }
+        return await m.send(pic.buff, {}, "image");
+    }
+    let caption = `@${m.sender.split("@")[0]} cuddled with @${target.split("@")[0]}`;
+    if (pic.gif) {
+        return await m.send(pic.buff, {
+            caption: caption,
+            gifPlayback: true,
+            mentions: [m.sender, target]
+        }, "video");
+    }
+    return await m.send(pic.buff, {
+        caption: caption,
+        mentions: [m.sender, target]
+    }, "image");
+});
+
+kord({
+    cmd: "awoo",
+    desc: "send waifu awoo",
+    fromMe: wtype,
+    type: "fun",
+}, async (m, text) => {
+    let pic = await fetchWaifu("awoo");
+    let caption = "Here's your waifu! (Awoo)";
+    if (pic.gif) {
+        return await m.send(pic.buff, {
+            caption: caption,
+            gifPlayback: true
+        }, "video");
+    }
+    return await m.send(pic.buff, { caption: caption }, "image");
+});
+
+kord({
+    cmd: "cringe",
+    desc: "send waifu cringe",
+    fromMe: wtype,
+    type: "fun",
+}, async (m, text) => {
+    let pic = await fetchWaifu("cringe");
+    let caption = "Here's your waifu! (Cringe)";
+    if (pic.gif) {
+        return await m.send(pic.buff, {
+            caption: caption,
+            gifPlayback: true
+        }, "video");
+    }
+    return await m.send(pic.buff, { caption: caption }, "image");
+});
+
+kord({
+    cmd: "megumin",
+    desc: "send megumin waifu",
+    fromMe: wtype,
+    type: "fun",
+}, async (m, text) => {
+    let pic = await fetchWaifu("megumin");
+    let caption = "Here's your waifu! (Megumin)";
+    if (pic.gif) {
+        return await m.send(pic.buff, {
+            caption: caption,
+            gifPlayback: true
+        }, "video");
+    }
+    return await m.send(pic.buff, { caption: caption }, "image");
+});
+
+kord({
+    cmd: "shinobu",
+    desc: "send shinobu waifu",
+    fromMe: wtype,
+    type: "fun",
+}, async (m, text) => {
+    let pic = await fetchWaifu("shinobu");
+    let caption = "Here's your waifu! (Shinobu)";
+    if (pic.gif) {
+        return await m.send(pic.buff, {
+            caption: caption,
+            gifPlayback: true
+        }, "video");
+    }
+    return await m.send(pic.buff, { caption: caption }, "image");
+});

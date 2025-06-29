@@ -1,1 +1,656 @@
-const a0_0x3302bb=a0_0xe5c9;function a0_0xe5c9(_0x41ed64,_0x14abbf){const _0x25e9d2=a0_0x25e9();return a0_0xe5c9=function(_0xe5c9e4,_0x67de14){_0xe5c9e4=_0xe5c9e4-0x6b;let _0x2dba62=_0x25e9d2[_0xe5c9e4];return _0x2dba62;},a0_0xe5c9(_0x41ed64,_0x14abbf);}(function(_0x3743cb,_0x59bc00){const _0x2a49c6=a0_0xe5c9,_0x4bde7d=_0x3743cb();while(!![]){try{const _0x5427b9=-parseInt(_0x2a49c6(0xe9))/0x1*(parseInt(_0x2a49c6(0xc8))/0x2)+parseInt(_0x2a49c6(0xa1))/0x3+-parseInt(_0x2a49c6(0x76))/0x4*(parseInt(_0x2a49c6(0xc3))/0x5)+-parseInt(_0x2a49c6(0xdc))/0x6+parseInt(_0x2a49c6(0x73))/0x7*(parseInt(_0x2a49c6(0xeb))/0x8)+-parseInt(_0x2a49c6(0x85))/0x9+-parseInt(_0x2a49c6(0xbc))/0xa*(-parseInt(_0x2a49c6(0x100))/0xb);if(_0x5427b9===_0x59bc00)break;else _0x4bde7d['push'](_0x4bde7d['shift']());}catch(_0x3013d0){_0x4bde7d['push'](_0x4bde7d['shift']());}}}(a0_0x25e9,0xdacea));const {kord,webp2png,webp2mp4,elevenlabs,rand,getBuffer,toAudio,config,processAudio,extractUrlsFromString,toPTT,isMediaURL,wtype}=require(a0_0x3302bb(0xe6)),stkpack=config()[a0_0x3302bb(0x94)],stkauthor=config()[a0_0x3302bb(0xf6)],stkp=[stkpack,stkauthor],{Sticker,StickerTypes}=require(a0_0x3302bb(0xe1)),fs=require('fs'),ffmpeg=require('fluent-ffmpeg'),{Image}=require(a0_0x3302bb(0xe4)),ff=require(a0_0x3302bb(0x86)),path=require('path'),{read}=require(a0_0x3302bb(0x6f)),{fromBuffer}=require(a0_0x3302bb(0xb1));function a0_0x25e9(){const _0x242579=['apply\x20echo\x20effect\x20to\x20audio','exif','apply\x20bass\x20effect\x20to\x20audio','acrusher=.1:1:64:0:log','toBuffer','tovv','existsSync','STICKER_AUTHOR','error...:\x20','\x0a_*Publisher\x20➱*_\x20','bass','tremolo','mp4','afftfilt=real=\x27hypot(re,im)*sin(0)\x27:imag=\x27hypot(re,im)*cos(0)\x27:win_size=512:overlap=0.75','_reply\x20to\x20a\x20photo\x20sticker_','roundstk|round','converts\x20replied\x20media\x20to\x20sticker','44vjgDDo','\x20*List\x20of\x20Available\x20Aitts\x20models*\x0a\x0a\x201\x20_rachel_\x20\x0a\x202\x20_clyde_\x20\x0a\x203\x20_domi_\x20\x0a\x204\x20_dave_\x20\x0a\x205\x20_fin_\x20\x0a\x206\x20_bella_\x20\x0a\x207\x20_antoni_\x20\x0a\x208\x20_thomas_\x20\x0a\x209\x20_charlie_\x20\x0a\x2010\x20_emily_\x20\x0a\x2011\x20_elli_\x20\x0a\x2012\x20_callum_\x20\x0a\x2013\x20_patrick_\x20\x0a\x2014\x20_harry_\x20\x0a\x2015\x20_liam_\x20\x0a\x2016\x20_dorothy_\x20\x0a\x2017\x20_josh_\x20\x0a\x2018\x20_arnold_\x20\x0a\x2019\x20_charlotte_\x20\x0a\x2020\x20_matilda_\x20\x0a\x2021\x20_matthew_\x20\x0a\x2022\x20_james_\x20\x0a\x2023\x20_joseph_\x20\x0a\x2024\x20_jeremy_\x20\x0a\x2025\x20_michael_\x20\x0a\x2026\x20_ethan_\x20\x0a\x2027\x20_gigi_\x20\x0a\x2028\x20_freya_\x20\x0a\x2029\x20_grace_\x20\x0a\x2030\x20_daniel_\x20\x0a\x2031\x20_serena_\x20\x0a\x2032\x20_adam_\x20\x0a\x2033\x20_nicole_\x20\x0a\x2034\x20_jessie_\x20\x0a\x2035\x20_ryan_\x20\x0a\x2036\x20_sam_\x20\x0a\x2037\x20_glinda_\x20\x0a\x2038\x20_giovanni_\x20\x0a\x2039\x20_mimi_\x20\x0a','reverse\x20audio\x20playback','audio/mp4','converts\x20media\x20to\x20document','slow','fast','converts\x20mp3\x20to\x20black\x20video','jimp','atempo=1.6,asetrate=22100','ROUNDED','convert\x20sticker\x20to\x20image','21lPmhCG','ptv','data:audio/mp4;base64,','11120YMUoqU','split','volume=12','run','replace','echo','apply\x20extremely\x20loud\x20effect\x20to\x20audio','getHeight','-filter:a','_Seems\x20API\x20key\x20is\x20invalid\x20or\x20not\x20found_\x0a\x0a*Get\x20API\x20key\x20from:*\x20https://elevenlabs.io/app/settings/api-keys\x0aThen\x20set\x20using:\x20.setting\x20ELEVENLABS_APIKEY\x20yourkey\x0aOr\x20set\x20manually\x20in\x20config.js','create\x20or\x20convert\x20sticker\x20to\x20circle\x20frame\x20type','API\x20Error:','document','toString','send','14484150eWDTUK','fluent-ffmpeg','nightcore','sticker|s|stk','change\x20the\x20data\x20of\x20a\x20sticker\x20or\x20audio','jpeg','reply\x20to\x20an\x20image/audio/video','get\x20exif\x20data\x20of\x20a\x20sticker','client','gif','trim','sticker','apply\x208D\x20surround\x20effect\x20to\x20audio','apply\x20smooth\x20effect\x20to\x20audio','base64','STICKER_PACKNAME','downloadMediaMessage','sendMessage','vibrato=f=7:d=0.5','atempo=0.7,asetrate=44100','video','writeFileSync','sendstk','photo|toimg','atempo=1.63,asetrate=44100','jpg','stringify','asubboost=dry=0:wet=1:decay=0.1:feedback=0.1:cutoff=100:slope=0.5:delay=20','5261505ZPHGUR','readFileSync','audio','converter','jeremy','kord','https://github.com/M3264/Kord-Ai','tts\x20ai\x20with\x20id\x20split\x20with\x20|','download','../core/store/audio.mp3','output','reverse','includes','squirrel','areverse','\x20hey\x20there|jeremy_\x0a\x0aTo\x20see\x20list\x20of\x20voices,\x20use\x20*aitts\x20list*','file-type','doc','smooth','aecho=0.8:0.9:1000:0.3','vibrato','create\x20or\x20convert\x20sticker\x20to\x20round\x20frame\x20type','https://cdn.kordai.biz.id/serve/n2BwUtItyeae.jpg','image','_image\x20width\x20and\x20height\x20must\x20be\x20same!!_','slice','sticker-pack-name','9899160aFgrYm','quoted','error','apply\x20flanger\x20effect\x20to\x20audio','https://cdn.kordai.biz.id/serve/tuNyPANPYD2v.png','list','isAnimated','2960FRKhlp','end','_reply\x20to\x20a\x20photo/sticker_','apply\x20robot\x20voice\x20effect\x20to\x20audio','circlestk|circle','722258sfUuCN','API\x20request\x20failed','earrape','buffer','_reply\x20to\x20a\x20video\x20sticker_','_Reply\x20to\x20photo\x20or\x20video_','apply\x20chipmunk\x20voice\x20effect\x20to\x20audio','_reply\x20to\x20a\x20sticker_','png','AUDIO_DATA','-af','fat','atempo=4/4,asetrate=44500*2/3','match','_reply\x20to\x20a\x20video_','_*reply\x20to\x20a\x20sticker\x20or\x20audio*_','\x0a\x0a_*Pack\x20name\x20➱*_\x20','load','chat','blown','4220298wwlMDv','equalizer=f=54:width_type=o:width=2:g=20','../core/store/black.jpg','map','_reply\x20a\x20audio_','wa-sticker-formatter','*_please\x20provide\x20a\x20image\x20url_*','converts\x20sticker\x20to\x20gif','node-webpmux','join','../core','_*Sticker\x20Pack\x20ID\x20➱*_\x20','unlinkSync','4lNlKGJ','robot','1561984VcDufs','flanger','apply\x20vibrato\x20effect\x20to\x20audio','slow\x20down\x20audio'];a0_0x25e9=function(){return _0x242579;};return a0_0x25e9();}kord({'cmd':a0_0x3302bb(0x88),'desc':a0_0x3302bb(0xff),'fromMe':wtype,'type':a0_0x3302bb(0xa4)},async(_0x5a4d9d,_0x1e92f7)=>{const _0x4234a5=a0_0x3302bb;if(!(_0x5a4d9d['image']||_0x5a4d9d[_0x4234a5(0x99)]||_0x5a4d9d[_0x4234a5(0xbd)]['video']||_0x5a4d9d['quoted'][_0x4234a5(0xb8)]))return await _0x5a4d9d[_0x4234a5(0x84)](_0x4234a5(0xcd));let _0x495234=await _0x5a4d9d['client'][_0x4234a5(0x95)](_0x5a4d9d['image']||_0x5a4d9d[_0x4234a5(0x99)]?_0x5a4d9d:_0x5a4d9d[_0x4234a5(0xbd)]?_0x5a4d9d[_0x4234a5(0xbd)]:null);return await _0x5a4d9d[_0x4234a5(0x9b)](_0x495234,{'packname':stkpack,'author':stkauthor});}),kord({'cmd':a0_0x3302bb(0x9c),'desc':a0_0x3302bb(0x72),'fromMe':wtype,'type':a0_0x3302bb(0xa4)},async(_0x28d7be,_0x1cfbc3)=>{const _0x371426=a0_0x3302bb;if(!_0x28d7be[_0x371426(0xbd)][_0x371426(0x90)])return await _0x28d7be[_0x371426(0x84)]('_reply\x20to\x20a\x20sticker_');if(_0x28d7be[_0x371426(0xbd)][_0x371426(0xc2)])return await _0x28d7be[_0x371426(0x84)](_0x371426(0xfd));let _0xcbccb4=await _0x28d7be[_0x371426(0xbd)][_0x371426(0xa9)]();return _0x28d7be[_0x371426(0x84)](_0xcbccb4,{},'image');}),kord({'cmd':a0_0x3302bb(0x74),'desc':'converts\x20video\x20to\x20ptv\x20message','fromMe':wtype,'type':a0_0x3302bb(0xa4)},async(_0x2bb5bc,_0x509fa2)=>{const _0x1a2b1d=a0_0x3302bb;if(!_0x2bb5bc[_0x1a2b1d(0xbd)][_0x1a2b1d(0x99)])return await _0x2bb5bc['send'](_0x1a2b1d(0xd6));var _0x371ce3=await _0x2bb5bc['quoted'][_0x1a2b1d(0xa9)]();return await _0x2bb5bc['send'](_0x371ce3,{'ptv':!![]},_0x1a2b1d(0x99));}),kord({'cmd':a0_0x3302bb(0xfb),'desc':'converts\x20sticker\x20to\x20video','fromMe':wtype,'type':a0_0x3302bb(0xa4)},async(_0x1b84e7,_0x34bbbf)=>{const _0x2c8c38=a0_0x3302bb;if(!_0x1b84e7[_0x2c8c38(0xbd)]['sticker'])return await _0x1b84e7['send']('_reply\x20to\x20a\x20sticker_');if(!_0x1b84e7[_0x2c8c38(0xbd)][_0x2c8c38(0xc2)])return await _0x1b84e7[_0x2c8c38(0x84)](_0x2c8c38(0xcc));let _0x3d3370=await webp2mp4(await _0x1b84e7[_0x2c8c38(0xbd)]['download']());return await _0x1b84e7[_0x2c8c38(0x84)](_0x3d3370,{},_0x2c8c38(0x99));}),kord({'cmd':a0_0x3302bb(0x8e),'desc':a0_0x3302bb(0xe3),'fromMe':wtype,'type':a0_0x3302bb(0xa4)},async(_0x59ce5d,_0x2f04ae)=>{const _0x46677f=a0_0x3302bb;if(!_0x59ce5d[_0x46677f(0xbd)][_0x46677f(0x90)])return await _0x59ce5d[_0x46677f(0x84)](_0x46677f(0xcf));if(!_0x59ce5d['quoted'][_0x46677f(0xc2)])return await _0x59ce5d[_0x46677f(0x84)](_0x46677f(0xcc));let _0x1af6eb=await webp2mp4(await _0x59ce5d[_0x46677f(0xbd)][_0x46677f(0xa9)]());return await _0x59ce5d[_0x46677f(0x84)](_0x1af6eb,{'gifPlayback':!![]},_0x46677f(0x99));}),kord({'cmd':'black','desc':a0_0x3302bb(0x6e),'fromMe':wtype,'type':a0_0x3302bb(0xa4)},async(_0x3aa57f,_0x5de988)=>{const _0x215a54=a0_0x3302bb;if(!_0x3aa57f['quoted'][_0x215a54(0xa3)])return _0x3aa57f['send']('_reply\x20to\x20audio_');const _0x1895ba=_0x5de988?.['trim']()?.[_0x215a54(0x77)](/\s+/),_0x453f96=ff();let _0x32cc18=path[_0x215a54(0xe5)](__dirname,_0x215a54(0xde));if(!fs[_0x215a54(0xf5)](_0x32cc18)){const _0x17a73a=await getBuffer(_0x215a54(0xb7));fs[_0x215a54(0x9a)](_0x32cc18,_0x17a73a);}if(_0x1895ba[0x0]&&await isMediaURL(_0x1895ba[0x0])){const _0x1d5118=await getBuffer(extractUrlsFromString(_0x1895ba)[0x0]),_0x422321=await read(_0x1d5118);if(_0x422321['getWidth']()!=_0x422321[_0x215a54(0x7d)]())return await _0x3aa57f[_0x215a54(0x84)](_0x215a54(0xb9));const {mime:_0x496b64}=await fromBuffer(_0x1d5118);if(![_0x215a54(0x9e),_0x215a54(0x8a),_0x215a54(0xd0)][_0x215a54(0xad)](_0x496b64[_0x215a54(0x77)]('/')[0x1]))return await _0x3aa57f[_0x215a54(0x84)](_0x215a54(0xe2));_0x32cc18='../core/store/'+_0x496b64[_0x215a54(0x7a)]('/','.'),fs[_0x215a54(0x9a)](_0x32cc18,_0x1d5118);const _0x17eb6c=path['join'](__dirname,_0x215a54(0xaa));var _0x23e78b=await _0x3aa57f[_0x215a54(0xbd)]['download']();fs['writeFileSync'](_0x17eb6c,_0x23e78b);const _0xe0c1d9=path[_0x215a54(0xe5)](__dirname,'../core/store/videoMixed.mp4');_0x453f96['input'](_0x32cc18),_0x453f96['input'](_0x17eb6c),_0x453f96[_0x215a54(0xab)](_0xe0c1d9),_0x453f96['on'](_0x215a54(0xc4),async()=>{const _0x4e09e2=_0x215a54;await _0x3aa57f[_0x4e09e2(0x84)](fs['readFileSync'](_0xe0c1d9),{},_0x4e09e2(0x99)),fs[_0x4e09e2(0xe8)](_0x17eb6c),fs['unlinkSync'](_0xe0c1d9);}),_0x453f96['on'](_0x215a54(0xbe),async _0x32b4b6=>{const _0x5b481e=_0x215a54;await _0x3aa57f[_0x5b481e(0x84)](''+_0x32b4b6);}),_0x453f96[_0x215a54(0x79)]();}}),kord({'cmd':a0_0x3302bb(0xfe),'desc':a0_0x3302bb(0xb6),'fromMe':wtype,'type':'converter'},async(_0x2544ff,_0xb51ce8)=>{const _0x2ade3b=a0_0x3302bb;if(!(_0x2544ff['image']||_0x2544ff['quoted'][_0x2ade3b(0x90)]||_0x2544ff[_0x2ade3b(0xbd)][_0x2ade3b(0xb8)]))return await _0x2544ff[_0x2ade3b(0x84)](_0x2ade3b(0xc5));if(_0x2544ff[_0x2ade3b(0xbd)][_0x2ade3b(0xc2)])return await _0x2544ff['send'](_0x2ade3b(0xfd));var _0x5ad22b=await _0x2544ff['client'][_0x2ade3b(0x95)](_0x2544ff[_0x2ade3b(0xb8)]?_0x2544ff:_0x2544ff['quoted']?_0x2544ff[_0x2ade3b(0xbd)]:null);let _0x37eff5=new Sticker(_0x5ad22b,{'pack':stkpack,'author':stkauthor,'type':StickerTypes[_0x2ade3b(0x71)],'categories':['🤩','🎉'],'id':_0x2ade3b(0xa7),'quality':0x4b});const _0x1fe0bd=await _0x37eff5[_0x2ade3b(0xf3)]();await _0x2544ff['send'](_0x1fe0bd,{'packname':stkpack,'author':stkauthor},'sticker');}),kord({'cmd':a0_0x3302bb(0xc7),'desc':a0_0x3302bb(0x80),'fromMe':wtype,'type':a0_0x3302bb(0xa4)},async(_0x3e1965,_0xe054a5)=>{const _0x273022=a0_0x3302bb;if(!(_0x3e1965[_0x273022(0xb8)]||_0x3e1965[_0x273022(0xbd)][_0x273022(0x90)]||_0x3e1965[_0x273022(0xbd)][_0x273022(0xb8)]))return await _0x3e1965[_0x273022(0x84)](_0x273022(0xc5));if(_0x3e1965[_0x273022(0xbd)]['isAnimated'])return await _0x3e1965['send']('_reply\x20to\x20a\x20photo\x20sticker_');var _0x58322a=await _0x3e1965['client'][_0x273022(0x95)](_0x3e1965['image']?_0x3e1965:_0x3e1965[_0x273022(0xbd)]?_0x3e1965[_0x273022(0xbd)]:null);let _0x39c4b4=new Sticker(_0x58322a,{'pack':stkpack,'author':stkauthor,'type':StickerTypes['CIRCLE'],'categories':['🤩','🎉'],'id':'https://github.com/M3264/Kord-Ai','quality':0x4b});const _0x96ccdf=await _0x39c4b4[_0x273022(0xf3)]();await _0x3e1965[_0x273022(0x84)](_0x96ccdf,{'packname':stkpack,'author':stkauthor},_0x273022(0x90));}),kord({'cmd':'take','desc':a0_0x3302bb(0x89),'fromMe':wtype,'type':a0_0x3302bb(0xa4)},async(_0x19be12,_0x195726)=>{const _0x33b4ee=a0_0x3302bb;if(!(_0x19be12[_0x33b4ee(0xbd)][_0x33b4ee(0x90)]||_0x19be12[_0x33b4ee(0xbd)][_0x33b4ee(0xa3)]))return await _0x19be12[_0x33b4ee(0x84)](_0x33b4ee(0xd7));if(_0x19be12['quoted']['sticker']){const [_0x20c7cd,_0x3ffa76]=(_0x195726[_0x33b4ee(0xd5)](/[^|;,:]+/g)||[])[_0x33b4ee(0xdf)](_0x3facea=>_0x3facea[_0x33b4ee(0x8f)]()),_0x1ac3ac=[_0x20c7cd||stkpack,_0x3ffa76||stkauthor];await _0x19be12[_0x33b4ee(0x84)](await _0x19be12[_0x33b4ee(0xbd)][_0x33b4ee(0xa9)](),{'packname':_0x1ac3ac[0x0],'author':_0x1ac3ac[0x1]},'sticker');}else{if(_0x19be12[_0x33b4ee(0xbd)][_0x33b4ee(0xa3)]){let _0x215782;var _0x56087d=await _0x19be12[_0x33b4ee(0xbd)][_0x33b4ee(0xa9)]();const _0x590f32=Buffer['from'](_0x56087d),_0x31eff5=await toAudio(_0x590f32,_0x33b4ee(0xfb));_0x195726?_0x215782=_0x195726[_0x33b4ee(0x77)](';'):_0x215782=config()[_0x33b4ee(0xd1)][_0x33b4ee(0x77)](';')||[_0x33b4ee(0xa6),'v2',''];const _0x5e7565=_0x215782[0x0]||_0x33b4ee(0xa6),_0x4551d7=_0x215782[0x1]||'v2',_0x19989a=_0x215782[0x2]||_0x33b4ee(0xc0);try{const _0x1a80c6=_0x31eff5[_0x33b4ee(0x83)](_0x33b4ee(0x93)),_0x2790ff=await fetch('https://kord-api.vercel.app/add-mp3-meta',{'method':'POST','headers':{'Content-Type':'application/json'},'body':JSON[_0x33b4ee(0x9f)]({'songUrl':_0x33b4ee(0x75)+_0x1a80c6,'coverUrl':_0x19989a,'title':_0x5e7565,'artist':_0x4551d7})});if(!_0x2790ff['ok'])throw new Error(_0x33b4ee(0xc9));const _0x101d10=await _0x2790ff[_0x33b4ee(0xcb)]();await _0x19be12[_0x33b4ee(0x84)](_0x101d10,{'mimetype':'audio/mp4'},_0x33b4ee(0xa3));}catch(_0x1d641f){console[_0x33b4ee(0xbe)](_0x33b4ee(0x81),_0x1d641f),await _0x19be12['send'](_0x31eff5,{'mimetype':_0x33b4ee(0x103)},_0x33b4ee(0xa3));}}}}),kord({'cmd':a0_0x3302bb(0xf0),'desc':a0_0x3302bb(0x8c),'fromMe':wtype,'type':a0_0x3302bb(0xa4)},async(_0x49c059,_0x3234a9)=>{const _0x590875=a0_0x3302bb;if(!_0x49c059[_0x590875(0xbd)][_0x590875(0x90)])return await _0x49c059[_0x590875(0x84)](_0x590875(0xcf));let _0x23fbc8=new Image();await _0x23fbc8[_0x590875(0xd9)](await _0x49c059['quoted'][_0x590875(0xa9)]());const _0x277263=JSON['parse'](_0x23fbc8[_0x590875(0xf0)][_0x590875(0xba)](0x16)[_0x590875(0x83)]()),_0x236f40=_0x277263['sticker-pack-id'],_0x40d8e4=_0x277263[_0x590875(0xbb)],_0x472211=_0x277263['sticker-pack-publisher'],_0x9b4395=_0x590875(0xe7)+_0x236f40+_0x590875(0xd8)+_0x40d8e4+_0x590875(0xf8)+_0x472211;return _0x49c059[_0x590875(0x84)](_0x9b4395);}),kord({'cmd':'aitts','desc':a0_0x3302bb(0xa8),'fromMe':wtype,'type':a0_0x3302bb(0xa4)},async(_0x1f91bd,_0x3a7957,_0x559ba8)=>{const _0x20b1f8=a0_0x3302bb;if(_0x3a7957==_0x20b1f8(0xc1))return await _0x1f91bd[_0x20b1f8(0x84)](_0x20b1f8(0x101)[_0x20b1f8(0x7a)](/├/g,''));let [_0x4d9c54,_0x2389de]=_0x3a7957[_0x20b1f8(0x77)]('|');if(!_0x4d9c54)return await _0x1f91bd[_0x20b1f8(0x84)]('*_Provide\x20text\x20to\x20speak_*\x0a_Example:\x20'+_0x559ba8+_0x20b1f8(0xb0));if(!_0x2389de)_0x2389de=_0x20b1f8(0xa5);const _0xc3cc0a=await elevenlabs(_0x4d9c54,_0x2389de);if(!_0xc3cc0a)return await _0x1f91bd[_0x20b1f8(0x84)](_0x20b1f8(0x7f));return await _0x1f91bd[_0x20b1f8(0x84)](_0xc3cc0a,{'mimetype':'audio/mpeg','ptt':!![]},_0x20b1f8(0xa3));}),kord({'cmd':a0_0x3302bb(0xb2),'desc':a0_0x3302bb(0x6b),'fromMe':wtype,'type':a0_0x3302bb(0xa4)},async(_0x2e4347,_0x5cec82)=>{const _0x2ad1d9=a0_0x3302bb;var _0x5e24d7=(_0x5cec82||await rand())[_0x2ad1d9(0x7a)](/[^A-Za-z0-9]/g,'-');if(!(_0x2e4347[_0x2ad1d9(0xb8)]||_0x2e4347[_0x2ad1d9(0x99)]||_0x2e4347[_0x2ad1d9(0xbd)]['image']||_0x2e4347[_0x2ad1d9(0xbd)][_0x2ad1d9(0x99)]||_0x2e4347[_0x2ad1d9(0xbd)]['audio']))return await _0x2e4347[_0x2ad1d9(0x84)](_0x2ad1d9(0x8b));var _0x598797=_0x2e4347['image']||_0x2e4347[_0x2ad1d9(0x99)]?_0x2e4347:_0x2e4347[_0x2ad1d9(0xbd)]?_0x2e4347[_0x2ad1d9(0xbd)]:null,_0x26b07e=await _0x2e4347['client'][_0x2ad1d9(0x95)](_0x598797);const {ext:_0x281ceb,mime:_0x595da}=await fromBuffer(_0x26b07e);return await _0x2e4347[_0x2ad1d9(0x84)](_0x26b07e,{'mimetype':_0x595da,'fileName':_0x5e24d7+'.'+_0x281ceb},_0x2ad1d9(0x82));}),kord({'cmd':a0_0x3302bb(0xf4),'desc':'convert\x20media\x20to\x20viewonce','fromMe':wtype,'type':a0_0x3302bb(0xa4)},async(_0x346e73,_0x2ec28e)=>{const _0x23eea5=a0_0x3302bb;if(!(_0x346e73[_0x23eea5(0xb8)]||_0x346e73['video']||_0x346e73[_0x23eea5(0xbd)][_0x23eea5(0xb8)]||_0x346e73[_0x23eea5(0xbd)][_0x23eea5(0x99)]||_0x346e73['quoted'][_0x23eea5(0xa3)]))return await _0x346e73['send'](_0x23eea5(0x8b));var _0x109697=_0x346e73[_0x23eea5(0xb8)]||_0x346e73['video']?_0x346e73:_0x346e73[_0x23eea5(0xbd)]?_0x346e73[_0x23eea5(0xbd)]:null,_0x48b6f2=await _0x346e73['client']['downloadMediaMessage'](_0x109697);if(_0x346e73[_0x23eea5(0xb8)])await _0x346e73['send'](_0x48b6f2,{'viewOnce':!![]},_0x23eea5(0xb8));else{if(_0x346e73[_0x23eea5(0x99)])await _0x346e73[_0x23eea5(0x84)](_0x48b6f2,{'viewOnce':!![]},_0x23eea5(0x99));else{if(_0x346e73[_0x23eea5(0xbd)][_0x23eea5(0xb8)])await _0x346e73['send'](_0x48b6f2,{'viewOnce':!![]},_0x23eea5(0xb8));else{if(_0x346e73[_0x23eea5(0xbd)][_0x23eea5(0x99)])await _0x346e73['send'](_0x48b6f2,{'viewOnce':!![]},_0x23eea5(0x99));else _0x346e73[_0x23eea5(0xbd)][_0x23eea5(0xa3)]&&await _0x346e73[_0x23eea5(0x84)](_0x48b6f2,{'viewOnce':!![]},_0x23eea5(0xa3));}}}}),kord({'cmd':'bass','desc':a0_0x3302bb(0xf1),'fromMe':wtype,'type':a0_0x3302bb(0xa4)},async(_0x36fd80,_0x150db9)=>{const _0x1fedd7=a0_0x3302bb;if(!_0x36fd80[_0x1fedd7(0xbd)][_0x1fedd7(0xa3)])return await _0x36fd80['send'](_0x1fedd7(0xe0));const _0x468568=await processAudio(_0x36fd80,_0x1fedd7(0xf9),[_0x1fedd7(0xd2),_0x1fedd7(0xdd)]);await _0x36fd80[_0x1fedd7(0x8d)][_0x1fedd7(0x96)](_0x36fd80['chat'],{'audio':require('fs')[_0x1fedd7(0xa2)](_0x468568),'mimetype':'audio/mp4','ptt':![]},{'quoted':_0x36fd80}),fs['unlinkSync'](_0x468568);}),kord({'cmd':a0_0x3302bb(0xdb),'desc':'apply\x20blown\x20effect\x20to\x20audio','fromMe':wtype,'type':a0_0x3302bb(0xa4)},async(_0xdfdef3,_0x44416f)=>{const _0x16423d=a0_0x3302bb;try{if(!_0xdfdef3[_0x16423d(0xbd)]['audio'])return await _0xdfdef3[_0x16423d(0x84)](_0x16423d(0xe0));const _0x364eaa=await processAudio(_0xdfdef3,_0x16423d(0xdb),['-af',_0x16423d(0xf2)]);await _0xdfdef3['client'][_0x16423d(0x96)](_0xdfdef3[_0x16423d(0xda)],{'audio':require('fs')['readFileSync'](_0x364eaa),'mimetype':_0x16423d(0x103),'ptt':![]}),fs[_0x16423d(0xe8)](_0x364eaa);}catch(_0x336050){return console['error'](_0x336050),await _0xdfdef3[_0x16423d(0x84)]('error...:\x20'+_0x336050);}}),kord({'cmd':'deep','desc':'apply\x20deep\x20effect\x20to\x20audio','fromMe':wtype,'type':a0_0x3302bb(0xa4)},async(_0x40fd01,_0x432448)=>{const _0x471a9d=a0_0x3302bb;try{if(!_0x40fd01[_0x471a9d(0xbd)][_0x471a9d(0xa3)])return await _0x40fd01[_0x471a9d(0x84)](_0x471a9d(0xe0));const _0x8de5f9=await processAudio(_0x40fd01,'deep',['-af',_0x471a9d(0xd4)]);await _0x40fd01['client'][_0x471a9d(0x96)](_0x40fd01['chat'],{'audio':require('fs')[_0x471a9d(0xa2)](_0x8de5f9),'mimetype':_0x471a9d(0x103),'ptt':![]},{'quoted':_0x40fd01}),fs[_0x471a9d(0xe8)](_0x8de5f9);}catch(_0x437044){return console[_0x471a9d(0xbe)](_0x437044),await _0x40fd01[_0x471a9d(0x84)](_0x471a9d(0xf7)+_0x437044);}}),kord({'cmd':a0_0x3302bb(0xca),'desc':a0_0x3302bb(0x7c),'fromMe':wtype,'type':'converter'},async(_0x5da3bf,_0x5d658d)=>{const _0x550967=a0_0x3302bb;try{if(!_0x5da3bf[_0x550967(0xbd)]['audio'])return await _0x5da3bf[_0x550967(0x84)](_0x550967(0xe0));const _0x2f5ea1=await processAudio(_0x5da3bf,_0x550967(0xca),[_0x550967(0xd2),_0x550967(0x78)]);await _0x5da3bf[_0x550967(0x8d)][_0x550967(0x96)](_0x5da3bf['chat'],{'audio':require('fs')[_0x550967(0xa2)](_0x2f5ea1),'mimetype':'audio/mp4','ptt':![]},{'quoted':_0x5da3bf}),fs['unlinkSync'](_0x2f5ea1);}catch(_0x33b7e0){return console[_0x550967(0xbe)](_0x33b7e0),await _0x5da3bf[_0x550967(0x84)](_0x550967(0xf7)+_0x33b7e0);}}),kord({'cmd':a0_0x3302bb(0x6d),'desc':'speed\x20up\x20audio','fromMe':wtype,'type':'converter'},async(_0x34a567,_0xe3d028)=>{const _0x3a0bb8=a0_0x3302bb;try{if(!_0x34a567[_0x3a0bb8(0xbd)][_0x3a0bb8(0xa3)])return await _0x34a567[_0x3a0bb8(0x84)]('_reply\x20a\x20audio_');const _0x45445f=await processAudio(_0x34a567,_0x3a0bb8(0x6d),[_0x3a0bb8(0x7e),_0x3a0bb8(0x9d)]);await _0x34a567[_0x3a0bb8(0x8d)][_0x3a0bb8(0x96)](_0x34a567['chat'],{'audio':require('fs')[_0x3a0bb8(0xa2)](_0x45445f),'mimetype':_0x3a0bb8(0x103),'ptt':![]},{'quoted':_0x34a567}),fs[_0x3a0bb8(0xe8)](_0x45445f);}catch(_0x372271){return console[_0x3a0bb8(0xbe)](_0x372271),await _0x34a567[_0x3a0bb8(0x84)]('error...:\x20'+_0x372271);}}),kord({'cmd':a0_0x3302bb(0xd3),'desc':'apply\x20fat\x20effect\x20to\x20audio','fromMe':wtype,'type':'converter'},async(_0x283d11,_0x4d1e19)=>{const _0xb2e157=a0_0x3302bb;try{if(!_0x283d11[_0xb2e157(0xbd)]['audio'])return await _0x283d11[_0xb2e157(0x84)](_0xb2e157(0xe0));const _0x28dbd3=await processAudio(_0x283d11,'fat',[_0xb2e157(0x7e),_0xb2e157(0x70)]);await _0x283d11[_0xb2e157(0x8d)]['sendMessage'](_0x283d11['chat'],{'audio':require('fs')[_0xb2e157(0xa2)](_0x28dbd3),'mimetype':'audio/mp4','ptt':![]},{'quoted':_0x283d11}),fs['unlinkSync'](_0x28dbd3);}catch(_0x4f6fb5){return console[_0xb2e157(0xbe)](_0x4f6fb5),await _0x283d11[_0xb2e157(0x84)](_0xb2e157(0xf7)+_0x4f6fb5);}}),kord({'cmd':a0_0x3302bb(0x87),'desc':'apply\x20nightcore\x20effect\x20to\x20audio','fromMe':wtype,'type':a0_0x3302bb(0xa4)},async(_0x1d2281,_0x42ec85)=>{const _0x1891b7=a0_0x3302bb;try{if(!_0x1d2281[_0x1891b7(0xbd)][_0x1891b7(0xa3)])return await _0x1d2281[_0x1891b7(0x84)](_0x1891b7(0xe0));const _0x5c12f3=await processAudio(_0x1d2281,_0x1891b7(0x87),[_0x1891b7(0x7e),'atempo=1.06,asetrate=44100*1.25']);await _0x1d2281[_0x1891b7(0x8d)][_0x1891b7(0x96)](_0x1d2281[_0x1891b7(0xda)],{'audio':require('fs')[_0x1891b7(0xa2)](_0x5c12f3),'mimetype':_0x1891b7(0x103),'ptt':![]},{'quoted':_0x1d2281}),fs[_0x1891b7(0xe8)](_0x5c12f3);}catch(_0x3f1c33){return console[_0x1891b7(0xbe)](_0x3f1c33),await _0x1d2281[_0x1891b7(0x84)](_0x1891b7(0xf7)+_0x3f1c33);}}),kord({'cmd':'reverse','desc':a0_0x3302bb(0x102),'fromMe':wtype,'type':'converter'},async(_0x47a0a9,_0x450403)=>{const _0x133b37=a0_0x3302bb;try{if(!_0x47a0a9['quoted'][_0x133b37(0xa3)])return await _0x47a0a9['send']('_reply\x20a\x20audio_');const _0x981417=await processAudio(_0x47a0a9,_0x133b37(0xac),['-filter_complex',_0x133b37(0xaf)]);await _0x47a0a9[_0x133b37(0x8d)][_0x133b37(0x96)](_0x47a0a9[_0x133b37(0xda)],{'audio':require('fs')[_0x133b37(0xa2)](_0x981417),'mimetype':'audio/mp4','ptt':![]},{'quoted':_0x47a0a9}),fs[_0x133b37(0xe8)](_0x981417);}catch(_0x55802d){return console[_0x133b37(0xbe)](_0x55802d),await _0x47a0a9[_0x133b37(0x84)](_0x133b37(0xf7)+_0x55802d);}}),kord({'cmd':a0_0x3302bb(0xae),'desc':'apply\x20squirrel\x20voice\x20effect\x20to\x20audio','fromMe':wtype,'type':'converter'},async(_0x1aa9b7,_0x21712d)=>{const _0x19a4c1=a0_0x3302bb;try{if(!_0x1aa9b7[_0x19a4c1(0xbd)][_0x19a4c1(0xa3)])return await _0x1aa9b7[_0x19a4c1(0x84)](_0x19a4c1(0xe0));const _0xdb0f0f=await processAudio(_0x1aa9b7,_0x19a4c1(0xae),[_0x19a4c1(0x7e),'atempo=0.5,asetrate=65100']);await _0x1aa9b7[_0x19a4c1(0x8d)][_0x19a4c1(0x96)](_0x1aa9b7[_0x19a4c1(0xda)],{'audio':require('fs')[_0x19a4c1(0xa2)](_0xdb0f0f),'mimetype':'audio/mp4','ptt':![]},{'quoted':_0x1aa9b7}),fs[_0x19a4c1(0xe8)](_0xdb0f0f);}catch(_0x37d9df){return console['error'](_0x37d9df),await _0x1aa9b7[_0x19a4c1(0x84)](_0x19a4c1(0xf7)+_0x37d9df);}}),kord({'cmd':a0_0x3302bb(0xea),'desc':a0_0x3302bb(0xc6),'fromMe':wtype,'type':'converter'},async(_0x46e24e,_0x3d8539)=>{const _0x23e709=a0_0x3302bb;try{if(!_0x46e24e[_0x23e709(0xbd)][_0x23e709(0xa3)])return await _0x46e24e[_0x23e709(0x84)](_0x23e709(0xe0));const _0x5a846a=await processAudio(_0x46e24e,'robot',[_0x23e709(0xd2),_0x23e709(0xfc)]);await _0x46e24e[_0x23e709(0x8d)][_0x23e709(0x96)](_0x46e24e[_0x23e709(0xda)],{'audio':require('fs')[_0x23e709(0xa2)](_0x5a846a),'mimetype':_0x23e709(0x103),'ptt':![]},{'quoted':_0x46e24e}),fs['unlinkSync'](_0x5a846a);}catch(_0x4503a4){return console[_0x23e709(0xbe)](_0x4503a4),await _0x46e24e[_0x23e709(0x84)](_0x23e709(0xf7)+_0x4503a4);}}),kord({'cmd':a0_0x3302bb(0x6c),'desc':a0_0x3302bb(0xee),'fromMe':wtype,'type':'converter'},async(_0x4d4d54,_0x152f53)=>{const _0x1cd806=a0_0x3302bb;try{if(!_0x4d4d54[_0x1cd806(0xbd)][_0x1cd806(0xa3)])return await _0x4d4d54[_0x1cd806(0x84)]('_reply\x20a\x20audio_');const _0x5b8a79=await processAudio(_0x4d4d54,_0x1cd806(0x6c),[_0x1cd806(0x7e),_0x1cd806(0x98)]);await _0x4d4d54[_0x1cd806(0x8d)][_0x1cd806(0x96)](_0x4d4d54[_0x1cd806(0xda)],{'audio':require('fs')[_0x1cd806(0xa2)](_0x5b8a79),'mimetype':_0x1cd806(0x103),'ptt':![]},{'quoted':_0x4d4d54}),fs[_0x1cd806(0xe8)](_0x5b8a79);}catch(_0x42bd15){return console[_0x1cd806(0xbe)](_0x42bd15),await _0x4d4d54[_0x1cd806(0x84)](_0x1cd806(0xf7)+_0x42bd15);}}),kord({'cmd':a0_0x3302bb(0xb3),'desc':a0_0x3302bb(0x92),'fromMe':wtype,'type':a0_0x3302bb(0xa4)},async(_0x47d0a4,_0x387dbd)=>{const _0x2df874=a0_0x3302bb;try{if(!_0x47d0a4['quoted'][_0x2df874(0xa3)])return await _0x47d0a4['send'](_0x2df874(0xe0));const _0x1c7598=await processAudio(_0x47d0a4,_0x2df874(0xb3),[_0x2df874(0xd2),_0x2df874(0xa0)]);await _0x47d0a4[_0x2df874(0x8d)]['sendMessage'](_0x47d0a4[_0x2df874(0xda)],{'audio':require('fs')[_0x2df874(0xa2)](_0x1c7598),'mimetype':_0x2df874(0x103),'ptt':![]},{'quoted':_0x47d0a4}),fs['unlinkSync'](_0x1c7598);}catch(_0x258c24){return console['error'](_0x258c24),await _0x47d0a4[_0x2df874(0x84)](_0x2df874(0xf7)+_0x258c24);}}),kord({'cmd':'chipmunk','desc':a0_0x3302bb(0xce),'fromMe':wtype,'type':'converter'},async(_0x38818a,_0x280172)=>{const _0x231816=a0_0x3302bb;try{if(!_0x38818a[_0x231816(0xbd)][_0x231816(0xa3)])return await _0x38818a[_0x231816(0x84)](_0x231816(0xe0));const _0x577355=await processAudio(_0x38818a,'chipmunk',['-filter:a','atempo=0.8,asetrate=65100*1.3']);await _0x38818a[_0x231816(0x8d)][_0x231816(0x96)](_0x38818a[_0x231816(0xda)],{'audio':require('fs')[_0x231816(0xa2)](_0x577355),'mimetype':_0x231816(0x103),'ptt':![]},{'quoted':_0x38818a}),fs['unlinkSync'](_0x577355);}catch(_0x16c526){return console[_0x231816(0xbe)](_0x16c526),await _0x38818a[_0x231816(0x84)](_0x231816(0xf7)+_0x16c526);}}),kord({'cmd':'tremolo','desc':'apply\x20tremolo\x20effect\x20to\x20audio','fromMe':wtype,'type':a0_0x3302bb(0xa4)},async(_0x6ea29a,_0x283eab)=>{const _0x47b1be=a0_0x3302bb;try{if(!_0x6ea29a[_0x47b1be(0xbd)][_0x47b1be(0xa3)])return await _0x6ea29a['send']('_reply\x20a\x20audio_');const _0x13ce0d=await processAudio(_0x6ea29a,_0x47b1be(0xfa),[_0x47b1be(0xd2),'tremolo=f=6:d=0.5']);await _0x6ea29a['client'][_0x47b1be(0x96)](_0x6ea29a[_0x47b1be(0xda)],{'audio':require('fs')[_0x47b1be(0xa2)](_0x13ce0d),'mimetype':'audio/mp4','ptt':![]},{'quoted':_0x6ea29a}),fs[_0x47b1be(0xe8)](_0x13ce0d);}catch(_0x152c4b){return console['error'](_0x152c4b),await _0x6ea29a[_0x47b1be(0x84)](_0x47b1be(0xf7)+_0x152c4b);}}),kord({'cmd':'vibrato','desc':a0_0x3302bb(0xed),'fromMe':wtype,'type':a0_0x3302bb(0xa4)},async(_0x45c818,_0x214883)=>{const _0xd0f55f=a0_0x3302bb;try{if(!_0x45c818[_0xd0f55f(0xbd)][_0xd0f55f(0xa3)])return await _0x45c818[_0xd0f55f(0x84)](_0xd0f55f(0xe0));const _0x5584d7=await processAudio(_0x45c818,_0xd0f55f(0xb5),['-af',_0xd0f55f(0x97)]);await _0x45c818['client'][_0xd0f55f(0x96)](_0x45c818['chat'],{'audio':require('fs')[_0xd0f55f(0xa2)](_0x5584d7),'mimetype':_0xd0f55f(0x103),'ptt':![]},{'quoted':_0x45c818}),fs[_0xd0f55f(0xe8)](_0x5584d7);}catch(_0x4b6c9e){return console[_0xd0f55f(0xbe)](_0x4b6c9e),await _0x45c818[_0xd0f55f(0x84)](_0xd0f55f(0xf7)+_0x4b6c9e);}}),kord({'cmd':'8d','desc':a0_0x3302bb(0x91),'fromMe':wtype,'type':a0_0x3302bb(0xa4)},async(_0x3a8b7a,_0x4b2748)=>{const _0x476124=a0_0x3302bb;try{if(!_0x3a8b7a['quoted'][_0x476124(0xa3)])return await _0x3a8b7a['send'](_0x476124(0xe0));const _0x329998=await processAudio(_0x3a8b7a,'8d',[_0x476124(0xd2),'apulsator=hz=0.125']);await _0x3a8b7a[_0x476124(0x8d)]['sendMessage'](_0x3a8b7a[_0x476124(0xda)],{'audio':require('fs')[_0x476124(0xa2)](_0x329998),'mimetype':_0x476124(0x103),'ptt':![]},{'quoted':_0x3a8b7a}),fs[_0x476124(0xe8)](_0x329998);}catch(_0x1a8342){return console[_0x476124(0xbe)](_0x1a8342),await _0x3a8b7a[_0x476124(0x84)]('error...:\x20'+_0x1a8342);}}),kord({'cmd':a0_0x3302bb(0x7b),'desc':a0_0x3302bb(0xef),'fromMe':wtype,'type':a0_0x3302bb(0xa4)},async(_0x585c68,_0x5cf972)=>{const _0x348a8b=a0_0x3302bb;try{if(!_0x585c68[_0x348a8b(0xbd)][_0x348a8b(0xa3)])return await _0x585c68[_0x348a8b(0x84)](_0x348a8b(0xe0));const _0x23db07=await processAudio(_0x585c68,_0x348a8b(0x7b),[_0x348a8b(0xd2),_0x348a8b(0xb4)]);await _0x585c68['client'][_0x348a8b(0x96)](_0x585c68[_0x348a8b(0xda)],{'audio':require('fs')[_0x348a8b(0xa2)](_0x23db07),'mimetype':'audio/mp4','ptt':![]},{'quoted':_0x585c68}),fs[_0x348a8b(0xe8)](_0x23db07);}catch(_0x406570){return console[_0x348a8b(0xbe)](_0x406570),await _0x585c68[_0x348a8b(0x84)]('error...:\x20'+_0x406570);}}),kord({'cmd':a0_0x3302bb(0xec),'desc':a0_0x3302bb(0xbf),'fromMe':wtype,'type':a0_0x3302bb(0xa4)},async(_0x5d9ef7,_0x2b6ac6)=>{const _0x417cc5=a0_0x3302bb;try{if(!_0x5d9ef7['quoted'][_0x417cc5(0xa3)])return await _0x5d9ef7[_0x417cc5(0x84)](_0x417cc5(0xe0));const _0xb1aba6=await processAudio(_0x5d9ef7,_0x417cc5(0xec),[_0x417cc5(0xd2),'flanger=delay=5:depth=2:regen=5:width=5:speed=2:shape=sine:phase=90:interp=linear']);await _0x5d9ef7[_0x417cc5(0x8d)]['sendMessage'](_0x5d9ef7[_0x417cc5(0xda)],{'audio':require('fs')['readFileSync'](_0xb1aba6),'mimetype':_0x417cc5(0x103),'ptt':![]},{'quoted':_0x5d9ef7}),fs['unlinkSync'](_0xb1aba6);}catch(_0x57c486){return console[_0x417cc5(0xbe)](_0x57c486),await _0x5d9ef7['send'](_0x417cc5(0xf7)+_0x57c486);}});
+const {kord, webp2png, webp2mp4, elevenlabs, rand, getBuffer, toAudio, config, processAudio, extractUrlsFromString, toPTT, isMediaURL, wtype} = require("../core")
+
+const stkpack = config().STICKER_PACKNAME
+const stkauthor = config().STICKER_AUTHOR
+const stkp = [stkpack, stkauthor]
+const { Sticker, StickerTypes } = require("wa-sticker-formatter");
+const fs = require('fs');
+const ffmpeg = require('fluent-ffmpeg');
+const { Image } = require("node-webpmux");
+const ff = require("fluent-ffmpeg")
+const path = require('path');
+const {
+   read
+} = require('jimp');
+const {
+   fromBuffer
+} = require('file-type');
+
+kord({
+        cmd: "sticker|s|stk",
+        desc: "converts replied media to sticker",
+        fromMe: wtype,
+        type: "converter",
+}, async (m, text) => {
+        if (!(m.image || m.video || m.quoted.video || m.quoted.image)) return await m.send("_Reply to photo or video_");
+        let buff = await m.client.downloadMediaMessage((m.image || m.video) ? m : m.quoted ? m.quoted : null)
+        return await m.sendstk(buff, { packname: stkpack, author: stkauthor });
+})
+
+
+kord({
+        cmd: "photo|toimg",
+        desc: "convert sticker to image",
+        fromMe: wtype,
+        type: "converter",
+}, async (m, text) => {
+        if (!m.quoted.sticker) return await m.send("_reply to a sticker_")
+        if (m.quoted.isAnimated) return await m.send("_reply to a photo sticker_")
+        let buff = await m.quoted.download()
+        return m.send(buff, {}, "image")
+})
+
+kord({
+        cmd: "ptv",
+        desc: "converts video to ptv message",
+        fromMe: wtype,
+        type: "converter",
+}, async (m, text) => {
+        if (!m.quoted.video) return await m.send("_reply to a video_")
+        var vid = await m.quoted.download()
+        return await m.send(vid, {ptv: true}, 'video')
+})
+
+kord({
+        cmd: "mp4",
+        desc: "converts sticker to video",
+        fromMe: wtype,
+        type: "converter",
+}, async (m, text) => {
+        if (!m.quoted.sticker) return await m.send("_reply to a sticker_")
+        if (!m.quoted.isAnimated) return await m.send("_reply to a video sticker_")
+        let buffer = await webp2mp4(await m.quoted.download());
+        return await m.send(buffer, {}, "video");
+})
+
+kord({
+        cmd: "gif",
+        desc: "converts sticker to gif",
+        fromMe: wtype,
+        type: "converter",
+}, async (m, text) => {
+        if (!m.quoted.sticker) return await m.send("_reply to a sticker_")
+        if (!m.quoted.isAnimated) return await m.send("_reply to a video sticker_")
+        let buffer = await webp2mp4(await m.quoted.download());
+        return await m.send(buffer, { gifPlayback: true }, "video");
+})
+
+kord({
+  cmd: "tomp3|toaudio",
+  desc: "convert video to audio",
+  fromMe: wtype,
+  type: "converter",
+}, async (m, text) => {
+  try {
+  if (!m.quoted.video) return await m.send("_Reply to a video_")
+  var au = await toAudio(await m.quoted.download(), "mp3")
+  return await m.send(au, { ptt: false }, "audio")
+  } catch (er){
+    return await m.send(`${er}`)
+  }
+})
+
+kord({
+  cmd: "black",
+  desc: "converts mp3 to black video",
+  fromMe: wtype,
+  type: "converter",
+}, async (m, text) => {
+  if (!m.quoted.audio) return m.send("_reply to audio_")
+  const args = text?.trim()?.split(/\s+/);
+  const ffmpegg = ff();
+      let file = path.join(__dirname, '../core/store/black.jpg')
+      if (!fs.existsSync(file)) {
+        const blackImg = await getBuffer("https://cdn.kordai.biz.id/serve/n2BwUtItyeae.jpg");
+        fs.writeFileSync(file, blackImg);
+      }
+      if (args[0] && await isMediaURL(args[0])) {
+         const buff = await getBuffer(extractUrlsFromString(args)[0])
+         const readed = await read(buff);
+         if (readed.getWidth() != readed.getHeight()) return await m.send('_image width and height must be same!!_');
+              const {
+                        mime
+                } = await fromBuffer(buff);
+              if (!['jpg', 'jpeg', 'png'].includes(mime.split('/')[1])) return await m.send("*_please provide a image url_*");
+              file = '../core/store/' + mime.replace('/', '.');
+              fs.writeFileSync(file, buff);
+              const audioFile = path.join(__dirname, '../core/store/audio.mp3');
+      var buf = await m.quoted.download()
+      fs.writeFileSync(audioFile, buf);
+      const Opath = path.join(__dirname, '../core/store/videoMixed.mp4')
+      ffmpegg.input(file);
+      ffmpegg.input(audioFile);
+      ffmpegg.output(Opath);
+      ffmpegg.on('end', async () => {
+         await m.send(fs.readFileSync(Opath), {}, 'video');
+         fs.unlinkSync(audioFile)
+       fs.unlinkSync(Opath)
+      });
+      ffmpegg.on('error', async (err) => {
+         await m.send(`${err}`);
+      });
+    
+      ffmpegg.run();
+              
+      }
+})
+
+
+kord({
+  cmd: "roundstk|round",
+  desc: "create or convert sticker to round frame type",
+  fromMe: wtype,
+  type: "converter",
+}, async (m, text) => {
+  if (!(m.image || m.quoted.sticker || m.quoted.image)) return await m.send("_reply to a photo/sticker_")
+        if (m.quoted.isAnimated) return await m.send("_reply to a photo sticker_")
+        var media = await m.client.downloadMediaMessage(m.image ? m : m.quoted ? m.quoted : null)
+        let sticker = new Sticker(media, {
+        pack: stkpack,
+        author: stkauthor, 
+        type: StickerTypes.ROUNDED,
+        categories: ["🤩", "🎉"], 
+        id: "https://github.com/M3264/Kord-Ai",
+        quality: 75, 
+   });
+   const buffer = await sticker.toBuffer();
+   await m.send(buffer, {packname: stkpack, author: stkauthor}, "sticker");
+})
+
+kord({
+  cmd: "circlestk|circle",
+  desc: "create or convert sticker to circle frame type",
+  fromMe: wtype,
+  type: "converter",
+}, async (m, text) => {
+  if (!(m.image || m.quoted.sticker || m.quoted.image)) return await m.send("_reply to a photo/sticker_")
+        if (m.quoted.isAnimated) return await m.send("_reply to a photo sticker_")
+        var media = await m.client.downloadMediaMessage(m.image ? m : m.quoted ? m.quoted : null)
+        let sticker = new Sticker(media, {
+        pack: stkpack,
+        author: stkauthor, 
+        type: StickerTypes.CIRCLE ,
+        categories: ["🤩", "🎉"], 
+        id: "https://github.com/M3264/Kord-Ai",
+        quality: 75, 
+   });
+   const buffer = await sticker.toBuffer();
+   await m.send(buffer, { packname: stkpack, author: stkauthor }, "sticker");
+})
+
+
+kord({
+  cmd: "take",
+  desc: "change the data of a sticker or audio",
+  fromMe: wtype,
+  type: "converter",
+}, async(m, text) => {
+  if (!(m.quoted.sticker || m.quoted.audio)) return await m.send("_*reply to a sticker or audio*_")
+  
+  if (m.quoted.sticker) {
+    const [packname, author] = (text.match(/[^|;,:]+/g) || []).map(s => s.trim())
+    const pack = [packname || stkpack, author || stkauthor]
+    await m.send(await m.quoted.download(), {packname: pack[0], author: pack[1]}, "sticker")
+  } else if (m.quoted.audio) {
+    let data
+    var buf = await m.quoted.download()
+    const audioBuffer = Buffer.from(buf)
+    const audioResult = await toAudio(audioBuffer, 'mp4')
+    
+    if (text) {
+      data = text.split(";")
+    } else {
+      data = config().AUDIO_DATA.split(";") || ["kord", "v2", ""]
+    }
+    
+    const title = data[0] || "kord"
+    const artist = data[1] || "v2"
+    const coverUrl = data[2] || "https://cdn.kordai.biz.id/serve/tuNyPANPYD2v.png"
+    
+    try {
+      const audioBase64 = audioResult.toString('base64')
+      
+      const response = await fetch('https://kord-api.vercel.app/add-mp3-meta', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          songUrl: `data:audio/mp4;base64,${audioBase64}`,
+          coverUrl: coverUrl,
+          title: title,
+          artist: artist
+        })
+      })
+      
+      if (!response.ok) {
+        throw new Error('API request failed')
+      }
+      
+      const taggedAudio = await response.buffer()
+      await m.send(taggedAudio, { mimetype: "audio/mp4" }, "audio")
+    } catch (error) {
+      console.error('API Error:', error)
+      await m.send(audioResult, { mimetype: "audio/mp4" }, "audio")
+    }
+  }
+})
+
+kord({
+  cmd: "exif",
+  desc: "get exif data of a sticker",
+  fromMe: wtype,
+  type: "converter",
+}, async (m, text) => {
+  if (!m.quoted.sticker) return await m.send("_reply to a sticker_")
+  let img = new Image();
+   await img.load(await m.quoted.download());
+   const exif = JSON.parse(img.exif.slice(22).toString());
+   const stickerPackId = exif['sticker-pack-id'];
+   const stickerPackName = exif['sticker-pack-name'];
+   const stickerPackPublisher = exif['sticker-pack-publisher'];
+   const cap = (`_*Sticker Pack ID ➱*_ ${stickerPackId}\n\n_*Pack name ➱*_ ${stickerPackName}\n_*Publisher ➱*_ ${stickerPackPublisher}`)
+   return m.send(cap)
+})
+
+kord({
+  cmd: "aitts",
+  desc: "tts ai with id split with |",
+  fromMe: wtype,
+  type: "converter",
+}, async (m, text, cmd) => {
+  if (text == 'list') 
+   return await m.send(` *List of Available Aitts models*\n\n 1 _rachel_ \n 2 _clyde_ \n 3 _domi_ \n 4 _dave_ \n 5 _fin_ \n 6 _bella_ \n 7 _antoni_ \n 8 _thomas_ \n 9 _charlie_ \n 10 _emily_ \n 11 _elli_ \n 12 _callum_ \n 13 _patrick_ \n 14 _harry_ \n 15 _liam_ \n 16 _dorothy_ \n 17 _josh_ \n 18 _arnold_ \n 19 _charlotte_ \n 20 _matilda_ \n 21 _matthew_ \n 22 _james_ \n 23 _joseph_ \n 24 _jeremy_ \n 25 _michael_ \n 26 _ethan_ \n 27 _gigi_ \n 28 _freya_ \n 29 _grace_ \n 30 _daniel_ \n 31 _serena_ \n 32 _adam_ \n 33 _nicole_ \n 34 _jessie_ \n 35 _ryan_ \n 36 _sam_ \n 37 _glinda_ \n 38 _giovanni_ \n 39 _mimi_ \n`.replace(/├/g, ''));
+   let [txt, id] = text.split("|");
+if (!txt) {
+  return await m.send(`*_Provide text to speak_*\n_Example: ${cmd} hey there|jeremy_\n\nTo see list of voices, use *aitts list*`);
+}
+if (!id) id = "jeremy";
+const stream = await elevenlabs(txt, id);
+if (!stream) {
+  return await m.send(`_Seems API key is invalid or not found_\n\n*Get API key from:* https://elevenlabs.io/app/settings/api-keys\nThen set using: .setting ELEVENLABS_APIKEY yourkey\nOr set manually in config.js`);
+}
+return await m.send(stream, { mimetype: 'audio/mpeg', ptt: true }, 'audio');
+})
+
+kord({
+  cmd: "doc",
+  desc: "converts media to document",
+  fromMe: wtype,
+  type: "converter",
+}, async (m, text) => {
+  var name = (text || await rand()).replace(/[^A-Za-z0-9]/g,'-');
+  if (!(m.image || m.video || m.quoted.image || m.quoted.video || m.quoted.audio)) return await m.send("reply to an image/audio/video")
+  var msg = (m.image || m.video) ? m : m.quoted ? m.quoted : null
+  var media = await m.client.downloadMediaMessage(msg)
+  const { ext, mime } = await fromBuffer(media);
+    return await m.send(media, { mimetype: mime, fileName: name + "." + ext }, "document");
+})
+
+kord({
+  cmd: "tovv",
+  desc: "convert media to viewonce",
+  fromMe: wtype,
+  type: "converter",
+}, async (m, text) => {
+  if (!(m.image || m.video || m.quoted.image || m.quoted.video || m.quoted.audio)) return await m.send("reply to an image/audio/video")
+  var media = (m.image || m.video) ? m : m.quoted ? m.quoted : null
+  var buf = await m.client.downloadMediaMessage(media)
+  if (m.image) {
+    await m.send(buf, { viewOnce: true}, "image")
+  } else if (m.video) {
+    await m.send(buf, { viewOnce: true}, "video")
+  } else if (m.quoted.image) {
+    await m.send(buf, { viewOnce: true}, "image")
+  } else if (m.quoted.video) {
+    await m.send(buf, { viewOnce: true}, "video")
+  } else if (m.quoted.audio) {
+    await m.send(buf, { viewOnce: true}, "audio")
+  }
+})
+
+kord({
+  cmd: "bass",
+  desc: "apply bass effect to audio",
+  fromMe: wtype, 
+  type: "converter",
+}, async (m, text) => {
+  if (!m.quoted.audio) return await m.send("_reply a audio_")
+  const output = await processAudio(m, "bass", [
+                    "-af", "equalizer=f=54:width_type=o:width=2:g=20"
+                ]);
+  await m.client.sendMessage(m.chat, {
+     audio: require("fs").readFileSync(output ),
+     mimetype: 'audio/mp4',
+     ptt: false
+     }, { quoted: m})
+     fs.unlinkSync(output);
+})
+
+kord({
+  cmd: "blown",
+  desc: "apply blown effect to audio",
+  fromMe: wtype, 
+  type: "converter",
+}, async (m, text) => {
+try {
+  if (!m.quoted.audio) return await m.send("_reply a audio_")
+  const outputPath = await processAudio(m, "blown", [
+                    "-af", "acrusher=.1:1:64:0:log"
+                ]);
+   await m.client.sendMessage(m.chat, {
+     audio: require("fs").readFileSync(outputPath),
+     mimetype: 'audio/mp4',
+     ptt: false
+     })
+  fs.unlinkSync(outputPath);
+} catch (e) {
+  console.error(e)
+  return await m.send(`error...: ${e}`)
+}
+})
+
+kord({
+  cmd: "deep",
+  desc: "apply deep effect to audio",
+  fromMe: wtype, 
+  type: "converter",
+}, async (m, text) => {
+try {
+  if (!m.quoted.audio) return await m.send("_reply a audio_")
+  const outputPath = await processAudio(m, "deep", [
+                    "-af", "atempo=4/4,asetrate=44500*2/3"
+                ]);
+   await m.client.sendMessage(m.chat, {      audio: require("fs").readFileSync(outputPath),      mimetype: 'audio/mp4',      ptt: false      }, { quoted: m})
+  fs.unlinkSync(outputPath);
+} catch (e) {
+  console.error(e)
+  return await m.send(`error...: ${e}`)
+}
+})
+
+kord({
+  cmd: "earrape",
+  desc: "apply extremely loud effect to audio",
+  fromMe: wtype, 
+  type: "converter",
+}, async (m, text) => {
+try {
+  if (!m.quoted.audio) return await m.send("_reply a audio_")
+  const outputPath = await processAudio(m, "earrape", [
+                    "-af", "volume=12"
+                ]);
+   await m.client.sendMessage(m.chat, {      audio: require("fs").readFileSync(outputPath),      mimetype: 'audio/mp4',      ptt: false      }, { quoted: m})
+  fs.unlinkSync(outputPath);
+} catch (e) {
+  console.error(e)
+  return await m.send(`error...: ${e}`)
+}
+})
+
+kord({
+  cmd: "fast",
+  desc: "speed up audio",
+  fromMe: wtype, 
+  type: "converter",
+}, async (m, text) => {
+try {
+  if (!m.quoted.audio) return await m.send("_reply a audio_")
+  const outputPath = await processAudio(m, "fast", [
+                    "-filter:a", "atempo=1.63,asetrate=44100"
+                ]);
+   await m.client.sendMessage(m.chat, {      audio: require("fs").readFileSync(outputPath),      mimetype: 'audio/mp4',      ptt: false      }, { quoted: m})
+  fs.unlinkSync(outputPath);
+} catch (e) {
+  console.error(e)
+  return await m.send(`error...: ${e}`)
+}
+})
+
+kord({
+  cmd: "fat",
+  desc: "apply fat effect to audio",
+  fromMe: wtype, 
+  type: "converter",
+}, async (m, text) => {
+try {
+  if (!m.quoted.audio) return await m.send("_reply a audio_")
+  const outputPath = await processAudio(m, "fat", [
+                    "-filter:a", "atempo=1.6,asetrate=22100"
+                ]);
+   await m.client.sendMessage(m.chat, {      audio: require("fs").readFileSync(outputPath),      mimetype: 'audio/mp4',      ptt: false      }, { quoted: m})
+  fs.unlinkSync(outputPath);
+} catch (e) {
+  console.error(e)
+  return await m.send(`error...: ${e}`)
+}
+})
+
+kord({
+  cmd: "nightcore",
+  desc: "apply nightcore effect to audio",
+  fromMe: wtype, 
+  type: "converter",
+}, async (m, text) => {
+try {
+  if (!m.quoted.audio) return await m.send("_reply a audio_")
+  const outputPath = await processAudio(m, "nightcore", [
+                    "-filter:a", "atempo=1.06,asetrate=44100*1.25"
+                ]);
+   await m.client.sendMessage(m.chat, {      audio: require("fs").readFileSync(outputPath),      mimetype: 'audio/mp4',      ptt: false      }, { quoted: m})
+  fs.unlinkSync(outputPath);
+} catch (e) {
+  console.error(e)
+  return await m.send(`error...: ${e}`)
+}
+})
+
+kord({
+  cmd: "reverse",
+  desc: "reverse audio playback",
+  fromMe: wtype, 
+  type: "converter",
+}, async (m, text) => {
+try {
+  if (!m.quoted.audio) return await m.send("_reply a audio_")
+  const outputPath = await processAudio(m, "reverse", [
+                    "-filter_complex", "areverse"
+                ]);
+   await m.client.sendMessage(m.chat, {      audio: require("fs").readFileSync(outputPath),      mimetype: 'audio/mp4',      ptt: false      }, { quoted: m})
+  fs.unlinkSync(outputPath);
+} catch (e) {
+  console.error(e)
+  return await m.send(`error...: ${e}`)
+}
+})
+
+kord({
+  cmd: "squirrel",
+  desc: "apply squirrel voice effect to audio",
+  fromMe: wtype, 
+  type: "converter",
+}, async (m, text) => {
+try {
+  if (!m.quoted.audio) return await m.send("_reply a audio_")
+  const outputPath = await processAudio(m, "squirrel", [
+                    "-filter:a", "atempo=0.5,asetrate=65100"
+                ]);
+   await m.client.sendMessage(m.chat, {      audio: require("fs").readFileSync(outputPath),      mimetype: 'audio/mp4',      ptt: false      }, { quoted: m})
+  fs.unlinkSync(outputPath);
+} catch (e) {
+  console.error(e)
+  return await m.send(`error...: ${e}`)
+}
+})
+
+kord({
+  cmd: "robot",
+  desc: "apply robot voice effect to audio",
+  fromMe: wtype, 
+  type: "converter",
+}, async (m, text) => {
+try {
+  if (!m.quoted.audio) return await m.send("_reply a audio_")
+  const outputPath = await processAudio(m, "robot", [
+                    "-af", "afftfilt=real='hypot(re,im)*sin(0)':imag='hypot(re,im)*cos(0)':win_size=512:overlap=0.75"
+                ]);
+   await m.client.sendMessage(m.chat, {      audio: require("fs").readFileSync(outputPath),      mimetype: 'audio/mp4',      ptt: false      }, { quoted: m})
+  fs.unlinkSync(outputPath);
+} catch (e) {
+  console.error(e)
+  return await m.send(`error...: ${e}`)
+}
+})
+
+kord({
+  cmd: "slow",
+  desc: "slow down audio",
+  fromMe: wtype, 
+  type: "converter",
+}, async (m, text) => {
+try {
+  if (!m.quoted.audio) return await m.send("_reply a audio_")
+  const outputPath = await processAudio(m, "slow", [
+                    "-filter:a", "atempo=0.7,asetrate=44100"
+                ]);
+   await m.client.sendMessage(m.chat, {      audio: require("fs").readFileSync(outputPath),      mimetype: 'audio/mp4',      ptt: false      }, { quoted: m})
+  fs.unlinkSync(outputPath);
+} catch (e) {
+  console.error(e)
+  return await m.send(`error...: ${e}`)
+}
+})
+
+kord({
+  cmd: "smooth",
+  desc: "apply smooth effect to audio",
+  fromMe: wtype, 
+  type: "converter",
+}, async (m, text) => {
+try {
+  if (!m.quoted.audio) return await m.send("_reply a audio_")
+  const outputPath = await processAudio(m, "smooth", [
+                    "-af", "asubboost=dry=0:wet=1:decay=0.1:feedback=0.1:cutoff=100:slope=0.5:delay=20"
+                ]);
+   await m.client.sendMessage(m.chat, {      audio: require("fs").readFileSync(outputPath),      mimetype: 'audio/mp4',      ptt: false      }, { quoted: m})
+  fs.unlinkSync(outputPath);
+} catch (e) {
+  console.error(e)
+  return await m.send(`error...: ${e}`)
+}
+})
+
+kord({
+  cmd: "chipmunk",
+  desc: "apply chipmunk voice effect to audio",
+  fromMe: wtype, 
+  type: "converter",
+}, async (m, text) => {
+try {
+  if (!m.quoted.audio) return await m.send("_reply a audio_")
+  const outputPath = await processAudio(m, "chipmunk", [
+                    "-filter:a", "atempo=0.8,asetrate=65100*1.3"
+                ]);
+   await m.client.sendMessage(m.chat, {      audio: require("fs").readFileSync(outputPath),      mimetype: 'audio/mp4',      ptt: false      }, { quoted: m})
+  fs.unlinkSync(outputPath);
+} catch (e) {
+  console.error(e)
+  return await m.send(`error...: ${e}`)
+}
+})
+
+kord({
+  cmd: "tremolo",
+  desc: "apply tremolo effect to audio",
+  fromMe: wtype, 
+  type: "converter",
+}, async (m, text) => {
+try {
+  if (!m.quoted.audio) return await m.send("_reply a audio_")
+  const outputPath = await processAudio(m, "tremolo", [
+                    "-af", "tremolo=f=6:d=0.5"
+                ]);
+   await m.client.sendMessage(m.chat, {      audio: require("fs").readFileSync(outputPath),      mimetype: 'audio/mp4',      ptt: false      }, { quoted: m})
+  fs.unlinkSync(outputPath);
+} catch (e) {
+  console.error(e)
+  return await m.send(`error...: ${e}`)
+}
+})
+
+kord({
+  cmd: "vibrato",
+  desc: "apply vibrato effect to audio",
+  fromMe: wtype, 
+  type: "converter",
+}, async (m, text) => {
+try {
+  if (!m.quoted.audio) return await m.send("_reply a audio_")
+  const outputPath = await processAudio(m, "vibrato", [
+                    "-af", "vibrato=f=7:d=0.5"
+                ]);
+   await m.client.sendMessage(m.chat, {      audio: require("fs").readFileSync(outputPath),      mimetype: 'audio/mp4',      ptt: false      }, { quoted: m})
+  fs.unlinkSync(outputPath);
+} catch (e) {
+  console.error(e)
+  return await m.send(`error...: ${e}`)
+}
+})
+
+kord({
+  cmd: "8d",
+  desc: "apply 8D surround effect to audio",
+  fromMe: wtype, 
+  type: "converter",
+}, async (m, text) => {
+try {
+  if (!m.quoted.audio) return await m.send("_reply a audio_")
+  const outputPath = await processAudio(m, "8d", [
+                    "-af", "apulsator=hz=0.125"
+                ]);
+   await m.client.sendMessage(m.chat, {      audio: require("fs").readFileSync(outputPath),      mimetype: 'audio/mp4',      ptt: false      }, { quoted: m})
+  fs.unlinkSync(outputPath);
+} catch (e) {
+  console.error(e)
+  return await m.send(`error...: ${e}`)
+}
+})
+
+kord({
+  cmd: "echo",
+  desc: "apply echo effect to audio",
+  fromMe: wtype, 
+  type: "converter",
+}, async (m, text) => {
+try {
+  if (!m.quoted.audio) return await m.send("_reply a audio_")
+  const outputPath = await processAudio(m, "echo", [
+                    "-af", "aecho=0.8:0.9:1000:0.3"
+                ]);
+   await m.client.sendMessage(m.chat, {      audio: require("fs").readFileSync(outputPath),      mimetype: 'audio/mp4',      ptt: false      }, { quoted: m})
+  fs.unlinkSync(outputPath);
+} catch (e) {
+  console.error(e)
+  return await m.send(`error...: ${e}`)
+}
+})
+
+kord({
+  cmd: "flanger",
+  desc: "apply flanger effect to audio",
+  fromMe: wtype, 
+  type: "converter",
+}, async (m, text) => {
+try {
+  if (!m.quoted.audio) return await m.send("_reply a audio_")
+  const outputPath = await processAudio(m, "flanger", [
+                    "-af", "flanger=delay=5:depth=2:regen=5:width=5:speed=2:shape=sine:phase=90:interp=linear"
+                ]);
+   await m.client.sendMessage(m.chat, {      audio: require("fs").readFileSync(outputPath),      mimetype: 'audio/mp4',      ptt: false      }, { quoted: m})
+  fs.unlinkSync(outputPath);
+} catch (e) {
+  console.error(e)
+  return await m.send(`error...: ${e}`)
+}
+})
+

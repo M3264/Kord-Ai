@@ -1203,3 +1203,159 @@ kord({
     return await m.client.groupParticipantsUpdate(m.chat, [user], "remove")
   }
 })
+
+kord({
+  cmd: "antigm",
+  desc: "set action to be done when a person mentions the group",
+  fromMe: wtype,
+  gc: true,
+  type: "group",
+}, async (m, text) => {
+  try {
+  var botAd = await isBotAdmin(m);
+  if (!botAd) return await m.send("_*Bot Needs To Be Admin!*_")
+  
+  const args = text.split(" ");
+  if (args && args.length > 0) {
+  const option = args[0].toLowerCase();
+  const value = args.length > 1 ? args[1] : null;
+  const fArgs = args.slice(1).join(" ")
+  const chatJid = m.chat
+  
+  
+  var sdata = await getData("antigm_config");
+      if (!Array.isArray(sdata)) sdata = [];
+  let isExist = sdata.find(entry => entry.chatJid === chatJid);
+  if (option === "delete") {
+    var delc = { 
+      chatJid,
+     action: "del",
+     warnc: "0",
+     maxwrn: "3"
+    }
+    if (isExist) {
+      isExist.action = "del"
+    } else {
+      sdata.push(delc)
+    }
+    await storeData("antigm_config", JSON.stringify(sdata, null, 2))
+    return await m.send(`_*AntiGm Is Now Enabled!*_\n_Action:_ delete`)
+    } else  if (option === "kick") {
+      var kikc = {
+        chatJid,
+        "action": "kick", 
+        "warnc": "0",
+        "maxwrn": "3"
+      }
+       if (isExist) {
+      isExist.action = "kick"
+    } else {
+      sdata.push(kikc)
+    }
+    await storeData("antigm_config", JSON.stringify(sdata, null, 2))
+    return await m.send(`_*AntiGm Is Now Enabled!*_\n_Action:_ kick`)
+    } else if (option === "warn") {
+      var cou = parseInt(value)
+      if(!cou) return await m.send(`*_Use ${prefix}antibot warn 3_*`)
+      var warnco = {
+        chatJid,
+        "action": "warn",
+        "warnc": "0",
+        "maxwrn": cou
+      }
+      if (isExist) {
+      isExist.action = "warn"
+      isExist.maxwrn = cou
+    } else {
+      sdata.push(warnco)
+    }
+    await storeData("antigm_config", JSON.stringify(sdata, null, 2))
+    return await m.send(`_*AntiGm Is Now Enabled!*_\n_Action:_ Warn\n_MaxWarning:_ ${cou}`)
+    } else if (option === "status") {
+      if (!isExist) return await m.send("_AntiGm is Currently Disabled here..._")
+      var sc = `\`\`\`[ ANTI-GM STATUS ]\`\`\`
+_Active?:_ Yes
+_Action:_ ${isExist.action}
+_MaxWARN:_ ${isExist.maxwrn}`
+      await m.send(sc)
+    } else if (option === "off") {
+      if (!isExist) return await m.send("_AntiGm is Currently Disabled here..._")
+        sdata = sdata.filter(entry => entry.chatJid !== chatJid)
+       await storeData("antigm_config", JSON.stringify(sdata, null, 2))
+       return await m.send("_*AntiGm disabled!*_")
+    } else {
+      var mssg = `\`\`\` [ Available AntiGm config ] \`\`\`
+_${pre}antigm delete_
+_${pre}antigm kick_
+_${pre}antigm warn 3_
+_${pre}antigm status_
+_${pre}antigm off_`
+      return m.send(`${mssg}`)
+    }
+    } else {
+      var msg = `\`\`\` [ Available AntiGm config ] \`\`\`
+_${pre}antigm delete_
+_${pre}antigm kick_
+_${pre}antigm warn 3_
+_${pre}antigm status_
+_${pre}antigm off_`
+      return m.send(`${msg}`)
+    }
+      
+    } catch (e) {
+      console.error(e)
+      m.send(`${e}`)
+    }
+})
+
+kord({
+  on: "all",
+}, async (m, text) => {
+  const isGroup = m.key.remoteJid.endsWith('@g.us');
+    if (isGroup) {
+        var botAd = await isBotAdmin(m);
+        if (!botAd) return;
+        
+       if(m.message.reactionMessage) return;
+    const cJid = m.key.remoteJid
+    const groupMetadata = await getMeta(m.client, m.chat);
+        const admins =  groupMetadata.participants.filter(v => v.admin !== null).map(v => v.jid); 
+        const wCount = new Map()
+    if (m.message?.groupStatusMentionMessage && !m.fromMe) {
+    var sdata = await getData("antigm_config");
+      if (!Array.isArray(sdata)) return;
+  let isExist = sdata.find(entry => entry.chatJid === cJid);
+  if (isExist && !admins.includes(m.sender)) {
+    var act = isExist.action
+    if (act === "del") {
+      await m.client.sendMessage(m.key.remoteJid, { delete: m.key });
+      return await m.send(`_*Status Mention is not Allowed!!*_`)
+    } else if (act === "kick") {
+      await m.client.sendMessage(m.key.remoteJid, { delete: m.key });
+      await m.send(`_*Status Mention is not Allowed!!*_\n_Goodbye!!_`)
+      await m.client.groupParticipantsUpdate(cJid, [m.sender], 'remove');
+    } else if (act === "warn") {
+      var cCount = (wCount.get(cJid) || 0) + 1
+      wCount.set(cJid, cCount)
+      var maxC = isExist.maxwrn
+      
+      var remain = maxC - cCount
+      if (remain > 0) {
+        var rmsg = `_*Status Mention is not Allowed!!*_
+_You are warned!_
+Warning(s): (${cCount}/${maxC})`
+      await m.send(`${rmsg}`)
+      await m.client.sendMessage(m.key.remoteJid, { delete: m.key });
+      }
+      if (cCount >= maxC) {
+        await m.client.sendMessage(m.key.remoteJid, { delete: m.key });
+        await m.send(`_*Max Warning Exceeded!!*_\n_Goodbye!!!_`)
+        await m.client.groupParticipantsUpdate(cJid, [m.sender], 'remove');
+        wCount.delete(cJid)
+      }
+    }
+  }
+  } else return;
+  }
+})
+

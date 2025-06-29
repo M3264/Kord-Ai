@@ -1,1 +1,386 @@
-const a0_0x19973e=a0_0x18c9;(function(_0x75915a,_0xf13d2){const _0x24eb6b=a0_0x18c9,_0x2d4d81=_0x75915a();while(!![]){try{const _0x1db1a2=-parseInt(_0x24eb6b(0x116))/0x1+parseInt(_0x24eb6b(0x13b))/0x2*(parseInt(_0x24eb6b(0x9e))/0x3)+parseInt(_0x24eb6b(0x103))/0x4*(-parseInt(_0x24eb6b(0xc1))/0x5)+parseInt(_0x24eb6b(0x9c))/0x6*(parseInt(_0x24eb6b(0x102))/0x7)+-parseInt(_0x24eb6b(0x90))/0x8+-parseInt(_0x24eb6b(0xd2))/0x9*(parseInt(_0x24eb6b(0x95))/0xa)+parseInt(_0x24eb6b(0x13d))/0xb;if(_0x1db1a2===_0xf13d2)break;else _0x2d4d81['push'](_0x2d4d81['shift']());}catch(_0x402801){_0x2d4d81['push'](_0x2d4d81['shift']());}}}(a0_0xa8f6,0x7d29c));function a0_0xa8f6(){const _0x19cfed=['\x0a╠\x20\x20\x20\x20💰\x20Price:\x20₹','jackpot.png','inv|inventory','lowbal','send','```╔════════════════╗\x0a╠\x20💸\x20WITHDRAW\x20SUCCESS\x20╣\x0a╠════════════════╝\x0a╠\x20💰\x20Withdrawn:\x20₹','\x20』\x0a╚════════════════```','\x0a╠\x20🏦\x20Bank:\x20₹','Successfully\x20claimed\x20your\x20daily\x20coins','push','💸\x20Gambling\x20Loss','```❌\x20Please\x20specify\x20who\x20to\x20pay```','\x0a╠\x20😈\x20You\x20got\x20away\x20with\x20it!\x0a╚════════════════```','```⚠️\x20Please\x20specify\x20item\x20name\x20or\x20number```','Worked\x20as\x20','8795394QKUGBf','loss.png','amount','Not\x20your\x20lucky\x20day','kord','```😂\x20You\x20cannot\x20rob\x20yourself```','\x0a╠\x20💎\x20Profit:\x20₹','Engineer','\x20and\x20earned\x20money','```╔════════════════╗\x0a╠\x20📦\x20INVENTORY\x20\x20\x20\x20\x20╣\x0a╠════════════════╝\x0a','```','bankCapacity','buy','💰\x20Balance\x20Check','path','```❌\x20Please\x20provide\x20valid\x20amount```','Buy\x20some\x20items\x20from\x20shop','economy|econ','\x0a╠\x20💎\x20Your\x20Balance:\x20₹','🚨\x20Robbery\x20Failed','😴\x20Work\x20Cooldown','```❌\x20Item\x20not\x20found\x20in\x20shop```','econ','random','```📊\x20No\x20users\x20found\x20in\x20economy```','leaderboard.png','Doctor','\x0a╠\x20👤\x20To:\x20@','```╔════════════════╗\x0a╠\x20🏦\x20DEPOSIT\x20SUCCESS\x20╣\x0a╠════════════════╝\x0a╠\x20💰\x20Deposited:\x20₹','withdraw','purchase.png','fine','```⚠️\x20Please\x20specify\x20amount\x20to\x20withdraw```','\x0a╚════════════════```','floor','all','daily.png','```💎\x20Economy\x20Commands\x20Are\x20Already\x20Inactive```','```💸\x20Insufficient\x20bank\x20balance```','dep|deposit','📦\x20Your\x20Inventory','success','```📉\x20Economy\x20commands\x20deactivated```','connect','\x0a╠\x20💎\x20Wallet:\x20₹','\x0a╠\x20👮\x20Caught\x20by\x20police!\x0a╠\x20😢\x20Better\x20luck\x20next\x20time\x0a╚════════════════```','includes','noten','1477lHEmYP','4xAVVKd','Chef','\x0a╠\x20🎲\x20Better\x20luck\x20next\x20time\x0a╚════════════════```','off','🏆\x20Economy\x20Leaderboard','quoted','💼\x20Work\x20Complete','name','buyItem','\x0a╠\x20💰\x20Earned:\x20₹','[economy]shows\x20user\x27s\x20balance','```💸\x20Target\x20doesn\x27t\x20have\x20enough\x20money\x20to\x20rob```','Money\x20safely\x20stored\x20in\x20bank','notfound','work.png','item','[economy]\x20attempt\x20to\x20rob\x20someone','```⚠️\x20Please\x20specify\x20amount\x20to\x20gamble```','withdraw.png','868002mFKghK','🏦\x20Bank\x20Deposit','mentions','```⚠️\x20Reply\x20to\x20someone\x20or\x20mention\x20with\x20amount```','Come\x20back\x20later\x20for\x20your\x20reward','Take\x20a\x20rest\x20before\x20working\x20again','store','🎰\x20Gambling\x20Win','Transaction\x20completed\x20successfully','```⚠️\x20Reply\x20to\x20someone\x20or\x20mention\x20to\x20rob```','daily','```💎\x20Economy\x20Is\x20Not\x20Activated\x20Here```','join','```⚠️\x20Please\x20specify\x20amount\x20to\x20deposit```','```😂\x20You\x20cannot\x20pay\x20yourself```','[economy]\x20gamble\x20your\x20money','\x0a╠\x20👤\x20From:\x20@','🛒\x20Purchase\x20Complete','invalid','```❌\x20Please\x20provide\x20a\x20valid\x20amount```','../core/edb','work','\x0a╠\x20\x20\x20\x20📝\x20','bank','caught.png','price','give','```╔════════════════╗\x0a╠\x20💸\x20GAMBLING\x20LOSS\x20\x20╣\x0a╠════════════════╝\x0a╠\x20💰\x20Bet:\x20₹','\x0a╠\x20💎\x20Remaining:\x20₹',':\x20₹','\x20』\x0a╠\x20🏦\x20𝗕𝗮𝗻𝗸:『\x20₹','empty.png','gamble|bet','core','\x0a╠\x20😢\x20Lost:\x20₹','deposit','```╔════════════════╗\x0a╠\x20💸\x20PAYMENT\x20SUCCESS\x20╣\x0a╠════════════════╝\x0a╠\x20💰\x20Amount:\x20₹','4754ErfWQb','with|withdraw','21086824FWbUQI','\x0a╠\x0a','Caught\x20and\x20fined\x20by\x20police','userID','quantity','```╔════════════════╗\x0a╠\x20🚨\x20ROBBERY\x20FAILED\x20\x20╣\x0a╠════════════════╝\x0a╠\x20💸\x20Fine:\x20₹','🛒\x20Item\x20Shop','```╔════════════════╗\x0a╠\x20🛒\x20ITEM\x20SHOP\x20\x20\x20\x20\x20╣\x0a╠════════════════╝\x0a','police.png','```💸\x20Insufficient\x20balance\x20to\x20buy\x20this\x20item```','Items\x20you\x20currently\x20own','[economy]\x20work\x20to\x20earn\x20money','4278000UwIgWi','chat','```╔════════════════╗\x0a╠\x20🎯\x20ROBBERY\x20SUCCESS\x20╣\x0a╠════════════════╝\x0a╠\x20💰\x20Stolen:\x20₹','Teacher','cdL','10BstDdq','```╔════════════════╗\x0a╠\x20💼\x20WORK\x20COMPLETE\x20\x20╣\x0a╠════════════════╝\x0a╠\x20👷\x20Job:\x20','toLowerCase','```💸\x20Insufficient\x20wallet\x20balance```','```╔════════════════╗\x0a╠\x20💰\x20USER\x20BALANCE\x20\x20\x20╣\x0a╠════════════════╝\x0a╠\x20💎\x20𝗪𝗮𝗹𝗹𝗲𝘁:『\x20₹','Writer','lb|leaderboard|top','7056flXVVZ','filter','1059jiNZBz','Lady\x20luck\x20is\x20on\x20your\x20side!','payment.png','[economy]\x20buy\x20items\x20from\x20shop','length','Your\x20current\x20financial\x20status','```📦\x20Your\x20inventory\x20is\x20empty```','economy','Successfully\x20robbed\x20someone!','balance','readFileSync','```⭕\x20You\x27re\x20still\x20tired\x20from\x20work\x0a⏱️\x20Come\x20back\x20in:\x20','[economy]\x20give\x20money\x20to\x20someone','⏰\x20Daily\x20Cooldown','```╔════════════════╗\x0a╠\x20🛒\x20PURCHASE\x20SUCCESS\x20╣\x0a╠════════════════╝\x0a╠\x20🎁\x20Item:\x20','description','[economy]\x20view\x20your\x20inventory','```\x0a╚\x20⏱️\x20*Cooldown:*\x20```24\x20Hours```','```💎\x20Economy\x20Commands\x20Are\x20Already\x20Active```','[economy]\x20view\x20available\x20items','🎯\x20Robbery\x20Success','split','[economy]\x20withdraw\x20money\x20from\x20bank','newBalance','wallet','Successfully\x20bought\x20','rob','╚════════════════```','../core','cooldown.png','Designer','MONGODB_URI','╔🎉\x20*You\x27ve\x20claimed:*\x20```₹','manage\x20economy\x20commands','insufficient','557575IlkMak','sender'];a0_0xa8f6=function(){return _0x19cfed;};return a0_0xa8f6();}const {kord,prefix,wtype,config,getData,storeData}=require(a0_0x19973e(0xba)),fs=require('fs'),path=require(a0_0x19973e(0xe0)),edb=require(a0_0x19973e(0x12a));if(config()['MONGODB_URI'])var con=edb[a0_0x19973e(0xfd)](config()[a0_0x19973e(0xbd)]);else con=undefined;function a0_0x18c9(_0x153203,_0x120d94){const _0xa8f6b4=a0_0xa8f6();return a0_0x18c9=function(_0x18c931,_0xd8a8aa){_0x18c931=_0x18c931-0x88;let _0x532b38=_0xa8f6b4[_0x18c931];return _0x532b38;},a0_0x18c9(_0x153203,_0x120d94);}const k=a0_0x19973e(0xd6),stored=path[a0_0x19973e(0x122)](__dirname,'..',a0_0x19973e(0x137),a0_0x19973e(0x11c));kord({'cmd':a0_0x19973e(0xe3),'desc':a0_0x19973e(0xbf),'fromMe':wtype,'type':a0_0x19973e(0xa5)},async(_0x2ddc1a,_0x3dc2e2)=>{const _0xd92ed3=a0_0x19973e;if(!config()[_0xd92ed3(0xbd)]||config()['MONGODB_URI']==='')return await _0x2ddc1a[_0xd92ed3(0xc7)]('```You\x20need\x20to\x20set\x20MONGODB_URI\x20at\x20config\x0aexample\x20setvar\x20MONGODB_URI=your\x20url..```');var _0x15d9ba=await getData(_0xd92ed3(0xe8))||[];if(_0x3dc2e2&&_0x3dc2e2['toLowerCase']()===_0xd92ed3(0x106)){if(!_0x15d9ba[_0xd92ed3(0x100)](_0x2ddc1a[_0xd92ed3(0x91)]))return await _0x2ddc1a[_0xd92ed3(0xc7)](_0xd92ed3(0xf7));return _0x15d9ba=_0x15d9ba[_0xd92ed3(0x9d)](_0xd689de=>_0xd689de!==_0x2ddc1a[_0xd92ed3(0x91)]),await storeData(_0xd92ed3(0xe8),_0x15d9ba),await _0x2ddc1a['send'](_0xd92ed3(0xfc));}if(_0x3dc2e2&&_0x3dc2e2['toLowerCase']()==='on'){if(_0x15d9ba[_0xd92ed3(0x100)](_0x2ddc1a['chat']))return await _0x2ddc1a[_0xd92ed3(0xc7)](_0xd92ed3(0xb0));return _0x15d9ba[_0xd92ed3(0xcc)](_0x2ddc1a['chat']),await storeData(_0xd92ed3(0xe8),_0x15d9ba),await _0x2ddc1a[_0xd92ed3(0xc7)]('```📈\x20Economy\x20commands\x20activated```');}if(_0x15d9ba[_0xd92ed3(0x100)](_0x2ddc1a[_0xd92ed3(0x91)]))return await _0x2ddc1a[_0xd92ed3(0xc7)](_0xd92ed3(0xb0));return _0x15d9ba[_0xd92ed3(0xcc)](_0x2ddc1a[_0xd92ed3(0x91)]),await storeData(_0xd92ed3(0xe8),_0x15d9ba),await _0x2ddc1a[_0xd92ed3(0xc7)]('```📈\x20Economy\x20commands\x20activated```');}),kord({'cmd':'bal|wallet','desc':a0_0x19973e(0x10d),'fromMe':wtype,'type':a0_0x19973e(0xa5)},async(_0x2fd346,_0x509463)=>{const _0xa9f326=a0_0x19973e;var _0x3fa24e=await getData(_0xa9f326(0xe8))||[];if(!_0x3fa24e['includes'](_0x2fd346[_0xa9f326(0x91)]))return await _0x2fd346['send'](_0xa9f326(0x121));const _0x1d68e8=await edb[_0xa9f326(0xa7)](_0x2fd346[_0xa9f326(0xc2)],k);return await _0x2fd346[_0xa9f326(0xc7)](_0xa9f326(0x99)+_0x1d68e8['wallet']+_0xa9f326(0x134)+_0x1d68e8[_0xa9f326(0x12d)]+'/₹'+_0x1d68e8[_0xa9f326(0xdd)]+_0xa9f326(0xc9),{'title':_0xa9f326(0xdf),'body':_0xa9f326(0xa3),'thumbnail':fs[_0xa9f326(0xa8)](path[_0xa9f326(0x122)](stored,'wallet.png'))},'ad');}),kord({'cmd':a0_0x19973e(0x120),'desc':'[economy]\x20claim\x20daily\x20coins','fromMe':wtype,'type':a0_0x19973e(0xa5)},async(_0x38d55a,_0x5d9306)=>{const _0x27ad52=a0_0x19973e;var _0x3123b2=await getData(_0x27ad52(0xe8))||[];if(!_0x3123b2[_0x27ad52(0x100)](_0x38d55a[_0x27ad52(0x91)]))return await _0x38d55a[_0x27ad52(0xc7)](_0x27ad52(0x121));const _0x37ba6c=await edb[_0x27ad52(0x120)](_0x38d55a[_0x27ad52(0xc2)],k,0x3e9);if(_0x37ba6c['cd'])return await _0x38d55a['send']('```⭕\x20You\x27ve\x20Already\x20Claimed\x20For\x20Today\x0a⏱️\x20Come\x20back\x20in:\x20'+_0x37ba6c[_0x27ad52(0x94)]+_0x27ad52(0xdc),{'title':_0x27ad52(0xab),'body':_0x27ad52(0x11a),'thumbnail':fs[_0x27ad52(0xa8)](path[_0x27ad52(0x122)](stored,_0x27ad52(0xbb)))},'ad');else{const _0x48bef7=await edb[_0x27ad52(0xa7)](_0x38d55a[_0x27ad52(0xc2)],k);return await _0x38d55a['send'](_0x27ad52(0xbe)+_0x37ba6c['amount']+'```\x20\x20*For\x20Today*\x0a╠\x20💰\x20*New\x20Balance:*```\x20₹'+_0x48bef7[_0x27ad52(0xb6)]+_0x27ad52(0xaf),{'title':'🎁\x20Daily\x20Reward','body':_0x27ad52(0xcb),'thumbnail':fs[_0x27ad52(0xa8)](path[_0x27ad52(0x122)](stored,_0x27ad52(0xf6)))},'ad');}}),kord({'cmd':a0_0x19973e(0xf9),'desc':'[economy]\x20deposit\x20money\x20to\x20bank','fromMe':wtype,'type':'economy'},async(_0x5d42ba,_0xcb28de)=>{const _0x9d439b=a0_0x19973e;var _0x3a9242=await getData(_0x9d439b(0xe8))||[];if(!_0x3a9242[_0x9d439b(0x100)](_0x5d42ba['chat']))return await _0x5d42ba[_0x9d439b(0xc7)](_0x9d439b(0x121));if(!_0xcb28de)return await _0x5d42ba[_0x9d439b(0xc7)](_0x9d439b(0x123));const _0x1b82a9=_0xcb28de['toLowerCase']()==='all'?_0x9d439b(0xf5):parseInt(_0xcb28de);if(_0x1b82a9!==_0x9d439b(0xf5)&&(isNaN(_0x1b82a9)||_0x1b82a9<=0x0))return await _0x5d42ba[_0x9d439b(0xc7)](_0x9d439b(0x129));const _0x338518=await edb[_0x9d439b(0x139)](_0x5d42ba[_0x9d439b(0xc2)],k,_0x1b82a9);if(_0x338518[_0x9d439b(0x101)])return await _0x5d42ba[_0x9d439b(0xc7)]('```💸\x20Insufficient\x20wallet\x20balance```');const _0xed8c32=await edb[_0x9d439b(0xa7)](_0x5d42ba[_0x9d439b(0xc2)],k);return await _0x5d42ba['send'](_0x9d439b(0xee)+_0x338518['amount']+_0x9d439b(0xfe)+_0xed8c32[_0x9d439b(0xb6)]+_0x9d439b(0xca)+_0xed8c32[_0x9d439b(0x12d)]+'/₹'+_0xed8c32['bankCapacity']+_0x9d439b(0xf3),{'title':_0x9d439b(0x117),'body':_0x9d439b(0x10f),'thumbnail':fs['readFileSync'](path[_0x9d439b(0x122)](stored,'deposit.png'))},'ad');}),kord({'cmd':a0_0x19973e(0x13c),'desc':a0_0x19973e(0xb4),'fromMe':wtype,'type':a0_0x19973e(0xa5)},async(_0xbc2c39,_0x2d7d4d)=>{const _0x3b56a9=a0_0x19973e;var _0x3d2933=await getData(_0x3b56a9(0xe8))||[];if(!_0x3d2933[_0x3b56a9(0x100)](_0xbc2c39[_0x3b56a9(0x91)]))return await _0xbc2c39[_0x3b56a9(0xc7)](_0x3b56a9(0x121));if(!_0x2d7d4d)return await _0xbc2c39[_0x3b56a9(0xc7)](_0x3b56a9(0xf2));const _0x4241a6=_0x2d7d4d[_0x3b56a9(0x97)]()==='all'?_0x3b56a9(0xf5):parseInt(_0x2d7d4d);if(_0x4241a6!==_0x3b56a9(0xf5)&&(isNaN(_0x4241a6)||_0x4241a6<=0x0))return await _0xbc2c39[_0x3b56a9(0xc7)](_0x3b56a9(0x129));const _0x11a83f=await edb[_0x3b56a9(0xef)](_0xbc2c39[_0x3b56a9(0xc2)],k,_0x4241a6);if(_0x11a83f[_0x3b56a9(0x101)])return await _0xbc2c39[_0x3b56a9(0xc7)](_0x3b56a9(0xf8));if(_0x11a83f[_0x3b56a9(0x128)])return await _0xbc2c39[_0x3b56a9(0xc7)]('```❌\x20Invalid\x20amount\x20specified```');const _0x394d88=await edb[_0x3b56a9(0xa7)](_0xbc2c39['sender'],k);return await _0xbc2c39[_0x3b56a9(0xc7)](_0x3b56a9(0xc8)+_0x11a83f[_0x3b56a9(0xd4)]+_0x3b56a9(0xfe)+_0x394d88['wallet']+'\x0a╠\x20🏦\x20Bank:\x20₹'+_0x394d88[_0x3b56a9(0x12d)]+'/₹'+_0x394d88[_0x3b56a9(0xdd)]+_0x3b56a9(0xf3),{'title':'💸\x20Bank\x20Withdrawal','body':'Money\x20withdrawn\x20to\x20wallet','thumbnail':fs[_0x3b56a9(0xa8)](path[_0x3b56a9(0x122)](stored,_0x3b56a9(0x115)))},'ad');}),kord({'cmd':'give|pay','desc':a0_0x19973e(0xaa),'fromMe':wtype,'type':a0_0x19973e(0xa5)},async(_0x4e17e2,_0x21ba24)=>{const _0x253583=a0_0x19973e;var _0x495c6f=await getData(_0x253583(0xe8))||[];if(!_0x495c6f[_0x253583(0x100)](_0x4e17e2['chat']))return await _0x4e17e2[_0x253583(0xc7)](_0x253583(0x121));if(!_0x4e17e2['quoted']&&!_0x21ba24)return await _0x4e17e2[_0x253583(0xc7)](_0x253583(0x119));let _0x6505af=_0x4e17e2[_0x253583(0x108)]?_0x4e17e2[_0x253583(0x108)][_0x253583(0xc2)]:_0x4e17e2[_0x253583(0x118)][0x0],_0x505734=_0x21ba24?parseInt(_0x21ba24[_0x253583(0xb3)]('\x20')[0x1]||_0x21ba24):parseInt(_0x21ba24);if(!_0x6505af)return await _0x4e17e2[_0x253583(0xc7)](_0x253583(0xce));if(isNaN(_0x505734)||_0x505734<=0x0)return await _0x4e17e2[_0x253583(0xc7)](_0x253583(0xe1));if(_0x6505af===_0x4e17e2[_0x253583(0xc2)])return await _0x4e17e2[_0x253583(0xc7)](_0x253583(0x124));const _0x30ee46=await edb[_0x253583(0xa7)](_0x4e17e2[_0x253583(0xc2)],k);if(_0x30ee46[_0x253583(0xb6)]<_0x505734)return await _0x4e17e2[_0x253583(0xc7)](_0x253583(0x98));return await edb['deduct'](_0x4e17e2[_0x253583(0xc2)],k,_0x505734),await edb[_0x253583(0x130)](_0x6505af,k,_0x505734),await _0x4e17e2[_0x253583(0xc7)](_0x253583(0x13a)+_0x505734+_0x253583(0xed)+_0x6505af['split']('@')[0x0]+_0x253583(0xe4)+(_0x30ee46[_0x253583(0xb6)]-_0x505734)+_0x253583(0xf3),{'title':'💸\x20Payment\x20Sent','body':_0x253583(0x11e),'thumbnail':fs[_0x253583(0xa8)](path[_0x253583(0x122)](stored,_0x253583(0xa0)))},'ad');}),kord({'cmd':a0_0x19973e(0x12b),'desc':a0_0x19973e(0x8f),'fromMe':wtype,'type':'economy'},async(_0x536e7d,_0x5e4108)=>{const _0x54a579=a0_0x19973e;var _0x56e816=await getData(_0x54a579(0xe8))||[];if(!_0x56e816[_0x54a579(0x100)](_0x536e7d[_0x54a579(0x91)]))return await _0x536e7d[_0x54a579(0xc7)](_0x54a579(0x121));const _0x1af4fe=await edb['work'](_0x536e7d[_0x54a579(0xc2)],k);if(_0x1af4fe['cd'])return await _0x536e7d[_0x54a579(0xc7)](_0x54a579(0xa9)+_0x1af4fe[_0x54a579(0x94)]+'```',{'title':_0x54a579(0xe6),'body':_0x54a579(0x11b),'thumbnail':fs[_0x54a579(0xa8)](path['join'](stored,'tired.png'))},'ad');const _0x84d050=['Developer',_0x54a579(0xbc),_0x54a579(0x93),_0x54a579(0xec),_0x54a579(0xd9),_0x54a579(0x104),_0x54a579(0x9a),'Artist'],_0x181890=_0x84d050[Math[_0x54a579(0xf4)](Math[_0x54a579(0xe9)]()*_0x84d050[_0x54a579(0xa2)])];return await _0x536e7d[_0x54a579(0xc7)](_0x54a579(0x96)+_0x181890+_0x54a579(0x10c)+_0x1af4fe[_0x54a579(0xd4)]+'\x0a╠\x20⏱️\x20Cooldown:\x20'+_0x1af4fe[_0x54a579(0x94)]+_0x54a579(0xf3),{'title':_0x54a579(0x109),'body':_0x54a579(0xd1)+_0x181890+_0x54a579(0xda),'thumbnail':fs[_0x54a579(0xa8)](path[_0x54a579(0x122)](stored,_0x54a579(0x111)))},'ad');}),kord({'cmd':a0_0x19973e(0xb8),'desc':a0_0x19973e(0x113),'fromMe':wtype,'type':a0_0x19973e(0xa5)},async(_0x40b368,_0x21038d)=>{const _0x3b7011=a0_0x19973e;var _0x529a68=await getData(_0x3b7011(0xe8))||[];if(!_0x529a68['includes'](_0x40b368[_0x3b7011(0x91)]))return await _0x40b368[_0x3b7011(0xc7)](_0x3b7011(0x121));if(!_0x40b368[_0x3b7011(0x108)]&&!_0x40b368[_0x3b7011(0x118)][0x0])return await _0x40b368[_0x3b7011(0xc7)](_0x3b7011(0x11f));const _0x240d30=_0x40b368['quoted']?_0x40b368[_0x3b7011(0x108)][_0x3b7011(0xc2)]:_0x40b368[_0x3b7011(0x118)][0x0];if(_0x240d30===_0x40b368['sender'])return await _0x40b368[_0x3b7011(0xc7)](_0x3b7011(0xd7));const _0x2134d5=await edb[_0x3b7011(0xb8)](_0x40b368[_0x3b7011(0xc2)],k,_0x240d30);if(_0x2134d5['cd'])return await _0x40b368[_0x3b7011(0xc7)]('```⭕\x20You\x20recently\x20attempted\x20robbery\x0a⏱️\x20Come\x20back\x20in:\x20'+_0x2134d5[_0x3b7011(0x94)]+_0x3b7011(0xdc),{'title':'🚨\x20Rob\x20Cooldown','body':'Lay\x20low\x20for\x20a\x20while','thumbnail':fs[_0x3b7011(0xa8)](path[_0x3b7011(0x122)](stored,_0x3b7011(0x8c)))},'ad');if(_0x2134d5[_0x3b7011(0xc6)])return await _0x40b368[_0x3b7011(0xc7)](_0x3b7011(0x10e));return _0x2134d5[_0x3b7011(0xfb)]?await _0x40b368[_0x3b7011(0xc7)](_0x3b7011(0x92)+_0x2134d5[_0x3b7011(0xd4)]+_0x3b7011(0x126)+_0x240d30['split']('@')[0x0]+_0x3b7011(0xcf),{'title':_0x3b7011(0xb2),'body':_0x3b7011(0xa6),'thumbnail':fs[_0x3b7011(0xa8)](path['join'](stored,'robbery.png'))},'ad'):await _0x40b368[_0x3b7011(0xc7)](_0x3b7011(0x89)+_0x2134d5[_0x3b7011(0xf1)]+_0x3b7011(0xff),{'title':_0x3b7011(0xe5),'body':_0x3b7011(0x13f),'thumbnail':fs[_0x3b7011(0xa8)](path['join'](stored,_0x3b7011(0x12e)))},'ad');}),kord({'cmd':a0_0x19973e(0x136),'desc':a0_0x19973e(0x125),'fromMe':wtype,'type':'economy'},async(_0x3db411,_0x21b030)=>{const _0x2b635f=a0_0x19973e;var _0x17cd55=await getData(_0x2b635f(0xe8))||[];if(!_0x17cd55[_0x2b635f(0x100)](_0x3db411['chat']))return await _0x3db411[_0x2b635f(0xc7)](_0x2b635f(0x121));if(!_0x21b030)return await _0x3db411[_0x2b635f(0xc7)](_0x2b635f(0x114));const _0x51e1cf=parseInt(_0x21b030);if(isNaN(_0x51e1cf)||_0x51e1cf<=0x0)return await _0x3db411[_0x2b635f(0xc7)]('```❌\x20Please\x20provide\x20valid\x20amount```');const _0x2dd734=await edb['balance'](_0x3db411[_0x2b635f(0xc2)],k);if(_0x2dd734[_0x2b635f(0xb6)]<_0x51e1cf)return await _0x3db411[_0x2b635f(0xc7)](_0x2b635f(0x98));const _0x516c13=Math[_0x2b635f(0xe9)]()>0.5;if(_0x516c13){const _0x36902f=Math[_0x2b635f(0xf4)](_0x51e1cf*(0x1+Math['random']()));return await edb['give'](_0x3db411[_0x2b635f(0xc2)],k,_0x36902f),await _0x3db411[_0x2b635f(0xc7)]('```╔════════════════╗\x0a╠\x20🎰\x20GAMBLING\x20WIN\x20\x20\x20╣\x0a╠════════════════╝\x0a╠\x20💰\x20Bet:\x20₹'+_0x51e1cf+'\x0a╠\x20🎉\x20Won:\x20₹'+_0x36902f+_0x2b635f(0xd8)+_0x36902f+'\x0a╚════════════════```',{'title':_0x2b635f(0x11d),'body':_0x2b635f(0x9f),'thumbnail':fs[_0x2b635f(0xa8)](path[_0x2b635f(0x122)](stored,_0x2b635f(0xc4)))},'ad');}else return await edb['deduct'](_0x3db411['sender'],k,_0x51e1cf),await _0x3db411[_0x2b635f(0xc7)](_0x2b635f(0x131)+_0x51e1cf+_0x2b635f(0x138)+_0x51e1cf+_0x2b635f(0x105),{'title':_0x2b635f(0xcd),'body':_0x2b635f(0xd5),'thumbnail':fs[_0x2b635f(0xa8)](path[_0x2b635f(0x122)](stored,_0x2b635f(0xd3)))},'ad');}),kord({'cmd':a0_0x19973e(0x9b),'desc':'[economy]\x20show\x20richest\x20users','fromMe':wtype,'type':a0_0x19973e(0xa5)},async(_0x49bc4e,_0x51895c)=>{const _0x2c5775=a0_0x19973e;var _0x1f1d7d=await getData(_0x2c5775(0xe8))||[];if(!_0x1f1d7d[_0x2c5775(0x100)](_0x49bc4e[_0x2c5775(0x91)]))return await _0x49bc4e['send'](_0x2c5775(0x121));const _0x3b251d=parseInt(_0x51895c)||0xa,_0x291667=await edb['lb'](k,_0x3b251d>0x14?0x14:_0x3b251d);if(_0x291667[_0x2c5775(0xa2)]===0x0)return await _0x49bc4e[_0x2c5775(0xc7)](_0x2c5775(0xea));let _0x5aee5c='```╔════════════════╗\x0a╠\x20🏆\x20LEADERBOARD\x20\x20\x20\x20╣\x0a╠════════════════╝\x0a';for(let _0x23f891=0x0;_0x23f891<_0x291667[_0x2c5775(0xa2)];_0x23f891++){const _0x458a41=_0x23f891+0x1,_0x5a1099=_0x291667[_0x23f891],_0x2c25f5=_0x5a1099['wallet']+_0x5a1099[_0x2c5775(0x12d)],_0x5aba7d=_0x458a41===0x1?'🥇':_0x458a41===0x2?'🥈':_0x458a41===0x3?'🥉':_0x458a41+'.';_0x5aee5c+='╠\x20'+_0x5aba7d+'\x20@'+_0x5a1099[_0x2c5775(0x140)][_0x2c5775(0xb3)]('@')[0x0]+_0x2c5775(0x133)+_0x2c25f5+'\x0a';}return _0x5aee5c+=_0x2c5775(0xb9),await _0x49bc4e[_0x2c5775(0xc7)](_0x5aee5c,{'title':_0x2c5775(0x107),'body':'Top\x20richest\x20users\x20in\x20the\x20chat','thumbnail':fs['readFileSync'](path['join'](stored,_0x2c5775(0xeb)))},'ad');}),kord({'cmd':'shop','desc':a0_0x19973e(0xb1),'fromMe':wtype,'type':a0_0x19973e(0xa5)},async(_0x1ca594,_0x3d0298)=>{const _0x4e75d9=a0_0x19973e;var _0x5140ee=await getData(_0x4e75d9(0xe8))||[];if(!_0x5140ee[_0x4e75d9(0x100)](_0x1ca594[_0x4e75d9(0x91)]))return await _0x1ca594[_0x4e75d9(0xc7)](_0x4e75d9(0x121));const _0x49ac0b=await edb['getShop']();let _0x5ed19d=_0x4e75d9(0x8b);return _0x49ac0b['forEach']((_0xdff9b3,_0x177fb8)=>{const _0x25d99a=_0x4e75d9;_0x5ed19d+='╠\x20'+(_0x177fb8+0x1)+'.\x20'+_0xdff9b3[_0x25d99a(0x10a)]+_0x25d99a(0xc3)+_0xdff9b3[_0x25d99a(0x12f)]+_0x25d99a(0x12c)+_0xdff9b3[_0x25d99a(0xad)]+_0x25d99a(0x13e);}),_0x5ed19d+=_0x4e75d9(0xb9),await _0x1ca594[_0x4e75d9(0xc7)](_0x5ed19d,{'title':_0x4e75d9(0x8a),'body':'Browse\x20available\x20items\x20to\x20purchase','thumbnail':fs[_0x4e75d9(0xa8)](path[_0x4e75d9(0x122)](stored,'shop.png'))},'ad');}),kord({'cmd':a0_0x19973e(0xde),'desc':a0_0x19973e(0xa1),'fromMe':wtype,'type':'economy'},async(_0x55ee33,_0x33b6c3)=>{const _0xf05f1e=a0_0x19973e;var _0x160daa=await getData(_0xf05f1e(0xe8))||[];if(!_0x160daa[_0xf05f1e(0x100)](_0x55ee33[_0xf05f1e(0x91)]))return await _0x55ee33[_0xf05f1e(0xc7)](_0xf05f1e(0x121));if(!_0x33b6c3)return await _0x55ee33[_0xf05f1e(0xc7)](_0xf05f1e(0xd0));const _0x20cca8=await edb[_0xf05f1e(0x10b)](_0x55ee33[_0xf05f1e(0xc2)],k,_0x33b6c3);if(_0x20cca8[_0xf05f1e(0x110)])return await _0x55ee33[_0xf05f1e(0xc7)](_0xf05f1e(0xe7));if(_0x20cca8[_0xf05f1e(0xc0)])return await _0x55ee33[_0xf05f1e(0xc7)](_0xf05f1e(0x8d));return await _0x55ee33[_0xf05f1e(0xc7)](_0xf05f1e(0xac)+_0x20cca8[_0xf05f1e(0x112)]['name']+'\x0a╠\x20💰\x20Price:\x20₹'+_0x20cca8[_0xf05f1e(0x112)]['price']+_0xf05f1e(0x132)+_0x20cca8[_0xf05f1e(0xb5)]+'\x0a╚════════════════```',{'title':_0xf05f1e(0x127),'body':_0xf05f1e(0xb7)+_0x20cca8[_0xf05f1e(0x112)][_0xf05f1e(0x10a)],'thumbnail':fs[_0xf05f1e(0xa8)](path[_0xf05f1e(0x122)](stored,_0xf05f1e(0xf0)))},'ad');}),kord({'cmd':a0_0x19973e(0xc5),'desc':a0_0x19973e(0xae),'fromMe':wtype,'type':a0_0x19973e(0xa5)},async(_0x2f3842,_0xe4db99)=>{const _0x7ac4f2=a0_0x19973e;var _0x5e5f6f=await getData(_0x7ac4f2(0xe8))||[];if(!_0x5e5f6f['includes'](_0x2f3842[_0x7ac4f2(0x91)]))return await _0x2f3842[_0x7ac4f2(0xc7)]('```💎\x20Economy\x20Is\x20Not\x20Activated\x20Here```');const _0x25c03c=await edb['getInventory'](_0x2f3842['sender'],k);if(_0x25c03c[_0x7ac4f2(0xa2)]===0x0)return await _0x2f3842['send'](_0x7ac4f2(0xa4),{'title':'📦\x20Empty\x20Inventory','body':_0x7ac4f2(0xe2),'thumbnail':fs[_0x7ac4f2(0xa8)](path[_0x7ac4f2(0x122)](stored,_0x7ac4f2(0x135)))},'ad');let _0x58aa5f=_0x7ac4f2(0xdb);return _0x25c03c['forEach']((_0x40b490,_0x9c5213)=>{const _0x17ed36=_0x7ac4f2;_0x58aa5f+='╠\x20'+(_0x9c5213+0x1)+'.\x20'+_0x40b490[_0x17ed36(0x10a)]+'\x20x'+_0x40b490[_0x17ed36(0x88)]+_0x17ed36(0x12c)+_0x40b490[_0x17ed36(0xad)]+'\x0a╠\x0a';}),_0x58aa5f+=_0x7ac4f2(0xb9),await _0x2f3842[_0x7ac4f2(0xc7)](_0x58aa5f,{'title':_0x7ac4f2(0xfa),'body':_0x7ac4f2(0x8e),'thumbnail':fs[_0x7ac4f2(0xa8)](path[_0x7ac4f2(0x122)](stored,'inventory.png'))},'ad');});
+const { kord, prefix, wtype, config, getData, storeData } = require("../core")
+const fs = require("fs")
+const path = require("path")
+const edb = require("../core/edb")
+if (config().MONGODB_URI) {
+var con = edb.connect(config().MONGODB_URI)
+} else {
+  con = undefined
+}
+const k = "kord"
+const stored = path.join(__dirname, '..', 'core', 'store')
+      
+
+kord({
+   cmd: "economy|econ",
+   desc: "manage economy commands",
+   fromMe: wtype,
+   type: "economy"
+}, async (m, text) => {
+   if (!config().MONGODB_URI || config().MONGODB_URI === "") {
+      return await m.send("```You need to set MONGODB_URI at config\nexample setvar MONGODB_URI=your url..```")
+   }
+   
+   var edata = await getData("econ") || []
+   
+   if (text && text.toLowerCase() === "off") {
+      if (!edata.includes(m.chat)) {
+         return await m.send("```💎 Economy Commands Are Already Inactive```")
+      }
+      edata = edata.filter(chat => chat !== m.chat)
+      await storeData("econ", edata)
+      return await m.send("```📉 Economy commands deactivated```")
+   }
+   
+   if (text && text.toLowerCase() === "on") {
+      if (edata.includes(m.chat)) {
+         return await m.send("```💎 Economy Commands Are Already Active```")
+      }
+      edata.push(m.chat)
+      await storeData("econ", edata)
+      return await m.send("```📈 Economy commands activated```")
+   }
+   
+   if (edata.includes(m.chat)) {
+      return await m.send("```💎 Economy Commands Are Already Active```")
+   }
+   edata.push(m.chat)
+   await storeData("econ", edata)
+   return await m.send("```📈 Economy commands activated```")
+})
+
+kord({
+   cmd: "bal|wallet",
+   desc: "[economy]shows user's balance",
+   fromMe: wtype,
+   type: "economy",
+}, async (m, text) => {
+   var x = await getData("econ") || []
+   if (!x.includes(m.chat)) return await m.send("```💎 Economy Is Not Activated Here```")
+   const b = await edb.balance(m.sender, k)
+   return await m.send(`\`\`\`╔════════════════╗
+╠ 💰 USER BALANCE   ╣
+╠════════════════╝
+╠ 💎 𝗪𝗮𝗹𝗹𝗲𝘁:『 ₹${b.wallet} 』
+╠ 🏦 𝗕𝗮𝗻𝗸:『 ₹${b.bank}/₹${b.bankCapacity} 』
+╚════════════════\`\`\``, {title: "💰 Balance Check", body: "Your current financial status", thumbnail: fs.readFileSync(path.join(stored, 'wallet.png'))}, "ad")
+})
+
+kord({
+   cmd: "daily",
+   desc: "[economy] claim daily coins",
+   fromMe: wtype,
+   type: "economy",
+}, async (m, text) => {
+   var x = await getData("econ") || []
+   if (!x.includes(m.chat)) return await m.send("```💎 Economy Is Not Activated Here```")
+   const d  = await edb.daily(m.sender, k, 1001)
+   if (d.cd) {
+      return await m.send(`\`\`\`⭕ You've Already Claimed For Today\n⏱️ Come back in: ${d.cdL}\`\`\``, {title: "⏰ Daily Cooldown", body: "Come back later for your reward", thumbnail: fs.readFileSync(path.join(stored, 'cooldown.png'))}, "ad")
+   } else {
+      const newBal = await edb.balance(m.sender, k)
+      return await m.send(`╔🎉 *You've claimed:* \`\`\`₹${d.amount}\`\`\`  *For Today*\n╠ 💰 *New Balance:*\`\`\` ₹${newBal.wallet}\`\`\`\n╚ ⏱️ *Cooldown:* \`\`\`24 Hours\`\`\``, {title: "🎁 Daily Reward", body: "Successfully claimed your daily coins", thumbnail: fs.readFileSync(path.join(stored, 'daily.png'))}, "ad")
+   }
+})
+
+kord({
+   cmd: "dep|deposit",
+   desc: "[economy] deposit money to bank",
+   fromMe: wtype,
+   type: "economy",
+}, async (m, text) => {
+   var x = await getData("econ") || []
+   if (!x.includes(m.chat)) return await m.send("```💎 Economy Is Not Activated Here```")
+   if (!text) return await m.send("```⚠️ Please specify amount to deposit```")
+   
+   const amount = text.toLowerCase() === "all" ? "all" : parseInt(text)
+   if (amount !== "all" && (isNaN(amount) || amount <= 0)) {
+      return await m.send("```❌ Please provide a valid amount```")
+   }
+   
+   const result = await edb.deposit(m.sender, k, amount)
+   if (result.noten) {
+      return await m.send("```💸 Insufficient wallet balance```")
+   }
+   
+   const newBal = await edb.balance(m.sender, k)
+   return await m.send(`\`\`\`╔════════════════╗
+╠ 🏦 DEPOSIT SUCCESS ╣
+╠════════════════╝
+╠ 💰 Deposited: ₹${result.amount}
+╠ 💎 Wallet: ₹${newBal.wallet}
+╠ 🏦 Bank: ₹${newBal.bank}/₹${newBal.bankCapacity}
+╚════════════════\`\`\``, {title: "🏦 Bank Deposit", body: "Money safely stored in bank", thumbnail: fs.readFileSync(path.join(stored, 'deposit.png'))}, "ad")
+})
+
+kord({
+   cmd: "with|withdraw",
+   desc: "[economy] withdraw money from bank",
+   fromMe: wtype,
+   type: "economy",
+}, async (m, text) => {
+   var x = await getData("econ") || []
+   if (!x.includes(m.chat)) return await m.send("```💎 Economy Is Not Activated Here```")
+   if (!text) return await m.send("```⚠️ Please specify amount to withdraw```")
+   
+   const amount = text.toLowerCase() === "all" ? "all" : parseInt(text)
+   if (amount !== "all" && (isNaN(amount) || amount <= 0)) {
+      return await m.send("```❌ Please provide a valid amount```")
+   }
+   
+   const result = await edb.withdraw(m.sender, k, amount)
+   if (result.noten) {
+      return await m.send("```💸 Insufficient bank balance```")
+   }
+   if (result.invalid) {
+      return await m.send("```❌ Invalid amount specified```")
+   }
+   
+   const newBal = await edb.balance(m.sender, k)
+   return await m.send(`\`\`\`╔════════════════╗
+╠ 💸 WITHDRAW SUCCESS ╣
+╠════════════════╝
+╠ 💰 Withdrawn: ₹${result.amount}
+╠ 💎 Wallet: ₹${newBal.wallet}
+╠ 🏦 Bank: ₹${newBal.bank}/₹${newBal.bankCapacity}
+╚════════════════\`\`\``, {title: "💸 Bank Withdrawal", body: "Money withdrawn to wallet", thumbnail: fs.readFileSync(path.join(stored, 'withdraw.png'))}, "ad")
+})
+
+kord({
+   cmd: "give|pay",
+   desc: "[economy] give money to someone",
+   fromMe: wtype,
+   type: "economy",
+}, async (m, text) => {
+   var x = await getData("econ") || []
+   if (!x.includes(m.chat)) return await m.send("```💎 Economy Is Not Activated Here```")
+   if (!m.quoted && !text) return await m.send("```⚠️ Reply to someone or mention with amount```")
+   
+   let target = m.quoted ? m.quoted.sender : m.mentions[0]
+   let amount = text ? parseInt(text.split(" ")[1] || text) : parseInt(text)
+   
+   if (!target) return await m.send("```❌ Please specify who to pay```")
+   if (isNaN(amount) || amount <= 0) return await m.send("```❌ Please provide valid amount```")
+   if (target === m.sender) return await m.send("```😂 You cannot pay yourself```")
+   
+   const senderBal = await edb.balance(m.sender, k)
+   if (senderBal.wallet < amount) return await m.send("```💸 Insufficient wallet balance```")
+   
+   await edb.deduct(m.sender, k, amount)
+   await edb.give(target, k, amount)
+   
+   return await m.send(`\`\`\`╔════════════════╗
+╠ 💸 PAYMENT SUCCESS ╣
+╠════════════════╝
+╠ 💰 Amount: ₹${amount}
+╠ 👤 To: @${target.split("@")[0]}
+╠ 💎 Your Balance: ₹${senderBal.wallet - amount}
+╚════════════════\`\`\``, {title: "💸 Payment Sent", body: "Transaction completed successfully", thumbnail: fs.readFileSync(path.join(stored, 'payment.png'))}, "ad")
+})
+
+kord({
+   cmd: "work",
+   desc: "[economy] work to earn money",
+   fromMe: wtype,
+   type: "economy",
+}, async (m, text) => {
+   var x = await getData("econ") || []
+   if (!x.includes(m.chat)) return await m.send("```💎 Economy Is Not Activated Here```")
+   const result = await edb.work(m.sender, k)
+   
+   if (result.cd) {
+      return await m.send(`\`\`\`⭕ You're still tired from work\n⏱️ Come back in: ${result.cdL}\`\`\``, {title: "😴 Work Cooldown", body: "Take a rest before working again", thumbnail: fs.readFileSync(path.join(stored, 'tired.png'))}, "ad")
+   }
+   
+   const jobs = ["Developer", "Designer", "Teacher", "Doctor", "Engineer", "Chef", "Writer", "Artist"]
+   const job = jobs[Math.floor(Math.random() * jobs.length)]
+   
+   return await m.send(`\`\`\`╔════════════════╗
+╠ 💼 WORK COMPLETE  ╣
+╠════════════════╝
+╠ 👷 Job: ${job}
+╠ 💰 Earned: ₹${result.amount}
+╠ ⏱️ Cooldown: ${result.cdL}
+╚════════════════\`\`\``, {title: "💼 Work Complete", body: `Worked as ${job} and earned money`, thumbnail: fs.readFileSync(path.join(stored, 'work.png'))}, "ad")
+})
+
+kord({
+   cmd: "rob",
+   desc: "[economy] attempt to rob someone",
+   fromMe: wtype,
+   type: "economy",
+}, async (m, text) => {
+   var x = await getData("econ") || []
+   if (!x.includes(m.chat)) return await m.send("```💎 Economy Is Not Activated Here```")
+   if (!m.quoted && !m.mentions[0]) return await m.send("```⚠️ Reply to someone or mention to rob```")
+   
+   const target = m.quoted ? m.quoted.sender : m.mentions[0]
+   if (target === m.sender) return await m.send("```😂 You cannot rob yourself```")
+   
+   const result = await edb.rob(m.sender, k, target)
+   
+   if (result.cd) {
+      return await m.send(`\`\`\`⭕ You recently attempted robbery\n⏱️ Come back in: ${result.cdL}\`\`\``, {title: "🚨 Rob Cooldown", body: "Lay low for a while", thumbnail: fs.readFileSync(path.join(stored, 'police.png'))}, "ad")
+   }
+   
+   if (result.lowbal) {
+      return await m.send("```💸 Target doesn't have enough money to rob```")
+   }
+   
+   if (result.success) {
+      return await m.send(`\`\`\`╔════════════════╗
+╠ 🎯 ROBBERY SUCCESS ╣
+╠════════════════╝
+╠ 💰 Stolen: ₹${result.amount}
+╠ 👤 From: @${target.split("@")[0]}
+╠ 😈 You got away with it!
+╚════════════════\`\`\``, {title: "🎯 Robbery Success", body: "Successfully robbed someone!", thumbnail: fs.readFileSync(path.join(stored, 'robbery.png'))}, "ad")
+   } else {
+      return await m.send(`\`\`\`╔════════════════╗
+╠ 🚨 ROBBERY FAILED  ╣
+╠════════════════╝
+╠ 💸 Fine: ₹${result.fine}
+╠ 👮 Caught by police!
+╠ 😢 Better luck next time
+╚════════════════\`\`\``, {title: "🚨 Robbery Failed", body: "Caught and fined by police", thumbnail: fs.readFileSync(path.join(stored, 'caught.png'))}, "ad")
+   }
+})
+
+kord({
+   cmd: "gamble|bet",
+   desc: "[economy] gamble your money",
+   fromMe: wtype,
+   type: "economy",
+}, async (m, text) => {
+   var x = await getData("econ") || []
+   if (!x.includes(m.chat)) return await m.send("```💎 Economy Is Not Activated Here```")
+   if (!text) return await m.send("```⚠️ Please specify amount to gamble```")
+   
+   const amount = parseInt(text)
+   if (isNaN(amount) || amount <= 0) return await m.send("```❌ Please provide valid amount```")
+   
+   const userBal = await edb.balance(m.sender, k)
+   if (userBal.wallet < amount) return await m.send("```💸 Insufficient wallet balance```")
+   
+   const win = Math.random() > 0.5
+   
+   if (win) {
+      const winAmount = Math.floor(amount * (1 + Math.random()))
+      await edb.give(m.sender, k, winAmount)
+      return await m.send(`\`\`\`╔════════════════╗
+╠ 🎰 GAMBLING WIN   ╣
+╠════════════════╝
+╠ 💰 Bet: ₹${amount}
+╠ 🎉 Won: ₹${winAmount}
+╠ 💎 Profit: ₹${winAmount}
+╚════════════════\`\`\``, {title: "🎰 Gambling Win", body: "Lady luck is on your side!", thumbnail: fs.readFileSync(path.join(stored, 'jackpot.png'))}, "ad")
+   } else {
+      await edb.deduct(m.sender, k, amount)
+      return await m.send(`\`\`\`╔════════════════╗
+╠ 💸 GAMBLING LOSS  ╣
+╠════════════════╝
+╠ 💰 Bet: ₹${amount}
+╠ 😢 Lost: ₹${amount}
+╠ 🎲 Better luck next time
+╚════════════════\`\`\``, {title: "💸 Gambling Loss", body: "Not your lucky day", thumbnail: fs.readFileSync(path.join(stored, 'loss.png'))}, "ad")
+   }
+})
+
+kord({
+   cmd: "lb|leaderboard|top",
+   desc: "[economy] show richest users",
+   fromMe: wtype,
+   type: "economy",
+}, async (m, text) => {
+   var x = await getData("econ") || []
+   if (!x.includes(m.chat)) return await m.send("```💎 Economy Is Not Activated Here```")
+   const count = parseInt(text) || 10
+   const lb = await edb.lb(k, count > 20 ? 20 : count)
+   
+   if (lb.length === 0) return await m.send("```📊 No users found in economy```")
+   
+   let msg = "```╔════════════════╗\n╠ 🏆 LEADERBOARD    ╣\n╠════════════════╝\n"
+   
+   for (let i = 0; i < lb.length; i++) {
+      const pos = i + 1
+      const user = lb[i]
+      const total = user.wallet + user.bank
+      const medal = pos === 1 ? "🥇" : pos === 2 ? "🥈" : pos === 3 ? "🥉" : `${pos}.`
+      msg += `╠ ${medal} @${user.userID.split("@")[0]}: ₹${total}\n`
+   }
+   msg += "╚════════════════```"
+   
+   return await m.send(msg, {title: "🏆 Economy Leaderboard", body: "Top richest users in the chat", thumbnail: fs.readFileSync(path.join(stored, 'leaderboard.png'))}, "ad")
+})
+
+kord({
+   cmd: "shop",
+   desc: "[economy] view available items",
+   fromMe: wtype,
+   type: "economy",
+}, async (m, text) => {
+   var x = await getData("econ") || []
+   if (!x.includes(m.chat)) return await m.send("```💎 Economy Is Not Activated Here```")
+   const shop = await edb.getShop()
+   
+   let msg = "```╔════════════════╗\n╠ 🛒 ITEM SHOP     ╣\n╠════════════════╝\n"
+   
+   shop.forEach((item, i) => {
+      msg += `╠ ${i + 1}. ${item.name}\n╠    💰 Price: ₹${item.price}\n╠    📝 ${item.description}\n╠\n`
+   })
+   msg += "╚════════════════```"
+   
+   return await m.send(msg, {title: "🛒 Item Shop", body: "Browse available items to purchase", thumbnail: fs.readFileSync(path.join(stored, 'shop.png'))}, "ad")
+})
+
+kord({
+   cmd: "buy",
+   desc: "[economy] buy items from shop",
+   fromMe: wtype,
+   type: "economy",
+}, async (m, text) => {
+   var x = await getData("econ") || []
+   if (!x.includes(m.chat)) return await m.send("```💎 Economy Is Not Activated Here```")
+   if (!text) return await m.send("```⚠️ Please specify item name or number```")
+   
+   const result = await edb.buyItem(m.sender, k, text)
+   
+   if (result.notfound) {
+      return await m.send("```❌ Item not found in shop```")
+   }
+   if (result.insufficient) {
+      return await m.send("```💸 Insufficient balance to buy this item```")
+   }
+   
+   return await m.send(`\`\`\`╔════════════════╗
+╠ 🛒 PURCHASE SUCCESS ╣
+╠════════════════╝
+╠ 🎁 Item: ${result.item.name}
+╠ 💰 Price: ₹${result.item.price}
+╠ 💎 Remaining: ₹${result.newBalance}
+╚════════════════\`\`\``, {title: "🛒 Purchase Complete", body: `Successfully bought ${result.item.name}`, thumbnail: fs.readFileSync(path.join(stored, 'purchase.png'))}, "ad")
+})
+
+kord({
+   cmd: "inv|inventory",
+   desc: "[economy] view your inventory",
+   fromMe: wtype,
+   type: "economy",
+}, async (m, text) => {
+   var x = await getData("econ") || []
+   if (!x.includes(m.chat)) return await m.send("```💎 Economy Is Not Activated Here```")
+   const inv = await edb.getInventory(m.sender, k)
+   
+   if (inv.length === 0) {
+      return await m.send("```📦 Your inventory is empty```", {title: "📦 Empty Inventory", body: "Buy some items from shop", thumbnail: fs.readFileSync(path.join(stored, 'empty.png'))}, "ad")
+   }
+   
+   let msg = "```╔════════════════╗\n╠ 📦 INVENTORY     ╣\n╠════════════════╝\n"
+   
+   inv.forEach((item, i) => {
+      msg += `╠ ${i + 1}. ${item.name} x${item.quantity}\n╠    📝 ${item.description}\n╠\n`
+   })
+   msg += "╚════════════════```"
+   
+   return await m.send(msg, {title: "📦 Your Inventory", body: "Items you currently own", thumbnail: fs.readFileSync(path.join(stored, 'inventory.png'))}, "ad")
+})
