@@ -504,7 +504,7 @@ kord({
         if (!lik) return m.send("_*reply/provide a tiktok link!*_")
         m.react("⏰")
         var links = await extractUrlsFromString(lik)
-        const ttregex = /https:\/\/(?:www\.|vm\.)?tiktok\.com\/(?:(@[\w.-]+\/)?(?:video|photo)\/\d+|[A-Za-z0-9]+\/?)(?:\?.*)?$/;
+        const ttregex = /https:\/\/(?:www\.|vm\.)?tiktok\.com\/(?:(@[\w.-]+\/)?(?:video|photo)\/[\d]+|[\w-]+\/?)(?:\?.*)?$/;
         var link = links.find(url => ttregex.test(url));
     if (!link) {
         m.react("❌");
