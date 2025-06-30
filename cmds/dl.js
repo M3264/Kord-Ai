@@ -505,7 +505,7 @@ kord({
         m.react("⏰")
         var links = await extractUrlsFromString(lik)
         const ttregex = /https:\/\/(?:www\.|vm\.)?tiktok\.com\/(?:(@[\w.-]+\/)?(?:video|photo)\/[\d]+|[\w-]+\/?)(?:\?.*)?$/;
-        var link = links.find(url => ttregex.test(url));
+        var link = links.find(url => ttregex.test(url))
     if (!link) {
         m.react("❌");
         return m.send("No valid TikTok link found.");
