@@ -950,33 +950,38 @@ kord({
   type: "group",
 }, async (m, text) => {
   try {
-    
     var botAd = await isBotAdmin(m)
     if (!botAd) return await m.send("_*✘Bot Needs To Be Admin!*_")
-    var user = m.mentionedJid[0] || m.quoted.sender || `${text.split(" ")[0]}@s.whatsapp.net`
-    if (!user) return await m.send("_✘ Reply to or mention a member_\n_to remove use:_\n_akick 234xxxxxxx remove_")
+
+    let args = text.trim().split(/\s+/)
+    let isRemoveCmd = args[0] === "remove"
+    let numberArg = isRemoveCmd ? args[1] : args[0]
+    let user = m.mentionedJid[0] || m.quoted?.sender || (numberArg && `${numberArg.replace(/[^0-9]/g, "")}@s.whatsapp.net`)
+    if (!user) return await m.send("_✘ Reply to or mention a member_\n_to remove use:_\n_akick remove 234xxxxxxx_")
+
     const jid = parsedJid(user)
-    if (text.includes("remove")) {
-      let sdata = await getData("akick");
-if (!Array.isArray(sdata)) sdata = [];
-let isExist = sdata.includes(user);
-  if (!isExist) return m.send("_user is not in auto kick_")
-  sdata = sdata.filter(entry => entry !== user)
-  await storeData("akick", JSON.stringify(sdata, null, 2))
-  return m.send("_user is now free_")
+
+    if (isRemoveCmd || text.includes("remove")) {
+      let sdata = await getData("akick")
+      if (!Array.isArray(sdata)) sdata = []
+      if (!sdata.includes(user)) return m.send("_user is not in auto kick_")
+      sdata = sdata.filter(entry => entry !== user)
+      await storeData("akick", JSON.stringify(sdata, null, 2))
+      return m.send("_user is now free_")
     }
-    var d = await getData("akick") || []
+
+    let d = await getData("akick") || []
     d.push(jid)
     await storeData("akick", d)
     await m.client.groupParticipantsUpdate(m.chat, [jid[0]], "remove")
     if (config().KICK_AND_BLOCK) await m.client.updateBlockStatus(jid[0], "block")
     await m.send(`_*✓ @${jid[0].split("@")[0]} kicked*_`, { mentions: [jid[0]] })
-    
+
   } catch (e) {
     console.error(e)
     return await m.send(`error in akick ${e}`)
   }
-});
+})
 
 kord({
   cmd: "antiword",
