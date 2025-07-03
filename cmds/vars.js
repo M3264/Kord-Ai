@@ -7,7 +7,7 @@
  * -------------------------------------------------------------------------------
  */
 
-const { kord, wtype, updateConfig, prefix, updateEnv, updateEnvSudo, addEnvSudo, removeEnvSudo, replaceEnvSudo, getEnvValue, envExists, listEnvKeys, toBoolean, getPlatformInfo, setVar, updateVar, delVar, getVars, config, myMods
+const { kord, wtype, updateConfig, prefix, updateEnv, updateEnvSudo, addEnvSudo, removeEnvSudo, replaceEnvSudo, getEnvValue, envExists, listEnvKeys, toBoolean, getPlatformInfo, setVar, updateVar, delVar, getVars, config, myMods, getAdmins 
   } = require("../core")
   const fs = require("fs")
   
@@ -166,20 +166,32 @@ async function updateAllConfig(key, value, m) {
 function toggle(cmdName, envKey, displayName) {
   return async (m, text, cmd) => {
     const allowed = [...myMods().map(x => x + '@s.whatsapp.net'), m.ownerJid]
-    text = text.split(" ")[0]
-    if (!text) {
-      return config().RES_TYPE.toLowerCase() === "button" ? await m.btnText("*Toggle on/off*", {
-        [`${cmd} on`]: "ON",
-        [`${cmd} off`]: "OFF",
-      }) : config().RES_TYPE.toLowerCase() == "poll" ? await m.send({
-        name: "*Toggle on/off*",
-        values: [{name: "on", id: `${cmdName} on`}, {name: "Off", id: `${cmdName} off`}],
-        withPrefix: true,
-        onlyOnce: true,
-        participates: allowed,
-        selectableCount: true,
-      }, {}, "poll") : await m.send(`*use ${cmd} on/off*`)
-    }
+    text = text.split(" ")[0].toLowerCase()
+const validInputs = ['on', 'off', 'true', 'false']
+
+if (!validInputs.includes(text)) {
+  return await m.send(`*Invalid option:* _${text}_\n_Use only 'on', 'off', 'true', or 'false'_`)
+}
+
+if (!text) {
+  if (config().RES_TYPE.toLowerCase() === "button") {
+    return await m.btnText("*Toggle on/off*", {
+      [`${cmd} on`]: "ON",
+      [`${cmd} off`]: "OFF",
+    })
+  } else if (config().RES_TYPE.toLowerCase() === "poll") {
+    return await m.send({
+      name: "*Toggle on/off*",
+      values: [{ name: "on", id: `${cmdName} on` }, { name: "off", id: `${cmdName} off` }],
+      withPrefix: true,
+      onlyOnce: true,
+      participates: allowed,
+      selectableCount: true,
+    }, {}, "poll")
+  } else {
+    return await m.send(`*Use:* ${cmd} on/off`)
+  }
+}
     
     var t = toBoolean(text)
     var envVal = process.env[envKey]
@@ -233,7 +245,21 @@ kord({
   desc: "turn on/off antidelete in chat",
   fromMe: true,
   type: "config",
-}, toggle("antidelete-inchat", "ANTIDELETE_INCHAT", "Anti Delete In Chat"))
+}, toggle("antideletechat", "ANTIDELETE_INCHAT", "Anti Delete In Chat"))
+
+kord({
+  cmd: "antiedit",
+  desc: "turn on/off Anti-Edit",
+  fromMe: true,
+  type: "config",
+}, toggle("antiedit", "ANTI_EDIT", "Anti Edit"))
+
+kord({
+  cmd: "antieditchat",
+  desc: "turn on/off antiedit in chat",
+  fromMe: true,
+  type: "config",
+}, toggle("antieditchat", "ANTI_EDIT_IN_CHAT", "Anti Edit In Chat"))
 
 kord({
   cmd: "savestatus",
@@ -269,30 +295,43 @@ kord({
   fromMe: true,
   type: "config",
 }, async (m, text) => {
-  var usr = m.mentionedJid[0] || m.quoted.sender || text
-  if (!usr) return await m.send("_Reply/mention/provide a user_")
-  var user = usr.split("@")[0]
-  const cSudo = config().SUDO || ""
-  const cNumbers = cSudo ? cSudo.split(',').map(n => n.trim()).filter(n => n) : []
-  if (cNumbers.includes(user)) return await m.send("_User is already a sudo_")
-  var un = [...cNumbers, user]
-  var nsn = un.join(",")
-  if (m.client.platform == "render") {
-     
+  let users = []
+
+  if (!text) return await m.send("_Reply/mention/provide a user or type 'admins'_")
+  if (text.trim().toLowerCase() === 'admins') {
+    if (!m.isGroup) return await m.send("_'admins' can only be used in groups_")
+    const admins = await getAdmins(m.client, m.chat)
+    users = admins.map(j => j.split('@')[0])
+  } else {
+    const u = m.mentionedJid[0] || m.quoted?.sender || text
+    if (!u) return await m.send("_Reply/mention/provide a user_")
+    users = [u.split('@')[0]]
+  }
+
+  const current = config().SUDO || ""
+  const cNumbers = current.split(',').map(n => n.trim()).filter(n => n)
+  const existing = new Set(cNumbers)
+  const toAdd = users.filter(u => !existing.has(u))
+  if (toAdd.length === 0) return await m.send("_User(s) already a sudo_")
+  const nsn = [...existing, ...toAdd].join(",")
+
+  if (m.client.platform === "render") {
     try {
-    await m.send(`\`\`\`${user} added to sudo list...\n_Restarting\`\`\``)
-    await setVar("SUDO", nsn)
+      await m.send(`\`\`\`${toAdd.join(', ')} added to sudo list...\n_Restarting\`\`\``)
+      await setVar("SUDO", nsn)
     } catch (er) {
       console.error(er)
       return await m.send(`error: ${er}`)
-    }}
-    var isExist = await envExists()
-    if (isExist) {
-      await updateEnv("SUDO", nsn)
-     return await m.send(`\`\`\`${user} added to sudo list...\`\`\``)
+    }
+  }
+
+  const isExist = await envExists()
+  if (isExist) {
+    await updateEnv("SUDO", nsn)
+    return await m.send(`\`\`\`${toAdd.join(', ')} added to sudo list...\`\`\``)
   } else {
     await updateConfig("SUDO", nsn, { replace: true })
-    return await m.send(`\`\`\`${user} added to sudo list...\`\`\``)
+    return await m.send(`\`\`\`${toAdd.join(', ')} added to sudo list...\`\`\``)
   }
 })
 
@@ -302,29 +341,42 @@ kord({
   fromMe: true,
   type: "config",
 }, async (m, text) => {
-  var usr = m.mentionedJid[0] || m.quoted.sender || text
-  if (!usr) return await m.send("_Reply/mention/provide a user_")
-  var user = usr.split("@")[0]
-  const cSudo = config().SUDO || ""
-  const cNumbers = cSudo ? cSudo.split(',').map(n => n.trim()).filter(n => n) : []
-  if (!cNumbers.includes(user)) return await m.send("_User is not a sudo_")
-  var un = cNumbers.filter(num => num !== user) 
-  var nsn = un.length == 0 ? "false" : un.join(",")
-  if (m.client.platform == "render") {
+  let users = []
+
+  if (!text) return await m.send("_Reply/mention/provide a user or type 'admins'_")
+  if (text.trim().toLowerCase() === 'admins') {
+    if (!m.isGroup) return await m.send("_'admins' can only be used in groups_")
+    const admins = await getAdmins(m.client, m.chat)
+    users = admins.map(j => j.split('@')[0])
+  } else {
+    const u = m.mentionedJid[0] || m.quoted?.sender || text
+    if (!u) return await m.send("_Reply/mention/provide a user_")
+    users = [u.split('@')[0]]
+  }
+
+  const current = config().SUDO || ""
+  const cNumbers = current.split(',').map(n => n.trim()).filter(n => n)
+  const filtered = cNumbers.filter(n => !users.includes(n))
+  if (filtered.length === cNumbers.length) return await m.send("_User(s) not in sudo list_")
+  const nsn = filtered.length ? filtered.join(",") : "false"
+
+  if (m.client.platform === "render") {
     try {
-    await m.send(`\`\`\`${user} removed from sudo list...\n_Restarting\`\`\``)
-    await setVar("SUDO", nsn)
+      await m.send(`\`\`\`${users.join(', ')} removed from sudo list...\n_Restarting\`\`\``)
+      await setVar("SUDO", nsn)
     } catch (er) {
       console.error(er)
       return await m.send(`error: ${er}`)
-    }}
-    var isExist = await envExists()
-    if (isExist) {
-      await updateEnv("SUDO", nsn)
-     return await m.send(`\`\`\`${user} removed from sudo list...\`\`\``)
+    }
+  }
+
+  const isExist = await envExists()
+  if (isExist) {
+    await updateEnv("SUDO", nsn)
+    return await m.send(`\`\`\`${users.join(', ')} removed from sudo list...\`\`\``)
   } else {
     await updateConfig("SUDO", nsn, { replace: true })
-    return await m.send(`\`\`\`${user} removed from sudo list...\`\`\``)
+    return await m.send(`\`\`\`${users.join(', ')} removed from sudo list...\`\`\``)
   }
 })
 
@@ -353,34 +405,47 @@ kord({
 
 kord({
   cmd: "setmod|addmod",
-  desc: "add a user to mod",
+  desc: "add a user to mod list",
   fromMe: true,
   type: "config",
 }, async (m, text) => {
-  var usr = m.mentionedJid[0] || m.quoted.sender || text
-  if (!usr) return await m.send("_Reply/mention/provide a user_")
-  var user = usr.split("@")[0]
-  const cMod = config().MODS || ""
-  const cNumbers = cMod ? cMod.split(',').map(n => n.trim()).filter(n => n) : []
-  if (cNumbers.includes(user)) return await m.send("_User is already a mod_")
-  var un = [...cNumbers, user]
-  var nsn = un.join(",")
-  if (m.client.platform == "render") {
+  let users = []
+
+  if (!text) return await m.send("_Reply/mention/provide a user or type 'admins'_")
+  if (text.trim().toLowerCase() === 'admins') {
+    if (!m.isGroup) return await m.send("_'admins' can only be used in groups_")
+    const admins = await getAdmins(m.client, m.chat)
+    users = admins.map(j => j.split('@')[0])
+  } else {
+    const u = m.mentionedJid[0] || m.quoted?.sender || text
+    if (!u) return await m.send("_Reply/mention/provide a user_")
+    users = [u.split('@')[0]]
+  }
+
+  const current = config().MODS || ""
+  const cNumbers = current.split(',').map(n => n.trim()).filter(n => n)
+  const existing = new Set(cNumbers)
+  const toAdd = users.filter(u => !existing.has(u))
+  if (toAdd.length === 0) return await m.send("_User(s) already a mod_")
+  const nsn = [...existing, ...toAdd].join(",")
+
+  if (m.client.platform === "render") {
     try {
-      await m.send(`\`\`\`${user} added to mod list...\n_Restarting\`\`\``)
+      await m.send(`\`\`\`${toAdd.join(', ')} added to mod list...\n_Restarting\`\`\``)
       await setVar("MODS", nsn)
     } catch (er) {
       console.error(er)
       return await m.send(`error: ${er}`)
     }
   }
-  var isExist = await envExists()
+
+  const isExist = await envExists()
   if (isExist) {
     await updateEnv("MODS", nsn)
-    return await m.send(`\`\`\`${user} added to mod list...\`\`\``)
+    return await m.send(`\`\`\`${toAdd.join(', ')} added to mod list...\`\`\``)
   } else {
     await updateConfig("MODS", nsn, { replace: true })
-    return await m.send(`\`\`\`${user} added to mod list...\`\`\``)
+    return await m.send(`\`\`\`${toAdd.join(', ')} added to mod list...\`\`\``)
   }
 })
 
@@ -390,30 +455,42 @@ kord({
   fromMe: true,
   type: "config",
 }, async (m, text) => {
-  var usr = m.mentionedJid[0] || m.quoted.sender || text
-  if (!usr) return await m.send("_Reply/mention/provide a user_")
-  var user = usr.split("@")[0]
-  const cMod = config().MODS || ""
-  const cNumbers = cMod ? cMod.split(',').map(n => n.trim()).filter(n => n) : []
-  if (!cNumbers.includes(user)) return await m.send("_User is not a mod_")
-  var un = cNumbers.filter(num => num !== user)
-  var nsn = un.length == 0 ? "false" : un.join(",")
-  if (m.client.platform == "render") {
+  let users = []
+
+  if (!text) return await m.send("_Reply/mention/provide a user or type 'admins'_")
+  if (text.trim().toLowerCase() === 'admins') {
+    if (!m.isGroup) return await m.send("_'admins' can only be used in groups_")
+    const admins = await getAdmins(m.client, m.chat)
+    users = admins.map(j => j.split('@')[0])
+  } else {
+    const u = m.mentionedJid[0] || m.quoted?.sender || text
+    if (!u) return await m.send("_Reply/mention/provide a user_")
+    users = [u.split('@')[0]]
+  }
+
+  const current = config().MODS || ""
+  const cNumbers = current.split(',').map(n => n.trim()).filter(n => n)
+  const filtered = cNumbers.filter(n => !users.includes(n))
+  if (filtered.length === cNumbers.length) return await m.send("_User(s) not in mod list_")
+  const nsn = filtered.length ? filtered.join(",") : "false"
+
+  if (m.client.platform === "render") {
     try {
-      await m.send(`\`\`\`${user} removed from mod list...\n_Restarting\`\`\``)
+      await m.send(`\`\`\`${users.join(', ')} removed from mod list...\n_Restarting\`\`\``)
       await setVar("MODS", nsn)
     } catch (er) {
       console.error(er)
       return await m.send(`error: ${er}`)
     }
   }
-  var isExist = await envExists()
+
+  const isExist = await envExists()
   if (isExist) {
     await updateEnv("MODS", nsn)
-    return await m.send(`\`\`\`${user} removed from mod list...\`\`\``)
+    return await m.send(`\`\`\`${users.join(', ')} removed from mod list...\`\`\``)
   } else {
     await updateConfig("MODS", nsn, { replace: true })
-    return await m.send(`\`\`\`${user} removed from mod list...\`\`\``)
+    return await m.send(`\`\`\`${users.join(', ')} removed from mod list...\`\`\``)
   }
 })
 

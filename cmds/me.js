@@ -105,7 +105,22 @@ let isExist = sdata.includes(user);
   }
 )
 
+kord({
+  cmd: "banlist",
+  desc: "shows all banned users",
+  fromMe: true,
+  type: "bot"
+}, async (m) => {
+  let sdata = await getData("banned")
+  if (!Array.isArray(sdata)) sdata = []
 
+  if (!sdata.length) return m.send("_no users are currently banned_")
+
+  let mentions = sdata.map(jid => jid.replace(/[^0-9]/g, '') + '@s.whatsapp.net')
+  let list = sdata.map((jid, i) => `${i + 1}. @${jid.replace(/[^0-9]/g, '')}`).join("\n")
+
+  return m.send(`*Banned Users:*\n\n${list}`, { mentions })
+})
 
 kord({
   cmd: 'uptime',

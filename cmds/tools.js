@@ -592,3 +592,62 @@ kord({
    }
 })
 
+kord({
+  cmd: "ignore",
+  desc: "ignores the current chat",
+  fromMe: true,
+  type: "bot"
+}, async (m) => {
+  let sdata = await getData("ignored")
+  if (!Array.isArray(sdata)) sdata = []
+
+  if (sdata.includes(m.chat)) return m.send("_this chat is already ignored_")
+
+  sdata.push(m.chat)
+  await storeData("ignored", JSON.stringify(sdata, null, 2))
+  return m.send("_this chat is now ignored_")
+})
+
+kord({
+  cmd: "allow",
+  desc: "removes the current chat from ignore list",
+  fromMe: true,
+  type: "bot"
+}, async (m) => {
+  let sdata = await getData("ignored")
+  if (!Array.isArray(sdata)) sdata = []
+
+  if (!sdata.includes(m.chat)) return m.send("_this chat is not ignored_")
+
+  sdata = sdata.filter(jid => jid !== m.chat)
+  await storeData("ignored", JSON.stringify(sdata, null, 2))
+  return m.send("_this chat is now allowed_")
+})
+
+kord({
+  cmd: "bot",
+  desc: "turn bot on or off in this chat",
+  fromMe: true,
+  type: "bot"
+}, async (m, text) => {
+  let sdata = await getData("ignored")
+  if (!Array.isArray(sdata)) sdata = []
+
+  const isIgnored = sdata.includes(m.chat)
+
+  if (/off/i.test(text)) {
+    if (isIgnored) return m.send("_bot is already turned off in this chat_")
+    sdata.push(m.chat)
+    await storeData("ignored", JSON.stringify(sdata, null, 2))
+    return m.send("_bot has been turned off in this chat_")
+  }
+
+  if (/on/i.test(text)) {
+    if (!isIgnored) return m.send("_bot is already active in this chat_")
+    sdata = sdata.filter(jid => jid !== m.chat)
+    await storeData("ignored", JSON.stringify(sdata, null, 2))
+    return m.send("_bot has been turned on in this chat_")
+  }
+
+  return m.send("_usage: .bot on | .bot off_")
+})

@@ -1189,6 +1189,7 @@ if (d.action == "warn") {
 kord({
   cmd: "warn",
   desc: "warn user and kick if warnings exceeded",
+  type: "group",
   fromMe: true,
   gc: true,
   adminOnly: true,
