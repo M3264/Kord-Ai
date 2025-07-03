@@ -26,6 +26,8 @@ module.exports = {
     RENDER_API_KEY: process.env.RENDER_API_KEY,
     ANTIDELETE: process.env.ANTIDELETE || "on",
     ANTIDELETE_INCHAT: process.env.ANTIDELETE_INCHAT || "off",
+    ANTI_EDIT: process.env.ANTI_EDIT || "off",
+    ANTI_EDIT_IN_CHAT: process.env.ANTI_EDIT_IN_CHAT || "off",
     AUDIO_DATA: process.env.AUDIO_DATA || "Kord;🤍",
     SUDO: process.env.SUDO || "", // example: 23412345667,2341234567
     MODS: process.env.MODS || "",
