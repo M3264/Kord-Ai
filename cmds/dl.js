@@ -267,7 +267,7 @@ try {
         audioD = await ytaudio(link)
         if (!audioD.url) return m.send("_*failed to fetch video, try again*_")
         m.react("")
-       return await m.send(audioD.url, { caption: `➟ ${audioD.title}\n\n${config().CAPTION}`, quoted: m }, "audio")
+       return await m.send(audioD.url, { caption: `➟ ${audioD.title}\n\n${config().CAPTION}`, mimetype: "audio/mpeg", quoted: m }, "audio")
 } catch (e) {
         console.error(e)
       return  m.send(`${e}`)

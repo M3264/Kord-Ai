@@ -1271,7 +1271,7 @@ kord({
     return await m.send(`_*AntiGm Is Now Enabled!*_\n_Action:_ kick`)
     } else if (option === "warn") {
       var cou = parseInt(value)
-      if(!cou) return await m.send(`*_Use ${prefix}antibot warn 3_*`)
+      if(!cou) return await m.send(`*_Use ${prefix}antigm warn 3_*`)
       var warnco = {
         chatJid,
         "action": "warn",
