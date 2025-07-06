@@ -35,7 +35,7 @@
     "form-data": "^4.0.0",
     "fs": "^0.0.1-security",
     "g-i-s": "^2.1.7",
-    "jimp": "^0.16.1",
+    "jimp": "^1.6.0",
     "link-preview-js": "^3.0.14",
     "lodash.debounce": "^4.0.8",
     "moment-timezone": "^0.5.34",
