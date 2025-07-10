@@ -5,9 +5,9 @@ const http = require("http")
 
 const run = async () => {
   try {
-    const { platform } = getPlatformInfo?.() || {}
+    const platform = getPlatformInfo?.().platform?.toLowerCase() || ""
 
-    if (platform !== "pterodactyl") {
+    if (!platform.includes("pterodactyl")) {
       const server = http.createServer((req, res) => {
         res.writeHead(200, { "Content-Type": "text/plain" })
         res.end("Bot is running\n")
