@@ -6,6 +6,7 @@
   "scripts": {
     "test": "node index.js",
     "start": "npx pm2 start . --attach --name kord-v2",
+    "build": "echo 'Not needed'",
     "stop": "npx pm2 stop kord-ai"
   },
   "repository": {
