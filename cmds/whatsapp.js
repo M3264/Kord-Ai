@@ -8,7 +8,7 @@
  */
  
  
- const { kord, wtype, isAdmin, saveFilter, listFilters, removeFilter, prefix, getData, storeData, isBotAdmin} = require("../core")
+ const { kord, wtype, isAdmin, isadminn, saveFilter, listFilters, removeFilter, prefix, getData, storeData, isBotAdmin} = require("../core")
 
 kord({
   cmd: "delete|del|dlt",
