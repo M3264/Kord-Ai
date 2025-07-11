@@ -1489,3 +1489,93 @@ Warning(s): (${cCount}/${maxC})`
   }
 })
 
+const formatTimeAgo = sec => {
+  const h = Math.floor(sec / 3600)
+  const m = Math.floor((sec % 3600) % 3600 / 60)
+  const s = Math.floor((sec % 3600) % 60)
+  return `${h} hours ${m} minutes ${s} seconds ago`
+}
+
+kord({
+  cmd: "msgs",
+  desc: "Show message stats",
+  fromMe: true,
+  type: "tools",
+  gc: true,
+  adminOnly: true
+}, async (m, text, c, store) => {
+  const rows = await store.chatHistory(m.chat, 99999)
+  if (!rows.length) return m.send("_No messages found_")
+
+  const stats = {}
+  const now = Math.floor(Date.now() / 1000)
+
+  for (const row of rows) {
+    let parsed
+    try {
+      parsed = JSON.parse(row.message)
+    } catch { continue }
+
+    const msg = parsed.message || {}
+    const key = parsed.key || {}
+
+    const rawJid = key.participantPn || key.participant || key.remoteJid
+    if (!rawJid || rawJid.endsWith("@g.us")) continue
+
+    const jid = rawJid.split("@")[0]
+    const name = parsed.pushName || jid
+    const timestamp = parsed.messageTimestamp || 0
+
+    if (!stats[jid]) {
+      stats[jid] = {
+        name,
+        total: 0,
+        text: 0,
+        sticker: 0,
+        image: 0,
+        video: 0,
+        audio: 0,
+        document: 0,
+        others: 0,
+        lastSeen: timestamp
+      }
+    }
+
+    stats[jid].total++
+
+    if (msg.conversation || msg.extendedTextMessage) stats[jid].text++
+    else if (msg.stickerMessage) stats[jid].sticker++
+    else if (msg.imageMessage) stats[jid].image++
+    else if (msg.videoMessage) stats[jid].video++
+    else if (msg.audioMessage) stats[jid].audio++
+    else if (msg.documentMessage) stats[jid].document++
+    else stats[jid].others++
+
+    if (timestamp > stats[jid].lastSeen)
+      stats[jid].lastSeen = timestamp
+  }
+
+  const all = Object.entries(stats)
+  const sorted = all.sort((a, b) => b[1].total - a[1].total)
+  const sliced = text.trim().toLowerCase() === "all" ? sorted : sorted.slice(0, 10)
+
+  const report = sliced.map(([jid, d]) => {
+    const ago = formatTimeAgo(now - d.lastSeen)
+    let lines = [
+      `*Number :* ${jid}`,
+      `*Name :* ${d.name}`,
+      `*Total Msgs :* ${d.total}`,
+      `*text :* ${d.text}`
+    ]
+    if (d.sticker) lines.push(`*sticker :* ${d.sticker}`)
+    if (d.image) lines.push(`*image :* ${d.image}`)
+    if (d.video) lines.push(`*video :* ${d.video}`)
+    if (d.audio) lines.push(`*audio :* ${d.audio}`)
+    if (d.document) lines.push(`*document :* ${d.document}`)
+    if (d.others) lines.push(`*others :* ${d.others}`)
+    lines.push(`*lastSeen :* ${ago}`)
+    return lines.join("\n")
+  }).join("\n\n")
+
+  return m.send(report)
+})
