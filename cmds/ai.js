@@ -15,9 +15,14 @@ kord({
         fromMe: wtype,
         type: "ai",
 }, async (m, text) => {
-        var prompt = text || m.quoted?.text
-        if (!prompt) return await m.send("Hi!, What's Your Prompt?")
-        return await m.send(await chatWithAi(prompt, "Gemma"))
+        try {
+                var prompt = text || m.quoted?.text
+                if (!prompt) return await m.send("Hi!, What's Your Prompt?")
+                return await m.send(await chatWithAi(prompt, "Gemma"))
+        } catch (e) {
+                console.log("cmd error", e)
+                return await m.sendErr(e)
+        }
 })
 
 kord({
@@ -26,9 +31,14 @@ kord({
         fromMe: wtype,
         type: "ai",
 }, async (m, text) => {
-        var prompt = text || m.quoted?.text
-        if (!prompt) return await m.send("Hi!, What's Your Prompt?")
-        return await m.send(await chatWithAi(prompt, "gpt-3.5-turbo"))
+        try {
+                var prompt = text || m.quoted?.text
+                if (!prompt) return await m.send("Hi!, What's Your Prompt?")
+                return await m.send(await chatWithAi(prompt, "gpt-3.5-turbo"))
+        } catch (e) {
+                console.log("cmd error", e)
+                return await m.sendErr(e)
+        }
 })
 
 kord({
@@ -37,9 +47,14 @@ kord({
         fromMe: wtype,
         type: "ai",
 }, async (m, text) => {
-        var prompt = text || m.quoted?.text
-        if (!prompt) return await m.send("Hi!, What's Your Prompt?")
-        return await m.send(await chatWithAi(prompt, "Llama-2-int8"))
+        try {
+                var prompt = text || m.quoted?.text
+                if (!prompt) return await m.send("Hi!, What's Your Prompt?")
+                return await m.send(await chatWithAi(prompt, "Llama-2-int8"))
+        } catch (e) {
+                console.log("cmd error", e)
+                return await m.sendErr(e)
+        }
 })
 
 kord({
@@ -48,9 +63,14 @@ kord({
         fromMe: wtype,
         type: "ai",
 }, async (m, text) => {
-        var prompt = text || m.quoted?.text
-        if (!prompt) return await m.send("Hi!, What's Your Prompt?")
-        return await m.send(await chatWithAi(prompt, "Llama-2-int8"))
+        try {
+                var prompt = text || m.quoted?.text
+                if (!prompt) return await m.send("Hi!, What's Your Prompt?")
+                return await m.send(await chatWithAi(prompt, "Llama-2-int8"))
+        } catch (e) {
+                console.log("cmd error", e)
+                return await m.sendErr(e)
+        }
 })
 
 kord({
@@ -59,9 +79,14 @@ kord({
         fromMe: wtype,
         type: "ai",
 }, async (m, text) => {
-        var prompt = text || m.quoted?.text
-        if (!prompt) return await m.send("Hi!, What's Your Prompt?")
-        return await m.send(await chatWithAi(prompt, "Mistral"))
+        try {
+                var prompt = text || m.quoted?.text
+                if (!prompt) return await m.send("Hi!, What's Your Prompt?")
+                return await m.send(await chatWithAi(prompt, "Mistral"))
+        } catch (e) {
+                console.log("cmd error", e)
+                return await m.sendErr(e)
+        }
 })
 
 kord({
@@ -70,9 +95,14 @@ kord({
         fromMe: wtype,
         type: "ai",
 }, async (m, text) => {
-        var prompt = text || m.quoted?.text
-        if (!prompt) return await m.send("Hi!, What's Your Prompt?")
+        try {
+                var prompt = text || m.quoted?.text
+                if (!prompt) return await m.send("Hi!, What's Your Prompt?")
                 return await m.send(await chatWithAi(prompt, "Llama-2-awq"))
+        } catch (e) {
+                console.log("cmd error", e)
+                return await m.sendErr(e)
+        }
 })
 
 kord({
@@ -81,9 +111,14 @@ kord({
         fromMe: wtype,
         type: "ai",
 }, async (m, text) => {
-        var prompt = text || m.quoted?.text
-        if (!prompt) return await m.send("Hi!, What's Your Prompt?")
-        return await m.send(await chatWithAi(prompt, "OpenHermes"))
+        try {
+                var prompt = text || m.quoted?.text
+                if (!prompt) return await m.send("Hi!, What's Your Prompt?")
+                return await m.send(await chatWithAi(prompt, "OpenHermes"))
+        } catch (e) {
+                console.log("cmd error", e)
+                return await m.sendErr(e)
+        }
 })
 
 kord({
@@ -92,9 +127,14 @@ kord({
         fromMe: wtype,
         type: "ai",
 }, async (m, text) => {
-        var prompt = text || m.quoted?.text
-        if (!prompt) return await m.send("Hi!, What's Your Prompt?")
-        return await m.send(await chatWithAi(prompt, "Zephyr"))
+        try {
+                var prompt = text || m.quoted?.text
+                if (!prompt) return await m.send("Hi!, What's Your Prompt?")
+                return await m.send(await chatWithAi(prompt, "Zephyr"))
+        } catch (e) {
+                console.log("cmd error", e)
+                return await m.sendErr(e)
+        }
 })
 
 var chatc = {
@@ -184,9 +224,9 @@ kord({
         [`${cmd} clear`]: "🗑️ Clear History"
       })
     }
-  } catch (err) {
-    console.error(err)
-    return await m.send(`An error occurred: ${err.message}`)
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
   }
 })
 
@@ -231,8 +271,9 @@ kord({
 
       return await m.send(errorMessage)
     }
-  } catch (err) {
-    console.error("Message handling error:", err)
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
   }
 })
 
@@ -245,7 +286,8 @@ kord({
   try {
     const response = await chatbotResponse({ text: "Hello, this is a test message" }, `test_${Date.now()}`)
     await m.send(`*AI Test Successful!*\n\n*Response:* ${response}`)
-  } catch (error) {
-    await m.send(`*AI Test Failed:* ${error.message}`)
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
   }
 })

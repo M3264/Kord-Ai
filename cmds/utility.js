@@ -119,17 +119,22 @@ kord({
 })
 
 kord({
-  cmd: "audio2text|text",
+cmd: "audio2text|text",
   desc: "convert audio or video to text",
   fromMe: wtype,
   type: "utilities",
 }, async (m, text) => {
-  if (!(m.quoted.audio || m.quoted.video)) return await m.send("_reply to an audio or video_")
-  var p = await m.client.dlandsave(m.quoted)
-  var t = await talkNote(p)
-  var c = t.text
-  await m.send(`${c}`)
-  await require("fs").promises.unlink(p); 
+  try {
+    if (!(m.quoted.audio || m.quoted.video)) return await m.send("_reply to an audio or video_")
+    var p = await m.client.dlandsave(m.quoted)
+    var t = await talkNote(p)
+    var c = t.text
+    await m.send(`${c}`)
+    await require("fs").promises.unlink(p);
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
@@ -157,79 +162,101 @@ kord({
 })
 
 kord({
-        cmd: "url|tourl|upload",
+cmd: "url|tourl|upload",
         desc: "uploads quoted media to Kord\'s Cdn and sends access url(safe)",
         fromMe: wtype,
         react: "🔗",
         type: "utilities",
 }, async (m, text) => {
-        if (!m.quoted.media) return m.send("_reply to a media message_")
-        var path = await m.client.dlandsave(m.quoted)
-        var url = await m.upload(path)
-        await m.send(`${url}`);
-        await require("fs").promises.unlink(path);
+  try {
+    if (!m.quoted.media) return m.send("_reply to a media message_")
+    var path = await m.client.dlandsave(m.quoted)
+    var url = await m.upload(path)
+    await m.send(`${url}`);
+    await require("fs").promises.unlink(path);
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
-        cmd: "temp-url|temp-upload",
+cmd: "temp-url|temp-upload",
         desc: "uploads quoted media to Kord\'s Cdn and sends access url(temporarily)",
         fromMe: wtype,
         react: "♻️",
         type: "utilities",
 }, async (m, text) => {
-        if (!m.quoted.media) return m.send("_reply to a media message_")
-        var path = await m.client.dlandsave(m.quoted)
-        var url = await m.upload(path, "temp")
-        await m.send(`${url}`);
-        await require("fs").promises.unlink(path);
+  try {
+    if (!m.quoted.media) return m.send("_reply to a media message_")
+    var path = await m.client.dlandsave(m.quoted)
+    var url = await m.upload(path, "temp")
+    await m.send(`${url}`);
+    await require("fs").promises.unlink(path);
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
-        cmd: "readmore",
+cmd: "readmore",
         desc: "adds readmore to given text",
         fromMe: wtype,
         type: "utilities",
 }, async (m, text) => {
-        let txt = text || m.quoted?.text;
-        if (!txt) return m.send(`_*provide or reply some text*_\n_example: ${prefix}readmore Hello this is visible |readmore| this is hidden_`);
-        
-        const readmoreChar = String.fromCharCode(8206).repeat(4001);
-        const rtext = txt.replace(/(\|readmore\|)/i, readmoreChar);
-        return await m.send(rtext);
+  try {
+    let txt = text || m.quoted?.text;
+    if (!txt) return m.send(`_*provide or reply some text*_\n_example: ${prefix}readmore Hello this is visible |readmore| this is hidden_`);
+    
+    const readmoreChar = String.fromCharCode(8206).repeat(4001);
+    const rtext = txt.replace(/(\|readmore\|)/i, readmoreChar);
+    return await m.send(rtext);
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 });
 
 
 kord({
-        cmd: "define|whatis",
+cmd: "define|whatis",
         desc: "defines given text",
         react: "🧩",
         fromMe: wtype,
         type: "utilities",
 }, async (m, text) => {
-        if (!text) return m.send("_what do you want to define?_")
-        const fWword = text?.trim()?.split(/\s+/)[0];
-        var res = await m.axios(`http://api.urbandictionary.com/v0/define?term=${fWword}`);
-        var def = res.list[0]
-        const reply = `
-◈ _*Word:*_ ${fWword}
-◈ _*Definition:*_ ${def.definition.replace(/\[/g, "").replace(/\]/g, "")}
-◈ _*Example:*_ ${def.example.replace(/\[/g, "").replace(/\]/g, "")}
- 
-> definitions might not be accurate`;
-        return await m.send(reply)
+  try {
+    if (!text) return m.send("_what do you want to define?_")
+    const fWword = text?.trim()?.split(/\s+/)[0];
+    var res = await m.axios(`http://api.urbandictionary.com/v0/define?term=${fWword}`);
+    var def = res.list[0]
+    const reply = `
+    ◈ _*Word:*_ ${fWword}
+    ◈ _*Definition:*_ ${def.definition.replace(/\[/g, "").replace(/\]/g, "")}
+    ◈ _*Example:*_ ${def.example.replace(/\[/g, "").replace(/\]/g, "")}
+    
+    > definitions might not be accurate`;
+    return await m.send(reply)
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
-        cmd: "weather",
+cmd: "weather",
         desc: "gives the weather information about given country",
         react: "🌦️",
         fromMe: wtype,
         type: "utilities",
 }, async (m, text) => {
-        if (!text) return await m.send("_provide a location_");
-                const res = await m.axios(`https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`);
-                const w = res
-                const sunrise = new Date(w.sys.sunrise * 1000).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+  try {
+    if (!text) return await m.send("_provide a location_");
+    const res = await m.axios(`https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`);
+    const w = res
+    const sunrise = new Date(w.sys.sunrise * 1000).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit'
+});
                 const sunset = new Date(w.sys.sunset * 1000).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
                 const report = `\`\`\`
 ✤ Weather Report ✤
@@ -252,7 +279,11 @@ kord({
 ♜ Sunset       : ${sunset}
 \`\`\``.trim();
                 return await m.send(report)
-});
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
+})
 
 kord({
         cmd: "tinyurl|shorten-url",
@@ -475,17 +506,22 @@ kord({
 
 
 kord({
-  cmd: "calc|calculate",
+cmd: "calc|calculate",
   desc: "perform a calculation",
   fromMe: wtype,
   type: "utilities",
 }, async (m, text) => {
-  if (!text) return await m.send('❏ i need a calculation.\n_example:_ .calc 2+3')
-  if (!/^[\d\s\+\-\*\/\(\)\.]+$/.test(text)) {
-        return await m.send('Invalid characters in calculation');
-      }
-      const result = eval(text);
-      await m.send(`Result: ${text} = ${result}`);
+  try {
+    if (!text) return await m.send('❏ i need a calculation.\n_example:_ .calc 2+3')
+    if (!/^[\d\s\+\-\*\/\(\)\.]+$/.test(text)) {
+    return await m.send('Invalid characters in calculation');
+    }
+    const result = eval(text);
+    await m.send(`Result: ${text} = ${result}`);
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
@@ -511,85 +547,106 @@ kord({
 })
 
 kord({
-    cmd: "ngl",
+cmd: "ngl",
     desc: "send message to the ngl api (username and message)",
     fromMe: wtype,
     type: "utilities",
 }, async (m, text, c) => {
+  try {
     if (!text) return await m.send(`*provide both username and message*\n_example: ${c} username:hello, i am a boy_`)
     var a = text.split(":")
     var user = a[0]?.trim()
     var msg = a.slice(1).join(":").trim()
     if (!msg) return await m.send(`_*provide msg*_\n_example: ${c} username:hello, i am a boy_`)
-
+    
     var res = await m.axios(`https://kord-api.vercel.app/ngl?username=${encodeURIComponent(user)}&message=${encodeURIComponent(msg)}`)
     if (res?.success) {
-        return await m.send(`*Message Sent!*`)
+    return await m.send(`*Message Sent!*`)
     } else {
-        return await m.send(`*sorry, i encountered an error..*`)
+    return await m.send(`*sorry, i encountered an error..*`)
     }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
-    cmd: "ip|ipbot",
+cmd: "ip|ipbot",
     desc: "get ip for the bot",
     fromMe: wtype,
     type: "utilities",
 }, async (m) => {
+  try {
     http.get({
-        'host': 'api.ipify.org',
-        'port': 80,
-        'path': '/'
+    'host': 'api.ipify.org',
+    'port': 80,
+    'path': '/'
     }, function(resp) {
-        let data = '';
-        resp.on('data', function(chunk) {
-            data += chunk;
-        });
+    let data = '';
+    resp.on('data', function(chunk) {
+    data += chunk;
+});
         resp.on('end', function() {
             m.send(`*My public IP address is:* ${data}`);
         });
     }).on('error', function(err) {
         m.send(`error! ${err}`)
     })
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
-  cmd: "wiki",
+cmd: "wiki",
   desc: "search wiki",
   fromMe: wtype,
   type: "utilities",
 }, async (m, text) => {
+  try {
     if (!text) return await m.send("*provide a query to search*")
-      const data = await m.axios(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(text)}`);
-      if (!data) return await m.send("*error!*")
-      
-      return await m.send(`_*${data.title}*_\n\`\`\`${data.extract}\`\`\``)
+    const data = await m.axios(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(text)}`);
+    if (!data) return await m.send("*error!*")
+    
+    return await m.send(`_*${data.title}*_\n\`\`\`${data.extract}\`\`\``)
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
-  cmd: "bible",
+cmd: "bible",
   desc: "get verse/verses from the bible",
   fromMe: wtype,
   type: "utilities",
 }, async (m, text) => {
-  if (!text) return await m.send("*provide reference*\n_example: bible john 3:16_")
-  var r = text.trim()
-  if (!r) return await m.send("*provide reference*\n_example: bible john 3:16_")
-  var res = await m.axios(`https://bible-api.com/${encodeURIComponent(r)}`)
-  return await m.send(`*THE BIBLE*\n\n_*Reference: ${res.reference}*_\n${res.text.trim()}`)
+  try {
+    if (!text) return await m.send("*provide reference*\n_example: bible john 3:16_")
+    var r = text.trim()
+    if (!r) return await m.send("*provide reference*\n_example: bible john 3:16_")
+    var res = await m.axios(`https://bible-api.com/${encodeURIComponent(r)}`)
+    return await m.send(`*THE BIBLE*\n\n_*Reference: ${res.reference}*_\n${res.text.trim()}`)
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
-  cmd: "font",
+cmd: "font",
   desc: "change font of text",
   fromMe: wtype,
   type: "utilities",
 }, async (m, text) => {
-  if (!text) {
+  try {
+    if (!text) {
     let texxt = "*Fancy text generator*\n\n_*Example: .fancy 1 kord*_\n\n"
-        listall("Kord-Ai").forEach((txt, num) => {
-          texxt += `${num + 1} ${txt}\n`;
-        }); 
+    listall("Kord-Ai").forEach((txt, num) => {
+    texxt += `${num + 1} ${txt}\n`;
+}); 
         return await m.send(`${texxt}`)
   }
   const num = parseInt(text.split(" ")[0], 10);
@@ -597,6 +654,10 @@ kord({
   
   const txt = await fancytext(text.slice(text.indexOf(' ') + 1), num);
   return await m.send(`${txt}`)
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
@@ -654,12 +715,17 @@ kord({
 
 
 kord({
-  cmd: 'getdevice|device',
+cmd: 'getdevice|device',
   desc: 'Get device of sender or quoted',
   fromMe: wtype,
   type: 'utilities'
 }, async (m) => {
-  const id = m.quoted?.id || m.key?.id
-  const device = getDevice(id)
-  await m.reply(`Device: *${device}*`)
+  try {
+    const id = m.quoted?.id || m.key?.id
+    const device = getDevice(id)
+    await m.reply(`Device: *${device}*`)
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })

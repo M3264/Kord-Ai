@@ -26,111 +26,135 @@ const fs = require('fs')
 const { warn } = require("../core/db")
 
 kord({
-  cmd: 'ping',
+cmd: 'ping',
   desc: 'check the bot ping',
   react: "🙂‍↔️",
   fromMe: wtype,
   type: 'bot'
 }, async (m, text) => {
-  const start = performance.now();
-  const msg = await m.send("```pinging...```");
-  const end = performance.now();
-  const ping = Math.round(end - start);
-   msg.edit(`*_々 Pong! ${ping}ms_*`);
+  try {
+    const start = performance.now();
+    const msg = await m.send("```pinging...```");
+    const end = performance.now();
+    const ping = Math.round(end - start);
+    msg.edit(`*_々 Pong! ${ping}ms_*`);
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 });
 
 kord({
-  cmd: "ban",
+cmd: "ban",
   desc: "bans a user from using the bot",
   fromMe: true,
   type: "bot"
 }, async (m, text) => {
-  let user;
-  if (m.isGroup) {
+  try {
+    let user;
+    if (m.isGroup) {
     if (m.mentionedJid?.length) {
-  user = m.mentionedJid[0]
-  } else if (m.quoted?.sender) {
-  user = m.quoted.sender
-  } else {
-  return m.send("_reply or mention a user_");
-}
-  } else if (text) {
+    user = m.mentionedJid[0]
+    } else if (m.quoted?.sender) {
+    user = m.quoted.sender
+    } else {
+    return m.send("_reply or mention a user_");
+    }
+    } else if (text) {
     user = text.replace(/[^\d]/g, '');
-  } else {
+    } else {
     user = m.chat
-  }
-  
-  if (!user) return m.send("_reply or mention a user_")
-  let sdata = await getData("banned");
-if (!Array.isArray(sdata)) sdata = [];
-let isExist = sdata.includes(user);
-  if (isExist) {
+    }
+    
+    if (!user) return m.send("_reply or mention a user_")
+    let sdata = await getData("banned");
+    if (!Array.isArray(sdata)) sdata = [];
+    let isExist = sdata.includes(user);
+    if (isExist) {
     return m.send("_user is already banned_")
-  } else {
+    } else {
     sdata.push(user)
     await storeData("banned", JSON.stringify(sdata, null, 2))
     return m.send("_user is now banned_")
+    }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
   }
 })
 
 kord({
-  cmd: "unban",
+cmd: "unban",
   desc: "unbans an already banned user",
   fromMe: true,
   type: "bot",
-  }, async (m, text) => {
+}, async (m, text) => {
+  try {
     let user;
-if (m.chat.endsWith("@g.us")) {
-  if (m.mentionedJid?.length) {
-  user = m.mentionedJid[0];
-} else if (m.quoted?.sender) {
-  user = m.quoted.sender;
-} else {
-  return m.send("_reply or mention a user_");
-}
-} else if (text) {
-  user = text.replace(/[^\d]/g, '');
-} else {
-  user = m.chat
-}
-
-  if (!user) return m.send("_reply or mention a user_")
-  let sdata = await getData("banned");
-if (!Array.isArray(sdata)) sdata = [];
-let isExist = sdata.includes(user);
-  if (!isExist) return m.send("_user is not banned currently_")
-  sdata = sdata.filter(entry => entry !== user)
-  await storeData("banned", JSON.stringify(sdata, null, 2))
-  return m.send("_user is now unbaned_")
+    if (m.chat.endsWith("@g.us")) {
+    if (m.mentionedJid?.length) {
+    user = m.mentionedJid[0];
+    } else if (m.quoted?.sender) {
+    user = m.quoted.sender;
+    } else {
+    return m.send("_reply or mention a user_");
+    }
+    } else if (text) {
+    user = text.replace(/[^\d]/g, '');
+    } else {
+    user = m.chat
+    }
+    
+    if (!user) return m.send("_reply or mention a user_")
+    let sdata = await getData("banned");
+    if (!Array.isArray(sdata)) sdata = [];
+    let isExist = sdata.includes(user);
+    if (!isExist) return m.send("_user is not banned currently_")
+    sdata = sdata.filter(entry => entry !== user)
+    await storeData("banned", JSON.stringify(sdata, null, 2))
+    return m.send("_user is now unbaned_")
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
   }
-)
+})
 
 kord({
-  cmd: "banlist",
+cmd: "banlist",
   desc: "shows all banned users",
   fromMe: true,
   type: "bot"
 }, async (m) => {
-  let sdata = await getData("banned")
-  if (!Array.isArray(sdata)) sdata = []
-
-  if (!sdata.length) return m.send("_no users are currently banned_")
-
-  let mentions = sdata.map(jid => jid.replace(/[^0-9]/g, '') + '@s.whatsapp.net')
-  let list = sdata.map((jid, i) => `${i + 1}. @${jid.replace(/[^0-9]/g, '')}`).join("\n")
-
-  return m.send(`*Banned Users:*\n\n${list}`, { mentions })
+  try {
+    let sdata = await getData("banned")
+    if (!Array.isArray(sdata)) sdata = []
+    
+    if (!sdata.length) return m.send("_no users are currently banned_")
+    
+    let mentions = sdata.map(jid => jid.replace(/[^0-9]/g, '') + '@s.whatsapp.net')
+    let list = sdata.map((jid, i) => `${i + 1}. @${jid.replace(/[^0-9]/g, '')}`).join("\n")
+    
+    return m.send(`*Banned Users:*\n\n${list}`, { mentions })
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
-  cmd: 'uptime',
+cmd: 'uptime',
   desc: 'checks the bot\'s uptime',
   react: '💨',
   fromMe: wtype,
   type: 'bot'
-}, async(m, text) => {
-  var uptime = await secondsToHms(process.uptime())
-  return m.send(`_*Active since ${uptime} ago!..*_`)
+}, async (m, text) => {
+  try {
+    var uptime = await secondsToHms(process.uptime())
+    return m.send(`uptime: ${uptime}`)
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
@@ -155,24 +179,28 @@ kord({
 })
 
 kord({
-  cmd: "list",
+cmd: "list",
   desc: "shows the list of available comamnds and their description",
   react: "☯️",
   fromMe: wtype,
   type: 'help',
 }, async (m, text) => {
-  let count = 1
-      list = ""
-  commands.map((cmd => {
-  if (cmd.cmd && cmd.desc) {
+  try {
+    let count = 1
+    list = ""
+    commands.map((cmd => {
+    if (cmd.cmd && cmd.desc) {
     const firstAlias = cmd.cmd.split('|')[0].trim();
     list += `${count++} *${firstAlias}*\n_${cmd.desc}_\n\n`;
-  } else {
+    } else {
     const fallback = cmd.cmd ? cmd.cmd.split('|')[0].trim() : '';
     list += `${count++} *${fallback}*\n`;
-  }
-}));
+    } }));
 return m.send(list)
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 const pm2 = require('pm2')
@@ -335,6 +363,7 @@ kord({
   on: "all",
   fromMe: false,
 }, async (m, text) => {
+  try {
   if (text.toLowerCase().includes("save") || text.toLowerCase().includes("download") || text.toLowerCase().includes("send")) {
     const mtype = m.quoted.mtype
     if (m.quoted.chat !== "status@broadcast") return
@@ -362,51 +391,69 @@ kord({
       mediaType: 1
     }, "ad")
   }
+  } catch (e) {
+    console.log(`cmd error:`, e)
+  }
 })
 
 
 kord({
-  cmd: "owner",
+cmd: "owner",
   desc: "sends owner contact",
   fromMe: wtype,
   type: "bot"
 }, async (m, text) => {
-  const vcard = `BEGIN:VCARD
-VERSION:3.0
-FN:${config().OWNER_NAME}
-TEL;type=CELL;type=VOICE;waid=${config().OWNER_NUMBER}:${config().OWNER_NUMBER}
-END:VCARD`
-
-  const contactMsg = {
+  try {
+    const vcard = `BEGIN:VCARD
+    VERSION:3.0
+    FN:${config().OWNER_NAME}
+    TEL;type=CELL;type=VOICE;waid=${config().OWNER_NUMBER}:${config().OWNER_NUMBER}
+    END:VCARD`
+    
+    const contactMsg = {
     contacts: {
-      displayName: config().OWNER_NAME,
-      contacts: [{ vcard }]
+    displayName: config().OWNER_NAME,
+    contacts: [{ vcard }]
     }
+    }
+    
+    return await m.client.sendMessage(m.chat, contactMsg, { quoted: m })
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
   }
-
-  return await m.client.sendMessage(m.chat, contactMsg, { quoted: m })
 })
 
 kord({
-  cmd: "repo|sc|script",
+cmd: "repo|sc|script",
   desc: "send repository link of the bot",
   fromMe: wtype,
   type: "bot"
 }, async (m, text) => {
-  const msg = 
-`╔═════《 My Repository 》═════╗
-╠ Link: https://github.com/M3264/Kord-Ai
-╠ Description: WhatsApp Bot built with Baileys
-╚═════════════════════════════╝`
-
-  return await m.send(msg)
+  try {
+    const msg =
+    `╔═════《 My Repository 》═════╗
+    ╠ Link: https://github.com/M3264/Kord-Ai
+    ╠ Description: WhatsApp Bot built with Baileys
+    ╚═════════════════════════════╝`
+    
+    return await m.send(msg)
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
-    cmd: "update",
+cmd: "update",
     desc: "update bot",
     fromMe: true,
     type: "bot",
 }, async (m, text) => {
+  try {
     await updateBot(m, text)
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })

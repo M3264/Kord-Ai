@@ -12,68 +12,74 @@ const yts = require("yt-search")
 const { Sticker, StickerTypes } = require("wa-sticker-formatter");
 
 kord({
-  cmd: "apk",
+cmd: "apk",
   desc: "download an andriod app",
   type: "downloader",
   fromMe: wtype,
-}, async(m, text) => {
-  if (!text) return await m.send("_*Provide a apk name*_")
-  var data = await m.axios(`https://kord-api.vercel.app/apk?q=${text}`)
-  if (data.error) return await m.send("_Apk not found.._")
-  var cap = `❑ Name: ${data.app_name}
-❑ Package Name: ${data.package_name}
-❑ Version: ${data.version}
-❑ Downloads: ${data.downloads}
-
-${config().CAPTION}`
-  var buff = await getBuffer(data.download_url)
-  await m.send(
-  buff,
-  {
+}, async (m, text) => {
+  try {
+    if (!text) return await m.send("_*Provide a apk name*_")
+    var data = await m.axios(`https://kord-api.vercel.app/apk?q=${text}`)
+    if (data.error) return await m.send("_Apk not found.._")
+    var cap = `❑ Name: ${data.app_name}
+    ❑ Package Name: ${data.package_name}
+    ❑ Version: ${data.version}
+    ❑ Downloads: ${data.downloads}
+    
+    ${config().CAPTION}`
+    var buff = await getBuffer(data.download_url)
+    await m.send(
+    buff,
+    {
     mimetype: "application/vnd.android.package-archive",
     fileName: data.app_name,
     caption: cap,
     quoted: m
-  },
-  "document"
-);
+    },
+    "document"
+    );
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 
 kord({
-  cmd: "apksearch",
+cmd: "apksearch",
   desc: "search apk and download",
   fromMe: wtype,
   type: "search",
 }, async (m, text) => {
-  if (!text) return await m.send("_provide a apk name_")
-  if (text.startsWith("dl--")) {
+  try {
+    if (!text) return await m.send("_provide a apk name_")
+    if (text.startsWith("dl--")) {
     var q = text.replace("dl--", "")
     await m.send("downloading app...")
     var data = await m.axios(`https://api.kordai.biz.id/apkdl?id=${q}`)
     if (data.error) return await m.send("_Apk not found.._")
     var cap = `❑ Name: ${data.name}
-❑ Package Name: ${data.package}
-❑ Version: ${data.version}
-
-${config().CAPTION}`
-  var buff = await getBuffer(data.downloadUrl)
-  await m.send(
-  buff,
-  {
+    ❑ Package Name: ${data.package}
+    ❑ Version: ${data.version}
+    
+    ${config().CAPTION}`
+    var buff = await getBuffer(data.downloadUrl)
+    await m.send(
+    buff,
+    {
     mimetype: "application/vnd.android.package-archive",
     fileName: data.name,
     caption: cap,
     quoted: m
-  },
-  "document"
-);
-  } else {
-var info = await m.axios(`https://api.kordai.biz.id/apksearch?query=${text}`);
-const formatted = info.splice(0, 10).map(app => ({
-  name: app.name,
-  id: `apksearch dl--${app.id}`
-}));
+    },
+    "document"
+    );
+    } else {
+    var info = await m.axios(`https://api.kordai.biz.id/apksearch?query=${text}`);
+    const formatted = info.splice(0, 10).map(app => ({
+    name: app.name,
+    id: `apksearch dl--${app.id}`
+}))
 
 return await m.send({
   name: `Apk Download for ${text}`,
@@ -84,6 +90,11 @@ return await m.send({
   selectableCount: true,
 }, { quoted: m }, "poll");
   }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
+  
 })
 
 kord({
@@ -127,49 +138,55 @@ ${config().CAPTION}`;
 });
 
 kord({
-  cmd: "subtitlesearch|subtitles",
+cmd: "subtitlesearch|subtitles",
   desc: "Search subtitles from SubtitleCat",
   fromMe: wtype,
   type: "search",
 }, async (m, text) => {
-  if (!text) return await m.send("_provide a movie name_");
-
-  if (text.startsWith("dl--")) {
-  const pageUrl = decodeURIComponent(text.replace("d--", ""));
-  if (pageUrl.toLowerCase().includes("tempête dans une tasse de thé")) {
+  try {
+    if (!text) return await m.send("_provide a movie name_");
+    
+    if (text.startsWith("dl--")) {
+    const pageUrl = decodeURIComponent(text.replace("d--", ""));
+    if (pageUrl.toLowerCase().includes("tempête dans une tasse de thé")) {
     return await m.send("_Busy API or invalid subtitle. Try again later._");
-  }
-
-  await m.send("_Fetching available subtitle languages..._");
-  let data = await m.axios(`https://kord-api.vercel.app/subtiledl?q=${encodeURIComponent(pageUrl)}`);
-  
-  if (!Array.isArray(data) || data.length === 0)
+    }
+    
+    await m.send("_Fetching available subtitle languages..._");
+    let data = await m.axios(`https://kord-api.vercel.app/subtiledl?q=${encodeURIComponent(pageUrl)}`);
+    
+    if (!Array.isArray(data) || data.length === 0)
     return await m.send("_No subtitles found or server busy._");
-
-  const english = data.find(d => d.language.toLowerCase().includes("english"));
-  if (!english) return await m.send("_English subtitle not available._");
-
-  const fileName = decodeURIComponent(pageUrl.split("/").pop().replace(".html", "-en.srt"));
-
-  const buffer = await getBuffer(english.url);
-  await m.send(
+    
+    const english = data.find(d => d.language.toLowerCase().includes("english"));
+    if (!english) return await m.send("_English subtitle not available._");
+    
+    const fileName = decodeURIComponent(pageUrl.split("/").pop().replace(".html", "-en.srt"));
+    
+    const buffer = await getBuffer(english.url);
+    await m.send(
     buffer,
     {
-      mimetype: "application/x-subrip",
-      fileName: fileName,
-      caption: `❑ Language: English\n${config().CAPTION}`,
-      quoted: m
+    mimetype: "application/x-subrip",
+    fileName: fileName,
+    caption: `❑ Language: English\n${config().CAPTION}`,
+    quoted: m
     },
     "document"
-  );
-  } else {
+    );
+    } else {
     const info = await m.axios(`https://kord-api.vercel.app/subtitlepage?q=${text}`);
     if (!Array.isArray(info) || info.length === 0) {
-      return await m.send("_No subtitle results found._");
+    return await m.send("_No subtitle results found._");
     }
-
+    
     const formatted = info.slice(0, 10).map(res => ({
-      name: `${res.title} (${res.languagesSummary})`,
+    name: `${res.title} (${res.languagesSummary
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
+})`,
       id: `apksearch dl--${encodeURIComponent(res.pageUrl)}`
     }));
 
@@ -181,6 +198,10 @@ kord({
       participates: [m.sender, m.ownerJid],
       selectableCount: true,
     }, { quoted: m }, "poll");
+  }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
   }
 });
 

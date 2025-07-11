@@ -19,6 +19,7 @@ kord({
   fromMe: true,
   type: "config",
 }, async (m, text)=> {
+  try {
   if (!text)  return await m.send(`*provide the var name and value*\n_example: ${prefix}setvar SESSION_ID=kord-ai_321`)
   var [key, ...args] = text.split("=")
   key = key.toUpperCase()
@@ -47,24 +48,33 @@ kord({
       return await m.send(`*Config set successfully!*`)
     }
   }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
-  cmd: "getvar",
+cmd: "getvar",
   desc: "get all variables from config.js/config.env",
   fromMe: true,
   type: "config",
 }, async (m, text) => {
-  if (!text) return m.reply("_*provide var name...*_\n_example: getvar SUDO_")
-  const key = text.trim().toUpperCase()
-  if (typeof key !== 'string' || !key.trim()) {
+  try {
+    if (!text) return m.reply("_*provide var name...*_\n_example: getvar SUDO_")
+    const key = text.trim().toUpperCase()
+    if (typeof key !== 'string' || !key.trim()) {
     await m.reply("_*Invalid variable!...*_")
-  } else if (await envExists()) {
+    } else if (await envExists()) {
     return await m.send(`*${key}*: ${process.env[key]}`)
-  } else if (config()[key]) {
+    } else if (config()[key]) {
     return await m.send(`*${key}*: ${config()[key]}`)
-  } else {
+    } else {
     await m.reply(`_*'${key}' not found in config*_`)
+    }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
   }
 })
 
@@ -74,6 +84,7 @@ kord({
   fromMe: true,
   type: "config",
 }, async (m, text) => {
+  try {
   const key = text.trim().toUpperCase()
   const platformInfo = getPlatformInfo()
   if (platformInfo.platform === "render") {
@@ -92,6 +103,10 @@ kord({
     }
     await m.send(`_*successfully deleted ${key}*_`)
   }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
@@ -100,6 +115,7 @@ kord({
   fromMe: true,
   type: "config",
 }, async (m, text)=> {
+  try {
   const platformInfo = getPlatformInfo()
   
   if (platformInfo.platform === "render") {
@@ -130,6 +146,10 @@ kord({
     .map(key => `*${key}:* ${config()[key]}`)
     .join('\n')
     return await m.send(`${data}`)
+  }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
   }
 })
 
@@ -164,6 +184,7 @@ async function updateAllConfig(key, value, m) {
 }
 
 function toggle(cmdName, envKey, displayName) {
+  try {
   return async (m, text, cmd) => {
     const allowed = [...myMods().map(x => x + '@s.whatsapp.net'), m.ownerJid]
     text = text.split(" ")[0].toLowerCase()
@@ -201,6 +222,10 @@ if (!text) {
     }
     
     await updateAllConfig(envKey, text, m)
+  }
+  } catch (e) {
+    console.log("cmd error", e)
+    return m.sendErr(e)
   }
 }
 
@@ -295,20 +320,19 @@ kord({
   fromMe: true,
   type: "config",
 }, async (m, text) => {
+  try {
   let users = []
 
-  text = text?.trim()
-if ((text === 'admins' || !text) && m.isGroup && (!m.quoted && m.mentionedJid.length === 0)) {
-  if (text !== 'admins' && !m.quoted && !m.mentionedJid.length)
-    return await m.send("_Reply/mention/provide a user or type 'admins'_")
-
-  const admins = await getAdmins(m.client, m.chat)
-  users = admins.map(j => j.split('@')[0])
-} else {
-  const u = m.mentionedJid[0] || m.quoted?.sender || text
-  if (!u) return await m.send("_Reply/mention/provide a user_")
-  users = [u.split('@')[0]]
-}
+  if (!text) return await m.send("_Reply/mention/provide a user or type 'admins'_")
+  if (text.trim().toLowerCase() === 'admins') {
+    if (!m.isGroup) return await m.send("_'admins' can only be used in groups_")
+    const admins = await getAdmins(m.client, m.chat)
+    users = admins.map(j => j.split('@')[0])
+  } else {
+    const u = m.mentionedJid[0] || m.quoted?.sender || text
+    if (!u) return await m.send("_Reply/mention/provide a user_")
+    users = [u.split('@')[0]]
+  }
 
   const current = config().SUDO || ""
   const cNumbers = current.split(',').map(n => n.trim()).filter(n => n)
@@ -335,6 +359,10 @@ if ((text === 'admins' || !text) && m.isGroup && (!m.quoted && m.mentionedJid.le
     await updateConfig("SUDO", nsn, { replace: true })
     return await m.send(`\`\`\`${toAdd.join(', ')} added to sudo list...\`\`\``)
   }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
@@ -343,20 +371,19 @@ kord({
   fromMe: true,
   type: "config",
 }, async (m, text) => {
+  try {
   let users = []
 
-  text = text?.trim()
-if ((text === 'admins' || !text) && m.isGroup && (!m.quoted && m.mentionedJid.length === 0)) {
-  if (text !== 'admins' && !m.quoted && !m.mentionedJid.length)
-    return await m.send("_Reply/mention/provide a user or type 'admins'_")
-
-  const admins = await getAdmins(m.client, m.chat)
-  users = admins.map(j => j.split('@')[0])
-} else {
-  const u = m.mentionedJid[0] || m.quoted?.sender || text
-  if (!u) return await m.send("_Reply/mention/provide a user_")
-  users = [u.split('@')[0]]
-}
+  if (!text) return await m.send("_Reply/mention/provide a user or type 'admins'_")
+  if (text.trim().toLowerCase() === 'admins') {
+    if (!m.isGroup) return await m.send("_'admins' can only be used in groups_")
+    const admins = await getAdmins(m.client, m.chat)
+    users = admins.map(j => j.split('@')[0])
+  } else {
+    const u = m.mentionedJid[0] || m.quoted?.sender || text
+    if (!u) return await m.send("_Reply/mention/provide a user_")
+    users = [u.split('@')[0]]
+  }
 
   const current = config().SUDO || ""
   const cNumbers = current.split(',').map(n => n.trim()).filter(n => n)
@@ -382,29 +409,39 @@ if ((text === 'admins' || !text) && m.isGroup && (!m.quoted && m.mentionedJid.le
     await updateConfig("SUDO", nsn, { replace: true })
     return await m.send(`\`\`\`${users.join(', ')} removed from sudo list...\`\`\``)
   }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 
 kord({
-  cmd: "getsudo|allsudo",
+cmd: "getsudo|allsudo",
   desc: "get all sudos",
   fromMe: true,
   type: "config",
 }, async (m, text) => {
-  var sudo = (config().SUDO || "")
+  try {
+    var sudo = (config().SUDO || "")
     .split(",")
     .map(n => n.trim())
     .filter(n => n)
-  if (sudo.length == 0) return await m.send("_Sudo list is empty_")
-  var msg = "「 SUDO LIST 」\n"
-  var mj = []
-  for (var s of sudo) {
-  var jid = s.trim() + '@s.whatsapp.net'
+    if (sudo.length == 0) return await m.send("_Sudo list is empty_")
+    var msg = "「 SUDO LIST 」\n"
+    var mj = []
+    for (var s of sudo) {
+    var jid = s.trim() + '@s.whatsapp.net'
     msg += `❑ @${s}\n`
     mj.push(jid)
+    }
+    var fmsg = `\`\`\`${msg}\`\`\``
+    return await m.send(fmsg, {mentions: mj
+})
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
   }
-  var fmsg = `\`\`\`${msg}\`\`\``
-      return await m.send(fmsg, {mentions: mj})
 })
 
 kord({
@@ -413,20 +450,19 @@ kord({
   fromMe: true,
   type: "config",
 }, async (m, text) => {
+  try {
   let users = []
 
-  text = text?.trim()
-if ((text === 'admins' || !text) && m.isGroup && (!m.quoted && m.mentionedJid.length === 0)) {
-  if (text !== 'admins' && !m.quoted && !m.mentionedJid.length)
-    return await m.send("_Reply/mention/provide a user or type 'admins'_")
-
-  const admins = await getAdmins(m.client, m.chat)
-  users = admins.map(j => j.split('@')[0])
-} else {
-  const u = m.mentionedJid[0] || m.quoted?.sender || text
-  if (!u) return await m.send("_Reply/mention/provide a user_")
-  users = [u.split('@')[0]]
-}
+  if (!text) return await m.send("_Reply/mention/provide a user or type 'admins'_")
+  if (text.trim().toLowerCase() === 'admins') {
+    if (!m.isGroup) return await m.send("_'admins' can only be used in groups_")
+    const admins = await getAdmins(m.client, m.chat)
+    users = admins.map(j => j.split('@')[0])
+  } else {
+    const u = m.mentionedJid[0] || m.quoted?.sender || text
+    if (!u) return await m.send("_Reply/mention/provide a user_")
+    users = [u.split('@')[0]]
+  }
 
   const current = config().MODS || ""
   const cNumbers = current.split(',').map(n => n.trim()).filter(n => n)
@@ -453,6 +489,10 @@ if ((text === 'admins' || !text) && m.isGroup && (!m.quoted && m.mentionedJid.le
     await updateConfig("MODS", nsn, { replace: true })
     return await m.send(`\`\`\`${toAdd.join(', ')} added to mod list...\`\`\``)
   }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
@@ -461,20 +501,19 @@ kord({
   fromMe: true,
   type: "config",
 }, async (m, text) => {
+  try {
   let users = []
 
-  text = text?.trim()
-if ((text === 'admins' || !text) && m.isGroup && (!m.quoted && m.mentionedJid.length === 0)) {
-  if (text !== 'admins' && !m.quoted && !m.mentionedJid.length)
-    return await m.send("_Reply/mention/provide a user or type 'admins'_")
-
-  const admins = await getAdmins(m.client, m.chat)
-  users = admins.map(j => j.split('@')[0])
-} else {
-  const u = m.mentionedJid[0] || m.quoted?.sender || text
-  if (!u) return await m.send("_Reply/mention/provide a user_")
-  users = [u.split('@')[0]]
-}
+  if (!text) return await m.send("_Reply/mention/provide a user or type 'admins'_")
+  if (text.trim().toLowerCase() === 'admins') {
+    if (!m.isGroup) return await m.send("_'admins' can only be used in groups_")
+    const admins = await getAdmins(m.client, m.chat)
+    users = admins.map(j => j.split('@')[0])
+  } else {
+    const u = m.mentionedJid[0] || m.quoted?.sender || text
+    if (!u) return await m.send("_Reply/mention/provide a user_")
+    users = [u.split('@')[0]]
+  }
 
   const current = config().MODS || ""
   const cNumbers = current.split(',').map(n => n.trim()).filter(n => n)
@@ -500,78 +539,96 @@ if ((text === 'admins' || !text) && m.isGroup && (!m.quoted && m.mentionedJid.le
     await updateConfig("MODS", nsn, { replace: true })
     return await m.send(`\`\`\`${users.join(', ')} removed from mod list...\`\`\``)
   }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
-  cmd: "getmods",
+cmd: "getmods",
   desc: "get all mods",
   fromMe: true,
   type: "config",
 }, async (m, text) => {
-  var modList = (config().MODS || "")
+  try {
+    var modList = (config().MODS || "")
     .split(",")
     .map(n => n.trim())
     .filter(n => n)
-
-  if (modList.length == 0)
+    
+    if (modList.length == 0)
     return await m.send("_Mod list is empty_")
-  var msg = "「 MOD LIST 」\n"
-  var mentionJids = []
-  for (var u of modList) {
+    var msg = "「 MOD LIST 」\n"
+    var mentionJids = []
+    for (var u of modList) {
     msg += `❑ @${u}\n`
     mentionJids.push(u + '@s.whatsapp.net')
+    }
+    var fmsg = `\`\`\`${msg}\`\`\``
+    return await m.send(fmsg, {
+    mentions: mentionJids })
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
   }
-  var fmsg = `\`\`\`${msg}\`\`\``
-  return await m.send(fmsg, {
-    mentions: mentionJids
-  })
 })
 
 
 kord({
-  cmd: "mode",
+cmd: "mode",
   desc: "set bot to private or public",
   fromMe: true,
   type: "config",
 }, async (m, text) => {
-  const allowed = [...myMods().map(x => x + '@s.whatsapp.net'), m.ownerJid]
-  var cmdName = "mode"
-  if (!text) return config().RES_TYPE.toLowerCase() == "poll" ? await m.send({
-        name: "*Toggle private/public*",
-        values: [{name: "private", id: `${cmdName} private`}, {name: "public", id: `${cmdName} public`}],
-        withPrefix: true,
-        onlyOnce: true,
-        participates: [m.ownerJid, ],
-        selectableCount: true,
-      }, {}, "poll") : await m.send("Use either public or private")
-  if (text.toLowerCase() == "private") {
-    if (config().WORKTYPE.toLowerCase() == "private") return await m.send("_Bot is already private.._") 
+  try {
+    const allowed = [...myMods().map(x => x + '@s.whatsapp.net'), m.ownerJid]
+    var cmdName = "mode"
+    if (!text) return config().RES_TYPE.toLowerCase() == "poll" ? await m.send({
+    name: "*Toggle private/public*",
+    values: [{name: "private", id: `${cmdName} private`}, {name: "public", id: `${cmdName} public`}],
+    withPrefix: true,
+    onlyOnce: true,
+    participates: [m.ownerJid, ],
+    selectableCount: true,
+    }, {}, "poll") : await m.send("Use either public or private")
+    if (text.toLowerCase() == "private") {
+    if (config().WORKTYPE.toLowerCase() == "private") return await m.send("_Bot is already private.._")
     else {
-      await updateAllConfig("WORKTYPE", "private", m)
+    await updateAllConfig("WORKTYPE", "private", m)
     }
-  } else if (text.toLowerCase() == "public") {
-    if (config().WORKTYPE.toLowerCase() == "public") return await m.send("_Bot is already public.._") 
+    } else if (text.toLowerCase() == "public") {
+    if (config().WORKTYPE.toLowerCase() == "public") return await m.send("_Bot is already public.._")
     else {
-      await updateAllConfig("WORKTYPE", "public", m)
-    } 
-  } else {
+    await updateAllConfig("WORKTYPE", "public", m)
+    }
+    } else {
     return config().RES_TYPE.toLowerCase() == "poll" ? await m.send({
-        name: "*Toggle private/public*",
-        values: [{name: "private", id: `${cmdName} private`}, {name: "public", id: `${cmdName} public`}],
-        withPrefix: true,
-        onlyOnce: true,
-        participates: allowed,
-        selectableCount: true,
-      }, {}, "poll") : await m.send("Use either public or private")
+    name: "*Toggle private/public*",
+    values: [{name: "private", id: `${cmdName} private`}, {name: "public", id: `${cmdName} public`}],
+    withPrefix: true,
+    onlyOnce: true,
+    participates: allowed,
+    selectableCount: true,
+    }, {}, "poll") : await m.send("Use either public or private")
+    }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
   }
 })
 
 kord({
-  cmd: "statusemoji",
+cmd: "statusemoji",
   desc: "set like status emoji",
   fromMe: true,
   type: "config",
 }, async (m, text) => {
-  if (!text) return await m.send("_provide an emoji:emojis_\n_example: statusemoji 🤍 or statusemoji 🤍,🥏")
-  await updateAllConfig("STATUS_EMOJI", text, m)
+  try {
+    if (!text) return await m.send("_provide an emoji:emojis_\n_example: statusemoji 🤍 or statusemoji 🤍,🥏")
+    await updateAllConfig("STATUS_EMOJI", text, m)
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })

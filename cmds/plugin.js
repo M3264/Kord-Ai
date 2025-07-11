@@ -14,14 +14,15 @@ const path = require("path")
 const { kord, wtype, storeData, getData, isUrl, extractUrlsFromString, sleep } = require("../core")
 
 kord({
-  cmd: "plugin",
+  cmd: "plugin|install",
   desc: "install plugin from url",
-  fromMe: wtype,
+  fromMe: true,
   type: "plugins"
 }, async (m, match) => {
-  if (!isUrl(match)) return await m.send("send a valid plugin url")
-
-  const arr = await extractUrlsFromString(match)
+  
+  const input = match || m.quoted?.text?.trim()
+if (!input || !isUrl(input)) return await m.send("send a valid plugin url")
+const arr = await extractUrlsFromString(input)
 
   for (const element of arr) {
     let rawUrl
@@ -80,9 +81,9 @@ kord({
 })
 
 kord({
-  cmd: "remove",
+  cmd: "remove|uninstall",
   desc: "remove external plugin by name or url",
-  fromMe: wtype,
+  fromMe: true,
   type: "plugins"
 }, async (m, match) => {
   if (!match) return await m.send("provide plugin name or url to remove")
@@ -118,18 +119,22 @@ let toRemove = plugins.find(p => p.name === input || p.url === norm)
 })
 
 kord({
-  cmd: "plugins",
+cmd: "plugins",
   desc: "list installed plugins",
-  fromMe: wtype,
+  fromMe: true,
   type: "plugins"
 }, async (m) => {
-  const data = await getData("plugins") || []
-  if (!data.length) return await m.send("no plugins installed")
-
-  const list = data.map((p, i) => {
+  try {
+    const data = await getData("plugins") || []
+    if (!data.length) return await m.send("no plugins installed")
+    
+    const list = data.map((p, i) => {
     const mark = p.type === "event" ? " (event)" : ""
     return `${i + 1}. ${p.name}${mark} → ${p.url}`
-  }).join("\n")
-
+}).join("\n")
   await m.send("```" + list + "```")
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })

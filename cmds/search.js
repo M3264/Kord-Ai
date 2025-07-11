@@ -257,6 +257,7 @@ kord({
   fromMe: wtype,
   type: "tools",
 }, async (m, text) => {
+  try {
   if (!text) return await m.send(`*𝌫 Provide an element name!*\n_example: ${prefix}element Hydrogen`)
   const elementName = encodeURIComponent(text)
       var apiUrl = `https://api.popcat.xyz/periodic-table?element=${elementName}`
@@ -279,4 +280,8 @@ kord({
             } else {
               return await m.send("_nothing found.._")
             }
+} catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })

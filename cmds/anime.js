@@ -19,9 +19,9 @@ kord({
     react: "🔍",
     type: "anime",
 }, async (m, text) => {
-    if(!text) return m.send("_*provide anime name to search!*_")
-    m.react("⏳")
     try {
+        if(!text) return m.send("_*provide anime name to search!*_")
+        m.react("⏳")
         const res = await fetch(`https://api.jikan.moe/v4/anime?q=${encodeURIComponent(text)}&limit=1`)
         const json = await res.json()
         
@@ -37,9 +37,9 @@ kord({
         caption += `📝 *Synopsis:* ${anime.synopsis}`
         
         return m.send(anime.images.jpg.large_image_url, {caption}, "image")
-    } catch(err) {
-        console.error(err)
-        return m.send("_*error fetching anime info!*_")
+    } catch(e) {
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
 })
 
@@ -50,8 +50,8 @@ kord({
     react: "💕",
     type: "anime"
 }, async(m, text) => {
-    m.react("⌛")
     try {
+        m.react("⌛")
         const categories = ["waifu", "neko", "shinobu", "megumin", "bully", "cuddle", "cry", "hug", "kiss", "pat", "smug", "highfive"]
         let category = text || categories[Math.floor(Math.random() * categories.length)]
         if(!categories.includes(category)) category = "waifu"
@@ -60,8 +60,8 @@ kord({
         const json = await res.json()
         return m.send(json.url, {caption: `> here's your ${category} waifu`}, "image")
     } catch(e) {
-        console.log(e)
-        return m.send("_*failed to fetch waifu*_ 😔")
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
 })
 
@@ -72,10 +72,10 @@ kord({
     react: "📚",
     type: "anime",
 }, async (m, text) => {
-    if(!text) return m.send("_*provide manga name to search!*_")
-    m.react("🔎")
-
     try {
+        if(!text) return m.send("_*provide manga name to search!*_")
+        m.react("🔎")
+
         const resp = await fetch(`https://api.jikan.moe/v4/manga?q=${encodeURIComponent(text)}&limit=1`)
         const data = await resp.json()
 
@@ -92,9 +92,9 @@ kord({
         txt += `📝 *Synopsis:* ${manga.synopsis}`
 
         return m.send(manga.images.jpg.large_image_url, {caption: txt}, "image")
-    } catch(err) {
-        console.error(err)
-        return m.send("_*error occurred while fetching manga info*_")
+    } catch(e) {
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
 })
 
@@ -115,8 +115,8 @@ kord({
 
         return m.send(msg)
     } catch(e) {
-        console.log(e)
-        return m.send("_*failed to get anime quote*_ 😢")
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
 })
 
@@ -127,8 +127,8 @@ kord({
     type: "anime",
     react: "📰"
 }, async(m, text) => {
-    m.react("🔄")
     try {
+        m.react("🔄")
         const res = await fetch("https://api.jikan.moe/v4/top/anime?filter=airing&limit=5")
         const data = await res.json()
         if(!data.data || data.data.length < 1) return m.send("_*no trending anime found!*_")
@@ -141,9 +141,9 @@ kord({
         }
 
         return m.send(msg)
-    } catch(err) {
-        console.log(err)
-        return m.send("_*error fetching anime news*_")
+    } catch(e) {
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
 })
 
@@ -154,9 +154,9 @@ kord({
     type: "anime",
     react: "👤"
 }, async(m, text) => {
-    if(!text) return m.send("_*provide character name to search!*_")
-    m.react("🔍")
     try {
+        if(!text) return m.send("_*provide character name to search!*_")
+        m.react("🔍")
         const res = await fetch(`https://api.jikan.moe/v4/characters?q=${encodeURIComponent(text)}&limit=1`)
         const json = await res.json()
 
@@ -171,8 +171,8 @@ kord({
 
         return m.send(char.images.jpg.image_url, {caption: info}, "image")
     } catch(e) {
-        console.error(e)
-        return m.send("_*error searching for character*_ ❌")
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
 })
 
@@ -183,9 +183,9 @@ kord({
     react: "🔍",
     type: "anime"
 }, async(m) => {
-    if(!m.quoted || !m.quoted.media) return m.send("_*reply to anime image to search*_")
-    m.react("⏳")
     try {
+        if(!m.quoted || !m.quoted.media) return m.send("_*reply to anime image to search*_")
+        m.react("⏳")
         const path = await m.client.dlandsave(m.quoted)
         const url = await m.upload(path, "temp")
         const trace = await fetch(`https://api.trace.moe/search?url=${encodeURIComponent(url)}`)
@@ -206,8 +206,8 @@ kord({
         await m.send(buffer, {caption: text, gifPlayback: true}, "video")
         await fs.promises.unlink(path)
     } catch(e) {
-        console.error(e)
-        return m.send("_*error while searching anime*_ ❌")
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
 
     function formatTime(seconds) {
@@ -266,9 +266,9 @@ kord({
             fs.writeFileSync(watchlistFile, JSON.stringify(watchlist, null, 2))
             return m.send(`_*added ${animeName} (episode ${episode}) to watchlist*_ ✅`)
         }
-    } catch(err) {
-        console.error(err)
-        return m.send("_*error updating watchlist*_ ❌")
+    } catch(e) {
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
 })
 
@@ -279,8 +279,8 @@ kord({
     type: "anime",
     react: "🎬"
 }, async(m, text) => {
-    m.react("⏳")
     try {
+        m.react("⏳")
         const categories = ["happy", "sad", "angry", "dance", "hug", "kiss", "punch", "slap"]
         let category = text.toLowerCase()
         if(!text || !categories.includes(category)) category = categories[Math.floor(Math.random() * categories.length)]
@@ -291,8 +291,8 @@ kord({
 
         return m.send(json.results[0].url, {caption: `> ${category} anime gif`, gifPlayback: true}, "video")
     } catch(e) {
-        console.log(e)
-        return m.send("_*failed to get anime gif*_ 😢")
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
 })
 
@@ -303,10 +303,10 @@ kord({
     type: "anime",
     react: "🗓️"
 }, async(m, text) => {
-    if(!text) return m.send("_*provide season info:*_ .season <year> <season>\nSeasons: winter, spring, summer, fall")
-    m.react("🔍")
-
     try {
+        if(!text) return m.send("_*provide season info:*_ .season <year> <season>\nSeasons: winter, spring, summer, fall")
+        m.react("🔍")
+
         const args = text.split(" ")
         if(args.length < 2) return m.send("_*format:*_ .season <year> <season>")
 
@@ -332,8 +332,8 @@ kord({
 
         return m.send(msg)
     } catch(e) {
-        console.error(e)
-        return m.send("_*error fetching season data*_ ❌")
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
 })
 
@@ -344,8 +344,8 @@ kord({
     type: "anime",
     react: "🎯"
 }, async(m, text) => {
-    m.react("⏳")
     try {
+        m.react("⏳")
         let url = "https://api.jikan.moe/v4/recommendations/anime"
         let limit = 5
 
@@ -375,8 +375,8 @@ kord({
 
         return m.send(msg)
     } catch(e) {
-        console.error(e)
-        return m.send("_*error getting recommendations*_ ❌")
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
 })
 
@@ -387,10 +387,10 @@ kord({
     type: "anime",
     react: "📅"
 }, async(m, text) => {
-    if(!text) return m.send("_*provide anime name to check airing status*_")
-    m.react("🕒")
-
     try {
+        if(!text) return m.send("_*provide anime name to check airing status*_")
+        m.react("🕒")
+
         const res = await fetch(`https://api.jikan.moe/v4/anime?q=${encodeURIComponent(text)}&status=airing&limit=1`)
         const json = await res.json()
 
@@ -431,8 +431,8 @@ kord({
 
         return m.send(msg)
     } catch(e) {
-        console.error(e)
-        return m.send("_*error checking airing status*_ ❌")
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
 
     function timeDifference(current, future) {
@@ -458,26 +458,31 @@ kord({
     fromMe: wtype,
     type: "fun",
 }, async (m, text) => {
-    let target = m.mentionedJid[0] || m.quoted?.sender;
-    let pic = await fetchWaifu("slap");
-    if (!target) {
-        if (pic.gif) {
-            return await m.send(pic.buff, { gifPlayback: true }, "video");
+    try {
+        let target = m.mentionedJid[0] || m.quoted?.sender;
+        let pic = await fetchWaifu("slap");
+        if (!target) {
+            if (pic.gif) {
+                return await m.send(pic.buff, { gifPlayback: true }, "video");
+            }
+            return await m.send(pic.buff, {}, "image");
         }
-        return await m.send(pic.buff, {}, "image");
-    }
-    let caption = `@${m.sender.split("@")[0]} slapped @${target.split("@")[0]}`;
-    if (pic.gif) {
+        let caption = `@${m.sender.split("@")[0]} slapped @${target.split("@")[0]}`;
+        if (pic.gif) {
+            return await m.send(pic.buff, {
+                caption: caption,
+                gifPlayback: true,
+                mentions: [m.sender, target]
+            }, "video");
+        }
         return await m.send(pic.buff, {
             caption: caption,
-            gifPlayback: true,
             mentions: [m.sender, target]
-        }, "video");
+        }, "image");
+    } catch (e) {
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
-    return await m.send(pic.buff, {
-        caption: caption,
-        mentions: [m.sender, target]
-    }, "image");
 });
 
 kord({
@@ -486,26 +491,31 @@ kord({
     fromMe: wtype,
     type: "fun",
 }, async (m, text) => {
-    let target = m.mentionedJid[0] || m.quoted?.sender;
-    let pic = await fetchWaifu("cry");
-    if (!target) {
-        if (pic.gif) {
-            return await m.send(pic.buff, { gifPlayback: true }, "video");
+    try {
+        let target = m.mentionedJid[0] || m.quoted?.sender;
+        let pic = await fetchWaifu("cry");
+        if (!target) {
+            if (pic.gif) {
+                return await m.send(pic.buff, { gifPlayback: true }, "video");
+            }
+            return await m.send(pic.buff, {}, "image");
         }
-        return await m.send(pic.buff, {}, "image");
-    }
-    let caption = `@${m.sender.split("@")[0]} made @${target.split("@")[0]} cry`;
-    if (pic.gif) {
+        let caption = `@${m.sender.split("@")[0]} made @${target.split("@")[0]} cry`;
+        if (pic.gif) {
+            return await m.send(pic.buff, {
+                caption: caption,
+                gifPlayback: true,
+                mentions: [m.sender, target]
+            }, "video");
+        }
         return await m.send(pic.buff, {
             caption: caption,
-            gifPlayback: true,
             mentions: [m.sender, target]
-        }, "video");
+        }, "image");
+    } catch (e) {
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
-    return await m.send(pic.buff, {
-        caption: caption,
-        mentions: [m.sender, target]
-    }, "image");
 });
 
 kord({
@@ -514,26 +524,31 @@ kord({
     fromMe: wtype,
     type: "fun",
 }, async (m, text) => {
-    let target = m.mentionedJid[0] || m.quoted?.sender;
-    let pic = await fetchWaifu("hug");
-    if (!target) {
-        if (pic.gif) {
-            return await m.send(pic.buff, { gifPlayback: true }, "video");
+    try {
+        let target = m.mentionedJid[0] || m.quoted?.sender;
+        let pic = await fetchWaifu("hug");
+        if (!target) {
+            if (pic.gif) {
+                return await m.send(pic.buff, { gifPlayback: true }, "video");
+            }
+            return await m.send(pic.buff, {}, "image");
         }
-        return await m.send(pic.buff, {}, "image");
-    }
-    let caption = `@${m.sender.split("@")[0]} hugged @${target.split("@")[0]}`;
-    if (pic.gif) {
+        let caption = `@${m.sender.split("@")[0]} hugged @${target.split("@")[0]}`;
+        if (pic.gif) {
+            return await m.send(pic.buff, {
+                caption: caption,
+                gifPlayback: true,
+                mentions: [m.sender, target]
+            }, "video");
+        }
         return await m.send(pic.buff, {
             caption: caption,
-            gifPlayback: true,
             mentions: [m.sender, target]
-        }, "video");
+        }, "image");
+    } catch (e) {
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
-    return await m.send(pic.buff, {
-        caption: caption,
-        mentions: [m.sender, target]
-    }, "image");
 });
 
 kord({
@@ -542,26 +557,31 @@ kord({
     fromMe: wtype,
     type: "fun",
 }, async (m, text) => {
-    let target = m.mentionedJid[0] || m.quoted?.sender;
-    let pic = await fetchWaifu("kiss");
-    if (!target) {
-        if (pic.gif) {
-            return await m.send(pic.buff, { gifPlayback: true }, "video");
+    try {
+        let target = m.mentionedJid[0] || m.quoted?.sender;
+        let pic = await fetchWaifu("kiss");
+        if (!target) {
+            if (pic.gif) {
+                return await m.send(pic.buff, { gifPlayback: true }, "video");
+            }
+            return await m.send(pic.buff, {}, "image");
         }
-        return await m.send(pic.buff, {}, "image");
-    }
-    let caption = `@${m.sender.split("@")[0]} kissed @${target.split("@")[0]}`;
-    if (pic.gif) {
+        let caption = `@${m.sender.split("@")[0]} kissed @${target.split("@")[0]}`;
+        if (pic.gif) {
+            return await m.send(pic.buff, {
+                caption: caption,
+                gifPlayback: true,
+                mentions: [m.sender, target]
+            }, "video");
+        }
         return await m.send(pic.buff, {
             caption: caption,
-            gifPlayback: true,
             mentions: [m.sender, target]
-        }, "video");
+        }, "image");
+    } catch (e) {
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
-    return await m.send(pic.buff, {
-        caption: caption,
-        mentions: [m.sender, target]
-    }, "image");
 });
 
 kord({
@@ -570,26 +590,31 @@ kord({
     fromMe: wtype,
     type: "fun",
 }, async (m, text) => {
-    let target = m.mentionedJid[0] || m.quoted?.sender;
-    let pic = await fetchWaifu("lick");
-    if (!target) {
-        if (pic.gif) {
-            return await m.send(pic.buff, { gifPlayback: true }, "video");
+    try {
+        let target = m.mentionedJid[0] || m.quoted?.sender;
+        let pic = await fetchWaifu("lick");
+        if (!target) {
+            if (pic.gif) {
+                return await m.send(pic.buff, { gifPlayback: true }, "video");
+            }
+            return await m.send(pic.buff, {}, "image");
         }
-        return await m.send(pic.buff, {}, "image");
-    }
-    let caption = `@${m.sender.split("@")[0]} licked @${target.split("@")[0]}`;
-    if (pic.gif) {
+        let caption = `@${m.sender.split("@")[0]} licked @${target.split("@")[0]}`;
+        if (pic.gif) {
+            return await m.send(pic.buff, {
+                caption: caption,
+                gifPlayback: true,
+                mentions: [m.sender, target]
+            }, "video");
+        }
         return await m.send(pic.buff, {
             caption: caption,
-            gifPlayback: true,
             mentions: [m.sender, target]
-        }, "video");
+        }, "image");
+    } catch (e) {
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
-    return await m.send(pic.buff, {
-        caption: caption,
-        mentions: [m.sender, target]
-    }, "image");
 });
 
 kord({
@@ -598,26 +623,31 @@ kord({
     fromMe: wtype,
     type: "fun",
 }, async (m, text) => {
-    let target = m.mentionedJid[0] || m.quoted?.sender;
-    let pic = await fetchWaifu("pat");
-    if (!target) {
-        if (pic.gif) {
-            return await m.send(pic.buff, { gifPlayback: true }, "video");
+    try {
+        let target = m.mentionedJid[0] || m.quoted?.sender;
+        let pic = await fetchWaifu("pat");
+        if (!target) {
+            if (pic.gif) {
+                return await m.send(pic.buff, { gifPlayback: true }, "video");
+            }
+            return await m.send(pic.buff, {}, "image");
         }
-        return await m.send(pic.buff, {}, "image");
-    }
-    let caption = `@${m.sender.split("@")[0]} patted @${target.split("@")[0]}`;
-    if (pic.gif) {
+        let caption = `@${m.sender.split("@")[0]} patted @${target.split("@")[0]}`;
+        if (pic.gif) {
+            return await m.send(pic.buff, {
+                caption: caption,
+                gifPlayback: true,
+                mentions: [m.sender, target]
+            }, "video");
+        }
         return await m.send(pic.buff, {
             caption: caption,
-            gifPlayback: true,
             mentions: [m.sender, target]
-        }, "video");
+        }, "image");
+    } catch (e) {
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
-    return await m.send(pic.buff, {
-        caption: caption,
-        mentions: [m.sender, target]
-    }, "image");
 });
 
 kord({
@@ -626,26 +656,31 @@ kord({
     fromMe: wtype,
     type: "fun",
 }, async (m, text) => {
-    let target = m.mentionedJid[0] || m.quoted?.sender;
-    let pic = await fetchWaifu("blush");
-    if (!target) {
-        if (pic.gif) {
-            return await m.send(pic.buff, { gifPlayback: true }, "video");
+    try {
+        let target = m.mentionedJid[0] || m.quoted?.sender;
+        let pic = await fetchWaifu("blush");
+        if (!target) {
+            if (pic.gif) {
+                return await m.send(pic.buff, { gifPlayback: true }, "video");
+            }
+            return await m.send(pic.buff, {}, "image");
         }
-        return await m.send(pic.buff, {}, "image");
-    }
-    let caption = `@${m.sender.split("@")[0]} made @${target.split("@")[0]} blush`;
-    if (pic.gif) {
+        let caption = `@${m.sender.split("@")[0]} made @${target.split("@")[0]} blush`;
+        if (pic.gif) {
+            return await m.send(pic.buff, {
+                caption: caption,
+                gifPlayback: true,
+                mentions: [m.sender, target]
+            }, "video");
+        }
         return await m.send(pic.buff, {
             caption: caption,
-            gifPlayback: true,
             mentions: [m.sender, target]
-        }, "video");
+        }, "image");
+    } catch (e) {
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
-    return await m.send(pic.buff, {
-        caption: caption,
-        mentions: [m.sender, target]
-    }, "image");
 });
 
 kord({
@@ -654,26 +689,31 @@ kord({
     fromMe: wtype,
     type: "fun",
 }, async (m, text) => {
-    let target = m.mentionedJid[0] || m.quoted?.sender;
-    let pic = await fetchWaifu("kill");
-    if (!target) {
-        if (pic.gif) {
-            return await m.send(pic.buff, { gifPlayback: true }, "video");
+    try {
+        let target = m.mentionedJid[0] || m.quoted?.sender;
+        let pic = await fetchWaifu("kill");
+        if (!target) {
+            if (pic.gif) {
+                return await m.send(pic.buff, { gifPlayback: true }, "video");
+            }
+            return await m.send(pic.buff, {}, "image");
         }
-        return await m.send(pic.buff, {}, "image");
-    }
-    let caption = `@${m.sender.split("@")[0]} killed @${target.split("@")[0]}`;
-    if (pic.gif) {
+        let caption = `@${m.sender.split("@")[0]} killed @${target.split("@")[0]}`;
+        if (pic.gif) {
+            return await m.send(pic.buff, {
+                caption: caption,
+                gifPlayback: true,
+                mentions: [m.sender, target]
+            }, "video");
+        }
         return await m.send(pic.buff, {
             caption: caption,
-            gifPlayback: true,
             mentions: [m.sender, target]
-        }, "video");
+        }, "image");
+    } catch (e) {
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
-    return await m.send(pic.buff, {
-        caption: caption,
-        mentions: [m.sender, target]
-    }, "image");
 });
 
 kord({
@@ -682,26 +722,31 @@ kord({
     fromMe: wtype,
     type: "fun",
 }, async (m, text) => {
-    let target = m.mentionedJid[0] || m.quoted?.sender;
-    let pic = await fetchWaifu("kick");
-    if (!target) {
-        if (pic.gif) {
-            return await m.send(pic.buff, { gifPlayback: true }, "video");
+    try {
+        let target = m.mentionedJid[0] || m.quoted?.sender;
+        let pic = await fetchWaifu("kick");
+        if (!target) {
+            if (pic.gif) {
+                return await m.send(pic.buff, { gifPlayback: true }, "video");
+            }
+            return await m.send(pic.buff, {}, "image");
         }
-        return await m.send(pic.buff, {}, "image");
-    }
-    let caption = `@${m.sender.split("@")[0]} kicked @${target.split("@")[0]}`;
-    if (pic.gif) {
+        let caption = `@${m.sender.split("@")[0]} kicked @${target.split("@")[0]}`;
+        if (pic.gif) {
+            return await m.send(pic.buff, {
+                caption: caption,
+                gifPlayback: true,
+                mentions: [m.sender, target]
+            }, "video");
+        }
         return await m.send(pic.buff, {
             caption: caption,
-            gifPlayback: true,
             mentions: [m.sender, target]
-        }, "video");
+        }, "image");
+    } catch (e) {
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
-    return await m.send(pic.buff, {
-        caption: caption,
-        mentions: [m.sender, target]
-    }, "image");
 });
 
 kord({
@@ -710,26 +755,31 @@ kord({
     fromMe: wtype,
     type: "fun",
 }, async (m, text) => {
-    let target = m.mentionedJid[0] || m.quoted?.sender;
-    let pic = await fetchWaifu("bite");
-    if (!target) {
-        if (pic.gif) {
-            return await m.send(pic.buff, { gifPlayback: true }, "video");
+    try {
+        let target = m.mentionedJid[0] || m.quoted?.sender;
+        let pic = await fetchWaifu("bite");
+        if (!target) {
+            if (pic.gif) {
+                return await m.send(pic.buff, { gifPlayback: true }, "video");
+            }
+            return await m.send(pic.buff, {}, "image");
         }
-        return await m.send(pic.buff, {}, "image");
-    }
-    let caption = `@${m.sender.split("@")[0]} bit @${target.split("@")[0]}`;
-    if (pic.gif) {
+        let caption = `@${m.sender.split("@")[0]} bit @${target.split("@")[0]}`;
+        if (pic.gif) {
+            return await m.send(pic.buff, {
+                caption: caption,
+                gifPlayback: true,
+                mentions: [m.sender, target]
+            }, "video");
+        }
         return await m.send(pic.buff, {
             caption: caption,
-            gifPlayback: true,
             mentions: [m.sender, target]
-        }, "video");
+        }, "image");
+    } catch (e) {
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
-    return await m.send(pic.buff, {
-        caption: caption,
-        mentions: [m.sender, target]
-    }, "image");
 });
 
 kord({
@@ -738,26 +788,31 @@ kord({
     fromMe: wtype,
     type: "fun",
 }, async (m, text) => {
-    let target = m.mentionedJid[0] || m.quoted?.sender;
-    let pic = await fetchWaifu("high-five");
-    if (!target) {
-        if (pic.gif) {
-            return await m.send(pic.buff, { gifPlayback: true }, "video");
+    try {
+        let target = m.mentionedJid[0] || m.quoted?.sender;
+        let pic = await fetchWaifu("high-five");
+        if (!target) {
+            if (pic.gif) {
+                return await m.send(pic.buff, { gifPlayback: true }, "video");
+            }
+            return await m.send(pic.buff, {}, "image");
         }
-        return await m.send(pic.buff, {}, "image");
-    }
-    let caption = `@${m.sender.split("@")[0]} high-fived @${target.split("@")[0]}`;
-    if (pic.gif) {
+        let caption = `@${m.sender.split("@")[0]} high-fived @${target.split("@")[0]}`;
+        if (pic.gif) {
+            return await m.send(pic.buff, {
+                caption: caption,
+                gifPlayback: true,
+                mentions: [m.sender, target]
+            }, "video");
+        }
         return await m.send(pic.buff, {
             caption: caption,
-            gifPlayback: true,
             mentions: [m.sender, target]
-        }, "video");
+        }, "image");
+    } catch (e) {
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
-    return await m.send(pic.buff, {
-        caption: caption,
-        mentions: [m.sender, target]
-    }, "image");
 });
 
 kord({
@@ -766,26 +821,31 @@ kord({
     fromMe: wtype,
     type: "fun",
 }, async (m, text) => {
-    let target = m.mentionedJid[0] || m.quoted?.sender;
-    let pic = await fetchWaifu("handhold");
-    if (!target) {
-        if (pic.gif) {
-            return await m.send(pic.buff, { gifPlayback: true }, "video");
+    try {
+        let target = m.mentionedJid[0] || m.quoted?.sender;
+        let pic = await fetchWaifu("handhold");
+        if (!target) {
+            if (pic.gif) {
+                return await m.send(pic.buff, { gifPlayback: true }, "video");
+            }
+            return await m.send(pic.buff, {}, "image");
         }
-        return await m.send(pic.buff, {}, "image");
-    }
-    let caption = `@${m.sender.split("@")[0]} held hands with @${target.split("@")[0]}`;
-    if (pic.gif) {
+        let caption = `@${m.sender.split("@")[0]} held hands with @${target.split("@")[0]}`;
+        if (pic.gif) {
+            return await m.send(pic.buff, {
+                caption: caption,
+                gifPlayback: true,
+                mentions: [m.sender, target]
+            }, "video");
+        }
         return await m.send(pic.buff, {
             caption: caption,
-            gifPlayback: true,
             mentions: [m.sender, target]
-        }, "video");
+        }, "image");
+    } catch (e) {
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
-    return await m.send(pic.buff, {
-        caption: caption,
-        mentions: [m.sender, target]
-    }, "image");
 });
 
 kord({
@@ -794,26 +854,31 @@ kord({
     fromMe: wtype,
     type: "fun",
 }, async (m, text) => {
-    let target = m.mentionedJid[0] || m.quoted?.sender;
-    let pic = await fetchWaifu("dance");
-    if (!target) {
-        if (pic.gif) {
-            return await m.send(pic.buff, { gifPlayback: true }, "video");
+    try {
+        let target = m.mentionedJid[0] || m.quoted?.sender;
+        let pic = await fetchWaifu("dance");
+        if (!target) {
+            if (pic.gif) {
+                return await m.send(pic.buff, { gifPlayback: true }, "video");
+            }
+            return await m.send(pic.buff, {}, "image");
         }
-        return await m.send(pic.buff, {}, "image");
-    }
-    let caption = `@${m.sender.split("@")[0]} danced with @${target.split("@")[0]}`;
-    if (pic.gif) {
+        let caption = `@${m.sender.split("@")[0]} danced with @${target.split("@")[0]}`;
+        if (pic.gif) {
+            return await m.send(pic.buff, {
+                caption: caption,
+                gifPlayback: true,
+                mentions: [m.sender, target]
+            }, "video");
+        }
         return await m.send(pic.buff, {
             caption: caption,
-            gifPlayback: true,
             mentions: [m.sender, target]
-        }, "video");
+        }, "image");
+    } catch (e) {
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
-    return await m.send(pic.buff, {
-        caption: caption,
-        mentions: [m.sender, target]
-    }, "image");
 });
 
 kord({
@@ -822,26 +887,31 @@ kord({
     fromMe: wtype,
     type: "fun",
 }, async (m, text) => {
-    let target = m.mentionedJid[0] || m.quoted?.sender;
-    let pic = await fetchWaifu("bully");
-    if (!target) {
-        if (pic.gif) {
-            return await m.send(pic.buff, { gifPlayback: true }, "video");
+    try {
+        let target = m.mentionedJid[0] || m.quoted?.sender;
+        let pic = await fetchWaifu("bully");
+        if (!target) {
+            if (pic.gif) {
+                return await m.send(pic.buff, { gifPlayback: true }, "video");
+            }
+            return await m.send(pic.buff, {}, "image");
         }
-        return await m.send(pic.buff, {}, "image");
-    }
-    let caption = `@${m.sender.split("@")[0]} bullied @${target.split("@")[0]}`;
-    if (pic.gif) {
+        let caption = `@${m.sender.split("@")[0]} bullied @${target.split("@")[0]}`;
+        if (pic.gif) {
+            return await m.send(pic.buff, {
+                caption: caption,
+                gifPlayback: true,
+                mentions: [m.sender, target]
+            }, "video");
+        }
         return await m.send(pic.buff, {
             caption: caption,
-            gifPlayback: true,
             mentions: [m.sender, target]
-        }, "video");
+        }, "image");
+    } catch (e) {
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
-    return await m.send(pic.buff, {
-        caption: caption,
-        mentions: [m.sender, target]
-    }, "image");
 });
 
 kord({
@@ -850,26 +920,31 @@ kord({
     fromMe: wtype,
     type: "fun",
 }, async (m, text) => {
-    let target = m.mentionedJid[0] || m.quoted?.sender;
-    let pic = await fetchWaifu("wink");
-    if (!target) {
-        if (pic.gif) {
-            return await m.send(pic.buff, { gifPlayback: true }, "video");
+    try {
+        let target = m.mentionedJid[0] || m.quoted?.sender;
+        let pic = await fetchWaifu("wink");
+        if (!target) {
+            if (pic.gif) {
+                return await m.send(pic.buff, { gifPlayback: true }, "video");
+            }
+            return await m.send(pic.buff, {}, "image");
         }
-        return await m.send(pic.buff, {}, "image");
-    }
-    let caption = `@${m.sender.split("@")[0]} winked at @${target.split("@")[0]}`;
-    if (pic.gif) {
+        let caption = `@${m.sender.split("@")[0]} winked at @${target.split("@")[0]}`;
+        if (pic.gif) {
+            return await m.send(pic.buff, {
+                caption: caption,
+                gifPlayback: true,
+                mentions: [m.sender, target]
+            }, "video");
+        }
         return await m.send(pic.buff, {
             caption: caption,
-            gifPlayback: true,
             mentions: [m.sender, target]
-        }, "video");
+        }, "image");
+    } catch (e) {
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
-    return await m.send(pic.buff, {
-        caption: caption,
-        mentions: [m.sender, target]
-    }, "image");
 });
 
 kord({
@@ -878,26 +953,31 @@ kord({
     fromMe: wtype,
     type: "fun",
 }, async (m, text) => {
-    let target = m.mentionedJid[0] || m.quoted?.sender;
-    let pic = await fetchWaifu("cuddle");
-    if (!target) {
-        if (pic.gif) {
-            return await m.send(pic.buff, { gifPlayback: true }, "video");
+    try {
+        let target = m.mentionedJid[0] || m.quoted?.sender;
+        let pic = await fetchWaifu("cuddle");
+        if (!target) {
+            if (pic.gif) {
+                return await m.send(pic.buff, { gifPlayback: true }, "video");
+            }
+            return await m.send(pic.buff, {}, "image");
         }
-        return await m.send(pic.buff, {}, "image");
-    }
-    let caption = `@${m.sender.split("@")[0]} cuddled with @${target.split("@")[0]}`;
-    if (pic.gif) {
+        let caption = `@${m.sender.split("@")[0]} cuddled with @${target.split("@")[0]}`;
+        if (pic.gif) {
+            return await m.send(pic.buff, {
+                caption: caption,
+                gifPlayback: true,
+                mentions: [m.sender, target]
+            }, "video");
+        }
         return await m.send(pic.buff, {
             caption: caption,
-            gifPlayback: true,
             mentions: [m.sender, target]
-        }, "video");
+        }, "image");
+    } catch (e) {
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
-    return await m.send(pic.buff, {
-        caption: caption,
-        mentions: [m.sender, target]
-    }, "image");
 });
 
 kord({
@@ -906,15 +986,20 @@ kord({
     fromMe: wtype,
     type: "fun",
 }, async (m, text) => {
-    let pic = await fetchWaifu("awoo");
-    let caption = "Here's your waifu! (Awoo)";
-    if (pic.gif) {
-        return await m.send(pic.buff, {
-            caption: caption,
-            gifPlayback: true
-        }, "video");
+    try {
+        let pic = await fetchWaifu("awoo");
+        let caption = "Here's your waifu! (Awoo)";
+        if (pic.gif) {
+            return await m.send(pic.buff, {
+                caption: caption,
+                gifPlayback: true
+            }, "video");
+        }
+        return await m.send(pic.buff, { caption: caption }, "image");
+    } catch (e) {
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
-    return await m.send(pic.buff, { caption: caption }, "image");
 });
 
 kord({
@@ -923,15 +1008,20 @@ kord({
     fromMe: wtype,
     type: "fun",
 }, async (m, text) => {
-    let pic = await fetchWaifu("cringe");
-    let caption = "Here's your waifu! (Cringe)";
-    if (pic.gif) {
-        return await m.send(pic.buff, {
-            caption: caption,
-            gifPlayback: true
-        }, "video");
+    try {
+        let pic = await fetchWaifu("cringe");
+        let caption = "Here's your waifu! (Cringe)";
+        if (pic.gif) {
+            return await m.send(pic.buff, {
+                caption: caption,
+                gifPlayback: true
+            }, "video");
+        }
+        return await m.send(pic.buff, { caption: caption }, "image");
+    } catch (e) {
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
-    return await m.send(pic.buff, { caption: caption }, "image");
 });
 
 kord({
@@ -940,15 +1030,20 @@ kord({
     fromMe: wtype,
     type: "fun",
 }, async (m, text) => {
-    let pic = await fetchWaifu("megumin");
-    let caption = "Here's your waifu! (Megumin)";
-    if (pic.gif) {
-        return await m.send(pic.buff, {
-            caption: caption,
-            gifPlayback: true
-        }, "video");
+    try {
+        let pic = await fetchWaifu("megumin");
+        let caption = "Here's your waifu! (Megumin)";
+        if (pic.gif) {
+            return await m.send(pic.buff, {
+                caption: caption,
+                gifPlayback: true
+            }, "video");
+        }
+        return await m.send(pic.buff, { caption: caption }, "image");
+    } catch (e) {
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
-    return await m.send(pic.buff, { caption: caption }, "image");
 });
 
 kord({
@@ -957,13 +1052,18 @@ kord({
     fromMe: wtype,
     type: "fun",
 }, async (m, text) => {
-    let pic = await fetchWaifu("shinobu");
-    let caption = "Here's your waifu! (Shinobu)";
-    if (pic.gif) {
-        return await m.send(pic.buff, {
-            caption: caption,
-            gifPlayback: true
-        }, "video");
+    try {
+        let pic = await fetchWaifu("shinobu");
+        let caption = "Here's your waifu! (Shinobu)";
+        if (pic.gif) {
+            return await m.send(pic.buff, {
+                caption: caption,
+                gifPlayback: true
+            }, "video");
+        }
+        return await m.send(pic.buff, { caption: caption }, "image");
+    } catch (e) {
+        console.log("cmd error", e)
+        return await m.sendErr(e)
     }
-    return await m.send(pic.buff, { caption: caption }, "image");
 });

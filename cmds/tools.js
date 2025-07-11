@@ -29,6 +29,7 @@ kord({
   fromMe: true,
   type: "tools",
 }, async (m, text) => {
+  try {
   if (!m.quoted.sticker) return await m.send(`_Reply to a sticker with ${prefix}setcmd command_\n_example: ${prefix}setcmd ping_`)
   if (!text) return await m.send(`_provide a command also.._`) 
   var f = text?.trim()?.split(/\s+/)[0];
@@ -39,6 +40,10 @@ kord({
   stk_cmd[hash] = text
   await storeData("stk_cmd", JSON.stringify(stk_cmd, null, 2))
   return await m.send(`❏ Sticker set to *${f}*`)
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
@@ -47,6 +52,7 @@ kord({
   fromMe: true,
   type: "tools",
 }, async (m) => {
+  try {
   if (!m.quoted.sticker) {
     return await m.send(`_Reply to a sticker to delete its command_`);
   }
@@ -61,6 +67,10 @@ kord({
   delete stk_cmd[hash];
   await storeData("stk_cmd", JSON.stringify(stk_cmd, null, 2));
   return await m.send(`*cmd deleted!*\n_from:_ *${oldCmd}*`);
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 });
 
 kord({
@@ -69,6 +79,7 @@ kord({
   fromMe: true,
   type: "tools",
 }, async (m) => {
+  try {
   const data = await getData("stk_cmd");
   const stk_cmd = data || {}
   const entries = Object.entries(stk_cmd);
@@ -80,6 +91,10 @@ kord({
     text += `❏ *${cmd}*\n_↳ hash:_ \`${hash.slice(0, 16)}...\`\n\n`;
   }
   return await m.send(text.trim());
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 });
 
 
@@ -366,6 +381,7 @@ _.mention -text Your Text_ (sends custom text when owner is mentioned, Example: 
 kord({
   on: "all"
 }, async (m, text) => {
+  try {
   var MData = await getData("mention_config") || {}
           if (!MData.active) {
             return;
@@ -380,6 +396,10 @@ kord({
               return await m.client.sendMessage(jidd, { text: pText }, { quoted: m })
             }
           }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 async function loadAfkData() {
@@ -409,6 +429,7 @@ kord({
   fromMe: true,
   type: "tools"
 }, async (m, text) => {
+  try {
   const txt = !text ? "" : text;
   global.afkData = await loadAfkData();
   if (txt.toLowerCase() === "off" || txt.toLowerCase() === "stop") {
@@ -448,11 +469,16 @@ kord({
     await saveAfkData(global.afkData);
     return await m.send(`@${m.sender.split("@")[0]} is now afk..\n_Reason:_ ${txt}`, {mentions: [m.sender]});
   }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
   on: "all",
 }, async (message, text, c, store) => {
+  try {
   const user = message.sender;
   const afkData = await loadAfkData() || { users: {}, owner: { active: false, message: "", lastseen: "" } };
   
@@ -494,6 +520,10 @@ kord({
   if (message.sender === message.ownerJid && afkData.owner && afkData.owner.active) {
     afkData.owner.active = false;
     await saveAfkData(afkData);
+  }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
   }
 })
 
@@ -574,6 +604,7 @@ kord({
   on: "all",
   fromMe: false,
 }, async(m, text) =>{
+  try {
   if (!await getData("areact_config")) {
     await storeData("areact_config", JSON.stringify(areact, null, 2));
     }
@@ -590,6 +621,10 @@ kord({
    } else if (aReact.global) {
      await m.react(randomEmoji)
    }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
@@ -598,6 +633,7 @@ kord({
   fromMe: true,
   type: "bot"
 }, async (m) => {
+  try {
   let sdata = await getData("ignored")
   if (!Array.isArray(sdata)) sdata = []
 
@@ -606,6 +642,10 @@ kord({
   sdata.push(m.chat)
   await storeData("ignored", JSON.stringify(sdata, null, 2))
   return m.send("_this chat is now ignored_")
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
@@ -614,6 +654,7 @@ kord({
   fromMe: true,
   type: "bot"
 }, async (m) => {
+   try {
   let sdata = await getData("ignored")
   if (!Array.isArray(sdata)) sdata = []
 
@@ -622,6 +663,10 @@ kord({
   sdata = sdata.filter(jid => jid !== m.chat)
   await storeData("ignored", JSON.stringify(sdata, null, 2))
   return m.send("_this chat is now allowed_")
+   } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
@@ -630,6 +675,7 @@ kord({
   fromMe: true,
   type: "bot"
 }, async (m, text) => {
+  try {
   let sdata = await getData("ignored")
   if (!Array.isArray(sdata)) sdata = []
 
@@ -650,4 +696,8 @@ kord({
   }
 
   return m.send("_usage: .bot on | .bot off_")
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })

@@ -27,14 +27,15 @@ const { warn } = require("../core/db")
 const pre = prefix 
 
 kord({
-  cmd: "join",
+cmd: "join",
   desc: "join a group using it's link",
   fromMe: true,
   type: "group",
 }, async (m, text) => {
-  var links = extractUrlsFromString(text || m.quoted?.text)
-  if (links.length === 0) return await m.send("✘ Provide a WhatsApp group link")
-  const linkRegex = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i;
+  try {
+    var links = extractUrlsFromString(text || m.quoted?.text)
+    if (links.length === 0) return await m.send("✘ Provide a WhatsApp group link")
+    const linkRegex= /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i;
   const code = links.find(link => linkRegex.test(link))?.match(linkRegex)?.[1];
   if (!code) return await m.send("✘ Invalid invite link")
   try {
@@ -44,70 +45,94 @@ kord({
   } catch (error) {
     return await m.send("✘ " + error.message)
   }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
-  cmd: "leave|left",
+cmd: "leave|left",
   desc: "leave a group",
   gc: true,
   fromMe: true,
   type: "group",
-}, async(m, text) => {
-  await m.client.groupLeave(m.chat)
+}, async (m, text) => {
+  try {
+    await m.client.groupLeave(m.chat)
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
-  cmd: "gpp|setgcpp",
+cmd: "gpp|setgcpp",
   desc: "set a group profile pic",
   gc: true,
   adminOnly: true,
   fromMe: wtype,
   type: "group",
 }, async (m, text) => {
-  var botAd = await isBotAdmin(m);
-  if (!botAd) return await m.send("_*✘Bot Needs To Be Admin!*_");
-  if (text && text === "remove") {
+  try {
+    var botAd = await isBotAdmin(m);
+    if (!botAd) return await m.send("_*✘Bot Needs To Be Admin!*_");
+    if (text && text === "remove") {
     await m.client.removeProfilePicture(m.chat);
     return await m.send("```✓ Group Profile Picture Removed```");
+    }
+    if (!m.quoted?.image) return await m.send("✘ Reply to an image")
+    var media = await m.quoted.download()
+    await m.client.updateProfilePicture(m.chat, media);
+    return await m.send("```✓ Group Profile Picture Updated```")
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
   }
-  if (!m.quoted?.image) return await m.send("✘ Reply to an image")
-  var media = await m.quoted.download()
-  await m.client.updateProfilePicture(m.chat, media);
-  return await m.send("```✓ Group Profile Picture Updated```")
 })
 
 kord({
-  cmd: "gname|setgcname",
+cmd: "gname|setgcname",
   desc: "set a group name(subject)",
   gc: true,
   adminOnly: true,
   fromMe: wtype,
   type: "group",
 }, async (m, text, cmd) => {
-  var name = text || m.quoted?.text
-  if (!name) return await m.send(`_*✘ Provide a name to set!*_\n_Example: ${cmd} New Group Name_`)
-  const meta = await m.client.groupMetadata(m.chat);
-  var botAd = await isBotAdmin(m);
-  if (meta.restrict && !botAd) return await m.send("_*✘Bot Needs To Be Admin!*_");
-  await m.client.groupUpdateSubject(m.chat, name)
-  return await m.send("```✓ Group Name Updated```")
+  try {
+    var name = text || m.quoted?.text
+    if (!name) return await m.send(`_*✘ Provide a name to set!*_\n_Example: ${cmd} New Group Name_`)
+    const meta = await m.client.groupMetadata(m.chat);
+    var botAd = await isBotAdmin(m);
+    if (meta.restrict && !botAd) return await m.send("_*✘Bot Needs To Be Admin!*_");
+    await m.client.groupUpdateSubject(m.chat, name)
+    return await m.send("```✓ Group Name Updated```")
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
-  cmd: "gdesc|setgcdesc",
+cmd: "gdesc|setgcdesc",
   desc: "set a group description",
   gc: true,
   adminOnly: true,
   fromMe: wtype,
   type: "group",
 }, async (m, text, cmd) => {
-  var desc = text || m.quoted?.text
-  if (!desc) return await m.send(`_*✘ Provide a description to set*_\n_Example: ${cmd} Group rules and information..._`)
-  const meta = await m.client.groupMetadata(m.chat);
-  var botAd = await isBotAdmin(m);
-  if (meta.restrict && !botAd) return await m.send("_*✘Bot Needs To Be Admin!*_");
-  await m.client.groupUpdateDescription(m.chat, desc)
-  return await m.send("```✓ Description Updated```")
+  try {
+    var desc = text || m.quoted?.text
+    if (!desc) return await m.send(`_*✘ Provide a description to set*_\n_Example: ${cmd} Group rules and information..._`)
+    const meta = await m.client.groupMetadata(m.chat);
+    var botAd = await isBotAdmin(m);
+    if (meta.restrict && !botAd) return await m.send("_*✘Bot Needs To Be Admin!*_");
+    await m.client.groupUpdateDescription(m.chat, desc)
+    return await m.send("```✓ Description Updated```")
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
@@ -154,32 +179,33 @@ const cleanNumber = (user.includes('@') ? user.split('@')[0] : user).replace(/\D
 })
 
 kord({
-  cmd: "kick",
+cmd: "kick",
   desc: "remove a member from group",
   fromMe: wtype,
   gc: true,
   adminOnly: true,
   type: "group",
-}, async(m, text) => {
-  var botAd = await isBotAdmin(m);
-  if (!botAd) return await m.send("_*✘Bot Needs To Be Admin!*_");
-  
-  var user = m.mentionedJid[0] || m.quoted?.sender || text;
-  if(!user) return await m.send("_✘ Reply to or mention a member_");
-  
-  if (text === "all") {
+}, async (m, text) => {
+  try {
+    var botAd = await isBotAdmin(m);
+    if (!botAd) return await m.send("_*✘Bot Needs To Be Admin!*_");
+    
+    var user = m.mentionedJid[0] || m.quoted?.sender || text;
+    if(!user) return await m.send("_✘ Reply to or mention a member_");
+    
+    if (text === "all") {
     var res = await m.send("_✘ Reply \"confirm\" to continue_")
     var response = await m.getResponse(res, 5000)
     if (response.text.toLowerCase() === "confirm") {
-      await m.send("_*✓ Kicking all users in 10 seconds*_\n_Use restart command to cancel_")
-      await sleep(10000)
-      let { participants } = await m.client.groupMetadata(m.chat);
-      participants = participants.filter(p => p.jid !== m.user.jid);
-      for (let key of participants) {
-        const jid = parsedJid(key.jid);
-        await m.client.groupParticipantsUpdate(m.chat, [jid], "remove");
-        if (config().KICK_AND_BLOCK) await m.client.updateBlockStatus(jid, "block");
-        await m.send(`_*✓ @${jid[0].split("@")[0]} kicked*_`, { mentions: [jid] });
+    await m.send("_*✓ Kicking all users in 10 seconds*_\n_Use restart command to cancel_")
+    await sleep(10000)
+    let { participants } = await m.client.groupMetadata(m.chat);
+    participants = participants.filter(p => p.jid !== m.user.jid);
+    for (let key of participants) {
+    const jid = parsedJid(key.jid);
+    await m.client.groupParticipantsUpdate(m.chat, [jid], "remove");
+    if (config().KICK_AND_BLOCK) await m.client.updateBlockStatus(jid, "block");
+    await m.send(`_*✓ @${jid[0].split("@")[0]} kicked*_`, { mentions: [jid] });
       }
     }
   } else {
@@ -188,110 +214,145 @@ kord({
     if (config().KICK_AND_BLOCK) await m.client.updateBlockStatus(jid, "block");
     await m.send(`_*✓ @${jid[0].split("@")[0]} kicked*_`, { mentions: [jid] });
   }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
-  cmd: "promote",
+cmd: "promote",
   desc: "promote a member to admin",
   fromMe: wtype,
   gc: true,
   adminOnly: true,
   type: "group",
-}, async(m, text) => {
-  var botAd = await isBotAdmin(m);
-  if (!botAd) return await m.send("_*✘Bot Needs To Be Admin!*_");
-  var user = m.mentionedJid[0] || m.quoted?.sender || text
-  if (!user) return await m.send("_✘ Reply to or mention a member_")
-  if(await isadminn(m, user)) return await m.send("✘ Member is already admin")
-  let jid = parsedJid(user);
-  await m.client.groupParticipantsUpdate(m.chat, [jid], "promote");
-  return await m.send(`_*✓ @${jid[0].split("@")[0]} promoted*_`, { mentions: [jid] });
+}, async (m, text) => {
+  try {
+    var botAd = await isBotAdmin(m);
+    if (!botAd) return await m.send("_*✘Bot Needs To Be Admin!*_");
+    var user = m.mentionedJid[0] || m.quoted?.sender || text
+    if (!user) return await m.send("_✘ Reply to or mention a member_")
+    if(await isadminn(m, user)) return await m.send("✘ Member is already admin")
+    let jid = parsedJid(user);
+    await m.client.groupParticipantsUpdate(m.chat, [jid], "promote");
+    return await m.send(`_*✓ @${jid[0].split("@")[0]} promoted*_`, { mentions: [jid] });
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
-  cmd: "demote",
+cmd: "demote",
   desc: "demote an admin to member",
   fromMe: wtype,
   gc: true,
   adminOnly: true,
   type: "group",
-}, async(m, text) => {
-  var botAd = await isBotAdmin(m);
-  if (!botAd) return await m.send("_*✘Bot Needs To Be Admin!*_");
-  var user = m.mentionedJid[0] || m.quoted?.sender || text
-  if (!user) return await m.send("✘ Reply to or mention an admin")
-  if(!await isadminn(m, user)) return await m.send("✘ Member is not admin")
-  let jid = parsedJid(user);
-  await m.client.groupParticipantsUpdate(m.chat, [jid], "demote");
-  return await m.send(`✓ @${jid[0].split("@")[0]} demoted`, { mentions: [jid] });
+}, async (m, text) => {
+  try {
+    var botAd = await isBotAdmin(m);
+    if (!botAd) return await m.send("_*✘Bot Needs To Be Admin!*_");
+    var user = m.mentionedJid[0] || m.quoted?.sender || text
+    if (!user) return await m.send("✘ Reply to or mention an admin")
+    if(!await isadminn(m, user)) return await m.send("✘ Member is not admin")
+    let jid = parsedJid(user);
+    await m.client.groupParticipantsUpdate(m.chat, [jid], "demote");
+    return await m.send(`✓ @${jid[0].split("@")[0]} demoted`, { mentions: [jid] });
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
-  cmd: "mute",
+cmd: "mute",
   desc: "mute a group to allow only admins to send message",
   fromMe: wtype,
   gc: true,
   adminOnly: true,
   type: "group"
 }, async (m, text) => {
-  var botAd = await isBotAdmin(m);
-  if (!botAd) return await m.send("✘_*Bot Needs To Be Admin!*_");
-  await m.client.groupSettingUpdate(m.chat, "announcement");
-  return await m.send("✓ Group Muted");
+  try {
+    var botAd = await isBotAdmin(m);
+    if (!botAd) return await m.send("✘_*Bot Needs To Be Admin!*_");
+    await m.client.groupSettingUpdate(m.chat, "announcement");
+    return await m.send("✓ Group Muted");
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
-  cmd: "unmute",
+cmd: "unmute",
   desc: "unmute a group to allow all members to send message",
   fromMe: wtype,
   gc: true,
   adminOnly: true,
   type: "group"
 }, async (m, text) => {
-  var botAd = await isBotAdmin(m);
-  if (!botAd) return await m.send("✘_*Bot Needs To Be Admin!*_");
-  await m.client.groupSettingUpdate(m.chat, "not_announcement");
-  return await m.send("✓ Group Unmuted");
+  try {
+    var botAd = await isBotAdmin(m);
+    if (!botAd) return await m.send("✘_*Bot Needs To Be Admin!*_");
+    await m.client.groupSettingUpdate(m.chat, "not_announcement");
+    return await m.send("✓ Group Unmuted");
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
-  cmd: "invite|glink",
+cmd: "invite|glink",
   desc: "get group link",
   fromMe: wtype,
   gc: true,
   adminOnly: true,
   type: "group",
-}, async(m, text) => {
-  var botAd = await isBotAdmin(m);
-  if (!botAd) return await m.send("✘_*Bot Needs To Be Admin!*_");
-  const code = await m.client.groupInviteCode(m.chat);
-  return await m.send(`https://chat.whatsapp.com/${code}`);
+}, async (m, text) => {
+  try {
+    var botAd = await isBotAdmin(m);
+    if (!botAd) return await m.send("✘_*Bot Needs To Be Admin!*_");
+    const code = await m.client.groupInviteCode(m.chat);
+    return await m.send(`https://chat.whatsapp.com/${code}`);
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
-  cmd: "revoke",
+cmd: "revoke",
   desc: "reset group link",
   fromMe: wtype,
   gc: true,
   adminOnly: true,
   type: "group",
 }, async (m, text) => {
-  var botAd = await isBotAdmin(m);
-  if (!botAd) return await m.send("✘_*Bot Needs To Be Admin!*_");
-  await m.client.groupRevokeInvite(m.chat);
-  const newCode = await m.client.groupInviteCode(m.chat);
-  return await m.send(`✓ Link Revoked\nNew Link: https://chat.whatsapp.com/${newCode}`);
+  try {
+    var botAd = await isBotAdmin(m);
+    if (!botAd) return await m.send("✘_*Bot Needs To Be Admin!*_");
+    await m.client.groupRevokeInvite(m.chat);
+    const newCode = await m.client.groupInviteCode(m.chat);
+    return await m.send(`✓ Link Revoked\nNew Link: https://chat.whatsapp.com/${newCode}`);
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
-  cmd: "tag",
+cmd: "tag",
   desc: "tag all memebers/admins/me/text",
   fromMe: wtype,
   gc: true,
   adminOnly: true,
   type: "group"
 }, async (m, text, cmd, store) => {
-  if (!m.isGroup) return await m.send(`@${m.sender.split("@")[0]}`, { mentions: [m.sender] });   
+  try {
+    if (!m.isGroup) return await m.send(`@${m.sender.split("@")[0]}`, { mentions: [m.sender] });   
   const { participants } = await m.client.groupMetadata(m.chat);
   let admins = participants.filter(v => v.admin !== null).map(v => v.jid);
   let msg = "";
@@ -324,23 +385,32 @@ kord({
   } else { 
   return await m.send(`✘ Usage:\ntag all\ntag admins\ntag me\ntag <message>\ntag (reply to message)`);
   }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
-  cmd: "tagall",
+cmd: "tagall",
   desc: "tag all memebers",
   fromMe: wtype,
   gc: true,
   adminOnly: true,
   type: "group"
 }, async (m, text) => {
-  const { participants } = await m.client.groupMetadata(m.chat);
-  let admins = participants.filter(v => v.admin !== null).map(v => v.jid);
-  let msg = `❴ ⇛ *TAGALL* ⇚ ❵\n*Message:* ${text ? text : "blank"}*Caller:* @${m.sender.split("@")[0]}\n\n`
-  participants.forEach((p, i) => {
-      msg += `❧ ${i + 1}. @${p.jid.split('@')[0]}\n`;
+  try {
+    const { participants } = await m.client.groupMetadata(m.chat);
+    let admins = participants.filter(v => v.admin !== null).map(v => v.jid);
+    let msg = `❴ ⇛ *TAGALL* ⇚ ❵\n*Message:* ${text ? text : "blank"}*Caller:* @${m.sender.split("@")[0]}\n\n`
+    participants.forEach((p, i) => {
+    msg += `❧ ${i + 1}. @${p.jid.split('@')[0]}\n`; 
     });
     await m.send(msg, { mentions: participants.map(a => a.jid) });
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 
@@ -362,35 +432,45 @@ kord({
 })
 
 kord({
-  cmd: "lock",
+cmd: "lock",
   desc: "make only admins can modify group settings",
   fromMe: wtype,
   gc: true,
   adminOnly: true,
   type: "group",
 }, async (m, text) => {
-  var botAd = await isBotAdmin(m);
-  if (!botAd) return await m.send("✘_*Bot Needs To Be Admin!*_");
-  const meta = await m.client.groupMetadata(m.chat)
-  if (meta.restrict) return await m.send("✘ Group settings already admin-only");
-  await m.client.groupSettingUpdate(m.chat, 'locked')
-  return await m.send("✓ Group settings now admin-only");
+  try {
+    var botAd = await isBotAdmin(m);
+    if (!botAd) return await m.send("✘_*Bot Needs To Be Admin!*_");
+    const meta = await m.client.groupMetadata(m.chat)
+    if (meta.restrict) return await m.send("✘ Group settings already admin-only");
+    await m.client.groupSettingUpdate(m.chat, 'locked')
+    return await m.send("✓ Group settings now admin-only");
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
-  cmd: "unlock",
+cmd: "unlock",
   desc: "allow all members to modify group settings",
   fromMe: wtype,
   gc: true,
   adminOnly: true,
   type: "group",
 }, async (m, text) => {
-  var botAd = await isBotAdmin(m);
-  if (!botAd) return await m.send("✘_*Bot Needs To Be Admin!*_");
-  const meta = await m.client.groupMetadata(m.chat)
-  if (!meta.restrict) return await m.send("✘ Group settings already unlocked");
-  await m.client.groupSettingUpdate(m.chat, 'unlocked')
-  return await m.send("✓ All members can now modify group settings");
+  try {
+    var botAd = await isBotAdmin(m);
+    if (!botAd) return await m.send("✘_*Bot Needs To Be Admin!*_");
+    const meta = await m.client.groupMetadata(m.chat)
+    if (!meta.restrict) return await m.send("✘ Group settings already unlocked");
+    await m.client.groupSettingUpdate(m.chat, 'unlocked')
+    return await m.send("✓ All members can now modify group settings");
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
@@ -560,26 +640,27 @@ _${pre}antibot off_`
 })
 
 kord({
-  on: "all",
+on: "all",
 }, async (m, text) => {
-  const isGroup = m.key.remoteJid.endsWith('@g.us');
+  try {
+    const isGroup = m.key.remoteJid.endsWith('@g.us');
     if (isGroup) {
-        var botAd = await isBotAdmin(m);
-        if (!botAd) return;
-        
-       if(m.message.reactionMessage) return;
+    var botAd = await isBotAdmin(m);
+    if (!botAd) return;
+    
+    if(m.message.reactionMessage) return;
     const cJid = m.key.remoteJid
     const groupMetadata = await getMeta(m.client, m.chat);
-        const admins =  groupMetadata.participants.filter(v => v.admin !== null).map(v => v.jid); 
-        const wCount = new Map()
+    const admins =  groupMetadata.participants.filter(v => v.admin !== null).map(v => v.jid);
+    const wCount = new Map()
     if ((m.isBot || m.isBaileys) && !m.fromMe) {
     var sdata = await getData("antibot_config");
-      if (!Array.isArray(sdata)) return;
-  let isExist = sdata.find(entry => entry.chatJid === cJid);
-  if (isExist && !admins.includes(m.sender)) {
+    if (!Array.isArray(sdata)) return;
+    let isExist = sdata.find(entry => entry.chatJid === cJid);
+    if (isExist && !admins.includes(m.sender)) {
     var act = isExist.action
     if (act === "del") {
-      await m.client.sendMessage(m.key.remoteJid, { delete: m.key });
+    await m.client.sendMessage(m.key.remoteJid, { delete: m.key });
       return await m.send(`_*Bots are not Allowed!!*_`)
     } else if (act === "kick") {
       await m.client.sendMessage(m.key.remoteJid, { delete: m.key });
@@ -608,25 +689,30 @@ Warning(s): (${cCount}/${maxC})`
   }
   } else return;
   }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 
 
 kord({
-  cmd: "events|gcevent|grpevents",
+cmd: "events|gcevent|grpevents",
   desc: "manage group events settings",
   gc: true,
   adminOnly: true,
   fromMe: wtype,
   type: "group",
 }, async (m, text) => {
-  var botAd = await isBotAdmin(m);
-  if (!botAd) return await m.send("_*✘Bot Needs To Be Admin!*_");
-  
-  var gdata = await getData('group_events') || {}
-  const jid = m.chat;
-  
-  gdata[jid] = gdata[jid] || {
+  try {
+    var botAd = await isBotAdmin(m);
+    if (!botAd) return await m.send("_*✘Bot Needs To Be Admin!*_");
+    
+    var gdata = await getData('group_events') || {}
+    const jid = m.chat;
+    
+    gdata[jid] = gdata[jid] || {
     events: false,
     add: false,
     remove: false,
@@ -635,35 +721,35 @@ kord({
     antipromote: false,
     antidemote: false,
     welcome: `╭━━━々 𝚆 𝙴 𝙻 𝙲 𝙾 𝙼 𝙴 々━━━╮
-┃ ➺ *々 Welcome @user! to @gname*
-┃ ➺ *々 Members: @count*
-┃ ➺ We Hope You Have A Nice Time Here!
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+    ┃ ➺ *々 Welcome @user! to @gname*
+    ┃ ➺ *々 Members: @count*
+    ┃ ➺ We Hope You Have A Nice Time Here!
+    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
     goodbye: `╭━━━々 𝙶 𝙾 𝙾 𝙳 𝙱 𝚈 𝙴 々━━━╮
-┃ ➺ *々 @user! left @gname!*
-┃ ➺ *々 Members: @count*
-┃ ➺ We Hope He/She Had A Nice Time Here!
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━`
-  };
-  var parts = text.split(" ");
-  var cmd = parts[0]?.toLowerCase();
-  var value = parts[1]?.toLowerCase();
-  if (!cmd) {
+    ┃ ➺ *々 @user! left @gname!*
+    ┃ ➺ *々 Members: @count*
+    ┃ ➺ We Hope He/She Had A Nice Time Here!
+    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━`
+    };
+    var parts = text.split(" ");
+    var cmd = parts[0]?.toLowerCase();
+    var value = parts[1]?.toLowerCase();
+    if (!cmd) {
     let status = gdata[jid].events ? "enabled" : "disabled";
     return await m.send(`*_Group Events Settings_*
-_*Usage:*_
-_events on/off - Enable/disable all events_
-_events clear - clear the group events settings_
-_events welcome on/off - Toggle welcome messages_
-_events goodbye on/off - Toggle goodbye messages_
-_events promote on/off - Toggle promotion alerts_
-_events demote on/off - Toggle demotion alerts_
-_events antipromote on/off - Toggle anti-promotion_
-_events antidemote on/off - Toggle anti-demotion_
-_events setwelcome text - Set welcome message_
-_events setgoodbye text - Set goodbye message_`);
-  }
-  if (cmd === "on" || cmd === "enable") {
+    _*Usage:*_
+    _events on/off - Enable/disable all events_
+    _events clear - clear the group events settings_
+    _events welcome on/off - Toggle welcome messages_
+    _events goodbye on/off - Toggle goodbye messages_
+    _events promote on/off - Toggle promotion alerts_
+    _events demote on/off - Toggle demotion alerts_
+    _events antipromote on/off - Toggle anti-promotion_
+    _events antidemote on/off - Toggle anti-demotion_
+    _events setwelcome text - Set welcome message_
+    _events setgoodbye text - Set goodbye message_`);
+    }
+    if (cmd === "on" || cmd === "enable") {
     gdata[jid].events = true;
     gdata[jid].add = true,
     gdata[jid].remove = true,
@@ -673,104 +759,109 @@ _events setgoodbye text - Set goodbye message_`);
     gdata[jid].antidemote = true,
     await storeData('group_events', gdata);
     return await m.send("✓ Group events notifications enabled");
-  }
-  if (cmd === "off" || cmd === "disable") {
+    }
+    if (cmd === "off" || cmd === "disable") {
     gdata[jid].events = false;
     await storeData('group_events', gdata);
     return await m.send("✓ Group events notifications disabled");
-  }
-  if (cmd === "clear") {
+    }
+    if (cmd === "clear") {
     delete gdata[jid].events
     await storeData('group_events', gdata);
     return await m.send("✓ Group events notifications cleared");
-  }
-  if (cmd === "status") {
+    }
+    if (cmd === "status") {
     return await m.send(`*Events Status:* ${gdata[jid].events ? "on" : "off"}
-*Welcome:* ${gdata[jid].add ? "on" : "off"}
-*Goodbye:* ${gdata[jid].remove ? "on" : "off"}
-*Promote:* ${gdata[jid].promote ? "on" : "off"}
-*Demote:* ${gdata[jid].demote ? "on" : "off"}
-*Anti-Promote:* ${gdata[jid].antipromote ? "on" : "off"}
-*Anti-Demote:* ${gdata[jid].antidemote ? "on" : "off"}`)
-  }
-  if (cmd === "welcome") {
+    *Welcome:* ${gdata[jid].add ? "on" : "off"}
+    *Goodbye:* ${gdata[jid].remove ? "on" : "off"}
+    *Promote:* ${gdata[jid].promote ? "on" : "off"}
+    *Demote:* ${gdata[jid].demote ? "on" : "off"}
+    *Anti-Promote:* ${gdata[jid].antipromote ? "on" : "off"}
+    *Anti-Demote:* ${gdata[jid].antidemote ? "on" : "off"}`)
+    }
+    if (cmd === "welcome") {
     if (value !== "on" && value !== "off") return await m.send("✘ Please specify on or off");
     gdata[jid].add = value === "on" ? true : false;
     await storeData('group_events', gdata);
     return await m.send(`✓ Welcome messages turned ${value}`);
-  }
-  if (cmd === "goodbye") {
+    }
+    if (cmd === "goodbye") {
     if (value !== "on" && value !== "off") return await m.send("✘ Please specify on or off");
     gdata[jid].remove = value === "on" ? true : false;
     await storeData('group_events', gdata);
     return await m.send(`✓ Goodbye messages turned ${value}`);
-  }
-  if (cmd === "promote") {
+    }
+    if (cmd === "promote") {
     if (value !== "on" && value !== "off") return await m.send("✘ Please specify on or off");
     gdata[jid].promote = value === "on" ? true : false;
     await storeData('group_events', gdata);
     return await m.send(`✓ Promotion alerts turned ${value}`);
-  }
-  if (cmd === "demote") {
+    }
+    if (cmd === "demote") {
     if (value !== "on" && value !== "off") return await m.send("✘ Please specify on or off");
     gdata[jid].demote = value === "on" ? true : false;
     await storeData('group_events', gdata);
     return await m.send(`✓ Demotion alerts turned ${value}`);
-  }
-  if (cmd === "antipromote") {
+    }
+    if (cmd === "antipromote") {
     if (value !== "on" && value !== "off") return await m.send("✘ Please specify on or off");
     gdata[jid].antipromote = value === "on" ? true : false;
     await storeData('group_events', gdata);
     return await m.send(`✓ Anti-promotion ${value === "on" ? "enabled" : "disabled"}`);
-  }
-  if (cmd === "antidemote") {
+    }
+    if (cmd === "antidemote") {
     if (value !== "on" && value !== "off") return await m.send("✘ Please specify on or off");
     gdata[jid].antidemote = value === "on" ? true : false;
     await storeData('group_events', gdata);
     return await m.send(`✓ Anti-demotion ${value === "on" ? "enabled" : "disabled"}`);
-  }
-  if (cmd === "setwelcome") {
+    }
+    if (cmd === "setwelcome") {
     let newMsg = text.replace(cmd, "").trim();
     if (!newMsg) return await m.send("✘ provide the welcome message text\nAvaliable Usage: @user - Username\n@gname - Group name\n@gdesc - Group description\n@count - Member count\n@time - Current time")
     gdata[jid].welcome = newMsg;
     await storeData('group_events', gdata);
     return await m.send("✓ Welcome message updated\n\n" + newMsg);
-  }
-  if (cmd === "setgoodbye") {
+    }
+    if (cmd === "setgoodbye") {
     let newMsg = text.replace(cmd, "").trim();
     if (!newMsg) return await m.send("✘ provide the goodbye message text\nAvaliable Usage: @user - Username\n@gname - Group name\n@gdesc - Group description\n@count - Member count\n@time - Current time");
     gdata[jid].goodbye = newMsg;
     await storeData('group_events', gdata);
     return await m.send("✓ Goodbye message updated\n\n" + newMsg);
+    }
+    return await m.send("✘ Invalid option. Use 'events' without parameters to see available commands.");
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
   }
-  return await m.send("✘ Invalid option. Use 'events' without parameters to see available commands.");
 })
 
 
 kord({
-  cmd: "antilink",
+cmd: "antilink",
   desc: "automactically delete links in group",
   fromMe: wtype,
   gc: true,
   adminOnly: true,
   type: "group",
 }, async (m, text, c) => {
-  var botAd = await isBotAdmin(m);
-  if (!botAd) return await m.send("_*✘Bot Needs To Be Admin!*_");
-  var data = await getData("antilink") || {}
-  data[m.chat] = data[m.chat] || {
+  try {
+    var botAd = await isBotAdmin(m);
+    if (!botAd) return await m.send("_*✘Bot Needs To Be Admin!*_");
+    var data = await getData("antilink") || {}
+    data[m.chat] = data[m.chat] || {
     active: false,
     action: null,
     warnc: 0,
     permitted: []
-  }
-  var parts = text.split(" ");
-  var cmd = parts[0]?.toLowerCase();
-  var value = parts[1]?.toLowerCase();
-  var isActive = data[m.chat].active
-  if (!cmd) {
+    }
+    var parts = text.split(" ");
+    var cmd = parts[0]?.toLowerCase();
+    var value = parts[1]?.toLowerCase();
+    var isActive = data[m.chat].active
+    if (!cmd) {
     return await m.send(
-      `\`\`\`┌─────────❖
+    `\`\`\`┌─────────❖
 │▸ ANTILINK CONFIG
 └─────────❖
 Usage:
@@ -781,68 +872,67 @@ ${c} allow (url)
 ${c} unallow (url)
 ${c} listallow
 ${c} status
-${c} off
-\`\`\``
+${c} off\`\`\``
     )
-  }
-  
-  if (cmd === "kick") {
+    }
+    
+    if (cmd === "kick") {
     if (isActive && data[m.chat].action === "kick") {
-      return await m.send(`\`\`\` Antilink is already set to: kick\`\`\``)
+    return await m.send(`\`\`\` Antilink is already set to: kick\`\`\``)
     }
     data[m.chat].active = true
     data[m.chat].action = "kick"
     await storeData("antilink", data)
     return await m.send(`\`\`\`▸ ❏ Antilink Enabled: kick\`\`\``)
-  }
-  else if (cmd === "delete") {
+    }
+    else if (cmd === "delete") {
     if (isActive && data[m.chat].action === "delete") {
-      return await m.send(`\`\`\` Antilink is already set to: delete\`\`\``)
+    return await m.send(`\`\`\` Antilink is already set to: delete\`\`\``)
     }
     data[m.chat].active = true
     data[m.chat].action = "delete"
     await storeData("antilink", data)
-  }
-  else if (cmd === "warn") {
+    }
+    else if (cmd === "warn") {
     if (isActive && data[m.chat].action === "warn") {
-      return await m.send(`\`\`\` Antilink is already set to: warn | ${data[m.chat].warnc}\`\`\``)
+    return await m.send(`\`\`\` Antilink is already set to: warn | ${data[m.chat].warnc}\`\`\``)
     }
     data[m.chat].active = true
     data[m.chat].action = "warn"
     data[m.chat].warnc = parseInt(value) || 3
     await storeData("antilink", data)
     return await m.send(`\`\`\`▸ ❏ Antilink Enabled: warn | ${data[m.chat].warnc}\`\`\``)
-  }
-  else if (cmd === "allow") {
+    }
+    else if (cmd === "allow") {
     var url = parts.slice(1).join(" ");
     if (!url) {
-      return await m.send(`\`\`\`provide a URL to allow\nExample: ${c} allow youtube.com\`\`\``)
+    return await m.send(`\`\`\`provide a URL to allow\nExample: ${c} allow youtube.com\`\`\``)
     }
     if (!data[m.chat].permitted.includes(url)) {
-      data[m.chat].permitted.push(url)
-      await storeData("antilink", data)
-      return await m.send(`\`\`\`▸ ❏ URL allowed: ${url}\`\`\``)
+    data[m.chat].permitted.push(url)
+    await storeData("antilink", data)
+    return await m.send(`\`\`\`▸ ❏ URL allowed: ${url}\`\`\``)
     } else {
-      return await m.send(`\`\`\`URL already in allowed list: ${url}\`\`\``)
+    return await m.send(`\`\`\`URL already in allowed list: ${url}\`\`\``)
     }
-  }
-  else if (cmd === "unallow") {
+    }
+    else if (cmd === "unallow") {
     var url = parts.slice(1).join(" ");
     if (!url) {
-      return await m.send(`\`\`\`provide a URL to remove\nExample: ${c} unallow youtube.com\`\`\``)
+    return await m.send(`\`\`\`provide a URL to remove\nExample: ${c} unallow youtube.com\`\`\``)
     }
     var index = data[m.chat].permitted.indexOf(url)
     if (index > -1) {
-      data[m.chat].permitted.splice(index, 1)
-      await storeData("antilink", data)
-      return await m.send(`\`\`\`▸ ❏ URL removed: ${url}\`\`\``)
+    data[m.chat].permitted.splice(index, 1)
+    await storeData("antilink", data)
+    return await m.send(`\`\`\`▸ ❏ URL removed: ${url}\`\`\``)
     } else {
-      return await m.send(`\`\`\`URL not found in allowed list: ${url}\`\`\``)
+    return await m.send(`\`\`\`URL not found in allowed list: ${url}\`\`\``)
     }
-  }
-  else if (cmd === "listallow") {
+    }
+    else if (cmd === "listallow") {
     if (data[m.chat].permitted.length === 0) {
-      return await m.send(`\`\`\`No allowed URLs found\`\`\``)
+    return await m.send(`\`\`\`No allowed URLs found\`\`\``)
     }
     var list = data[m.chat].permitted.map((url, i) => `${i + 1}. ${url}`).join("\n")
     return await m.send(`\`\`\`┌─────────❖
@@ -850,10 +940,10 @@ ${c} off
 └─────────❖
 ${list}
 └──────────────\`\`\``)
-  }
-  else if (cmd === "status") {
+    }
+    else if (cmd === "status") {
     return m.send(
-      `\`\`\`┌─────────❖
+    `\`\`\`┌─────────❖
 │▸ ANTILINK CONFIG
 └─────────❖
 │▸ On: ${data[m.chat].active}
@@ -861,13 +951,13 @@ ${list}
 │▸ Allowed URLs: ${data[m.chat].permitted.length}
 └──────────────\`\`\``
     )
-  } else if (cmd === "off") {
+    } else if (cmd === "off") {
     data[m.chat].active = false
     await storeData("antilink", data)
     return await m.send(`\`\`\`▸ ❏ Antilink Disabled\`\`\``)
-  } else {
+    } else {
     return await m.send(
-      `\`\`\`┌─────────❖
+    `\`\`\`┌─────────❖
 │▸ ANTILINK CONFIG
 └─────────❖
 Usage:
@@ -878,27 +968,30 @@ ${c} allow <url>
 ${c} unallow <url>
 ${c} listallow
 ${c} status
-${c} off
-\`\`\``
+${c} off\`\`\``
     )
+    }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
   }
 })
 
 kord({
-  on: "all",
+on: "all",
 }, async (m, text) => {
-  var data = await getData("antilink") || []
-  var d = data[m.chat]
-  if (!d || !d.active) return
-  if (!m.isGroup) return
-  if (await isAdmin(m)) return;
-  if (!await isBotAdmin(m)) return;
-  var act = isUrl(text)
-  if (act) {
+  try {
+    var data = await getData("antilink") || []
+    var d = data[m.chat]
+    if (!d || !d.active) return
+    if (!m.isGroup) return
+    if (await isAdmin(m)) return;
+    if (!await isBotAdmin(m)) return;
+    var act = isUrl(text)
+    if (act) {
     var urls = text.match(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/gi) || []
     var allPermitted = urls.every(url => {
-      return d.permitted.some(permittedUrl => url.includes(permittedUrl))
-    })
+    return d.permitted.some(permittedUrl => url.includes(permittedUrl)) })
     if (allPermitted && urls.length > 0) return
     if (d.action === "kick") {
       try {
@@ -937,6 +1030,10 @@ kord({
         await storeData("antilink", data)
       }
     }
+  }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
   }
 })
 
@@ -984,30 +1081,31 @@ kord({
 })
 
 kord({
-  cmd: "antiword",
+cmd: "antiword",
   desc: "auto delete words you set",
   fromMe: wtype,
   gc: true,
   adminOnly: true,
   type: "group",
 }, async (m, text, c) => {
-  var botAd = await isBotAdmin(m);
-  if (!botAd) return await m.send("_*✘Bot Needs To Be Admin!*_");
-  var aw = await getData("antiword") || {}
-  aw[m.chat] = aw[m.chat] || {
+  try {
+    var botAd = await isBotAdmin(m);
+    if (!botAd) return await m.send("_*✘Bot Needs To Be Admin!*_");
+    var aw = await getData("antiword") || {}
+    aw[m.chat] = aw[m.chat] || {
     active: false,
     action: "delete",
     warnc: config().WARNCOUNT,
     words: []
-  }
-  var dw = aw[m.chat]
-  var parts = text.split(" ");
-  var cmd = parts[0]?.toLowerCase();
-  var value = parts[1]?.toLowerCase();
-  var vl = parts[2]?.toLowerCase()
-  var isActive = aw[m.chat].active
-  
-  if (!cmd) return await m.send(
+    }
+    var dw = aw[m.chat]
+    var parts = text.split(" ");
+    var cmd = parts[0]?.toLowerCase();
+    var value = parts[1]?.toLowerCase();
+    var vl = parts[2]?.toLowerCase()
+    var isActive = aw[m.chat].active
+    
+    if (!cmd) return await m.send(
     `\`\`\`┌─────────❖
 │▸ ANTIWORD CONFIG
 └─────────❖
@@ -1018,48 +1116,47 @@ ${c} warnc 5
 ${c} status/get
 ${c} remove <words>/all
 ${c} off
-${c} gay, stupid
-\`\`\``
-  )
-  
-  if (cmd == "on") {
+${c} gay, stupid\`\`\``
+    )
+    
+    if (cmd == "on") {
     if (isActive) return await m.send(`\`\`\`➻ Antiword is Already On: ${dw.action}\`\`\``)
     dw.active = true
     dw.action = "delete"
     await storeData("antiword", aw)
     return await m.send(`\`\`\`➻ Antiword Turned On and set to Delete\nUse ${c} action kick/delete/warn 3 to set action\`\`\``)
-  }
-  if (cmd == "off") {
+    }
+    if (cmd == "off") {
     if (isActive) {
-      dw.active = false
-      await storeData("antiword", aw)
-      return await m.send("```➻ AntiWord Turned Off```")
+    dw.active = false
+    await storeData("antiword", aw)
+    return await m.send("```➻ AntiWord Turned Off```")
     }
     return await m.send("```➻ Antiword isn't active```")
-  }
-  if (cmd == "action") {
+    }
+    if (cmd == "action") {
     if (value == "kick") {
-      if (isActive && aw[m.chat].action === "kick") return await m.send("```➻ Antiword is active & Action is already set to: kick```")
-      aw[m.chat].active = true
-      dw.action = "kick"
-      await storeData("antiword", aw)
-      return await m.send("```➻ Antiword Turned On & Action Set To: kick```")
+    if (isActive && aw[m.chat].action === "kick") return await m.send("```➻ Antiword is active & Action is already set to: kick```")
+    aw[m.chat].active = true
+    dw.action = "kick"
+    await storeData("antiword", aw)
+    return await m.send("```➻ Antiword Turned On & Action Set To: kick```")
     }
     else if (value == "delete") {
-      if (isActive && aw[m.chat].action === "delete") return await m.send("```➻ Antiword is active & Action is already set to: delete```")
-      aw[m.chat].active = true
-      dw.action = "delete"
-      await storeData("antiword", aw)
-      return await m.send("```➻ Antiword Turned On & Action Set To: delete```")
+    if (isActive && aw[m.chat].action === "delete") return await m.send("```➻ Antiword is active & Action is already set to: delete```")
+    aw[m.chat].active = true
+    dw.action = "delete"
+    await storeData("antiword", aw)
+    return await m.send("```➻ Antiword Turned On & Action Set To: delete```")
     }
     else if (value == "warn") {
-      if (isActive && dw.action == "warn") return await m.send(`\`\`\`➻ AntiWord is active & Action is Already set to warn | ${dw.warnc}\`\`\``)
-      
-      dw.active = true
-      dw.action = "warn"
-      dw.warnc = parseInt(vl) || config().WARNCOUNT
-      await storeData("antiword", aw)
-      return await m.send(`\`\`\`➻ Antiword Turned On & Action Set To: warn(${dw.warnc})\`\`\``)
+    if (isActive && dw.action == "warn") return await m.send(`\`\`\`➻ AntiWord is active & Action is Already set to warn | ${dw.warnc}\`\`\``)
+    
+    dw.active = true
+    dw.action = "warn"
+    dw.warnc = parseInt(vl) || config().WARNCOUNT
+    await storeData("antiword", aw)
+    return await m.send(`\`\`\`➻ Antiword Turned On & Action Set To: warn(${dw.warnc}\`\`\``)
     }
     else {
       return await m.send(`\`\`\`Use Either ${c} action kick/delete/warn 3\`\`\``)
@@ -1139,28 +1236,33 @@ Words: ${dw.words.join(", ") || "None"}
   dw.words.push(...wrds)
   await storeData("antiword", aw)
   return await m.send(`\`\`\`➻ Words added: ${wrds.join(", ")}\`\`\``)
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 var warns = {}
 kord({
-  on: "all",
+on: "all",
   fromMe: false,
 }, async (m, text) => {
-  if (!m.isGroup) return;
-  var botAd = await isBotAdmin(m);
-  if (!botAd) return;
-  var data = await getData("antiword") || {}
-  if (!data[m.chat]) return
-  var d = data[m.chat]
-  if (!d.active) return
-  if (await isAdmin(m)) return
-  
-  var msgText = (text || "").toLowerCase()
-  var foundWord = d.words.find(word => msgText.includes(word.toLowerCase()))
-  
-  if (!foundWord) return
-  
-  if (d.action == "delete") {
+  try {
+    if (!m.isGroup) return;
+    var botAd = await isBotAdmin(m);
+    if (!botAd) return;
+    var data = await getData("antiword") || {}
+    if (!data[m.chat]) return
+    var d = data[m.chat]
+    if (!d.active) return
+    if (await isAdmin(m)) return
+    
+    var msgText = (text || "").toLowerCase()
+    var foundWord = d.words.find(word => msgText.includes(word.toLowerCase()))
+    
+    if (!foundWord) return
+    
+    if (d.action == "delete") {
     await m.send(m, {}, "delete")
     return await m.send(`_*@${m.sender.split("@")[0]}*_\n_*That word is not allowed here!*_`, { mentions: [m.sender] })
   }
@@ -1184,38 +1286,46 @@ if (d.action == "warn") {
   }
   return await m.send(`_*@${m.sender.split("@")[0]} warned! (${warns[m.chat][m.sender]}/${d.warnc}) for using prohibited word*_`, { mentions: [m.sender] })
 }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
-  cmd: "warn",
+cmd: "warn",
   desc: "warn user and kick if warnings exceeded",
   type: "group",
   fromMe: true,
   gc: true,
   adminOnly: true,
 }, async (m, text) => {
-  var user = m.mentionedJid[0] || m.quoted.sender
-  if (!user) return await m.send(`_*mention or reply to a user*_\nor use *${prefix}warn reset* to clear warnings`)
-  if (text.toLowerCase() === "reset") {
+  try {
+    var user = m.mentionedJid[0] || m.quoted.sender
+    if (!user) return await m.send(`_*mention or reply to a user*_\nor use *${prefix}warn reset* to clear warnings`)
+    if (text.toLowerCase() === "reset") {
     var r = await warn.resetWarn(m.chat, user)
     if (!r) return await m.send("_*user hasn't been warned anytime before*_")
     return await m.send("*🍁 Warnings Cleared!*")
-  }
-  var aa = await warn.addWarn(m.chat, user, `${text ? text : null}`, m.sender)
-  var wc = await warn.getWcount(m.chat, user)
-  if (wc < config().WARNCOUNT) {
-  if (aa.timestamp) return await m.send(
+    }
+    var aa = await warn.addWarn(m.chat, user, `${text ? text : null}`, m.sender)
+    var wc = await warn.getWcount(m.chat, user)
+    if (wc < config().WARNCOUNT) {
+    if (aa.timestamp) return await m.send(
     `┏┅┅ 『 *WARNING* 』┅┅┓
 ┇ *User:* @${user.split("@")[0]}
 ┇ *Reason:* ${text ? text : "not specified"}
 ┇ *WarnCounts:* ${wc}
-┗┉By: @${m.sender.split("@")[0]}`, {mentions: [user, m.sender]}
-    )
-    return await m.send("*somethin happened...*")
+┗┉By: @${m.sender.split("@")[0]}`, {mentions: [user, m.sender] })
+    return await m.send("some error occurred...")
   } else {
     await m.send("*Warnings Exceeded!*\n_*Goodbye!*_")
     await warn.resetWarn(m.chat, user)
     return await m.client.groupParticipantsUpdate(m.chat, [user], "remove")
+  }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
   }
 })
 
@@ -1324,26 +1434,27 @@ _${pre}antigm off_`
 })
 
 kord({
-  on: "all",
+on: "all",
 }, async (m, text) => {
-  const isGroup = m.key.remoteJid.endsWith('@g.us');
+  try {
+    const isGroup = m.key.remoteJid.endsWith('@g.us');
     if (isGroup) {
-        var botAd = await isBotAdmin(m);
-        if (!botAd) return;
-        
-       if(m.message.reactionMessage) return;
+    var botAd = await isBotAdmin(m);
+    if (!botAd) return;
+    
+    if(m.message.reactionMessage) return;
     const cJid = m.key.remoteJid
     const groupMetadata = await getMeta(m.client, m.chat);
-        const admins =  groupMetadata.participants.filter(v => v.admin !== null).map(v => v.jid); 
-        const wCount = new Map()
+    const admins =  groupMetadata.participants.filter(v => v.admin !== null).map(v => v.jid);
+    const wCount = new Map()
     if (m.message?.groupStatusMentionMessage && !m.fromMe) {
     var sdata = await getData("antigm_config");
-      if (!Array.isArray(sdata)) return;
-  let isExist = sdata.find(entry => entry.chatJid === cJid);
-  if (isExist && !admins.includes(m.sender)) {
+    if (!Array.isArray(sdata)) return;
+    let isExist = sdata.find(entry => entry.chatJid === cJid);
+    if (isExist && !admins.includes(m.sender)) {
     var act = isExist.action
     if (act === "del") {
-      await m.client.sendMessage(m.key.remoteJid, { delete: m.key });
+    await m.client.sendMessage(m.key.remoteJid, { delete: m.key });
       return await m.send(`_*Status Mention is not Allowed!!*_`)
     } else if (act === "kick") {
       await m.client.sendMessage(m.key.remoteJid, { delete: m.key });
@@ -1371,6 +1482,10 @@ Warning(s): (${cCount}/${maxC})`
     }
   }
   } else return;
+  }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
   }
 })
 
