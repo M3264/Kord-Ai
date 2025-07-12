@@ -323,16 +323,17 @@ kord({
   try {
   let users = []
 
-  if (!text) return await m.send("_Reply/mention/provide a user or type 'admins'_")
-  if (text.trim().toLowerCase() === 'admins') {
-    if (!m.isGroup) return await m.send("_'admins' can only be used in groups_")
-    const admins = await getAdmins(m.client, m.chat)
-    users = admins.map(j => j.split('@')[0])
-  } else {
-    const u = m.mentionedJid[0] || m.quoted?.sender || text
-    if (!u) return await m.send("_Reply/mention/provide a user_")
-    users = [u.split('@')[0]]
-  }
+  if (!text && !m.quoted) return await m.send("_Reply/mention/provide a user or type 'admins'_")
+
+if (text.trim().toLowerCase() === 'admins') {
+  if (!m.isGroup) return await m.send("_'admins' can only be used in groups_")
+  const admins = await getAdmins(m.client, m.chat)
+  users = admins.map(j => j.split('@')[0])
+} else {
+  const u = m.mentionedJid?.[0] || m.quoted?.sender || (text || '').trim()
+  if (!u) return await m.send("_Reply/mention/provide a user_")
+  users = [u.split('@')[0]]
+}
 
   const current = config().SUDO || ""
   const cNumbers = current.split(',').map(n => n.trim()).filter(n => n)
@@ -374,16 +375,17 @@ kord({
   try {
   let users = []
 
-  if (!text) return await m.send("_Reply/mention/provide a user or type 'admins'_")
-  if (text.trim().toLowerCase() === 'admins') {
-    if (!m.isGroup) return await m.send("_'admins' can only be used in groups_")
-    const admins = await getAdmins(m.client, m.chat)
-    users = admins.map(j => j.split('@')[0])
-  } else {
-    const u = m.mentionedJid[0] || m.quoted?.sender || text
-    if (!u) return await m.send("_Reply/mention/provide a user_")
-    users = [u.split('@')[0]]
-  }
+  if (!text && !m.quoted) return await m.send("_Reply/mention/provide a user or type 'admins'_")
+
+if (text.trim().toLowerCase() === 'admins') {
+  if (!m.isGroup) return await m.send("_'admins' can only be used in groups_")
+  const admins = await getAdmins(m.client, m.chat)
+  users = admins.map(j => j.split('@')[0])
+} else {
+  const u = m.mentionedJid?.[0] || m.quoted?.sender || (text || '').trim()
+  if (!u) return await m.send("_Reply/mention/provide a user_")
+  users = [u.split('@')[0]]
+}
 
   const current = config().SUDO || ""
   const cNumbers = current.split(',').map(n => n.trim()).filter(n => n)
@@ -453,16 +455,17 @@ kord({
   try {
   let users = []
 
-  if (!text) return await m.send("_Reply/mention/provide a user or type 'admins'_")
-  if (text.trim().toLowerCase() === 'admins') {
-    if (!m.isGroup) return await m.send("_'admins' can only be used in groups_")
-    const admins = await getAdmins(m.client, m.chat)
-    users = admins.map(j => j.split('@')[0])
-  } else {
-    const u = m.mentionedJid[0] || m.quoted?.sender || text
-    if (!u) return await m.send("_Reply/mention/provide a user_")
-    users = [u.split('@')[0]]
-  }
+  if (!text && !m.quoted) return await m.send("_Reply/mention/provide a user or type 'admins'_")
+
+if (text.trim().toLowerCase() === 'admins') {
+  if (!m.isGroup) return await m.send("_'admins' can only be used in groups_")
+  const admins = await getAdmins(m.client, m.chat)
+  users = admins.map(j => j.split('@')[0])
+} else {
+  const u = m.mentionedJid?.[0] || m.quoted?.sender || (text || '').trim()
+  if (!u) return await m.send("_Reply/mention/provide a user_")
+  users = [u.split('@')[0]]
+}
 
   const current = config().MODS || ""
   const cNumbers = current.split(',').map(n => n.trim()).filter(n => n)
@@ -504,16 +507,17 @@ kord({
   try {
   let users = []
 
-  if (!text) return await m.send("_Reply/mention/provide a user or type 'admins'_")
-  if (text.trim().toLowerCase() === 'admins') {
-    if (!m.isGroup) return await m.send("_'admins' can only be used in groups_")
-    const admins = await getAdmins(m.client, m.chat)
-    users = admins.map(j => j.split('@')[0])
-  } else {
-    const u = m.mentionedJid[0] || m.quoted?.sender || text
-    if (!u) return await m.send("_Reply/mention/provide a user_")
-    users = [u.split('@')[0]]
-  }
+  if (!text && !m.quoted) return await m.send("_Reply/mention/provide a user or type 'admins'_")
+
+if (text.trim().toLowerCase() === 'admins') {
+  if (!m.isGroup) return await m.send("_'admins' can only be used in groups_")
+  const admins = await getAdmins(m.client, m.chat)
+  users = admins.map(j => j.split('@')[0])
+} else {
+  const u = m.mentionedJid?.[0] || m.quoted?.sender || (text || '').trim()
+  if (!u) return await m.send("_Reply/mention/provide a user_")
+  users = [u.split('@')[0]]
+}
 
   const current = config().MODS || ""
   const cNumbers = current.split(',').map(n => n.trim()).filter(n => n)
@@ -546,7 +550,7 @@ kord({
 })
 
 kord({
-cmd: "getmods",
+cmd: "getmods|getmod",
   desc: "get all mods",
   fromMe: true,
   type: "config",
