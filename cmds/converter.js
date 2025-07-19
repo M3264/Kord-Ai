@@ -9,21 +9,18 @@
 
 const {kord, webp2png, webp2mp4, elevenlabs, rand, getBuffer, toAudio, config, processAudio, extractUrlsFromString, toPTT, isMediaURL, wtype} = require("../core")
 
-const stkpack = config().STICKER_PACKNAME
-const stkauthor = config().STICKER_AUTHOR
-const stkp = [stkpack, stkauthor]
-const { Sticker, StickerTypes } = require("wa-sticker-formatter");
-const fs = require('fs');
-const ffmpeg = require('fluent-ffmpeg');
-const { Image } = require("node-webpmux");
+const { Sticker, StickerTypes } = require("wa-sticker-formatter")
+const fs = require('fs')
+const ffmpeg = require('fluent-ffmpeg')
+const { Image } = require("node-webpmux")
 const ff = require("fluent-ffmpeg")
-const path = require('path');
+const path = require('path')
 const {
    read
-} = require('jimp');
+} = require('jimp')
 const {
    fromBuffer
-} = require('file-type');
+} = require('file-type')
 
 kord({
         cmd: "sticker|s|stk",
@@ -32,8 +29,25 @@ kord({
         type: "converter",
 }, async (m, text) => {
   try {
-    if (!(m.image || m.video || m.quoted.video || m.quoted.image)) return await m.send("_Reply to photo or video_");
+    if (!(m.image || m.video || m.quoted.video || m.quoted.image)) return await m.send("_Reply to photo or video_")
     let buff = await m.client.downloadMediaMessage((m.image || m.video) ? m : m.quoted ? m.quoted : null)
+    
+    let stkpack, stkauthor
+    
+    if (text) {
+      if (text.includes(',') || text.includes(';') || text.includes('|')) {
+        const parts = text.split(/[,;|]/).map(s => s.trim())
+        stkpack = parts[0] || config().STICKER_PACKNAME
+        stkauthor = parts[1] || config().STICKER_AUTHOR
+      } else {
+        stkpack = text.trim()
+        stkauthor = ""
+      }
+    } else {
+      stkpack = config().STICKER_PACKNAME
+      stkauthor = config().STICKER_AUTHOR
+    }
+    
     return await m.sendstk(buff, { packname: stkpack, author: stkauthor})
   } catch (e) {
     console.log("cmd error", e)
@@ -84,8 +98,8 @@ kord({
   try {
     if (!m.quoted.sticker) return await m.send("_reply to a sticker_")
     if (!m.quoted.isAnimated) return await m.send("_reply to a video sticker_")
-    let buffer = await webp2mp4(await m.quoted.download());
-    return await m.send(buffer, {}, "video");
+    let buffer = await webp2mp4(await m.quoted.download())
+    return await m.send(buffer, {}, "video")
   } catch (e) {
     console.log("cmd error", e)
     return await m.sendErr(e)
@@ -101,8 +115,8 @@ kord({
   try {
     if (!m.quoted.sticker) return await m.send("_reply to a sticker_")
     if (!m.quoted.isAnimated) return await m.send("_reply to a video sticker_")
-    let buffer = await webp2mp4(await m.quoted.download());
-    return await m.send(buffer, { gifPlayback: true }, "video");
+    let buffer = await webp2mp4(await m.quoted.download())
+    return await m.send(buffer, { gifPlayback: true }, "video")
   } catch (e) {
     console.log("cmd error", e)
     return await m.sendErr(e)
@@ -132,38 +146,38 @@ cmd: "black",
 }, async (m, text) => {
   try {
     if (!m.quoted.audio) return m.send("_reply to audio_")
-    const args = text?.trim()?.split(/\s+/);
-    const ffmpegg = ff();
+    const args = text?.trim()?.split(/\s+/)
+    const ffmpegg = ff()
     let file = path.join(__dirname, '../core/store/black.jpg')
     if (!fs.existsSync(file)) {
-    const blackImg = await getBuffer("https://cdn.kordai.biz.id/serve/n2BwUtItyeae.jpg");
-    fs.writeFileSync(file, blackImg);
+    const blackImg = await getBuffer("https://cdn.kordai.biz.id/serve/n2BwUtItyeae.jpg")
+    fs.writeFileSync(file, blackImg)
     }
     if (args[0] && await isMediaURL(args[0])) {
     const buff = await getBuffer(extractUrlsFromString(args)[0])
-    const readed = await read(buff);
-    if (readed.getWidth() != readed.getHeight()) return await m.send('_image width and height must be same!!_');
+    const readed = await read(buff)
+    if (readed.getWidth() != readed.getHeight()) return await m.send('_image width and height must be same!!_')
     const {
     mime
-    } = await fromBuffer(buff);
-    if (!['jpg', 'jpeg', 'png'].includes(mime.split('/')[1])) return await m.send("*_please provide a image url_*");
-    file = '../core/store/' + mime.replace('/', '.');
-    fs.writeFileSync(file, buff);
-    const audioFile = path.join(__dirname, '../core/store/audio.mp3');
+    } = await fromBuffer(buff)
+    if (!['jpg', 'jpeg', 'png'].includes(mime.split('/')[1])) return await m.send("*_please provide a image url_*")
+    file = '../core/store/' + mime.replace('/', '.')
+    fs.writeFileSync(file, buff)
+    const audioFile = path.join(__dirname, '../core/store/audio.mp3')
     var buf = await m.quoted.download()
-    fs.writeFileSync(audioFile, buf);
+    fs.writeFileSync(audioFile, buf)
     const Opath = path.join(__dirname, '../core/store/videoMixed.mp4')
-    ffmpegg.input(file);
-    ffmpegg.input(audioFile);
-    ffmpegg.output(Opath);
+    ffmpegg.input(file)
+    ffmpegg.input(audioFile)
+    ffmpegg.output(Opath)
     ffmpegg.on('end', async () => {
-    await m.send(fs.readFileSync(Opath), {}, 'video');
+    await m.send(fs.readFileSync(Opath), {}, 'video')
     fs.unlinkSync(audioFile)
     fs.unlinkSync(Opath)
       ffmpegg.on('error', async (err) => {
-         await m.send(`${err}`);
+         await m.send(`${err}`)
       })
-      ffmpegg.run();
+      ffmpegg.run()
       })
     }
     } catch (e) {
@@ -183,6 +197,23 @@ cmd: "roundstk|round",
     if (!(m.image || m.quoted.sticker || m.quoted.image)) return await m.send("_reply to a photo/sticker_")
     if (m.quoted.isAnimated) return await m.send("_reply to a photo sticker_")
     var media = await m.client.downloadMediaMessage(m.image ? m : m.quoted ? m.quoted : null)
+    
+    let stkpack, stkauthor
+    
+    if (text) {
+      if (text.includes(',') || text.includes(';') || text.includes('|')) {
+        const parts = text.split(/[,;|]/).map(s => s.trim())
+        stkpack = parts[0] || config().STICKER_PACKNAME
+        stkauthor = parts[1] || config().STICKER_AUTHOR
+      } else {
+        stkpack = text.trim()
+        stkauthor = ""
+      }
+    } else {
+      stkpack = config().STICKER_PACKNAME
+      stkauthor = config().STICKER_AUTHOR
+    }
+    
     let sticker = new Sticker(media, {
     pack: stkpack,
     author: stkauthor,
@@ -191,7 +222,7 @@ cmd: "roundstk|round",
     id: "https://github.com/M3264/Kord-Ai",
     quality: 75,
     })
-   const buffer = await sticker.toBuffer();
+   const buffer = await sticker.toBuffer()
    await m.send(buffer, {packname: stkpack, author: stkauthor}, "sticker")
     } catch (e) {
     console.log("cmd error", e)
@@ -209,6 +240,23 @@ cmd: "circlestk|circle",
     if (!(m.image || m.quoted.sticker || m.quoted.image)) return await m.send("_reply to a photo/sticker_")
     if (m.quoted.isAnimated) return await m.send("_reply to a photo sticker_")
     var media = await m.client.downloadMediaMessage(m.image ? m : m.quoted ? m.quoted : null)
+    
+    let stkpack, stkauthor
+    
+    if (text) {
+      if (text.includes(',') || text.includes(';') || text.includes('|')) {
+        const parts = text.split(/[,;|]/).map(s => s.trim())
+        stkpack = parts[0] || config().STICKER_PACKNAME
+        stkauthor = parts[1] || config().STICKER_AUTHOR
+      } else {
+        stkpack = text.trim()
+        stkauthor = ""
+      }
+    } else {
+      stkpack = config().STICKER_PACKNAME
+      stkauthor = config().STICKER_AUTHOR
+    }
+    
     let sticker = new Sticker(media, {
     pack: stkpack,
     author: stkauthor,
@@ -216,9 +264,9 @@ cmd: "circlestk|circle",
     categories: ["🤩", "🎉"],
     id: "https://github.com/M3264/Kord-Ai",
     quality: 75,
-});
-   const buffer = await sticker.toBuffer();
-   await m.send(buffer, { packname: stkpack, author: stkauthor }, "sticker");
+})
+   const buffer = await sticker.toBuffer()
+   await m.send(buffer, { packname: stkpack, author: stkauthor }, "sticker")
   } catch (e) {
     console.log("cmd error", e)
     return await m.sendErr(e)
@@ -227,7 +275,7 @@ cmd: "circlestk|circle",
 
 
 kord({
-  cmd: "take",
+  cmd: "take|steal",
   desc: "change the data of a sticker or audio",
   fromMe: wtype,
   type: "converter",
@@ -235,9 +283,23 @@ kord({
   if (!(m.quoted.sticker || m.quoted.audio)) return await m.send("_*reply to a sticker or audio*_")
   
   if (m.quoted.sticker) {
-    const [packname, author] = (text.match(/[^|;,:]+/g) || []).map(s => s.trim())
-    const pack = [packname || stkpack, author || stkauthor]
-    await m.send(await m.quoted.download(), {packname: pack[0], author: pack[1]}, "sticker")
+    let stkpack, stkauthor
+    
+    if (text) {
+      if (text.includes(',') || text.includes(';') || text.includes('|')) {
+        const parts = text.split(/[,;|]/).map(s => s.trim())
+        stkpack = parts[0] || config().STICKER_PACKNAME
+        stkauthor = parts[1] || config().STICKER_AUTHOR
+      } else {
+        stkpack = text.trim()
+        stkauthor = ""
+      }
+    } else {
+      stkpack = config().STICKER_PACKNAME
+      stkauthor = config().STICKER_AUTHOR
+    }
+    
+    await m.send(await m.quoted.download(), {packname: stkpack, author: stkauthor}, "sticker")
   } else if (m.quoted.audio) {
     let data
     var buf = await m.quoted.download()

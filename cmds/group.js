@@ -402,7 +402,7 @@ cmd: "tagall",
   try {
     const { participants } = await m.client.groupMetadata(m.chat);
     let admins = participants.filter(v => v.admin !== null).map(v => v.jid);
-    let msg = `❴ ⇛ *TAGALL* ⇚ ❵\n*Message:* ${text ? text : "blank"}*Caller:* @${m.sender.split("@")[0]}\n\n`
+    let msg = `❴ ⇛ *TAGALL* ⇚ ❵\n*Message:* ${text ? text : "blank"}\n*Caller:* @${m.sender.split("@")[0]}\n\n`
     participants.forEach((p, i) => {
     msg += `❧ ${i + 1}. @${p.jid.split('@')[0]}\n`; 
     });

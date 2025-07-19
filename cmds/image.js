@@ -33,27 +33,9 @@ const getImageUrl = async (m) => {
 }
 
 
-kord({
-        cmd: "remini",
-        desc: "increase the quality of an image(Vyro.ai)",
-        fromMe: wtype,
-        type: "image"
-}, async (m, text) => {
-      try {
-        if (!(m.image || m.quoted.image)) return await m.send("_Reply to a image_")
-        await m.react("⏳")
-        var media = await m.client.downloadMediaMessage(m.image ? m : m.quoted.image ? m.quoted: null)
-        var pic = await remini(media, "enhance")
-        await m.react("")
-        return await m.send(pic, { caption: "> here's your enhanced image.." }, "image")
-      } catch (err) {
-                console.error(err)
-                return await m.send(`error ${err}`)
-        }
-})
 
 kord({
-        cmd: "upscale|hd",
+        cmd: "remini|upscale|hd",
         desc: "increase the quality of an image(pixelcut)",
         fromMe: wtype,
         type: "image"

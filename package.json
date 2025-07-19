@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node index.js",
-    "start": "npx pm2 start . --attach --name kord-v2",
+    "start": "FORCE_COLOR=1 npx pm2 start . --attach --name kord-v2 -- --color",
     "build": "echo 'Not needed'",
     "stop": "npx pm2 stop kord-ai"
   },
@@ -24,7 +24,7 @@
   "homepage": "https://github.com/M3264/Kord-Ai#readme",
   "dependencies": {
     "axios": "^0.27.2",
-    "baileys": "github:WhiskeySockets/Baileys",
+    "baileys": "github:WhiskeySockets/Baileys#19124426b2ded31f6d28ed60c53b75f101865bc3",
     "chalk": "^4.1.2",
     "cheerio": "^1.0.0-rc.10",
     "child_process": "^1.0.2",
@@ -48,13 +48,14 @@
     "os": "^0.1.2",
     "path": "^0.12.7",
     "pdfkit": "^0.17.1",
-    "pm2": "^6.0.5",
     "pino": "^7.9.2",
+    "pm2": "^6.0.5",
     "sequelize": "^6.21.4",
     "sqlite": "5.1.1",
     "sqlite3": "^5.0.11",
     "uuid": "^11.1.0",
     "wa-sticker-formatter": "^4.4.4",
+    "word-list": "^4.1.0",
     "yarn": "^1.22.22",
     "yt-search": "^2.11.1"
   },

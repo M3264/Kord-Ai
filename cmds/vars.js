@@ -229,6 +229,62 @@ if (!text) {
   }
 }
 
+function deltog() {
+  try {
+    return async (m, text, cmd) => {
+      const allowed = [...myMods().map(x => x + '@s.whatsapp.net'), m.ownerJid]
+      text = text.split(" ")[0].toLowerCase()
+      const validInputs = ['on', 'p', 'chat', 'g', 'off']
+
+      if (text && !validInputs.includes(text) && !text.match(/^\d+$/)) {
+        return await m.send(`*Invalid option:* _${text}_\n_Use: 'on/p' (owner), 'chat/g' (in chat), 'off' (disable), or phone number_`)
+      }
+
+      if (!text) {
+        if (config().RES_TYPE.toLowerCase() === "button") {
+          return await m.btnText("*Antidelete Settings*", {
+            [`${cmd} on`]: "TO OWNER",
+            [`${cmd} chat`]: "IN CHAT",
+            [`${cmd} off`]: "DISABLE",
+          })
+        } else if (config().RES_TYPE.toLowerCase() === "poll") {
+          return await m.send({
+            name: "*Antidelete Settings*",
+            values: [
+              { name: "To Owner", id: `${cmd} on` },
+              { name: "In Chat", id: `${cmd} chat` },
+              { name: "Disable", id: `${cmd} off` }
+            ],
+            withPrefix: true,
+            onlyOnce: true,
+            participates: allowed,
+            selectableCount: true,
+          }, {}, "poll")
+        } else {
+          return await m.send(`*Use:* ${cmd} on/p/chat/g/off or phone number\n\n*Options:*\n• on/p - Send to owner\n• chat/g - Send in chat\n• off - Disable\n• [number] - Send to specific number`)
+        }
+      }
+
+      let finalValue = text
+      if (text.match(/^\d+$/)) {
+        finalValue = text
+      }
+
+      var envVal = process.env.ANTIDELETE
+      var configVal = config().ANTIDELETE
+      if ((envVal !== undefined && envVal === finalValue) || (configVal !== undefined && configVal === finalValue)) {
+        return await m.send(`*Anti Delete already set to ${text}..*`)
+      }
+
+      await updateAllConfig('ANTIDELETE', finalValue, m)
+    }
+  } catch (e) {
+    console.log("cmd error", e)
+    return m.sendErr(e)
+  }
+}
+
+
 kord({
   cmd: "readstatus",
   desc: "turn on/off readstatus",
@@ -260,17 +316,11 @@ kord({
 
 kord({
   cmd: "antidelete",
-  desc: "turn on/off antidelete",
+  desc: "configure antidelete settings",
   fromMe: true,
   type: "config",
-}, toggle("antidelete", "ANTIDELETE", "Anti Delete"))
+}, deltog())
 
-kord({
-  cmd: "antideletechat",
-  desc: "turn on/off antidelete in chat",
-  fromMe: true,
-  type: "config",
-}, toggle("antideletechat", "ANTIDELETE_INCHAT", "Anti Delete In Chat"))
 
 kord({
   cmd: "antiedit",
@@ -550,7 +600,7 @@ if (text.trim().toLowerCase() === 'admins') {
 })
 
 kord({
-cmd: "getmods|getmod",
+cmd: "getmods",
   desc: "get all mods",
   fromMe: true,
   type: "config",

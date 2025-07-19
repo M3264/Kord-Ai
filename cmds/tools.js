@@ -479,51 +479,120 @@ kord({
   on: "all",
 }, async (message, text, c, store) => {
   try {
-  const user = message.sender;
-  const afkData = await loadAfkData() || { users: {}, owner: { active: false, message: "", lastseen: "" } };
-  
-  if (message.message && message.message.reactionMessage) return;
-  
-  if (afkData.users && afkData.users[user] && afkData.users[user].active) {
-    afkData.users[user].active = false;
-    await saveAfkData(afkData);
-    const timeDiff = Math.round((new Date()).getTime() / 1000) - afkData.users[user].lastseen;
-    const timeStr = formatTime(timeDiff);
-    await message.send(`Welcome back @${user.split("@")[0]}!\nYou were afk for: *${timeStr}*`, {mentions: [user]});
-  }
-  
-  if (afkData.owner && afkData.owner.active && (text.includes(message.ownerJid) || text.includes(message.ownerJid.split('@')[0]) || (message.quoted && message.quoted.sender === message.ownerJid))) {
-    const timeDiff = Math.round((new Date()).getTime() / 1000) - afkData.owner.lastseen;
-    const timeStr = formatTime(timeDiff);
-    await message.send(`*Owner is currently AFK.*\n*Reason:* ${afkData.owner.message || "Not specified"}\n*Last seen:* ${timeStr} ago`);
-    var mesa = await message.forwardMessage(
-            message.ownerJid,
-            await global.store.findMsg(message.id),
-            { quoted: message }
-        );
-     await message.client.sendMessage(message.ownerJid, { text: `User: ${await global.store.getname(message.sender)}(${message.sender.split("@")[0]}) tagged/reply during afk, Message above:` }, { quoted: mesa });
-  }
-  
-  for (const mentionedUser in afkData.users) {
-    if (afkData.users[mentionedUser] && 
-        afkData.users[mentionedUser].active && 
-        (text.includes(mentionedUser) || 
-         text.includes(mentionedUser.split('@')[0]) || 
-         (message.quoted && message.quoted.sender === mentionedUser))) {
-      
-      const timeDiff = Math.round((new Date()).getTime() / 1000) - afkData.users[mentionedUser].lastseen;
-      const timeStr = formatTime(timeDiff);
-      await message.send(`@${mentionedUser.split("@")[0]} *is currently AFK*.\n*Reason:* ${afkData.users[mentionedUser].message || "Not specified"}\n*Last seen:* ${timeStr} ago`, {mentions: [mentionedUser]});
+ //   console.log("AFK Handler triggered")
+  //  const user = message.sender
+ //   console.log("User:", user)
+   // console.log("OwnerJid:", message.ownerJid)
+    //console.log("Text:", text)
+    //console.log("MentionedJid:", message.mentionedJid)
+    
+    const afkData = await loadAfkData() || { users: {}, owner: { active: false, message: "", lastseen: "" } }
+  //  console.log("AFK Data loaded:", JSON.stringify(afkData, null, 2))
+    
+    if (message.message && message.message.reactionMessage) {
+   //   console.log("Reaction message, returning")
+      return
     }
-  }
-  
-  if (message.sender === message.ownerJid && afkData.owner && afkData.owner.active) {
-    afkData.owner.active = false;
-    await saveAfkData(afkData);
-  }
+    if (!text) {
+    //  console.log("No text, returning")
+      return
+    }
+    
+    if (c && c.includes("afk")) {
+    //  console.log("AFK command, ignoring")
+      return
+    }
+    
+    if (afkData.users && afkData.users[user] && afkData.users[user].active) {
+    //  console.log("User is AFK, welcoming back")
+      afkData.users[user].active = false
+      await saveAfkData(afkData)
+      const timeDiff = Math.round((new Date()).getTime() / 1000) - afkData.users[user].lastseen
+      const timeStr = formatTime(timeDiff)
+      await message.send(`Welcome back @${user.split("@")[0]}!\nYou were afk for: *${timeStr}*`, {mentions: [user]})
+    }
+    
+    if (user === message.ownerJid && afkData.owner && afkData.owner.active) {
+    //  console.log("Owner returned from AFK")
+      afkData.owner.active = false
+      await saveAfkData(afkData)
+      return
+    }
+    
+    if (afkData.owner && afkData.owner.active && user !== message.ownerJid) {
+    //  console.log("Checking owner AFK notifications")
+      let shouldNotify = false
+      
+      if (message.mentionedJid && message.mentionedJid.includes(message.ownerJid)) {
+     //   console.log("Owner mentioned in mentionedJid")
+        shouldNotify = true
+      }
+      
+      if (text.includes(message.ownerJid) || text.includes(message.ownerJid.split('@')[0])) {
+       // console.log("Owner mentioned in text")
+        shouldNotify = true
+      }
+      
+      if (message.quoted.sender === message.ownerJid) {
+    //    console.log("Owner message quoted")
+        shouldNotify = true
+      }
+      
+    //  console.log("Should notify owner:", shouldNotify)
+      
+      if (shouldNotify) {
+        const timeDiff = Math.round((new Date()).getTime() / 1000) - afkData.owner.lastseen
+        const timeStr = formatTime(timeDiff)
+        await message.send(`*Owner is currently AFK.*\n*Reason:* ${afkData.owner.message || "Not specified"}\n*Last seen:* ${timeStr} ago`)
+        
+        const mesa = await message.forwardMessage(
+          message.ownerJid,
+          await global.store.findMsg(message.id),
+          { quoted: message }
+        )
+        await message.client.sendMessage(message.ownerJid, { 
+          text: `User: ${await global.store.getname(message.sender)}(${message.sender.split("@")[0]}) tagged/reply during afk, Message above:` 
+        }, { quoted: mesa })
+      }
+    }
+    
+//    console.log("Checking user AFK notifications")
+    for (const mentionedUser in afkData.users) {
+      if (afkData.users[mentionedUser] && 
+          afkData.users[mentionedUser].active && 
+          user !== mentionedUser) {
+        
+  //      console.log("Checking AFK user:", mentionedUser)
+        let shouldNotify = false
+        
+        if (message.mentionedJid && message.mentionedJid.includes(mentionedUser)) {
+    //      console.log("User mentioned in mentionedJid:", mentionedUser)
+          shouldNotify = true
+        }
+        
+        if (text.includes(mentionedUser) || text.includes(mentionedUser.split('@')[0])) {
+      //    console.log("User mentioned in text:", mentionedUser)
+          shouldNotify = true
+        }
+        
+        if (message.quoted && message.quoted.sender === mentionedUser) {
+        //  console.log("User message quoted:", mentionedUser)
+          shouldNotify = true
+        }
+        
+    //    console.log("Should notify user:", mentionedUser, shouldNotify)
+        
+        if (shouldNotify) {
+          const timeDiff = Math.round((new Date()).getTime() / 1000) - afkData.users[mentionedUser].lastseen
+          const timeStr = formatTime(timeDiff)
+          await message.send(`@${mentionedUser.split("@")[0]} *is currently AFK*.\n*Reason:* ${afkData.users[mentionedUser].message || "Not specified"}\n*Last seen:* ${timeStr} ago`, {mentions: [mentionedUser]})
+        }
+      }
+    }
+    
   } catch (e) {
-    console.log("cmd error", e)
-    return await m.sendErr(e)
+  //  console.log("cmd error", e)
+   // return await message.sendErr(e)
   }
 })
 

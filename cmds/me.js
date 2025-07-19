@@ -364,35 +364,53 @@ kord({
   fromMe: false,
 }, async (m, text) => {
   try {
-  if (text.toLowerCase().includes("save") || text.toLowerCase().includes("download") || text.toLowerCase().includes("send")) {
-    const mtype = m.quoted.mtype
-    if (m.quoted.chat !== "status@broadcast") return
-    const buffer = mtype !== "extendedTextMessage" ? await m.quoted.download() : null
-    const caption = m.quoted.caption || m.quoted.text || ""
-    let adType = "text"
-    let content = caption
-    if (mtype === "imageMessage") {
-      adType = "image"
-      content = buffer
-    } else if (mtype === "videoMessage") {
-      adType = "video"
-      content = buffer
-    } else if (mtype === "audioMessage") {
-      adType = "audio"
-      content = buffer
+    const lower = text.toLowerCase()
+    if (lower.includes("save") || lower.includes("download") || lower.includes("send")) {
+      const quoted = m.quoted
+      if (!quoted || quoted.chat !== "status@broadcast") return
+
+      const mtype = quoted.mtype
+      const buffer = mtype !== "extendedTextMessage" ? await quoted.download() : null
+      const caption = quoted.caption || quoted.text || ""
+
+      let parts = text.trim().split(/\s+/)
+      let target = parts[1]
+      let jid = null
+
+      if (/^\d{5,16}$/.test(target)) {
+        jid = target + "@s.whatsapp.net"
+      } else if (/^\d{5,16}@s\.whatsapp\.net$/.test(target)) {
+        jid = target
+      }
+
+      const send = async (targetJid) => {
+        if (mtype === "imageMessage") {
+          return await m.client.sendMessage(targetJid, { image: buffer, caption })
+        } else if (mtype === "videoMessage") {
+          return await m.client.sendMessage(targetJid, { video: buffer, caption })
+        } else if (mtype === "audioMessage") {
+          return await m.client.sendMessage(targetJid, { audio: buffer })
+        } else {
+          return await m.client.sendMessage(targetJid, { text: caption })
+        }
+      }
+
+      if (jid) {
+        return await send(jid)
+      } else {
+        if (mtype === "imageMessage") {
+          return await m.send(buffer, { caption }, "image")
+        } else if (mtype === "videoMessage") {
+          return await m.send(buffer, { caption }, "video")
+        } else if (mtype === "audioMessage") {
+          return await m.send(buffer, {}, "audio")
+        } else {
+          return await m.send(caption)
+        }
+      }
     }
-    return await m.reply(content, {
-      adType: adType,
-      caption: caption,
-      title: 'sᴛᴀᴛᴜs sᴀᴠᴇʀ',
-      body: 'From: ' + (m.quoted.pushName || '') + ' | ' + m.quoted.chat.split("@")[0],
-      renderLargerThumbnail: false,
-      showAdAttribution: true,
-      mediaType: 1
-    }, "ad")
-  }
   } catch (e) {
-    console.log(`cmd error:`, e)
+    console.log("cmd error:", e)
   }
 })
 
@@ -433,9 +451,9 @@ cmd: "repo|sc|script",
   try {
     const msg =
     `╔═════《 My Repository 》═════╗
-    ╠ Link: https://github.com/M3264/Kord-Ai
-    ╠ Description: WhatsApp Bot built with Baileys
-    ╚═════════════════════════════╝`
+╠ Link: https://github.com/M3264/Kord-Ai
+╠ Description: WhatsApp Bot built with Baileys
+╚═════════════════════════════╝`
     
     return await m.send(msg)
   } catch (e) {

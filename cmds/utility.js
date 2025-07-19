@@ -313,29 +313,42 @@ kord({
       !m.quoted?.viewOnce &&
       !m.quoted?.viewOnceMessageV2 &&
       m.quoted?.mtype !== 'viewOnceMessageV2Extension'
-    )
-      return await m.send("_*𝌫 Reply To A Viewonce Message*_");
+    ) return await m.send("_*𝌫 Reply To A Viewonce Message*_")
 
-    const damn = await m.client.dlandsave(m.quoted);
-    let msg;
+    const damn = await m.client.dlandsave(m.quoted)
+    let msg
 
     if (m.quoted.image || m.quoted.type === "imageMessage") {
-      msg = { image: { url: damn }, caption: m.quoted.caption || "" };
+      msg = { image: { url: damn }, caption: m.quoted.caption || "" }
     } else if (m.quoted.video || m.quoted.type === "videoMessage") {
-      msg = { video: { url: damn }, caption: m.quoted.caption || "" };
+      msg = { video: { url: damn }, caption: m.quoted.caption || "" }
     } else if (m.quoted.audio || m.quoted?.message?.audioMessage) {
-      msg = { audio: { url: damn }, ptt: false, caption: m.quoted.caption || "" };
+      msg = { audio: { url: damn }, ptt: false }
     } else {
-      await require("fs").promises.unlink(damn);
-      return await m.send("_*Unsupported media type*_");
+      await require("fs").promises.unlink(damn)
+      return await m.send("_*Unsupported media type*_")
     }
 
-    await m.client.sendMessage(m.chat, msg, { quoted: m });
-    await require("fs").promises.unlink(damn);
+    let target = text.trim()
+    let sendTo = m.chat
+
+    if (target === 'chat') {
+      sendTo = m.sender
+    } else if (target === 'owner') {
+      sendTo = m.ownerJid
+    } else if (/^\d{5,16}$/.test(target)) {
+    } else if (/^\d{5,16}$/.test(target)) {
+      sendTo = `${target}@s.whatsapp.net`
+    } else if (/^\d{5,16}@s\.whatsapp\.net$/.test(target)) {
+      sendTo = target
+    }
+
+    await m.client.sendMessage(sendTo, msg)
+    await require("fs").promises.unlink(damn)
   } catch (err) {
-    console.error("vv plugin", err);
+    console.error("vv plugin", err)
   }
-});
+})
 
 
 kord({
@@ -346,8 +359,10 @@ kord({
     if (text.toLowerCase().includes(config().VV_CMD)) {
       if (
         !m.quoted?.viewOnce &&
+        !m.quoted?.viewOnce &&
         !m.quoted?.viewOnceMessageV2 &&
-        m.quoted?.mtype !== "viewOnceMessageV2Extension"
+        m.quoted?.mtype !== "viewOnceMessageV2Extension" &&
+        m.quoted?.mtype !== "viewOnceMessageV2" 
       ) return
 
       const damn = await m.client.dlandsave(m.quoted)
