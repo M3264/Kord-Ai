@@ -14,7 +14,7 @@ const PDFDocument = require("pdfkit")
 const fetch = require("node-fetch")
 const { tiny, fancytext, listall } = require('../core/store/style-font');
 const os = require('os');
-const sharp = require('sharp');
+const Jimp = require('jimp');
 const ffmpeg = require('fluent-ffmpeg');
 const http = require('http')
 const { getDevice } = require('baileys')
@@ -688,11 +688,13 @@ kord({
     var opath = path.join(bin, `compressed_${Date.now()}.${ext}`)
     try {
       if (ext.match(/(jpg|jpeg|png|webp)/)) {
-                await sharp(pth)
-                    .resize({ width: 800 })
-                    .jpeg({ quality: 60 })
-                    .toFile(opath);
-          await m.send(fs.readFileSync(opath), { caption: "> compressed image.."}, 'image')
+      const image = await Jimp.read(pth);
+      await image
+    .resize(800, Jimp.AUTO)
+    .quality(60)
+    .writeAsync(opath);
+
+  await m.send(fs.readFileSync(opath), { caption: "> compressed image.." }, 'image')
       } else if (ext.match(/(mp4|mkv|avi)/)) {
                 await m.reply("*_Compressing video..._* This might take minutes.")
                 await new Promise((resolve, reject) => {
