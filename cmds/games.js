@@ -1,4 +1,4 @@
-const { kord, isAdmin, prefix, TicTacToe, wtype } = require("../core")
+const { kord, isAdmin, prefix, TicTacToe, WCG, wtype } = require("../core")
 
 kord({
   cmd: "delttt",
@@ -6,6 +6,7 @@ kord({
   fromMe: wtype,
   type: "game",
 }, async (m) => {
+  try {
   global.tictactoe = global.tictactoe || {}
   let found = Object.values(global.tictactoe).find(room => room.id.startsWith("tictactoe"))
   if (found) {
@@ -13,6 +14,10 @@ kord({
     return m.send("_Successfully Deleted running TicTacToe game._")
   } else {
     return m.send("No TicTacToe game🎮 is running.")
+  }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
   }
 })
 
@@ -22,6 +27,7 @@ kord({
   fromMe: wtype,
   type: "game"
 }, async (m, text) => {
+  try {
   global.tictactoe = global.tictactoe || {}
   let active = Object.values(global.tictactoe).find(room => room.id.startsWith("tictactoe") && [room.game.playerX, room.game.playerO].includes(m.sender))
   if (active) return m.send("_You're still in the game_")
@@ -49,12 +55,17 @@ kord({
     m.send(waitMsg, { mentions: [m.sender] })
     global.tictactoe[room.id] = room
   }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
   on: "text",
   fromMe: wtype
 }, async (m, text) => {
+  try {
   global.tictactoe = global.tictactoe || {}
   
   let waitingRoom = Object.values(global.tictactoe).find(room => 
@@ -112,6 +123,9 @@ kord({
   let mentions = [room.game.playerX, room.game.playerO, winner || room.game.currentTurn]
   await m.send(str, { mentions, quoted: m })
   if (isWin || isTie) delete global.tictactoe[room.id]
+  } catch (e) {
+    console.log("ttt error", e)
+  }
 })
 
 const wordChainGames = {}
@@ -352,6 +366,7 @@ kord({
   fromMe: wtype,
   type: 'game'
 }, async (m, text) => {
+  try {
   if (m.isBot) return
   
   const chat = m.chat
@@ -445,6 +460,10 @@ ${playerList}
       return await game.startGame(m)
     }
   }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
@@ -453,6 +472,7 @@ kord({
   fromMe: wtype,
   type: 'game'
 }, async (m) => {
+  try {
   if (m.isBot) return
   
   const chat = m.chat
@@ -484,11 +504,16 @@ ${game.wordsCount ? `📊 *Final Stats:*
 • Total words: ${game.wordsCount}
 • ${game.longestWordBy}
 • Chain: ${game.wordChain}` : ''}`)
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
 })
 
 kord({
   on: 'text'
 }, async (m, text) => {
+  try {
   if (m.isBot) return
 
   const chat = m.chat
@@ -718,5 +743,8 @@ Word not found in dictionary`)
     game.processingTurn = false
     await game.wait(2)
     return await m.send(msg, { mentions: [game.currentPlayer] })
+  }
+  } catch (e) {
+    console.log("wcg error", e)
   }
 })
