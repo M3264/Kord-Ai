@@ -354,7 +354,7 @@ kord({
     if (!mediaObj) mediaObj = m.quoted.message || m.quoted
 
     const damn = await m.client.dlandsave(mediaObj)
-    const type = getQ(m.quoted)
+    
     let msg
 
     if (type === 'image') {
