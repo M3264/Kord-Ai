@@ -301,6 +301,18 @@ try {
 }
 })
 
+function getQ(q) {
+  const msg = q?.message || q
+
+  if (msg?.imageMessage || msg?.viewOnceMessageV2?.message?.imageMessage)
+    return 'image'
+  if (msg?.videoMessage || msg?.viewOnceMessageV2?.message?.videoMessage)
+    return 'video'
+  if (msg?.audioMessage || msg?.viewOnceMessageV2?.message?.audioMessage)
+    return 'audio'
+  return null
+}
+
 kord({
   cmd: "vv",
   desc: "resend a viewonce media as a normal media",
@@ -316,15 +328,16 @@ kord({
       m.quoted?.mtype !== 'viewOnceMessageV2'
     ) return await m.send("_*𝌫 Reply To A Viewonce Message*_")
 
-    const damn = await m.client.dlandsave(m.quoted)
+    const damn = await m.client.dlandsave(m.quoted.message || m.quoted)
+    const type = getQ(m.quoted)
     let msg
 
-    if (m.quoted.image || m.quoted.type === "imageMessage") {
+    if (type === 'image') {
       msg = { image: { url: damn }, caption: m.quoted.caption || "" }
-    } else if (m.quoted.video || m.quoted.type === "videoMessage") {
+    } else if (type === 'video') {
       msg = { video: { url: damn }, caption: m.quoted.caption || "" }
-    } else if (m.quoted.audio || m.quoted?.message?.audioMessage) {
-      msg = { audio: { url: damn }, ptt: false }
+    } else if (type === 'audio') {
+      msg = { audio: { url: damn }, ptt: false, caption: m.quoted.caption || "" }
     } else {
       await require("fs").promises.unlink(damn)
       return await m.send("_*Unsupported media type*_")
@@ -338,7 +351,6 @@ kord({
     } else if (target === 'owner') {
       sendTo = m.ownerJid
     } else if (/^\d{5,16}$/.test(target)) {
-    } else if (/^\d{5,16}$/.test(target)) {
       sendTo = `${target}@s.whatsapp.net`
     } else if (/^\d{5,16}@s\.whatsapp\.net$/.test(target)) {
       sendTo = target
@@ -351,7 +363,6 @@ kord({
   }
 })
 
-
 kord({
   on: "all",
   fromMe: true,
@@ -360,20 +371,20 @@ kord({
     if (text.toLowerCase().includes(config().VV_CMD)) {
       if (
         !m.quoted?.viewOnce &&
-        !m.quoted?.viewOnce &&
         !m.quoted?.viewOnceMessageV2 &&
         m.quoted?.mtype !== "viewOnceMessageV2Extension" &&
-        m.quoted?.mtype !== "viewOnceMessageV2" 
+        m.quoted?.mtype !== "viewOnceMessageV2"
       ) return
 
-      const damn = await m.client.dlandsave(m.quoted)
+      const damn = await m.client.dlandsave(m.quoted.message || m.quoted)
+      const type = getQ(m.quoted)
       let msg
 
-      if (m.quoted.image || m.quoted.type === "imageMessage") {
+      if (type === 'image') {
         msg = { image: { url: damn }, caption: m.quoted.caption || "" }
-      } else if (m.quoted.video || m.quoted.type === "videoMessage") {
+      } else if (type === 'video') {
         msg = { video: { url: damn }, caption: m.quoted.caption || "" }
-      } else if (m.quoted.audio || m.quoted?.message?.audioMessage) {
+      } else if (type === 'audio') {
         msg = { audio: { url: damn }, ptt: false, caption: m.quoted.caption || "" }
       } else {
         await require("fs").promises.unlink(damn)
@@ -387,7 +398,6 @@ kord({
     console.error("Error in vv", e)
   }
 })
-
 kord({
   cmd: "pdf",
   desc: "Converts image to PDF or text to PDF",
