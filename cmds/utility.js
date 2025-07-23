@@ -336,7 +336,24 @@ kord({
       m.quoted?.mtype !== 'viewOnceMessageV2'
     ) return await m.send("_*𝌫 Reply To A Viewonce Message*_")
 
-    const damn = await m.client.dlandsave(m.quoted.message || m.quoted)
+    let mediaObj
+    const type = getQ(m.quoted)
+    
+    if (m.quoted?.mtype === 'viewOnceMessageV2') {
+      if (type === 'image') mediaObj = m.quoted.message.imageMessage
+      else if (type === 'video') mediaObj = m.quoted.message.videoMessage
+      else if (type === 'audio') mediaObj = m.quoted.message.audioMessage
+    }
+    
+    if (!mediaObj) {
+      if (type === 'image') mediaObj = m.quoted.imageMessage || m.quoted.message?.imageMessage
+      else if (type === 'video') mediaObj = m.quoted.videoMessage || m.quoted.message?.videoMessage
+      else if (type === 'audio') mediaObj = m.quoted.audioMessage || m.quoted.message?.audioMessage
+    }
+    
+    if (!mediaObj) mediaObj = m.quoted.message || m.quoted
+
+    const damn = await m.client.dlandsave(mediaObj)
     const type = getQ(m.quoted)
     let msg
 
@@ -371,6 +388,7 @@ kord({
   }
 })
 
+
 kord({
   on: "all",
   fromMe: true,
@@ -384,8 +402,24 @@ kord({
         m.quoted?.mtype !== "viewOnceMessageV2"
       ) return
 
-      const damn = await m.client.dlandsave(m.quoted.message || m.quoted)
+      let mediaObj
       const type = getQ(m.quoted)
+      
+      if (m.quoted?.mtype === 'viewOnceMessageV2') {
+        if (type === 'image') mediaObj = m.quoted.message.imageMessage
+        else if (type === 'video') mediaObj = m.quoted.message.videoMessage
+        else if (type === 'audio') mediaObj = m.quoted.message.audioMessage
+      }
+      
+      if (!mediaObj) {
+        if (type === 'image') mediaObj = m.quoted.imageMessage || m.quoted.message?.imageMessage
+        else if (type === 'video') mediaObj = m.quoted.videoMessage || m.quoted.message?.videoMessage
+        else if (type === 'audio') mediaObj = m.quoted.audioMessage || m.quoted.message?.audioMessage
+      }
+      
+      if (!mediaObj) mediaObj = m.quoted.message || m.quoted
+
+      const damn = await m.client.dlandsave(mediaObj)
       let msg
 
       if (type === 'image') {
@@ -406,6 +440,8 @@ kord({
     console.error("Error in vv", e)
   }
 })
+
+
 kord({
   cmd: "pdf",
   desc: "Converts image to PDF or text to PDF",
