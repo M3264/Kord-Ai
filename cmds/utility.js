@@ -37,7 +37,7 @@ kord({
          m.react("⏰")
         var links = await extractUrlsFromString(lik)
         var link = links[0]
-        
+
         var img = await fetch(`https://puppeteer-on-vercel-roan.vercel.app/ss?url=${encodeURIComponent(link)}&device=desktop`) //or mobile or tablet 
         var imgbuff = await img.buffer()
         return m.send(imgbuff, {caption: "> here\'s your screenshot", quoted: m}, "image")
@@ -64,7 +64,7 @@ kord({
                 m.react("⏰")
                 var links = await extractUrlsFromString(lik)
                 var link = links[0]
-                
+
                 var img = await fetch(`https://puppeteer-on-vercel-roan.vercel.app/ss?url=${encodeURIComponent(link)}&device=tablet`)  //or mobile or tablet 
                 var imgbuff = await img.buffer()
                 return m.send(imgbuff, {caption: "> here\'s your screenshot", quoted: m}, "image")
@@ -91,7 +91,7 @@ kord({
                 m.react("⏰")
                 var links = await extractUrlsFromString(lik)
                 var link = links[0]
-                
+
                 var img = await fetch(`https://puppeteer-on-vercel-roan.vercel.app/ss?url=${encodeURIComponent(link)}&device=mobile`)  //or mobile or tablet 
                 var imgbuff = await img.buffer()
                 return m.send(imgbuff, {caption: "> here\'s your screenshot", quoted: m}, "image")
@@ -208,7 +208,7 @@ cmd: "readmore",
   try {
     let txt = text || m.quoted?.text;
     if (!txt) return m.send(`_*provide or reply some text*_\n_example: ${prefix}readmore Hello this is visible |readmore| this is hidden_`);
-    
+
     const readmoreChar = String.fromCharCode(8206).repeat(4001);
     const rtext = txt.replace(/(\|readmore\|)/i, readmoreChar);
     return await m.send(rtext);
@@ -302,14 +302,22 @@ try {
 })
 
 function getQ(q) {
-  const msg = q?.message || q
+  if (q?.mtype === 'viewOnceMessageV2') {
+    if (q?.message?.imageMessage) return 'image'
+    if (q?.message?.videoMessage) return 'video'
+    if (q?.message?.audioMessage) return 'audio'
+  }
 
-  if (msg?.imageMessage || msg?.viewOnceMessageV2?.message?.imageMessage)
-    return 'image'
-  if (msg?.videoMessage || msg?.viewOnceMessageV2?.message?.videoMessage)
-    return 'video'
-  if (msg?.audioMessage || msg?.viewOnceMessageV2?.message?.audioMessage)
-    return 'audio'
+  if (q?.mtype === 'imageMessage') return 'image'
+  if (q?.mtype === 'videoMessage') return 'video'  
+  if (q?.mtype === 'audioMessage') return 'audio'
+
+  const msg = q?.message || q
+  
+  if (msg?.imageMessage) return 'image'
+  if (msg?.videoMessage) return 'video'
+  if (msg?.audioMessage) return 'audio'
+  
   return null
 }
 
@@ -356,7 +364,7 @@ kord({
       sendTo = target
     }
 
-    await m.client.sendMessage(sendTo, msg)
+    await m.client.sendMessage(sendTo, msg, { quoted: m })
     await require("fs").promises.unlink(damn)
   } catch (err) {
     console.error("vv plugin", err)
@@ -415,7 +423,7 @@ kord({
       pdf.end();
 
       await new Promise(resolve => writeStream.on('finish', resolve));
-      
+
       try {
         const buffer = fs.readFileSync(p);
         await m.send(
@@ -430,7 +438,7 @@ kord({
           fs.unlinkSync(p);
         } catch (unlinkErr) {}
       }
-      
+
       return;
     }
 
@@ -441,17 +449,17 @@ kord({
       const jpgFiles = fs.readdirSync(dir)
         .filter(file => file.toLowerCase().endsWith('.jpg'))
         .map(file => path.join(dir, file));
-      
+
       if (jpgFiles.length === 0) {
         return await m.send("_No images found in pdf folder._");
       }
-      
+
       const doc = new PDFDocument();
       const outputPath = "./image.pdf";
       const writeStream = fs.createWriteStream(outputPath);
-      
+
       doc.pipe(writeStream);
-      
+
       let imagesAdded = 0;
       for (const jpgPath of jpgFiles) {
         try {
@@ -466,15 +474,15 @@ kord({
           await m.send(`> Could not add image ${path.basename(jpgPath)}: ${imgErr.message}`);
         }
       }
-      
+
       if (imagesAdded === 0) {
         doc.text("No valid images were found to convert", 100, 100);
       }
-      
+
       doc.end();
-      
+
       await new Promise(resolve => writeStream.on('finish', resolve));
-      
+
       try {
         const buffer = fs.readFileSync(outputPath);
         await m.send(
@@ -485,7 +493,7 @@ kord({
       } catch (sendErr) {
         await m.send(`Failed to send PDF: ${sendErr.message}`);
       }
-      
+
       try {
         fs.unlinkSync(outputPath);
         fs.readdirSync(dir).forEach(file => {
@@ -522,7 +530,7 @@ kord({
           return await m.send(`Failed to save image: ${renameErr.message}`);
         }
       }
-      
+
       await m.send(`_*Images saved!*_\n_Total Images: ${fs.readdirSync(dir).length}_`);
     }
   } catch (err) {
@@ -584,7 +592,7 @@ cmd: "ngl",
     var user = a[0]?.trim()
     var msg = a.slice(1).join(":").trim()
     if (!msg) return await m.send(`_*provide msg*_\n_example: ${c} username:hello, i am a boy_`)
-    
+
     var res = await m.axios(`https://kord-api.vercel.app/ngl?username=${encodeURIComponent(user)}&message=${encodeURIComponent(msg)}`)
     if (res?.success) {
     return await m.send(`*Message Sent!*`)
@@ -635,7 +643,7 @@ cmd: "wiki",
     if (!text) return await m.send("*provide a query to search*")
     const data = await m.axios(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(text)}`);
     if (!data) return await m.send("*error!*")
-    
+
     return await m.send(`_*${data.title}*_\n\`\`\`${data.extract}\`\`\``)
   } catch (e) {
     console.log("cmd error", e)
@@ -677,7 +685,7 @@ cmd: "font",
   }
   const num = parseInt(text.split(" ")[0], 10);
   if (isNaN(num)) return await m.send("*invalid font number!*\n_example: fancy 1 kord_")
-  
+
   const txt = await fancytext(text.slice(text.indexOf(' ') + 1), num);
   return await m.send(`${txt}`)
   } catch (e) {
