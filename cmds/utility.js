@@ -312,7 +312,8 @@ kord({
     if (
       !m.quoted?.viewOnce &&
       !m.quoted?.viewOnceMessageV2 &&
-      m.quoted?.mtype !== 'viewOnceMessageV2Extension'
+      m.quoted?.mtype !== 'viewOnceMessageV2Extension' &&
+      m.quoted?.mtype !== 'viewOnceMessageV2'
     ) return await m.send("_*𝌫 Reply To A Viewonce Message*_")
 
     const damn = await m.client.dlandsave(m.quoted)
