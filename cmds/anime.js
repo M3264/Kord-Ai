@@ -100,18 +100,18 @@ kord({
 
 kord({
     cmd: "animequote",
-    desc: "get random anime quotes",
+    desc: "get random anime quote",
     type: "anime",
     fromMe: wtype,
     react: "💭"
 }, async(m) => {
     try {
-        const res = await fetch("https://animechan.xyz/api/random")
-        const quote = await res.json()
-
+        const res = await fetch("https://yurippe.vercel.app/api/quotes?random=1")
+        const quot = await res.json()
+        const quote = quot[0]
         const msg = `💬 *Quote:* ${quote.quote}\n\n`
                 + `👤 *Character:* ${quote.character}\n`
-                + `📺 *Anime:* ${quote.anime}`
+                + `📺 *Show:* ${quote.show}`
 
         return m.send(msg)
     } catch(e) {
