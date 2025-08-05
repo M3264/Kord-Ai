@@ -509,6 +509,8 @@ kord({
   fromMe: false,
 }, async (m) => {
   try {
+    if (m.ownerJid === m.sender) return
+
     let global = await getData("pfilter") || {}
     let gmatch = global["pm"]?.[m.body?.toLowerCase()]
     if (gmatch) {
