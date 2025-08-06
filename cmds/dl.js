@@ -568,7 +568,7 @@ kord({
                 if (!lik) return m.send("_*reply/provide a tiktok link!*_");
                 m.react("⏰");
                 var links = await extractUrlsFromString(lik);
-                const ttregex = /https:\/\/(?:www\.|vm\.)tiktok\.com\/(@[\w.-]+\/)?(video|photo)\/\d+/;
+                const ttregex = /https:\/\/(?:www\.|vm\.|m\.|vt\.)?tiktok\.com\/(?:(@[\w.-]+\/(?:video|photo)\/\d+)|v\/\d+\.html|[\w-]+\/?)(?:\?.*)?$/
                 var link = links.find(url => ttregex.test(url));
                 const dta = await fetch(`https://kord-api.vercel.app/tik-img?url=${encodeURIComponent(link)}`);
                 const data = await dta.json();
