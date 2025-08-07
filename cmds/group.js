@@ -190,9 +190,11 @@ cmd: "kick",
     var botAd = await isBotAdmin(m);
     if (!botAd) return await m.send("_*✘Bot Needs To Be Admin!*_");
     
-    var user = m.mentionedJid[0] || m.quoted?.sender || text;
+    var user = m.mentionedJid[0] || m.quoted?.sender || text
+    
+    if (!user) return await m.send("_✘ Reply to or mention a member_");
+    
     user = (user.includes('@') ? user.split('@')[0] : user).replace(/\D/g, '') + '@s.whatsapp.net'
-    if(!user) return await m.send("_✘ Reply to or mention a member_");
     
     if (text === "all") {
     var res = await m.send("_✘ Reply \"confirm\" to continue_")
