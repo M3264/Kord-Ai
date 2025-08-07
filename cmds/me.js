@@ -45,38 +45,40 @@ cmd: 'ping',
 });
 
 kord({
-cmd: "ban",
+  cmd: "ban",
   desc: "bans a user from using the bot",
   fromMe: true,
   type: "bot"
 }, async (m, text) => {
   try {
-    let user;
+    let user
     if (m.isGroup) {
-    if (m.mentionedJid?.length) {
-    user = m.mentionedJid[0]
-    } else if (m.quoted?.sender) {
-    user = m.quoted.sender
-    } else {
-    return m.send("_reply or mention a user_");
-    }
+      if (m.mentionedJid?.length) {
+        user = m.mentionedJid[0]
+      } else if (m.quoted?.sender) {
+        user = m.quoted.sender
+      } else {
+        return m.send("_reply or mention a user_")
+      }
     } else if (text) {
-    user = text.replace(/[^\d]/g, '');
+      user = text.replace(/[^\d]/g, '')
     } else {
-    user = m.chat
+      user = m.chat
     }
-    
+
     if (!user) return m.send("_reply or mention a user_")
-    let sdata = await getData("banned");
-    if (!Array.isArray(sdata)) sdata = [];
-    let isExist = sdata.includes(user);
-    if (isExist) {
-    return m.send("_user is already banned_")
-    } else {
+    if (user === m.ownerJid) return m.send("_why would you want to do that?_")
+
+    let sdata = await getData("banned")
+    if (!Array.isArray(sdata)) sdata = []
+
+    if (sdata.includes(user)) {
+      return m.send("_user is already banned_")
+    }
+
     sdata.push(user)
     await storeData("banned", JSON.stringify(sdata, null, 2))
     return m.send("_user is now banned_")
-    }
   } catch (e) {
     console.log("cmd error", e)
     return await m.sendErr(e)
@@ -84,35 +86,40 @@ cmd: "ban",
 })
 
 kord({
-cmd: "unban",
+  cmd: "unban",
   desc: "unbans an already banned user",
   fromMe: true,
-  type: "bot",
+  type: "bot"
 }, async (m, text) => {
   try {
-    let user;
+    let user
     if (m.chat.endsWith("@g.us")) {
-    if (m.mentionedJid?.length) {
-    user = m.mentionedJid[0];
-    } else if (m.quoted?.sender) {
-    user = m.quoted.sender;
-    } else {
-    return m.send("_reply or mention a user_");
-    }
+      if (m.mentionedJid?.length) {
+        user = m.mentionedJid[0]
+      } else if (m.quoted?.sender) {
+        user = m.quoted.sender
+      } else {
+        return m.send("_reply or mention a user_")
+      }
     } else if (text) {
-    user = text.replace(/[^\d]/g, '');
+      user = text.replace(/[^\d]/g, '')
     } else {
-    user = m.chat
+      user = m.chat
     }
-    
+
     if (!user) return m.send("_reply or mention a user_")
-    let sdata = await getData("banned");
-    if (!Array.isArray(sdata)) sdata = [];
-    let isExist = sdata.includes(user);
-    if (!isExist) return m.send("_user is not banned currently_")
+    if (user === m.ownerJid) return m.send("_why would you do that?_")
+
+    let sdata = await getData("banned")
+    if (!Array.isArray(sdata)) sdata = []
+
+    if (!sdata.includes(user)) {
+      return m.send("_user is not banned currently_")
+    }
+
     sdata = sdata.filter(entry => entry !== user)
     await storeData("banned", JSON.stringify(sdata, null, 2))
-    return m.send("_user is now unbaned_")
+    return m.send("_user is now unbanned_")
   } catch (e) {
     console.log("cmd error", e)
     return await m.sendErr(e)
