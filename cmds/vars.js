@@ -686,3 +686,33 @@ cmd: "statusemoji",
     return await m.sendErr(e)
   }
 })
+
+kord({
+  cmd: "savecmd",
+  desc: "set save emoji",
+  fromMe: true,
+  type: "config",
+}, async (m, text) => {
+  try {
+    if (!text) return await m.send("_provide an emoji_\n_example: savecmd 🤍")
+    await updateAllConfig("SAVE_CMD", text, m)
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
+})
+
+kord({
+  cmd: "vvcmd",
+  desc: "set vv emoji",
+  fromMe: true,
+  type: "config",
+}, async (m, text) => {
+  try {
+    if (!text) return await m.send("_provide an emoji_\n_example: vvcmd 🤍")
+    await updateAllConfig("VV_CMD", text, m)
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
+})

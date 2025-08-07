@@ -191,6 +191,7 @@ cmd: "kick",
     if (!botAd) return await m.send("_*✘Bot Needs To Be Admin!*_");
     
     var user = m.mentionedJid[0] || m.quoted?.sender || text;
+    user = (user.includes('@') ? user.split('@')[0] : user).replace(/\D/g, '') + '@s.whatsapp.net'
     if(!user) return await m.send("_✘ Reply to or mention a member_");
     
     if (text === "all") {
@@ -212,7 +213,7 @@ cmd: "kick",
     const jid = parsedJid(user);
     await m.client.groupParticipantsUpdate(m.chat, [jid], "remove");
     if (config().KICK_AND_BLOCK) await m.client.updateBlockStatus(jid, "block");
-    await m.send(`_*✓ @${jid[0].split("@")[0]} kicked*_`, { mentions: [jid] });
+    await m.send(`_*✓ @${jid.split("@")[0]} kicked*_`, { mentions: [jid] });
   }
   } catch (e) {
     console.log("cmd error", e)
@@ -236,7 +237,7 @@ cmd: "promote",
     if(await isadminn(m, user)) return await m.send("✘ Member is already admin")
     let jid = parsedJid(user);
     await m.client.groupParticipantsUpdate(m.chat, [jid], "promote");
-    return await m.send(`_*✓ @${jid[0].split("@")[0]} promoted*_`, { mentions: [jid] });
+    return await m.send(`_*✓ @${jid.split("@")[0]} promoted*_`, { mentions: [jid] });
   } catch (e) {
     console.log("cmd error", e)
     return await m.sendErr(e)
@@ -259,7 +260,7 @@ cmd: "demote",
     if(!await isadminn(m, user)) return await m.send("✘ Member is not admin")
     let jid = parsedJid(user);
     await m.client.groupParticipantsUpdate(m.chat, [jid], "demote");
-    return await m.send(`✓ @${jid[0].split("@")[0]} demoted`, { mentions: [jid] });
+    return await m.send(`✓ @${jid.split("@")[0]} demoted`, { mentions: [jid] });
   } catch (e) {
     console.log("cmd error", e)
     return await m.sendErr(e)
@@ -660,10 +661,10 @@ on: "all",
     if (isExist && !admins.includes(m.sender)) {
     var act = isExist.action
     if (act === "del") {
-    await m.client.sendMessage(m.key.remoteJid, { delete: m.key });
+    await m.send(m, {}, "delete")
       return await m.send(`_*Bots are not Allowed!!*_`)
     } else if (act === "kick") {
-      await m.client.sendMessage(m.key.remoteJid, { delete: m.key });
+      await m.send(m, {}, "delete")
       await m.send(`_*Bots are not Allowed!!*_\n_Goodbye!!_`)
       await m.client.groupParticipantsUpdate(cJid, [m.sender], 'remove');
     } else if (act === "warn") {
@@ -677,10 +678,10 @@ on: "all",
 _You are warned!_
 Warning(s): (${cCount}/${maxC})`
       await m.send(`${rmsg}`)
-      await m.client.sendMessage(m.key.remoteJid, { delete: m.key });
+      await m.send(m, {}, "delete")
       }
       if (cCount >= maxC) {
-        await m.client.sendMessage(m.key.remoteJid, { delete: m.key });
+        await m.send(m, {}, "delete")
         await m.send(`_*Max Warning Exceeded!!*_\n_Goodbye!!!_`)
         await m.client.groupParticipantsUpdate(cJid, [m.sender], 'remove');
         wCount.delete(cJid)
@@ -706,130 +707,178 @@ cmd: "events|gcevent|grpevents",
   type: "group",
 }, async (m, text) => {
   try {
-    var botAd = await isBotAdmin(m);
-    if (!botAd) return await m.send("_*✘Bot Needs To Be Admin!*_");
+    var botAd = await isBotAdmin(m)
+    if (!botAd) return await m.send("_*✘Bot Needs To Be Admin!*_")
     
     var gdata = await getData('group_events') || {}
-    const jid = m.chat;
+    const jid = m.chat
+    
+    const defaultWelcome = config().WELCOME_MSG || `╭━━━々 𝚆 𝙴 𝙻 𝙲 𝙾 𝙼 𝙴 々━━━╮
+┃ ➺ *々 Welcome @user! to @gname*
+┃ ➺ *々 Members: @count*
+┃ ➺ We Hope You Have A Nice Time Here!
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━`
+    
+    const defaultGoodbye = config().GOODBYE_MSG || `╭━━━々 𝙶 𝙾 𝙾 𝙳 𝙱 𝚈 𝙴 々━━━╮
+┃ ➺ *々 @user! left @gname!*
+┃ ➺ *々 Members: @count*
+┃ ➺ We Hope He/She Had A Nice Time Here!
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━`
     
     gdata[jid] = gdata[jid] || {
-    events: false,
-    add: false,
-    remove: false,
-    promote: false,
-    demote: false,
-    antipromote: false,
-    antidemote: false,
-    welcome: `╭━━━々 𝚆 𝙴 𝙻 𝙲 𝙾 𝙼 𝙴 々━━━╮
-    ┃ ➺ *々 Welcome @user! to @gname*
-    ┃ ➺ *々 Members: @count*
-    ┃ ➺ We Hope You Have A Nice Time Here!
-    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
-    goodbye: `╭━━━々 𝙶 𝙾 𝙾 𝙳 𝙱 𝚈 𝙴 々━━━╮
-    ┃ ➺ *々 @user! left @gname!*
-    ┃ ➺ *々 Members: @count*
-    ┃ ➺ We Hope He/She Had A Nice Time Here!
-    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━`
-    };
-    var parts = text.split(" ");
-    var cmd = parts[0]?.toLowerCase();
-    var value = parts[1]?.toLowerCase();
+      events: false,
+      add: false,
+      remove: false,
+      promote: false,
+      demote: false,
+      antipromote: false,
+      antidemote: false,
+      welcome: defaultWelcome,
+      goodbye: defaultGoodbye
+    }
+    
+    var parts = text.split(" ")
+    var cmd = parts[0]?.toLowerCase()
+    var value = parts[1]?.toLowerCase()
+    
     if (!cmd) {
-    let status = gdata[jid].events ? "enabled" : "disabled";
-    return await m.send(`*_Group Events Settings_*
-    _*Usage:*_
-    _events on/off - Enable/disable all events_
-    _events clear - clear the group events settings_
-    _events welcome on/off - Toggle welcome messages_
-    _events goodbye on/off - Toggle goodbye messages_
-    _events promote on/off - Toggle promotion alerts_
-    _events demote on/off - Toggle demotion alerts_
-    _events antipromote on/off - Toggle anti-promotion_
-    _events antidemote on/off - Toggle anti-demotion_
-    _events setwelcome text - Set welcome message_
-    _events setgoodbye text - Set goodbye message_`);
+      let status = gdata[jid].events ? "enabled" : "disabled"
+      return await m.send(`*_Group Events Settings_*
+_*Usage:*_
+_events on/off - Enable/disable all events_
+_events clear - clear the group events settings_
+_events welcome on/off - Toggle welcome messages_
+_events goodbye on/off - Toggle goodbye messages_
+_events promote on/off - Toggle promotion alerts_
+_events demote on/off - Toggle demotion alerts_
+_events antipromote on/off - Toggle anti-promotion_
+_events antidemote on/off - Toggle anti-demotion_
+_events setwelcome text - Set welcome message_
+_events setgoodbye text - Set goodbye message_
+
+*Available Variables:*
+@user or &user - Username
+@gname or &gname - Group name  
+@gdesc or &gdesc - Group description
+@count or &count - Member count
+@time or &time - Current time
+@pp or &pp - Include profile picture
+@ad or &ad - Include external ad reply`)
     }
+    
     if (cmd === "on" || cmd === "enable") {
-    gdata[jid].events = true;
-    gdata[jid].add = true,
-    gdata[jid].remove = true,
-    gdata[jid].promote = true,
-    gdata[jid].demote = true,
-    gdata[jid].antipromote = true,
-    gdata[jid].antidemote = true,
-    await storeData('group_events', gdata);
-    return await m.send("✓ Group events notifications enabled");
+      gdata[jid].events = true
+      gdata[jid].add = true
+      gdata[jid].remove = true
+      gdata[jid].promote = true
+      gdata[jid].demote = true
+      gdata[jid].antipromote = true
+      gdata[jid].antidemote = true
+      gdata[jid].welcome = defaultWelcome
+      gdata[jid].goodbye = defaultGoodbye
+      await storeData('group_events', gdata)
+      return await m.send("✓ Group events notifications enabled with default messages")
     }
+    
     if (cmd === "off" || cmd === "disable") {
-    gdata[jid].events = false;
-    await storeData('group_events', gdata);
-    return await m.send("✓ Group events notifications disabled");
+      gdata[jid].events = false
+      await storeData('group_events', gdata)
+      return await m.send("✓ Group events notifications disabled")
     }
+    
     if (cmd === "clear") {
-    delete gdata[jid].events
-    await storeData('group_events', gdata);
-    return await m.send("✓ Group events notifications cleared");
+      delete gdata[jid]
+      await storeData('group_events', gdata)
+      return await m.send("✓ Group events notifications cleared")
     }
+    
     if (cmd === "status") {
-    return await m.send(`*Events Status:* ${gdata[jid].events ? "on" : "off"}
-    *Welcome:* ${gdata[jid].add ? "on" : "off"}
-    *Goodbye:* ${gdata[jid].remove ? "on" : "off"}
-    *Promote:* ${gdata[jid].promote ? "on" : "off"}
-    *Demote:* ${gdata[jid].demote ? "on" : "off"}
-    *Anti-Promote:* ${gdata[jid].antipromote ? "on" : "off"}
-    *Anti-Demote:* ${gdata[jid].antidemote ? "on" : "off"}`)
+      return await m.send(`*Events Status:* ${gdata[jid].events ? "on" : "off"}
+*Welcome:* ${gdata[jid].add ? "on" : "off"}
+*Goodbye:* ${gdata[jid].remove ? "on" : "off"}
+*Promote:* ${gdata[jid].promote ? "on" : "off"}
+*Demote:* ${gdata[jid].demote ? "on" : "off"}
+*Anti-Promote:* ${gdata[jid].antipromote ? "on" : "off"}
+*Anti-Demote:* ${gdata[jid].antidemote ? "on" : "off"}`)
     }
+    
     if (cmd === "welcome") {
-    if (value !== "on" && value !== "off") return await m.send("✘ Please specify on or off");
-    gdata[jid].add = value === "on" ? true : false;
-    await storeData('group_events', gdata);
-    return await m.send(`✓ Welcome messages turned ${value}`);
+      if (value !== "on" && value !== "off") return await m.send("✘ Please specify on or off")
+      gdata[jid].add = value === "on" ? true : false
+      await storeData('group_events', gdata)
+      return await m.send(`✓ Welcome messages turned ${value}`)
     }
+    
     if (cmd === "goodbye") {
-    if (value !== "on" && value !== "off") return await m.send("✘ Please specify on or off");
-    gdata[jid].remove = value === "on" ? true : false;
-    await storeData('group_events', gdata);
-    return await m.send(`✓ Goodbye messages turned ${value}`);
+      if (value !== "on" && value !== "off") return await m.send("✘ Please specify on or off")
+      gdata[jid].remove = value === "on" ? true : false
+      await storeData('group_events', gdata)
+      return await m.send(`✓ Goodbye messages turned ${value}`)
     }
+    
     if (cmd === "promote") {
-    if (value !== "on" && value !== "off") return await m.send("✘ Please specify on or off");
-    gdata[jid].promote = value === "on" ? true : false;
-    await storeData('group_events', gdata);
-    return await m.send(`✓ Promotion alerts turned ${value}`);
+      if (value !== "on" && value !== "off") return await m.send("✘ Please specify on or off")
+      gdata[jid].promote = value === "on" ? true : false
+      await storeData('group_events', gdata)
+      return await m.send(`✓ Promotion alerts turned ${value}`)
     }
+    
     if (cmd === "demote") {
-    if (value !== "on" && value !== "off") return await m.send("✘ Please specify on or off");
-    gdata[jid].demote = value === "on" ? true : false;
-    await storeData('group_events', gdata);
-    return await m.send(`✓ Demotion alerts turned ${value}`);
+      if (value !== "on" && value !== "off") return await m.send("✘ Please specify on or off")
+      gdata[jid].demote = value === "on" ? true : false
+      await storeData('group_events', gdata)
+      return await m.send(`✓ Demotion alerts turned ${value}`)
     }
+    
     if (cmd === "antipromote") {
-    if (value !== "on" && value !== "off") return await m.send("✘ Please specify on or off");
-    gdata[jid].antipromote = value === "on" ? true : false;
-    await storeData('group_events', gdata);
-    return await m.send(`✓ Anti-promotion ${value === "on" ? "enabled" : "disabled"}`);
+      if (value !== "on" && value !== "off") return await m.send("✘ Please specify on or off")
+      gdata[jid].antipromote = value === "on" ? true : false
+      await storeData('group_events', gdata)
+      return await m.send(`✓ Anti-promotion ${value === "on" ? "enabled" : "disabled"}`)
     }
+    
     if (cmd === "antidemote") {
-    if (value !== "on" && value !== "off") return await m.send("✘ Please specify on or off");
-    gdata[jid].antidemote = value === "on" ? true : false;
-    await storeData('group_events', gdata);
-    return await m.send(`✓ Anti-demotion ${value === "on" ? "enabled" : "disabled"}`);
+      if (value !== "on" && value !== "off") return await m.send("✘ Please specify on or off")
+      gdata[jid].antidemote = value === "on" ? true : false
+      await storeData('group_events', gdata)
+      return await m.send(`✓ Anti-demotion ${value === "on" ? "enabled" : "disabled"}`)
     }
+    
     if (cmd === "setwelcome") {
-    let newMsg = text.replace(cmd, "").trim();
-    if (!newMsg) return await m.send("✘ provide the welcome message text\nAvaliable Usage: @user - Username\n@gname - Group name\n@gdesc - Group description\n@count - Member count\n@time - Current time")
-    gdata[jid].welcome = newMsg;
-    await storeData('group_events', gdata);
-    return await m.send("✓ Welcome message updated\n\n" + newMsg);
+      let newMsg = text.replace(cmd, "").trim()
+      if (!newMsg) return await m.send(`✘ Provide the welcome message text
+
+*Available Variables:*
+@user or &user - Username
+@gname or &gname - Group name
+@gdesc or &gdesc - Group description  
+@count or &count - Member count
+@time or &time - Current time
+@pp or &pp - Include profile picture
+@ad or &ad - Include external ad reply`)
+      gdata[jid].welcome = newMsg
+      await storeData('group_events', gdata)
+      return await m.send("✓ Welcome message updated\n\n" + newMsg)
     }
+    
     if (cmd === "setgoodbye") {
-    let newMsg = text.replace(cmd, "").trim();
-    if (!newMsg) return await m.send("✘ provide the goodbye message text\nAvaliable Usage: @user - Username\n@gname - Group name\n@gdesc - Group description\n@count - Member count\n@time - Current time");
-    gdata[jid].goodbye = newMsg;
-    await storeData('group_events', gdata);
-    return await m.send("✓ Goodbye message updated\n\n" + newMsg);
+      let newMsg = text.replace(cmd, "").trim()
+      if (!newMsg) return await m.send(`✘ Provide the goodbye message text
+
+*Available Variables:*
+@user or &user - Username
+@gname or &gname - Group name
+@gdesc or &gdesc - Group description
+@count or &count - Member count
+@time or &time - Current time
+@pp or &pp - Include profile picture
+@ad or &ad - Include external ad reply`)
+      gdata[jid].goodbye = newMsg
+      await storeData('group_events', gdata)
+      return await m.send("✓ Goodbye message updated\n\n" + newMsg)
     }
-    return await m.send("✘ Invalid option. Use 'events' without parameters to see available commands.");
+    
+    return await m.send("✘ Invalid option. Use 'events' without parameters to see available commands.")
   } catch (e) {
     console.log("cmd error", e)
     return await m.sendErr(e)
@@ -1005,7 +1054,7 @@ on: "all",
     else if (d.action === "delete") {
       try {
         await m.send(m, {}, "delete")
-        return await m.send(`\`\`\`@${m.sender.split("@")[0]}\`\`\`\n\`\`\`Links Are Not Allowed!!\`\`\``, { mentions: [m.sender], q: false })
+        return await m.send(`\`\`\`@${m.sender.split("@")[0]}\`\`\`Links Are Not Allowed!!\`\`\``, { mentions: [m.sender], q: false })
       } catch (e) {
         console.error("err deleting in antilink", e)
       }
@@ -1311,12 +1360,15 @@ cmd: "warn",
     var aa = await warn.addWarn(m.chat, user, `${text ? text : null}`, m.sender)
     var wc = await warn.getWcount(m.chat, user)
     if (wc < config().WARNCOUNT) {
-    if (aa.timestamp) return await m.send(
+    if (aa.timestamp) { 
+      await m.send(m.quoted, {}, "delete")
+      return await m.send(
     `┏┅┅ 『 *WARNING* 』┅┅┓
 ┇ *User:* @${user.split("@")[0]}
 ┇ *Reason:* ${text ? text : "not specified"}
 ┇ *WarnCounts:* ${wc}
 ┗┉By: @${m.sender.split("@")[0]}`, {mentions: [user, m.sender] })
+}
     return await m.send("some error occurred...")
   } else {
     await m.send("*Warnings Exceeded!*\n_*Goodbye!*_")
@@ -1454,10 +1506,10 @@ on: "all",
     if (isExist && !admins.includes(m.sender)) {
     var act = isExist.action
     if (act === "del") {
-    await m.client.sendMessage(m.key.remoteJid, { delete: m.key });
+    await m.send(m, {}, "delete")
       return await m.send(`_*Status Mention is not Allowed!!*_`)
     } else if (act === "kick") {
-      await m.client.sendMessage(m.key.remoteJid, { delete: m.key });
+      await m.send(m, {}, "delete")
       await m.send(`_*Status Mention is not Allowed!!*_\n_Goodbye!!_`)
       await m.client.groupParticipantsUpdate(cJid, [m.sender], 'remove');
     } else if (act === "warn") {
@@ -1471,10 +1523,9 @@ on: "all",
 _You are warned!_
 Warning(s): (${cCount}/${maxC})`
       await m.send(`${rmsg}`)
-      await m.client.sendMessage(m.key.remoteJid, { delete: m.key });
-      }
+      await m.send(m, {}, "delete")
       if (cCount >= maxC) {
-        await m.client.sendMessage(m.key.remoteJid, { delete: m.key });
+        await m.send(m, {}, "delete")
         await m.send(`_*Max Warning Exceeded!!*_\n_Goodbye!!!_`)
         await m.client.groupParticipantsUpdate(cJid, [m.sender], 'remove');
         wCount.delete(cJid)
@@ -1483,6 +1534,7 @@ Warning(s): (${cCount}/${maxC})`
   }
   } else return;
   }
+    }
   } catch (e) {
     console.log("cmd error", e)
     return await m.sendErr(e)

@@ -44,6 +44,7 @@ cmd: 'ping',
   }
 });
 
+
 kord({
   cmd: "ban",
   desc: "bans a user from using the bot",
@@ -125,7 +126,6 @@ kord({
     return await m.sendErr(e)
   }
 })
-
 kord({
 cmd: "banlist",
   desc: "shows all banned users",
@@ -421,6 +421,52 @@ kord({
   }
 })
 
+kord({
+  on: "all",
+  fromMe: false,
+}, async (m, text) => {
+  try {
+    const lower = text.toLowerCase()
+    if (lower.includes(config().SAVE_CMD)) {
+      const quoted = m.quoted
+      if (!quoted || quoted.chat !== "status@broadcast") return
+
+      const mtype = quoted.mtype
+      const buffer = mtype !== "extendedTextMessage" ? await quoted.download() : null
+      const caption = quoted.caption || quoted.text || ""
+      let jid = m.ownerJid
+      let targetJid = m.ownerJid
+
+      const send = async (targetJid) => {
+        if (mtype === "imageMessage") {
+          return await m.client.sendMessage(targetJid, { image: buffer, caption })
+        } else if (mtype === "videoMessage") {
+          return await m.client.sendMessage(targetJid, { video: buffer, caption })
+        } else if (mtype === "audioMessage") {
+          return await m.client.sendMessage(targetJid, { audio: buffer })
+        } else {
+          return await m.client.sendMessage(targetJid, { text: caption })
+        }
+      }
+
+      if (jid) {
+        return await send(jid)
+      } else {
+        if (mtype === "imageMessage") {
+          return await m.send(buffer, { caption }, "image")
+        } else if (mtype === "videoMessage") {
+          return await m.send(buffer, { caption }, "video")
+        } else if (mtype === "audioMessage") {
+          return await m.send(buffer, {}, "audio")
+        } else {
+          return await m.send(caption)
+        }
+      }
+    }
+  } catch (e) {
+    console.log("cmd error:", e)
+  }
+})
 
 kord({
 cmd: "owner",
@@ -429,16 +475,17 @@ cmd: "owner",
   type: "bot"
 }, async (m, text) => {
   try {
-    const vcard = `BEGIN:VCARD
-    VERSION:3.0
-    FN:${config().OWNER_NAME}
-    TEL;type=CELL;type=VOICE;waid=${config().OWNER_NUMBER}:${config().OWNER_NUMBER}
-    END:VCARD`
+    const vcard = `
+BEGIN:VCARD
+VERSION:3.0
+FN:${config().OWNER_NAME}
+TEL;type=CELL;type=VOICE;waid=${config().OWNER_NUMBER}:${config().OWNER_NUMBER}
+END:VCARD`
     
     const contactMsg = {
     contacts: {
-    displayName: config().OWNER_NAME,
-    contacts: [{ vcard }]
+      displayName: config().OWNER_NAME,
+      contacts: [{ vcard }]
     }
     }
     
