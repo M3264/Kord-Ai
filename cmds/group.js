@@ -943,6 +943,7 @@ ${c} off\`\`\``
     data[m.chat].active = true
     data[m.chat].action = "delete"
     await storeData("antilink", data)
+   return await m.send(`\`\`\`▸ ❏ Antilink Enabled: delete\`\`\``)
     }
     else if (cmd === "warn") {
     if (isActive && data[m.chat].action === "warn") {
