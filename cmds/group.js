@@ -1056,7 +1056,7 @@ on: "all",
     else if (d.action === "delete") {
       try {
         await m.send(m, {}, "delete")
-        return await m.send(`\`\`\`@${m.sender.split("@")[0]}\`\`\`Links Are Not Allowed!!\`\`\``, { mentions: [m.sender], q: false })
+        return await m.send(`\`\`\`@${m.sender.split("@")[0]} Links Are Not Allowed!!\`\`\``, { mentions: [m.sender], q: false })
       } catch (e) {
         console.error("err deleting in antilink", e)
       }
