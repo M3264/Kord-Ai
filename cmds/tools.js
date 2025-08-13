@@ -387,7 +387,7 @@ kord({
             return;
           }
           var jidd = m.chat
-          if (text.includes(config().OWNER_NUMBER) || text.includes(m.ownerJid)) {
+          if (text.includes(config().OWNER_NUMBER) || text.includes(m.ownerJid) || m.mentionedJid.includes(m.ownerJid)) {
             if (MData.action === "react") {
             var pEmoji = MData.emoji
             return await m.client.sendMessage(jidd, { react: { text: pEmoji, key: m.key } })
@@ -479,32 +479,20 @@ kord({
   on: "all",
 }, async (message, text, c, store) => {
   try {
- //   console.log("AFK Handler triggered")
-  //  const user = message.sender
- //   console.log("User:", user)
-   // console.log("OwnerJid:", message.ownerJid)
-    //console.log("Text:", text)
-    //console.log("MentionedJid:", message.mentionedJid)
-    
     const afkData = await loadAfkData() || { users: {}, owner: { active: false, message: "", lastseen: "" } }
-  //  console.log("AFK Data loaded:", JSON.stringify(afkData, null, 2))
-    
+    const user = message.sender
     if (message.message && message.message.reactionMessage) {
-   //   console.log("Reaction message, returning")
       return
     }
     if (!text) {
-    //  console.log("No text, returning")
       return
     }
     
     if (c && c.includes("afk")) {
-    //  console.log("AFK command, ignoring")
       return
     }
     
     if (afkData.users && afkData.users[user] && afkData.users[user].active) {
-    //  console.log("User is AFK, welcoming back")
       afkData.users[user].active = false
       await saveAfkData(afkData)
       const timeDiff = Math.round((new Date()).getTime() / 1000) - afkData.users[user].lastseen
@@ -513,32 +501,26 @@ kord({
     }
     
     if (user === message.ownerJid && afkData.owner && afkData.owner.active) {
-    //  console.log("Owner returned from AFK")
       afkData.owner.active = false
+      await m.send("welcome back!")
       await saveAfkData(afkData)
       return
     }
     
     if (afkData.owner && afkData.owner.active && user !== message.ownerJid) {
-    //  console.log("Checking owner AFK notifications")
       let shouldNotify = false
-      
       if (message.mentionedJid && message.mentionedJid.includes(message.ownerJid)) {
-     //   console.log("Owner mentioned in mentionedJid")
         shouldNotify = true
       }
       
       if (text.includes(message.ownerJid) || text.includes(message.ownerJid.split('@')[0])) {
-       // console.log("Owner mentioned in text")
         shouldNotify = true
       }
       
       if (message.quoted.sender === message.ownerJid) {
-    //    console.log("Owner message quoted")
         shouldNotify = true
       }
-      
-    //  console.log("Should notify owner:", shouldNotify)
+     
       
       if (shouldNotify) {
         const timeDiff = Math.round((new Date()).getTime() / 1000) - afkData.owner.lastseen
@@ -556,32 +538,25 @@ kord({
       }
     }
     
-//    console.log("Checking user AFK notifications")
     for (const mentionedUser in afkData.users) {
       if (afkData.users[mentionedUser] && 
           afkData.users[mentionedUser].active && 
           user !== mentionedUser) {
         
-  //      console.log("Checking AFK user:", mentionedUser)
         let shouldNotify = false
         
         if (message.mentionedJid && message.mentionedJid.includes(mentionedUser)) {
-    //      console.log("User mentioned in mentionedJid:", mentionedUser)
           shouldNotify = true
         }
         
         if (text.includes(mentionedUser) || text.includes(mentionedUser.split('@')[0])) {
-      //    console.log("User mentioned in text:", mentionedUser)
           shouldNotify = true
         }
         
         if (message.quoted && message.quoted.sender === mentionedUser) {
-        //  console.log("User message quoted:", mentionedUser)
           shouldNotify = true
         }
-        
-    //    console.log("Should notify user:", mentionedUser, shouldNotify)
-        
+       
         if (shouldNotify) {
           const timeDiff = Math.round((new Date()).getTime() / 1000) - afkData.users[mentionedUser].lastseen
           const timeStr = formatTime(timeDiff)
@@ -591,8 +566,7 @@ kord({
     }
     
   } catch (e) {
-  //  console.log("cmd error", e)
-   // return await message.sendErr(e)
+   console.log("cmd error", e)
   }
 })
 

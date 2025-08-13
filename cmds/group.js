@@ -1634,3 +1634,469 @@ kord({
 
   return m.send(report)
 })
+
+
+kord({
+  cmd: "antispam",
+  desc: "set action to be done when a person sends spam messages",
+  fromMe: wtype,
+  gc: true,
+  type: "group",
+}, async (m, text) => {
+  try {
+  var botAd = await isBotAdmin(m)
+  if (!botAd) return await m.send("_*Bot Needs To Be Admin!*_")
+  
+  const args = text.split(" ")
+  if (args && args.length > 0) {
+  const option = args[0].toLowerCase()
+  const value = args.length > 1 ? args[1] : null
+  const fArgs = args.slice(1).join(" ")
+  const chatJid = m.chat
+  
+  
+  var sdata = await getData("antispam_config")
+      if (!Array.isArray(sdata)) sdata = []
+  let isExist = sdata.find(entry => entry.chatJid === chatJid)
+  if (option === "delete") {
+    var delc = { 
+      chatJid,
+     action: "del",
+     warnc: "0",
+     maxwrn: "3",
+     msgLimit: 5,
+     timeFrame: 10
+    }
+    if (isExist) {
+      isExist.action = "del"
+    } else {
+      sdata.push(delc)
+    }
+    await storeData("antispam_config", JSON.stringify(sdata, null, 2))
+    return await m.send(`_*AntiSpam Is Now Enabled!*_\n_Action:_ delete\n_Limit:_ 5 messages in 10 seconds`)
+    } else  if (option === "kick") {
+      var kikc = {
+        chatJid,
+        "action": "kick", 
+        "warnc": "0",
+        "maxwrn": "3",
+        "msgLimit": 5,
+        "timeFrame": 10
+      }
+       if (isExist) {
+      isExist.action = "kick"
+    } else {
+      sdata.push(kikc)
+    }
+    await storeData("antispam_config", JSON.stringify(sdata, null, 2))
+    return await m.send(`_*AntiSpam Is Now Enabled!*_\n_Action:_ kick\n_Limit:_ 5 messages in 10 seconds`)
+    } else if (option === "warn") {
+      var cou = parseInt(value)
+      if(!cou) return await m.send(`*_Use ${prefix}antispam warn 3_*`)
+      var warnco = {
+        chatJid,
+        "action": "warn",
+        "warnc": "0",
+        "maxwrn": cou,
+        "msgLimit": 5,
+        "timeFrame": 10
+      }
+      if (isExist) {
+      isExist.action = "warn"
+      isExist.maxwrn = cou
+    } else {
+      sdata.push(warnco)
+    }
+    await storeData("antispam_config", JSON.stringify(sdata, null, 2))
+    return await m.send(`_*AntiSpam Is Now Enabled!*_\n_Action:_ Warn\n_MaxWarning:_ ${cou}\n_Limit:_ 5 messages in 10 seconds`)
+    } else if (option === "limit") {
+      var msgLimit = parseInt(args[1])
+      var timeFrame = parseInt(args[2])
+      if (!msgLimit || !timeFrame) return await m.send(`*_Use ${prefix}antispam limit 5 10_*\n_5 messages in 10 seconds_`)
+      
+      if (isExist) {
+        isExist.msgLimit = msgLimit
+        isExist.timeFrame = timeFrame
+      } else {
+        return await m.send("_Enable AntiSpam first with delete/kick/warn option_")
+      }
+      await storeData("antispam_config", JSON.stringify(sdata, null, 2))
+      return await m.send(`_*AntiSpam Limit Updated!*_\n_Limit:_ ${msgLimit} messages in ${timeFrame} seconds`)
+    } else if (option === "status") {
+      if (!isExist) return await m.send("_AntiSpam is Currently Disabled here..._")
+      var sc = `\`\`\`[ ANTI-SPAM STATUS ]\`\`\`
+_Active?:_ Yes
+_Action:_ ${isExist.action}
+_MaxWARN:_ ${isExist.maxwrn}
+_Limit:_ ${isExist.msgLimit} messages in ${isExist.timeFrame} seconds`
+      await m.send(sc)
+    } else if (option === "off") {
+      if (!isExist) return await m.send("_AntiSpam is Currently Disabled here..._")
+        sdata = sdata.filter(entry => entry.chatJid !== chatJid)
+       await storeData("antispam_config", JSON.stringify(sdata, null, 2))
+       return await m.send("_*AntiSpam disabled!*_")
+    } else {
+      var mssg = `\`\`\` [ Available AntiSpam config ] \`\`\`
+_${pre}antispam delete_
+_${pre}antispam kick_
+_${pre}antispam warn 3_
+_${pre}antispam limit 5 10_
+_${pre}antispam status_
+_${pre}antispam off_`
+      return m.send(`${mssg}`)
+    }
+    } else {
+      var msg = `\`\`\` [ Available AntiSpam config ] \`\`\`
+_${pre}antispam delete_
+_${pre}antispam kick_
+_${pre}antispam warn 3_
+_${pre}antispam limit 5 10_
+_${pre}antispam status_
+_${pre}antispam off_`
+      return m.send(`${msg}`)
+    }
+      
+    } catch (e) {
+      console.error(e)
+      m.send(`${e}`)
+    }
+})
+
+const userMessageCount = new Map()
+const userWarnings = new Map()
+
+kord({
+on: "all",
+}, async (m, text) => {
+  try {
+    const isGroup = m.key.remoteJid.endsWith('@g.us')
+    if (isGroup) {
+    var botAd = await isBotAdmin(m)
+    if (!botAd) return
+    
+    if(m.message.reactionMessage) return
+    if(m.fromMe) return
+    
+    const cJid = m.key.remoteJid
+    const sender = m.sender
+    const groupMetadata = await getMeta(m.client, m.chat)
+    const admins = groupMetadata.participants.filter(v => v.admin !== null).map(v => v.jid)
+    
+    if (admins.includes(sender)) return
+    
+    if (m.message && !m.message.reactionMessage) {
+    var sdata = await getData("antispam_config")
+    if (!Array.isArray(sdata)) return
+    let isExist = sdata.find(entry => entry.chatJid === cJid)
+    if (isExist) {
+    
+    const userKey = `${cJid}_${sender}`
+    const currentTime = Date.now()
+    
+    if (!userMessageCount.has(userKey)) {
+      userMessageCount.set(userKey, [])
+    }
+    
+    const userMessages = userMessageCount.get(userKey)
+    userMessages.push(currentTime)
+    
+    const timeFrame = isExist.timeFrame * 1000
+    const validMessages = userMessages.filter(timestamp => currentTime - timestamp < timeFrame)
+    userMessageCount.set(userKey, validMessages)
+    
+    if (validMessages.length > isExist.msgLimit) {
+      var act = isExist.action
+      
+      if (act === "del") {
+        await m.send(m, {}, "delete")
+        await m.send(`_*@${sender.split('@')[0]} Stop Spamming!!*_`, {mentions: [sender]})
+        userMessageCount.delete(userKey)
+      } else if (act === "kick") {
+        await m.send(m, {}, "delete")
+        await m.send(`_*@${sender.split('@')[0]} Stop Spamming!!*_\n_Goodbye!!_`, {mentions: [sender]})
+        await m.client.groupParticipantsUpdate(cJid, [sender], 'remove')
+        userMessageCount.delete(userKey)
+        userWarnings.delete(userKey)
+      } else if (act === "warn") {
+        const warnKey = userKey
+        var currentWarns = userWarnings.get(warnKey) || 0
+        currentWarns += 1
+        userWarnings.set(warnKey, currentWarns)
+        
+        var maxC = parseInt(isExist.maxwrn)
+        var remain = maxC - currentWarns
+        
+        if (currentWarns >= maxC) {
+          await m.send(m, {}, "delete")
+          await m.send(`_*@${sender.split('@')[0]} Max Warning Exceeded!!*_\n_Goodbye!!!_`, {mentions: [sender]})
+          await m.client.groupParticipantsUpdate(cJid, [sender], 'remove')
+          userMessageCount.delete(userKey)
+          userWarnings.delete(warnKey)
+        } else {
+          var rmsg = `_*@${sender.split('@')[0]} Stop Spamming!!*_
+_You are warned!_
+Warning(s): (${currentWarns}/${maxC})
+_Remaining:_ ${remain}`
+          await m.send(`${rmsg}`, {mentions: [sender]})
+          await m.send(m, {}, "delete")
+        }
+        
+        userMessageCount.delete(userKey)
+      }
+    }
+    }
+    }
+    }
+  } catch (e) {
+    console.log("antispam error", e)
+    return await m.sendErr(e)
+  }
+})
+
+
+kord({
+  cmd: "antitag",
+  desc: "set action to be done when a person tags all group members",
+  fromMe: wtype,
+  gc: true,
+  type: "group",
+}, async (m, text) => {
+  try {
+  var botAd = await isBotAdmin(m)
+  if (!botAd) return await m.send("_*Bot Needs To Be Admin!*_")
+  
+  const args = text.split(" ")
+  if (args && args.length > 0) {
+  const option = args[0].toLowerCase()
+  const value = args.length > 1 ? args[1] : null
+  const fArgs = args.slice(1).join(" ")
+  const chatJid = m.chat
+  
+  
+  var sdata = await getData("antitag_config")
+      if (!Array.isArray(sdata)) sdata = []
+  let isExist = sdata.find(entry => entry.chatJid === chatJid)
+  if (option === "delete") {
+    var delc = { 
+      chatJid,
+     action: "del",
+     warnc: "0",
+     maxwrn: "3"
+    }
+    if (isExist) {
+      isExist.action = "del"
+    } else {
+      sdata.push(delc)
+    }
+    await storeData("antitag_config", JSON.stringify(sdata, null, 2))
+    return await m.send(`_*AntiTag Is Now Enabled!*_\n_Action:_ delete`)
+    } else  if (option === "kick") {
+      var kikc = {
+        chatJid,
+        "action": "kick", 
+        "warnc": "0",
+        "maxwrn": "3"
+      }
+       if (isExist) {
+      isExist.action = "kick"
+    } else {
+      sdata.push(kikc)
+    }
+    await storeData("antitag_config", JSON.stringify(sdata, null, 2))
+    return await m.send(`_*AntiTag Is Now Enabled!*_\n_Action:_ kick`)
+    } else if (option === "warn") {
+      var cou = parseInt(value)
+      if(!cou) return await m.send(`*_Use ${prefix}antitag warn 3_*`)
+      var warnco = {
+        chatJid,
+        "action": "warn",
+        "warnc": "0",
+        "maxwrn": cou
+      }
+      if (isExist) {
+      isExist.action = "warn"
+      isExist.maxwrn = cou
+    } else {
+      sdata.push(warnco)
+    }
+    await storeData("antitag_config", JSON.stringify(sdata, null, 2))
+    return await m.send(`_*AntiTag Is Now Enabled!*_\n_Action:_ Warn\n_MaxWarning:_ ${cou}`)
+    } else if (option === "status") {
+      if (!isExist) return await m.send("_AntiTag is Currently Disabled here..._")
+      var sc = `\`\`\`[ ANTI-TAG STATUS ]\`\`\`
+_Active?:_ Yes
+_Action:_ ${isExist.action}
+_MaxWARN:_ ${isExist.maxwrn}`
+      await m.send(sc)
+    } else if (option === "off") {
+      if (!isExist) return await m.send("_AntiTag is Currently Disabled here..._")
+        sdata = sdata.filter(entry => entry.chatJid !== chatJid)
+       await storeData("antitag_config", JSON.stringify(sdata, null, 2))
+       return await m.send("_*AntiTag disabled!*_")
+    } else {
+      var mssg = `\`\`\` [ Available AntiTag config ] \`\`\`
+_${pre}antitag delete_
+_${pre}antitag kick_
+_${pre}antitag warn 3_
+_${pre}antitag status_
+_${pre}antitag off_`
+      return m.send(`${mssg}`)
+    }
+    } else {
+      var msg = `\`\`\` [ Available AntiTag config ] \`\`\`
+_${pre}antitag delete_
+_${pre}antitag kick_
+_${pre}antitag warn 3_
+_${pre}antitag status_
+_${pre}antitag off_`
+      return m.send(`${msg}`)
+    }
+      
+    } catch (e) {
+      console.error(e)
+      m.send(`${e}`)
+    }
+})
+
+const tagWarnings = new Map()
+
+kord({
+on: "all",
+}, async (m, text) => {
+  try {
+    const isGroup = m.key.remoteJid.endsWith('@g.us')
+    if (isGroup) {
+    var botAd = await isBotAdmin(m)
+    if (!botAd) return
+    
+    if(m.message.reactionMessage) return
+    if(m.fromMe) return
+    
+    const cJid = m.key.remoteJid
+    const sender = m.sender
+    const groupMetadata = await getMeta(m.client, m.chat)
+    const admins = groupMetadata.participants.filter(v => v.admin !== null).map(v => v.jid)
+    
+    if (admins.includes(sender)) return
+    
+    if (m.mentionedJid && m.mentionedJid.length > 0) {
+    var sdata = await getData("antitag_config")
+    if (!Array.isArray(sdata)) return
+    let isExist = sdata.find(entry => entry.chatJid === cJid)
+    if (isExist) {
+    
+    const { participants } = await m.client.groupMetadata(m.chat)
+    const allParticipants = participants.map(p => p.jid)
+    const mentionedCount = m.mentionedJid.length
+    const totalParticipants = allParticipants.length
+    
+    const tagPercentage = (mentionedCount / totalParticipants) * 100
+    
+    if (tagPercentage >= 80 || mentionedCount >= 10) {
+      var act = isExist.action
+      
+      if (act === "del") {
+        await m.send(m, {}, "delete")
+        await m.send(`_*@${sender.split('@')[0]} Mass Tagging is not Allowed!!*_`, {mentions: [sender]})
+      } else if (act === "kick") {
+        await m.send(m, {}, "delete")
+        await m.send(`_*@${sender.split('@')[0]} Mass Tagging is not Allowed!!*_\n_Goodbye!!_`, {mentions: [sender]})
+        await m.client.groupParticipantsUpdate(cJid, [sender], 'remove')
+      } else if (act === "warn") {
+        const warnKey = `${cJid}_${sender}`
+        var currentWarns = tagWarnings.get(warnKey) || 0
+        currentWarns += 1
+        tagWarnings.set(warnKey, currentWarns)
+        
+        var maxC = parseInt(isExist.maxwrn)
+        var remain = maxC - currentWarns
+        
+        if (currentWarns >= maxC) {
+          await m.send(m, {}, "delete")
+          await m.send(`_*@${sender.split('@')[0]} Max Warning Exceeded!!*_\n_Goodbye!!!_`, {mentions: [sender]})
+          await m.client.groupParticipantsUpdate(cJid, [sender], 'remove')
+          tagWarnings.delete(warnKey)
+        } else {
+          var rmsg = `_*@${sender.split('@')[0]} Mass Tagging is not Allowed!!*_
+_You are warned!_
+Warning(s): (${currentWarns}/${maxC})
+_Remaining:_ ${remain}`
+          await m.send(`${rmsg}`, {mentions: [sender]})
+          await m.send(m, {}, "delete")
+        }
+      }
+    }
+    }
+    }
+    }
+  } catch (e) {
+    console.log("antitag error", e)
+    return await m.sendErr(e)
+  }
+})
+
+
+const parseInterval = input => {
+  const match = input.match(/(\d+)([dhm])/i)
+  if (!match) return 0
+  const value = parseInt(match[1])
+  const unit = match[2].toLowerCase()
+  if (unit === 'd') return value * 24 * 3600
+  if (unit === 'h') return value * 3600
+  if (unit === 'm') return value * 60
+  return 0
+}
+
+const listOnlineOffline = async (m, text, store, mode) => {
+  if (!text) return await m.send("_provide a time interval_\n_example:_\n_listonline 10m_\n_listonline 30m_\n_listonline 24h_\n_listonline 1d_")
+  const intervalSec = parseInterval(text)
+  if (!intervalSec) return await m.send("_invalid interval_\n_example:_\n_listonline 10m_\n_listonline 30m_\n_listonline 24h_\n_listonline 1d_")
+  const now = Math.floor(Date.now() / 1000)
+  const rows = await store.chatHistory(m.chat, 99999)
+  if (!rows.length) return m.send("_No messages found_")
+
+  const stats = {}
+  for (const row of rows) {
+    let parsed
+    try { parsed = JSON.parse(row.message) } catch { continue }
+    const key = parsed.key || {}
+    const rawJid = key.participantPn || key.participant || key.remoteJid
+    if (!rawJid || rawJid.endsWith("@g.us")) continue
+    const jid = rawJid.split("@")[0]
+    const timestamp = parsed.messageTimestamp || 0
+    if (mode === "online" && timestamp < now - intervalSec) continue
+    if (!stats[jid] || stats[jid].lastSeen < timestamp) {
+      stats[jid] = { jid, name: parsed.pushName || jid, lastSeen: timestamp }
+    }
+  }
+
+  let filtered
+  if (mode === "online") filtered = Object.values(stats)
+  else {
+    const cutoff = now - intervalSec
+    filtered = Object.values(stats).filter(u => u.lastSeen < cutoff)
+  }
+
+  if (!filtered.length) return m.send(`_${mode} users: None_`)
+  const mentions = filtered.map(u => u.jid + '@s.whatsapp.net')
+  const textList = filtered.map(u => `-@${u.jid}`).join("\n")
+  return m.send(`*${mode.charAt(0).toUpperCase() + mode.slice(1)} users:*\n${textList}`, { mentions })
+}
+
+kord({
+  cmd: "listonline",
+  desc: "List online users by interval",
+  fromMe: wtype,
+  type: "tools",
+  gc: true,
+  adminOnly: true
+}, async (m, text, c, store) => listOnlineOffline(m, text, store, "online"))
+
+kord({
+  cmd: "listoffline",
+  desc: "List offline users by interval",
+  fromMe: wtype,
+  type: "tools",
+  gc: true,
+  adminOnly: true
+}, async (m, text, c, store) => listOnlineOffline(m, text, store, "offline"))
