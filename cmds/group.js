@@ -198,7 +198,7 @@ cmd: "kick",
     
     if (text === "all") {
     var res = await m.send("_✘ Reply \"confirm\" to continue_")
-    var response = await m.getResponse(res, 5000)
+    var response = await m.getResponse(res, 10000)
     if (response.text.toLowerCase() === "confirm") {
     await m.send("_*✓ Kicking all users in 10 seconds*_\n_Use restart command to cancel_")
     await sleep(10000)
