@@ -4,11 +4,6 @@ A powerful, multi-device WhatsApp bot built with Baileys. Fast to set up and eas
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-
-<div style="border:2px solid red; padding:10px; border-radius:5px; background-color:#ffe6e6;">
-<strong>Warning:</strong> websites are down, DO NOT DEPLOY YET
-</div>
-
 ---
 
 ## ⭐️ Star & Fork
