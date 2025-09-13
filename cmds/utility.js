@@ -17,8 +17,6 @@ const os = require('os');
 const Jimp = require('jimp');
 const ffmpeg = require('fluent-ffmpeg');
 const http = require('http')
-const { getDevice } = require('baileys')
-
 
 kord({
         cmd: "ss",
@@ -793,8 +791,9 @@ cmd: 'getdevice|device',
   type: 'utilities'
 }, async (m) => {
   try {
+  const b = await Baileys()
     const id = m.quoted?.id || m.key?.id
-    const device = getDevice(id)
+    const device = b.getDevice(id)
     await m.reply(`Device: *${device}*`)
   } catch (e) {
     console.log("cmd error", e)

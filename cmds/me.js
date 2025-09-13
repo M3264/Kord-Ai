@@ -16,9 +16,11 @@ const { kord,
   secondsToHms,
   isBotAdmin,
   config,
-  updateBot
+  updateBot,
+  Baileys,
 } = require("../core")
 const { exec } = require("child_process")
+const os = require("os")
 const pre = prefix
 const core = require("../core")
 const path = require('path')
@@ -365,6 +367,48 @@ kord({
   }
 });
 
+kord({
+  cmd: "stats",
+  desc: "Show bot performance stats",
+  fromMe: wtype,
+  type: "bot"
+}, async (m) => {
+  try {
+    const baileys = await Baileys()
+
+    if (!global.stats) global.stats = { msgc: 0, cmdc: new Map(), cmdl: [] }
+
+    const msgsCount = global.stats.msgc || 0
+    const cmdsRunned = [...global.stats.cmdc.values()].reduce((a, b) => a + b, 0)
+
+    const mem = process.memoryUsage().rss
+    const memMB = Math.round(mem / 1024 / 1024)
+
+    const cpus = os.loadavg()[0] / os.cpus().length
+    const cpuPercent = Math.min(100, Math.round(cpus * 100))
+
+    const pollVotes = [
+      { optionName: "Msgs Count", optionVoteCount: msgsCount },
+      { optionName: "Cmds Runned", optionVoteCount: cmdsRunned },
+      { optionName: `Memory Usage (MB)`, optionVoteCount: memMB },
+      { optionName: "CPU (%)", optionVoteCount: cpuPercent }
+    ]
+
+    const wmsg = baileys.generateWAMessageFromContent(m.chat, {
+      pollResultSnapshotMessage: {
+        name: `${config().BOT_NAME} Stats`,
+        pollVotes
+      }
+    }, { quoted: m })
+
+    await m.client.relayMessage(wmsg.key.remoteJid, wmsg.message, {
+      messageId: wmsg.key.id
+    })
+  } catch (error) {
+    console.error(error)
+    await m.sendErr(error)
+  }
+})
 
 kord({
   on: "all",

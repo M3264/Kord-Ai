@@ -1,7 +1,7 @@
 // Credits to Neeraj-X0
-const unicode = require("./unicode");
-var style = unicode;
-style.tools.creepify.options.maxHeight = 10;
+import unicode from './unicode'
+var style = unicode
+style.tools.creepify.options.maxHeight = 10
 
 function createMap(chars) {
   var alphanum = [
@@ -67,14 +67,14 @@ function createMap(chars) {
     "7",
     "8",
     "9",
-  ];
-  var i = 0;
-  var map = {};
+  ]
+  var i = 0
+  var map = {}
   for (var c of chars) {
-    map[alphanum[i]] = c;
-    i++;
+    map[alphanum[i]] = c
+    i++
   }
-  return JSON.stringify(map);
+  return JSON.stringify(map)
 }
 
 const mangaCharMap = {
@@ -140,7 +140,7 @@ const mangaCharMap = {
   X: "乂",
   Y: "ㄚ",
   Z: "乙",
-};
+}
 const ladybugCharMap = {
   0: "0",
   1: "1",
@@ -204,7 +204,7 @@ const ladybugCharMap = {
   X: "ꉧ",
   Y: "ꌩ",
   Z: "ꁴ",
-};
+}
 const runesCharMap = {
   0: "0",
   1: "1",
@@ -268,7 +268,7 @@ const runesCharMap = {
   X: "ሸ",
   Y: "ሃ",
   Z: "ጊ",
-};
+}
 
 const serif_BCharMap = {
   0: "0",
@@ -333,7 +333,7 @@ const serif_BCharMap = {
   X: "𝐗",
   Y: "𝐘",
   Z: "𝐙",
-};
+}
 const serif_BICharMap = {
   0: "0",
   1: "1",
@@ -397,7 +397,7 @@ const serif_BICharMap = {
   X: "𝑿",
   Y: "𝒀",
   Z: "𝒁",
-};
+}
 const serif_ICharMap = {
   0: "0",
   1: "1",
@@ -461,7 +461,7 @@ const serif_ICharMap = {
   X: "𝑋",
   Y: "𝑌",
   Z: "𝑍",
-};
+}
 const wingdingsCharMap = {
   0: "📁︎",
   1: "📂︎",
@@ -683,7 +683,7 @@ const wingdingsCharMap = {
   ý: "☒︎",
   þ: "☑︎",
   ÿ: "◻︎",
-};
+}
 const vaporwaveCharMap = {
   " ": "　",
   "`": "`",
@@ -741,7 +741,7 @@ const vaporwaveCharMap = {
   a: "ａ",
   s: "ｓ",
   d: "d",
-};
+}
 const sparrowCharMap = {
   0: "0",
   1: "1",
@@ -805,7 +805,7 @@ const sparrowCharMap = {
   X: "X",
   Y: "Ψ",
   Z: "Z",
-};
+}
 const typewriterCharMap = {
   0: "0",
   1: "1",
@@ -869,7 +869,7 @@ const typewriterCharMap = {
   X: "𝚇",
   Y: "𝚈",
   Z: "𝚉",
-};
+}
 const analuciaCharMap = {
   0: "0",
   1: "1",
@@ -933,129 +933,129 @@ const analuciaCharMap = {
   X: "᥊",
   Y: "ꪗ",
   Z: "ɀ",
-};
+}
 
 //createMap("𝕒𝕓𝕔𝕕𝕖𝕗𝕘𝕙𝕚𝕛𝕜𝕝𝕞𝕟𝕠𝕡𝕢𝕣𝕤𝕥𝕦𝕧𝕨𝕩𝕪𝕫𝔸𝔹ℂ𝔻𝔼𝔽𝔾ℍ𝕀𝕁𝕂𝕃𝕄ℕ𝕆ℙℚℝ𝕊𝕋𝕌𝕍𝕎𝕏𝕐ℤ𝟘𝟙𝟚𝟛𝟜𝟝𝟞𝟟𝟠𝟡")
 
 function listall(text) {
-  text = text.trim();
+  text = text.trim()
   if (text === "") {
-    return "";
+    return ""
   }
-  var finalText = [];
+  var finalText = []
 
-  finalText.push(tiny(text));
-  finalText.push(flip(text));
-  finalText.push(roundsquares(text));
-  finalText.push(squares(text));
-  finalText.push(mirror(text));
-  finalText.push(creepify(text));
-  finalText.push(bubbles(text));
-  finalText.push(strikeThrough(text));
-  finalText.push(tildeStrikeThrough(text));
-  finalText.push(slashThrough(text));
-  finalText.push(underline(text));
-  finalText.push(doubleUnderline(text));
-  finalText.push(heartsBetween(text));
-  finalText.push(arrowBelow(text));
-  finalText.push(crossAboveBelow(text));
-  finalText.push(wingdings(text));
-  finalText.push(vaporwave(text));
-  finalText.push(sparrow(text));
-  finalText.push(manga(text));
-  finalText.push(ladybug(text));
-  finalText.push(runes(text));
-  finalText.push(serif_B(text));
-  finalText.push(serif_BI(text));
-  finalText.push(serif_I(text));
-  finalText.push(analucia(text));
-  finalText.push(typewriter(text));
-  finalText.push(fancy1(text));
-  finalText.push(fancy2(text));
-  finalText.push(fancy3(text));
-  finalText.push(fancy4(text));
-  finalText.push(fancy5(text));
-  finalText.push(fancy6(text));
-  finalText.push(fancy7(text));
-   finalText.push(fancy8(text));
-   finalText.push(fancy9(text));
-   finalText.push(fancy10(text));
-   finalText.push(fancy11(text));
-   finalText.push(fancy12(text));
-   finalText.push(fancy13(text));
-   finalText.push(fancy14(text));
-   finalText.push(fancy15(text));
-   finalText.push(fancy16(text));
-   finalText.push(fancy17(text));
-   finalText.push(fancy18(text));
-   finalText.push(fancy19(text));
-   finalText.push(fancy20(text));
-   finalText.push(fancy21(text));
-   finalText.push(fancy22(text));
-   finalText.push(fancy23(text));
-   finalText.push(fancy24(text));
-   finalText.push(fancy25(text));
-   finalText.push(fancy26(text));
-   finalText.push(fancy27(text));
-   finalText.push(fancy28(text));
-   finalText.push(fancy29(text));
-   finalText.push(fancy30(text));
-   finalText.push(fancy31(text));
-   finalText.push(fancy32(text));
-   finalText.push(fancy33(text));
+  finalText.push(tiny(text))
+  finalText.push(flip(text))
+  finalText.push(roundsquares(text))
+  finalText.push(squares(text))
+  finalText.push(mirror(text))
+  finalText.push(creepify(text))
+  finalText.push(bubbles(text))
+  finalText.push(strikeThrough(text))
+  finalText.push(tildeStrikeThrough(text))
+  finalText.push(slashThrough(text))
+  finalText.push(underline(text))
+  finalText.push(doubleUnderline(text))
+  finalText.push(heartsBetween(text))
+  finalText.push(arrowBelow(text))
+  finalText.push(crossAboveBelow(text))
+  finalText.push(wingdings(text))
+  finalText.push(vaporwave(text))
+  finalText.push(sparrow(text))
+  finalText.push(manga(text))
+  finalText.push(ladybug(text))
+  finalText.push(runes(text))
+  finalText.push(serif_B(text))
+  finalText.push(serif_BI(text))
+  finalText.push(serif_I(text))
+  finalText.push(analucia(text))
+  finalText.push(typewriter(text))
+  finalText.push(fancy1(text))
+  finalText.push(fancy2(text))
+  finalText.push(fancy3(text))
+  finalText.push(fancy4(text))
+  finalText.push(fancy5(text))
+  finalText.push(fancy6(text))
+  finalText.push(fancy7(text))
+   finalText.push(fancy8(text))
+   finalText.push(fancy9(text))
+   finalText.push(fancy10(text))
+   finalText.push(fancy11(text))
+   finalText.push(fancy12(text))
+   finalText.push(fancy13(text))
+   finalText.push(fancy14(text))
+   finalText.push(fancy15(text))
+   finalText.push(fancy16(text))
+   finalText.push(fancy17(text))
+   finalText.push(fancy18(text))
+   finalText.push(fancy19(text))
+   finalText.push(fancy20(text))
+   finalText.push(fancy21(text))
+   finalText.push(fancy22(text))
+   finalText.push(fancy23(text))
+   finalText.push(fancy24(text))
+   finalText.push(fancy25(text))
+   finalText.push(fancy26(text))
+   finalText.push(fancy27(text))
+   finalText.push(fancy28(text))
+   finalText.push(fancy29(text))
+   finalText.push(fancy30(text))
+   finalText.push(fancy31(text))
+   finalText.push(fancy32(text))
+   finalText.push(fancy33(text))
   
-  return finalText;
+  return finalText
 }
 
 function flip(text) {
-  return style.tools.flip.encode(text);
+  return style.tools.flip.encode(text)
 }
 function roundsquares(text) {
-  return style.tools.roundsquares.encode(text);
+  return style.tools.roundsquares.encode(text)
 }
 function squares(text) {
-  return style.tools.squares.encode(text);
+  return style.tools.squares.encode(text)
 }
 function mirror(text) {
-  return style.tools.mirror.encode(text);
+  return style.tools.mirror.encode(text)
 }
 function creepify(text) {
-  return style.tools.creepify.encode(text);
+  return style.tools.creepify.encode(text)
 }
 function bubbles(text) {
-  return style.tools.bubbles.encode(text);
+  return style.tools.bubbles.encode(text)
 }
 function strikeThrough(text) {
-  return text.split("").join("̶") + "̶";
+  return text.split("").join("̶") + "̶"
 }
 function tildeStrikeThrough(text) {
-  return text.split("").join("̴") + "̴";
+  return text.split("").join("̴") + "̴"
 }
 function underline(text) {
-  return text.split("").join("̲") + "̲";
+  return text.split("").join("̲") + "̲"
 }
 function doubleUnderline(text) {
-  return text.split("").join("̳") + "̳";
+  return text.split("").join("̳") + "̳"
 }
 function slashThrough(text) {
-  return text.split("").join("̷") + "̷";
+  return text.split("").join("̷") + "̷"
 }
 function heartsBetween(text) {
-  return text.split("").join("♥");
+  return text.split("").join("♥")
 }
 function arrowBelow(text) {
-  return text.split("").join("͎") + "͎";
+  return text.split("").join("͎") + "͎"
 }
 function crossAboveBelow(text) {
-  return text.split("").join("͓̽") + "͓̽";
+  return text.split("").join("͓̽") + "͓̽"
 }
 function manga(text) {
   return text
     .split("")
     .map(function (a) {
-      return mangaCharMap[a] ? mangaCharMap[a] : a;
+      return mangaCharMap[a] ? mangaCharMap[a] : a
     })
-    .join("");
+    .join("")
 }
 const fancy1chrmap = {
   0: "0",
@@ -1120,14 +1120,14 @@ const fancy1chrmap = {
   X: "x",
   Y: "ฯ",
   Z: "ຊ",
-};
+}
 function fancy1(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy1chrmap[a] ? fancy1chrmap[a] : a;
+      return fancy1chrmap[a] ? fancy1chrmap[a] : a
     })
-    .join("");
+    .join("")
 }
 const fancy2chrmap = {
   0: "0",
@@ -1192,14 +1192,14 @@ const fancy2chrmap = {
   X: "ҳ",
   Y: "ყ",
   Z: "ʑ",
-};
+}
 function fancy2(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy2chrmap[a] ? fancy2chrmap[a] : a;
+      return fancy2chrmap[a] ? fancy2chrmap[a] : a
     })
-    .join("");
+    .join("")
 }
 const fancy3chrmap = {
   0: "0",
@@ -1264,15 +1264,15 @@ const fancy3chrmap = {
   X: "ﾒ",
   Y: "ﾘ",
   Z: "乙",
-};
+}
 
 function fancy3(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy3chrmap[a] ? fancy3chrmap[a] : a;
+      return fancy3chrmap[a] ? fancy3chrmap[a] : a
     })
-    .join("");
+    .join("")
 }
 const fancy4chrmap = {
   0: "0",
@@ -1337,14 +1337,14 @@ const fancy4chrmap = {
   X: "乂",
   Y: "ㄚ",
   Z: "乙",
-};
+}
 function fancy4(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy4chrmap[a] ? fancy4chrmap[a] : a;
+      return fancy4chrmap[a] ? fancy4chrmap[a] : a
     })
-    .join("");
+    .join("")
 }
 const fancy5chrmap = {
   0: "0",
@@ -1409,14 +1409,14 @@ const fancy5chrmap = {
   X: "🅇",
   Y: "🅈",
   Z: "🅉",
-};
+}
 function fancy5(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy5chrmap[a] ? fancy5chrmap[a] : a;
+      return fancy5chrmap[a] ? fancy5chrmap[a] : a
     })
-    .join("");
+    .join("")
 }
 const fancy6chrmap = {
   0: "0",
@@ -1481,14 +1481,14 @@ const fancy6chrmap = {
   X: "ጀ",
   Y: "Ꭹ",
   Z: "ፚ",
-};
+}
 function fancy6(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy6chrmap[a] ? fancy6chrmap[a] : a;
+      return fancy6chrmap[a] ? fancy6chrmap[a] : a
     })
-    .join("");
+    .join("")
 }
 const fancy7chrmap = {
   0: "0",
@@ -1553,14 +1553,14 @@ const fancy7chrmap = {
   X: "᙭",
   Y: "Y",
   Z: "ᘔ",
-};
+}
 function fancy7(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy7chrmap[a] ? fancy7chrmap[a] : a;
+      return fancy7chrmap[a] ? fancy7chrmap[a] : a
     })
-    .join("");
+    .join("")
 }
 const fancy8chrmap = {
   0: "0",
@@ -1625,14 +1625,14 @@ const fancy8chrmap = {
   X: "Ӽ",
   Y: "ʏ",
   Z: "ʐ",
-};
+}
 function fancy8(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy8chrmap[a] ? fancy8chrmap[a] : a;
+      return fancy8chrmap[a] ? fancy8chrmap[a] : a
     })
-    .join("");
+    .join("")
 }
 const fancy9chrmap = {
   0: "𝟶",
@@ -1697,14 +1697,14 @@ const fancy9chrmap = {
   X: "𝚇",
   Y: "𝚈",
   Z: "𝚉",
-};
+}
 function fancy9(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy9chrmap[a] ? fancy9chrmap[a] : a;
+      return fancy9chrmap[a] ? fancy9chrmap[a] : a
     })
-    .join("");
+    .join("")
 }
 const fancy10chrmap = {
   0: "0",
@@ -1769,14 +1769,14 @@ const fancy10chrmap = {
   X: "𝙓",
   Y: "𝙔",
   Z: "𝙕",
-};
+}
 function fancy10(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy10chrmap[a] ? fancy10chrmap[a] : a;
+      return fancy10chrmap[a] ? fancy10chrmap[a] : a
     })
-    .join("");
+    .join("")
 }
 const fancy11chrmap = {
   0: "𝟬",
@@ -1841,14 +1841,14 @@ const fancy11chrmap = {
   X: "𝗫",
   Y: "𝗬",
   Z: "𝗭",
-};
+}
 function fancy11(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy11chrmap[a] ? fancy11chrmap[a] : a;
+      return fancy11chrmap[a] ? fancy11chrmap[a] : a
     })
-    .join("");
+    .join("")
 }
 const fancy12chrmap = {
   0: "𝟎",
@@ -1913,53 +1913,53 @@ const fancy12chrmap = {
   X: "𝐗",
   Y: "𝐘",
   Z: "𝐙",
-};
+}
 function fancy12(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy12chrmap[a] ? fancy12chrmap[a] : a;
+      return fancy12chrmap[a] ? fancy12chrmap[a] : a
     })
-    .join("");
+    .join("")
 }
 const fancy13chrmap = {"0":"0","1":"1","2":"2","3":"3","4":"4","5":"5","6":"6","7":"7","8":"8","9":"9","a":"𝘢","b":"𝘣","c":"𝘤","d":"𝘥","e":"𝘦","f":"𝘧","g":"𝘨","h":
 "𝘩","i":"𝘪","j":"𝘫","k":"𝘬","l":"𝘭","m":"𝘮","n":"𝘯","o":"𝘰","p":"𝘱","q":"𝘲","r":"𝘳","s":"𝘴","t":"𝘵","u":"𝘶","v":"𝘷","w":"𝘸","x":"𝘹"
 ,"y":"𝘺","z":"𝘻","A":"𝘈","B":"𝘉","C":"𝘊","D":"𝘋","E":"𝘌","F":"𝘍","G":"𝘎","H":"𝘏","I":"𝘐","J":"𝘑","K":"𝘒","L":"𝘓","M":"𝘔","N":"𝘕","O"
-:"𝘖","P":"𝘗","Q":"𝘘","R":"𝘙","S":"𝘚","T":"𝘛","U":"𝘜","V":"𝘝","W":"𝘞","X":"𝘟","Y":"𝘠","Z":"𝘡"};
+:"𝘖","P":"𝘗","Q":"𝘘","R":"𝘙","S":"𝘚","T":"𝘛","U":"𝘜","V":"𝘝","W":"𝘞","X":"𝘟","Y":"𝘠","Z":"𝘡"}
 function fancy13(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy13chrmap[a] ? fancy13chrmap[a] : a;
+      return fancy13chrmap[a] ? fancy13chrmap[a] : a
     })
-    .join("");
+    .join("")
 }
 const fancy14chrmap = {"0":"0","1":"1","2":"2","3":"3","4":"4","5":"5","6":"6","7":"7","8":"8","9":"9","a":"α","b":"Ⴆ","c":"ƈ","d":"ԃ","e":"ҽ","f":"ϝ","g":"ɠ","h":"ԋ","i":"ι","j":"ʝ","k":"ƙ","l":"ʅ","m":"ɱ","n":"ɳ","o":"σ","p":"ρ","q":"ϙ","r":"ɾ","s":"ʂ","t":"ƚ","u":"υ","v":"ʋ","w":"ɯ","x":"x","y":"ყ","z":"ȥ","A":"A","B":"B","C":"C","D":"D","E":"E","F":"F","G":"G","H":"H","I":"I","J":"J","K":"K","L":"L","M":"M","N":"N","O":"O","P":"P","Q":"Q","R":"R","S":"S","T":"T","U":"U","V":"V","W":"W","X":"X","Y":"Y","Z":"Z"}
 function fancy14(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy14chrmap[a] ? fancy14chrmap[a] : a;
+      return fancy14chrmap[a] ? fancy14chrmap[a] : a
     })
-    .join("");
+    .join("")
 }
 const fancy15chrmap = {"0":"0","1":"1","2":"2","3":"3","4":"4","5":"5","6":"6","7":"7","8":"8","9":"9","a":"₳","b":"฿","c":"₵","d":"Đ","e":"Ɇ","f":"₣","g":"₲","h":"Ⱨ","i":"ł","j":"J","k":"₭","l":"Ⱡ","m":"₥","n":"₦","o":"Ø","p":"₱","q":"Q","r":"Ɽ","s":"₴","t":"₮","u":"Ʉ","v":"V","w":"₩","x":"Ӿ","y":"Ɏ","z":"Ⱬ","A":"₳","B":"฿","C":"₵","D":"Đ","E":"Ɇ","F":"₣","G":"₲","H":"Ⱨ","I":"ł","J":"J","K":"₭","L":"Ⱡ","M":"₥","N":"₦","O":"Ø","P":"₱","Q":"Q","R":"Ɽ","S":"₴","T":"₮","U":"Ʉ","V":"V","W":"₩","X":"Ӿ","Y":"Ɏ","Z":"Ⱬ"}
 function fancy15(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy15chrmap[a] ? fancy15chrmap[a] : a;
+      return fancy15chrmap[a] ? fancy15chrmap[a] : a
     })
-    .join("");
+    .join("")
 }
 const fancy16chrmap = {"0":"0","1":"1","2":"2","3":"3","4":"4","5":"5","6":"6","7":"7","8":"8","9":"9","a":"å","b":"ß","c":"¢","d":"Ð","e":"ê","f":"£","g":"g","h":"h","i":"ï","j":"j","k":"k","l":"l","m":"m","n":"ñ","o":"ð","p":"þ","q":"q","r":"r","s":"§","t":"†","u":"µ","v":"v","w":"w","x":"x","y":"¥","z":"z","A":"Ä","B":"ß","C":"Ç","D":"Ð","E":"È","F":"£","G":"G","H":"H","I":"Ì","J":"J","K":"K","L":"L","M":"M","N":"ñ","O":"Ö","P":"þ","Q":"Q","R":"R","S":"§","T":"†","U":"Ú","V":"V","W":"W","X":"×","Y":"¥","Z":"Z"}
 function fancy16(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy16chrmap[a] ? fancy16chrmap[a] : a;
+      return fancy16chrmap[a] ? fancy16chrmap[a] : a
     })
-    .join("");
+    .join("")
 }
 const fancy17chrmap = {"0":"0","1":"1","2":"2","3":"3","4":"4","5":"5","6":"6","7":"7","8":"8","9":"9","a":"α","b":"в","c":"¢","d":"∂","e":"є","f":"ƒ","g":"g","h":"н","i":"ι","j":"נ","k":"к","l":"ℓ","m":"м","n":"η","o":"σ","p":"ρ","q":"q","r":"я","s":"ѕ","t":"т","u":"υ","v":"ν","w":"ω","x":"χ","y":"у","z":"z","A":"α","B":"в","C":"¢","D":"∂","E":"є","F":"ƒ","G":"g","H":"н","I":"ι","J":"נ","K":"к","L":"ℓ","M":"м","N":"η","O":"σ","P":"ρ","Q":"q","R":"я","S":"ѕ","T":"т","U":"υ","V":"ν","W":"ω","X":"χ","Y":"у","Z":"z"}
 
@@ -1967,65 +1967,65 @@ function fancy17(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy17chrmap[a] ? fancy17chrmap[a] : a;
+      return fancy17chrmap[a] ? fancy17chrmap[a] : a
     })
-    .join("");
+    .join("")
 }
 const fancy18chrmap = {"0":"0","1":"1","2":"2","3":"3","4":"4","5":"5","6":"6","7":"7","8":"8","9":"9","a":"Λ","b":"B","c":"ᄃ","d":"D","e":"Σ","f":"F","g":"G","h":"Ή","i":"I","j":"J","k":"K","l":"ᄂ","m":"M","n":"П","o":"Ө","p":"P","q":"Q","r":"Я","s":"Ƨ","t":"Ƭ","u":"Ц","v":"V","w":"Щ","x":"X","y":"Y","z":"Z","A":"Λ","B":"B","C":"ᄃ","D":"D","E":"Σ","F":"F","G":"G","H":"Ή","I":"I","J":"J","K":"K","L":"ᄂ","M":"M","N":"П","O":"Ө","P":"P","Q":"Q","R":"Я","S":"Ƨ","T":"Ƭ","U":"Ц","V":"V","W":"Щ","X":"X","Y":"Y","Z":"Z"}
 function fancy18(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy18chrmap[a] ? fancy18chrmap[a] : a;
+      return fancy18chrmap[a] ? fancy18chrmap[a] : a
     })
-    .join("");
+    .join("")
 }
 const fancy19chrmap = {"0":"⊘","1":"𝟙","2":"ϩ","3":"Ӡ","4":"५","5":"Ƽ","6":"Ϭ","7":"7","8":"𝟠","9":"९","a":"ą","b":"ҍ","c":"ç","d":"ժ","e":"ҽ","f":"ƒ","g":"ց","h":"հ","i":"ì","j":"ʝ","k":"ҟ","l":"Ӏ","m":"ʍ","n":"ղ","o":"օ","p":"ք","q":"զ","r":"ɾ","s":"ʂ","t":"է","u":"մ","v":"ѵ","w":"ա","x":"×","y":"վ","z":"Հ","A":"Ⱥ","B":"β","C":"↻","D":"Ꭰ","E":"Ɛ","F":"Ƒ","G":"Ɠ","H":"Ƕ","I":"į","J":"ل","K":"Ҡ","L":"Ꝉ","M":"Ɱ","N":"ហ","O":"ට","P":"φ","Q":"Ҩ","R":"འ","S":"Ϛ","T":"Ͳ","U":"Ա","V":"Ỽ","W":"చ","X":"ჯ","Y":"Ӌ","Z":"ɀ"}
 function fancy19(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy19chrmap[a] ? fancy19chrmap[a] : a;
+      return fancy19chrmap[a] ? fancy19chrmap[a] : a
     })
-    .join("");
+    .join("")
 }
 const fancy20chrmap = {"0":"₀","1":"₁","2":"₂","3":"₃","4":"₄","5":"₅","6":"₆","7":"₇","8":"₈","9":"₉","a":"ₐ","b":"b","c":"c","d":"d","e":"ₑ","f":"f","g":"g","h":"ₕ","i":"ᵢ","j":"ⱼ","k":"ₖ","l":"ₗ","m":"ₘ","n":"ₙ","o":"ₒ","p":"ₚ","q":"q","r":"ᵣ","s":"ₛ","t":"ₜ","u":"ᵤ","v":"ᵥ","w":"w","x":"ₓ","y":"y","z":"z","A":"ₐ","B":"B","C":"C","D":"D","E":"ₑ","F":"F","G":"G","H":"ₕ","I":"ᵢ","J":"ⱼ","K":"ₖ","L":"ₗ","M":"ₘ","N":"ₙ","O":"ₒ","P":"ₚ","Q":"Q","R":"ᵣ","S":"ₛ","T":"ₜ","U":"ᵤ","V":"ᵥ","W":"W","X":"ₓ","Y":"Y","Z":"Z"}
 function fancy20(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy20chrmap[a] ? fancy20chrmap[a] : a;
+      return fancy20chrmap[a] ? fancy20chrmap[a] : a
     })
-    .join("");
+    .join("")
 }
 const fancy21chrmap =  {"0":"⁰","1":"¹","2":"²","3":"³","4":"⁴","5":"⁵","6":"⁶","7":"⁷","8":"⁸","9":"⁹","a":"ᵃ","b":"ᵇ","c":"ᶜ","d":"ᵈ","e":"ᵉ","f":"ᶠ","g":"ᵍ","h":"ʰ","i":"ⁱ","j":"ʲ","k":"ᵏ","l":"ˡ","m":"ᵐ","n":"ⁿ","o":"ᵒ","p":"ᵖ","q":"q","r":"ʳ","s":"ˢ","t":"ᵗ","u":"ᵘ","v":"ᵛ","w":"ʷ","x":"ˣ","y":"ʸ","z":"ᶻ","A":"ᴬ","B":"ᴮ","C":"ᶜ","D":"ᴰ","E":"ᴱ","F":"ᶠ","G":"ᴳ","H":"ᴴ","I":"ᴵ","J":"ᴶ","K":"ᴷ","L":"ᴸ","M":"ᴹ","N":"ᴺ","O":"ᴼ","P":"ᴾ","Q":"Q","R":"ᴿ","S":"ˢ","T":"ᵀ","U":"ᵁ","V":"ⱽ","W":"ᵂ","X":"ˣ","Y":"ʸ","Z":"ᶻ"}
 function fancy21(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy21chrmap[a] ? fancy21chrmap[a] : a;
+      return fancy21chrmap[a] ? fancy21chrmap[a] : a
     })
-    .join("");
+    .join("")
 }
 const fancy22chrmap =  {"0":"0","1":"1","2":"2","3":"3","4":"4","5":"5","6":"6","7":"7","8":"8","9":"9","a":"ค","b":"๒","c":"ς","d":"๔","e":"є","f":"Ŧ","g":"ﻮ","h":"ђ","i":"เ","j":"ן","k":"к","l":"ɭ","m":"๓","n":"ภ","o":"๏","p":"ק","q":"ợ","r":"г","s":"ร","t":"Շ","u":"ย","v":"ש","w":"ฬ","x":"א","y":"ץ","z":"չ","A":"ค","B":"๒","C":"ς","D":"๔","E":"є","F":"Ŧ","G":"ﻮ","H":"ђ","I":"เ","J":"ן","K":"к","L":"ɭ","M":"๓","N":"ภ","O":"๏","P":"ק","Q":"ợ","R":"г","S":"ร","T":"Շ","U":"ย","V":"ש","W":"ฬ","X":"א","Y":"ץ","Z":"չ"}
 function fancy22(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy22chrmap[a] ? fancy22chrmap[a] : a;
+      return fancy22chrmap[a] ? fancy22chrmap[a] : a
     })
-    .join("");
-};
+    .join("")
+}
 const fancy23chrmap =  {"0":"𝟘","1":"𝟙","2":"𝟚","3":"𝟛","4":"𝟜","5":"𝟝","6":"𝟞","7":"𝟟","8":"𝟠","9":"𝟡","a":"𝕒","b":"𝕓","c":"𝕔","d":"𝕕","e":"𝕖","f":"𝕗","g":"𝕘","h":"𝕙","i":"𝕚","j":"𝕛","k":"𝕜","l":"𝕝","m":"𝕞","n":"𝕟","o":"𝕠","p":"𝕡","q":"𝕢","r":"𝕣","s":"𝕤","t":"𝕥","u":"𝕦","v":"𝕧","w":"𝕨","x":"𝕩","y":"𝕪","z":"𝕫","A":"𝔸","B":"𝔹","C":"ℂ","D":"𝔻","E":"𝔼","F":"𝔽","G":"𝔾","H":"ℍ","I":"𝕀","J":"𝕁","K":"𝕂","L":"𝕃","M":"𝕄","N":
 "ℕ","O":"𝕆","P":"ℙ","Q":"ℚ","R":"ℝ","S":"𝕊","T":"𝕋","U":"𝕌","V":"𝕍","W":"𝕎","X":"𝕏","Y":"𝕐","Z":"ℤ"}
 function fancy23(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy23chrmap[a] ? fancy23chrmap[a] : a;
+      return fancy23chrmap[a] ? fancy23chrmap[a] : a
     })
-    .join("");
-};
+    .join("")
+}
 const fancy24chrmap = {"0":"0","1":"1","2":"2","3":"3","4":"4","5":"5","6":"6","7":"7","8":"8","9":"9","a":"𝖆","b":"𝖇","c":"𝖈","d":"𝖉","e":"𝖊","f":"𝖋","g":"𝖌","h":
 "𝖍","i":"𝖎","j":"𝖏","k":"𝖐","l":"𝖑","m":"𝖒","n":"𝖓","o":"𝖔","p":"𝖕","q":"𝖖","r":"𝖗","s":"𝖘","t":"𝖙","u":"𝖚","v":"𝖛","w":"𝖜","x":"𝖝"
 ,"y":"𝖞","z":"𝖟","A":"𝕬","B":"𝕭","C":"𝕮","D":"𝕯","E":"𝕰","F":"𝕱","G":"𝕲","H":"𝕳","I":"𝕴","J":"𝕵","K":"𝕶","L":"𝕷","M":"𝕸","N":"𝕹","O"
@@ -2034,10 +2034,10 @@ function fancy24(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy24chrmap[a] ? fancy24chrmap[a] : a;
+      return fancy24chrmap[a] ? fancy24chrmap[a] : a
     })
-    .join("");
-};
+    .join("")
+}
 const fancy25chrmap = {"0":"0","1":"1","2":"2","3":"3","4":"4","5":"5","6":"6","7":"7","8":"8","9":"9","a":"🅰","b":"🅱","c":"🅲","d":"🅳","e":"🅴","f":"🅵","g":"🅶","h":
 "🅷","i":"🅸","j":"🅹","k":"🅺","l":"🅻","m":"🅼","n":"🅽","o":"🅾","p":"🅿","q":"🆀","r":"🆁","s":"🆂","t":"🆃","u":"🆄","v":"🆅","w":"🆆","x":"🆇"
 ,"y":"🆈","z":"🆉","A":"🅰","B":"🅱","C":"🅲","D":"🅳","E":"🅴","F":"🅵","G":"🅶","H":"🅷","I":"🅸","J":"🅹","K":"🅺","L":"🅻","M":"🅼","N":"🅽","O"
@@ -2046,10 +2046,10 @@ const fancy25chrmap = {"0":"0","1":"1","2":"2","3":"3","4":"4","5":"5","6":"6","
   return text
     .split("")
     .map(function (a) {
-      return fancy25chrmap[a] ? fancy25chrmap[a] : a;
+      return fancy25chrmap[a] ? fancy25chrmap[a] : a
     })
-    .join("");
-};
+    .join("")
+}
 const fancy26chrmap = {"0":"0","1":"1","2":"2","3":"3","4":"4","5":"5","6":"6","7":"7","8":"8","9":"9","a":"𝓪","b":"𝓫","c":"𝓬","d":"𝓭","e":"𝓮","f":"𝓯","g":"𝓰","h":
 "𝓱","i":"𝓲","j":"𝓳","k":"𝓴","l":"𝓵","m":"𝓶","n":"𝓷","o":"𝓸","p":"𝓹","q":"𝓺","r":"𝓻","s":"𝓼","t":"𝓽","u":"𝓾","v":"𝓿","w":"𝔀","x":"𝔁"
 ,"y":"𝔂","z":"𝔃","A":"𝓐","B":"𝓑","C":"𝓒","D":"𝓓","E":"𝓔","F":"𝓕","G":"𝓖","H":"𝓗","I":"𝓘","J":"𝓙","K":"𝓚","L":"𝓛","M":"𝓜","N":"𝓝","O"
@@ -2058,10 +2058,10 @@ const fancy26chrmap = {"0":"0","1":"1","2":"2","3":"3","4":"4","5":"5","6":"6","
   return text
     .split("")
     .map(function (a) {
-      return fancy26chrmap[a] ? fancy26chrmap[a] : a;
+      return fancy26chrmap[a] ? fancy26chrmap[a] : a
     })
-    .join("");
-};
+    .join("")
+}
 const fancy27chrmap = {"0":"0","1":"1","2":"2","3":"3","4":"4","5":"5","6":"6","7":"7","8":"8","9":"9","a":"𝔞","b":"𝔟","c":"𝔠","d":"𝔡","e":"𝔢","f":"𝔣","g":"𝔤","h":
 "𝔥","i":"𝔦","j":"𝔧","k":"𝔨","l":"𝔩","m":"𝔪","n":"𝔫","o":"𝔬","p":"𝔭","q":"𝔮","r":"𝔯","s":"𝔰","t":"𝔱","u":"𝔲","v":"𝔳","w":"𝔴","x":"𝔵"
 ,"y":"𝔶","z":"𝔷","A":"𝔄","B":"𝔅","C":"ℭ","D":"𝔇","E":"𝔈","F":"𝔉","G":"𝔊","H":"ℌ","I":"ℑ","J":"𝔍","K":"𝔎","L":"𝔏","M":"𝔐","N":"𝔑","O":"�","P":"𝔓","Q":"𝔔","R":"ℜ","S":"𝔖","T":"𝔗","U":"𝔘","V":"𝔙","W":"𝔚","X":"𝔛","Y":"𝔜","Z":"ℨ"}
@@ -2069,20 +2069,20 @@ function fancy27(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy27chrmap[a] ? fancy27chrmap[a] : a;
+      return fancy27chrmap[a] ? fancy27chrmap[a] : a
     })
-    .join("");
-};
+    .join("")
+}
 
 const fancy28chrmap = {"0":"０","1":"１","2":"２","3":"３","4":"４","5":"５","6":"６","7":"７","8":"８","9":"９","a":"ａ","b":"ｂ","c":"ｃ","d":"ｄ","e":"ｅ","f":"ｆ","g":"ｇ","h":"ｈ","i":"ｉ","j":"ｊ","k":"ｋ","l":"ｌ","m":"ｍ","n":"ｎ","o":"ｏ","p":"ｐ","q":"ｑ","r":"ｒ","s":"ｓ","t":"ｔ","u":"ｕ","v":"ｖ","w":"ｗ","x":"ｘ","y":"ｙ","z":"ｚ","A":"Ａ","B":"Ｂ","C":"Ｃ","D":"Ｄ","E":"Ｅ","F":"Ｆ","G":"Ｇ","H":"Ｈ","I":"Ｉ","J":"Ｊ","K":"Ｋ","L":"Ｌ","M":"Ｍ","N":"Ｎ","O":"Ｏ","P":"Ｐ","Q":"Ｑ","R":"Ｒ","S":"Ｓ","T":"Ｔ","U":"Ｕ","V":"Ｖ","W":"Ｗ","X":"Ｘ","Y":"Ｙ","Z":"Ｚ"}
 function fancy28(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy28chrmap[a] ? fancy28chrmap[a] : a;
+      return fancy28chrmap[a] ? fancy28chrmap[a] : a
     })
-    .join("");
-};
+    .join("")
+}
 const fancy29chrmap = {"0":"0","1":"1","2":"2","3":"3","4":"4","5":"5","6":"6","7":"7","8":"8","9":"9","a":"𝒂","b":"𝒃","c":"𝒄","d":"𝒅","e":"𝒆","f":"𝒇","g":"𝒈","h":
 "𝒉","i":"𝒊","j":"𝒋","k":"𝒌","l":"𝒍","m":"𝒎","n":"𝒏","o":"𝒐","p":"𝒑","q":"𝒒","r":"𝒓","s":"𝒔","t":"𝒕","u":"𝒖","v":"𝒗","w":"𝒘","x":"𝒙"
 ,"y":"𝒚","z":"𝒛","A":"𝑨","B":"𝑩","C":"𝑪","D":"𝑫","E":"𝑬","F":"𝑭","G":"𝑮","H":"𝑯","I":"𝑰","J":"𝑱","K":"𝑲","L":"𝑳","M":"𝑴","N":"𝑵","O"
@@ -2091,10 +2091,10 @@ function fancy29(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy29chrmap[a] ? fancy29chrmap[a] : a;
+      return fancy29chrmap[a] ? fancy29chrmap[a] : a
     })
-    .join("");
-};
+    .join("")
+}
 const fancy30chrmap = {"0":"0","1":"1","2":"2","3":"3","4":"4","5":"5","6":"6","7":"7","8":"8","9":"9","a":"𝛥","b":"𝐵","c":"𝐶","d":"𝐷","e":"𝛯","f":"𝐹","g":"𝐺","h":
 "𝛨","i":"𝛪","j":"𝐽","k":"𝛫","l":"𝐿","m":"𝛭","n":"𝛮","o":"𝛩","p":"𝛲","q":"𝑄","r":"𝑅","s":"𝑆","t":"𝑇","u":"𝑈","v":"𝛻","w":"𝑊","x":"𝛸"
 ,"y":"𝑌","z":"𝛧","A":"𝛥","B":"𝐵","C":"𝐶","D":"𝐷","E":"𝛯","F":"𝐹","G":"𝐺","H":"𝛨","I":"𝛪","J":"𝐽","K":"𝛫","L":"𝐿","M":"𝛭","N":"𝛮","O"
@@ -2103,20 +2103,20 @@ function fancy30(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy30chrmap[a] ? fancy30chrmap[a] : a;
+      return fancy30chrmap[a] ? fancy30chrmap[a] : a
     })
-    .join("");
-};
+    .join("")
+}
 const fancy31chrmap = {"0":"𝟬","1":"𝟭","2":"𝟮","3":"𝟯","4":"𝟰","5":"𝟱","6":"𝟲","7":"𝟳","8":"𝟴","9":"𝟵","a":"𝞓","b":"𝞑","c":"𝘾","d":"𝘿","e":"𝞢","f":"𝙁","g"
 :"𝙂","h":"𝞖","i":"𝞘","j":"𝙅","k":"𝞙","l":"𝙇","m":"𝞛","n":"𝞜","o":"𝞗","p":"𝞠","q":"𝙌","r":"𝞒","s":"𝙎","t":"𝙏","u":"𝙐","v":"𝝯","w":"𝙒","x":"𝞦","y":"𝙔","z":"𝙕","A":"𝞓","B":"𝞑","C":"𝘾","D":"𝘿","E":"𝞢","F":"𝙁","G":"𝙂","H":"𝞖","I":"𝞘","J":"𝙅","K":"𝞙","L":"𝙇","M":"𝞛","N":"𝞜","O":"𝞗","P":"𝞠","Q":"𝙌","R":"𝞒","S":"𝙎","T":"𝙏","U":"𝙐","V":"𝝯","W":"𝙒","X":"𝞦","Y":"𝙔","Z":"𝙕"}
 function fancy31(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy31chrmap[a] ? fancy31chrmap[a] : a;
+      return fancy31chrmap[a] ? fancy31chrmap[a] : a
     })
-    .join("");
-};
+    .join("")
+}
 const fancy32chrmap =  {"0":"0","1":"1","2":"2","3":"3","4":"4","5":"5","6":"6","7":"7","8":"8","9":"9","a":"𝚫","b":"𝚩","c":"𝐂","d":"𝐃","e":"𝚵","f":"𝐅","g":"𝐆","h":
 "𝚮","i":"𝚰","j":"𝐉","k":"𝐊","l":"𝐋","m":"𝚳","n":"𝚴","o":"𝚯","p":"𝚸","q":"𝐐","r":"𝚪","s":"𝐒","t":"𝚻","u":"𝐔","v":"𝛁","w":"𝐖","x":"𝚾"
 ,"y":"𝐘","z":"𝚭","A":"𝚫","B":"𝚩","C":"𝐂","D":"𝐃","E":"𝚵","F":"𝐅","G":"𝐆","H":"𝚮","I":"𝚰","J":"𝐉","K":"𝐊","L":"𝐋","M":"𝚳","N":"𝚴","O"
@@ -2125,122 +2125,122 @@ function fancy32(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy32chrmap[a] ? fancy32chrmap[a] : a;
+      return fancy32chrmap[a] ? fancy32chrmap[a] : a
     })
-    .join("");
-};
+    .join("")
+}
 const fancy33chrmap = {"0":"0","1":"1","2":"2","3":"3","4":"4","5":"5","6":"6","7":"7","8":"8","9":"9","a":"ᗩ","b":"ᗷ","c":"ᑕ","d":"ᗞ","e":"ᗴ","f":"ᖴ","g":"Ꮐ","h":"ᕼ","i":"Ꮖ","j":"ᒍ","k":"Ꮶ","l":"し","m":"ᗰ","n":"ᑎ","o":"ᝪ","p":"ᑭ","q":"ᑫ","r":"ᖇ","s":"ᔑ","t":"Ꭲ","u":"ᑌ","v":"ᐯ","w":"ᗯ","x":"᙭","y":"Ꭹ","z":"Ꮓ","A":"ᗩ","B":"ᗷ","C":"ᑕ","D":"ᗞ","E":"ᗴ","F":"ᖴ","G":"Ꮐ","H":"ᕼ","I":"Ꮖ","J":"ᒍ","K":"Ꮶ","L":"し","M":"ᗰ","N":"ᑎ","O":"ᝪ","P":"ᑭ","Q":"ᑫ","R":"ᖇ","S":"ᔑ","T":"Ꭲ","U":"ᑌ","V":"ᐯ","W":"ᗯ","X":"᙭","Y":"Ꭹ","Z":"Ꮓ"}
 function fancy33(text) {
   return text
     .split("")
     .map(function (a) {
-      return fancy33chrmap[a] ? fancy33chrmap[a] : a;
+      return fancy33chrmap[a] ? fancy33chrmap[a] : a
     })
-    .join("");
-};
+    .join("")
+}
 const tinyChrmap = {"0":"0","1":"1","2":"2","3":"3","4":"4","5":"5","6":"6","7":"7","8":"8","9":"9","a":"ᴀ","b":"ʙ","c":"ᴄ","d":"ᴅ","e":"ᴇ","f":"ꜰ","g":"ɢ","h":"ʜ","i":"ɪ","j":"ᴊ","k":"ᴋ","l":"ʟ","m":"ᴍ","n":"ɴ","o":"ᴏ","p":"ᴘ","q":"ϙ","r":"ʀ","s":"ꜱ","t":"ᴛ","u":"ᴜ","v":"ᴠ","w":"ᴡ","x":"x","y":"ʏ","z":"ᴢ","A":"A","B":"ʙ","C":"C","D":"D","E":"E","F":"F","G":"G","H":"H","I":"I","J":"J","K":"K","L":"L","M":"M","N":"N","O":"O","P":"P","Q":"Q","R":"R","S":"S","T":"T","U":"U","V":"V","W":"W","X":"X","Y":"Y","Z":"Z"}
 function tiny(text) {
   return text
     .split("")
     .map(function (a) {
-      return tinyChrmap[a] ? tinyChrmap[a] : a;
+      return tinyChrmap[a] ? tinyChrmap[a] : a
     })
-    .join("");
-};
+    .join("")
+}
 function ladybug(text) {
   return text
     .split("")
     .map(function (a) {
-      return ladybugCharMap[a] ? ladybugCharMap[a] : a;
+      return ladybugCharMap[a] ? ladybugCharMap[a] : a
     })
-    .join("");
+    .join("")
 }
 
 function runes(text) {
   return text
     .split("")
     .map(function (a) {
-      return runesCharMap[a] ? runesCharMap[a] : a;
+      return runesCharMap[a] ? runesCharMap[a] : a
     })
-    .join("");
+    .join("")
 }
 function serif_B(text) {
   return text
     .split("")
     .map(function (a) {
-      return serif_BCharMap[a] ? serif_BCharMap[a] : a;
+      return serif_BCharMap[a] ? serif_BCharMap[a] : a
     })
-    .join("");
+    .join("")
 }
 function serif_BI(text) {
   return text
     .split("")
     .map(function (a) {
-      return serif_BICharMap[a] ? serif_BICharMap[a] : a;
+      return serif_BICharMap[a] ? serif_BICharMap[a] : a
     })
-    .join("");
+    .join("")
 }
 function serif_I(text) {
   return text
     .split("")
     .map(function (a) {
-      return serif_ICharMap[a] ? serif_ICharMap[a] : a;
+      return serif_ICharMap[a] ? serif_ICharMap[a] : a
     })
-    .join("");
+    .join("")
 }
 function wingdings(text) {
   return text
     .split("")
     .map(function (a) {
-      return wingdingsCharMap[a] ? wingdingsCharMap[a] : a;
+      return wingdingsCharMap[a] ? wingdingsCharMap[a] : a
     })
-    .join("");
+    .join("")
 }
 
 function vaporwave(text) {
   return text
     .split("")
     .map(function (a) {
-      return vaporwaveCharMap[a] ? vaporwaveCharMap[a] : a;
+      return vaporwaveCharMap[a] ? vaporwaveCharMap[a] : a
     })
-    .join("");
+    .join("")
 }
 
 function sparrow(text) {
   return text
     .split("")
     .map(function (a) {
-      return sparrowCharMap[a] ? sparrowCharMap[a] : a;
+      return sparrowCharMap[a] ? sparrowCharMap[a] : a
     })
-    .join("");
+    .join("")
 }
 
 function typewriter(text) {
   return text
     .split("")
     .map(function (a) {
-      return typewriterCharMap[a] ? typewriterCharMap[a] : a;
+      return typewriterCharMap[a] ? typewriterCharMap[a] : a
     })
-    .join("");
+    .join("")
 }
 function fancytext(text, index) {
-        index = index - 1;
-        return listall(text)[index];
+        index = index - 1
+        return listall(text)[index]
     }
 function analucia(text) {
   return text
     .split("")
     .map(function (a) {
-      return analuciaCharMap[a] ? analuciaCharMap[a] : a;
+      return analuciaCharMap[a] ? analuciaCharMap[a] : a
     })
-    .join("");
+    .join("")
 }
 
-module.exports = {
+export { 
   randomStyle:(text)=>{
     let list = listall(text)
    return list[Math.floor(Math.random()*list.length)]
-  },
+   },
   listall,
   strikeThrough,
   wingdings,
@@ -2304,4 +2304,4 @@ fancy7,
  fancy31,
  fancy32,
  fancy33,
-};
+}

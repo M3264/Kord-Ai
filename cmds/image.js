@@ -13,15 +13,10 @@ const {
    prefix,
    remini,
    upscaleImage,
-   config
+   config,
+   Baileys
 } = require("../core")
-const { proto, generateWAMessageFromContent, prepareWAMessageMedia } = require('baileys')
 
-const formatFileSize = bytes => {
-    if (bytes < 1024) return bytes + ' B'
-    else if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(2) + ' KB'
-    else return (bytes / (1024 * 1024)).toFixed(2) + ' MB'
-}
 
 const getImageUrl = async (m) => {
     if (m.quoted.image) {
@@ -511,6 +506,8 @@ kord({
         const response = await m.axios(`https://kord-api.vercel.app/lumina/search?query=${text}`)
         const { wallpapers } = response
         const jid = m.chat
+        const baileys = await Baileys()
+        const { proto, generateWAMessageFromContent, prepareWAMessageMedia } = baileys
 
         const slides = wallpapers.map(wallpaper => {
             const stats = `❐ ${wallpaper.downloads} ✰ ${wallpaper.likes} ✡ ${wallpaper.views}`;

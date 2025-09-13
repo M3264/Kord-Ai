@@ -247,6 +247,6 @@ const fonts = {
         'k': 'ᴋ', 'l': 'ʟ', 'm': 'ᴍ', 'n': 'ɴ', 'o': 'ᴏ', 'p': 'ᴘ', 'q': 'ꞯ', 'r': 'ʀ', 's': 's', 't': 'ᴛ',
         'u': 'ᴜ', 'v': 'ᴠ', 'w': 'ᴡ', 'x': 'x', 'y': 'ʏ', 'z': 'ᴢ'
     },
-  };
+  }
   
-  module.exports = fonts;
+  export default fonts

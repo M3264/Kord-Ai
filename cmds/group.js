@@ -17,6 +17,7 @@ const {
   getData,
   storeData,
   parsedJid,
+  lidToJid,
   sleep,
   prefix,
   getMeta,
@@ -198,7 +199,7 @@ cmd: "kick",
     
     if (text === "all") {
     var res = await m.send("_✘ Reply \"confirm\" to continue_")
-    var response = await m.getResponse(res, 10000)
+    var response = await m.getResponse(res, 5000)
     if (response.text.toLowerCase() === "confirm") {
     await m.send("_*✓ Kicking all users in 10 seconds*_\n_Use restart command to cancel_")
     await sleep(10000)
@@ -1881,7 +1882,8 @@ kord({
       chatJid,
      action: "del",
      warnc: "0",
-     maxwrn: "3"
+     maxwrn: "3",
+     mode: "members"
     }
     if (isExist) {
       isExist.action = "del"
@@ -1889,21 +1891,23 @@ kord({
       sdata.push(delc)
     }
     await storeData("antitag_config", JSON.stringify(sdata, null, 2))
-    return await m.send(`_*AntiTag Is Now Enabled!*_\n_Action:_ delete`)
+    return await m.send(`_*AntiTag Is Now Enabled!*_\n_Action:_ delete\n_Mode:_ members`)
     } else  if (option === "kick") {
       var kikc = {
         chatJid,
         "action": "kick", 
         "warnc": "0",
-        "maxwrn": "3"
+        "maxwrn": "3",
+        "mode": "members"
       }
        if (isExist) {
       isExist.action = "kick"
+      if (!isExist.mode) isExist.mode = "members"
     } else {
       sdata.push(kikc)
     }
     await storeData("antitag_config", JSON.stringify(sdata, null, 2))
-    return await m.send(`_*AntiTag Is Now Enabled!*_\n_Action:_ kick`)
+    return await m.send(`_*AntiTag Is Now Enabled!*_\n_Action:_ kick\n_Mode:_ members`)
     } else if (option === "warn") {
       var cou = parseInt(value)
       if(!cou) return await m.send(`*_Use ${prefix}antitag warn 3_*`)
@@ -1911,22 +1915,40 @@ kord({
         chatJid,
         "action": "warn",
         "warnc": "0",
-        "maxwrn": cou
+        "maxwrn": cou,
+        "mode": "members"
       }
       if (isExist) {
       isExist.action = "warn"
       isExist.maxwrn = cou
+      if (!isExist.mode) isExist.mode = "members"
     } else {
       sdata.push(warnco)
     }
     await storeData("antitag_config", JSON.stringify(sdata, null, 2))
-    return await m.send(`_*AntiTag Is Now Enabled!*_\n_Action:_ Warn\n_MaxWarning:_ ${cou}`)
+    return await m.send(`_*AntiTag Is Now Enabled!*_\n_Action:_ Warn\n_MaxWarning:_ ${cou}\n_Mode:_ members`)
+    } else if (option === "admins") {
+      if (!isExist) return await m.send("_Please enable antitag first with an action (delete/kick/warn)_")
+      isExist.mode = "admins"
+      await storeData("antitag_config", JSON.stringify(sdata, null, 2))
+      return await m.send(`_*AntiTag Mode Changed!*_\n_Mode:_ admins only`)
+    } else if (option === "members") {
+      if (!isExist) return await m.send("_Please enable antitag first with an action (delete/kick/warn)_")
+      isExist.mode = "members"
+      await storeData("antitag_config", JSON.stringify(sdata, null, 2))
+      return await m.send(`_*AntiTag Mode Changed!*_\n_Mode:_ members`)
+    } else if (option === "member") {
+      if (!isExist) return await m.send("_Please enable antitag first with an action (delete/kick/warn)_")
+      isExist.mode = "member"
+      await storeData("antitag_config", JSON.stringify(sdata, null, 2))
+      return await m.send(`_*AntiTag Mode Changed!*_\n_Mode:_ member (no member tagging allowed)`)
     } else if (option === "status") {
       if (!isExist) return await m.send("_AntiTag is Currently Disabled here..._")
       var sc = `\`\`\`[ ANTI-TAG STATUS ]\`\`\`
 _Active?:_ Yes
 _Action:_ ${isExist.action}
-_MaxWARN:_ ${isExist.maxwrn}`
+_MaxWARN:_ ${isExist.maxwrn}
+_Mode:_ ${isExist.mode || "members"}`
       await m.send(sc)
     } else if (option === "off") {
       if (!isExist) return await m.send("_AntiTag is Currently Disabled here..._")
@@ -1938,6 +1960,9 @@ _MaxWARN:_ ${isExist.maxwrn}`
 _${pre}antitag delete_
 _${pre}antitag kick_
 _${pre}antitag warn 3_
+_${pre}antitag admins_
+_${pre}antitag members_
+_${pre}antitag member_
 _${pre}antitag status_
 _${pre}antitag off_`
       return m.send(`${mssg}`)
@@ -1947,6 +1972,9 @@ _${pre}antitag off_`
 _${pre}antitag delete_
 _${pre}antitag kick_
 _${pre}antitag warn 3_
+_${pre}antitag admins_
+_${pre}antitag members_
+_${pre}antitag member_
 _${pre}antitag status_
 _${pre}antitag off_`
       return m.send(`${msg}`)
@@ -1987,20 +2015,40 @@ on: "all",
     
     const { participants } = await m.client.groupMetadata(m.chat)
     const allParticipants = participants.map(p => p.jid)
+    const adminJids = participants.filter(p => p.admin !== null).map(p => p.jid)
     const mentionedCount = m.mentionedJid.length
     const totalParticipants = allParticipants.length
     
-    const tagPercentage = (mentionedCount / totalParticipants) * 100
+    const mode = isExist.mode || "members"
+    let shouldTrigger = false
     
-    if (tagPercentage >= 80 || mentionedCount >= 10) {
+    if (mode === "admins") {
+      const mentionedAdmins = m.mentionedJid.filter(jid => adminJids.includes(jid))
+      const adminPercentage = adminJids.length > 0 ? (mentionedAdmins.length / adminJids.length) * 100 : 0
+      shouldTrigger = adminPercentage >= 80 || mentionedAdmins.length >= Math.min(5, adminJids.length)
+    } else if (mode === "member") {
+      const mentionedMembers = m.mentionedJid.filter(jid => !adminJids.includes(jid))
+      shouldTrigger = mentionedMembers.length > 0
+    } else {
+      const tagPercentage = (mentionedCount / totalParticipants) * 100
+      shouldTrigger = tagPercentage >= 80 || mentionedCount >= 10
+    }
+    
+    if (shouldTrigger) {
       var act = isExist.action
       
       if (act === "del") {
         await m.send(m, {}, "delete")
-        await m.send(`_*@${sender.split('@')[0]} Mass Tagging is not Allowed!!*_`, {mentions: [sender]})
+        let modeText = "Mass Tagging"
+        if (mode === "admins") modeText = "Mass Tagging Admins"
+        else if (mode === "member") modeText = "Tagging Members"
+        await m.send(`_*@${sender.split('@')[0]} ${modeText} is not Allowed!!*_`, {mentions: [sender]})
       } else if (act === "kick") {
         await m.send(m, {}, "delete")
-        await m.send(`_*@${sender.split('@')[0]} Mass Tagging is not Allowed!!*_\n_Goodbye!!_`, {mentions: [sender]})
+        let modeText = "Mass Tagging"
+        if (mode === "admins") modeText = "Mass Tagging Admins"
+        else if (mode === "member") modeText = "Tagging Members"
+        await m.send(`_*@${sender.split('@')[0]} ${modeText} is not Allowed!!*_\n_Goodbye!!_`, {mentions: [sender]})
         await m.client.groupParticipantsUpdate(cJid, [sender], 'remove')
       } else if (act === "warn") {
         const warnKey = `${cJid}_${sender}`
@@ -2017,7 +2065,10 @@ on: "all",
           await m.client.groupParticipantsUpdate(cJid, [sender], 'remove')
           tagWarnings.delete(warnKey)
         } else {
-          var rmsg = `_*@${sender.split('@')[0]} Mass Tagging is not Allowed!!*_
+          let modeText = "Mass Tagging"
+          if (mode === "admins") modeText = "Mass Tagging Admins"
+          else if (mode === "member") modeText = "Tagging Members"
+          var rmsg = `_*@${sender.split('@')[0]} ${modeText} is not Allowed!!*_
 _You are warned!_
 Warning(s): (${currentWarns}/${maxC})
 _Remaining:_ ${remain}`
@@ -2035,7 +2086,6 @@ _Remaining:_ ${remain}`
   }
 })
 
-
 const parseInterval = input => {
   const match = input.match(/(\d+)([dhm])/i)
   if (!match) return 0
@@ -2046,8 +2096,7 @@ const parseInterval = input => {
   if (unit === 'm') return value * 60
   return 0
 }
-
-const listOnlineOffline = async (m, text, store, mode) => {
+const listOnlineOffline = async (m, text, store, mode, sock) => {
   if (!text) return await m.send("_provide a time interval_\n_example:_\n_listonline 10m_\n_listonline 30m_\n_listonline 24h_\n_listonline 1d_")
   const intervalSec = parseInterval(text)
   if (!intervalSec) return await m.send("_invalid interval_\n_example:_\n_listonline 10m_\n_listonline 30m_\n_listonline 24h_\n_listonline 1d_")
@@ -2060,13 +2109,20 @@ const listOnlineOffline = async (m, text, store, mode) => {
     let parsed
     try { parsed = JSON.parse(row.message) } catch { continue }
     const key = parsed.key || {}
-    const rawJid = key.participantPn || key.participant || key.remoteJid
-    if (!rawJid || rawJid.endsWith("@g.us")) continue
-    const jid = rawJid.split("@")[0]
+    const participantJid = key.participant || key.remoteJid
+    const actualJid = key.participantPn || participantJid
+    if (!participantJid || participantJid.endsWith("@g.us")) continue
+    const jid = participantJid.split("@")[0]
     const timestamp = parsed.messageTimestamp || 0
     if (mode === "online" && timestamp < now - intervalSec) continue
     if (!stats[jid] || stats[jid].lastSeen < timestamp) {
-      stats[jid] = { jid, name: parsed.pushName || jid, lastSeen: timestamp }
+      stats[jid] = { 
+        jid, 
+        name: parsed.pushName || jid, 
+        lastSeen: timestamp, 
+        rawJid: participantJid,
+        actualJid: actualJid
+      }
     }
   }
 
@@ -2078,7 +2134,8 @@ const listOnlineOffline = async (m, text, store, mode) => {
   }
 
   if (!filtered.length) return m.send(`_${mode} users: None_`)
-  const mentions = filtered.map(u => u.jid + '@s.whatsapp.net')
+  
+  const mentions = filtered.map(u => u.rawJid)
   const textList = filtered.map(u => `-@${u.jid}`).join("\n")
   return m.send(`*${mode.charAt(0).toUpperCase() + mode.slice(1)} users:*\n${textList}`, { mentions })
 }
@@ -2090,7 +2147,7 @@ kord({
   type: "tools",
   gc: true,
   adminOnly: true
-}, async (m, text, c, store) => listOnlineOffline(m, text, store, "online"))
+}, async (m, text, c, store) => listOnlineOffline(m, text, store, "online", m.client))
 
 kord({
   cmd: "listoffline",
@@ -2099,4 +2156,41 @@ kord({
   type: "tools",
   gc: true,
   adminOnly: true
-}, async (m, text, c, store) => listOnlineOffline(m, text, store, "offline"))
+}, async (m, text, c, store) => listOnlineOffline(m, text, store, "offline", m.client))
+
+kord({
+cmd: "kickr",
+  desc: "remove mentioned members from replied message except sender",
+  fromMe: wtype,
+  gc: true,
+  adminOnly: true,
+  type: "group",
+}, async (m, text) => {
+  try {
+    var botAd = await isBotAdmin(m)
+    if (!botAd) return await m.send("_*✘Bot Needs To Be Admin!*_")
+    
+    if (!m.quoted) return await m.send("_✘ Reply to a message with mentions_")
+    
+    var mentionedUsers = m.quoted.mentionedJid
+    if (!mentionedUsers || mentionedUsers.length === 0) return await m.send("_✘ No mentioned users found in replied message_")
+    
+    var sender = m.quoted.sender
+    var usersToKick = mentionedUsers.filter(user => user !== sender)
+    
+    if (usersToKick.length === 0) return await m.send("_✘ No users to kick (sender excluded)_")
+    
+    await m.send(`_*✓ Kicking ${usersToKick.length} users*_`)
+    
+    for (let user of usersToKick) {
+      const jid = parsedJid(user)
+      await m.client.groupParticipantsUpdate(m.chat, [jid], "remove")
+      if (config().KICK_AND_BLOCK) await m.client.updateBlockStatus(jid, "block")
+      await m.send(`_*✓ @${jid.split("@")[0]} kicked*_`, { mentions: [jid] })
+      await sleep(1000)
+    }
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
+})

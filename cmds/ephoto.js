@@ -17,93 +17,94 @@ const createCmd = (name, effectUrl, emoji, description, options = {}) => {
         type: "textmaker",
         fromMe: wtype,
     }, async (m, text) => {
-                const joinedText = text
-        const hasSemicolon = joinedText.includes(';');
-        let textInputs = [];
-        let radioOption = null;
+        const joinedText = text
+        const hasSemicolon = joinedText.includes(';')
+        let textInputs = []
+        let radioOption = null
         
         if (hasSemicolon) {
-            const splitInputs = joinedText.split(';').map(item => item.trim());
+            const splitInputs = joinedText.split(';').map(item => item.trim())
             if (options.hasRadio && splitInputs.length > 0) {
-                const lastItem = splitInputs[splitInputs.length - 1];
+                const lastItem = splitInputs[splitInputs.length - 1]
                 if (/^\d+$/.test(lastItem)) {
-                    radioOption = lastItem;
-                    textInputs = splitInputs.slice(0, splitInputs.length - 1);
+                    radioOption = lastItem
+                    textInputs = splitInputs.slice(0, splitInputs.length - 1)
                 } else {
-                    textInputs = splitInputs;
+                    textInputs = splitInputs
                 }
             } else {
-                textInputs = splitInputs;
+                textInputs = splitInputs
             }
         } else {
-            textInputs = joinedText ? [joinedText] : [];
+            textInputs = joinedText ? [joinedText] : []
         }
         
         if (options.needsMultipleTexts && textInputs.length < options.numTexts) {
-                let radioOptionsList = "";
-                if (options.hasRadio) {
-                    radioOptionsList = "\n_You can use the following numbers:_\n" +
-                        options.radioOptions.map((ro, index) => `_${index + 1} - ${ro.dataTitle}_`).join("\n");
-                }
-                
-                m.send(`_provide the correct arguments_.\n` +
-                    `_*Example: ${prefix}${name} text1;text2${options.numTexts > 2 ? ';text3' : ''}${options.numTexts > 3 ? ';text4' : ''}${options.hasRadio ? ';1' : ''}*_\n` +
-                    `${radioOptionsList}`);
-                return;
+            let radioOptionsList = ""
+            if (options.hasRadio) {
+                radioOptionsList = "\n_You can use the following numbers:_\n" +
+                    options.radioOptions.map((ro, index) => `_${index + 1} - ${ro.dataTitle}_`).join("\n")
+            }
+            
+            m.send(`_provide the correct arguments_.\n` +
+                `_*Example: ${prefix}${name} text1;text2${options.numTexts > 2 ? ';text3' : ''}${options.numTexts > 3 ? ';text4' : ''}${options.hasRadio ? ';1' : ''}*_\n` +
+                `${radioOptionsList}`)
+            return
         } else if (!options.needsMultipleTexts && textInputs.length === 0 && !options.hasRadio) {
-                m.send(`_provide text for the ${name} effect_\n` +
-                    `_*Example: ${prefix}${name} Hello World*_`);
-                return;
+            m.send(`_provide text for the ${name} effect_\n` +
+                `_*Example: ${prefix}${name} Hello World*_`)
+            return
         }
         
         if (options.hasRadio) {
             if (!radioOption) {
-                    let radioOptionsList = "\n_You can use the following numbers:_\n" +
-                        options.radioOptions.map((ro, index) => `_${index + 1} - ${ro.dataTitle}_`).join("\n");
-                    
-                    m.send(`_*provide a radio option*_.\n` +
-                        `_*Example: ${prefix}${name} ${options.needsMultipleTexts ? `text1;text2${options.numTexts > 2 ? ';text3' : ''}${options.numTexts > 3 ? ';text4' : ''}` : "text"};1*_\n` +
-                        `${radioOptionsList}`);
-                    return;
+                let radioOptionsList = "\n_You can use the following numbers:_\n" +
+                    options.radioOptions.map((ro, index) => `_${index + 1} - ${ro.dataTitle}_`).join("\n")
+                
+                m.send(`_*provide a radio option*_.\n` +
+                    `_*Example: ${prefix}${name} ${options.needsMultipleTexts ? `text1;text2${options.numTexts > 2 ? ';text3' : ''}${options.numTexts > 3 ? ';text4' : ''}` : "text"};1*_\n` +
+                    `${radioOptionsList}`)
+                return
             }
             
-            const radioIndex = parseInt(radioOption);
+            const radioIndex = parseInt(radioOption)
             
             if (isNaN(radioIndex) || radioIndex < 1 || radioIndex > options.radioOptions.length) {
-                    let availableOptions = options.radioOptions.map((ro, index) => `${ro.dataTitle} (${index + 1})`).join(", ");
-                    m.send(`_Invalid radio option. choose a number from 1 to ${options.radioOptions.length}_\n` +
-                        `_You can use the following numbers:_\n` +
-                        options.radioOptions.map((ro, index) => `_${index + 1} - ${ro.dataTitle}_`).join("\n"));
-                    return;
+                m.send(`_Invalid radio option. choose a number from 1 to ${options.radioOptions.length}_\n` +
+                    `_You can use the following numbers:_\n` +
+                    options.radioOptions.map((ro, index) => `_${index + 1} - ${ro.dataTitle}_`).join("\n"))
+                return
             }
         }
         
         try {
-          await m.react("⏳")
-            let result;
+            await m.react("⏳")
+            let result
+            
             if (options.hasRadio) {
-                const radioIndex = parseInt(radioOption);
-                const selectedOption = options.radioOptions[radioIndex - 1];
+                const radioIndex = parseInt(radioOption)
+                const selectedOption = options.radioOptions[radioIndex - 1]
                 
-                const optionValue = selectedOption.dataTitle.toLowerCase();
+                const radioParams = {
+                    [options.radioName]: selectedOption.dataTitle.toLowerCase()
+                }
                 
-                result = await textMaker(effectUrl, options.needsMultipleTexts ? textInputs : [textInputs[0]], {
-                    [options.radioName]: optionValue });
+                result = await textMaker(effectUrl, options.needsMultipleTexts ? textInputs : [textInputs[0]], radioParams)
             } else {
-                result = await textMaker(effectUrl, options.needsMultipleTexts ? textInputs : [textInputs[0]]);
+                result = await textMaker(effectUrl, options.needsMultipleTexts ? textInputs : [textInputs[0]])
             }
 
             if (!result.status || !result.url) {
-                throw new Error('Failed to generate effect');
+                throw new Error('Failed to generate effect')
             }
             await m.send(result.url, { caption: config().CAPTION }, "image")
             m.react("")
         } catch (error) {
-            console.error(`Error in ${name} command:`, error);
-            m.send(`An error occurred: ${error.message}`);
+            console.error(`Error in ${name} command:`, error)
+            m.send(`An error occurred: ${error.message}`)
         }
-    });
-};
+    })
+}
 
 createCmd("neonlight", "https://en.ephoto360.com/create-light-effects-green-neon-online-429.html", "💡", "neon light text effect", {
     needsMultipleTexts: false,
