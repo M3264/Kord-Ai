@@ -1,5 +1,5 @@
 // Credits to Neeraj-X0
-import unicode from './unicode'
+const unicode = require('./unicode')
 var style = unicode
 style.tools.creepify.options.maxHeight = 10
 
@@ -489,7 +489,7 @@ const wingdingsCharMap = {
   ".": "📬︎",
   "/": "📭︎",
   ":": "🖳︎",
-  ";": "🖴︎",
+  "": "🖴︎",
   "<": "🖫︎",
   "=": "🖬︎",
   ">": "✇︎",
@@ -2236,11 +2236,10 @@ function analucia(text) {
     .join("")
 }
 
-export { 
-  randomStyle:(text)=>{
+module.exports = { randomStyle:(text)=>{
     let list = listall(text)
    return list[Math.floor(Math.random()*list.length)]
-   },
+    },
   listall,
   strikeThrough,
   wingdings,

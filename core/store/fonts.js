@@ -249,4 +249,4 @@ const fonts = {
     },
   }
   
-  export default fonts
+  module.exports = fonts
