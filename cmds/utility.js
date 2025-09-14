@@ -36,7 +36,7 @@ kord({
         var links = await extractUrlsFromString(lik)
         var link = links[0]
 
-        var img = await fetch(`https://puppeteer-on-vercel-roan.vercel.app/ss?url=${encodeURIComponent(link)}&device=desktop`) //or mobile or tablet 
+        var img = await fetch(`https://ss.haki.top/screenshot?url=${encodeURIComponent(link)}&size=pc`) //or mobile or tablet 
         var imgbuff = await img.buffer()
         return m.send(imgbuff, {caption: "> here\'s your screenshot", quoted: m}, "image")
        } catch (err) {
@@ -63,7 +63,7 @@ kord({
                 var links = await extractUrlsFromString(lik)
                 var link = links[0]
 
-                var img = await fetch(`https://puppeteer-on-vercel-roan.vercel.app/ss?url=${encodeURIComponent(link)}&device=tablet`)  //or mobile or tablet 
+                var img = await fetch(`https://ss.haki.top/screenshot?url=${encodeURIComponent(link)}&size=tablet`)  //or mobile or tablet 
                 var imgbuff = await img.buffer()
                 return m.send(imgbuff, {caption: "> here\'s your screenshot", quoted: m}, "image")
         } catch (err) {
@@ -90,7 +90,7 @@ kord({
                 var links = await extractUrlsFromString(lik)
                 var link = links[0]
 
-                var img = await fetch(`https://puppeteer-on-vercel-roan.vercel.app/ss?url=${encodeURIComponent(link)}&device=mobile`)  //or mobile or tablet 
+                var img = await fetch(`https://ss.haki.top/screenshot?url=${encodeURIComponent(link)}&size=phone`)  //or mobile or tablet 
                 var imgbuff = await img.buffer()
                 return m.send(imgbuff, {caption: "> here\'s your screenshot", quoted: m}, "image")
         } catch (err) {
