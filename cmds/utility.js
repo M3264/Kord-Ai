@@ -45,6 +45,7 @@ kord({
        }
 })
 
+
 kord({
         cmd: "sstab",
         desc: "screenshots a given url live page(tab view)",
