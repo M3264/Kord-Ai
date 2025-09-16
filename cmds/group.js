@@ -491,7 +491,7 @@ kord({
       return await m.send("✘_*Bot Needs To Be Admin!*_");
     }
   }
-  var links = extractUrlsFromString(text || m.quoted?.text)
+  var links = extractUrlsFromString(link || text || m.quoted?.text)
   if (links.length === 0) return await m.send("✘ Provide a WhatsApp group link")
   const linkRegex = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i;
   link = links.find(l => linkRegex.test(l));
@@ -502,7 +502,7 @@ kord({
     const groupInfo = await m.client.groupGetInviteInfo(code);
     const memberCount = groupInfo.size || 0;
     const maxParticipants = groupInfo.maxParticipants || 257;
-    const pic = await m.client.profilePicUrl(m.chat, "image")
+    const pic = await m.client.profilePictureUrl(groupInfo.id, "image")
     
     const response = `*╭─❑ 『 GROUP INFORMATION 』 ❑─╮*
 ├ ➨ *Name:* ${groupInfo.subject}
@@ -716,13 +716,13 @@ cmd: "events|gcevent|grpevents",
     var gdata = await getData('group_events') || {}
     const jid = m.chat
     
-    const defaultWelcome = config().WELCOME_MSG || `╭━━━々 𝚆 𝙴 𝙻 𝙲 𝙾 𝙼 𝙴 々━━━╮
+    const defaultWelcome = `@pp ╭━━━々 𝚆 𝙴 𝙻 𝙲 𝙾 𝙼 𝙴 々━━━╮
 ┃ ➺ *々 Welcome @user! to @gname*
 ┃ ➺ *々 Members: @count*
 ┃ ➺ We Hope You Have A Nice Time Here!
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━`
     
-    const defaultGoodbye = config().GOODBYE_MSG || `╭━━━々 𝙶 𝙾 𝙾 𝙳 𝙱 𝚈 𝙴 々━━━╮
+    const defaultGoodbye = `@pp ╭━━━々 𝙶 𝙾 𝙾 𝙳 𝙱 𝚈 𝙴 々━━━╮
 ┃ ➺ *々 @user! left @gname!*
 ┃ ➺ *々 Members: @count*
 ┃ ➺ We Hope He/She Had A Nice Time Here!
@@ -807,6 +807,7 @@ _events setgoodbye text - Set goodbye message_
     
     if (cmd === "welcome") {
       if (value !== "on" && value !== "off") return await m.send("✘ Please specify on or off")
+      gdata[jid].events = true
       gdata[jid].add = value === "on" ? true : false
       await storeData('group_events', gdata)
       return await m.send(`✓ Welcome messages turned ${value}`)
@@ -814,6 +815,7 @@ _events setgoodbye text - Set goodbye message_
     
     if (cmd === "goodbye") {
       if (value !== "on" && value !== "off") return await m.send("✘ Please specify on or off")
+      gdata[jid].events = true
       gdata[jid].remove = value === "on" ? true : false
       await storeData('group_events', gdata)
       return await m.send(`✓ Goodbye messages turned ${value}`)
@@ -821,6 +823,7 @@ _events setgoodbye text - Set goodbye message_
     
     if (cmd === "promote") {
       if (value !== "on" && value !== "off") return await m.send("✘ Please specify on or off")
+      gdata[jid].events = true
       gdata[jid].promote = value === "on" ? true : false
       await storeData('group_events', gdata)
       return await m.send(`✓ Promotion alerts turned ${value}`)
@@ -828,6 +831,7 @@ _events setgoodbye text - Set goodbye message_
     
     if (cmd === "demote") {
       if (value !== "on" && value !== "off") return await m.send("✘ Please specify on or off")
+      gdata[jid].events = true
       gdata[jid].demote = value === "on" ? true : false
       await storeData('group_events', gdata)
       return await m.send(`✓ Demotion alerts turned ${value}`)
@@ -835,6 +839,7 @@ _events setgoodbye text - Set goodbye message_
     
     if (cmd === "antipromote") {
       if (value !== "on" && value !== "off") return await m.send("✘ Please specify on or off")
+      gdata[jid].events = true
       gdata[jid].antipromote = value === "on" ? true : false
       await storeData('group_events', gdata)
       return await m.send(`✓ Anti-promotion ${value === "on" ? "enabled" : "disabled"}`)
@@ -842,6 +847,7 @@ _events setgoodbye text - Set goodbye message_
     
     if (cmd === "antidemote") {
       if (value !== "on" && value !== "off") return await m.send("✘ Please specify on or off")
+      gdata[jid].events = true
       gdata[jid].antidemote = value === "on" ? true : false
       await storeData('group_events', gdata)
       return await m.send(`✓ Anti-demotion ${value === "on" ? "enabled" : "disabled"}`)
