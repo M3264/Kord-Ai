@@ -7,7 +7,7 @@
  * -------------------------------------------------------------------------------
  */
 
-const { kord, extractUrlsFromString, getJson, talkNote, prefix, wtype, config, ss } = require("../core")
+const { kord, extractUrlsFromString, getJson, Baileys, talkNote, prefix, wtype, config, ss } = require("../core")
 const fs = require("fs");
 const path = require("path");
 const PDFDocument = require("pdfkit")
@@ -36,7 +36,7 @@ kord({
         var links = await extractUrlsFromString(lik)
         var link = links[0]
 
-        var img = await fetch(`https://ss.haki.top/screenshot?url=${encodeURIComponent(link)}&size=pc`) //or mobile or tablet 
+        var img = await fetch(`https://puppeteer-on-vercel-roan.vercel.app/ss?url=${encodeURIComponent(link)}&device=desktop`) //or mobile or tablet 
         var imgbuff = await img.buffer()
         return m.send(imgbuff, {caption: "> here\'s your screenshot", quoted: m}, "image")
        } catch (err) {
@@ -44,7 +44,6 @@ kord({
                return m.send(`${err}`)
        }
 })
-
 
 kord({
         cmd: "sstab",
@@ -64,7 +63,7 @@ kord({
                 var links = await extractUrlsFromString(lik)
                 var link = links[0]
 
-                var img = await fetch(`https://ss.haki.top/screenshot?url=${encodeURIComponent(link)}&size=tablet`)  //or mobile or tablet 
+                var img = await fetch(`https://puppeteer-on-vercel-roan.vercel.app/ss?url=${encodeURIComponent(link)}&device=tablet`)  //or mobile or tablet 
                 var imgbuff = await img.buffer()
                 return m.send(imgbuff, {caption: "> here\'s your screenshot", quoted: m}, "image")
         } catch (err) {
@@ -91,7 +90,7 @@ kord({
                 var links = await extractUrlsFromString(lik)
                 var link = links[0]
 
-                var img = await fetch(`https://ss.haki.top/screenshot?url=${encodeURIComponent(link)}&size=phone`)  //or mobile or tablet 
+                var img = await fetch(`https://puppeteer-on-vercel-roan.vercel.app/ss?url=${encodeURIComponent(link)}&device=mobile`)  //or mobile or tablet 
                 var imgbuff = await img.buffer()
                 return m.send(imgbuff, {caption: "> here\'s your screenshot", quoted: m}, "image")
         } catch (err) {
@@ -599,19 +598,29 @@ kord({
     fromMe: wtype,
     type: "utilities",
 }, async (m, text, c) => {
-    try{
-        if (!text) return await m.send(`*reply to text/provide text with lang code*\n_example: ${c} en bonjour`)
-        var f = text?.trim()?.split(/\s+/)[0]
-        var a = text?.split(" ")
-        var code = a[0] || config().LANG_CODE
-        var t = m.quoted?.text || a.slice(1).join(" ")
-        if (!a && !t) return await m.send(`*reply to text/provide text with lang code*\n_example: ${c} en bonjour`)
-        var res = await m.axios(`https://kord-api.vercel.app/translate?text=${t}&code=${code}`)
+    try {
+        if (!text && !m.quoted?.text) 
+            return await m.send(`*reply to text/provide text with lang code*\n_example: ${c} en bonjour`)
+
+        var a = text.trim().split(/\s+/)
+        var first = a[0]
+        var hasCode = /^[a-z]{2,5}$/i.test(first)
+
+        var code = hasCode ? first : (config().LANG_CODE || "en")
+        var t = hasCode ? a.slice(1).join(" ") : a.join(" ")
+        if (!t) t = m.quoted?.text
+
+        if (!t) return await m.send(`*reply to text/provide text with lang code*\n_example: ${c} en bonjour`)
+
+        var res = await m.axios(
+            `https://kord-api.vercel.app/translate?text=${encodeURIComponent(t)}&to=${code}`
+        )
+
         if (res.status == 400) return await m.send("*invalid language code provided*")
-        return await m.send(`${res.translated}`)
+        return await m.send(res.translated)
     } catch (err) {
         console.error("error in translate:", err)
-        return await m.send(`*error ocuurred:* ${err}`)
+        return await m.send(`*error occurred:* ${err.message}`)
     }
 })
 
