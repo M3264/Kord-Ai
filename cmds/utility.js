@@ -15,6 +15,7 @@ const fetch = require("node-fetch")
 const { tiny, fancytext, listall } = require('../core/store/style-font');
 const os = require('os');
 const Jimp = require('jimp');
+const { read } = require('jimp')
 const ffmpeg = require('fluent-ffmpeg');
 const http = require('http')
 
@@ -751,7 +752,7 @@ kord({
     var opath = path.join(bin, `compressed_${Date.now()}.${ext}`)
     try {
       if (ext.match(/(jpg|jpeg|png|webp)/)) {
-      const image = await Jimp.read(pth);
+      const image = await read(pth);
       await image
     .resize(800, Jimp.AUTO)
     .quality(60)
