@@ -385,7 +385,7 @@ cmd: "aitts",
     if (!stream) {
     return await m.send(`_Seems API key is invalid or not found_\n\n*Get API key from:* https://elevenlabs.io/app/settings/api-keys\nThen set using: .setting ELEVENLABS_APIKEY yourkey\nOr set manually in config.js`);
     }
-    return await m.send(stream, { mimetype: 'audio/mpeg', ptt: true }, 'audio');
+    return await m.send(stream, { mimetype: 'audio/mpeg', ptt: false }, 'audio');
   } catch (e) {
     console.log("cmd error", e)
     return await m.sendErr(e)
