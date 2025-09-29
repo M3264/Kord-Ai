@@ -132,7 +132,7 @@ kord({
   try {
   if (!m.quoted.video) return await m.send("_Reply to a video_")
   var au = await toAudio(await m.quoted.download(), "mp3")
-  return await m.send(au, { ptt: false }, "audio")
+  return await m.send(au, { ptt: false, mimetype: "audio/mpeg" }, "audio")
   } catch (er){
     return await m.send(`${er}`)
   }
