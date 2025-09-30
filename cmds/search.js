@@ -4,7 +4,7 @@
  * And I hope you know what you're doing here.
  * You may not use this file except in compliance with the License.
  * See the LICENSE file or https://www.gnu.org/licenses/gpl-3.0.html
- * -------------------------------------------------------------------------------
+ * ------------------------------------------------------------------------------
  */
 
 const { kord,
