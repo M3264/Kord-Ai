@@ -216,7 +216,7 @@ kord({
           }
           var mp3Link = await ytaudio(ytInfo.url)
           var mp = mp3Link.url
-          await m.send(mp, { ptt: false, quoted: rMsg }, "audio")
+          await m.send(mp, { mimetype: "audio/mpeg", ptt: false, quoted: rMsg }, "audio")
           
         } else if (rs === "video" || rs === "2") {
           if (!ytInfo || !ytInfo.url) {
