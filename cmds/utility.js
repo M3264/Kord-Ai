@@ -15,7 +15,9 @@ const fetch = require("node-fetch")
 const { tiny, fancytext, listall } = require('../core/store/style-font');
 const os = require('os');
 const Jimp = require('jimp');
-const { read } = require('jimp')
+const {
+   read
+} = require('jimp')
 const ffmpeg = require('fluent-ffmpeg');
 const http = require('http')
 
@@ -37,7 +39,7 @@ kord({
         var links = await extractUrlsFromString(lik)
         var link = links[0]
 
-        var img = await fetch(`https://puppeteer-on-vercel-roan.vercel.app/ss?url=${encodeURIComponent(link)}&device=desktop`) //or mobile or tablet 
+        var img = await fetch(`http://temp-ss-dxk8h7-2ae299-130-162-52-162.traefik.me/api/screenshot?url=${encodeURIComponent(link)}&device=desktop`) //or mobile or tablet 
         var imgbuff = await img.buffer()
         return m.send(imgbuff, {caption: "> here\'s your screenshot", quoted: m}, "image")
        } catch (err) {
@@ -64,7 +66,7 @@ kord({
                 var links = await extractUrlsFromString(lik)
                 var link = links[0]
 
-                var img = await fetch(`https://puppeteer-on-vercel-roan.vercel.app/ss?url=${encodeURIComponent(link)}&device=tablet`)  //or mobile or tablet 
+                var img = await fetch(`http://temp-ss-dxk8h7-2ae299-130-162-52-162.traefik.me/api/screenshot?url=${encodeURIComponent(link)}&device=tablet`) //or mobile or tablet 
                 var imgbuff = await img.buffer()
                 return m.send(imgbuff, {caption: "> here\'s your screenshot", quoted: m}, "image")
         } catch (err) {
@@ -91,7 +93,7 @@ kord({
                 var links = await extractUrlsFromString(lik)
                 var link = links[0]
 
-                var img = await fetch(`https://puppeteer-on-vercel-roan.vercel.app/ss?url=${encodeURIComponent(link)}&device=mobile`)  //or mobile or tablet 
+                var img = await fetch(`http://temp-ss-dxk8h7-2ae299-130-162-52-162.traefik.me/api/screenshot?url=${encodeURIComponent(link)}&device=phone`) //or mobile or tablet 
                 var imgbuff = await img.buffer()
                 return m.send(imgbuff, {caption: "> here\'s your screenshot", quoted: m}, "image")
         } catch (err) {
@@ -100,6 +102,32 @@ kord({
         }
 })
 
+kord({
+        cmd: "ssfull",
+        desc: "screenshots a given url live page(full page version)",
+        fromMe: wtype,
+        type: "utilities",
+}, async (m, text) => {
+        try {
+                let lik;
+                if (!text) {
+                        lik = m.quoted?.text
+                } else {
+                        lik = text
+                }
+                if (!lik) return m.send("_*reply/provide a valid link!*_")
+                m.react("⏰")
+                var links = await extractUrlsFromString(lik)
+                var link = links[0]
+
+                var img = await fetch(`http://temp-ss-dxk8h7-2ae299-130-162-52-162.traefik.me/api/screenshot?url=${encodeURIComponent(link)}&device=full`) //or mobile or tablet 
+                var imgbuff = await img.buffer()
+                return m.send(imgbuff, {caption: "> here\'s your screenshot", quoted: m}, "image")
+        } catch (err) {
+                console.error(err)
+                return m.send(`${err}`)
+        }
+})
 
 kord({
   cmd: "tts",
