@@ -132,7 +132,7 @@ kord({
   try {
   if (!m.quoted.video) return await m.send("_Reply to a video_")
   var au = await toAudio(await m.quoted.download(), "mp3")
-  return await m.send(au, { ptt: false, mimetype: "audio/mpeg" }, "audio")
+  return await m.send(au, { mimetype: "audio/mpeg", ptt: false }, "audio")
   } catch (er){
     return await m.send(`${er}`)
   }
@@ -319,7 +319,7 @@ kord({
     try {
       const audioBase64 = audioResult.toString('base64')
       
-      const response = await fetch('https://kord-api.vercel.app/add-mp3-meta', {
+      const response = await fetch('https://api.kordai.biz.id/add-mp3-meta', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -385,7 +385,7 @@ cmd: "aitts",
     if (!stream) {
     return await m.send(`_Seems API key is invalid or not found_\n\n*Get API key from:* https://elevenlabs.io/app/settings/api-keys\nThen set using: .setting ELEVENLABS_APIKEY yourkey\nOr set manually in config.js`);
     }
-    return await m.send(stream, { mimetype: 'audio/mpeg', ptt: false }, 'audio');
+    return await m.send(stream, { mimetype: 'audio/mpeg', ptt: true }, 'audio');
   } catch (e) {
     console.log("cmd error", e)
     return await m.sendErr(e)

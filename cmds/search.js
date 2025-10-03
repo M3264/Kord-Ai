@@ -4,7 +4,7 @@
  * And I hope you know what you're doing here.
  * You may not use this file except in compliance with the License.
  * See the LICENSE file or https://www.gnu.org/licenses/gpl-3.0.html
- * ------------------------------------------------------------------------------
+ * -------------------------------------------------------------------------------
  */
 
 const { kord,
@@ -217,7 +217,7 @@ kord({
           var mp3Link = await ytaudio(ytInfo.url)
           var mp = mp3Link.url
           await m.send(mp, { mimetype: "audio/mpeg", ptt: false, quoted: rMsg }, "audio")
-          
+            
         } else if (rs === "video" || rs === "2") {
           if (!ytInfo || !ytInfo.url) {
             return await m.send("Sorry, YouTube link not available to download video")

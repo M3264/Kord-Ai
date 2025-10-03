@@ -97,30 +97,7 @@ kord({
   }
 });
 
-kord({
-  cmd: "delallcmds",
-  desc: "Delete all sticker-bound commands",
-  fromMe: true,
-  type: "tools",
-}, async (m) => {
-  try {
-    const data = await getData("stk_cmd")
-    const stk_cmd = data || {}
-    const entries = Object.entries(stk_cmd)
-    
-    if (entries.length === 0) {
-      return await m.send(`_No sticker commands found to delete_`)
-    }
-    
-    const count = entries.length
-    await storeData("stk_cmd", JSON.stringify({}, null, 2))
-    
-    return await m.send(`_All sticker commands deleted!_\n_Total deleted:_ *${count}*`)
-  } catch (e) {
-    console.log("cmd error", e)
-    return await m.sendErr(e)
-  }
-})
+
 
 kord({
   cmd: "permit",
@@ -449,7 +426,7 @@ async function saveAfkData(data) {
 kord({
   cmd: "afk",
   desc: "set afk message",
-  fromMe: true,
+  fromMe: wtype,
   type: "tools"
 }, async (m, text) => {
   try {
@@ -525,7 +502,7 @@ kord({
     
     if (user === message.ownerJid && afkData.owner && afkData.owner.active) {
       afkData.owner.active = false
-      await message.send("welcome back!")
+      await m.send("welcome back!")
       await saveAfkData(afkData)
       return
     }

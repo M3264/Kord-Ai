@@ -471,7 +471,7 @@ if (text.trim().toLowerCase() === 'admins') {
 kord({
 cmd: "getsudo|allsudo",
   desc: "get all sudos",
-  fromMe: true,
+  fromMe: wtype,
   type: "config",
 }, async (m, text) => {
   try {
@@ -600,9 +600,9 @@ if (text.trim().toLowerCase() === 'admins') {
 })
 
 kord({
-cmd: "getmods",
+cmd: "getmods|getmod|allmods",
   desc: "get all mods",
-  fromMe: true,
+  fromMe: wtype,
   type: "config",
 }, async (m, text) => {
   try {
