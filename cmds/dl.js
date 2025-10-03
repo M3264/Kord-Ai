@@ -19,7 +19,7 @@ cmd: "apk",
 }, async (m, text) => {
   try {
     if (!text) return await m.send("_*Provide a apk name*_")
-    var data = await m.axios(`https://api.kordai.biz.id/apk?q=${text}`)
+    var data = await m.axios(`https://api.kordai.biz.id/api/apk?q=${text}`)
     if (data.error) return await m.send("_Apk not found.._")
     var cap = `❑ Name: ${data.app_name}
     ❑ Package Name: ${data.package_name}
@@ -56,7 +56,7 @@ cmd: "apksearch",
     if (text.startsWith("dl--")) {
     var q = text.replace("dl--", "")
     await m.send("downloading app...")
-    var data = await m.axios(`https://api.kordai.biz.id/apkdl?id=${q}`)
+    var data = await m.axios(`https://api.kordai.biz.id/api/apkdl?id=${q}`)
     if (data.error) return await m.send("_Apk not found.._")
     var cap = `❑ Name: ${data.name}
     ❑ Package Name: ${data.package}
@@ -75,7 +75,7 @@ cmd: "apksearch",
     "document"
     );
     } else {
-    var info = await m.axios(`https://api.kordai.biz.id/apksearch?query=${text}`);
+    var info = await m.axios(`https://api.kordai.biz.id/api/apksearch?query=${text}`);
     const formatted = info.splice(0, 10).map(app => ({
     name: app.name,
     id: `apksearch dl--${app.id}`
@@ -106,7 +106,7 @@ kord({
   if (!text) return await m.send("_*Provide a movie name*_");
   let data;
   try {
-    data = await m.axios(`https://api.kordai.biz.id/subtitle?q=${text}`);
+    data = await m.axios(`https://api.kordai.biz.id/api/subtitle?q=${text}`);
   } catch (e) {
     return await m.send("_Failed to fetch subtitle data._");
   }
@@ -153,7 +153,7 @@ cmd: "subtitlesearch|subtitles",
     }
     
     await m.send("_Fetching available subtitle languages..._");
-    let data = await m.axios(`https://api.kordai.biz.id/subtiledl?q=${encodeURIComponent(pageUrl)}`);
+    let data = await m.axios(`https://api.kordai.biz.id/api/subtiledl?q=${encodeURIComponent(pageUrl)}`);
     
     if (!Array.isArray(data) || data.length === 0)
     return await m.send("_No subtitles found or server busy._");
@@ -175,7 +175,7 @@ cmd: "subtitlesearch|subtitles",
     "document"
     );
     } else {
-    const info = await m.axios(`https://api.kordai.biz.id/subtitlepage?q=${text}`);
+    const info = await m.axios(`https://api.kordai.biz.id/api/subtitlepage?q=${text}`);
     if (!Array.isArray(info) || info.length === 0) {
     return await m.send("_No subtitle results found._");
     }
@@ -570,7 +570,7 @@ kord({
                 var links = await extractUrlsFromString(lik);
                 const ttregex = /https:\/\/(?:www\.|vm\.|m\.|vt\.)?tiktok\.com\/(?:(@[\w.-]+\/(?:video|photo)\/\d+)|v\/\d+\.html|[\w-]+\/?)(?:\?.*)?$/
                 var link = links.find(url => ttregex.test(url));
-                const dta = await fetch(`https://api.kordai.biz.id/tik-img?url=${encodeURIComponent(link)}`);
+                const dta = await fetch(`https://api.kordai.biz.id/api/tik-img?url=${encodeURIComponent(link)}`);
                 const data = await dta.json();
                 if (!data.downloadableImages || data.downloadableImages.length === 0) {
                         return m.send("_No images found._");
