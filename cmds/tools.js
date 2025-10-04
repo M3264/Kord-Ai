@@ -502,7 +502,7 @@ kord({
     
     if (user === message.ownerJid && afkData.owner && afkData.owner.active) {
       afkData.owner.active = false
-      await m.send("welcome back!")
+      await message.send("welcome back!")
       await saveAfkData(afkData)
       return
     }
