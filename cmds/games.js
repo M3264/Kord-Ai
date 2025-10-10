@@ -511,7 +511,8 @@ ${game.wordsCount ? `📊 *Final Stats:*
 })
 
 kord({
-  on: 'text'
+  on: 'text',
+  fromMe: false
 }, async (m, text) => {
   try {
   if (m.isBot) return
