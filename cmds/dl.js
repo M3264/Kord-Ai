@@ -181,13 +181,8 @@ cmd: "subtitlesearch|subtitles",
     }
     
     const formatted = info.slice(0, 10).map(res => ({
-    name: `${res.title} (${res.languagesSummary
-  } catch (e) {
-    console.log("cmd error", e)
-    return await m.sendErr(e)
-  }
-})`,
-      id: `apksearch dl--${encodeURIComponent(res.pageUrl)}`
+    name: `${res.title}`,
+      id: `subtitles dl--${encodeURIComponent(res.pageUrl)}`
     }));
 
     return await m.send({
@@ -636,7 +631,7 @@ kord({
                 
                 while (retries < maxRetries) {
                         fbD = await fb(link);
-                        vid = fbD?.data?.[0];
+                        vid = fbD?.videos
                         if (vid) break;
                         retries++;
                         await sleep(2000);
@@ -644,7 +639,7 @@ kord({
                 
                 if (!vid) return m.react("");
                 
-                const dl = vid.hdQualityLink || vid.normalQualityLink;
+                const dl = vid.hd.url || vid.sd.url
                 if (!dl) return m.react("");
                 
                 m.react("");
@@ -750,4 +745,46 @@ if (!lik) return await m.send("*provide a repo link!*")
    console.error("gitclone err", e)
    return await m.send("*error!*\nrepo might be private")
  }
+})
+
+
+kord({
+        cmd: "pint|pinterest",
+        desc: "downloads Pinterest videos/images",
+        fromMe: wtype,
+        type: "downloader",
+}, async (m, text) => {
+        try {
+                let lik
+                if (!text) {
+                        lik = m.quoted?.text
+                } else {
+                        lik = text
+                }
+                if (!lik) return m.send("_*reply/provide a valid Pinterest link!*_")
+                m.react("⏰")
+                var links = await extractUrlsFromString(lik)
+                const pinregex = /^(https?:\/\/)?(www\.)?(pin\.it|pinterest\.?com)\/.+$/
+                var link = links.find(url => pinregex.test(url))
+                if (!link) return m.send("_*No valid Pinterest URL found!*_")
+
+                const api = `https://api.kordai.biz.id/api/pinterest?url=${encodeURIComponent(link)}`
+                const res = await fetch(api)
+                const json = await res.json()
+                const data = json?.data?.data
+                if (!data) return m.react("")
+
+                const downloads = data.downloads || []
+                const video = downloads.find(v => v.format === "MP4")?.url
+                const thumb = downloads.find(v => v.format === "JPG")?.url
+                const dlUrl = video || thumb
+
+                if (!dlUrl) return m.react("")
+                m.react("")
+                return await m.client.sendFileUrl(m.chat, dlUrl, config().CAPTION, m)
+
+        } catch (e) {
+                console.error(e)
+                return await m.send(`${e}`)
+        }
 })

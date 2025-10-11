@@ -63,7 +63,7 @@ kord({
 
 kord({
   on: "text",
-  fromMe: wtype
+  fromMe: false
 }, async (m, text) => {
   try {
   global.tictactoe = global.tictactoe || {}

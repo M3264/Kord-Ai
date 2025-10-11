@@ -188,11 +188,7 @@ function toggle(cmdName, envKey, displayName) {
   return async (m, text, cmd) => {
     const allowed = [...myMods().map(x => x + '@s.whatsapp.net'), m.ownerJid]
     text = text.split(" ")[0].toLowerCase()
-const validInputs = ['on', 'off', 'true', 'false']
-
-if (!validInputs.includes(text)) {
-  return await m.send(`*Invalid option:* _${text}_\n_Use only 'on', 'off', 'true', or 'false'_`)
-}
+    const validInputs = ['on', 'off', 'true', 'false']
 
 if (!text) {
   if (config().RES_TYPE.toLowerCase() === "button") {
@@ -212,6 +208,10 @@ if (!text) {
   } else {
     return await m.send(`*Use:* ${cmd} on/off`)
   }
+}
+
+if (!validInputs.includes(text)) {
+  return await m.send(`*Invalid option:* _${text}_\n_Use only 'on', 'off', 'true', or 'false'_`)
 }
     
     var t = toBoolean(text)
@@ -643,7 +643,7 @@ cmd: "mode",
     values: [{name: "private", id: `${cmdName} private`}, {name: "public", id: `${cmdName} public`}],
     withPrefix: true,
     onlyOnce: true,
-    participates: [m.ownerJid, ],
+    participates: allowed,
     selectableCount: true,
     }, {}, "poll") : await m.send("Use either public or private")
     if (text.toLowerCase() == "private") {
