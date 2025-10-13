@@ -503,7 +503,7 @@ kord({
   type: "image",
 }, async (m, text) => {
   try {
-        const response = await m.axios(`https://api.kordai.biz.id/api/lumina/search?query=${text}`)
+        const response = await m.axios(`https://api.kord.live/api/lumina/search?query=${text}`)
         const { wallpapers } = response
         const jid = m.chat
         const baileys = await Baileys()

@@ -39,7 +39,7 @@ cmd: 'ping',
     const msg = await m.send("```pinging...```");
     const end = performance.now();
     const ping = Math.round(end - start);
-    msg.edit(`*_々 Pong! ${ping}ms_*`);
+    msg.edit(`_々 Pong! ${ping}ms_`);
   } catch (e) {
     console.log("cmd error", e)
     return await m.sendErr(e)
@@ -356,7 +356,7 @@ kord({
       mediaType: 1,
       renderLargerThumbnail: false,
       showAdAttribution: false,
-      sourceUrl: "https://kord-ai.web.id"
+      sourceUrl: "https://kord.live"
     }
   }
 })

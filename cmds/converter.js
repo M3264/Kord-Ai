@@ -150,7 +150,7 @@ cmd: "black",
     const ffmpegg = ff()
     let file = path.join(__dirname, '../core/store/black.jpg')
     if (!fs.existsSync(file)) {
-    const blackImg = await getBuffer("https://cdn.kordai.biz.id/serve/n2BwUtItyeae.jpg")
+    const blackImg = await getBuffer("https://cdn.kord.live/serve/n2BwUtItyeae.jpg")
     fs.writeFileSync(file, blackImg)
     }
     if (args[0] && await isMediaURL(args[0])) {
@@ -314,12 +314,12 @@ kord({
     
     const title = data[0] || "kord"
     const artist = data[1] || "v2"
-    const coverUrl = data[2] || "https://cdn.kordai.biz.id/serve/tuNyPANPYD2v.png"
+    const coverUrl = data[2] || "https://cdn.kord.live/serve/tuNyPANPYD2v.png"
     
     try {
       const audioBase64 = audioResult.toString('base64')
       
-      const response = await fetch('https://api.kordai.biz.id/add-mp3-meta', {
+      const response = await fetch('https://api.kord.live/add-mp3-meta', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

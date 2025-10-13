@@ -642,7 +642,7 @@ kord({
         if (!t) return await m.send(`*reply to text/provide text with lang code*\n_example: ${c} en bonjour`)
 
         var res = await m.axios(
-            `https://api.kordai.biz.id/api/translate?text=${encodeURIComponent(t)}&to=${code}`
+            `https://api.kord.live/api/translate?text=${encodeURIComponent(t)}&to=${code}`
         )
 
         if (res.status == 400) return await m.send("*invalid language code provided*")
