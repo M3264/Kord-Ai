@@ -39,7 +39,7 @@ kord({
         var links = await extractUrlsFromString(lik)
         var link = links[0]
 
-        var img = await fetch(`http://temp-ss-dxk8h7-2ae299-130-162-52-162.traefik.me/api/screenshot?url=${encodeURIComponent(link)}&device=desktop`) //or mobile or tablet 
+        var img = await fetch(`http://main-ss-u3lwwu-75bdf3-130-162-52-162.traefik.me/api/screenshot?url=${encodeURIComponent(link)}&device=desktop`) //or mobile or tablet 
         var imgbuff = await img.buffer()
         return m.send(imgbuff, {caption: "> here\'s your screenshot", quoted: m}, "image")
        } catch (err) {
@@ -66,7 +66,7 @@ kord({
                 var links = await extractUrlsFromString(lik)
                 var link = links[0]
 
-                var img = await fetch(`http://temp-ss-dxk8h7-2ae299-130-162-52-162.traefik.me/api/screenshot?url=${encodeURIComponent(link)}&device=tablet`) //or mobile or tablet 
+                var img = await fetch(`http://main-ss-u3lwwu-75bdf3-130-162-52-162.traefik.me/api/screenshot?url=${encodeURIComponent(link)}&device=tablet`) //or mobile or tablet 
                 var imgbuff = await img.buffer()
                 return m.send(imgbuff, {caption: "> here\'s your screenshot", quoted: m}, "image")
         } catch (err) {
@@ -93,7 +93,7 @@ kord({
                 var links = await extractUrlsFromString(lik)
                 var link = links[0]
 
-                var img = await fetch(`http://temp-ss-dxk8h7-2ae299-130-162-52-162.traefik.me/api/screenshot?url=${encodeURIComponent(link)}&device=phone`) //or mobile or tablet 
+                var img = await fetch(`http://main-ss-u3lwwu-75bdf3-130-162-52-162.traefik.me/api/screenshot?url=${encodeURIComponent(link)}&device=phone`) //or mobile or tablet 
                 var imgbuff = await img.buffer()
                 return m.send(imgbuff, {caption: "> here\'s your screenshot", quoted: m}, "image")
         } catch (err) {
