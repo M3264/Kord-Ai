@@ -1,5 +1,5 @@
 /* 
- * Copyright © 2025 Mirage
+ * Copyright © 2025 Kenny
  * This file is part of Kord and is licensed under the GNU GPLv3.
  * And I hope you know what you're doing here.
  * You may not use this file except in compliance with the License.
@@ -258,7 +258,7 @@ kord({
 }, async (m, text) => {
   try {
     q = text
-    if (!q) return await m.send(`_*provide a name to set!*_\n_Example: ${prefix}setname Mirage_`);
+    if (!q) return await m.send(`_*provide a name to set!*_\n_Example: ${prefix}setname Kenny_`);
     await m.client.updateProfileName(q);
     await m.reply(`_Profile name updated to ${q}_`);
   } catch (e) {
