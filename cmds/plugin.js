@@ -45,10 +45,10 @@ const arr = await extractUrlsFromString(input)
     }
 
     try {
-      const { dat, status } = await axios.get(rawUrl)
+      const { data, status } = await axios.get(rawUrl)
       if (status !== 200) return await m.send("plugin fetch failed")
 
-      const data = dat.code
+      if (data?.code) data = data.code
       const cmdMatch = data.match(/cmd:\s*["'](.*?)["']/)
       const pluginName = cmdMatch ? cmdMatch[1].trim().replace(/['"]/g, '') : null
       const file = (pluginName || "__" + Math.random().toString(36).substring(8)) + ".js"
