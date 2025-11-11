@@ -258,12 +258,11 @@ cmd: "define|whatis",
     const fWword = text?.trim()?.split(/\s+/)[0];
     var res = await m.axios(`http://api.urbandictionary.com/v0/define?term=${fWword}`);
     var def = res.list[0]
-    const reply = `
-    ◈ _*Word:*_ ${fWword}
-    ◈ _*Definition:*_ ${def.definition.replace(/\[/g, "").replace(/\]/g, "")}
-    ◈ _*Example:*_ ${def.example.replace(/\[/g, "").replace(/\]/g, "")}
-    
-    > definitions might not be accurate`;
+    const reply = `◈ _*Word:*_ ${fWword}
+◈ _*Definition:*_ ${def.definition.replace(/\[/g, "").replace(/\]/g, "")}
+◈ _*Example:*_ ${def.example.replace(/\[/g, "").replace(/\]/g, "")}
+
+> definitions might not be accurate`;
     return await m.send(reply)
   } catch (e) {
     console.log("cmd error", e)
