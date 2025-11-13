@@ -541,7 +541,7 @@ END:VCARD`
 })
 
 kord({
-cmd: "repo|sc|script",
+cmd: "crib",
   desc: "send repository link of the bot",
   fromMe: wtype,
   type: "bot"
@@ -549,7 +549,7 @@ cmd: "repo|sc|script",
   try {
     const msg =
     `╔═════《 My Repository 》═════╗
-╠ Link: https://github.com/M3264/Kord-Ai
+╠ Link: https://github.com/kelin132/Kelin-AI.git
 ╠ Description: WhatsApp Bot built with Baileys
 ╚═════════════════════════════╝`
     
