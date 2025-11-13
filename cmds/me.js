@@ -573,3 +573,20 @@ cmd: "update",
     return await m.sendErr(e)
   }
 })
+
+kord({
+cmd: "kelin",
+  desc: "send repository link of the bot",
+  fromMe: wtype,
+  type: "bot"
+}, async (m, text) => {
+  try {
+    const msg =
+    `✨KELIN-AI IS UP AND ACTIVE✨`
+
+    return await m.send(msg)
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
+})
