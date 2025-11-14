@@ -2,15 +2,15 @@
   "name": "Kord",
   "version": "2.0.0",
   "description": "Kord Multi-Device WhatsApp Bot",
-  "logo": "https://cdn.kordai.biz.id/serve/UAkzzmMoZwY0.png",
+  "logo": "https://cdn.kord.live/serve/UAkzzmMoZwY0.png",
   "keywords": ["whatsapp", "bot", "kord"],
   "repository": "https://github.com/M3264/Kord",
-  "website": "https://kord-ai.web.id",
+  "website": "https://kord.live",
   "success_url": "/",
   "stack": "container",
   "env": {
     "SESSION_ID": {
-      "description": "Session ID gotten from pair web: https://kord-ai.web.id/session",
+      "description": "Session ID gotten from pair web: https://kord.live/session",
       "required": true
     },
     "OWNER_NUMBER": {
