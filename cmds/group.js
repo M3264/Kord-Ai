@@ -201,7 +201,7 @@ cmd: "kick",
     var res = await m.send("_✘ Reply \"confirm\" to continue_")
     var response = await m.getResponse(res, 15000)
     if (response.text.toLowerCase() === "confirm") {
-    await m.send("_*✓ Kicking all users in 10 seconds*_\n_Use restart command to cancel_")
+    await m.send("_*࿐໋Kicking all users in 10 seconds*_\n_Use restart command to cancel_")
     await sleep(10000)
     let { participants } = await m.client.groupMetadata(m.chat);
     participants = participants.filter(p => p.jid !== m.user.jid);
