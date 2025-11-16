@@ -22,111 +22,99 @@ const ffmpeg = require('fluent-ffmpeg');
 const http = require('http')
 
 kord({
-        cmd: "ss",
-        desc: "screenshots a given url live page",
-        fromMe: wtype,
-        type: "utilities",
+    cmd: "ss",
+    desc: "screenshots a given url live page",
+    fromMe: wtype,
+    type: "utilities",
 }, async (m, text) => {
-       try {
-        let lik;
-        if (!text) { 
-           lik = m.quoted?.text
-        } else {
-        lik = text
-        }
+    try {
+        let lik
+        if (!text) lik = m.quoted?.text
+        else lik = text
         if (!lik) return m.send("_*reply/provide a valid link!*_")
-         m.react("⏰")
+        m.react("⏰")
         var links = await extractUrlsFromString(lik)
         var link = links[0]
 
-        var img = await fetch(`http://main-ss-u3lwwu-75bdf3-130-162-52-162.traefik.me/api/screenshot?url=${encodeURIComponent(link)}&device=desktop`) //or mobile or tablet 
+        var img = await fetch(`https://api-rebix.zone.id/api/ssweb?url=${encodeURIComponent(link)}&device=pc`)
         var imgbuff = await img.buffer()
-        return m.send(imgbuff, {caption: "> here\'s your screenshot", quoted: m}, "image")
-       } catch (err) {
-               console.error(err)
-               return m.send(`${err}`)
-       }
+        return m.send(imgbuff, { caption: "> here’s your screenshot", quoted: m }, "image")
+    } catch (err) {
+        console.error(err)
+        return m.send(`${err}`)
+    }
 })
 
 kord({
-        cmd: "sstab",
-        desc: "screenshots a given url live page(tab view)",
-        fromMe: wtype,
-        type: "utilities",
+    cmd: "sstab",
+    desc: "screenshots a given url live page(tab view)",
+    fromMe: wtype,
+    type: "utilities",
 }, async (m, text) => {
-        try {
-                let lik;
-                if (!text) {
-                        lik = m.quoted?.text
-                } else {
-                        lik = text
-                }
-                if (!lik) return m.send("_*reply/provide a valid link!*_")
-                m.react("⏰")
-                var links = await extractUrlsFromString(lik)
-                var link = links[0]
+    try {
+        let lik
+        if (!text) lik = m.quoted?.text
+        else lik = text
+        if (!lik) return m.send("_*reply/provide a valid link!*_")
+        m.react("⏰")
+        var links = await extractUrlsFromString(lik)
+        var link = links[0]
 
-                var img = await fetch(`http://main-ss-u3lwwu-75bdf3-130-162-52-162.traefik.me/api/screenshot?url=${encodeURIComponent(link)}&device=tablet`) //or mobile or tablet 
-                var imgbuff = await img.buffer()
-                return m.send(imgbuff, {caption: "> here\'s your screenshot", quoted: m}, "image")
-        } catch (err) {
-                console.error(err)
-                return m.send(`${err}`)
-        }
+        var img = await fetch(`https://api-rebix.zone.id/api/ssweb?url=${encodeURIComponent(link)}&device=tablet`)
+        var imgbuff = await img.buffer()
+        return m.send(imgbuff, { caption: "> here’s your screenshot", quoted: m }, "image")
+    } catch (err) {
+        console.error(err)
+        return m.send(`${err}`)
+    }
 })
 
 kord({
-        cmd: "ssphone",
-        desc: "screenshots a given url live page(Mobile version)",
-        fromMe: wtype,
-        type: "utilities",
+    cmd: "ssphone",
+    desc: "screenshots a given url live page(Mobile version)",
+    fromMe: wtype,
+    type: "utilities",
 }, async (m, text) => {
-        try {
-                let lik;
-                if (!text) {
-                        lik = m.quoted?.text
-                } else {
-                        lik = text
-                }
-                if (!lik) return m.send("_*reply/provide a valid link!*_")
-                m.react("⏰")
-                var links = await extractUrlsFromString(lik)
-                var link = links[0]
+    try {
+        let lik
+        if (!text) lik = m.quoted?.text
+        else lik = text
+        if (!lik) return m.send("_*reply/provide a valid link!*_")
+        m.react("⏰")
+        var links = await extractUrlsFromString(lik)
+        var link = links[0]
 
-                var img = await fetch(`http://main-ss-u3lwwu-75bdf3-130-162-52-162.traefik.me/api/screenshot?url=${encodeURIComponent(link)}&device=phone`) //or mobile or tablet 
-                var imgbuff = await img.buffer()
-                return m.send(imgbuff, {caption: "> here\'s your screenshot", quoted: m}, "image")
-        } catch (err) {
-                console.error(err)
-                return m.send(`${err}`)
-        }
+        var img = await fetch(`https://api-rebix.zone.id/api/ssweb?url=${encodeURIComponent(link)}&device=phone`)
+        var imgbuff = await img.buffer()
+        return m.send(imgbuff, { caption: "> here’s your screenshot", quoted: m }, "image")
+    } catch (err) {
+        console.error(err)
+        return m.send(`${err}`)
+    }
 })
 
 kord({
-        cmd: "ssfull",
-        desc: "screenshots a given url live page(full page version)",
-        fromMe: wtype,
-        type: "utilities",
+    cmd: "ssfull",
+    desc: "screenshots a given url live page(full page version)",
+    fromMe: wtype,
+    type: "utilities",
 }, async (m, text) => {
-        try {
-                let lik;
-                if (!text) {
-                        lik = m.quoted?.text
-                } else {
-                        lik = text
-                }
-                if (!lik) return m.send("_*reply/provide a valid link!*_")
-                m.react("⏰")
-                var links = await extractUrlsFromString(lik)
-                var link = links[0]
+    try {
+        let lik
+        if (!text) lik = m.quoted?.text
+        else lik = text
+        if (!lik) return m.send("_*reply/provide a valid link!*_")
+        m.react("⏰")
+        var links = await extractUrlsFromString(lik)
+        var link = links[0]
 
-                var img = await fetch(`http://temp-ss-dxk8h7-2ae299-130-162-52-162.traefik.me/api/screenshot?url=${encodeURIComponent(link)}&device=full`) //or mobile or tablet 
-                var imgbuff = await img.buffer()
-                return m.send(imgbuff, {caption: "> here\'s your screenshot", quoted: m}, "image")
-        } catch (err) {
-                console.error(err)
-                return m.send(`${err}`)
-        }
+        var img = await fetch(`https://api-rebix.zone.id/api/ssweb?url=${encodeURIComponent(link)}&device=pc`)
+        var imgbuff = await img.buffer()
+        return m.send(imgbuff, { caption: "> here’s your screenshot", quoted: m }, "image")
+    } catch (err) {
+        console.error(err)
+        return m.send(`${err}`)
+    }
 })
 
 kord({
