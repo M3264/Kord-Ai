@@ -16,7 +16,7 @@ module.exports = {
     ERROR_MSG: process.env.ERROR_MSG || true,
     TIMEZONE: process.env.TIMEZONE || "Africa/Lagos",
     CAPTION: process.env.CAPTION || "",
-    STICKER_PACKNAME: process.env.STICKER_PACKNAME || "Kord",
+    STICKER_PACKNAME: process.env.STICKER_PACKNAME || "Kelin",
     STICKER_AUTHOR: process.env.STICKER_AUTHOR || "🤍",
     BOT_PRESENCE: process.env.BOT_PRESENCE || "unavailable",
     REACT: process.env.REACT || false,
@@ -39,8 +39,8 @@ module.exports = {
     RES_TYPE: process.env.RES_TYPE || "text",
     CMD_REACT: process.env.CMD_REACT || "off",
     LOG_MESSAGES: process.env.LOG_MESSAGES || "off",
-    STARTUP_MSG: process.env.STARTUP_MSG || "on",
-    MENU_IMAGE: process.env.MENU_IMAGE || "",
+    STARTUP_MSG: process.env.STARTUP_MSG || "off",
+    MENU_IMAGE: process.env.MENU_IMAGE || "https://cdn.kord.live/serve/21GiAYUpX0Zy.jpg",
     WELCOME_MESSAGE: process.env.WELCOME_MESSAGE ||  `╭━━━✦✧┈┈┈┈┈୨♡୧┈┈┈┈┈✧✦━━━╮
 ┃ ✿ﾟ*々 Welcome @user! to @gname*
 ┃ ✿ﾟ*々 Members: @count*
