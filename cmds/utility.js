@@ -108,7 +108,7 @@ kord({
         var links = await extractUrlsFromString(lik)
         var link = links[0]
 
-        var img = await fetch(`https://api-rebix.zone.id/api/ssweb?url=${encodeURIComponent(link)}&device=pc`)
+        var img = await fetch(`https://api-rebix.zone.id/api/ssweb?url=${encodeURIComponent(link)}&device=full`)
         var imgbuff = await img.buffer()
         return m.send(imgbuff, { caption: "> here’s your screenshot", quoted: m }, "image")
     } catch (err) {
