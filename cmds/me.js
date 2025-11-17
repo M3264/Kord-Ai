@@ -591,32 +591,3 @@ cmd: "kelin",
   }
 })
 
-kord({
- on: "all",
- fromMe: false,
-}, async (m, text) => {
- try {
- const body = (text || "").trim();
- if (!body) return;
-// exact match "hi" (case-insensitive)
-if (body.toLowerCase() === "hi") {
-  // try to react to the message (some Baileys wrappers accept this structure)
-  try {
-    await m.client.sendMessage(m.chat, { react: { text: "👋", key: m.key } });
-  } catch (e) {
-    // reaction failed or not supported — ignore
-  }
-
-  const replies = [
-    "hi how are you doing today",
-    "Wassup here",
-    "hyyy",
-    "hey you good"
-  ];
-  const reply = replies[Math.floor(Math.random() * replies.length)];
-  return await m.send(reply);
-}
-} catch (err) {
- console.log("greeting handler error:", err);
- }
-})
