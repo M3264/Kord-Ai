@@ -100,7 +100,7 @@ ${styledBody}`
     const uptime = await secondsToHms(process.uptime())
     const memoryUsage = format(os.totalmem() - os.freemem())
     
-    let menu = `\`\`\`┌────────── ${config().BOT_NAME} ──────────┐
+    let menu = `\`\`\`┌──────── ${config().BOT_NAME} ────────┐
   ▸ Owner: ${config().OWNER_NAME}
   ▸ User: ${m.pushName}
   ▸ Plugins: ${commands.length}
