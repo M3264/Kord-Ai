@@ -16,15 +16,15 @@ module.exports = {
     ERROR_MSG: process.env.ERROR_MSG || true,
     TIMEZONE: process.env.TIMEZONE || "Africa/Lagos",
     CAPTION: process.env.CAPTION || "",
-    STICKER_PACKNAME: process.env.STICKER_PACKNAME || "Kord",
+    STICKER_PACKNAME: process.env.STICKER_PACKNAME || "Kelin",
     STICKER_AUTHOR: process.env.STICKER_AUTHOR || "🤍",
-    BOT_PRESENCE: process.env.BOT_PRESENCE || "available",
+    BOT_PRESENCE: process.env.BOT_PRESENCE || "unavailable",
     REACT: process.env.REACT || false,
     READ_MESSAGE: process.env.READ_MESSAGE || "false",
-    OWNER_NAME: process.env.OWNER_NAME || "Mirage",
-    BOT_NAME: process.env.BOT_NAME || "Kord",
+    OWNER_NAME: process.env.OWNER_NAME || "kelin",
+    BOT_NAME: process.env.BOT_NAME || "Kelin",
     RENDER_API_KEY: process.env.RENDER_API_KEY,
-    ANTIDELETE: process.env.ANTIDELETE || "on",
+    ANTIDELETE: process.env.ANTIDELETE || "off",
     ANTIDELETE_INCHAT: process.env.ANTIDELETE_INCHAT || "off",
     ANTI_EDIT: process.env.ANTI_EDIT || "off",
     ANTI_EDIT_IN_CHAT: process.env.ANTI_EDIT_IN_CHAT || "off",
@@ -39,16 +39,16 @@ module.exports = {
     RES_TYPE: process.env.RES_TYPE || "text",
     CMD_REACT: process.env.CMD_REACT || "off",
     LOG_MESSAGES: process.env.LOG_MESSAGES || "off",
-    STARTUP_MSG: process.env.STARTUP_MSG || "on",
-    MENU_IMAGE: process.env.MENU_IMAGE || "",
-    WELCOME_MESSAGE: process.env.WELCOME_MESSAGE ||  `╭━━━々 𝚆 𝙴 𝙻 𝙲 𝙾 𝙼 𝙴 々━━━╮
-┃ ➺ *々 Welcome @user! to @gname*
-┃ ➺ *々 Members: @count*
-┃ ➺ We Hope You Have A Nice Time Here!
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
-    GOODBYE_MESSAGE: process.env.GOODBYE_MESSAGE || `╭━━━々 𝙶 𝙾 𝙾 𝙳 𝙱 𝚈 𝙴 々━━━╮
-┃ ➺ *々 @user! left @gname!*
-┃ ➺ *々 Members: @count*
-┃ ➺ We Hope He/She Had A Nice Time Here!
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━`
+    STARTUP_MSG: process.env.STARTUP_MSG || "off",
+    MENU_IMAGE: process.env.MENU_IMAGE || "https://cdn.kord.live/serve/21GiAYUpX0Zy.jpg",
+    WELCOME_MESSAGE: process.env.WELCOME_MESSAGE ||  `╭━━━✦✧┈┈┈┈┈୨♡୧┈┈┈┈┈✧✦━━━╮
+┃ ✿ﾟ*々 Welcome @user! to @gname*
+┃ ✿ﾟ*々 Members: @count*
+┃ ✿ﾟWe Hope You Have A Nice Time Here!
+┗━━━━✦✧┈┈┈┈┈୨♡୧┈┈┈┈┈✧✦━━━━━━━━`,
+    GOODBYE_MESSAGE: process.env.GOODBYE_MESSAGE || `╭━━✦✧┈┈┈┈┈୨♡୧┈┈┈┈┈✧✦━━━╮
+┃ ✿ﾟ *々 @user! left @gname!*
+┃ ✿ﾟ Members: @count*
+┃ ✿ﾟ We Hope He/She Had A Nice Time Here!
+┗━━━━━✦✧┈┈┈┈┈୨♡୧┈┈┈┈┈✧✦━━━━━`
 }

@@ -541,7 +541,7 @@ END:VCARD`
 })
 
 kord({
-cmd: "repo|sc|script",
+cmd: "crib",
   desc: "send repository link of the bot",
   fromMe: wtype,
   type: "bot"
@@ -549,7 +549,7 @@ cmd: "repo|sc|script",
   try {
     const msg =
     `╔═════《 My Repository 》═════╗
-╠ Link: https://github.com/M3264/Kord-Ai
+╠ Link: https://github.com/kelin132/Kelin-AI.git
 ╠ Description: WhatsApp Bot built with Baileys
 ╚═════════════════════════════╝`
     
@@ -573,3 +573,21 @@ cmd: "update",
     return await m.sendErr(e)
   }
 })
+
+kord({
+cmd: "kelin",
+  desc: "send repository link of the bot",
+  fromMe: wtype,
+  type: "bot"
+}, async (m, text) => {
+  try {
+    const msg =
+    `✨KELIN-AI IS UP AND ACTIVE✨`
+
+    return await m.send(msg)
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
+})
+
