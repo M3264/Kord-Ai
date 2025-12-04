@@ -1,5 +1,5 @@
 /* 
- * Copyright © 2025 Mirage
+ * Copyright © 2025 Kenny
  * This file is part of Kord and is licensed under the GNU GPLv3.
  * And I hope you know what you're doing here.
  * You may not use this file except in compliance with the License.
@@ -179,70 +179,70 @@ kord({
   }
 })
 
-const { CohereClient } = require('cohere-ai')
-const fs = require('fs')
-const path = require('path')
-
-const cohere = new CohereClient({
-  token: 'YIsaBvSxI7MNTz4dEMMFW0aszjgWfKqXacL0I6j3',
-})
-
-const SYSTEM_PREAMBLE = fs.readFileSync(
-  path.join(__dirname, 'know.txt'), 
-  'utf-8'
-)
+const API_BASE_URL = 'https://api.mistral.ai/v1'
+const API_KEY = 'AA46jQW0VLsz2x7FW7sCUnBVIpBaa1qW'
+const AGENT_ID = 'ag:4151fcb9:20250104:untitled-agent:d1bde2e5'
 
 const chatHistories = new Map()
 
+function stripThoughts(text) {
+  return text.replace(/<think>[\s\S]*?<\/think>/gi, '').trim()
+}
+
 async function getAIResponse(m, quoted) {
   const chatId = m.chat || m.chatId || m.key?.remoteJid || 'unknown'
-  
+  const rawMessage = JSON.stringify(m, null, 2)
+  const rawQuoted = quoted ? JSON.stringify(quoted, null, 2) : null
 
-  let message = `Text: ${m.text}
-Sender: ${m.sender}
-IsCreator: ${m.isCreator}
-PushName: ${m.pushName}
-IsSudo: ${m.isSudo}`
+  let message = rawQuoted
+    ? `Message:\n${rawMessage}\n\nQuoted:\n${rawQuoted}`
+    : `Message:\n${rawMessage}`
 
-  if (quoted) {
-    message += `\n\nQuoted:
-Text: ${quoted.text}
-Sender: ${m.quoted?.sender}
-PushName: ${m.quoted?.pushName}`
-  }
   try {
     if (!chatHistories.has(chatId)) chatHistories.set(chatId, [])
     const history = chatHistories.get(chatId)
+    history.push({ role: 'user', content: message })
 
-    const chatHistory = history.slice(-10).map(h => ({
-      role: h.role,
-      message: h.message
-    }))
+    const contextMessages = history.slice(-10)
+    const messages = [
+      {
+        role: 'system',
+        content: "You're a WhatsApp bot. You receive raw JSON of messages and quoted messages. Respond with useful answers in WhatsApp format using *bold*, _italic_, ~strikethrough~, and ```monospace```."
+      },
+      ...contextMessages
+    ]
 
-    const response = await cohere.chat({
-      model: 'command-a-03-2025',
-      message: message,
-      preamble: SYSTEM_PREAMBLE,
-      chatHistory: chatHistory,
-      temperature: 0.7,
-      maxTokens: 500,
+    const res = await axios.post(`${API_BASE_URL}/agents/completions`, {
+      agent_id: AGENT_ID,
+      messages,
+      max_tokens: 500,
+      stream: false,
+      tool_choice: 'auto',
+      parallel_tool_calls: true,
+      prompt_mode: 'reasoning'
+    }, {
+      headers: {
+        Authorization: `Bearer ${API_KEY}`,
+        'Content-Type': 'application/json'
+      },
+      timeout: 30000
     })
 
-    const output = response.text
+    const raw = res.data?.choices?.[0]?.message?.content
+    const output = stripThoughts(raw)
 
     if (output) {
-      history.push({ role: 'USER', message: message })
-      history.push({ role: 'CHATBOT', message: output })
-      chatHistories.set(chatId, history.slice(-20))
+      history.push({ role: 'assistant', content: output })
+      chatHistories.set(chatId, history.slice(-10))
       return output
     } else {
       throw new Error('Empty response')
     }
   } catch (e) {
-    console.error('Cohere AI Error:', e.message)
-    if (e.message?.includes('timeout')) throw new Error('Request timeout - try again')
-    if (e.statusCode === 429) throw new Error('Rate limit exceeded - wait a moment')
-    if (e.statusCode >= 500) throw new Error('Server error - try later')
+    console.error('Mistral AI Error:', e.message)
+    if (e.code === 'ECONNABORTED') throw new Error('Request timeout - try again')
+    if (e.response?.status === 429) throw new Error('Rate limit exceeded - wait a moment')
+    if (e.response?.status >= 500) throw new Error('Server error - try later')
     throw new Error('Failed to get AI response')
   }
 }
@@ -254,16 +254,10 @@ function clearChatHistory(chatId) {
 
 async function getAIStatus() {
   try {
-    const response = await cohere.chat({
-      model: 'command-a-03-2025',
-      message: 'ping',
-      maxTokens: 10,
+    const response = await axios.get(`${API_BASE_URL}/ai/status`, {
+      timeout: 10000
     })
-    return {
-      status: 'active',
-      activeSessions: chatHistories.size,
-      timestamp: Date.now()
-    }
+    return response.data.data
   } catch (error) {
     console.error('AI status error:', error.message)
     return null
@@ -271,38 +265,15 @@ async function getAIStatus() {
 }
 
 var chatc = {
-  active: false,
-  global: false,
-  activeChats: [
-    '1234@g.us'
-  ],
+    active: false,
+    global: false,
+    activeChats: [
+        '1234@g.us'
+    ],
 }
 
 if (!getData("chatbot_cfg")) {
-  storeData("chatbot_cfg", JSON.stringify(chatc, null, 2))
-}
-
-async function loadChatbotConfig() {
-  try {
-    const data = await getData("chatbot_cfg")
-    if (!data) {
-      return {
-        active: false,
-        global: false,
-        activeChats: [],
-        mentionOnlyChats: []
-      }
-    }
-    
-    
-      return data
-    } catch (er) {
-      console.error("Error loading chatbot shi", er)
-    }
-    
-}
-async function saveChatbotConfig(config) {
-  await storeData('chatbot_cfg', JSON.stringify(config, null, 2))
+    storeData("chatbot_cfg", JSON.stringify(chatc, null, 2))
 }
 
 kord({
@@ -315,14 +286,11 @@ kord({
     if (!text) return m.btnText("Toggle chatbot", {
       [`${cmd} on`]: "✅ON",
       [`${cmd} off`]: "OFF",
-      [`${cmd} on -m`]: "ON (Mention only)",
       [`${cmd} on all`]: "On (All chats)",
       [`${cmd} off all`]: "Off (All chats)",
       [`${cmd} status`]: "📊 Status",
       [`${cmd} clear`]: "🗑️ Clear History"
     })
-    
-    const config = await loadChatbotConfig()
     
     const args = text.split(" ")
     if (args && args.length > 0) {
@@ -330,50 +298,34 @@ kord({
       const value = args.length > 1 ? args[1] : null
       
       if (option === 'on' && value === 'all') {
-        config.global = true
-        config.mentionOnly = false
-        await saveChatbotConfig(config)
+        chatc.global = true
+        await storeData('chatbot_cfg', JSON.stringify(chatc, null, 2))
         return await m.send('_*Chatbot enabled for all chats!*_')
       } else if (option === 'off' && value === 'all') {
-        config.global = false
-        await saveChatbotConfig(config)
+        chatc.global = false
+        await storeData('chatbot_cfg', JSON.stringify(chatc, null, 2))
         return await m.send('_*Chatbot disabled for all chats!*_')
-      } else if (option === "on" && value === '-m') {
-        config.active = true
-        if (!config.mentionOnlyChats) config.mentionOnlyChats = []
-        if (!config.mentionOnlyChats.includes(m.chat)) {
-          config.mentionOnlyChats.push(m.chat)
-        }
-        if (!config.activeChats.includes(m.chat)) {
-          config.activeChats.push(m.chat)
-        }
-        await saveChatbotConfig(config)
-        return await m.send('_Chatbot is now active (mention only)_')
       } else if (option === "on") {
-        config.active = true
-        if (config.mentionOnlyChats) {
-          config.mentionOnlyChats = config.mentionOnlyChats.filter(jid => jid !== m.chat)
+        chatc.active = true
+        if (!chatc.activeChats.includes(m.chat)) {
+          chatc.activeChats.push(m.chat)
         }
-        if (!config.activeChats.includes(m.chat)) {
-          config.activeChats.push(m.chat)
-        }
-        await saveChatbotConfig(config)
+        await storeData('chatbot_cfg', JSON.stringify(chatc, null, 2))
         return await m.send('_Chatbot is now active in this chat_')
       } else if (option === 'off') {
-        config.activeChats = config.activeChats.filter(jid => jid !== m.chat)
-        if (config.mentionOnlyChats) {
-          config.mentionOnlyChats = config.mentionOnlyChats.filter(jid => jid !== m.chat)
-        }
-        clearChatHistory(m.chat)
-        await saveChatbotConfig(config)
+        chatc.activeChats = chatc.activeChats.filter(jid => jid !== m.chat)
+         clearChatHistory(m.chat)
+        await storeData('chatbot_cfg', JSON.stringify(chatc, null, 2))
         return await m.send("_Chatbot deactivated in this chat_")
       } else if (option === 'status') {
-        const isMentionOnly = config.mentionOnlyChats?.includes(m.chat) || false
-        const isActive = config.activeChats?.includes(m.chat) || config.global
-        const statusText = `*Chatbot Status for this chat:*\n• Active: ${isActive ? '✅' : '❌'}\n• Mention Only: ${isMentionOnly ? '✅' : '❌'}\n• Global Mode: ${config.global ? '✅' : '❌'}\n• Active Chats: ${config.activeChats?.length || 0}`
-        return await m.send(statusText)
+        const status = await getAIStatus()
+        if (status) {
+          return await m.send(`*AI Status:*\n• Status: ${status.status}\n• Active Sessions: ${status.activeSessions}\n• Last Updated: ${new Date(status.timestamp).toLocaleString()}`)
+        } else {
+          return await m.send('_Unable to fetch AI status_')
+        }
       } else if (option === 'clear') {
-        const cleared = clearChatHistory(m.chat)
+        const cleared =  clearChatHistory(m.chat)
         if (cleared) {
           return await m.send('_Chat history cleared successfully_')
         } else {
@@ -383,7 +335,6 @@ kord({
         return m.btnText("Toggle chatbot", {
           [`${cmd} on`]: "✅ON",
           [`${cmd} off`]: "OFF",
-          [`${cmd} on -m`]: "ON (Mention only)",
           [`${cmd} on all`]: "On (All chats)",
           [`${cmd} off all`]: "Off (All chats)",
           [`${cmd} status`]: "📊 Status",
@@ -394,7 +345,6 @@ kord({
       return m.btnText("Toggle chatbot", {
         [`${cmd} on`]: "✅ON",
         [`${cmd} off`]: "OFF",
-        [`${cmd} on -m`]: "ON (Mention only)",
         [`${cmd} on all`]: "On (All chats)",
         [`${cmd} off all`]: "Off (All chats)",
         [`${cmd} status`]: "📊 Status",
@@ -412,22 +362,11 @@ kord({
   fromMe: false,
 }, async (m, text) => {
   try {
-    const config = await loadChatbotConfig()
+    const config = await getData("chatbot_cfg") || { global: false, activeChats: [] }
     if (!config) return
 
-    const isMentioned = m.mentionedJid?.includes(m.user.jid)
-    const isQuoted = m.quoted?.fromMe
-
-    let shouldRespond = false
-    
-    const isMentionOnlyChat = config.mentionOnlyChats?.includes(m.chat) || false
-    
-    if (config.global) {
-      shouldRespond = isMentionOnlyChat ? isMentioned : (isQuoted || isMentioned)
-    } else if (config.activeChats?.includes(m.chat)) {
-      shouldRespond = isMentionOnlyChat ? isMentioned : (isQuoted || isMentioned)
-    }
-
+    const shouldRespond = (config.global || config.activeChats.includes(m.chat)) &&
+                          (m.quoted?.fromMe || m.mentionedJid?.includes(m.user.jid))
     if (!shouldRespond) return
 
     const typingInterval = setInterval(() => {
@@ -437,7 +376,7 @@ kord({
     }, 1000)
 
     try {
-      const fullResponse = await getAIResponse(m, m.quoted)
+      const fullResponse = await getAIResponse(text, m.chat)
       clearInterval(typingInterval)
 
       const [messagePart, codePart] = fullResponse.split("$$")
@@ -445,18 +384,6 @@ kord({
       if (messagePart?.trim()) await m.send(messagePart.trim())
 
       if (codePart?.trim()) {
-        try {
-          const sock = m.client
-          const command = m.command
-          const store = global.store
-
-          await (async () => {
-            await eval(`(async () => { ${codePart.trim()} })()`)
-          })()
-        } catch (e) {
-          console.error("Eval error:", e)
-          console.log("evaled:", codePart.trim())
-        }
       }
     } catch (error) {
       clearInterval(typingInterval)
@@ -478,6 +405,8 @@ kord({
     console.error("Message handling error:", err)
   }
 })
+
+
 kord({
   cmd: "aitest",
   desc: "test AI connectivity",
@@ -486,7 +415,7 @@ kord({
 }, async (m) => {
   try {
     const testMessage = "Hello, this is a test message"
-    const response = await getAIResponse({ chat: `test_${Date.now()}` }, null)
+    const response = await getAIResponse(testMessage, `test_${Date.now()}`)
     await m.send(`*AI Test Successful!*\n\n*Sent:* ${testMessage}\n*Response:* ${response}`)
   } catch (error) {
     await m.send(`*AI Test Failed:* ${error.message}`)
