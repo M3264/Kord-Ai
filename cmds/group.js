@@ -1,5 +1,5 @@
 /* 
- * Copyright © 2025 Kenny
+ * Copyright © 2025 Mirage
  * This file is part of Kord and is licensed under the GNU GPLv3.
  * And I hope you know what you're doing here.
  * You may not use this file except in compliance with the License.
@@ -204,9 +204,9 @@ cmd: "kick",
     await m.send("_*✓ Kicking all users in 10 seconds*_\n_Use restart command to cancel_")
     await sleep(10000)
     let { participants } = await m.client.groupMetadata(m.chat);
-    participants = participants.filter(p => p.jid !== m.user.jid);
+    participants = participants.filter(p => (p.jid || p.phoneNumber) !== m.user.jid);
     for (let key of participants) {
-    const jid = parsedJid(key.jid);
+    const jid = parsedJid(key.jid || key.phoneNumber);
     await m.client.groupParticipantsUpdate(m.chat, [jid], "remove");
     if (config().KICK_AND_BLOCK) await m.client.updateBlockStatus(jid, "block");
     await m.send(`_*✓ @${jid[0].split("@")[0]} kicked*_`, { mentions: [jid] });
@@ -348,7 +348,7 @@ cmd: "revoke",
 })
 
 kord({
-cmd: "tag",
+  cmd: "tag",
   desc: "tag all memebers/admins/me/text",
   fromMe: wtype,
   gc: true,
@@ -356,39 +356,47 @@ cmd: "tag",
   type: "group"
 }, async (m, text, cmd, store) => {
   try {
-    if (!m.isGroup) return await m.send(`@${m.sender.split("@")[0]}`, { mentions: [m.sender] });   
-  const { participants } = await m.client.groupMetadata(m.chat);
-  let admins = participants.filter(v => v.admin !== null).map(v => v.jid);
-  let msg = "";
-  
-  if (text === "all" || text === "everyone") {
-    participants.forEach((p, i) => {
-      msg += `❐ ${i + 1}. @${p.jid.split('@')[0]}\n`;
-    });
-    await m.send(msg, { mentions: participants.map(a => a.jid) });
-  } 
-  else if (text === "admin" || text === "admins") {
-    admins.forEach((admin, i) => {
-      msg += `❐ ${i + 1}. @${admin.split('@')[0]}\n`;
-    });
-    return await m.send(msg, { mentions: admins });
-  } 
-  else if (text === "me" || text === "mee") {
-    return await m.send(`@${m.sender.split("@")[0]}`, { mentions: [m.sender] });
-  } 
-  else if (text) {
-    const message = text || m.quoted.text;
-    return await m.send(message, { mentions: participants.map(a => a.jid) });
-  } 
-  else if (m.quoted) {
-    return await m.forwardMessage(
-            m.chat,
-            await store.findMsg(m.quoted.id),
-            { contextInfo: { mentionedJid: participants.map(a => a.jid) }, quoted: m }
-        );
-  } else { 
-  return await m.send(`✘ Usage:\ntag all\ntag admins\ntag me\ntag <message>\ntag (reply to message)`);
-  }
+    if (!m.isGroup) return await m.send(`@${m.sender.split("@")[0]}`, { mentions: [m.sender] })
+
+    const { participants } = await m.client.groupMetadata(m.chat)
+
+    let admins = participants
+      .filter(v => v.admin === 'admin' || v.admin === 'superadmin')
+      .map(v => v.jid || v.phoneNumber)
+
+    let msg = ""
+
+    if (text === "all" || text === "everyone") {
+      participants.forEach((p, i) => {
+        msg += `❐ ${i + 1}. @${(p.jid || p.phoneNumber).split('@')[0]}\n`
+      })
+      await m.send(msg, { mentions: participants.map(a => a.jid || a.phoneNumber) })
+    }
+
+    else if (text === "admin" || text === "admins") {
+      admins.forEach((admin, i) => {
+        msg += `❐ ${i + 1}. @${admin.split('@')[0]}\n`
+      })
+      return await m.send(msg, { mentions: admins })
+    }
+
+    else if (text === "me" || text === "mee") {
+      return await m.send(`@${m.sender.split("@")[0]}`, { mentions: [m.sender] })
+    }
+
+    else if (text) {
+      return await m.send(text, { mentions: participants.map(a => a.jid || a.phoneNumber) })
+    }
+
+    else if (m.quoted) {
+      return await m.forwardMessage(
+        m.chat,
+        await store.findMsg(m.quoted.id),
+        { contextInfo: { mentionedJid: participants.map(a => a.jid || a.phoneNumber) }, quoted: m }
+      )
+    }
+
+    return await m.send(`✘ Usage:\ntag all\ntag admins\ntag me\ntag <message>\ntag (reply to message)`)
   } catch (e) {
     console.log("cmd error", e)
     return await m.sendErr(e)
@@ -396,7 +404,7 @@ cmd: "tag",
 })
 
 kord({
-cmd: "tagall",
+  cmd: "tagall",
   desc: "tag all memebers",
   fromMe: wtype,
   gc: true,
@@ -404,13 +412,19 @@ cmd: "tagall",
   type: "group"
 }, async (m, text) => {
   try {
-    const { participants } = await m.client.groupMetadata(m.chat);
-    let admins = participants.filter(v => v.admin !== null).map(v => v.jid);
+    const { participants } = await m.client.groupMetadata(m.chat)
+    
+    let admins = participants
+      .filter(v => v.admin != null)
+      .map(v => v.jid || v.phoneNumber)
+    
     let msg = `❴ ⇛ *TAGALL* ⇚ ❵\n*Message:* ${text ? text : "blank"}\n*Caller:* @${m.sender.split("@")[0]}\n\n`
+    
     participants.forEach((p, i) => {
-    msg += `❧ ${i + 1}. @${p.jid.split('@')[0]}\n`; 
-    });
-    await m.send(msg, { mentions: participants.map(a => a.jid) });
+      msg += `❧ ${i + 1}. @${(p.jid || p.phoneNumber).split('@')[0]}\n`
+    })
+    
+    await m.send(msg, { mentions: participants.map(a => a.jid || a.phoneNumber) })
   } catch (e) {
     console.log("cmd error", e)
     return await m.sendErr(e)
@@ -655,7 +669,7 @@ on: "all",
     if(m.message.reactionMessage) return;
     const cJid = m.key.remoteJid
     const groupMetadata = await getMeta(m.client, m.chat);
-    const admins =  groupMetadata.participants.filter(v => v.admin !== null).map(v => v.jid);
+    const admins =  groupMetadata.participants.filter(v => v.admin !== null).map(v => v.jid || v.phoneNumber);
     const wCount = new Map()
     if ((m.isBot || m.isBaileys) && !m.fromMe) {
     var sdata = await getData("antibot_config");
@@ -1507,7 +1521,7 @@ on: "all",
     if(m.message.reactionMessage) return;
     const cJid = m.key.remoteJid
     const groupMetadata = await getMeta(m.client, m.chat);
-    const admins =  groupMetadata.participants.filter(v => v.admin !== null).map(v => v.jid);
+    const admins =  groupMetadata.participants.filter(v => v.admin !== null).map(v => v.jid || v.phoneNumber);
     const wCount = new Map()
     if (m.message?.groupStatusMentionMessage && !m.fromMe) {
     var sdata = await getData("antigm_config");
@@ -1787,7 +1801,7 @@ on: "all",
     const cJid = m.key.remoteJid
     const sender = m.sender
     const groupMetadata = await getMeta(m.client, m.chat)
-    const admins = groupMetadata.participants.filter(v => v.admin !== null).map(v => v.jid)
+    const admins = groupMetadata.participants.filter(v => v.admin !== null).map(v => v.jid || v.phoneNumber)
     
     if (admins.includes(sender)) return
     
@@ -2009,7 +2023,7 @@ on: "all",
     const cJid = m.key.remoteJid
     const sender = m.sender
     const groupMetadata = await getMeta(m.client, m.chat)
-    const admins = groupMetadata.participants.filter(v => v.admin !== null).map(v => v.jid)
+    const admins = groupMetadata.participants.filter(v => v.admin !== null).map(v => v.jid || v.phoneNumber)
     
     if (admins.includes(sender)) return
     
@@ -2020,8 +2034,8 @@ on: "all",
     if (isExist) {
     
     const { participants } = await m.client.groupMetadata(m.chat)
-    const allParticipants = participants.map(p => p.jid)
-    const adminJids = participants.filter(p => p.admin !== null).map(p => p.jid)
+    const allParticipants = participants.map(p => p.jid || p.phoneNumber )
+    const adminJids = participants.filter(p => p.admin !== null).map(p => p.jid || p.phoneNumber )
     const mentionedCount = m.mentionedJid.length
     const totalParticipants = allParticipants.length
     
