@@ -259,10 +259,6 @@ kord({
 })
 
 
-    return await m.send(`Error: ${e}`);
-  }
-});
-
 kord({
   cmd: "runtime",
   desc: "get runtime of bot with cool display",
@@ -299,6 +295,12 @@ kord({
     }
   }
 })
+} catch (e) {
+    console.error(e)
+    return await m.sendErr(e)
+}
+})
+
     
 
 kord({
@@ -367,6 +369,7 @@ kord({
     return await m.send(`Error: ${e}`)
   }
 })
+
 
 
 kord({
