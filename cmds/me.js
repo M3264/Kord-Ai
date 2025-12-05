@@ -259,67 +259,6 @@ kord({
 })
 
 
-kord({
-  cmd: "p-status",
-  desc: "checks process status",
-  fromMe: true,
-  type: "process"
-}, async (m, text) => {
-  try {
-    exec("npx pm2 status kord-v2", async (err, stdout, stderr) => {
-      if (err) {
-        await m.send(`Error: ${err}`);
-        return;
-      }
-      const lines = stdout.split('\n').filter(line => line.includes('kord-v2'));
-      if (lines.length === 0) {
-        await m.send("No Kord processes found running.");
-        return;
-      }
-      const processInfoList = lines.map(line => {
-        const parts = line.split('│').map(part => part.trim()).filter(Boolean);
-        
-        if (parts.length < 9) {
-          return null;
-        }
-        
-        return {
-          id: parts[0],
-          name: parts[1],
-          namespace: parts[2],
-          version: parts[3],
-          mode: parts[4], 
-          pid: parts[5],
-          uptime: parts[6],
-          restarts: parts[7],
-          status: parts[8],
-          cpu: parts[9],
-          memory: parts[10]
-        };
-      }).filter(Boolean);
-      
-      let statusMsg = `*❊ Bot Status*\n\n`;
-      
-      processInfoList.forEach((proc, index) => {
-        const statusSymbol = proc.status && proc.status.toLowerCase().includes('online') ? '✓' : '✗';
-        
-        statusMsg += `*Process #${proc.id}*: ${proc.name}\n`;
-        statusMsg += `${statusSymbol} *Status*: ${proc.status}\n`;
-        statusMsg += `*𝌫 Mode*: ${proc.mode}\n`;
-        statusMsg += `*𝌫 CPU*: ${proc.cpu}\n`;
-        statusMsg += `*𝌫 Memory*: ${proc.memory}\n`;
-        statusMsg += `*𝌫 Uptime*: ${proc.uptime}\n`;
-        statusMsg += `*𝌫 Version*: ${proc.version}\n`;
-        statusMsg += `*𝌫 Restarts*: ${proc.restarts}\n`;
-        
-        if (index < processInfoList.length - 1) {
-          statusMsg += `\n${'─'.repeat(20)}\n\n`;
-        }
-      });
-      await m.send(statusMsg);
-    });
-  } catch (e) {
-    console.error(e);
     return await m.send(`Error: ${e}`);
   }
 });
@@ -361,11 +300,74 @@ kord({
   }
 })
     
-  } catch (error) {
-    console.error('Error in runtime command:', error);
-    await m.send(`Error in runtime: ${error}`);
+
+kord({
+  cmd: "p-status",
+  desc: "checks process status",
+  fromMe: true,
+  type: "process"
+}, async (m, text) => {
+  try {
+    exec("npx pm2 status kord-v2", async (err, stdout, stderr) => {
+      if (err) {
+        await m.send(`Error: ${err}`)
+        return
+      }
+
+      const clean = stdout.replace(/\x1B\[[0-9;]*m/g, '')
+
+      const lines = clean.split('\n').filter(line => line.includes('kord-v2'))
+      if (lines.length === 0) {
+        await m.send("No Kord processes found running.")
+        return
+      }
+
+      const processInfoList = lines.map(line => {
+        const parts = line.split('│').map(v => v.trim()).filter(Boolean)
+        if (parts.length < 11) return null
+
+        return {
+          id: parts[0],
+          name: parts[1],
+          namespace: parts[2],
+          version: parts[3],
+          mode: parts[4],
+          pid: parts[5],
+          uptime: parts[6],
+          restarts: parts[7],
+          status: parts[8],
+          cpu: parts[9],
+          memory: parts[10]
+        }
+      }).filter(Boolean)
+
+      let statusMsg = `*❊ Bot Status*\n\n`
+
+      processInfoList.forEach((proc, i) => {
+        const ok = proc.status.toLowerCase().includes('online') ? '✓' : '✗'
+
+        statusMsg += `*Process #${proc.id}*: ${proc.name}\n`
+        statusMsg += `${ok} *Status*: ${proc.status}\n`
+        statusMsg += `*𝌫 Mode*: ${proc.mode}\n`
+        statusMsg += `*𝌫 CPU*: ${proc.cpu}\n`
+        statusMsg += `*𝌫 Memory*: ${proc.memory}\n`
+        statusMsg += `*𝌫 Uptime*: ${proc.uptime}\n`
+        statusMsg += `*𝌫 Version*: ${proc.version}\n`
+        statusMsg += `*𝌫 Restarts*: ${proc.restarts}\n`
+
+        if (i < processInfoList.length - 1) {
+          statusMsg += `\n────────────────────\n\n`
+        }
+      })
+
+      await m.send(statusMsg)
+    })
+  } catch (e) {
+    console.error(e)
+    return await m.send(`Error: ${e}`)
   }
-});
+})
+
 
 kord({
   cmd: "stats",
