@@ -7,6 +7,7 @@
  * -------------------------------------------------------------------------------
  */
 
+
 const {
   kord,
   wtype,
@@ -26,6 +27,17 @@ const {
 } = require("../core")
 const { warn } = require("../core/db")
 const pre = prefix 
+// let activeTimers = new Map()
+
+if (!global.activeTimers) {
+  global.activeTimers = new Map()
+}
+const activeTimers = global.activeTimers
+let clientInstance
+
+
+
+
 
 kord({
 cmd: "join",
@@ -271,42 +283,246 @@ cmd: "demote",
 })
 
 kord({
-cmd: "mute",
-  desc: "mute a group to allow only admins to send message",
+  cmd: "mute",
+  desc: "mute a group (immediate or scheduled)",
   fromMe: wtype,
   gc: true,
   adminOnly: true,
   type: "group"
-}, async (m, text) => {
+}, async (m, text, cmd) => {
   try {
-    var botAd = await isBotAdmin(m);
-    if (!botAd) return await m.send("✘_*Bot Needs To Be Admin!*_");
-    await m.client.groupSettingUpdate(m.chat, "announcement");
-    return await m.send("✓ Group Muted");
+    if (!clientInstance) {
+      clientInstance = m.client
+    }
+    
+    var botAd = await isBotAdmin(m)
+    if (!botAd) return await m.send("✘_*Bot Needs To Be Admin!*_")
+    
+    const chatJid = m.chat
+    var muteData = await getData("mute_timers") || {}
+    
+    try {
+      const meta = await m.client.groupMetadata(chatJid)
+      if (meta.announce === true) {
+        return await m.send("✘ Group is already muted")
+      }
+    } catch (e) {}
+    
+    if (!text) {
+      await m.client.groupSettingUpdate(chatJid, "announcement")
+      
+      if (activeTimers.has(chatJid)) {
+        clearTimeout(activeTimers.get(chatJid))
+        activeTimers.delete(chatJid)
+      }
+      
+      if (muteData[chatJid]) {
+        delete muteData[chatJid]
+        await storeData("mute_timers", muteData)
+      }
+      
+      return await m.send("✓ Group Muted")
+    }
+    
+    const timeMatch = text.match(/^(\d+)(s|m|hr|h|d|w)$/i)
+    if (!timeMatch) {
+      return await m.send(`✘ Invalid time format\nUsage: ${cmd} 10s (seconds)\n${cmd} 30m (minutes)\n${cmd} 2hr (hours)\n${cmd} 1d (days)\n${cmd} 1w (weeks)`)
+    }
+    
+    const amount = parseInt(timeMatch[1])
+    const unit = timeMatch[2].toLowerCase()
+    
+    let milliseconds
+    switch(unit) {
+      case 's': milliseconds = amount * 1000; break
+      case 'm': milliseconds = amount * 60 * 1000; break
+      case 'h':
+      case 'hr': milliseconds = amount * 60 * 60 * 1000; break
+      case 'd': milliseconds = amount * 24 * 60 * 60 * 1000; break
+      case 'w': milliseconds = amount * 7 * 24 * 60 * 60 * 1000; break
+      default: return await m.send("✘ Invalid time unit")
+    }
+    
+    if (milliseconds > 7 * 24 * 60 * 60 * 1000) {
+      return await m.send("✘ Maximum mute time is 7 days")
+    }
+    
+    await m.client.groupSettingUpdate(chatJid, "announcement")
+    
+    let timeDisplay
+    if (unit === 's') timeDisplay = `${amount} second${amount > 1 ? 's' : ''}`
+    else if (unit === 'm') timeDisplay = `${amount} minute${amount > 1 ? 's' : ''}`
+    else if (unit === 'h' || unit === 'hr') timeDisplay = `${amount} hour${amount > 1 ? 's' : ''}`
+    else if (unit === 'd') timeDisplay = `${amount} day${amount > 1 ? 's' : ''}`
+    else if (unit === 'w') timeDisplay = `${amount} week${amount > 1 ? 's' : ''}`
+    
+    const unmuteTime = Date.now() + milliseconds
+    muteData[chatJid] = {
+      unmuteTime: unmuteTime,
+      setBy: m.sender,
+      setAt: Date.now(),
+      duration: milliseconds,
+      type: "timer_mute"
+    }
+    
+    await storeData("mute_timers", muteData)
+    
+    await m.send(`✓ Group Muted for ${timeDisplay}`)
+    
+    if (activeTimers.has(chatJid)) {
+      clearTimeout(activeTimers.get(chatJid))
+    }
+    
+    const timerId = setTimeout(async () => {
+      try {
+        const meta = await m.client.groupMetadata(chatJid).catch(() => null)
+        if (meta && meta.announce === true) {
+          await m.client.groupSettingUpdate(chatJid, "not_announcement")
+          await m.client.sendMessage(chatJid, { text: "✓ Group Unmuted" })
+        }
+        
+        const currentData = await getData("mute_timers") || {}
+        if (currentData[chatJid]) {
+          delete currentData[chatJid]
+          await storeData("mute_timers", currentData)
+        }
+        activeTimers.delete(chatJid)
+        
+      } catch (error) {}
+    }, milliseconds)
+    
+    activeTimers.set(chatJid, timerId)
+    
   } catch (e) {
-    console.log("cmd error", e)
+    console.log("mute cmd error", e)
     return await m.sendErr(e)
   }
 })
 
 kord({
-cmd: "unmute",
-  desc: "unmute a group to allow all members to send message",
+  cmd: "unmute",
+  desc: "unmute a group (immediate or scheduled)",
   fromMe: wtype,
   gc: true,
   adminOnly: true,
   type: "group"
-}, async (m, text) => {
+}, async (m, text, cmd) => {
   try {
-    var botAd = await isBotAdmin(m);
-    if (!botAd) return await m.send("✘_*Bot Needs To Be Admin!*_");
-    await m.client.groupSettingUpdate(m.chat, "not_announcement");
-    return await m.send("✓ Group Unmuted");
+    if (!clientInstance) {
+      clientInstance = m.client
+    }
+    
+    var botAd = await isBotAdmin(m)
+    if (!botAd) return await m.send("✘_*Bot Needs To Be Admin!*_")
+    
+    const chatJid = m.chat
+    var muteData = await getData("mute_timers") || {}
+    
+    let isMuted = false
+    try {
+      const meta = await m.client.groupMetadata(chatJid)
+      isMuted = meta.announce === true
+    } catch (e) {
+      return await m.send("✘ Error checking group")
+    }
+    
+    if (!text) {
+      if (!isMuted) {
+        return await m.send("✘ Group is not muted")
+      }
+      
+      await m.client.groupSettingUpdate(chatJid, "not_announcement")
+      
+      if (activeTimers.has(chatJid)) {
+        clearTimeout(activeTimers.get(chatJid))
+        activeTimers.delete(chatJid)
+      }
+      
+      if (muteData[chatJid]) {
+        delete muteData[chatJid]
+        await storeData("mute_timers", muteData)
+      }
+      
+      return await m.send("✓ Group Unmuted")
+    }
+    
+    const timeMatch = text.match(/^(\d+)(s|m|hr|h|d|w)$/i)
+    if (!timeMatch) {
+      return await m.send(`✘ Invalid time format\nUsage: ${cmd} (immediate)\n${cmd} 10s (unmute for 10s)`)
+    }
+    
+    const amount = parseInt(timeMatch[1])
+    const unit = timeMatch[2].toLowerCase()
+    
+    let milliseconds
+    switch(unit) {
+      case 's': milliseconds = amount * 1000; break
+      case 'm': milliseconds = amount * 60 * 1000; break
+      case 'h':
+      case 'hr': milliseconds = amount * 60 * 60 * 1000; break
+      case 'd': milliseconds = amount * 24 * 60 * 60 * 1000; break
+      case 'w': milliseconds = amount * 7 * 24 * 60 * 60 * 1000; break
+      default: return await m.send("✘ Invalid time unit")
+    }
+    
+    if (milliseconds > 7 * 24 * 60 * 60 * 1000) {
+      return await m.send("✘ Maximum time is 7 days")
+    }
+    
+    if (isMuted) {
+      await m.client.groupSettingUpdate(chatJid, "not_announcement")
+    }
+    
+    let timeDisplay
+    if (unit === 's') timeDisplay = `${amount} second${amount > 1 ? 's' : ''}`
+    else if (unit === 'm') timeDisplay = `${amount} minute${amount > 1 ? 's' : ''}`
+    else if (unit === 'h' || unit === 'hr') timeDisplay = `${amount} hour${amount > 1 ? 's' : ''}`
+    else if (unit === 'd') timeDisplay = `${amount} day${amount > 1 ? 's' : ''}`
+    else if (unit === 'w') timeDisplay = `${amount} week${amount > 1 ? 's' : ''}`
+    
+    await m.send(`✓ Group Unmuted for ${timeDisplay}`)
+    
+    if (activeTimers.has(chatJid)) {
+      clearTimeout(activeTimers.get(chatJid))
+    }
+    
+    const muteTime = Date.now() + milliseconds
+    muteData[chatJid] = {
+      unmuteTime: muteTime,
+      setBy: m.sender,
+      setAt: Date.now(),
+      duration: milliseconds,
+      type: "timer_unmute"
+    }
+    
+    await storeData("mute_timers", muteData)
+    
+    const timerId = setTimeout(async () => {
+      try {
+        const meta = await m.client.groupMetadata(chatJid).catch(() => null)
+        if (meta && meta.announce === false) {
+          await m.client.groupSettingUpdate(chatJid, "announcement")
+          await m.client.sendMessage(chatJid, { text: "✓ Group Muted" })
+        }
+        
+        const currentData = await getData("mute_timers") || {}
+        if (currentData[chatJid]) {
+          delete currentData[chatJid]
+          await storeData("mute_timers", currentData)
+        }
+        activeTimers.delete(chatJid)
+        
+      } catch (error) {}
+    }, milliseconds)
+    
+    activeTimers.set(chatJid, timerId)
+    
   } catch (e) {
-    console.log("cmd error", e)
+    console.log("unmute cmd error", e)
     return await m.sendErr(e)
   }
 })
+
 
 kord({
 cmd: "invite|glink",
