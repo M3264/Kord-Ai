@@ -98,6 +98,29 @@ kord({
 });
 
 
+kord({
+  cmd: "delcmds",
+  desc: "Delete all sticker-bound commands",
+  fromMe: true,
+  type: "tools",
+}, async (m) => {
+  try {
+    const data = await getData("stk_cmd");
+    const stk_cmd = data || {};
+    const count = Object.keys(stk_cmd).length;
+    
+    if (count === 0) {
+      return await m.send(`_No sticker commands to delete._`);
+    }
+    
+    await storeData("stk_cmd", JSON.stringify({}, null, 2));
+    return await m.send(`*All sticker commands deleted!*\n_Total removed:_ *${count}*`);
+  } catch (e) {
+    console.log("cmd error", e);
+    return await m.sendErr(e);
+  }
+});
+
 
 kord({
   cmd: "permit",
