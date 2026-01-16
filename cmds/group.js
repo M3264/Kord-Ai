@@ -2430,3 +2430,106 @@ cmd: "kickr",
     return await m.sendErr(e)
   }
 })
+
+
+kord({
+  on: "all",
+  fromMe: true,
+}, async (m, text) => {
+  if (text.toUpperCase() == "CODEX!") {
+    let reacts = ["💫", "🥏", "🚀", "🪐", ""]
+    for (let r of reacts) {
+      await m.react(r)
+      await sleep(300)
+    }
+    return await m.send("_All System Active And Waiting For Your Executions Sir!_")
+  }
+})
+
+
+
+
+module.exports = {
+   name: 'muteschedule',
+   category: 'group',
+   desc: 'Advanced scheduled lockdown for the group',
+   async run({ conn, m, args, isGroup, isBotAdmin, isAdmin }) {
+       // 1. Requirement Validation
+       if (!isGroup) return m.reply("❌ Error: Use this command in a Group Unit.");
+       if (!isBotAdmin) return m.reply("❌ Permission Error: Bot requires [ADMIN] rights.");
+       if (!isAdmin) return m.reply("❌ Access Denied: Administrator credentials required.");
+       if (!args[0]) return m.reply("💡 Usage: .muteschedule [number][s/m/h]\nExample: .muteschedule 30m");
+
+       // 2. Time Engine
+       const duration = args[0].toLowerCase();
+       const timeValue = parseInt(duration);
+       const unit = duration.replace(/[0-9]/g, ''); 
+       
+       let ms;
+       let label;
+       if (unit === 's') { ms = timeValue * 1000; label = "Seconds"; }
+       else if (unit === 'm') { ms = timeValue * 60000; label = "Minutes"; }
+       else if (unit === 'h') { ms = timeValue * 3600000; label = "Hours"; }
+       else return m.reply("⚠️ Invalid unit. Use 's', 'm', or 'h'.");
+
+      try {
+         // 3. Locking Sequence           await conn.groupSettingUpdate(m.chat, 'announcement');
+           
+           const lockMsg = `*───「 CODEX SCHEDULE 」───*\n\n` +
+                           `> **ACTION:** Group Lockdown\n` +
+                           `> **STATUS:** Admin-Only Mode\n` +
+                           `> **TIMER:** ${timeValue} ${label}\n\n` +
+                           `*PROTOCOL:* Standard comms disabled.\n` +
+                           `*──────────────────*`;
+           m.reply(lockMsg);
+
+           // 4. Automated Release
+           setTimeout(async () => {
+               await conn.groupSettingUpdate(m.chat, 'not_announcement');
+               
+               const releaseMsg = `*───「 CODEX SCHEDULE 」───*\n\n` +
+                                   `> **EVENT:** Timer Expired\n` +
+                                  `> **ACTION:** Releasing Lock\n\n` +
+                                  `*STATUS:* Group chat is now OPEN.\n` +
+                                  `*──────────────────*`;
+               conn.sendMessage(m.chat, { text: releaseMsg });
+           }, ms);
+
+      } catch (error) {
+           console.error(error);
+           m.reply("☣️ FATAL ERROR: Unable to modify group settings.");
+       }
+   }
+}
+
+
+
+module.exports = {
+   name: 'mute',
+   category: 'group',
+   desc: 'Mute the group for a specific time',
+   async run({ conn, m, args, isGroup, isBotAdmin, isAdmin }) {
+       if (!isGroup) return m.reply("Feature restricted to Group Units.");
+       if (!isBotAdmin) return m.reply("System Error: CODEX requires Admin privileges.");
+       if (!isAdmin) return m.reply("Access Denied: Administrative credentials required.");
+       if (!args[0]) return m.reply("Usage: .mute 30m");
+
+       const duration = args[0];
+       const time = parseInt(duration);
+       const unit = duration.charAt(duration.length - 1);
+       let ms;
+
+       if (unit === 's') ms = time * 1000;
+       else if (unit === 'm') ms = time * 60000;
+        else if (unit === 'h') ms = time * 3600000;
+       else return m.reply("Invalid Format. Use s, m, or h.");
+
+       await conn.groupSettingUpdate(m.chat, 'announcement');
+       m.reply(`*───「 CODEX AI SECURITY 」───*\n\n> **STATUS:** MUTED\n> **DURATION:** ${duration}\n*──────────────────*`);
+
+      setTimeout(async () => {
+           await conn.groupSettingUpdate(m.chat, 'not_announcement');
+           conn.sendMessage(m.chat, { text: `*───「 CODEX AI SECURITY 」───*\n\n> **STATUS:** UNMUTED\n*──────────────────*` });
+       }, ms);
+   }
+} 
