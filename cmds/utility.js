@@ -127,7 +127,7 @@ kord({
   if (!text) return m.send("_*What do you want me to say?*_")
   var res = await m.axios(`https://ab-text-voice.abrahamdw882.workers.dev/?q=${encodeURIComponent(text)}&voicename=henry`)
   return await m.send(res.url, { mimetype: "audio/mpeg", ptt: false, quoted: m}, "audio")
-  } catch(e) {
+  } catch(err) {
     console.error(err)
     return await m.send(`_*error!*_`)
   }
