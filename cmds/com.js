@@ -171,140 +171,164 @@ kord({cmd:'cinfo|comminfo',desc:'get community information',gc:true,fromMe:wtype
   } catch(e) { return m.sendErr(e); }
 });
 
-kord({   
-  cmd: "mute-user",   
-  desc: "mute a user or a sticker. Use -t <duration> for timed mute (e.g. -t 10m, -t 1h)",   
-  fromMe: true,   
-  type: "bot",   
-  gc: true,   
-  adminOnly: true, 
-}, async (m, text) => {   
-  var botAd = await isBotAdmin(m);   
-  if (!botAd) return await m.send("_*✘Bot Needs To Be Admin!*_");    
+function parseDuration(str) {
+  const match = String(str || '').match(/^(\d+)(s|m|h|d)$/i);
+  if (!match) return null;
+  const duration = Number(match[1]) * { s: 1000, m: 60000, h: 3600000, d: 86400000 }[match[2].toLowerCase()];
+  return Number.isSafeInteger(duration) && duration > 0 && Number.isSafeInteger(Date.now() + duration) ? duration : null;
+}
 
-  var _b = await getData("blacklisted") || {};   
-  if (!_b[m.chat]) _b[m.chat] = { users: [], stk: [], timers: {} };   
-  if (!_b[m.chat].timers) _b[m.chat].timers = {};    
-  let bl = _b[m.chat];    
+async function stickerHashes(mediaBuffer) {
+  const img = new WebP.Image();
+  await img.load(mediaBuffer);
+  img.exif = null;
+  const normalized = await img.save(null, {});
+  return [require('crypto').createHash('sha256').update(normalized).digest('hex'), normalized.toString('hex').slice(0, 50)];
+}
+async function getStickerHash(mediaBuffer) { return (await stickerHashes(mediaBuffer))[0]; }
 
-  let duration = null;   
-  let durationLabel = null;    
-
-  const timerMatch = text.match(/-t\s*(\d+[smhd])/);   
-  if (timerMatch) {     
-    durationLabel = timerMatch[1];     
-    duration = parseDuration(durationLabel);     
-    text = text.replace(timerMatch[0], '').trim();   
-  } else {     
-    const bareMatch = text.match(/\b(\d+[smhd])(\s|$)/);     
-    if (bareMatch) {       
-      durationLabel = bareMatch[1];       
-      duration = parseDuration(durationLabel);       
-      text = text.replace(bareMatch[0], '').trim();     
-    }   
-  }    
-
-
-  if (text.includes("-s")) {     
-    if (!m.quoted?.sticker) return await m.send("_reply to the sticker to mute_");     
-    
-    var hash = await getStickerHash(await m.quoted.download());
-    if (bl.stk.includes(hash)) return await m.send("_sticker is already muted_");      
-    bl.stk.push(hash);      
-
-    if (duration) {       
-      const timerKey = `${m.chat}::stk_${hash}`;       
-      if (muteTimers.has(timerKey)) clearTimeout(muteTimers.get(timerKey));       
-      
-      bl.timers[`stk_${hash}`] = Date.now() + duration;       
-      const handle = setTimeout(async () => {         
-        muteTimers.delete(timerKey);         
-        var _fresh = await getData("blacklisted") || {};         
-        if (!_fresh[m.chat]) return;         
-        _fresh[m.chat].stk = (_fresh[m.chat].stk || []).filter(h => h !== hash);         
-        delete _fresh[m.chat].timers?.[`stk_${hash}`];         
-        await storeData("blacklisted", _fresh);         
-        await m.send(`_sticker auto-unmuted after timer_`);       
-      }, duration);       
-      muteTimers.set(timerKey, handle);     
-    }      
-    await storeData("blacklisted", _b);     
-    return await m.send(duration ? `_sticker muted for ${durationLabel}_` : "_sticker muted_");   
-  }    
-
-
-  let input = m.mentionedJid?.[0] || m.quoted?.sender || text;   
-  if (!input) return await m.send('need user...');   
-  let user = (input.includes('@') ? input.split('@')[0] : input).replace(/\D/g, '') + '@s.whatsapp.net';   
-  
-  if (await isadminn(m, user)) return await m.send("User is an admin");   
-  if (bl.users.includes(user)) return await m.send("_User is already muted_");    
-
-  bl.users.push(user);    
-
-  if (duration) {     
-    const timerKey = `${m.chat}::${user}`;     
-    if (muteTimers.has(timerKey)) clearTimeout(muteTimers.get(timerKey));     
-    
-    bl.timers[user] = Date.now() + duration;     
-    const handle = setTimeout(async () => {       
-      muteTimers.delete(timerKey);       
-      var _fresh = await getData("blacklisted") || {};       
-      if (!_fresh[m.chat]) return;       
-      _fresh[m.chat].users = (_fresh[m.chat].users || []).filter(u => u !== user);       
-      delete _fresh[m.chat].timers?.[user];       
-      await storeData("blacklisted", _fresh);       
-      await m.send(`@${user.split("@")[0]} has been auto-unmuted`, { mentions: [user] });     
-    }, duration);     
-    muteTimers.set(timerKey, handle);   
-  }    
-  await storeData("blacklisted", _b);   
-  return await m.send(duration ? `@${user.split("@")[0]} has been muted for ${durationLabel}` : `@${user.split("@")[0]} has been muted`, { mentions: [user] }); 
-});   
-
-kord({   
-  cmd: "unmute-user",   
-  desc: "unmute a user or sticker",   
-  fromMe: true,   
-  type: "bot",   
-  gc: true,   
-  adminOnly: true, 
-}, async (m, text) => {   
-  var botAd = await isBotAdmin(m);   
-  if (!botAd) return await m.send("_*✘Bot Needs To Be Admin!*_");    
-
-  var _b = await getData("blacklisted") || {};   
-  if (!_b[m.chat]) return await m.send("_no one muted here_");    
-
-  let bl = _b[m.chat];   
-  if (!bl.timers) bl.timers = {};    
-
-  if (text.includes("-s")) {     
-    if (!m.quoted?.sticker) return await m.send("_reply to the sticker to unmute_");     
-    
-    var hash = await getStickerHash(await m.quoted.download());     
-    if (!bl.stk.includes(hash)) return await m.send("_sticker is not muted_");      
-
-    const timerKey = `${m.chat}::stk_${hash}`;     
-    if (muteTimers.has(timerKey)) clearTimeout(muteTimers.get(timerKey));      
-
-    bl.stk = bl.stk.filter(h => h !== hash);     
-    delete bl.timers[`stk_${hash}`];     
-    await storeData("blacklisted", _b);     
-    return await m.send("_sticker unmuted_");   
-  }    
-
-  let input = m.mentionedJid?.[0] || m.quoted?.sender || text;   
-  if (!input) return await m.send('need user...');   
-  let user = (input.includes('@') ? input.split('@')[0] : input).replace(/\D/g, '') + '@s.whatsapp.net';   
-  
-  if (!bl.users.includes(user)) return await m.send("_User is not muted_");    
-
-  const timerKey = `${m.chat}::${user}`;   
-  if (muteTimers.has(timerKey)) clearTimeout(muteTimers.get(timerKey));    
-
-  bl.users = bl.users.filter(u => u !== user);   
-  delete bl.timers[user];   
-  await storeData("blacklisted", _b);   
-  return await m.send(`@${user.split("@")[0]} has been unmuted`, { mentions: [user] }); 
-});  
+// Keep pending database writes serialized across command-folder hot reloads.
+const muteRuntime = global.__kordMuteRuntime || (global.__kordMuteRuntime = { queue: Promise.resolve(), timers: new Map() });
+const muteTimers = muteRuntime.timers;
+for (const handle of muteTimers.values()) clearTimeout(handle);
+muteTimers.clear();
+function withMuteState(fn) {
+  const result = muteRuntime.queue.then(fn);
+  muteRuntime.queue = result.catch(() => {});
+  return result;
+}
+function muteList(data, chat) {
+  const bl = data[chat] || (data[chat] = {});
+  if (!Array.isArray(bl.users)) bl.users = [];
+  if (!Array.isArray(bl.stk)) bl.stk = [];
+  if (!bl.timers || typeof bl.timers !== 'object') bl.timers = {};
+  return bl;
+}
+function removeMute(bl, key) {
+  if (key.startsWith('stk_')) bl.stk = bl.stk.filter(hash => hash !== key.slice(4));
+  else bl.users = bl.users.filter(jid => jid !== key);
+  delete bl.timers[key];
+}
+function cancelMuteTimer(chat, key) {
+  const id = `${chat}::${key}`;
+  clearTimeout(muteTimers.get(id));
+  muteTimers.delete(id);
+}
+function scheduleMuteExpiry(chat, key, expires) {
+  const id = `${chat}::${key}`;
+  if (muteTimers.has(id)) return;
+  const handle = setTimeout(() => {
+    muteTimers.delete(id);
+    withMuteState(async () => {
+      const data = await getData('blacklisted') || {};
+      if (!data[chat]) return;
+      const bl = muteList(data, chat);
+      if (bl.timers[key] !== expires) return;
+      if (expires > Date.now()) return scheduleMuteExpiry(chat, key, expires);
+      removeMute(bl, key);
+      await storeData('blacklisted', data);
+    }).catch(e => console.error('mute expiry error', e));
+  }, Math.min(2147483647, Math.max(1, expires - Date.now())));
+  handle.unref?.();
+  muteTimers.set(id, handle);
+}
+async function refreshMuteTimers(data, chat) {
+  const bl = muteList(data, chat);
+  let changed = false;
+  for (const [key, expires] of Object.entries(bl.timers)) {
+    if (!Number.isFinite(expires) || expires <= Date.now()) {
+      cancelMuteTimer(chat, key);
+      removeMute(bl, key);
+      changed = true;
+    } else scheduleMuteExpiry(chat, key, expires);
+  }
+  if (changed) await storeData('blacklisted', data);
+  return bl;
+}
+async function muteAliases(m, jid) {
+  const aliases = await communityAliases(m, [jid]);
+  const meta = await m.client.groupMetadata(m.chat);
+  for (const p of meta.participants || []) {
+    const ids = [p.id, p.jid, p.phoneNumber, p.lid].map(normalizeCommunityJid).filter(Boolean);
+    if (ids.some(id => aliases.has(id))) ids.forEach(id => aliases.add(id));
+  }
+  return { aliases, meta };
+}
+async function changeMute(m, text, unmute) {
+  if (!m.isGroup) return m.send('_Group only command._');
+  if (!await isBotAdmin(m)) return m.send('_*✘Bot Needs To Be Admin!*_');
+  text = String(text || '').trim();
+  let duration = null, label = null;
+  const timerMatch = text.match(/(?:^|\s)-t\s+(\S+)(?=\s|$)/) || text.match(/(?:^|\s)(\d+[smhd])(?=\s|$)/i);
+  if (timerMatch) {
+    label = timerMatch[1];
+    duration = parseDuration(label);
+    if (!duration || unmute) return m.send('_Invalid duration. Use -t 10m, -t 1h, or -t 1d._');
+    text = text.replace(timerMatch[0], '').trim();
+  } else if (/(?:^|\s)-t(?:\s|$)/.test(text)) return m.send('_Invalid duration. Use -t 10m._');
+  const sticker = /(?:^|\s)-s(?=\s|$)/.test(text);
+  let user, aliases, hashes;
+  if (sticker) {
+    if (!m.quoted?.sticker) return m.send(`_reply to the sticker to ${unmute ? 'unmute' : 'mute'}_`);
+    hashes = await stickerHashes(await m.quoted.download());
+  } else {
+    user = communityTarget(m, text);
+    if (!user) return m.send('_Reply to, mention, or provide a valid user._');
+    const resolved = await muteAliases(m, user);
+    aliases = resolved.aliases;
+    if (!unmute && communityIsAdmin(resolved.meta, aliases)) return m.send('User is an admin');
+  }
+  return withMuteState(async () => {
+    const data = await getData('blacklisted') || {};
+    const bl = await refreshMuteTimers(data, m.chat);
+    const matches = sticker ? bl.stk.filter(h => hashes.includes(h)) : bl.users.filter(jid => aliases.has(normalizeCommunityJid(jid)));
+    if (unmute) {
+      if (!matches.length) return m.send(sticker ? '_sticker is not muted_' : '_User is not muted_');
+      for (const value of matches) {
+        const key = sticker ? `stk_${value}` : value;
+        cancelMuteTimer(m.chat, key);
+        removeMute(bl, key);
+      }
+    } else {
+      if (matches.length) return m.send(sticker ? '_sticker is already muted_' : '_User is already muted_');
+      const value = sticker ? hashes[0] : user;
+      const key = sticker ? `stk_${value}` : value;
+      (sticker ? bl.stk : bl.users).push(value);
+      cancelMuteTimer(m.chat, key);
+      delete bl.timers[key];
+      if (duration) bl.timers[key] = Date.now() + duration;
+    }
+    await storeData('blacklisted', data);
+    for (const [key, expires] of Object.entries(bl.timers)) scheduleMuteExpiry(m.chat, key, expires);
+    const action = unmute ? 'unmuted' : `muted${duration ? ` for ${label}` : ''}`;
+    return m.send(sticker ? `_sticker ${action}_` : `@${user.split('@')[0]} has been ${action}`, sticker ? {} : { mentions: [user] });
+  });
+}
+kord({ cmd: 'mute-user', desc: 'mute a user or sticker; optional -t 10m, -t 1h, -t 1d', fromMe: true, type: 'bot', gc: true, adminOnly: true }, async (m, text) => {
+  try { return await changeMute(m, text, false); } catch (e) { return m.sendErr(e); }
+});
+kord({ cmd: 'unmute-user', desc: 'unmute a user or sticker', fromMe: true, type: 'bot', gc: true, adminOnly: true }, async (m, text) => {
+  try { return await changeMute(m, text, true); } catch (e) { return m.sendErr(e); }
+});
+kord({ on: 'all', fromMe: false }, async m => {
+  try {
+    if (!m.isGroup || !m.key?.id || m.key.fromMe || m.fromMe || ['protocolMessage', 'reactionMessage', 'pollUpdateMessage', 'pollResultSnapshotMessage'].includes(m.mtype)) return;
+    await withMuteState(async () => {
+      const data = await getData('blacklisted') || {};
+      if (!data[m.chat]) return;
+      const bl = await refreshMuteTimers(data, m.chat);
+      if (!bl.users.length && !bl.stk.length) return;
+      if (!await isBotAdmin(m)) return;
+      const sender = m.key.participant || m.sender;
+      const { aliases, meta } = await muteAliases(m, sender);
+      // Sender aliases must originate from the message or verified mappings, not its quote.
+      if (communityIsAdmin(meta, aliases)) return;
+      let blocked = bl.users.some(jid => aliases.has(normalizeCommunityJid(jid)));
+      if (!blocked && m.sticker && bl.stk.length) {
+        const hashes = await stickerHashes(await m.download());
+        blocked = bl.stk.some(hash => hashes.includes(hash));
+      }
+      if (blocked) await m.client.sendMessage(m.chat, { delete: m.key });
+    });
+  } catch (e) { console.error('mute enforcement error', e); }
+});
