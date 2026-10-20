@@ -266,37 +266,35 @@ kord({
   type: "process"
 }, async (m, text) => {
   try {
-    exec("npx pm2 status kord-v2", async (err, stdout, stderr) => {
-      if (err) {
-        await m.send(`Error: ${err}`);
-        return;
-      }
-      const lines = stdout.split('\n').filter(line => line.includes('kord-v2'));
-      if (lines.length === 0) {
-        await m.send("No Kord processes found running.");
-        return;
-      }
-      const processInfoList = lines.map(line => {
-        const parts = line.split('│').map(part => part.trim()).filter(Boolean);
-        
-        if (parts.length < 9) {
-          return null;
-        }
-        
-        return {
-          id: parts[0],
-          name: parts[1],
-          namespace: parts[2],
-          version: parts[3],
-          mode: parts[4], 
-          pid: parts[5],
-          uptime: parts[6],
-          restarts: parts[7],
-          status: parts[8],
-          cpu: parts[9],
-          memory: parts[10]
-        };
-      }).filter(Boolean);
+    const processes = await new Promise((resolve, reject) => {
+      pm2.connect(err => {
+        if (err) return reject(err);
+        pm2.describe('kord-v2', (err, list) => {
+          pm2.disconnect();
+          return err ? reject(err) : resolve(list);
+        });
+      });
+    });
+    if (!processes.length) {
+      return await m.send("No Kord processes found running.");
+    }
+    const processInfoList = await Promise.all(processes.map(async proc => {
+      const env = proc.pm2_env || {};
+      const monit = proc.monit || {};
+      return {
+        id: proc.pm_id,
+        name: proc.name,
+        version: env.version || 'N/A',
+        mode: (env.exec_mode || 'N/A').replace(/_mode$/, ''),
+        uptime: env.status === 'online' && env.pm_uptime
+          ? await secondsToHms(Math.max(0, (Date.now() - env.pm_uptime) / 1000))
+          : '0s',
+        restarts: env.restart_time ?? 0,
+        status: env.status || 'unknown',
+        cpu: `${monit.cpu ?? 0}%`,
+        memory: `${((monit.memory ?? 0) / 1024 / 1024).toFixed(2)} MB`
+      };
+    }));
       
       let statusMsg = `*❊ Bot Status*\n\n`;
       
@@ -317,7 +315,6 @@ kord({
         }
       });
       await m.send(statusMsg);
-    });
   } catch (e) {
     console.error(e);
     return await m.send(`Error: ${e}`);
