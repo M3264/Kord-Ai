@@ -215,6 +215,7 @@ kord({
             return await m.send("Sorry, YouTube link not available to download audio")
           }
           var mp3Link = await ytaudio(ytInfo.url)
+          if (!mp3Link?.url) return await m.send("Sorry, audio download failed, try again")
           var mp = mp3Link.url
           await m.send(mp, { mimetype: "audio/mpeg", ptt: false, quoted: rMsg }, "audio")
             
@@ -224,6 +225,7 @@ kord({
           }
           
           var mp4Link = await ytvideo(ytInfo.url)
+          if (!mp4Link?.url) return await m.send("Sorry, video download failed, try again")
           var mk = mp4Link.url
           await m.send(mk, { caption: `*Video for ${ytInfo.title}*`, quoted: rMsg }, "video")
         } else {

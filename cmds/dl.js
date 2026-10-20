@@ -7,7 +7,7 @@
  * -------------------------------------------------------------------------------
  */
 
-const { kord, wtype, prefix, sleep, extractUrlsFromString, fb, ytaudio, config, ytvideo, xdl, tt, insta, mediaFire, rand, gdrive, getBuffer } = require("../core")
+const { kord, wtype, prefix, sleep, extractUrlsFromString, fb, ytaudio, config, ytvideo, xdl, tt, insta, mediaFire, rand, gdrive, getBuffer, kordGet, kordFetch } = require("../core")
 const yts = require("yt-search")
 const { Sticker, StickerTypes } = require("wa-sticker-formatter");
 
@@ -19,7 +19,7 @@ cmd: "apk",
 }, async (m, text) => {
   try {
     if (!text) return await m.send("_*Provide a apk name*_")
-    var data = await m.axios(`https://api.kord.live/api/apk?q=${text}`)
+    var data = await kordGet(`https://api.kordai.tech/api/apk?q=${text}`)
     if (data.error) return await m.send("_Apk not found.._")
     var cap = `❑ Name: ${data.app_name}
     ❑ Package Name: ${data.package_name}
@@ -56,7 +56,7 @@ cmd: "apksearch",
     if (text.startsWith("dl--")) {
     var q = text.replace("dl--", "")
     await m.send("downloading app...")
-    var data = await m.axios(`https://api.kord.live/api/apkdl?id=${q}`)
+    var data = await kordGet(`https://api.kordai.tech/api/apkdl?id=${q}`)
     if (data.error) return await m.send("_Apk not found.._")
     var cap = `❑ Name: ${data.name}
     ❑ Package Name: ${data.package}
@@ -75,7 +75,7 @@ cmd: "apksearch",
     "document"
     );
     } else {
-    var info = await m.axios(`https://api.kord.live/api/apksearch?query=${text}`);
+    var info = await kordGet(`https://api.kordai.tech/api/apksearch?query=${text}`);
     const formatted = info.splice(0, 10).map(app => ({
     name: app.name,
     id: `apksearch dl--${app.id}`
@@ -106,7 +106,7 @@ kord({
   if (!text) return await m.send("_*Provide a movie name*_");
   let data;
   try {
-    data = await m.axios(`https://api.kord.live/api/subtitle?q=${text}`);
+    data = await kordGet(`https://api.kordai.tech/api/subtitle?q=${text}`);
   } catch (e) {
     return await m.send("_Failed to fetch subtitle data._");
   }
@@ -147,13 +147,13 @@ cmd: "subtitlesearch|subtitles",
     if (!text) return await m.send("_provide a movie name_");
     
     if (text.startsWith("dl--")) {
-    const pageUrl = decodeURIComponent(text.replace("d--", ""));
+    const pageUrl = decodeURIComponent(text.slice("dl--".length));
     if (pageUrl.toLowerCase().includes("tempête dans une tasse de thé")) {
     return await m.send("_Busy API or invalid subtitle. Try again later._");
     }
     
     await m.send("_Fetching available subtitle languages..._");
-    let data = await m.axios(`https://api.kord.live/api/subtiledl?q=${encodeURIComponent(pageUrl)}`);
+    let data = await kordGet(`https://api.kordai.tech/api/subtiledl?q=${encodeURIComponent(pageUrl)}`);
     
     if (!Array.isArray(data) || data.length === 0)
     return await m.send("_No subtitles found or server busy._");
@@ -175,7 +175,7 @@ cmd: "subtitlesearch|subtitles",
     "document"
     );
     } else {
-    const info = await m.axios(`https://api.kord.live/api/subtitlepage?q=${text}`);
+    const info = await kordGet(`https://api.kordai.tech/api/subtitlepage?q=${text}`);
     if (!Array.isArray(info) || info.length === 0) {
     return await m.send("_No subtitle results found._");
     }
@@ -202,287 +202,50 @@ cmd: "subtitlesearch|subtitles",
 
 
 
-kord({
-        cmd: "ytv|ytmp4",
-        desc: "download a YouTube video with its link",
-        type: "downloader",
-        fromMe: wtype,
-}, async (m, text) => {
-        var source;
-        var link
-        if (!text) { 
-        source = m.quoted?.text
-        if (!source) return m.send(`_*provide a YouTube link/title*_\n_Example: ${prefix}yt https://youtube.com/video_`)
-        } else {
-        source = text
-        }
-        if (!source) return m.send(`_*provide a YouTube link/title*_\n_Example: ${prefix}yt https://youtube.com/video_`)
-        m.react("⏰")
-        var lik = await extractUrlsFromString(source)
-        if (lik.length === 0) {
-                let result = await yts(source)
-                lik = [result.videos[0]?.url]
-        }
-        const ytRegex = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+/;
-         link = lik.find(url => ytRegex.test(url));
-        if (!link) {
-        let result = await yts(text)
-        link = result.videos[0]?.url
-        if (!link) return m.send("_*No results found for your query.*_")
-}
-      if (!link) return m.send(`_*provide a YouTube link/title*_\n_Example: ${prefix}yt https://youtube.com/video_`)
-      if (!ytRegex.test(link)) return m.send(`_*provide a valid YouTube link! or use ${prefix}video if you want to download a video with its name.*_`)
-     try {
-           let videoData = await ytvideo(link)
-           var test = videoData.url.toLowerCase()
-           if (test.includes("processing"))  await sleep(1000)
-           videoData = await ytvideo(link)
-           if (!videoData.url) return m.send("_*failed to fetch video, try again*_")
-           m.react("")
-           return await m.send(videoData.url, { caption: `➟ ${videoData.title}\n\n${config().CAPTION}`, quoted: m }, "video")
-     } catch (e) {
-             console.error(e)
-             return m.send(`${e}`)
-     }
-})
+const { resolveYoutubeInput, parseYoutubeQuality } = require('../core/tools')
 
-
-kord({
-        cmd: "yta|ytmp3",
-        desc: "downloads YouTube audio with its link",
-        fromMe: wtype,
-        type: "downloader",
-}, async (m, text) => {
-        var source;
-if (!text) {
-        source = m.quoted?.text
-        if (!source) return m.send(`_*provide a YouTube link/title*_\n_Example: ${prefix}yt https://youtube.com/video_`)
-} else {
-        source = text
+for (const definition of [
+  { cmd: 'ytv|ytmp4', format: 'mp4' },
+  { cmd: 'yta|ytmp3', format: 'mp3' },
+  { cmd: 'video|ytvideo', format: 'mp4' },
+  { cmd: 'play|music', format: 'mp3' },
+  { cmd: 'videodoc|ytvideodoc', format: 'mp4', document: true },
+  { cmd: 'playdoc|musicdoc', format: 'mp3', document: true },
+  { cmd: 'ytvdoc|ytmp4doc', format: 'mp4', document: true },
+  { cmd: 'ytadoc|ytmp3doc', format: 'mp3', document: true },
+]) {
+  kord({
+    cmd: definition.cmd,
+    desc: `Download YouTube ${definition.format === 'mp3' ? 'audio' : 'video'}${definition.document ? ' as a document' : ''} from a link or title${definition.format === 'mp4' ? ' (optional: 360p, 720p, 1080p)' : ''}`,
+    type: 'downloader',
+    fromMe: wtype,
+  }, async (m, text) => {
+    try {
+      const parsed = definition.format === 'mp4' ? parseYoutubeQuality(text) : { source: text?.trim(), quality: 720 }
+      const source = parsed.source || m.quoted?.text?.trim()
+      if (!source) return await m.send('Provide a YouTube link or a search title.')
+      await m.react('⏰')
+      const video = await resolveYoutubeInput(source, yts)
+      const download = await (definition.format === 'mp3' ? ytaudio(video.url) : ytvideo(video.url, parsed.quality))
+      if (!download?.url) throw new Error('Unable to download this video. Please try again shortly.')
+      const title = String(download.title || video.title || 'YouTube').replace(/[\/\\:*?"<>|\x00-\x1f]/g, '').slice(0, 150)
+      const options = {
+        mimetype: definition.format === 'mp3' ? 'audio/mpeg' : 'video/mp4',
+        fileName: `${title}.${definition.format}`,
+        quoted: m,
+      }
+      if (definition.document || definition.format === 'mp4') options.caption = `➟ ${title}\n\n${config().CAPTION || ''}`
+      if (definition.format === 'mp3') options.ptt = false
+      return await m.send(download.url, options, definition.document ? 'document' : definition.format === 'mp3' ? 'audio' : 'video')
+    } catch (error) {
+      console.error('YouTube command failed:', error.message)
+      const message = /abort|timeout/i.test(error.message) ? 'The download took too long. Please try again.' : error.message || 'YouTube download failed. Please try again.'
+      return await m.send(message)
+    } finally {
+      try { await m.react('') } catch {}
+    }
+  })
 }
-if (!source) return m.send(`_*provide a YouTube link*_\n_Example: ${prefix}yt https://youtube.com/video_`)
-m.react("⏰")
-var lik = await extractUrlsFromString(source)
-if (lik.length === 0) {
-        let result = await yts(source)
-        lik = [result.videos[0]?.url]
-}
-const ytRegex = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+/;
-var link = lik.find(url => ytRegex.test(url));
-if (!link) {
-        let result = await yts(text)
-        link = result.videos[0]?.url
-        if (!link) return m.send("_*No results found for your query.*_")
-}
-if (!link) return m.send(`_*provide a YouTube link/title*_\n_Example: ${prefix}yt https://youtube.com/video_`)
-if (!ytRegex.test(link)) return m.send(`_*provide a valid YouTube link! or use ${prefix}play if you want to download a audio with its name.*_`)
-try {
-        let audioD = await ytaudio(link)
-        var test = audioD.url.toLowerCase()
-        if (test.includes("processing")) await sleep(1000)
-        audioD = await ytaudio(link)
-        if (!audioD.url) return m.send("_*failed to fetch video, try again*_")
-        m.react("")
-       return await m.send(audioD.url, { caption: `➟ ${audioD.title}\n\n${config().CAPTION}`, mimetype: "audio/mpeg", quoted: m }, "audio")
-} catch (e) {
-        console.error(e)
-      return  m.send(`${e}`)
-}
-}
-)
-
-kord({
-        cmd: "video|ytvideo",
-        desc: "downloads and send video based on the title given",
-        fromMe: wtype,
-        type: "downloader",
-}, async (m, text) => {
-        try {
-        if (!text) return await m.send(`_*provide a query*_\n_example: ${prefix}video avengers doomsday trailer_`)
-        m.react("⏰")
-        var ytsr = await yts(text)
-        var ytsd = ytsr.videos[0]
-        var dl = await ytvideo(ytsd.url)
-        var caption = `*❦ ᴠɪᴅᴇᴏ ᴅᴇᴛᴀɪʟꜱ ❦*
-*➟ Video Url:* ${ytsd.url}
-*➟ Title:* ${ytsd.title}
-*➟ Description:* ${ytsd.description}
-*➟ Duration:* ${ytsd.duration.timestamp}
-*➟ Views:* ${ytsd.views.toLocaleString()}
-*➟ Date Uploaded:* ${ytsd.ago}
-
-${config().CAPTION}`
-m.react("")
-
-        return await m.send(dl.url, {caption: caption, quoted: m}, "video")
-} catch (err) {
-        console.error(err)
-       return m.send(`an error occured: ${err}`)
-}
-})
-
-kord({
-        cmd: "play|music",
-        desc: "downloads and send audio based on the title given",
-        fromMe: wtype,
-        type: "downloader",
-}, async (m, text) => {
-        try {
-        if (!text) return await m.send(`_*provide a query*_\n_example: ${prefix}play unstoppable_`)
-        m.react("⏰")
-        var ytsr = await yts(text)
-        var ytsa = ytsr.videos[0]
-        var dl = await ytaudio(ytsa.url)
-        var cap = `00:00 ───◁ㅤ ❚❚ ㅤ▷─── ${ytsa.duration.timestamp} ♡`
-        m.react("")
-        return await m.send(dl.url, {ptt: false,
-            mimetype: 'audio/mpeg'
-            }, "audio")
-            } catch (err) {
-        console.error(err)
-       return m.send(`an error occured: ${err}`)
-}
-})
-kord({
-       cmd: "videodoc|ytvideodoc",
-        desc: "downloads and send video(document) based on the title given",
-        fromMe: wtype,
-        type: "downloader",
-}, async (m, text) => {
-        try {
-                if (!text) return await m.send(`_*provide a query*_\n_example: ${prefix}video avengers doomsday trailer_`)
-                m.react("⏰")
-                var ytsr = await yts(text)
-                var ytsd = ytsr.videos[0]
-                var dl = await ytvideo(ytsd.url)
-                var caption = `*❦ ᴠɪᴅᴇᴏ ᴅᴇᴛᴀɪʟꜱ ❦*
-*➟ Video Url:* ${ytsd.url}
-*➟ Title:* ${ytsd.title}
-*➟ Description:* ${ytsd.description}
-*➟ Duration:* ${ytsd.duration.timestamp}
-*➟ Views:* ${ytsd.views.toLocaleString()}
-*➟ Date Uploaded:* ${ytsd.ago}
-
-${config().CAPTION}`
-m.react("")
-                
-                return await m.send(dl.url, { mimetype: "video/mp4", fileName: `${ytsd.title}.mp4`, caption: caption, quoted: m }, "document") 
-        }catch (err) {
-        console.error(err)
-      return  m.send(`an error occured: ${err}`)
-        }
-})
-
-kord({
-        cmd: "playdoc|musicdoc",
-        desc: "downloads and send audio from YouTube as doc",
-        fromMe: wtype,
-        type: "downloader",
-}, async (m, text) => {
-        try {
-        if (!text) return await m.send(`_*provide a query*_\n_example: ${prefix}play unstoppable_`)
-        m.react("⏰")
-        var ytsr = await yts(text)
-        var ytsa = ytsr.videos[0]
-        var dl = await ytaudio(ytsa.url)
-        var cap = `00:00 ───◁ㅤ ❚❚ ㅤ▷─── ${ytsa.duration.timestamp} ♡`
-        m.react("")
-        return await m.send(dl.url, {ptt: false,
-            mimetype: 'audio/mpeg',
-            fileName: `${ytsa.title}.mp3`,
-            caption: ytsa.title
-            }, "document")
-        } catch (err) {
-        console.error(err)
-        return m.send(`an error occured: ${err}`)
-        }
-})
-
-kord({
-        cmd: "ytvdoc|ytmp4doc",
-        desc: "download a YouTube video with its link and send as document",
-        type: "downloader",
-        fromMe: wtype,
-}, async (m, text) => {
-        var source;
-        if (!text) { 
-        source = m.quoted?.text
-        if (!source) return m.send(`_*provide a YouTube link/title*_\n_Example: ${prefix}yt https://youtube.com/video_`)
-        } else {
-        source = text
-        }
-        if (!source) return m.send(`_*provide a YouTube link/title*_\n_Example: ${prefix}yt https://youtube.com/video_`)
-        var lik = await extractUrlsFromString(source)
-        if (lik.length === 0) {
-        let result = await yts(source)
-        lik = [result.videos[0]?.url]
-}
-        const ytRegex = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+/;
-        var link = lik.find(url => ytRegex.test(url));
-        if (!link) {
-        let result = await yts(source)
-        link = result.videos[0]?.url
-        if (!link) return m.send("_*No results found for your query.*_")
-}
-      if (!link) return m.send(`_*provide a YouTube link/title*_\n_Example: ${prefix}yt https://youtube.com/video_`)
-      if (!ytRegex.test(link)) return m.send(`_*provide a valid YouTube link! or use ${prefix}video if you want to download a video with its name.*_`)
-      m.react("⏰")
-     try {
-           let videoData = await ytvideo(link)
-           var test = videoData.url.toLowerCase()
-           if (test.includes("processing"))  await sleep(1000)
-           videoData = await ytvideo(link)
-           if (!videoData.url) return m.send("_*failed to fetch video, try again*_")
-           m.react("")
-           return await m.send(videoData.url, { mimetype: "video/mp4", fileName: `${videoData.title}.mp4`, caption: `➟ ${videoData.title}\n\n${config().CAPTION}`, quoted: m }, "document")
-     } catch (e) {
-             console.error(e)
-            return m.send(`${e}`)
-     }
-})
-
-kord({
-        cmd: "ytadoc|ytmp3doc",
-        desc: "downloads YouTube audio with its link",
-        fromMe: wtype,
-        type: "downloader",
-}, async (m, text) => {
-        var source;
-if (!text) {
-        source = m.quoted?.text
-        if (!source) return m.send(`_*provide a YouTube link/title*_\n_Example: ${prefix}yt https://youtube.com/video_`)
-} else {
-        source = text
-}
-if (!source) return m.send(`_*provide a YouTube link*_\n_Example: ${prefix}yt https://youtube.com/video_`)
-var lik = await extractUrlsFromString(source)
-if (lik.length === 0) {
-        let result = await yts(source)
-        lik = [result.videos[0]?.url]
-}
-const ytRegex = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+/;
-var link = lik.find(url => ytRegex.test(url));
-if (!link) {
-        let result = await yts(source)
-        link = result.videos[0]?.url
-        if (!link) return m.send("_*No results found for your query.*_")
-}
-if (!link) return m.send(`_*provide a YouTube link/title*_\n_Example: ${prefix}yt https://youtube.com/video_`)
-if (!ytRegex.test(link)) return m.send(`_*provide a valid YouTube link! or use ${prefix}play if you want to download a audio with its name.*_`)
-        m.react("⏰")
-try {
-        let audioD = await ytaudio(link)
-        var test = audioD.url.toLowerCase()
-        if (test.includes("processing")) await sleep(1000)
-        audioD = await ytaudio(link)
-        if (!audioD.url) return m.send("_*failed to fetch video, try again*_")
-        m.react("")
-       return await m.send(audioD.url, { mimetype: 'audio/mpeg', fileName: `${audioD.title}.mp3`, caption: `➟ ${audioD.title}\n\n${config().CAPTION}`, quoted: m }, "audio")
-} catch (e) {
-        console.error(e)
-    return    m.send(`${e}`)
-}
-})
 
 kord({
         cmd: "tt|tiktok",
@@ -545,7 +308,7 @@ kord({
                 var links = await extractUrlsFromString(lik);
                 const ttregex = /https:\/\/(?:www\.|vm\.|m\.|vt\.)?tiktok\.com\/(?:(@[\w.-]+\/(?:video|photo)\/\d+)|v\/\d+\.html|[\w-]+\/?)(?:\?.*)?$/
                 var link = links.find(url => ttregex.test(url));
-                const dta = await fetch(`https://api.kord.live/api/tik-img?url=${encodeURIComponent(link)}`);
+                const dta = await kordFetch(`https://api.kordai.tech/api/tik-img?url=${encodeURIComponent(link)}`);
                 const data = await dta.json();
                 if (!data.downloadableImages || data.downloadableImages.length === 0) {
                         return m.send("_No images found._");
@@ -829,8 +592,8 @@ kord({
                 var link = links.find(url => pinregex.test(url))
                 if (!link) return m.send("_*No valid Pinterest URL found!*_")
 
-                const api = `https://api.kord.live/api/pinterest?url=${encodeURIComponent(link)}`
-                const res = await fetch(api)
+                const api = `https://api.kordai.tech/api/pinterest?url=${encodeURIComponent(link)}`
+                const res = await kordFetch(api)
                 const json = await res.json()
                 const data = json?.data?.data
                 if (!data) return m.react("")

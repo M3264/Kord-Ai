@@ -21,165 +21,62 @@ const { kord,
 } = require("../core")
 const axios = require('axios') 
 
-kord({
-  cmd: "openai",
-  desc: "chat with ai (openai gpt-5 nano)",
-  fromMe: wtype,
-  type: "ai",
-}, async (m, text) => {
-  try {
-    var prompt = text || m.quoted?.text
-    if (!prompt) return await m.send("Hi!, What's Your Prompt?")
-    return await m.send(await chatWithAi(prompt, "openai"))
-  } catch (e) {
-    console.log("cmd error", e)
-    return await m.sendErr(e)
-  }
-})
+// Three task-focused commands share the anonymous Pollinations model.
+// Deliberately separate from chatbotResponse and its providers/history.
+const namedAiState = globalThis[Symbol.for('kord.namedFreeAi.v1')] ||= { busy: false, nextAt: 0 }
+const namedAiRoles = [
+  { name: 'gpt', description: 'general questions and explanations', system: 'You are Nova, a helpful general-purpose assistant. Answer clearly, accurately, and concisely. Say when you are unsure. Do not claim live web access.' },
+  { name: 'scribe', description: 'writing, rewriting and summaries', system: 'You are Scribe, a writing assistant. Help draft, rewrite, translate and summarize text. Preserve the user intent and facts. Prefer the requested output over commentary.' },
+  { name: 'forge', description: 'coding and debugging help', system: 'You are Forge, a coding assistant. Help write, explain and debug code. Prefer concise correct examples, call out assumptions, and never claim you ran code or tools.' }
+]
 
-kord({
-  cmd: "gpt",
-  desc: "chat with ai (openai fast)",
-  fromMe: wtype,
-  type: "ai",
-}, async (m, text) => {
-  try {
-    var prompt = text || m.quoted?.text
-    if (!prompt) return await m.send("Hi!, What's Your Prompt?")
-    return await m.send(await chatWithAi(prompt, "openai-fast"))
-  } catch (e) {
-    console.log("cmd error", e)
-    return await m.sendErr(e)
-  }
-})
-
-kord({
-  cmd: "gemini",
-  desc: "chat with ai (gemini 2.5)",
-  fromMe: wtype,
-  type: "ai",
-}, async (m, text) => {
-  try {
-    var prompt = text || m.quoted?.text
-    if (!prompt) return await m.send("Hi!, What's Your Prompt?")
-    return await m.send(await chatWithAi(prompt, "gemini"))
-  } catch (e) {
-    console.log("cmd error", e)
-    return await m.sendErr(e)
-  }
-})
-
-kord({
-  cmd: "aisearch",
-  desc: "chat with ai (gemini with google search)",
-  fromMe: wtype,
-  type: "ai",
-}, async (m, text) => {
-  try {
-    var prompt = text || m.quoted?.text
-    if (!prompt) return await m.send("Hi!, What's Your Prompt?")
-    return await m.send(await chatWithAi(prompt, "gemini-search"))
-  } catch (e) {
-    console.log("cmd error", e)
-    return await m.sendErr(e)
-  }
-})
-
-kord({
-  cmd: "mistral",
-  desc: "chat with ai (mistral small 3.2)",
-  fromMe: wtype,
-  type: "ai",
-}, async (m, text) => {
-  try {
-    var prompt = text || m.quoted?.text
-    if (!prompt) return await m.send("Hi!, What's Your Prompt?")
-    return await m.send(await chatWithAi(prompt, "mistral"))
-  } catch (e) {
-    console.log("cmd error", e)
-    return await m.sendErr(e)
-  }
-})
-
-kord({
-  cmd: "deepseek",
-  desc: "chat with ai (deepseek v3.1 reasoning)",
-  fromMe: wtype,
-  type: "ai",
-}, async (m, text) => {
-  try {
-    var prompt = text || m.quoted?.text
-    if (!prompt) return await m.send("Hi!, What's Your Prompt?")
-    return await m.send(await chatWithAi(prompt, "deepseek"))
-  } catch (e) {
-    console.log("cmd error", e)
-    return await m.sendErr(e)
-  }
-})
-
-kord({
-  cmd: "reasoning",
-  desc: "chat with ai (openai o4 mini reasoning)",
-  fromMe: wtype,
-  type: "ai",
-}, async (m, text) => {
-  try {
-    var prompt = text || m.quoted?.text
-    if (!prompt) return await m.send("Hi!, What's Your Prompt?")
-    return await m.send(await chatWithAi(prompt, "openai-reasoning"))
-  } catch (e) {
-    console.log("cmd error", e)
-    return await m.sendErr(e)
-  }
-})
-
-kord({
-  cmd: "coder",
-  desc: "chat with ai (qwen coder)",
-  fromMe: wtype,
-  type: "ai",
-}, async (m, text) => {
-  try {
-    var prompt = text || m.quoted?.text
-    if (!prompt) return await m.send("Hi!, What's Your Prompt?")
-    return await m.send(await chatWithAi(prompt, "qwen-coder"))
-  } catch (e) {
-    console.log("cmd error", e)
-    return await m.sendErr(e)
-  }
-})
-
-kord({
-  cmd: "llama",
-  desc: "chat with ai (llama 3.1)",
-  fromMe: wtype,
-  type: "ai",
-}, async (m, text) => {
-  try {
-    var prompt = text || m.quoted?.text
-    if (!prompt) return await m.send("Hi!, What's Your Prompt?")
-    return await m.send(await chatWithAi(prompt, "roblox-rp"))
-  } catch (e) {
-    console.log("cmd error", e)
-    return await m.sendErr(e)
-  }
-})
-
-kord({
-  cmd: "bidara",
-  desc: "chat with ai (nasa biomimetic designer)",
-  fromMe: wtype,
-  type: "ai",
-}, async (m, text) => {
-  try {
-    var prompt = text || m.quoted?.text
-    if (!prompt) return await m.send("Hi!, What's Your Prompt?")
-    return await m.send(await chatWithAi(prompt, "bidara"))
-  } catch (e) {
-    console.log("cmd error", e)
-    return await m.sendErr(e)
-  }
-})
+for (const role of namedAiRoles) {
+  kord({ cmd: role.name, desc: `${role.description} (free Pollinations openai-fast)`, fromMe: wtype, type: 'ai' }, async (m, text) => {
+    const prompt = String(text || m.quoted?.text || '').trim()
+    if (!prompt) return m.send(`Send a prompt or reply to text with ${role.name}.`)
+    if (prompt.length > 12000) return m.send('Please shorten the prompt to 12,000 characters or less.')
+    if (namedAiState.busy) return m.send('An AI request is already running. Please wait.')
+    const wait = Math.ceil((namedAiState.nextAt - Date.now()) / 1000)
+    if (wait > 0) return m.send(`Free AI cooldown: try again in ${wait}s. Nova, Scribe and Forge share one free allowance.`)
+    namedAiState.busy = true
+    namedAiState.nextAt = Date.now() + 31000
+    let output
+    try {
+      const response = await axios.post('https://text.pollinations.ai/openai', {
+        model: 'openai-fast',
+        messages: [{ role: 'system', content: role.system }, { role: 'user', content: prompt }],
+        max_tokens: 2048,
+        stream: false
+      }, { timeout: 60000, maxContentLength: 262144, headers: { 'Content-Type': 'application/json' } })
+      const choice = response.data?.choices?.[0]
+      const raw = choice?.message?.content
+      if (typeof raw !== 'string') throw new Error('empty-ai-reply')
+      output = raw.replace(/<think>[\s\S]*?<\/think>/gi, '').trim()
+      if (!output) throw new Error('empty-ai-reply')
+      if (choice.finish_reason === 'length') output += '\n\n[Reply reached the free output limit; ask a narrower question.]'
+    } catch (error) {
+      const status = error.response?.status
+      console.error('Named AI request failed:', role.name, status || error.code || 'response-error')
+      if (status === 402 || status === 429) {
+        const detail = typeof error.response?.data === 'string' ? error.response.data : ''
+        const retry = Number(error.response?.headers?.['retry-after']) || Number(detail.match(/wait\s+(\d+)\s*seconds?/i)?.[1]) || 30
+        namedAiState.nextAt = Date.now() + Math.min(3600, Math.max(31, retry + 1)) * 1000
+        output = 'The free AI allowance is busy or rate-limited. Please wait at least 30 seconds and try again.'
+      } else if (error.code === 'ECONNABORTED' || error.code === 'ETIMEDOUT') {
+        output = 'The free AI service timed out. Please try again shortly.'
+      } else {
+        output = 'The free AI service could not return a reply. Please try again later.'
+      }
+    } finally {
+      namedAiState.busy = false
+      namedAiState.nextAt = Math.max(namedAiState.nextAt, Date.now() + 31000)
+    }
+    // Output is text only. Never evaluate instructions/code returned by the model.
+    for (let offset = 0; offset < output.length; offset += 3800) {
+      await m.send(output.slice(offset, offset + 3800))
+    }
+  })
+}
 
 var chatc = {
     active: false,

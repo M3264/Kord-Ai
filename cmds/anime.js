@@ -554,6 +554,22 @@ kord({
 })
 
 kord({
+    cmd: "spank",
+    desc: "spank someone",
+    fromMe: wtype,
+    type: "fun"
+}, async (m) => {
+    try {
+        let target = m.mentionedJid[0] || m.quoted?.sender
+        let pic = await fetchWaifu("spank")
+        let caption = target ? `@${m.sender.split("@")[0]} spanked @${target.split("@")[0]}` : ""
+        return await sendMedia(m, pic, caption, target)
+    } catch (e) {
+        return await m.sendErr(e)
+    }
+})
+
+kord({
     cmd: "feed",
     desc: "feed someone",
     fromMe: wtype,

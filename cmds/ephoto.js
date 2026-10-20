@@ -1,5 +1,5 @@
 /* 
- * Copyright © 2025 Kenny
+ * Copyright © 2025 Mirage
  * This file is part of Kord and is licensed under the GNU GPLv3.
  * And I hope you know what you're doing here.
  * You may not use this file except in compliance with the License.
@@ -93,9 +93,9 @@ const createCmd = (name, effectUrl, emoji, description, options = {}) => {
             } else {
                 result = await textMaker(effectUrl, options.needsMultipleTexts ? textInputs : [textInputs[0]])
             }
-
+             
             if (!result.status || !result.url) {
-                throw new Error('Failed to generate effect')
+                console.error("error ", result)
             }
             await m.send(result.url, { caption: config().CAPTION }, "image")
             m.react("")

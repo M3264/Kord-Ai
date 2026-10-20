@@ -14,6 +14,7 @@ const {
    remini,
    upscaleImage,
    config,
+   kordGet,
    Baileys
 } = require("../core")
 
@@ -31,21 +32,25 @@ const getImageUrl = async (m) => {
 
 kord({
         cmd: "remini|upscale|hd",
-        desc: "increase the quality of an image(pixelcut)",
+        desc: "increase the quality of an image (kord upscale, scale 2-4)",
         fromMe: wtype,
         type: "image"
 }, async (m, text) => {
       try {
         if (!(m.image || m.quoted.image)) return await m.send("_Reply to a image_")
         await m.react("⏳")
-        var mss = m.image ? m : m.quoted.image ? m.quoted : null
-        var media = await m.client.downloadMediaMessage(m.image ? m : m.quoted.image ? m.quoted: null)
-        var pic = await upscaleImage(media)
+        var scale = String((text || '').trim().match(/^[234]$/) ? text.trim() : '2')
+        var target = m.image ? m : m.quoted.image ? m.quoted : null
+        var media = await m.client.downloadMediaMessage(target)
+        var out = await upscaleImage(media, scale)
+        var buf = Buffer.isBuffer(out) ? out : (out?.buffer || out?.url)
+        if (!buf) throw new Error('upscale returned empty result')
         await m.react("")
-        return await m.send(pic.url, { caption: "> here's your upscaled image.." }, "image")
+        return await m.send(buf, { caption: "> here's your upscaled image..", quoted: m }, "image")
         } catch (err) {
                 console.error(err)
-                return await m.send(`error ${err}`)
+                await m.react("")
+                return await m.send(`error ${err?.message || err}`)
         }
 })
 
@@ -508,7 +513,7 @@ kord({
   type: "image",
 }, async (m, text) => {
   try {
-        const response = await m.axios(`https://api.kord.live/api/lumina/search?query=${text}`)
+        const response = await kordGet(`https://api.kordai.tech/api/lumina/search?query=${text}`)
         const { wallpapers } = response
         const jid = m.chat
         const baileys = await Baileys()

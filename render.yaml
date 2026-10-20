@@ -9,18 +9,18 @@ services:
     autoDeploy: true
     envVars:
       - key: SESSION_ID
-        sync: false
+        required: true
       - key: OWNER_NUMBER
-        sync: false
+        required: true
       - key: WORKTYPE
-        sync: false
+        required: true
       - key: PREFIX
-        sync: false
+        required: true
       - key: TIMEZONE
-        sync: false
+        required: true
       - key: OWNER_NAME
-        sync: false
+        required: true
       - key: BOT_NAME
-        sync: false
+        required: true
       - key: RENDER_API_KEY
-        sync: false
+        required: true

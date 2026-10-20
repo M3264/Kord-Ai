@@ -1,10 +1,10 @@
-const { kord, wtype, extractUrlsFromString, fb, ytaudio, ytvideo, xdl, tt, insta, mediaFire, config } = require("../core")
+const { kord, wtype, extractUrlsFromString, fb, ytaudio, ytvideo, xdl, tt, insta, mediaFire, config, kordFetch } = require("../core")
 const { getData, storeData } = require("../core")
 
 const AUTODL_KEY = "autodl_chats"
 
 const urlPatterns = {
-  youtube: /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+/,
+  youtube: /^(https?:\/\/)?((www|m|music)\.)?(youtube\.com|youtu\.be)\/.+/,
   tiktok: /https:\/\/(?:www\.|vm\.|m\.|vt\.)?tiktok\.com\/(?:(@[\w.-]+\/(?:video|photo)\/\d+)|v\/\d+\.html|[\w-]+\/?)(?:\?.*)?$/,
   twitter: /^(https?:\/\/)?(www\.)?(x\.com|twitter\.?com)\/.+$/,
   facebook: /^(https?:\/\/)?(www\.)?(fb\.com|facebook\.?com)\/.+$/,
@@ -118,8 +118,8 @@ async function downloadMediafire(link, m) {
 
 async function downloadPinterest(link, m) {
   try {
-    const api = `https://api.kord.live/api/pinterest?url=${encodeURIComponent(link)}`
-    const res = await fetch(api)
+    const api = `https://api.kordai.tech/api/pinterest?url=${encodeURIComponent(link)}`
+    const res = await kordFetch(api)
     const json = await res.json()
     const data = json?.data?.data
     if (!data) return false

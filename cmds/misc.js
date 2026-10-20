@@ -17,7 +17,6 @@ const { kord,
         storeData,
         sleep
 } = require("../core")
-const axios = require("axios")
 
 kord({
 cmd: "quote",
@@ -57,48 +56,12 @@ cmd: "fact",
 })
 
 kord({
-cmd: "q|quotely",
-  desc: "makes sticker of replied messaged",
+  cmd: "q|quotely",
+  desc: "quote sticker; q r includes the original reply; q image or q r image sends an image",
   fromMe: wtype,
   type: "misc",
 }, async (m, text, c, str) => {
-  try {
-    if (!m.quoted) return await m.send("_reply to a message.._")
-    let p = await m.client.profilePictureUrl(m.quoted.sender).catch(() => "https://files.catbox.moe/wpi099.png")
-    
-    let td = ["#FFFFFF", "#000000", "#1f272a"]
-    let tdd = td[Math.floor(Math.random() * td.length)]
-    var username = await str.getname(m.quoted.sender)
-    let qq
-    qq = {}
-    let k = {
-    type: "quote",
-    format: "png",
-    backgroundColor: tdd,
-    width: 512,
-    height: 512,
-    scale: 3,
-    messages: [{
-    avatar: true,
-    from: {
-    first_name: username,
-    language_code: "en",
-    name: username,
-    photo: {
-    url: p,
-    },
-    },
-    text: m.quoted.text,
-    replyMessage:  qq,
-    }, ],
-    }
-    let res = await axios.post("https://bot.lyo.su/quote/generate", k)
-    let img = Buffer.from(res.data.result.image, "base64")
-    return await m.sendstk(img)
-  } catch (e) {
-    console.log("cmd error", e)
-    return await m.sendErr(e)
-  }
+  return require("../core/quote").sendQuote(m, str, text)
 })
 
 kord({
@@ -163,6 +126,24 @@ cmd: "pickupl|pickupline",
     return await m.send(
     `\`\`\`┏ PICKUP-LINE ┓\`\`\`
     \n\`\`\`${p.pickupline}\`\`\``
+    )
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
+})
+
+kord({
+cmd: "breakupl|breakupline",
+  desc: "get breakupline",
+  fromMe: wtype,
+  type: "fun",
+}, async (m, text) => {
+  try {
+    var p = await m.axios("https://breakupline-api.vercel.app/")
+    return await m.send(
+    `\`\`\`┏ BREAKUP-LINE ┓\`\`\`
+    \n\`\`\`${p}\`\`\``
     )
   } catch (e) {
     console.log("cmd error", e)

@@ -1,5 +1,5 @@
 /* 
- * Copyright © 2025 Kenny
+ * Copyright © 2025 Mirage
  * This file is part of Kord and is licensed under the GNU GPLv3.
  * And I hope you know what you're doing here.
  * You may not use this file except in compliance with the License.
@@ -7,7 +7,7 @@
  * -------------------------------------------------------------------------------
  */
 
-const {kord, webp2png, webp2mp4, elevenlabs, rand, getBuffer, toAudio, config, processAudio, extractUrlsFromString, toPTT, isMediaURL, wtype} = require("../core")
+const {kord, webp2png, webp2mp4, elevenlabs, rand, getBuffer, toAudio, config, processAudio, extractUrlsFromString, toPTT, isMediaURL, wtype, kordFetch} = require("../core")
 
 const { Sticker, StickerTypes } = require("wa-sticker-formatter")
 const fs = require('fs')
@@ -23,10 +23,10 @@ const {
 } = require('file-type')
 
 kord({
-        cmd: "sticker|s|stk",
-        desc: "converts replied media to sticker",
-        fromMe: wtype,
-        type: "converter",
+  cmd: "sticker|s|stk",
+  desc: "converts replied media to sticker",
+  fromMe: wtype,
+  type: "converter",
 }, async (m, text) => {
   try {
     if (!(m.image || m.video || m.quoted.video || m.quoted.image)) return await m.send("_Reply to photo or video_")
@@ -90,7 +90,7 @@ cmd: "ptv",
 })
 
 kord({
-        cmd: "mp4",
+        cmd: "tomp4|mp4",
         desc: "converts sticker to video",
         fromMe: wtype,
         type: "converter",
@@ -150,7 +150,7 @@ cmd: "black",
     const ffmpegg = ff()
     let file = path.join(__dirname, '../core/store/black.jpg')
     if (!fs.existsSync(file)) {
-    const blackImg = await getBuffer("https://cdn.kord.live/serve/n2BwUtItyeae.jpg")
+    const blackImg = await getBuffer("https://cdn.kordai.tech/serve/n2BwUtItyeae.jpg")
     fs.writeFileSync(file, blackImg)
     }
     if (args[0] && await isMediaURL(args[0])) {
@@ -314,12 +314,12 @@ kord({
     
     const title = data[0] || "kord"
     const artist = data[1] || "v2"
-    const coverUrl = data[2] || "https://cdn.kord.live/serve/tuNyPANPYD2v.png"
+    const coverUrl = data[2] || "https://cdn.kordai.tech/serve/tuNyPANPYD2v.png"
     
     try {
       const audioBase64 = audioResult.toString('base64')
       
-      const response = await fetch('https://api.kord.live/add-mp3-meta', {
+      const response = await kordFetch('https://api.kordai.tech/add-mp3-meta', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

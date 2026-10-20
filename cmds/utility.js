@@ -7,7 +7,7 @@
  * -------------------------------------------------------------------------------
  */
 
-const { kord, extractUrlsFromString, getJson, Baileys, transcribeATT, prefix, wtype, config, ss } = require("../core")
+const { kord, extractUrlsFromString, getJson, Baileys, transcribeATT, prefix, wtype, config, screenshot, kordGet } = require("../core")
 const fs = require("fs");
 const path = require("path");
 const PDFDocument = require("pdfkit")
@@ -21,6 +21,18 @@ const {
 const ffmpeg = require('fluent-ffmpeg');
 const http = require('http')
 
+function screenshotTarget(input) {
+    const text = String(input || '').trim()
+    const explicit = extractUrlsFromString(text)
+    if (explicit?.[0]) return explicit[0]
+    // Permit bare public-domain syntax without treating emails or other schemes as links.
+    const domain = /(?<![\p{L}\p{N}_@.\-/:])(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+(?:[a-z]{2,63}|xn--[a-z0-9-]{2,59})(?::\d{1,5})?(?:[/?#][^\s<>"'`]*)?(?![\p{L}\p{N}_@\-])/iu
+    const match = text.match(domain)
+    if (!match) return ''
+    const candidate = match[0].replace(/[.,!?;:)\]}]+$/, '')
+    try { return new URL(`https://${candidate}`).href } catch { return '' }
+}
+
 kord({
     cmd: "ss",
     desc: "screenshots a given url live page",
@@ -33,15 +45,16 @@ kord({
         else lik = text
         if (!lik) return m.send("_*reply/provide a valid link!*_")
         m.react("⏰")
-        var links = await extractUrlsFromString(lik)
-        var link = links[0]
-
-        var img = await fetch(`https://api-rebix.zone.id/api/ssweb?url=${encodeURIComponent(link)}&device=desktop`)
-        var imgbuff = await img.buffer()
-        return m.send(imgbuff, { caption: "> here’s your screenshot", quoted: m }, "image")
+        var link = screenshotTarget(lik)
+        if (!link) return m.send("_*no valid URL found!*_")
+        var shot = await screenshot(link, 1280, 800)
+        m.react("")
+        var eng = shot.engine ? ` (engine: ${shot.engine})` : ""
+        return m.send(shot.buffer, { caption: `> here's your screenshot${eng}`, quoted: m }, "image")
     } catch (err) {
         console.error(err)
-        return m.send(`${err}`)
+        m.react("")
+        return m.send(`${err?.message || err}`)
     }
 })
 
@@ -57,15 +70,16 @@ kord({
         else lik = text
         if (!lik) return m.send("_*reply/provide a valid link!*_")
         m.react("⏰")
-        var links = await extractUrlsFromString(lik)
-        var link = links[0]
-
-        var img = await fetch(`https://api-rebix.zone.id/api/ssweb?url=${encodeURIComponent(link)}&device=tablet`)
-        var imgbuff = await img.buffer()
-        return m.send(imgbuff, { caption: "> here’s your screenshot", quoted: m }, "image")
+        var link = screenshotTarget(lik)
+        if (!link) return m.send("_*no valid URL found!*_")
+        var shot = await screenshot(link, 768, 1024)
+        m.react("")
+        var eng = shot.engine ? ` (engine: ${shot.engine})` : ""
+        return m.send(shot.buffer, { caption: `> here's your screenshot${eng}`, quoted: m }, "image")
     } catch (err) {
         console.error(err)
-        return m.send(`${err}`)
+        m.react("")
+        return m.send(`${err?.message || err}`)
     }
 })
 
@@ -81,15 +95,16 @@ kord({
         else lik = text
         if (!lik) return m.send("_*reply/provide a valid link!*_")
         m.react("⏰")
-        var links = await extractUrlsFromString(lik)
-        var link = links[0]
-
-        var img = await fetch(`https://api-rebix.zone.id/api/ssweb?url=${encodeURIComponent(link)}&device=phone`)
-        var imgbuff = await img.buffer()
-        return m.send(imgbuff, { caption: "> here’s your screenshot", quoted: m }, "image")
+        var link = screenshotTarget(lik)
+        if (!link) return m.send("_*no valid URL found!*_")
+        var shot = await screenshot(link, 390, 844)
+        m.react("")
+        var eng = shot.engine ? ` (engine: ${shot.engine})` : ""
+        return m.send(shot.buffer, { caption: `> here's your screenshot${eng}`, quoted: m }, "image")
     } catch (err) {
         console.error(err)
-        return m.send(`${err}`)
+        m.react("")
+        return m.send(`${err?.message || err}`)
     }
 })
 
@@ -105,15 +120,16 @@ kord({
         else lik = text
         if (!lik) return m.send("_*reply/provide a valid link!*_")
         m.react("⏰")
-        var links = await extractUrlsFromString(lik)
-        var link = links[0]
-
-        var img = await fetch(`https://api-rebix.zone.id/api/ssweb?url=${encodeURIComponent(link)}&device=full`)
-        var imgbuff = await img.buffer()
-        return m.send(imgbuff, { caption: "> here’s your screenshot", quoted: m }, "image")
+        var link = screenshotTarget(lik)
+        if (!link) return m.send("_*no valid URL found!*_")
+        var shot = await screenshot(link, 1280, 2000)
+        m.react("")
+        var eng = shot.engine ? ` (engine: ${shot.engine})` : ""
+        return m.send(shot.buffer, { caption: `> here's your screenshot${eng}`, quoted: m }, "image")
     } catch (err) {
         console.error(err)
-        return m.send(`${err}`)
+        m.react("")
+        return m.send(`${err?.message || err}`)
     }
 })
 
@@ -124,7 +140,8 @@ kord({
   type: "utilities",
 }, async (m, text) => {
   try {
-  if (!text) return m.send("_*What do you want me to say?*_")
+  text = String(text || '').trim() || String(m.quoted?.text || '').trim()
+  if (!text) return m.send("_*Reply to text or tell me what to say.*_")
   var res = await m.axios(`https://ab-text-voice.abrahamdw882.workers.dev/?q=${encodeURIComponent(text)}&voicename=henry`)
   return await m.send(res.url, { mimetype: "audio/mpeg", ptt: false, quoted: m}, "audio")
   } catch(err) {
@@ -134,21 +151,28 @@ kord({
 })
 
 kord({
-cmd: "audio2text|text",
+  cmd: "audio2text|text",
   desc: "convert audio or video to text",
   fromMe: wtype,
   type: "utilities",
 }, async (m, text) => {
+  let filePath
   try {
-    if (!(m.quoted.audio || m.quoted.video)) return await m.send("_reply to an audio or video_")
-    var p = await m.client.dlandsave(m.quoted)
-    var t = await transcribeATT(p)
-    var c = t.text
-    await m.send(`${c}`)
-    await require("fs").promises.unlink(p);
-  } catch (e) {
-    console.log("cmd error", e)
-    return await m.sendErr(e)
+    if (!(m.quoted?.audio || m.quoted?.video)) return await m.send('_Reply to an audio message or video._')
+    await m.react('⏳')
+    filePath = await m.client.dlandsave(m.quoted)
+    const result = await transcribeATT(filePath)
+    // Keep long transcripts within WhatsApp's message size.
+    for (let offset = 0; offset < result.text.length; offset += 3500) {
+      await m.send(result.text.slice(offset, offset + 3500))
+    }
+  } catch (error) {
+    console.error('audio2text failed:', error.message)
+    const message = /abort|timeout/i.test(error.message) ? 'Transcription took too long. Please try a shorter recording.' : error.message || 'Unable to transcribe this recording.'
+    return await m.send(message)
+  } finally {
+    if (filePath) await require('fs').promises.unlink(filePath).catch(() => {})
+    try { await m.react('') } catch {}
   }
 })
 
@@ -335,125 +359,9 @@ function getQ(q) {
   return null
 }
 
-kord({
-  cmd: "vv",
-  desc: "resend a viewonce media as a normal media",
-  fromMe: wtype,
-  react: "🔓",
-  type: "utilities",
-}, async (m, text) => {
-  try {
-    if (
-      !m.quoted?.viewOnce &&
-      !m.quoted?.viewOnceMessageV2 &&
-      m.quoted?.mtype !== 'viewOnceMessageV2Extension' &&
-      m.quoted?.mtype !== 'viewOnceMessageV2'
-    ) return await m.send("_*𝌫 Reply To A Viewonce Message*_")
-
-    let mediaObj
-    const type = getQ(m.quoted)
-
-    if (m.quoted?.mtype === 'viewOnceMessageV2') {
-      if (type === 'image') mediaObj = m.quoted.message.imageMessage
-      else if (type === 'video') mediaObj = m.quoted.message.videoMessage
-      else if (type === 'audio') mediaObj = m.quoted.message.audioMessage
-    }
-
-    if (!mediaObj) {
-      if (type === 'image') mediaObj = m.quoted.imageMessage || m.quoted.message?.imageMessage
-      else if (type === 'video') mediaObj = m.quoted.videoMessage || m.quoted.message?.videoMessage
-      else if (type === 'audio') mediaObj = m.quoted.audioMessage || m.quoted.message?.audioMessage
-    }
-
-    if (!mediaObj) mediaObj = m.quoted.message || m.quoted
-
-    const damn = await m.client.dlandsave(mediaObj)
-
-    let msg
-
-    if (type === 'image') {
-      msg = { image: { url: damn }, caption: m.quoted.caption || "" }
-    } else if (type === 'video') {
-      msg = { video: { url: damn }, caption: m.quoted.caption || "" }
-    } else if (type === 'audio') {
-      msg = { audio: { url: damn }, ptt: false, caption: m.quoted.caption || "" }
-    } else {
-      await require("fs").promises.unlink(damn)
-      return await m.send("_*Unsupported media type*_")
-    }
-
-    let target = text.trim()
-    let sendTo = m.chat
-
-    if (target === 'chat') {
-      sendTo = m.sender
-    } else if (target === 'owner') {
-      sendTo = m.ownerJid
-    } else if (/^\d{5,16}$/.test(target)) {
-      sendTo = `${target}@s.whatsapp.net`
-    } else if (/^\d{5,16}@s\.whatsapp\.net$/.test(target)) {
-      sendTo = target
-    }
-
-    await m.client.sendMessage(sendTo, msg, { quoted: m })
-    await require("fs").promises.unlink(damn)
-  } catch (err) {
-    console.error("vv plugin", err)
-  }
-})
 
 
-kord({
-  on: "all",
-  fromMe: true,
-}, async (m, text) => {
-  try {
-    if (text.toLowerCase().includes(config().VV_CMD)) {
-      if (
-        !m.quoted?.viewOnce &&
-        !m.quoted?.viewOnceMessageV2 &&
-        m.quoted?.mtype !== "viewOnceMessageV2Extension" &&
-        m.quoted?.mtype !== "viewOnceMessageV2"
-      ) return
 
-      let mediaObj
-      const type = getQ(m.quoted)
-
-      if (m.quoted?.mtype === 'viewOnceMessageV2') {
-        if (type === 'image') mediaObj = m.quoted.message.imageMessage
-        else if (type === 'video') mediaObj = m.quoted.message.videoMessage
-        else if (type === 'audio') mediaObj = m.quoted.message.audioMessage
-      }
-
-      if (!mediaObj) {
-        if (type === 'image') mediaObj = m.quoted.imageMessage || m.quoted.message?.imageMessage
-        else if (type === 'video') mediaObj = m.quoted.videoMessage || m.quoted.message?.videoMessage
-        else if (type === 'audio') mediaObj = m.quoted.audioMessage || m.quoted.message?.audioMessage
-      }
-
-      if (!mediaObj) mediaObj = m.quoted.message || m.quoted
-
-      const damn = await m.client.dlandsave(mediaObj)
-      let msg
-
-      if (type === 'image') {
-        msg = { image: { url: damn }, caption: m.quoted.caption || "" }
-      } else if (type === 'video') {
-        msg = { video: { url: damn }, caption: m.quoted.caption || "" }
-      } else if (type === 'audio') {
-        msg = { audio: { url: damn }, ptt: false, caption: m.quoted.caption || "" }
-      } else {
-        await require("fs").promises.unlink(damn)
-        return
-      }
-
-      await m.client.sendMessage(m.ownerJid, msg, { quoted: m.data })
-      await require("fs").promises.unlink(damn)
-    }
-  } catch (e) {
-    console.error("Error in vv", e)
-  }
-})
 
 
 kord({
@@ -628,8 +536,8 @@ kord({
 
         if (!t) return await m.send(`*reply to text/provide text with lang code*\n_example: ${c} en bonjour`)
 
-        var res = await m.axios(
-            `https://api.kord.live/api/translate?text=${encodeURIComponent(t)}&to=${code}`
+        var res = await kordGet(
+            `https://api.kordai.tech/api/translate?text=${encodeURIComponent(t)}&to=${code}`
         )
 
         if (res.status == 400) return await m.send("*invalid language code provided*")
@@ -754,58 +662,6 @@ cmd: "font",
   }
 })
 
-kord({
-  cmd: "compress",
-  desc: "compress image/video",
-  fromMe: wtype,
-  type: "utilities",
-}, async (m, text) => {
-  try {
-    if (!(m.image || m.video || m.quoted.image || m.quoted.video)) return await m.send("_*reply to an image/video*_")
-    var pth = await m.client.dlandsave((m.image || m.video) ? m : (m.quoted.image || m.quoted.video) ? m.quoted : null)
-    var ext = pth.split(".")[1]
-    var opath = path.join(bin, `compressed_${Date.now()}.${ext}`)
-    try {
-      if (ext.match(/(jpg|jpeg|png|webp)/)) {
-      const image = await read(pth);
-      await image
-    .resize(800, Jimp.AUTO)
-    .quality(60)
-    .writeAsync(opath);
-
-  await m.send(fs.readFileSync(opath), { caption: "> compressed image.." }, 'image')
-      } else if (ext.match(/(mp4|mkv|avi)/)) {
-                await m.reply("*_Compressing video..._* This might take minutes.")
-                await new Promise((resolve, reject) => {
-                    ffmpeg(pth)
-                        .outputOptions([
-                            '-c:v libx264',
-                            '-preset faster',
-                            '-crf 28',
-                            '-b:v 500k',
-                            '-maxrate 800k',
-                            '-bufsize 1200k',
-                            '-vf scale=-2:480',
-                            '-c:a aac',
-                            '-b:a 96k'
-                        ])
-                        .save(opath)
-                        .on('end', resolve)
-                        .on('error', reject);
-                });
-             await m.send(fs.readFileSync(opath), { caption: "*compressed video ...*"}, "video")
-    }
-    } catch (err) {
-      return await m.send(`*Compression Error:* ${err}`)
-    } finally {
-            if (fs.existsSync(pth)) fs.unlinkSync(pth);
-            if (fs.existsSync(opath)) fs.unlinkSync(opath);
-        } 
-  } catch (er) {
-    console.error("error in compress cmd", er)
-    return await m.send(`*error!*\n${er}`)
-  }
-})
 
 
 

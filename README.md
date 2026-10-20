@@ -18,7 +18,7 @@ A powerful, multi-device WhatsApp bot built with Baileys. Fast to set up and eas
 ### 1. Get a Session ID
 
 Visit:  
-**[https://kord.live/session](https://kord.live/session)**  
+**[https://kordai.tech/session](https://kordai.tech/session)**  
 Paste the session ID in your `config.env`
 
 ---
@@ -26,11 +26,11 @@ Paste the session ID in your `config.env`
 ### 2. Choose a Deployment Method
 
 Go to:  
-**[https://kord.live/deploy](https://kord.live/deploy)**
+**[https://kordai.tech/deploy](https://kordai.tech/deploy)**
 
-- For **Render**: [https://kord.live/deploy (render)](https://kord.live/deploy)
-- For **Panel**: [kord.live/deploy (panel)](https://kord.live/deploy)
-- For **VPS**: [kord.live/deploy (vps)](https://kord.live/deploy)
+- For **Render**: [https://kordai.tech/deploy (render)](https://kordai.tech/deploy)
+- For **Panel**: [kordai.tech/deploy (panel)](https://kordai.tech/deploy)
+- For **VPS**: [kordai.tech/deploy (vps)](https://kordai.tech/deploy)
 
 You can also deploy on any other platform that supports Node.js.  
 If you encounter any issue, reach out directly:
@@ -42,7 +42,7 @@ If you encounter any issue, reach out directly:
 ## 📢 Community
 
 - **WhatsApp Chat Group**  
-  [Join Group](https://chat.whatsapp.com/BiUWsseAyN6B5JnK4lE7XX)
+  [Join Group](https://chat.whatsapp.com/GXUhk1vRI5nL5E2wjJOMqC)
  
 - **WhatsApp Channel**  
   [Join Now](https://whatsapp.com/channel/0029VaghjWRHVvTh35lfZ817)
