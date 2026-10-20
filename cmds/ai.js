@@ -97,14 +97,7 @@ kord({
   type: "ai",
 }, async (m, text, cmd) => {
   try {
-    if (!text) return m.btnText("Toggle chatbot", {
-      [`${cmd} on`]: "✅ON",
-      [`${cmd} off`]: "OFF",
-      [`${cmd} on all`]: "On (All chats)",
-      [`${cmd} off all`]: "Off (All chats)",
-      [`${cmd} status`]: "📊 Status",
-      [`${cmd} clear`]: "🗑️ Clear History"
-    })
+    if (!text) return m.send("use on/off")
 
     const args = text.split(" ")
     if (args && args.length > 0) {
