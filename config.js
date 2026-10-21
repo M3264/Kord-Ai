@@ -22,7 +22,6 @@ module.exports = {
     READ_MESSAGE: process.env.READ_MESSAGE || "on",
     OWNER_NAME: process.env.OWNER_NAME || '',
     BOT_NAME: process.env.BOT_NAME || "Kord",
-
     ANTIDELETE: process.env.ANTIDELETE || "on",
     ANTIDELETE_INCHAT: process.env.ANTIDELETE_INCHAT || "off",
     AUDIO_DATA: process.env.AUDIO_DATA || "Kord;🤍",
@@ -40,7 +39,5 @@ module.exports = {
     ANTI_EDIT: process.env.ANTI_EDIT || "off",
     ANTI_EDIT_IN_CHAT: process.env.ANTI_EDIT_IN_CHAT || "off",
     WARNCOUNT: process.env.WARNCOUNT || "4",
-    MENU_IMAGE: process.env.MENU_IMAGE || "",
-    KENNY_DEV: process.env.KENNY_DEV || "true"
-
+    MENU_IMAGE: process.env.MENU_IMAGE || ""
 }
