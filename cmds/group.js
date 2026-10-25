@@ -649,6 +649,186 @@ cmd: "revoke",
 
 
 kord({
+  cmd: "forward|fwrd",
+  desc: "forward a message",
+  fromMe: true,
+  type: "user",
+}, async (m, text, cmd, store) => {
+  try {
+    if (!m.quoted) return await m.send("_reply to the msg you want to forward.._");
+    if (!text) return await m.send(`_*Provide a number/jid!*_\n_example ${cmd} 2348033221144_\n_${cmd} 2348033221144@s.whatsapp.net_\n\nuse ${prefix}jid to get the jid of a chat`);
+
+    let jids = text.split(",").map(j => j.trim()).filter(j => j.length > 0);
+    let sentTo = [];
+
+    for (let rawJid of jids) {
+      let jidd = rawJid;
+      if (!jidd.includes("@")) {
+        jidd = `${jidd}@s.whatsapp.net`;
+      }
+
+      await m.forwardMessage(jidd, await store.findMsg(m.quoted.id));
+      sentTo.push(jidd);
+      await sleep(1000);
+    }
+
+    return await m.send(`_Forwarded to ${sentTo.join(", ")}_`);
+  } catch (e) {
+    console.log("cmd error", e);
+    return await m.sendErr(e);
+  }
+});
+
+kord({
+  cmd: "tag",
+  desc: "tag all members/admins/me/text",
+  fromMe: wtype,
+  gc: true,
+  adminOnly: true,
+  type: "group"
+}, async (m, text, cmd, store) => {
+  try {
+    const { participants } = await m.client.groupMetadata(m.chat);
+
+    const allJids = participants.map(p => p.id).filter(Boolean);
+    const admins = participants
+      .filter(p => p.admin === "admin" || p.admin === "superadmin")
+      .map(p => p.id)
+      .filter(Boolean);
+
+    if (text === "all" || text === "everyone") {
+      let msg = "";
+      participants.forEach((p, i) => {
+        msg += `❐ ${i + 1}. @${p.id.split("@")[0]}\n`;
+      });
+      return await m.send(msg, { mentions: allJids });
+    }
+
+    else if (text === "admin" || text === "admins") {
+      let msg = "";
+      admins.forEach((admin, i) => {
+        msg += `❐ ${i + 1}. @${admin.split("@")[0]}\n`;
+      });
+      return await m.send(msg, { mentions: admins });
+    }
+
+    else if (text === "me" || text === "mee") {
+      return await m.send(`@${m.sender.split("@")[0]}`, { mentions: [m.sender] });
+    }
+
+    else if (text) {
+      return await m.send(text, { mentions: allJids });
+    }
+
+    else if (m.quoted) {
+      const q = m.quoted;
+      const mentions = allJids;
+
+      if (q.text || q.conversation) {
+        return await m.send(q.text || q.conversation, { mentions });
+      }
+
+      let mediaBuffer;
+      try {
+        mediaBuffer = await q.download();
+      } catch (e) {
+        return await m.send(
+        `✘ Usage:\n` +
+        `• ${cmd} all\n` +
+        `• ${cmd} admins\n` +
+        `• ${cmd} me\n` +
+        `• ${cmd} (reply to message)`
+      );
+      }
+
+      const opts = { mentions };
+
+      if (q.image) {
+        return await m.client.sendMessage(m.chat, {
+          image: mediaBuffer,
+          caption: q.caption || "",
+          mimetype: q.mimetype,
+          ...opts
+        });
+      }
+      else if (q.video) {
+        return await m.client.sendMessage(m.chat, {
+          video: mediaBuffer,
+          caption: q.caption || "",
+          mimetype: q.mimetype,
+          ...opts
+        });
+      }
+      else if (q.audio) {
+        return await m.client.sendMessage(m.chat, {
+          audio: mediaBuffer,
+          mimetype: q.mimetype,
+          ptt: q.ptt || false,
+          ...opts
+        });
+      }
+      else if (q.sticker) {
+        return await m.client.sendMessage(m.chat, {
+          sticker: mediaBuffer,
+          ...opts
+        });
+      }
+      else if (q.document || q.mimetype) {
+        return await m.client.sendMessage(m.chat, {
+          document: mediaBuffer,
+          mimetype: q.mimetype,
+          fileName: q.fileName || "file",
+          caption: q.caption || "",
+          ...opts
+        });
+      }
+      else {
+        return await m.send("_*Cannot tag this message type*_");
+      }
+    }
+
+    else {
+      return await m.send(
+        `✘ Usage:\n` +
+        `• ${cmd} all\n` +
+        `• ${cmd} admins\n` +
+        `• ${cmd} me\n` +
+        `• ${cmd} (reply to message)`
+      );
+    }
+
+  } catch (e) {
+    console.log("cmd error", e);
+    return await m.sendErr(e);
+  }
+});
+
+kord({
+  cmd: "tagall",
+  desc: "tag all members",
+  fromMe: wtype,
+  gc: true,
+  adminOnly: true,
+  type: "group"
+}, async (m, text) => {
+  try {
+    const { participants } = await m.client.groupMetadata(m.chat)
+    const tt = text || m.quoted?.text
+
+    let msg = `❴ ⇛ *TAGALL* ⇚ ❵\n*Message:* ${tt || "blank"}\n*Caller:* @${m.sender.split("@")[0]}\n\n`
+
+    participants.forEach((p, i) => {
+      msg += `❧ ${i + 1}. @${p.id.split("@")[0]}\n`
+    })
+
+    await m.send(msg, { mentions: [m.sender, ...participants.map(p => p.id)] })
+  } catch (e) {
+    console.log("cmd error", e)
+    return await m.sendErr(e)
+  }
+});
+
+kord({
   cmd: "all|everyone",
   desc: "Tag everyone in the group with text",
   fromMe: false,

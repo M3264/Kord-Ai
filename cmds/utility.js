@@ -788,6 +788,86 @@ cmd: "font",
 
 
 kord({
+  cmd: "compress",
+  desc: "compress image/video",
+  fromMe: wtype,
+  type: "utilities",
+}, async (m, text) => {
+  try {
+    var target = m.image || m.video ? m : (m.quoted?.image || m.quoted?.video) ? m.quoted : null;
+    if (!target) return await m.send("_*Reply to an image or video*_");
+
+    var pth = await m.client.dlandsave(target);
+    if (!pth) return await m.send("_*Failed to download media*_");
+
+    var ext = path.extname(pth).toLowerCase().replace(".", "");
+    if (!ext) ext = target.image ? "jpg" : "mp4";
+
+    var outExt = ext.match(/(jpg|jpeg|png|webp)/) ? ext : "mp4";
+    var opath = path.join(bin, `compressed_${Date.now()}.${outExt}`);
+
+    if (!fs.existsSync(pth)) return await m.send("_*Download failed*_");
+
+    if (ext.match(/(jpg|jpeg|png|webp)/)) {
+      await m.send("_*Compressing image...*_");
+
+      const image = await Jimp.read(pth);
+
+      if (ext === "png" || ext === "webp") {
+        opath = opath.replace(/\.(png|webp)$/, ".jpg");
+      }
+
+      await image.resize({ w: 800, h: Jimp.AUTO });
+
+      const buffer = await image.getBuffer('image/jpeg', { quality: 60 });
+      fs.writeFileSync(opath, buffer);
+
+      await m.send(fs.readFileSync(opath), { caption: "> Compressed image" }, "image");
+    }
+
+    else if (ext.match(/(mp4|mkv|avi|mov|flv|wmv)/)) {
+      await m.send("_*Compressing video...*_ This might take a while.");
+
+      await new Promise((resolve, reject) => {
+        ffmpeg(pth)
+          .outputOptions([
+            "-c:v libx264",
+            "-preset faster",
+            "-crf 28",
+            "-b:v 500k",
+            "-maxrate 800k",
+            "-bufsize 1200k",
+            "-vf scale=-2:480",
+            "-c:a aac",
+            "-b:a 96k",
+            "-movflags +faststart"
+          ])
+          .toFormat("mp4")
+          .save(opath)
+          .on("end", resolve)
+          .on("error", reject);
+      });
+
+      await m.send(fs.readFileSync(opath), { caption: "> Compressed video" }, "video");
+    }
+
+    else {
+      return await m.send(`_*Unsupported format: .${ext}*_`);
+    }
+
+  } catch (err) {
+    console.error("Compress error:", err);
+    return await m.send(`_*Compression failed:*_ ${err.message}`);
+
+  } finally {
+    try {
+      if (pth && fs.existsSync(pth)) fs.unlinkSync(pth);
+      if (opath && fs.existsSync(opath)) fs.unlinkSync(opath);
+    } catch (e) {}
+  }
+});
+
+kord({
 cmd: 'getdevice|device',
   desc: 'Get device of sender or quoted',
   fromMe: wtype,
