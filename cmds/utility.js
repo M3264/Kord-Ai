@@ -365,6 +365,127 @@ function getQ(q) {
 
 
 kord({
+  cmd: "vv",
+  desc: "resend a viewonce media as a normal media",
+  fromMe: wtype,
+  react: "🔓",
+  type: "utilities",
+}, async (m, text) => {
+  try {
+    if (
+      !m.quoted?.viewOnce &&
+      !m.quoted?.viewOnceMessageV2 &&
+      m.quoted?.mtype !== 'viewOnceMessageV2Extension' &&
+      m.quoted?.mtype !== 'viewOnceMessageV2'
+    ) return await m.send("_*𝌫 Reply To A Viewonce Message*_")
+
+    let mediaObj
+    const type = getQ(m.quoted)
+
+    if (m.quoted?.mtype === 'viewOnceMessageV2') {
+      if (type === 'image') mediaObj = m.quoted.message.imageMessage
+      else if (type === 'video') mediaObj = m.quoted.message.videoMessage
+      else if (type === 'audio') mediaObj = m.quoted.message.audioMessage
+    }
+
+    if (!mediaObj) {
+      if (type === 'image') mediaObj = m.quoted.imageMessage || m.quoted.message?.imageMessage
+      else if (type === 'video') mediaObj = m.quoted.videoMessage || m.quoted.message?.videoMessage
+      else if (type === 'audio') mediaObj = m.quoted.audioMessage || m.quoted.message?.audioMessage
+    }
+
+    if (!mediaObj) mediaObj = m.quoted.message || m.quoted
+
+    const damn = await m.client.dlandsave(mediaObj)
+
+    let msg
+
+    if (type === 'image') {
+      msg = { image: { url: damn }, caption: m.quoted.caption || "" }
+    } else if (type === 'video') {
+      msg = { video: { url: damn }, caption: m.quoted.caption || "" }
+    } else if (type === 'audio') {
+      msg = { audio: { url: damn }, ptt: false, caption: m.quoted.caption || "" }
+    } else {
+      await require("fs").promises.unlink(damn)
+      return await m.send("_*Unsupported media type*_")
+    }
+
+    let target = text.trim()
+    let sendTo = m.chat
+
+    if (target === 'chat') {
+      sendTo = m.sender
+    } else if (target === 'owner') {
+      sendTo = m.ownerJid
+    } else if (/^\d{5,16}$/.test(target)) {
+      sendTo = `${target}@s.whatsapp.net`
+    } else if (/^\d{5,16}@s\.whatsapp\.net$/.test(target)) {
+      sendTo = target
+    }
+
+    await m.client.sendMessage(sendTo, msg, { quoted: m })
+    await require("fs").promises.unlink(damn)
+  } catch (err) {
+    console.error("vv plugin", err)
+  }
+})
+
+
+kord({
+  on: "all",
+  fromMe: true,
+}, async (m, text) => {
+  try {
+    if (text.toLowerCase().includes(config().VV_CMD)) {
+      if (
+        !m.quoted?.viewOnce &&
+        !m.quoted?.viewOnceMessageV2 &&
+        m.quoted?.mtype !== "viewOnceMessageV2Extension" &&
+        m.quoted?.mtype !== "viewOnceMessageV2"
+      ) return
+
+      let mediaObj
+      const type = getQ(m.quoted)
+
+      if (m.quoted?.mtype === 'viewOnceMessageV2') {
+        if (type === 'image') mediaObj = m.quoted.message.imageMessage
+        else if (type === 'video') mediaObj = m.quoted.message.videoMessage
+        else if (type === 'audio') mediaObj = m.quoted.message.audioMessage
+      }
+
+      if (!mediaObj) {
+        if (type === 'image') mediaObj = m.quoted.imageMessage || m.quoted.message?.imageMessage
+        else if (type === 'video') mediaObj = m.quoted.videoMessage || m.quoted.message?.videoMessage
+        else if (type === 'audio') mediaObj = m.quoted.audioMessage || m.quoted.message?.audioMessage
+      }
+
+      if (!mediaObj) mediaObj = m.quoted.message || m.quoted
+
+      const damn = await m.client.dlandsave(mediaObj)
+      let msg
+
+      if (type === 'image') {
+        msg = { image: { url: damn }, caption: m.quoted.caption || "" }
+      } else if (type === 'video') {
+        msg = { video: { url: damn }, caption: m.quoted.caption || "" }
+      } else if (type === 'audio') {
+        msg = { audio: { url: damn }, ptt: false, caption: m.quoted.caption || "" }
+      } else {
+        await require("fs").promises.unlink(damn)
+        return
+      }
+
+      await m.client.sendMessage(m.ownerJid, msg, { quoted: m.data })
+      await require("fs").promises.unlink(damn)
+    }
+  } catch (e) {
+    console.error("Error in vv", e)
+  }
+})
+
+
+kord({
   cmd: "pdf",
   desc: "Converts image to PDF or text to PDF",
   fromMe: wtype,
